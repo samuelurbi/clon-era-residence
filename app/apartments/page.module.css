@@ -1,0 +1,92 @@
+.page {
+  background: var(--_colors---other--bg);
+  color: var(--_colors---base-1000--primary);
+  padding: var(--_units---u-96) var(--_special-units---offset-l) var(--_units---u-160);
+  min-height: 100svh;
+}
+
+.header {
+  margin-bottom: var(--_units---u-96);
+}
+
+.title {
+  font-family: var(--_fonts---font-display);
+  font-size: var(--_fonts---h1--size);
+  line-height: var(--_fonts---h1--line-height);
+  letter-spacing: var(--_fonts---h1--letter-spacing);
+  margin: 0 0 var(--_units---u-16);
+}
+
+.count {
+  font-family: var(--_fonts---font-body);
+  font-size: var(--_fonts---l1--size);
+  letter-spacing: var(--_fonts---l1--letter-spacing);
+  text-transform: uppercase;
+  color: var(--_colors---base-1000--gray-text);
+  margin: 0;
+}
+
+.block {
+  margin-bottom: var(--_units---u-96);
+}
+
+.blockTitle {
+  font-family: var(--_fonts---font-display);
+  font-size: var(--_fonts---h4--size);
+  line-height: var(--_fonts---h4--line-height);
+  letter-spacing: var(--_fonts---h4--letter-spacing);
+  margin: 0 0 var(--_units---u-32);
+  padding-bottom: var(--_units---u-16);
+  border-bottom: 1px solid var(--_colors---base-1000--line);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: var(--_units---u-32) var(--_special-units---grid-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cardBody {
+  padding-top: var(--_units---u-16);
+}
+
+.cardTitle {
+  font-family: var(--_fonts---font-display);
+  font-size: var(--_fonts---h6--size);
+  line-height: var(--_fonts---h6--line-height);
+  margin: 0 0 var(--_units---u-4);
+}
+
+.cardMeta {
+  font-family: var(--_fonts---font-body);
+  font-size: var(--_fonts---p2--size);
+  line-height: var(--_fonts---p2--line-height);
+  letter-spacing: var(--_fonts---p2--letter-spacing);
+  color: var(--_colors---base-1000--gray-text);
+  margin: 0;
+}
+
+.card:hover .cardTitle {
+  color: var(--_global-colors---brand-500--velvet-plum);
+}
+
+@media screen and (max-width: 991px) {
+  .page {
+    padding: var(--_units---u-64) var(--_units---u-16) var(--_units---u-96);
+  }
+}

@@ -1,0 +1,119 @@
+/*
+ * Ficha de apartamento. Escrito sobre los design tokens, no sobre las clases
+ * de Webflow — al portar el diseño 1:1 sección a sección, este fichero es el
+ * que se va rellenando.
+ */
+
+.page {
+  background: var(--_colors---other--bg);
+  color: var(--_colors---base-1000--primary);
+  padding: var(--_units---u-96) var(--_special-units---offset-l) var(--_units---u-160);
+  min-height: 100svh;
+}
+
+.back {
+  font-family: var(--_fonts---font-body);
+  font-size: var(--_fonts---l1--size);
+  letter-spacing: var(--_fonts---l1--letter-spacing);
+  color: var(--_colors---base-1000--gray-text);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.back:hover {
+  color: var(--_colors---base-1000--primary);
+}
+
+.header {
+  margin: var(--_units---u-64) 0 var(--_units---u-48);
+  max-width: 56ch;
+}
+
+.category {
+  font-family: var(--_fonts---font-body);
+  font-size: var(--_fonts---l2--size);
+  letter-spacing: var(--_fonts---l2--letter-spacing);
+  text-transform: uppercase;
+  color: var(--_colors---base-1000--gray-text);
+  margin-bottom: var(--_units---u-16);
+}
+
+.title {
+  font-family: var(--_fonts---font-display);
+  font-size: var(--_fonts---h2--size);
+  line-height: var(--_fonts---h2--line-height);
+  letter-spacing: var(--_fonts---h2--letter-spacing);
+  margin: 0 0 var(--_units---u-24);
+}
+
+.description {
+  font-family: var(--_fonts---font-body);
+  font-size: var(--_fonts---p1--size);
+  line-height: var(--_fonts---p1--line-height);
+  letter-spacing: var(--_fonts---p1--letter-spacing);
+  color: var(--_colors---base-1000--gray-text);
+  margin: 0;
+}
+
+.hero,
+.layout,
+.galleryImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--_units---u-24);
+  margin: var(--_units---u-48) 0;
+  padding: var(--_units---u-32) 0;
+  border-top: 1px solid var(--_colors---base-1000--line);
+  border-bottom: 1px solid var(--_colors---base-1000--line);
+}
+
+.spec {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_units---u-8);
+}
+
+.specLabel {
+  font-family: var(--_fonts---font-body);
+  font-size: var(--_fonts---l2--size);
+  letter-spacing: var(--_fonts---l2--letter-spacing);
+  text-transform: uppercase;
+  color: var(--_colors---base-1000--gray-text);
+}
+
+.specValue {
+  font-family: var(--_fonts---font-display);
+  font-size: var(--_fonts---h5--size);
+  line-height: var(--_fonts---h5--line-height);
+  margin: 0;
+}
+
+.section {
+  margin-top: var(--_units---u-96);
+}
+
+.sectionTitle {
+  font-family: var(--_fonts---font-display);
+  font-size: var(--_fonts---h4--size);
+  line-height: var(--_fonts---h4--line-height);
+  letter-spacing: var(--_fonts---h4--letter-spacing);
+  margin: 0 0 var(--_units---u-32);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: var(--_special-units---grid-gap);
+}
+
+@media screen and (max-width: 991px) {
+  .page {
+    padding: var(--_units---u-64) var(--_units---u-16) var(--_units---u-96);
+  }
+}
