@@ -1,0 +1,35 @@
+{
+  "name": "era-residence",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "assets:download": "node scripts/download-assets.mjs",
+    "tokens:extract": "node scripts/extract-tokens.mjs",
+    "styles:embedded": "node scripts/extract-embedded-styles.mjs",
+    "gen:sections": "node scripts/generate-sections.mjs build",
+    "gen:apartments": "node scripts/extract-apartment-extras.mjs && node scripts/extract-apartment-cards.mjs && node scripts/generate-apartment-card.mjs && node scripts/generate-apartments-listing.mjs && node scripts/generate-apartment-detail.mjs",
+    "gen:header": "node scripts/generate-header.mjs",
+    "gen:shared": "node scripts/generate-shared-sections.mjs"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.15.0",
+    "lenis": "1.3.21",
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.0",
+    "node-html-parser": "^9.0.1",
+    "typescript": "^5"
+  }
+}
