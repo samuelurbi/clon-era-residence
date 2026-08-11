@@ -1,0 +1,44 @@
+/* ============================================================
+ *  Punto de entrada de estilos. El ORDEN importa: cada capa
+ *  puede pisar a la anterior.
+ *
+ *    1. webflow.css     capa heredada (generada) — se va vaciando
+ *    2. lenis.css       smooth scroll
+ *    3. tokens.css      design tokens (generados)
+ *    4. components.css  custom code del sitio original (generado):
+ *                       sistema de hovers y variables de animación
+ *    5. theme.css       personalización a mano — gana siempre
+ * ============================================================ */
+
+@import "./webflow.css";
+@import "lenis/dist/lenis.css";
+@import "./tokens.css";
+@import "./components.css";
+@import "./theme.css";
+
+/* --- Ajustes propios del port a Next.js --- */
+
+/* Webflow servía esto vía su runtime; en Next lo fijamos nosotros. */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* El JS de animación escribe --_100svh en resize para evitar el salto
+   de la barra de direcciones en móvil. Damos un valor inicial válido
+   para que el primer render (servidor) no quede sin altura. */
+:root {
+  --_100svh: 100svh;
+}
+
+/* Respeta a quien pide menos movimiento: el sitio original no lo hacía. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
