@@ -3,7 +3,7 @@ import { ComingSoonMain } from '@/components/pages/ComingSoonMain';
 
 export const metadata: Metadata = {
   title: 'Coming soon',
-  description: 'The next selection of ERA Residence apartments will be released shortly.',
+  description: 'The next selection of ERA Residence villas will be released shortly.',
 };
 
 /**

@@ -1,6 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * marcado del sitio original, pero al personalizarlo para Bahía Mar pasa a
+ * mantenerse a mano (textos, imágenes y alt). Regenerarlo con
+ * `npm run gen:sections` DESHARÍA este trabajo.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
@@ -53,15 +56,15 @@ export function Pillars() {
                         <div className="benefit-slide_t">
                           <div className="u-48 b-desk"></div>
                           <div className="u-272 b-mob"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h1 a-center b-desk">Real-Life Location</h3>
-                          <div data-scroll-reveal="h" data-slider="h" className="h2 a-center b-mob">Real-Life Location</div>
+                          <h3 data-scroll-reveal="h" data-slider="h" className="h1 a-center b-desk">Facing Samaná Bay</h3>
+                          <div data-scroll-reveal="h" data-slider="h" className="h2 a-center b-mob">Facing Samaná Bay</div>
                           <div className="u-48"></div>
                         </div>
                         <div className="benefit-slide_c">
                           <div className="u-16"></div>
                           <div className="benefit-slide_img">
                             <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                              <img src="/images/6a150affaf1d8cc969d57dd0_img_cam_02.webp" loading="eager" alt="" sizes="100vw" srcSet="/images/img_cam_02-p-500.webp 500w, /images/img_cam_02-p-800.webp 800w, /images/img_cam_02-p-1080.webp 1080w, /images/img_cam_02-p-1600.webp 1600w, /images/6a150affaf1d8cc969d57dd0_img_cam_02.webp 1920w" className="img" />
+                              <img src="/images/bahiamar-location-1.webp" loading="eager" alt="Circular fire-pit lounge on a wooden lookout above the palms, with the coast and the sea of Samaná at sunset." sizes="100vw" srcSet="/images/bahiamar-location-1-p-500.webp 500w, /images/bahiamar-location-1-p-800.webp 800w, /images/bahiamar-location-1-p-1080.webp 1080w, /images/bahiamar-location-1-p-1600.webp 1600w, /images/bahiamar-location-1-p-2000.webp 2000w, /images/bahiamar-location-1.webp 2350w" className="img" />
                             </div>
                           </div>
                           <div className="u-16"></div>
@@ -71,14 +74,14 @@ export function Pillars() {
                           <div className="grid _8-columns">
                             <div className="benefit-slide_desc">
                               <p data-scroll-reveal="p" data-slider="p" className="p1 a-center">
-                                Nestled between pristine beaches, world-class golf courses and exclusive wellness clubs, Era Residence offers a rare balance of seclusion and seamless access to the finest Mediterranean lifestyle.
+                                On the Samaná peninsula, with Las Terrenas nearby, every villa looks out over the beach, Samaná Bay and Los Haitises — seclusion and open horizons, with the restaurants, bars and beaches of the town close at hand.
                               </p>
                             </div>
                           </div>
                           <div className="u-48"></div>
                           <div className="grid _8-columns">
                             <div className="benefit-slide_cap">
-                              <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">Designed as a community, not a complex</p>
+                              <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">Las Terrenas · Samaná · Dominican Republic</p>
                             </div>
                           </div>
                           <div className="u-48"></div>
@@ -90,15 +93,15 @@ export function Pillars() {
                         <div className="benefit-slide_t">
                           <div className="u-48 b-desk"></div>
                           <div className="u-272 b-mob"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h1 a-center b-desk">Built to stay</h3>
-                          <div data-scroll-reveal="h" data-slider="h" className="h2 a-center b-mob">Built to stay</div>
+                          <h3 data-scroll-reveal="h" data-slider="h" className="h1 a-center b-desk">True eco-luxury</h3>
+                          <div data-scroll-reveal="h" data-slider="h" className="h2 a-center b-mob">True eco-luxury</div>
                           <div className="u-48"></div>
                         </div>
                         <div className="benefit-slide_c">
                           <div className="u-16"></div>
                           <div className="benefit-slide_img">
                             <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                              <img src="/images/6a150bbc2a39862be04f2cd5_era-residence-terrace.webp" loading="eager" alt="" sizes="100vw" srcSet="/images/era-residence-terrace-p-500.webp 500w, /images/era-residence-terrace-p-800.webp 800w, /images/era-residence-terrace-p-1080.webp 1080w, /images/era-residence-terrace-p-1600.webp 1600w, /images/6a150bbc2a39862be04f2cd5_era-residence-terrace.webp 1920w" className="img" />
+                              <img src="/images/bahiamar-eco-1.webp" loading="eager" alt="Villa Ámbar: pale stone walls and a timber pergola over the private pool, with the sea behind the palms." sizes="100vw" srcSet="/images/bahiamar-eco-1-p-500.webp 500w, /images/bahiamar-eco-1-p-800.webp 800w, /images/bahiamar-eco-1-p-1080.webp 1080w, /images/bahiamar-eco-1-p-1600.webp 1600w, /images/bahiamar-eco-1-p-2000.webp 2000w, /images/bahiamar-eco-1.webp 2350w" className="img" />
                             </div>
                           </div>
                           <div className="u-16"></div>
@@ -108,14 +111,14 @@ export function Pillars() {
                           <div className="grid _8-columns">
                             <div className="benefit-slide_desc">
                               <p data-scroll-reveal="p" data-slider="p" className="p1 a-center">
-                                Drawing on the spirit of Marbella&#x27;s golden age, the design blends modern architecture with natural materials, lush landscaping and thoughtfully crafted spaces.
+                                A master plan aligned with LEED for Cities and Communities, and villas built to last: solar panels, bamboo floors, chukum-finished walls, eco-efficient kitchens and home automation.
                               </p>
                             </div>
                           </div>
                           <div className="u-48"></div>
                           <div className="grid _8-columns">
                             <div className="benefit-slide_cap">
-                              <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">Designed as a community, not a complex</p>
+                              <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">Boutique residences in a setting full of vegetation</p>
                             </div>
                           </div>
                           <div className="u-48"></div>
@@ -127,15 +130,15 @@ export function Pillars() {
                         <div className="benefit-slide_t">
                           <div className="u-48 b-desk"></div>
                           <div className="u-272 b-mob"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h1 a-center b-desk">Boutique concept</h3>
-                          <div data-scroll-reveal="h" data-slider="h" className="h2 a-center b-mob">Boutique concept</div>
+                          <h3 data-scroll-reveal="h" data-slider="h" className="h1 a-center b-desk">A boutique resort</h3>
+                          <div data-scroll-reveal="h" data-slider="h" className="h2 a-center b-mob">A boutique resort</div>
                           <div className="u-48"></div>
                         </div>
                         <div className="benefit-slide_c">
                           <div className="u-16"></div>
                           <div className="benefit-slide_img">
                             <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                              <img src="/images/era-residence-garden.webp" loading="eager" alt="" sizes="100vw" srcSet="/images/era-residence-garden-p-500.png 500w, /images/era-residence-garden-p-800.png 800w, /images/era-residence-garden.webp 1920w" className="img" />
+                              <img src="/images/bahiamar-community-1.webp" loading="eager" alt="Lagoon-style community pool edged with rocks and sun loungers, looking out over the treetops to Samaná Bay." sizes="100vw" srcSet="/images/bahiamar-community-1-p-500.webp 500w, /images/bahiamar-community-1-p-800.webp 800w, /images/bahiamar-community-1-p-1080.webp 1080w, /images/bahiamar-community-1-p-1600.webp 1600w, /images/bahiamar-community-1-p-2000.webp 2000w, /images/bahiamar-community-1.webp 2350w" className="img" />
                             </div>
                           </div>
                           <div className="u-16"></div>
@@ -145,14 +148,14 @@ export function Pillars() {
                           <div className="grid _8-columns">
                             <div className="benefit-slide_desc">
                               <p data-scroll-reveal="p" data-slider="p" className="p1 a-center">
-                                A boutique gated community of 25 residences on Costa del Sol, designed around privacy, wellbeing and timeless Mediterranean living.
+                                A boutique resort community of 246 villas in five typologies across 349,000 m² of tropical landscape, sharing a beach club, clubhouse, hot springs and spa — and the first funicular in the Caribbean to move between them.
                               </p>
                             </div>
                           </div>
                           <div className="u-48"></div>
                           <div className="grid _8-columns">
                             <div className="benefit-slide_cap">
-                              <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">Designed as a community, not a complex</p>
+                              <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">Five villas. Five ways to live Bahía Mar</p>
                             </div>
                           </div>
                           <div className="u-48"></div>

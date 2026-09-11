@@ -85,11 +85,11 @@ export function Location() {
               <div className="loc-s_desc">
                 <div className="b-desk">
                   <div className="loc-s_desc_line"><div data-scroll-reveal="line" className="line-v"></div></div>
-                  <h3 data-scroll-reveal="p" className="l1">New Golden Mile, Estepona</h3>
+                  <h3 data-scroll-reveal="p" className="l1">Las Terrenas, Samaná</h3>
                   <div className="u-32"></div>
-                  <h4 data-scroll-reveal="p" className="p1">Costa del Sol</h4>
+                  <h4 data-scroll-reveal="p" className="p1">Samaná Peninsula</h4>
                   <div className="u-32"></div>
-                  <h5 data-scroll-reveal="p" className="p1">Spain</h5>
+                  <h5 data-scroll-reveal="p" className="p1">Dominican Republic</h5>
                 </div>
                 <div className="b-mob">
                   <div className="l1-list">
@@ -119,7 +119,7 @@ export function Location() {
             <div className="loc-w_bg_img">
               <div className="pins-cms w-dyn-list"><div className="cms_empty-none w-dyn-empty"></div></div>
               <div className="img-w h-auto">
-                <img src="/images/era-residence-master-plan.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/era-residence-master-plan-p-500.png 500w, /images/era-residence-master-plan-p-800.png 800w, /images/era-residence-master-plan-p-1080.png 1080w, /images/era-residence-master-plan.webp 1920w" alt="Coastal residential complex with pools, beachfront, roads, and distant mountains under clear blue sky." className="img h-auto" />
+                <img src="/images/bahiamar-aerial.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-aerial-p-500.webp 500w, /images/bahiamar-aerial-p-800.webp 800w, /images/bahiamar-aerial-p-1080.webp 1080w, /images/bahiamar-aerial-p-1600.webp 1600w, /images/bahiamar-aerial.webp 1920w" alt="Aerial view of Cosón Bay: white sand beach, turquoise water and dense palm forest under the Samaná hills." className="img h-auto" />
                 <div className="img-over-grad from-bot bot _100vh"></div>
               </div>
             </div>

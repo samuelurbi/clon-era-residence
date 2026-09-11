@@ -1,0 +1,28 @@
+# .htaccess para la carpeta de assets del host externo
+# -----------------------------------------------------
+# Subir a  public_html/urbatrix/era/  con el nombre  .htaccess  (con punto).
+#
+# Motivo: la auditoría (scripts/audit-vibe-assets.mjs) encontró que el
+# LiteSpeed de Hostinger sirve los 7 ficheros .webm como `text/plain`.
+# Los .mov y .mp4 sí salen bien, así que es solo este tipo el que falta
+# en su tabla de MIME.
+#
+# Por qué importa: el sitio sirve cada vídeo con dos fuentes,
+#
+#     <video><source src="…webm" type="video/webm">
+#            <source src="…mov"  type="video/quicktime"></video>
+#
+# y aunque el navegador se guía sobre todo por el atributo `type`, un
+# `text/plain` hace que Chrome descarte la fuente en cuanto la inspecciona.
+# El resultado sería caer siempre al .mov, que pesa bastante más — se
+# perdería el motivo por el que se generó el .webm.
+
+AddType video/webm .webm
+
+# Los demás tipos que usa el sitio ya los sirve bien LiteSpeed (verificado:
+# webp, png, jpg, avif, svg y pdf salen con su content-type correcto). Se
+# dejan aquí declarados por si el sitio se muda a un servidor que no los
+# traiga, que es el fallo silencioso más caro de diagnosticar.
+AddType image/webp .webp
+AddType image/avif .avif
+AddType image/svg+xml .svg

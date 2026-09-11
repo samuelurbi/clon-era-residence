@@ -82,7 +82,7 @@ export function Animations() {
      * coincide con el corte guardado.
      *
      * (Esta espera se añadió sospechando que causaba el salto de líneas de
-     * «Select an Apartment». Se comprobó que NO era eso —lo era la asimetría
+     * «Select a Villa». Se comprobó que NO era eso —lo era la asimetría
      * al partir las dos copias, ver lib/animations/interactions.ts— pero se
      * mantiene porque el problema que evita es real de todos modos.)
      */

@@ -1,0 +1,96 @@
+<!doctype html>
+<!--
+  PLANTILLA de index.html — `scripts/vibe-export.mjs` la renderiza a
+  `vibe/index.html` sustituyendo {{ASSET_BASE}} por el host de assets.
+  No edites `vibe/index.html`: se regenera.
+
+  Recoge lo que en Next vivía en el `export const metadata` y el
+  `export const viewport` de `app/layout.tsx`, que en una SPA no existen.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3f3ec" />
+
+    <title>ERA Residence — Contemporary Mediterranean Residences in Estepona</title>
+    <meta
+      name="description"
+      content="Boutique residences on the New Golden Mile combining contemporary architecture, natural materials and resort-style living near Marbella and Estepona."
+    />
+
+    <!-- Open Graph / Twitter. URLs absolutas obligatorias: las redes no
+         resuelven rutas relativas. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ERA Residence" />
+    <meta
+      property="og:title"
+      content="ERA Residence — Contemporary Mediterranean Residences in Estepona"
+    />
+    <meta
+      property="og:description"
+      content="Boutique residences on the New Golden Mile combining contemporary architecture, natural materials and resort-style living near Marbella and Estepona."
+    />
+    <meta property="og:image" content="{{ASSET_BASE}}/images/open-graph.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{ASSET_BASE}}/images/open-graph.webp" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ASSET_BASE}}/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ASSET_BASE}}/icons/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ASSET_BASE}}/icons/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_BASE}}/icons/apple-touch-icon.png" />
+
+    <!-- Tipografías. En Next las servía next/font desde nuestro dominio;
+         aquí se piden a Google (ver src/fonts.css). El preconnect ahorra
+         el handshake, que es justo lo que retrasa el primer render. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /*
+        React monta dentro de #root, un nivel que en Next no existía:
+        allí `.transition-wrapper` colgaba directamente del <body>.
+        `display: contents` hace que este div no genere caja, así que la
+        maquetación queda idéntica. Comprobado antes de ponerlo que
+        ningún selector del CSS ni del JS usa `body > …`.
+      */
+      #root {
+        display: contents;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <!-- GTM. En Next era <Script strategy="afterInteractive">; aquí va
+         al final del body, que consigue lo mismo: fuera de la ruta
+         crítica de render. -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-WMDRV3P6');
+    </script>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WMDRV3P6"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+  </body>
+</html>

@@ -1,0 +1,272 @@
+[
+  {
+    "villa": "coson",
+    "rol": "hero",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R1_1.png",
+    "destino": "/images/villa-coson-hero.webp"
+  },
+  {
+    "villa": "coson",
+    "rol": "g1",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R12.png",
+    "destino": "/images/villa-coson-g1.webp"
+  },
+  {
+    "villa": "coson",
+    "rol": "g2",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R11_2.png",
+    "destino": "/images/villa-coson-g2.webp"
+  },
+  {
+    "villa": "coson",
+    "rol": "g3",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R7_1.png",
+    "destino": "/images/villa-coson-g3.webp"
+  },
+  {
+    "villa": "coson",
+    "rol": "g4",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R8_1.png",
+    "destino": "/images/villa-coson-g4.webp"
+  },
+  {
+    "villa": "coson",
+    "rol": "i1",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 01.png",
+    "destino": "/images/villa-coson-i1.webp"
+  },
+  {
+    "villa": "coson",
+    "rol": "i2",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-004/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Cocina.png",
+    "destino": "/images/villa-coson-i2.webp"
+  },
+  {
+    "villa": "coson",
+    "rol": "i3",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio Principal 01.png",
+    "destino": "/images/villa-coson-i3.webp"
+  },
+  {
+    "villa": "coson",
+    "rol": "i4",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Sala TV 01.png",
+    "destino": "/images/villa-coson-i4.webp"
+  },
+  {
+    "villa": "helecho",
+    "rol": "hero",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "destino": "/images/villa-helecho-hero.webp"
+  },
+  {
+    "villa": "helecho",
+    "rol": "g1",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R2.png",
+    "destino": "/images/villa-helecho-g1.webp"
+  },
+  {
+    "villa": "helecho",
+    "rol": "g2",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R5.png",
+    "destino": "/images/villa-helecho-g2.webp"
+  },
+  {
+    "villa": "helecho",
+    "rol": "g3",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R6.png",
+    "destino": "/images/villa-helecho-g3.webp"
+  },
+  {
+    "villa": "helecho",
+    "rol": "g4",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R7.png",
+    "destino": "/images/villa-helecho-g4.webp"
+  },
+  {
+    "villa": "helecho",
+    "rol": "i1",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 01.png",
+    "destino": "/images/villa-helecho-i1.webp"
+  },
+  {
+    "villa": "helecho",
+    "rol": "i2",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 03.png",
+    "destino": "/images/villa-helecho-i2.webp"
+  },
+  {
+    "villa": "helecho",
+    "rol": "i3",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.png",
+    "destino": "/images/villa-helecho-i3.webp"
+  },
+  {
+    "villa": "helecho",
+    "rol": "i4",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Baño principal 01.png",
+    "destino": "/images/villa-helecho-i4.webp"
+  },
+  {
+    "villa": "remanso",
+    "rol": "hero",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "destino": "/images/villa-remanso-hero.webp"
+  },
+  {
+    "villa": "remanso",
+    "rol": "g1",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R3.png",
+    "destino": "/images/villa-remanso-g1.webp"
+  },
+  {
+    "villa": "remanso",
+    "rol": "g2",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R6.png",
+    "destino": "/images/villa-remanso-g2.webp"
+  },
+  {
+    "villa": "remanso",
+    "rol": "g3",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R7.png",
+    "destino": "/images/villa-remanso-g3.webp"
+  },
+  {
+    "villa": "remanso",
+    "rol": "g4",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R10.png",
+    "destino": "/images/villa-remanso-g4.webp"
+  },
+  {
+    "villa": "remanso",
+    "rol": "i1",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Zona social  01.png",
+    "destino": "/images/villa-remanso-i1.webp"
+  },
+  {
+    "villa": "remanso",
+    "rol": "i2",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Zona social  03.png",
+    "destino": "/images/villa-remanso-i2.webp"
+  },
+  {
+    "villa": "remanso",
+    "rol": "i3",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.png",
+    "destino": "/images/villa-remanso-i3.webp"
+  },
+  {
+    "villa": "remanso",
+    "rol": "i4",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Baño principal 01.png",
+    "destino": "/images/villa-remanso-i4.webp"
+  },
+  {
+    "villa": "ambar",
+    "rol": "hero",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "destino": "/images/villa-ambar-hero.webp"
+  },
+  {
+    "villa": "ambar",
+    "rol": "g1",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R2.png",
+    "destino": "/images/villa-ambar-g1.webp"
+  },
+  {
+    "villa": "ambar",
+    "rol": "g2",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R3.png",
+    "destino": "/images/villa-ambar-g2.webp"
+  },
+  {
+    "villa": "ambar",
+    "rol": "g3",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R4.png",
+    "destino": "/images/villa-ambar-g3.webp"
+  },
+  {
+    "villa": "ambar",
+    "rol": "g4",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R7.png",
+    "destino": "/images/villa-ambar-g4.webp"
+  },
+  {
+    "villa": "ambar",
+    "rol": "i1",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 01.png",
+    "destino": "/images/villa-ambar-i1.webp"
+  },
+  {
+    "villa": "ambar",
+    "rol": "i2",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 03.png",
+    "destino": "/images/villa-ambar-i2.webp"
+  },
+  {
+    "villa": "ambar",
+    "rol": "i3",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-004/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.jpg",
+    "destino": "/images/villa-ambar-i3.webp"
+  },
+  {
+    "villa": "ambar",
+    "rol": "i4",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Baño principal 01.jpg",
+    "destino": "/images/villa-ambar-i4.webp"
+  },
+  {
+    "villa": "carolina",
+    "rol": "hero",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R1_3.png",
+    "destino": "/images/villa-carolina-hero.webp"
+  },
+  {
+    "villa": "carolina",
+    "rol": "g1",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R3_3.png",
+    "destino": "/images/villa-carolina-g1.webp"
+  },
+  {
+    "villa": "carolina",
+    "rol": "g2",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R4_4.png",
+    "destino": "/images/villa-carolina-g2.webp"
+  },
+  {
+    "villa": "carolina",
+    "rol": "g3",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R6_3.png",
+    "destino": "/images/villa-carolina-g3.webp"
+  },
+  {
+    "villa": "carolina",
+    "rol": "g4",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R9_2.png",
+    "destino": "/images/villa-carolina-g4.webp"
+  },
+  {
+    "villa": "carolina",
+    "rol": "i1",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Zona Social 01.jpg",
+    "destino": "/images/villa-carolina-i1.webp"
+  },
+  {
+    "villa": "carolina",
+    "rol": "i2",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Zona Social 03.jpg",
+    "destino": "/images/villa-carolina-i2.webp"
+  },
+  {
+    "villa": "carolina",
+    "rol": "i3",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.jpg",
+    "destino": "/images/villa-carolina-i3.webp"
+  },
+  {
+    "villa": "carolina",
+    "rol": "i4",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Picuzzi Terraza 01.jpg",
+    "destino": "/images/villa-carolina-i4.webp"
+  }
+]

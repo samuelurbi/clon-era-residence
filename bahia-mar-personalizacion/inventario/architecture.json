@@ -1,0 +1,12 @@
+[
+  {
+    "destino": "/images/bahiamar-architecture-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R7_3.png",
+    "uso": "Home › sección Architecture: imagen de fondo a pantalla completa con parallax (components/home/Architecture.tsx). Recorte 4:3 (como la imagen original del slot), 2350 px + variantes -p-500/800/1080/1600/2000. Villa Carolina en ladera, terrazas y mar."
+  },
+  {
+    "destino": "/images/bahiamar-developer-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R4.png",
+    "uso": "Home › bloque Developer, tarjeta «Architects» (Estudio Dolla): imagen del hueco .other-card_info_logo (192 px, 3:2) que antes ocupaba el logo de la comercializadora (components/home/Developer.tsx). Recorte 3:2, 2350 px + variantes -p-500/800/1080/1600/2000 (en el srcSet sólo van 500/800/1080). Villa Helecho con arco de piedra frente al mar."
+  }
+]

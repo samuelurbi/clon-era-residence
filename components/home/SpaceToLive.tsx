@@ -1,10 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * Sección «The space to live in» de la home: interiores y terrazas de
+ * las villas de Bahía Mar.
+ *
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * home.html del sitio original, pero al personalizarlo para Bahía Mar pasa
+ * a mantenerse a mano. Regenerarlo DESHARÍA este trabajo y devolvería los
+ * textos e imágenes del sitio clonado.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
- * Las URLs del CDN ya están reescritas a /public.
+ * Textos: traducidos del brochure (bahia-mar-personalizacion/BRIEF.md).
+ * Imágenes: renders interiores, inventario en
+ * bahia-mar-personalizacion/inventario/space.json.
  */
 
 export function SpaceToLive() {
@@ -35,26 +43,25 @@ export function SpaceToLive() {
                   <div data-video-playpause="" className="interior-s_l_img-w">
                     <div className="interior-s_l_img">
                       <div data-scroll-reveal="slide" className="img-w">
-                        <img src="/images/era-residence-garden-2.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/era-residence-garden-2-p-500.png 500w, /images/era-residence-garden-2-p-800.png 800w, /images/era-residence-garden-2.webp 1920w" alt="Outdoor seating with modern chair, ottoman, table, and orange drink in a garden with pink flowers." className="img" />
+                        <img src="/images/bahiamar-space-1.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-space-1-p-500.webp 500w, /images/bahiamar-space-1-p-800.webp 800w, /images/bahiamar-space-1-p-1080.webp 1080w, /images/bahiamar-space-1-p-1600.webp 1600w, /images/bahiamar-space-1-p-2000.webp 2000w, /images/bahiamar-space-1.webp 2350w" alt="Covered porch under a timber pergola with a private jacuzzi, woven lounge seating and tropical planting." className="img" />
                       </div>
                     </div>
                     <div data-parallax="ctn-up" className="flower interior">
-                      <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="/images/bougainvillea-flowers_06.avif" className="video">
-                        <source src="/videos/bougainvillea-flowers_06.webm" type="video/webm" />
-                        <source src="/videos/bougainvillea-flowers_06.mov" type="video/mp4" />
+                      <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="/images/palm-fronds_03.webp" className="video">
+                        <source src="/videos/palm-fronds_03.webm" type="video/webm" />
                       </video>
                     </div>
                   </div>
                   <div className="interior-s_l_desc">
                     <div className="u-16"></div>
                     <h4 data-scroll-reveal="p" className="l1">
-                      Optional upgrades are available: 
+                      Every villa opens outdoors:
                       <br />
-                      • Private jacuzzi 
+                      • Private pool and jacuzzi
                       <br />
-                      • EV charging point installation 
+                      • Terrace with BBQ and lounge garden
                       <br />
-                      • Photovoltaic panels
+                      • Porch under a pergola
                     </h4>
                     <div className="u-160 b-mob"></div>
                   </div>
@@ -64,33 +71,33 @@ export function SpaceToLive() {
                 <div className="grid _5-columns">
                   <div className="interior-s_r_img">
                     <div data-scroll-reveal="slide" className="img-w">
-                      <img src="/images/era-residence-terrace.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/era-residence-terrace-p-500.png 500w, /images/era-residence-terrace-p-800.png 800w, /images/era-residence-terrace-p-1080.png 1080w, /images/era-residence-terrace.webp 1920w" alt="Sunlit terrace with cushioned seating, wooden tables, plants, flowering vine canopy, and ocean in the distance." className="img" />
+                      <img src="/images/bahiamar-space-2.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-space-2-p-500.webp 500w, /images/bahiamar-space-2-p-800.webp 800w, /images/bahiamar-space-2-p-1080.webp 1080w, /images/bahiamar-space-2-p-1600.webp 1600w, /images/bahiamar-space-2-p-2000.webp 2000w, /images/bahiamar-space-2.webp 2350w" alt="Open-plan living area with sliding glass walls onto the hills, woven pendant lamps and a linen sofa." className="img" />
                     </div>
                   </div>
                   <div className="interior-s_r_lead w-clearfix">
                     <div className="u-16"></div>
                     <div className="red-line"></div>
                     <h4 data-scroll-reveal="p" className="h5">
-                      Every detail was selected to create homes that feel elegant, intuitive and effortless to live in
+                      Every material was chosen so the house breathes with the landscape: bamboo underfoot, chukum on the walls, the bay in every opening
                     </h4>
                   </div>
                   <div className="interior-s_r_desc">
                     <div className="u-64"></div>
                     <p data-scroll-reveal="p" className="p1">
-                      Underfloor heating throughout the property. Climate automation systems. Smart lock access systems. Electrically adjustable aluminium shutters. Schneider Electric DLIFE switches and mechanisms .
+                      Bamboo floors throughout. Chukum wall finishes. Home automation. Kitchens with eco-efficient appliances and glass-ceramic hobs. Solar panels. Views of the beach, Samaná Bay and Los Haitises from every villa.
                     </p>
                     <div className="u-96"></div>
                   </div>
                   <div data-scroll-reveal="ctn" className="interior-s_r_btn">
                     <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                       <div data-magnetic-inner="" className="btn-circle_label">
-                        <a hover-nav-item="" aria-label="View available apartments" href="/apartments" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Explore the villas" href="/villas" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">View available apartments</div>
+                              <div hover="text" className="l1">Explore the villas</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">View available apartments</div>
+                              <div hover="text" className="l1">Explore the villas</div>
                             </div>
                           </div>
                         </a>
@@ -102,7 +109,7 @@ export function SpaceToLive() {
                           <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                         </svg>
                       </div>
-                      <a aria-label="View available apartments" href="/apartments" className="btn-circle_link w-inline-block"></a>
+                      <a aria-label="Explore the villas" href="/villas" className="btn-circle_link w-inline-block"></a>
                     </div>
                   </div>
                 </div>
@@ -116,28 +123,28 @@ export function SpaceToLive() {
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="/images/img_cam_03.webp" loading="eager" alt="" sizes="100vw" srcSet="/images/img_cam_03-p-500.webp 500w, /images/img_cam_03-p-800.webp 800w, /images/img_cam_03-p-1080.webp 1080w, /images/img_cam_03-p-1600.webp 1600w, /images/img_cam_03.webp 1920w" className="img" />
+                          <img src="/images/bahiamar-space-3.webp" loading="eager" alt="Kitchen and dining room in pale timber and stone, open to the terrace and the private pool." sizes="100vw" srcSet="/images/bahiamar-space-3-p-500.webp 500w, /images/bahiamar-space-3-p-800.webp 800w, /images/bahiamar-space-3-p-1080.webp 1080w, /images/bahiamar-space-3-p-1600.webp 1600w, /images/bahiamar-space-3-p-2000.webp 2000w, /images/bahiamar-space-3.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="/images/img_cam_07.webp" loading="eager" alt="" sizes="100vw" srcSet="/images/img_cam_07-p-500.webp 500w, /images/img_cam_07-p-800.webp 800w, /images/img_cam_07-p-1080.webp 1080w, /images/img_cam_07-p-1600.webp 1600w, /images/img_cam_07.webp 1920w" className="img" />
+                          <img src="/images/bahiamar-space-4.webp" loading="eager" alt="Principal bedroom with a glass wall sliding open onto a terrace that faces the sea." sizes="100vw" srcSet="/images/bahiamar-space-4-p-500.webp 500w, /images/bahiamar-space-4-p-800.webp 800w, /images/bahiamar-space-4-p-1080.webp 1080w, /images/bahiamar-space-4-p-1600.webp 1600w, /images/bahiamar-space-4-p-2000.webp 2000w, /images/bahiamar-space-4.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="/images/6a150812aefa2e544369d4a6_img_cam_09.webp" loading="eager" alt="" sizes="100vw" srcSet="/images/6a150812aefa2e544369d4a6_img_cam_09-p-500.webp 500w, /images/6a150812aefa2e544369d4a6_img_cam_09-p-800.webp 800w, /images/6a150812aefa2e544369d4a6_img_cam_09-p-1080.webp 1080w, /images/6a150812aefa2e544369d4a6_img_cam_09-p-1600.webp 1600w, /images/6a150812aefa2e544369d4a6_img_cam_09.webp 1920w" className="img" />
+                          <img src="/images/bahiamar-space-5.webp" loading="eager" alt="Bathroom with chukum-finished walls, a timber vanity and a walk-in shower beside a window onto the palms." sizes="100vw" srcSet="/images/bahiamar-space-5-p-500.webp 500w, /images/bahiamar-space-5-p-800.webp 800w, /images/bahiamar-space-5-p-1080.webp 1080w, /images/bahiamar-space-5-p-1600.webp 1600w, /images/bahiamar-space-5-p-2000.webp 2000w, /images/bahiamar-space-5.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="/images/era-residence-kitchen.webp" loading="eager" alt="" sizes="100vw" srcSet="/images/era-residence-kitchen-p-500.webp 500w, /images/era-residence-kitchen-p-800.webp 800w, /images/era-residence-kitchen-p-1080.webp 1080w, /images/era-residence-kitchen-p-1600.webp 1600w, /images/era-residence-kitchen.webp 1920w" className="img" />
+                          <img src="/images/bahiamar-space-6.webp" loading="eager" alt="Living and dining area with bamboo floors, timber joinery and full-height openings onto the palms and the pool." sizes="100vw" srcSet="/images/bahiamar-space-6-p-500.webp 500w, /images/bahiamar-space-6-p-800.webp 800w, /images/bahiamar-space-6-p-1080.webp 1080w, /images/bahiamar-space-6-p-1600.webp 1600w, /images/bahiamar-space-6-p-2000.webp 2000w, /images/bahiamar-space-6.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>

@@ -442,7 +442,7 @@ function markCurrentLink(): () => void {
    * navegación. Webflow marcaba con `w--current` cualquier enlace que
    * apuntara a la página actual, estuviera donde estuviera: la auditoría de
    * scripts/audit-shared-blocks.mjs encontró que también afecta al botón
-   * «View available apartments» del CTA y a los del menú.
+   * «View available villas» del CTA y a los del menú.
    */
   for (const link of qa<HTMLAnchorElement>('a[href]')) {
     const href = link.getAttribute('href');

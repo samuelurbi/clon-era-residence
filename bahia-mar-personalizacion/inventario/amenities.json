@@ -1,0 +1,27 @@
+[
+  {
+    "destino": "/images/bahiamar-amenities-1.webp",
+    "origen": "00. AMENIDADES/PORTICO INGRESO/PÓRTICO INGRESO 02.png",
+    "uso": "Home y ficha de villa > sección Amenities, diapositiva 1 «Entrance» (fondo a pantalla completa; variantes -p-500/800/1080/1600/2000)"
+  },
+  {
+    "destino": "/images/bahiamar-amenities-2.webp",
+    "origen": "00. AMENIDADES/PISCINA/PISCINA 02.png",
+    "uso": "Home y ficha de villa > sección Amenities, diapositiva 2 «Beach & pools» (fondo a pantalla completa; variantes -p-500/800/1080/1600/2000)"
+  },
+  {
+    "destino": "/images/bahiamar-amenities-3.webp",
+    "origen": "00. AMENIDADES/SAUNA RELAX/RELAX SAUNA 06.png",
+    "uso": "Home y ficha de villa > sección Amenities, diapositiva 3 «Thermal waters» (fondo a pantalla completa; variantes -p-500/800/1080/1600/2000)"
+  },
+  {
+    "destino": "/images/bahiamar-amenities-4.webp",
+    "origen": "00. AMENIDADES/COWORK/COWORK 06.png",
+    "uso": "Home y ficha de villa > sección Amenities, diapositiva 4 «Coworking» (fondo a pantalla completa; variantes -p-500/800/1080/1600/2000)"
+  },
+  {
+    "destino": "/images/bahiamar-amenities-5.webp",
+    "origen": "00. AMENIDADES/SENDERO/SENDERO 02.png",
+    "uso": "Home y ficha de villa > sección Amenities, diapositiva 5 «Forest trails» (fondo a pantalla completa; variantes -p-500/800/1080/1600/2000)"
+  }
+]

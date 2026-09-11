@@ -8,8 +8,8 @@ import { BookACall } from '@/components/sections/BookACall';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Get in touch with the ERA Residence sales office in Estepona for availability, ' +
-    'floor plans and private viewings.',
+    'Get in touch with the Bahía Mar team in Las Terrenas, Samaná, for villa ' +
+    'availability, floor plans and a private presentation of the project.',
 };
 
 export default function ContactPage() {

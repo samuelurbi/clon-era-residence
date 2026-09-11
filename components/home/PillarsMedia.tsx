@@ -1,6 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * marcado del sitio original, pero al personalizarlo para Bahía Mar pasa a
+ * mantenerse a mano (textos, imágenes y alt). Regenerarlo con
+ * `npm run gen:sections` DESHARÍA este trabajo.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
@@ -29,13 +32,13 @@ export function PillarsMedia() {
                 </div>
                 <div className="red-line"></div>
                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                  Instead of corridors, walking paths connect the apartments — making Era Residence feel closer to a group of private homes than a standard
+                  Walking trails, mountain bridges and the first funicular in the Caribbean link the villas — so Bahía Mar feels less like a complex and more like a landscape you move through.
                 </h4>
                 <div className="u-64"></div>
                 <div className="grid _4-columns">
                   <div className="quote-s_author">
-                    <div data-scroll-reveal="p" className="l1">Architecture Team</div>
-                    <div data-scroll-reveal="p" className="l1 reg">Era Residence</div>
+                    <div data-scroll-reveal="p" className="l1">Master plan</div>
+                    <div data-scroll-reveal="p" className="l1 reg">Bahía Mar Residences &amp; Beach Resort</div>
                   </div>
                 </div>
               </div>
@@ -46,7 +49,7 @@ export function PillarsMedia() {
             <div className="img-w h-auto quote-w_bg_img">
               <div className="img-over-grad from-bot bot _4x b-desk"></div>
               <div className="img-over-grad from-bot bot _4x b-desk"></div>
-              <img className="img h-auto quote-w_bg_img" src="/images/img_cam_05_alpha.webp" alt="Modern building with flowering vines beside a rectangular swimming pool and palm trees." sizes="(max-width: 1920px) 100vw, 1920px" data-parallax="img-out" loading="eager" srcSet="/images/img_cam_05_alpha-p-500.png 500w, /images/img_cam_05_alpha-p-800.png 800w, /images/img_cam_05_alpha-p-1080.png 1080w, /images/img_cam_05_alpha.webp 1920w" />
+              <img className="img h-auto quote-w_bg_img" src="/images/bahiamar-quote-1.webp" alt="Two-level Villa Cosón with timber cladding over a stone base, its private pool and terrace among the palms, the sea behind." sizes="(max-width: 2350px) 100vw, 2350px" data-parallax="img-out" loading="eager" srcSet="/images/bahiamar-quote-1-p-500.webp 500w, /images/bahiamar-quote-1-p-800.webp 800w, /images/bahiamar-quote-1-p-1080.webp 1080w, /images/bahiamar-quote-1-p-1600.webp 1600w, /images/bahiamar-quote-1-p-2000.webp 2000w, /images/bahiamar-quote-1.webp 2350w" />
             </div>
           </div>
           <div className="w_themes">

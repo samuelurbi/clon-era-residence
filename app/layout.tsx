@@ -18,21 +18,29 @@ import '@/styles/globals.css';
  * Dominio público del sitio. Al pasar a producción con el dominio del
  * cliente, cambiar aquí: alimenta las URLs absolutas de Open Graph.
  */
-const SITE_URL = 'https://www.era-residence.com';
+const SITE_URL = 'https://www.bahiamar.example'; // PROVISIONAL: falta el dominio real
 
-/** Contenedor de Google Tag Manager del sitio original. */
-const GTM_ID = 'GTM-WMDRV3P6';
+/**
+ * Contenedor de Google Tag Manager.
+ *
+ * VACÍO A PROPÓSITO. El valor que venía aquí (GTM-WMDRV3P6) es el del
+ * sitio original de ERA Residence: dejarlo puesto mandaría la analítica
+ * de Bahía Mar a la cuenta de otro promotor. Cuando el cliente dé su
+ * contenedor, se pone aquí y el script vuelve solo.
+ */
+const GTM_ID = '';
 
-const TITLE = 'ERA Residence — Contemporary Mediterranean Residences in Estepona';
+const TITLE = 'Bahía Mar — Boutique Villas on the Samaná Peninsula, Dominican Republic';
 const DESCRIPTION =
-  'Boutique residences on the New Golden Mile combining contemporary architecture, ' +
-  'natural materials and resort-style living near Marbella and Estepona.';
+  'Five villa typologies in a gated resort community on the Samaná peninsula, ' +
+  'combining contemporary tropical architecture, private pools and direct access ' +
+  'to the beach, the rainforest and Cosón Bay.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: '%s — ERA Residence',
+    template: '%s — Bahía Mar',
   },
   description: DESCRIPTION,
   openGraph: {
@@ -40,7 +48,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: SITE_URL,
-    siteName: 'ERA Residence',
+    siteName: 'Bahía Mar Residences & Beach Resort',
     images: [{ url: '/images/open-graph.webp', width: 1200, height: 630 }],
     videos: [{ url: '/videos/open-graph.mp4', type: 'video/mp4', width: 1200, height: 630 }],
   },
@@ -64,7 +72,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#f3f3ec',
+  themeColor: '#efeee9',
 };
 
 /*
@@ -109,22 +117,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <FloatingTips />
         </div>
 
-        {/* GTM: `afterInteractive` lo saca de la ruta crítica de render. */}
-        <Script id="gtm" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        {/*
+          GTM: `afterInteractive` lo saca de la ruta crítica de render.
+
+          Sin contenedor NO se inyecta nada. Si se dejara el script con el
+          id vacío, cada visita pediría un gtm.js?id= que devuelve error, y
+          además el <noscript> pintaría un iframe roto.
+        */}
+        {GTM_ID && (
+          <>
+            <Script id="gtm" strategy="afterInteractive">
+              {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');`}
-        </Script>
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
+            </Script>
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+                height="0"
+                width="0"
+                style={{ display: 'none', visibility: 'hidden' }}
+              />
+            </noscript>
+          </>
+        )}
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * Personalizado para Bahía Mar: se mantiene A MANO. Venía de
+ * scripts/generate-sections.mjs (home.html de ERA); regenerarlo lo desharía.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
@@ -19,12 +20,12 @@ export function Hero() {
               <div className="grid">
                 <div className="hero-s_logo">
                   <h1 data-prevent-flicker="" data-scroll-reveal="h" className="h1 a-center">
-                    Era 
+                    Bahía
                     <br />
-                    Residence
+                    Mar
                   </h1>
                   <div className="hero-s_logo_a">
-                    <h2 data-prevent-flicker="" data-scroll-reveal="a" className="a2">Estepona</h2>
+                    <h2 data-prevent-flicker="" data-scroll-reveal="a" className="a2">Las Terrenas</h2>
                   </div>
                 </div>
               </div>
@@ -114,12 +115,12 @@ export function Hero() {
                   </div>
                   <div data-tab-content="day" className="hero-w_bg_master_img_day">
                     <div data-tab="img" className="img-w h-auto">
-                      <img loading="eager" src="/images/era-residence_gated-community_day.webp" alt="" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/era-residence_gated-community_day-p-500.webp 500w, /images/era-residence_gated-community_day-p-800.webp 800w, /images/era-residence_gated-community_day-p-1080.webp 1080w, /images/era-residence_gated-community_day-p-1600.webp 1600w, /images/era-residence_gated-community_day.webp 1920w" className="img h-auto hero-img" />
+                      <img loading="eager" src="/images/bahiamar-hero-day.webp" alt="Villa Cosón at Bahía Mar, in daylight: a two-level tropical villa with infinity pool and palm trees" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-hero-day-p-500.webp 500w, /images/bahiamar-hero-day-p-800.webp 800w, /images/bahiamar-hero-day-p-1080.webp 1080w, /images/bahiamar-hero-day-p-1600.webp 1600w, /images/bahiamar-hero-day.webp 1920w" className="img h-auto hero-img" />
                     </div>
                   </div>
                   <div data-tab-content="night" className="hero-w_bg_master_img_night">
                     <div data-tab="img" className="img-w h-auto">
-                      <img loading="eager" src="/images/era-residence_gated-community_night.webp" alt="" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/era-residence_gated-community_night-p-500.webp 500w, /images/era-residence_gated-community_night-p-800.webp 800w, /images/era-residence_gated-community_night-p-1080.webp 1080w, /images/era-residence_gated-community_night-p-1600.webp 1600w, /images/era-residence_gated-community_night.webp 1920w" className="img h-auto hero-img" />
+                      <img loading="eager" src="/images/bahiamar-hero-night.webp" alt="Villa Cosón at Bahía Mar, at night: a two-level tropical villa with infinity pool and palm trees" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-hero-night-p-500.webp 500w, /images/bahiamar-hero-night-p-800.webp 800w, /images/bahiamar-hero-night-p-1080.webp 1080w, /images/bahiamar-hero-night-p-1600.webp 1600w, /images/bahiamar-hero-night.webp 1920w" className="img h-auto hero-img" />
                     </div>
                   </div>
                   <div className="img-over-grad from-top _100vh"></div>
@@ -131,13 +132,13 @@ export function Hero() {
                     <div className="e-auto">
                       <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                         <div data-magnetic-inner="" className="btn-circle_label">
-                          <a hover-nav-item="" aria-label="View available apartments" href="/apartments" className="nav-item w-inline-block">
+                          <a hover-nav-item="" aria-label="View available villas" href="/villas" className="nav-item w-inline-block">
                             <div className="nav-item_label">
                               <div className="nav-item_label_text">
-                                <div hover="text" className="l1">View available apartments</div>
+                                <div hover="text" className="l1">View available villas</div>
                               </div>
                               <div className="nav-item_label_text is-2">
-                                <div hover="text" className="l1">View available apartments</div>
+                                <div hover="text" className="l1">View available villas</div>
                               </div>
                             </div>
                           </a>
@@ -149,7 +150,7 @@ export function Hero() {
                             <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                           </svg>
                         </div>
-                        <a aria-label="View available apartments" href="/apartments" className="btn-circle_link w-inline-block"></a>
+                        <a aria-label="View available villas" href="/villas" className="btn-circle_link w-inline-block"></a>
                       </div>
                     </div>
                   </div>

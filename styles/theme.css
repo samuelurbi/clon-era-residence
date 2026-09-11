@@ -94,3 +94,73 @@ body {
     "Snell Roundhand", "Apple Chancery", cursive;
 }
 
+
+/* --------------------------------------------------------
+ *  Paleta de Bahía Mar
+ *
+ *  tokens.css deriva TODO el color del sitio de cinco globales
+ *  (dos neutros, tres de marca) y sus variantes con alfa. ERA era
+ *  navy + crema con ciruela, celeste y rosa. Bahía Mar es verde
+ *  profundo + blanco roto con arena y un verde vivo de acento.
+ *
+ *  Los valores están MEDIDOS sobre el brochure y el logo del
+ *  cliente (scratchpad/paleta.mjs), no elegidos a ojo:
+ *
+ *    #04332F  paneles de texto del brochure (#042c2c … #043f3a)
+ *    #022725  el panel más oscuro (p. 9)
+ *    #EFEEE9  fondo claro de la contraportada
+ *    #E8D8C8  isotipo en su versión arena (LOGO ICON2)
+ *    #6ED809  las palabras en cursiva verde (idéntico en 4 págs.)
+ *
+ *  Los sufijos --0/--5/--10/--30/--60 son el mismo color con alfa
+ *  00/0d/1a/4d/99, igual que en tokens.css: hay que repetirlos
+ *  porque son literales, no derivados.
+ * -------------------------------------------------------- */
+:root,
+body {
+  /* Claro (antes crema #f3f3ec) */
+  --_global-colors---base-0--0:   #efeee900;
+  --_global-colors---base-0--5:   #efeee90d;
+  --_global-colors---base-0--10:  #efeee91a;
+  --_global-colors---base-0--30:  #efeee94d;
+  --_global-colors---base-0--60:  #efeee999;
+  --_global-colors---base-0--100: #efeee9;
+
+  /* Oscuro (antes navy #17233b) */
+  --_global-colors---base-1000--0:   #04332f00;
+  --_global-colors---base-1000--5:   #04332f0d;
+  --_global-colors---base-1000--10:  #04332f1a;
+  --_global-colors---base-1000--30:  #04332f4d;
+  --_global-colors---base-1000--60:  #04332f99;
+  --_global-colors---base-1000--100: #04332f;
+
+  /* Marca */
+  --_global-colors---brand-500--velvet-plum: #022725; /* fondo de preloader y secciones oscuras */
+  --_global-colors---brand-500--powder-sky:  #e8d8c8; /* sección «brand»: era el cielo celeste */
+  --_global-colors---brand-500--blush-bloom: #6ed809; /* acento: era el rosa buganvilla */
+}
+
+/* --------------------------------------------------------
+ *  Vegetación de esquina (.flower): volteos en vez de giros
+ *
+ *  Los vídeos de buganvilla de ERA eran racimos de flores: giran
+ *  30°, 45°, 65°, 90° o -150° y siguen pareciendo un racimo. Los
+ *  de Bahía Mar son follaje COLGANTE desde un vértice, y colgado
+ *  en diagonal se ve como lo que es: un vídeo girado.
+ *
+ *  Un volteo, en cambio, sí tiene sentido físico: scaleY(-1)
+ *  convierte follaje que cuelga del techo en follaje que crece
+ *  del suelo, y scaleX(-1) sólo cambia de qué lado nace. Cada
+ *  hueco recibe el volteo que corresponde a la esquina en la que
+ *  webflow.css lo coloca (top/left/right/bottom de su regla).
+ *
+ *  Se usa `.flower.flower.x` (0,3,0) para ganar también a las
+ *  reglas de las media queries de webflow.css, que repiten el
+ *  selector `.flower.x` (0,2,0) con otro transform.
+ * -------------------------------------------------------- */
+.flower.flower.loc-intro    { transform: scaleY(-1); }            /* abajo-izquierda */
+.flower.flower.arch-intro-l { transform: scaleY(-1); }            /* abajo-izquierda */
+.flower.flower.arch-intro-r { transform: scale(-1, -1); }         /* abajo-derecha   */
+.flower.flower.other        { transform: scaleX(-1); }            /* arriba-derecha  */
+.flower.flower.apart        { transform: scaleX(-1); }            /* arriba-derecha  */
+.flower.flower.interior     { transform: scaleX(-1); }            /* arriba-derecha  */
