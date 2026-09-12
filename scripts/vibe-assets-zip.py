@@ -17,8 +17,9 @@ carpetas (de ahí el `%5C` de la primera subida de ERA).
     python scripts/vibe-assets-zip.py
 
 Salida: bahia-mar-personalizacion/bahiamar-assets.zip (fuera de git).
-Al descomprimirlo en el host queda images/, videos/, documents/ e icons/
-colgando de la carpeta elegida, que es lo que ASSET_BASE debe apuntar.
+Al descomprimirlo en el host queda images/, videos/, documents/, icons/ y
+el .htaccess colgando de la carpeta elegida, que es lo que ASSET_BASE debe
+apuntar.
 """
 import os
 import re
@@ -35,11 +36,16 @@ REGLAS = {
     'icons': re.compile(r'.'),
 }
 
+# LiteSpeed (Hostinger) sirve los .webm como text/plain: sin este .htaccess
+# las palmeras (sólo .webm) no cargan. Va en la raíz de la carpeta de assets.
+HTACCESS = os.path.join(RAIZ, 'vibe', 'assets.htaccess')
+
 
 def main():
     total = 0
     cuenta = {}
     with zipfile.ZipFile(DST, 'w', zipfile.ZIP_STORED) as z:   # webp/mp4 ya van comprimidos
+        z.write(HTACCESS, '.htaccess')
         for carpeta, regla in REGLAS.items():
             for nombre in sorted(os.listdir(os.path.join(PUB, carpeta))):
                 if not regla.search(nombre):

@@ -90,7 +90,13 @@ El cascarón (`src/App.tsx`, `src/pages/*`, `src/fonts.css`,
    `documents/` e `icons/`. Se descomprime en el host en la carpeta que
    apunta `ASSET_BASE` de `scripts/vibe-preparar.mjs`
    (`…/urbatrix/bahiamar`); si va a otra carpeta, se cambia esa línea. Es
-   un ZIP con `/` correctos: NO hace falta el `%5C` de ERA.
+   un ZIP con `/` correctos: NO hace falta el `%5C` de ERA. **Hecho el
+   12-09-2026** por SSH (`ssh dinnersky`, ver `~/.ssh/config`; ruta
+   `domains/puntacanadinnerinthesky.com/public_html/urbatrix/bahiamar/`):
+   564/564 ficheros responden con su content-type y el `.htaccess` añade
+   `video/webm` y **CORS** (`Access-Control-Allow-Origin: *`) — sin CORS
+   las máscaras CSS del isotipo y del arco del preloader se bloquean y el
+   logo desaparece; se vio sirviendo el build de Vite en local contra el host.
 2. **Comprobar que el host responde:** `node scripts/audit-vibe-assets.mjs`
    pide cada fichero a la URL final (parte A) y avisa del que falte.
 3. **Generar lo que se pega:** `node scripts/vibe-preparar.mjs` (export +

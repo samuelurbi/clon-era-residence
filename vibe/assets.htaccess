@@ -26,3 +26,13 @@ AddType video/webm .webm
 AddType image/webp .webp
 AddType image/avif .avif
 AddType image/svg+xml .svg
+
+# CORS. Bahía Mar pinta el isotipo con `mask-image` en CSS (header, sello,
+# preloader, menú, modal…) y el arco del preloader con otra máscara. Una
+# máscara CSS con imagen de OTRO dominio se pide en modo CORS y, sin esta
+# cabecera, el navegador la bloquea: el logo desaparecería en Vibe aunque
+# la imagen responda 200. (ERA no lo sufría: su logo era SVG en línea.)
+# Comprobado con el build de Vite servido en local contra este host.
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "*"
+</IfModule>
