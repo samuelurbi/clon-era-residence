@@ -56,6 +56,18 @@ que no pueda pasar por real.
   para tener el 42 % de cielo de la foto de ERA: así al cargar sólo hay cielo
   detrás del titular y la villa aparece al hacer scroll. `bahiamar-hero-day`
   y `-night` ya no se usan.
+- **Tipografía de titulares: Italiana.** El brochure titula con una romana
+  sin serifas, de astas acampanadas y contraste alto («Verdadero lujo»,
+  p. 9); no hay ficheros de fuente ni manual en el material del cliente, así
+  que se comparó letra a letra con las libres de Google Fonts: Italiana
+  coincide en formas (Bellefair lleva remates; Belleza, Tenor Sans y
+  Marcellus son más anchas y sin contraste). Es un 28 % más ancha que
+  Instrument Serif, así que h1/h2/h3 bajan un 15 % en bloque y hay ajustes
+  medidos para pilares, «Peninsula», teléfono del pie, pestañas de
+  amenidades, arco de móvil y «Similar options» (`styles/theme.css`,
+  `scratchpad/fit-titulares.mjs`). Los titulares siguen en MAYÚSCULAS como
+  en ERA; el brochure los pone en caja baja («Verdadero lujo») — si se
+  prefiere así, es quitar `text-transform` en theme.css y remedir.
 - **Nombre en el pie.** Conviven «Bahía Mar.» (línea de copyright) y «Bahía
   Mar Residences & Beach Resort» (crédito). Decisión: nombre legal en el
   crédito, marca corta en el resto.

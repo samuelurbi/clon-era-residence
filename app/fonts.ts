@@ -5,7 +5,7 @@
  *  desplegar en cualquier dominio sin pagar licencia web ni contar
  *  pageviews. Sustituyen a las del sitio original:
  *
- *    ambroise-francois-std (Adobe)  ->  Instrument Serif
+ *    ambroise-francois-std (Adobe)  ->  Italiana  (antes Instrument Serif)
  *    Maison Neue Extended (Milieu)  ->  Archivo
  *    sloop-script-three (Adobe)     ->  Pinyon Script
  *
@@ -15,23 +15,22 @@
  *  ajustadas, que es lo que evita el salto de maquetación al cargar.
  * ============================================================ */
 
-import { Archivo, Instrument_Serif, Pinyon_Script } from 'next/font/google';
+import { Archivo, Italiana, Pinyon_Script } from 'next/font/google';
 
 /**
- * Titulares. La elección se hizo midiendo, no a ojo: Ambroise François
- * es el corte COMPRIMIDO de su superfamilia, y casi ninguna didona
- * libre se le acerca. Con el h1 a 192px, "ERA RESIDENCE" ocupaba
- * 749px con la original; en Bodoni Moda se iba a 1499px (el doble) y
- * ya no cabía en el ancho disponible (1344px a 1440 de viewport).
- * Instrument Serif se queda en 1029px, que sí entra en una línea.
+ * Titulares. Bahía Mar no hereda la didona de ERA: el brochure del cliente
+ * titula con una romana sin serifas, de astas acampanadas y contraste alto
+ * («Verdadero lujo», pág. 9). Italiana es la libre que comparte esas formas
+ * (comparada letra a letra con el brochure: V, a, d, e, r, o y el gancho de
+ * la j coinciden; sólo es un punto más fina). Un solo peso y sin cursiva,
+ * que el sitio no usa en los titulares.
  *
- * Estática y de un solo peso, igual que el kit original: Typekit sólo
- * servía `fvd=n4` de Ambroise, así que no perdemos ningún peso.
+ * Es ~28% más ancha que Instrument Serif (la sustituta anterior, comprimida),
+ * así que los ajustes de anchura de styles/theme.css se remidieron con ella.
  */
-export const fontDisplay = Instrument_Serif({
+export const fontDisplay = Italiana({
   subsets: ['latin'],
   weight: '400',
-  style: ['normal', 'italic'],
   display: 'swap',
   variable: '--font-display',
 });

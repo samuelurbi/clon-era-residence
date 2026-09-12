@@ -15,7 +15,9 @@
  *  sustituyen por tres familias con licencia SIL OFL, que se pueden
  *  desplegar en cualquier dominio:
  *
- *    Titulares   Instrument Serif  (sustituye a Ambroise François)
+ *    Titulares   Italiana          (sustituye a Ambroise François; el
+ *                                   brochure de Bahía Mar titula con una
+ *                                   romana acampanada sin serifas)
  *    Texto       Archivo           (sustituye a Maison Neue Extended)
  *    Floritura   Pinyon Script     (sustituye a Sloop Script)
  *
@@ -57,26 +59,69 @@ html {
 /* --------------------------------------------------------
  *  Ajustes por el ancho de la tipografía sustituida
  *
- *  Instrument Serif es ~37% más ancha que Ambroise François,
- *  la didona comprimida del original. Las cajas del CSS
- *  heredado están dimensionadas para aquélla, así que algunos
- *  textos que allí entraban en una línea aquí se parten.
+ *  Las cajas del CSS heredado están dimensionadas para Ambroise
+ *  François, la didona COMPRIMIDA de ERA. Instrument Serif (la
+ *  primera sustituta) era un 37% más ancha y se corrigió caso a
+ *  caso. Italiana, la del brochure de Bahía Mar, es otro 28% más
+ *  ancha que Instrument: con ella ya no eran dos titulares sino
+ *  la mayoría, todos pidiendo entre ×0,75 y ×0,88 (medido con
+ *  scratchpad/fit-titulares.mjs a 1440 y 390), así que h1/h2/h3
+ *  bajan un 15% en bloque y lo que sigue sin caber se ajusta
+ *  donde ocurre. h4/h5 son párrafos-titular que pueden partir y
+ *  no se tocan.
  *
- *  Cada caso se corrige donde ocurre, no con un cambio global
- *  de escala: bajar el h1 en todo el sitio encogería también
- *  el hero, que entra perfectamente.
+ *  El titular del hero se queda a tamaño completo: «BAHÍA MAR»
+ *  entra de sobra y es la pieza grande de la página.
  * -------------------------------------------------------- */
+.h1 { font-size: calc(var(--_fonts---h1--size) * 0.85); }
+.h2 { font-size: calc(var(--_fonts---h2--size) * 0.85); }
+.h3 { font-size: calc(var(--_fonts---h3--size) * 0.85); }
+.hero-s_logo .h1 { font-size: var(--_fonts---h1--size); }
 
 /*
- * Los tres titulares del bloque de pilares («Real-Life Location»,
- * «Built to stay», «Boutique concept») deben ir en UNA línea.
+ * Los tres titulares del bloque de pilares («Facing Samaná Bay», «True
+ * eco-luxury», «A boutique resort») deben ir en UNA línea.
  *
- * Medido: el más largo necesita 1648px en una línea y su caja mide
- * 1429 — hace falta un 0,867 del cuerpo. Se aplica 0,84 para dejar
- * margen si cambian los textos.
+ * Medido con Italiana a 1440: el más largo necesita 1304px al 0,84
+ * anterior y su caja mide 1080 → 0,84 × 0,83 = 0,70. Se aplica 0,68
+ * para dejar margen si cambian los textos. (Con Instrument bastaba 0,84.)
  */
 .section.z-2 .h1 {
-  font-size: calc(var(--_fonts---h1--size) * 0.84);
+  font-size: calc(var(--_fonts---h1--size) * 0.68);
+}
+
+/*
+ * Teléfono del pie («+1 (809) 000-0000», h2): 1035px naturales en una
+ * caja de 806 a 1440 (×0,78) y 578 en 345 a 390 (×0,60). Un número de
+ * teléfono partido en dos líneas no se lee: se baja lo justo.
+ */
+.contact-cms .h2 { font-size: calc(var(--_fonts---h2--size) * 0.74); }
+
+/*
+ * Pestañas de amenidades (Entrance, Beach & pools, Thermal waters…):
+ * lista apilada que sólo cuadra a una línea por etiqueta. «Thermal
+ * waters» mide 267px en 259 (×0,97).
+ */
+.amen-tab .h5 { font-size: calc(var(--_fonts---h5--size) * 0.94); }
+
+/*
+ * «The Samaná Peninsula» (h1 de Location): «PENINSULA» mide 896px en
+ * una caja de 670 a 1440 (×0,75, y ya lleva el 0,85 global: 0,85×0,88).
+ */
+.loc-intro-s_title .h1 { font-size: calc(var(--_fonts---h1--size) * 0.72); }
+
+/*
+ * «Similar options» (arco de la ficha de villa, h3): 552px en una caja
+ * de 533 a 1440 (×0,97); a dos líneas rompe la composición del arco.
+ */
+.other-title-s_title .h3 { font-size: calc(var(--_fonts---h3--size) * 0.78); }
+
+@media screen and (max-width: 991px) {
+  .contact-cms .h2 { font-size: calc(var(--_fonts---h2--size) * 0.58); }
+  /* Arco «Three reasons for Bahía Mar» (texto SVG sobre un semicírculo):
+     con Italiana la frase se salía por los dos lados del arco de móvil
+     (390-home-step-02); a 0,76 vuelve a caber en el cuarto superior. */
+  .benefits-intro-s_title_svg.b-mob .h4 { font-size: calc(var(--_fonts---h4--size) * 0.76); }
 }
 
 /*
@@ -118,7 +163,7 @@ html {
 body {
   --_fonts---font-display:
     var(--font-display),
-    "Bodoni MT", "Didot", "Times New Roman", serif;
+    "Optima", "Candara", "Gill Sans", sans-serif;
 
   --_fonts---font-body:
     var(--font-body),
@@ -305,8 +350,8 @@ body {
  *  de móvil la etiqueta ocupa las columnas 1-3 y el titular las 2-5,
  *  solapados, y con «Dominican Republic» y «Peninsula» ambos se parten
  *  a media palabra (390-home-step-05). La etiqueta pasa a su propia
- *  fila a ancho completo y el titular baja de 96 a 80 unidades, con lo
- *  que «PENINSULA» entra en una línea a 390px.
+ *  fila a ancho completo y el titular baja de 96 a 76 unidades, con lo
+ *  que «PENINSULA» entra en una línea a 390px (medido con Italiana).
  * -------------------------------------------------------- */
 @media screen and (max-width: 767px) {
   .loc-intro-s_cap { grid-area: 1 / 1 / 2 / -1; align-self: start; }
@@ -314,7 +359,7 @@ body {
      390px: se reduce a .5em, con lo que cabe en una línea sin recortarse. */
   .loc-intro-s_cap .c1 { white-space: nowrap; letter-spacing: .5em; }
   .loc-intro-s_title { grid-area: 2 / 1 / 3 / -1; }
-  .loc-intro-s_title .h1 { font-size: calc(80rem / var(--_special-units---scale-ratio)); }
+  .loc-intro-s_title .h1 { font-size: calc(76rem / var(--_special-units---scale-ratio)); } /* Italiana: «PENINSULA» 347px en 345 a 80 unidades */
   /* El resto de la columna baja una fila: foto, texto y botón. */
   .loc-intro-s_img { grid-area: 3 / 2 / 4 / 5; }
   .loc-intro-s_desc { grid-area: 4 / 2 / 5 / 5; }
