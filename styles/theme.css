@@ -343,6 +343,15 @@ body {
   }
 }
 
+/*
+ * Rótulo «Dominican Republic» junto a «The Samaná Peninsula» (escritorio):
+ * ERA ponía «Spain» en esa celda. Con el tracking de .8em de la etiqueta
+ * c1, «DOMINICAN» mide 277px en una celda de 259 (misma proporción a 1280,
+ * 1440 y 1920) y la N caía a una tercera línea. A .6em mide 236px: dos
+ * líneas, una por palabra.
+ */
+.loc-intro-s_cap .c1 { letter-spacing: 0.6em; }
+
 /* --------------------------------------------------------
  *  Ubicación, titular «The Samaná Peninsula» en móvil
  *
