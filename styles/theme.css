@@ -400,6 +400,23 @@ body {
 }
 
 /* --------------------------------------------------------
+ *  Bloque de cita (PillarsMedia): la frase no se leía sobre el render
+ *
+ *  ERA apila ahí dos degradados de abajo arriba (.img-over-grad._4x,
+ *  30 % de negro al pie cada uno, cuatro celdas de alto ≈ 27 % del
+ *  bloque). La cita ocupa el tramo entre el 10 % y el 27 % inferior, así
+ *  que sus primeras líneas caían justo donde el degradado ya no llega, y
+ *  con el render de Villa Cosón —cristalera, tumbonas y piscina— la
+ *  frase blanca se perdía. Se hacen más altos (60 % del bloque) y más
+ *  densos (50 % cada uno): ≈47 % combinado en la primera línea, 66 % en
+ *  la última, 75 % en el pie. Sólo en este bloque.
+ * -------------------------------------------------------- */
+.quote-w_bg .img-over-grad {
+  height: 60%;
+  background-image: linear-gradient(#0000, #00000080);
+}
+
+/* --------------------------------------------------------
  *  Hero: slider de las cinco villas y línea de nombres
  *
  *  ERA apilaba dos capas (día `relative`, noche `absolute`) y el JS las
