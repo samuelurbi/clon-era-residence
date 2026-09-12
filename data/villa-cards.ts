@@ -66,8 +66,11 @@ export const villaCards: VillaCardData[] = villas.map((v, i) => ({
   unitsLabel: v.units === null ? null : String(v.units) + ' units',
   completion: v.completion,
   extra: 'Private pool',
-  image: v.heroImage,
-  imageSrcset: srcset(v.heroImage),
+  // Como en ERA, la portada de la tarjeta es el PLANO recortado sobre
+  // transparente (nivel 1), no el render: `img contain` lo deja flotar
+  // sobre el fondo de la tarjeta. Los renders siguen en la ficha.
+  image: v.plans[0].image,
+  imageSrcset: srcset(v.plans[0].image),
   filterType: slugifyType(v.category),
   filterBed: String(v.bedrooms),
   sortRelevant: String(i + 1),

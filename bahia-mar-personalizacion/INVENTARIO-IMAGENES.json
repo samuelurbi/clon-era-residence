@@ -81,13 +81,13 @@
     "seccion": "Fichas de villa › Villa Carolina",
     "destino": "/images/villa-carolina-plan-1.webp",
     "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
-    "uso": "Ficha /villas/carolina > plano principal «Villa Carolina — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+    "uso": "Ficha /villas/carolina > plano principal «Villa Carolina — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). | Desde el 12-09-2026 es un RECORTE sobre transparente del dibujo (scripts/planos-recorte.py aísla el plano de la lámina y vuelve transparente sólo el blanco exterior), como los planos de ERA; portada de la tarjeta en /villas (nivel 1) y de la ficha."
   },
   {
     "seccion": "Fichas de villa › Villa Carolina",
     "destino": "/images/villa-carolina-plan-2.webp",
     "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-02-SEGUNDO NIVEL.png",
-    "uso": "Ficha /villas/carolina > plano principal «Villa Carolina — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+    "uso": "Ficha /villas/carolina > plano principal «Villa Carolina — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). | Desde el 12-09-2026 es un RECORTE sobre transparente del dibujo (scripts/planos-recorte.py aísla el plano de la lámina y vuelve transparente sólo el blanco exterior), como los planos de ERA; portada de la tarjeta en /villas (nivel 1) y de la ficha."
   },
   {
     "seccion": "Fichas de villa › Villa Cosón",
@@ -147,13 +147,13 @@
     "seccion": "Fichas de villa › Villa Cosón",
     "destino": "/images/villa-coson-plan-1.webp",
     "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/00. PLANOS/COMERCIALES/A-01-PRIMER NIVEL.png",
-    "uso": "Ficha /villas/coson > plano principal «Villa Cosón — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+    "uso": "Ficha /villas/coson > plano principal «Villa Cosón — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). | Desde el 12-09-2026 es un RECORTE sobre transparente del dibujo (scripts/planos-recorte.py aísla el plano de la lámina y vuelve transparente sólo el blanco exterior), como los planos de ERA; portada de la tarjeta en /villas (nivel 1) y de la ficha."
   },
   {
     "seccion": "Fichas de villa › Villa Cosón",
     "destino": "/images/villa-coson-plan-2.webp",
     "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/00. PLANOS/COMERCIALES/A-02-SEGUNDO NIVEL.png",
-    "uso": "Ficha /villas/coson > plano principal «Villa Cosón — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+    "uso": "Ficha /villas/coson > plano principal «Villa Cosón — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). | Desde el 12-09-2026 es un RECORTE sobre transparente del dibujo (scripts/planos-recorte.py aísla el plano de la lámina y vuelve transparente sólo el blanco exterior), como los planos de ERA; portada de la tarjeta en /villas (nivel 1) y de la ficha."
   },
   {
     "seccion": "Fichas de villa › Villa Helecho",
@@ -213,13 +213,13 @@
     "seccion": "Fichas de villa › Villa Helecho",
     "destino": "/images/villa-helecho-plan-1.webp",
     "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
-    "uso": "Ficha /villas/helecho > plano principal «Villa Helecho — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+    "uso": "Ficha /villas/helecho > plano principal «Villa Helecho — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). | Desde el 12-09-2026 es un RECORTE sobre transparente del dibujo (scripts/planos-recorte.py aísla el plano de la lámina y vuelve transparente sólo el blanco exterior), como los planos de ERA; portada de la tarjeta en /villas (nivel 1) y de la ficha."
   },
   {
     "seccion": "Fichas de villa › Villa Helecho",
     "destino": "/images/villa-helecho-plan-2.webp",
     "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-02-SEGUNDO NIVEL.png",
-    "uso": "Ficha /villas/helecho > plano principal «Villa Helecho — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+    "uso": "Ficha /villas/helecho > plano principal «Villa Helecho — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). | Desde el 12-09-2026 es un RECORTE sobre transparente del dibujo (scripts/planos-recorte.py aísla el plano de la lámina y vuelve transparente sólo el blanco exterior), como los planos de ERA; portada de la tarjeta en /villas (nivel 1) y de la ficha."
   },
   {
     "seccion": "Fichas de villa › Villa Remanso",
@@ -279,7 +279,7 @@
     "seccion": "Fichas de villa › Villa Remanso",
     "destino": "/images/villa-remanso-plan-1.webp",
     "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
-    "uso": "Ficha /villas/remanso > plano principal «Villa Remanso — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+    "uso": "Ficha /villas/remanso > plano principal «Villa Remanso — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). | Desde el 12-09-2026 es un RECORTE sobre transparente del dibujo (scripts/planos-recorte.py aísla el plano de la lámina y vuelve transparente sólo el blanco exterior), como los planos de ERA; portada de la tarjeta en /villas (nivel 1) y de la ficha."
   },
   {
     "seccion": "Fichas de villa › Villa Ámbar",
@@ -339,7 +339,7 @@
     "seccion": "Fichas de villa › Villa Ámbar",
     "destino": "/images/villa-ambar-plan-1.webp",
     "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
-    "uso": "Ficha /villas/ambar > plano principal «Villa Ámbar — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+    "uso": "Ficha /villas/ambar > plano principal «Villa Ámbar — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). | Desde el 12-09-2026 es un RECORTE sobre transparente del dibujo (scripts/planos-recorte.py aísla el plano de la lámina y vuelve transparente sólo el blanco exterior), como los planos de ERA; portada de la tarjeta en /villas (nivel 1) y de la ficha."
   },
   {
     "seccion": "Home › Amenities",
@@ -507,7 +507,7 @@
     "seccion": "Home › Three reasons (pilares)",
     "destino": "/images/bahiamar-location-1.webp",
     "origen": "00. AMENIDADES/Z. FOGATAS 02.jpeg",
-    "uso": "components/home/Pillars.tsx — pillar 1 «Facing Samaná Bay» (slide image; 4:3 centre crop + srcset -p-500/800/1080/1600/2000)"
+    "uso": "SIN USO desde el 12-09-2026: los pilares pasaron de tres razones a una por villa (bahiamar-pillar-<villa>). Fichero conservado en public/ por si se recupera."
   },
   {
     "seccion": "Home › Three reasons (pilares)",
@@ -586,6 +586,36 @@
     "destino": "public/images/open-graph.webp",
     "origen": "(render) scratchpad/og-template.html → Playwright/Brave 1200x630 → WebP q85 (scratchpad/og-render.mjs). Fondo: public/images/bahiamar-hero-day-p-1600.webp (render diurno de la villa, ya procesado); isotipo: public/images/bahiamar-isotype.png recoloreado a arena (scratchpad/og-isotype-sand.png)",
     "uso": "app/layout.tsx → metadata.openGraph.images y metadata.twitter.images (vista previa al compartir)"
+  },
+  {
+    "seccion": "Otros",
+    "destino": "/images/bahiamar-pillar-ambar.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Home › Five reasons for Bahía Mar › diapositiva de Villa Ámbar (recorte 4:3 centrado del render frontal, 2350×1762 + variantes -p-500/800/1080/1600/2000)."
+  },
+  {
+    "seccion": "Otros",
+    "destino": "/images/bahiamar-pillar-carolina.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R1_3.png",
+    "uso": "Home › Five reasons for Bahía Mar › diapositiva de Villa Carolina (recorte 4:3 centrado del render frontal, 2350×1762 + variantes -p-500/800/1080/1600/2000)."
+  },
+  {
+    "seccion": "Otros",
+    "destino": "/images/bahiamar-pillar-coson.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R1_1.png",
+    "uso": "Home › Five reasons for Bahía Mar › diapositiva de Villa Cosón (recorte 4:3 centrado del render frontal, 2350×1762 + variantes -p-500/800/1080/1600/2000)."
+  },
+  {
+    "seccion": "Otros",
+    "destino": "/images/bahiamar-pillar-helecho.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Home › Five reasons for Bahía Mar › diapositiva de Villa Helecho (recorte 4:3 centrado del render frontal, 2350×1762 + variantes -p-500/800/1080/1600/2000)."
+  },
+  {
+    "seccion": "Otros",
+    "destino": "/images/bahiamar-pillar-remanso.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Home › Five reasons for Bahía Mar › diapositiva de Villa Remanso (recorte 4:3 centrado del render frontal, 2350×1762 + variantes -p-500/800/1080/1600/2000)."
   },
   {
     "seccion": "Página de contacto",

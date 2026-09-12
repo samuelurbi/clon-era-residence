@@ -243,18 +243,27 @@ export function Concept() {
                               </g>
                             ))}
 
-                            {/* El proyecto, en el centro del recorrido. */}
+                            {/*
+                              El proyecto, en el centro del recorrido: el isotipo
+                              es un NODO de la línea, no un adorno encima. Un halo
+                              del color de fondo de la sección interrumpe la costa
+                              justo bajo la ola (antes la línea la cruzaba por la
+                              mitad), y el rótulo va arriba como en los demás
+                              puntos. La línea sigue entera debajo: si cambia el
+                              fondo de la sección, el halo lo sigue por el token.
+                            */}
+                            <circle cx="540" cy="138" r="36" fill="var(--_colors---other--bg)" />
                             <image
                               href="/images/bahiamar-isotype.png"
-                              x="510"
-                              y="86"
-                              width="60"
-                              height="44"
+                              x="508"
+                              y="115"
+                              width="64"
+                              height="46"
                               preserveAspectRatio="xMidYMid meet"
                             />
                             <text
                               x="540"
-                              y="150"
+                              y="90"
                               textAnchor="middle"
                               fill="currentColor"
                               style={{

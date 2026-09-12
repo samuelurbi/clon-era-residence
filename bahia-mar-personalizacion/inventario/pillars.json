@@ -1,22 +1,47 @@
 [
   {
+    "destino": "/images/bahiamar-quote-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R13.png",
+    "uso": "components/home/PillarsMedia.tsx — background of the quote block (Villa Cosón exterior; 4:3 centre crop + srcset -p-500/800/1080/1600/2000)"
+  },
+  {
     "destino": "/images/bahiamar-location-1.webp",
     "origen": "00. AMENIDADES/Z. FOGATAS 02.jpeg",
-    "uso": "components/home/Pillars.tsx — pillar 1 «Facing Samaná Bay» (slide image; 4:3 centre crop + srcset -p-500/800/1080/1600/2000)"
+    "uso": "SIN USO desde el 12-09-2026: los pilares pasaron de tres razones a una por villa (bahiamar-pillar-<villa>). Fichero conservado en public/ por si se recupera."
   },
   {
     "destino": "/images/bahiamar-eco-1.webp",
     "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R5.png",
-    "uso": "components/home/Pillars.tsx — pillar 2 «True eco-luxury» (slide image, Villa Ámbar exterior; 4:5 portrait crop like the original slot + srcset -p-500/800/1080/1600/2000)"
+    "uso": "SIN USO desde el 12-09-2026: los pilares pasaron de tres razones a una por villa (bahiamar-pillar-<villa>). Fichero conservado en public/ por si se recupera."
   },
   {
     "destino": "/images/bahiamar-community-1.webp",
     "origen": "00. AMENIDADES/PISCINA/PISCINA 01.png",
-    "uso": "components/home/Pillars.tsx — pillar 3 «A boutique resort» (slide image, community lagoon pool; crop to the original slot aspect 1.29:1 + srcset -p-500/800/1080/1600/2000)"
+    "uso": "SIN USO desde el 12-09-2026: los pilares pasaron de tres razones a una por villa (bahiamar-pillar-<villa>). Fichero conservado en public/ por si se recupera."
   },
   {
-    "destino": "/images/bahiamar-quote-1.webp",
-    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R13.png",
-    "uso": "components/home/PillarsMedia.tsx — background of the quote block (Villa Cosón exterior; 4:3 centre crop + srcset -p-500/800/1080/1600/2000)"
+    "destino": "/images/bahiamar-pillar-coson.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R1_1.png",
+    "uso": "Home › Five reasons for Bahía Mar › diapositiva de Villa Cosón (recorte 4:3 centrado del render frontal, 2350×1762 + variantes -p-500/800/1080/1600/2000)."
+  },
+  {
+    "destino": "/images/bahiamar-pillar-helecho.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Home › Five reasons for Bahía Mar › diapositiva de Villa Helecho (recorte 4:3 centrado del render frontal, 2350×1762 + variantes -p-500/800/1080/1600/2000)."
+  },
+  {
+    "destino": "/images/bahiamar-pillar-remanso.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Home › Five reasons for Bahía Mar › diapositiva de Villa Remanso (recorte 4:3 centrado del render frontal, 2350×1762 + variantes -p-500/800/1080/1600/2000)."
+  },
+  {
+    "destino": "/images/bahiamar-pillar-ambar.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Home › Five reasons for Bahía Mar › diapositiva de Villa Ámbar (recorte 4:3 centrado del render frontal, 2350×1762 + variantes -p-500/800/1080/1600/2000)."
+  },
+  {
+    "destino": "/images/bahiamar-pillar-carolina.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R1_3.png",
+    "uso": "Home › Five reasons for Bahía Mar › diapositiva de Villa Carolina (recorte 4:3 centrado del render frontal, 2350×1762 + variantes -p-500/800/1080/1600/2000)."
   }
 ]

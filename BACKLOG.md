@@ -56,6 +56,26 @@ que no pueda pasar por real.
   para tener el 42 % de cielo de la foto de ERA: así al cargar sólo hay cielo
   detrás del titular y la villa aparece al hacer scroll. `bahiamar-hero-day`
   y `-night` ya no se usan.
+- **Pilares por villa.** «Three reasons for Bahía Mar» pasa a «Five
+  reasons»: una diapositiva por villa generada desde `data/villas.ts`
+  (nombre, tagline + primera frase, tipo/niveles/dormitorios/unidades) con
+  su render frontal en 4:3 (`bahiamar-pillar-<villa>`). Las tres imágenes
+  anteriores (location-1, eco-1, community-1) quedan sin uso.
+- **Recorrido: el isotipo como nodo.** La línea de la costa cruzaba la ola
+  por la mitad; ahora un halo del color de fondo la interrumpe bajo el
+  isotipo y el rótulo «Bahía Mar» va arriba como en los demás puntos.
+- **Vídeo aéreo a resolución nativa.** Se servía a 1920×1080 en una caja
+  8:9 que sólo enseñaba el 50 % central del fotograma ampliado ×1,5 (de
+  ahí que se viera blando). Ahora 2560×1440 y caja 4:3 en escritorio
+  (móvil conserva la caja alta): a 1440 el vídeo se pinta a 1920 de ancho
+  sin ampliar. Ficheros: 12 MB mp4 / 7 MB webm para 7 s.
+- **Planos como en ERA.** Los «planos» que servía la web eran las láminas
+  enteras del estudio (marco, cajetín, logo de LANDMASS, columna de
+  texto) escaladas. `scripts/planos-recorte.py` aísla el dibujo de cada
+  lámina y vuelve transparente sólo el blanco exterior: los ocho planos
+  son ahora recortes sobre transparente, portada de las tarjetas de
+  /villas (nivel 1, `img contain`) y de la ficha. Los renders se quedan en
+  las galerías.
 - **Tipografía de titulares: Italiana.** El brochure titula con una romana
   sin serifas, de astas acampanadas y contraste alto («Verdadero lujo»,
   p. 9); no hay ficheros de fuente ni manual en el material del cliente, así

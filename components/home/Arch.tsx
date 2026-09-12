@@ -71,7 +71,7 @@ export function Arch() {
                     <path id="circle-desk" d="M 800,800 m -676,0 a 676,676 0 1,1 1352,0 a 676,676 0 1,1 -1352,0"></path>
                   </defs>
                   <text data-circle-text="" className="h4" textAnchor="middle" fill="currentColor">
-                    <textPath href="#circle-desk" startOffset="25%">Three reasons for Bahía Mar</textPath>
+                    <textPath href="#circle-desk" startOffset="25%">Five reasons for Bahía Mar</textPath>
                   </text>
                 </svg>
               </div>
@@ -81,7 +81,7 @@ export function Arch() {
                     <path id="circle-mob" d="M 208,208 m -160,0 a 160,160 0 1,1 320,0 a 160,160 0 1,1 -320,0"></path>
                   </defs>
                   <text data-circle-text="" className="h4" textAnchor="middle" fill="currentColor">
-                    <textPath href="#circle-mob" startOffset="25%">Three reasons for Bahía Mar</textPath>
+                    <textPath href="#circle-mob" startOffset="25%">Five reasons for Bahía Mar</textPath>
                   </text>
                 </svg>
               </div>
