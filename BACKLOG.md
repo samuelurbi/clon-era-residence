@@ -35,10 +35,6 @@ que no pueda pasar por real.
 - **Planos de las villas.** Llevan los rótulos en español horneados en la
   imagen (RECIBIDOR, COCINA, PISCINA, PICUZZI…); el resto de la web está en
   inglés. Pedir al estudio una exportación en inglés o sin rótulos.
-- **Pines del hero.** Los tres puntos interactivos sobre la imagen (abren
-  los tips flotantes) conservan las posiciones de ERA, pensadas para una sola
-  foto; ahora el fondo rota entre cinco villas y caen donde caen. Decidir si
-  se quitan o se ubican por villa.
 
 ## Resuelto en la segunda pasada del hero (12-09-2026)
 
@@ -56,6 +52,10 @@ que no pueda pasar por real.
   para tener el 42 % de cielo de la foto de ERA: así al cargar sólo hay cielo
   detrás del titular y la villa aparece al hacer scroll. `bahiamar-hero-day`
   y `-night` ya no se usan.
+- **Pines del hero fuera.** Los tres hotspots de ERA sobre la foto del
+  conjunto no tenían dónde anclarse con cinco villas rotando; el cliente
+  pidió quitarlos. `FloatingTips.tsx` sigue montado sin disparadores por si
+  se recuperan en otra sección.
 - **Pilares por villa.** «Three reasons for Bahía Mar» pasa a «Five
   reasons»: una diapositiva por villa generada desde `data/villas.ts`
   (nombre, tagline + primera frase, tipo/niveles/dormitorios/unidades) con
