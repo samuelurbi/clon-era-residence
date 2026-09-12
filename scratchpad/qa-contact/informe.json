@@ -1,0 +1,248 @@
+[
+  {
+    "ruta": "/contact",
+    "ancho": 1440,
+    "consola": [],
+    "red": [],
+    "desborde": 0,
+    "imagenesRotas": [],
+    "imagenesSinCargar": [],
+    "mapa": {
+      "currentSrc": "http://localhost:3000/images/bahiamar-entrance-1-p-1600.webp",
+      "natural": "1440x759",
+      "alt": "The entrance to Bahía Mar: two arches over the access road, a whale-tail sculpture between them, tropical vegetation on both sides and the sea beyond.",
+      "w": 1440
+    },
+    "titulo": "Contact — Bahía Mar",
+    "descripcion": "Get in touch with the Bahía Mar team in Las Terrenas, Samaná, for villa availability, floor plans and a private presentation of the project.",
+    "textos": [
+      {
+        "tag": "h1",
+        "texto": "Get in touch",
+        "lineas": 2,
+        "w": 806,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "h2",
+        "texto": "Write to us",
+        "lineas": 1,
+        "w": 259,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "info@bahiamar.example",
+        "lineas": 1,
+        "w": 151,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "h3",
+        "texto": "Sales office",
+        "lineas": 1,
+        "w": 76,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Las Terrenas, Samaná (address TBC)",
+        "lineas": 2,
+        "w": 173,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "h3",
+        "texto": "The site",
+        "lineas": 1,
+        "w": 48,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Bahía Mar, Las Terrenas, Samaná, Dominican Republic",
+        "lineas": 3,
+        "w": 173,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "h3",
+        "texto": "Call or message us",
+        "lineas": 1,
+        "w": 259,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "+1 (809) 000-0000",
+        "lineas": 1,
+        "w": 94,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Whatsapp",
+        "lineas": 1,
+        "w": 62,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Bahía Mar",
+        "lineas": 1,
+        "w": 70,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Las Terrenas, Samaná",
+        "lineas": 1,
+        "w": 152,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Book a call now",
+        "lineas": 2,
+        "w": 101,
+        "seSale": false,
+        "fueraDeViewport": false
+      }
+    ]
+  },
+  {
+    "ruta": "/contact",
+    "ancho": 390,
+    "consola": [],
+    "red": [],
+    "desborde": 0,
+    "imagenesRotas": [],
+    "imagenesSinCargar": [],
+    "mapa": {
+      "currentSrc": "http://localhost:3000/images/bahiamar-entrance-1-p-500.webp",
+      "natural": "390x205",
+      "alt": "The entrance to Bahía Mar: two arches over the access road, a whale-tail sculpture between them, tropical vegetation on both sides and the sea beyond.",
+      "w": 891
+    },
+    "titulo": "Contact — Bahía Mar",
+    "descripcion": "Get in touch with the Bahía Mar team in Las Terrenas, Samaná, for villa availability, floor plans and a private presentation of the project.",
+    "textos": [
+      {
+        "tag": "h1",
+        "texto": "Get in touch",
+        "lineas": 2,
+        "w": 345,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "h2",
+        "texto": "Write to us",
+        "lineas": 1,
+        "w": 345,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "info@bahiamar.example",
+        "lineas": 1,
+        "w": 158,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "h3",
+        "texto": "Sales office",
+        "lineas": 1,
+        "w": 80,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Las Terrenas, Samaná (address TBC)",
+        "lineas": 2,
+        "w": 195,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "h3",
+        "texto": "The site",
+        "lineas": 1,
+        "w": 50,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Bahía Mar, Las Terrenas, Samaná, Dominican Republic",
+        "lineas": 2,
+        "w": 195,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "h3",
+        "texto": "Call or message us",
+        "lineas": 1,
+        "w": 345,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "+1 (809) 000-0000",
+        "lineas": 1,
+        "w": 98,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Whatsapp",
+        "lineas": 1,
+        "w": 64,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Bahía Mar",
+        "lineas": 1,
+        "w": 73,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Las Terrenas, Samaná",
+        "lineas": 1,
+        "w": 158,
+        "seSale": false,
+        "fueraDeViewport": false
+      },
+      {
+        "tag": "div",
+        "texto": "Book a call now",
+        "lineas": 2,
+        "w": 105,
+        "seSale": false,
+        "fueraDeViewport": false
+      }
+    ]
+  }
+]

@@ -32,9 +32,9 @@ const GTM_ID = '';
 
 const TITLE = 'Bahía Mar — Boutique Villas on the Samaná Peninsula, Dominican Republic';
 const DESCRIPTION =
-  'Five villa typologies in a gated resort community on the Samaná peninsula, ' +
-  'combining contemporary tropical architecture, private pools and direct access ' +
-  'to the beach, the rainforest and Cosón Bay.';
+  'Five villa typologies in a boutique beach resort community on the Samaná ' +
+  'peninsula, combining contemporary tropical architecture, private pools and ' +
+  'views over Samaná Bay, with the beach, the rainforest and Las Terrenas close by.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -49,8 +49,12 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: SITE_URL,
     siteName: 'Bahía Mar Residences & Beach Resort',
+    /*
+     * Sin `videos`: el /videos/open-graph.mp4 que enlazaba aquí es el del
+     * sitio original (ERA), no hay equivalente de Bahía Mar. La imagen sí es
+     * propia: se renderiza desde scratchpad/og-template.html.
+     */
     images: [{ url: '/images/open-graph.webp', width: 1200, height: 630 }],
-    videos: [{ url: '/videos/open-graph.mp4', type: 'video/mp4', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',

@@ -1,10 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * Ubicación: Las Terrenas, Samaná. Tras las tres capas de nubes, el fondo a
+ * sangre es el vídeo aéreo de la finca (sobrevuelo de las lomas con el
+ * perímetro del master plan dibujado), con la aérea fija como póster.
+ *
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * home.html de ERA Residence, pero al personalizarlo para Bahía Mar pasa a
+ * mantenerse a mano. Regenerarlo desharía este trabajo (volvería el master
+ * plan de Estepona como <img>).
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
- * Las URLs del CDN ya están reescritas a /public.
+ * El <video> hereda las clases del <img> al que sustituye; lo que el <img>
+ * recibía por etiqueta (object-fit) se lo da styles/theme.css.
  */
 
 export function Location() {
@@ -119,7 +127,10 @@ export function Location() {
             <div className="loc-w_bg_img">
               <div className="pins-cms w-dyn-list"><div className="cms_empty-none w-dyn-empty"></div></div>
               <div className="img-w h-auto">
-                <img src="/images/bahiamar-aerial.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-aerial-p-500.webp 500w, /images/bahiamar-aerial-p-800.webp 800w, /images/bahiamar-aerial-p-1080.webp 1080w, /images/bahiamar-aerial-p-1600.webp 1600w, /images/bahiamar-aerial.webp 1920w" alt="Aerial view of Cosón Bay: white sand beach, turquoise water and dense palm forest under the Samaná hills." className="img h-auto" />
+                <video muted playsInline loop autoPlay disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="/images/bahiamar-aerial.webp" aria-label="Aerial flyover of the Bahía Mar hills above Las Terrenas, with the master plan outlined over the terrain." className="img h-auto">
+                  <source src="/videos/bahiamar-aerial.webm" type="video/webm" />
+                  <source src="/videos/bahiamar-aerial.mp4" type="video/mp4" />
+                </video>
                 <div className="img-over-grad from-bot bot _100vh"></div>
               </div>
             </div>

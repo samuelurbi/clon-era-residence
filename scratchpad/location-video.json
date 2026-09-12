@@ -1,0 +1,17 @@
+[
+  {
+    "destino": "public/videos/bahiamar-aerial.webm",
+    "origen": "archivos-extra-whatsapp/WhatsApp Video 2026-09-11 at 9.15.57 AM.mp4",
+    "uso": "Home > sección Ubicación (components/home/Location.tsx): fondo a sangre tras las nubes, <source> VP9 (832x464, 30 fps, crf 33, sin audio, 1,1 MB). Sobrevuelo de las lomas con el perímetro del master plan dibujado. Resolución de origen conservada (no se ha escalado); el cliente prometió una versión en mayor resolución."
+  },
+  {
+    "destino": "public/videos/bahiamar-aerial.mp4",
+    "origen": "archivos-extra-whatsapp/WhatsApp Video 2026-09-11 at 9.15.57 AM.mp4",
+    "uso": "Home > sección Ubicación (components/home/Location.tsx): mismo vídeo, <source> H.264 de respaldo (832x464, 30 fps, crf 23, yuv420p, sin audio, faststart, 1,2 MB)."
+  },
+  {
+    "destino": "public/images/bahiamar-aerial.webp",
+    "origen": "(ya existente; procesada por un agente anterior — ver su inventario)",
+    "uso": "Home > sección Ubicación: póster del <video> aéreo (fallback mientras carga o si el vídeo no se reproduce). Su proporción 1920x2160 es la que fija el hueco en styles/theme.css. Capturas de comprobación: scratchpad/capturas/location-video-1440.png, -1440-b.png, -390.png, -390-b.png."
+  }
+]

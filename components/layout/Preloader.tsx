@@ -1,10 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * marcado de ERA Residence (home.html), pero al personalizarlo para Bahía
+ * Mar pasa a mantenerse a mano. Regenerarlo lo devolvería a los textos de
+ * Estepona.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
  * Las URLs del CDN ya están reescritas a /public.
+ *
+ * El fondo caligráfico: el original era un SVG con la palabra «Estepona»
+ * dibujada a mano como trazados. Aquí es un <svg> en línea con un <text>
+ * «Samaná» en la fuente de floritura del sitio (Pinyon Script, publicada
+ * como --_fonts---font-accent). Mismo viewBox (1440×864) y misma clase
+ * `.img`, así que webflow.css lo dimensiona igual que a la imagen; la
+ * palabra desborda el borde derecho a propósito, como el original.
  */
 
 export function Preloader() {
@@ -38,18 +48,18 @@ export function Preloader() {
         </div>
         <div className="preloader_c">
           <div className="grid">
-            <div className="preloader_title-l"><div data-part="h" className="c1 a-center">Costa</div></div>
+            <div className="preloader_title-l"><div data-part="h" className="c1 a-center">Samaná</div></div>
             <div className="preloader_logo">
               <div data-part="h" className="h3 a-center">
-                Era
+                Bahía
                 <br />
-                Residence
+                Mar
               </div>
               <div className="preloader_logo_a">
-                <div data-part="a" className="a2 preloader_a a-center">Estepona</div>
+                <div data-part="a" className="a2 preloader_a a-center">Las Terrenas</div>
               </div>
             </div>
-            <div className="preloader_title-r"><div data-part="h" className="c1 a-center">del Sol</div></div>
+            <div className="preloader_title-r"><div data-part="h" className="c1 a-center">Peninsula</div></div>
           </div>
         </div>
         <div className="preloader_b">
@@ -60,7 +70,7 @@ export function Preloader() {
               </div>
               <div className="u-32"></div>
               <p data-part="p" className="l1 a-center">
-                Era Residence
+                Bahía Mar
                 <br />
                 A place to return to.
               </p>
@@ -75,7 +85,17 @@ export function Preloader() {
       </div>
       <div className="preloader_bg">
         <div className="preloader_bg_a">
-          <img src="/images/e22485744735d6f17214f25b6157e9b5_preloader_bg.svg" loading="eager" alt="" className="img" />
+          <svg className="img" viewBox="0 0 1440 864" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <text
+              x="-40"
+              y="600"
+              fontSize="520"
+              fill="currentColor"
+              style={{ fontFamily: 'var(--_fonts---font-accent)' }}
+            >
+              Samaná
+            </text>
+          </svg>
         </div>
         <div className="preloader_bg_decor">
           <div data-wf--decor--variant="large" className="decor">

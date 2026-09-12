@@ -1,10 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * marcado de ERA Residence (home.html), pero al personalizarlo para Bahía
+ * Mar pasa a mantenerse a mano. Regenerarlo lo devolvería a los textos de
+ * Estepona.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
  * Las URLs del CDN ya están reescritas a /public.
+ *
+ * El texto del arco corre sobre un círculo (startOffset 25% = la cima)
+ * del que sólo se ve la mitad superior, y el scroll le va abriendo el
+ * word-spacing hasta 10rem (lib/animations/home-flow.ts). Medido con
+ * Playwright (scratchpad/qa-arch.mjs): «Three reasons to choose Bahía
+ * Mar» cabía en escritorio pero en móvil ya ocupaba el 51% del círculo
+ * en reposo y se cortaba por los lados; «Three reasons for Bahía Mar»
+ * ocupa lo mismo que la frase original (42% / 57% en móvil, 15% / 29%
+ * en escritorio), así que se usa esa sin tocar el trazado.
  */
 
 export function Arch() {
@@ -17,7 +29,7 @@ export function Arch() {
             <div className="u-272 b-mob"></div>
             <div className="s_logo">
               <div className="info-s_logo_l">
-                <div data-scroll-reveal="p" className="l1 a-center">Costa</div>
+                <div data-scroll-reveal="p" className="l1 a-center">Samaná</div>
               </div>
               <div data-scroll-reveal="ctn" className="logo_symbol ico-48">
                 <div className="logo w-embed">
@@ -40,7 +52,7 @@ export function Arch() {
                 </div>
               </div>
               <div className="info-s_logo_r">
-                <div data-scroll-reveal="p" className="l1 a-center">del Sol</div>
+                <div data-scroll-reveal="p" className="l1 a-center">Peninsula</div>
               </div>
             </div>
             <div className="u-48"></div>
@@ -59,7 +71,7 @@ export function Arch() {
                     <path id="circle-desk" d="M 800,800 m -676,0 a 676,676 0 1,1 1352,0 a 676,676 0 1,1 -1352,0"></path>
                   </defs>
                   <text data-circle-text="" className="h4" textAnchor="middle" fill="currentColor">
-                    <textPath href="#circle-desk" startOffset="25%">Three reasons to choose Era</textPath>
+                    <textPath href="#circle-desk" startOffset="25%">Three reasons for Bahía Mar</textPath>
                   </text>
                 </svg>
               </div>
@@ -69,7 +81,7 @@ export function Arch() {
                     <path id="circle-mob" d="M 208,208 m -160,0 a 160,160 0 1,1 320,0 a 160,160 0 1,1 -320,0"></path>
                   </defs>
                   <text data-circle-text="" className="h4" textAnchor="middle" fill="currentColor">
-                    <textPath href="#circle-mob" startOffset="25%">Three reasons to choose Era</textPath>
+                    <textPath href="#circle-mob" startOffset="25%">Three reasons for Bahía Mar</textPath>
                   </text>
                 </svg>
               </div>

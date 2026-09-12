@@ -1,6 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde coming-soon.html — no editar a mano.
+ * Página de espera («coming soon»).
+ *
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre
+ * coming-soon.html del sitio original, pero al personalizarlo para Bahía
+ * Mar pasa a mantenerse a mano. Regenerarlo con `npm run gen:*` devolvería
+ * los textos del promotor de origen.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
@@ -16,12 +21,12 @@ export function ComingSoonMain() {
             <div className="grid">
               <div className="soon-s_title">
                 <div className="u-160"></div>
-                <h1 data-scroll-reveal="h" className="h2 a-center">selection is coming soon</h1>
+                <h1 data-scroll-reveal="h" className="h2 a-center">next villas coming soon</h1>
                 <div className="u-32"></div>
                 <div className="grid _4-columns">
                   <div className="soon-s_desc">
                     <p data-scroll-reveal="p" className="p1 a-center">
-                      Contact us directly to find out which units are still available.
+                      A new selection of Bahía Mar villas in Las Terrenas will be released shortly. Contact us directly to find out which villas are still available.
                     </p>
                   </div>
                 </div>

@@ -1,6 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * Aviso de cookies.
+ *
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre
+ * home.html del sitio original, pero al personalizarlo para Bahía Mar
+ * pasa a mantenerse a mano. Regenerarlo con `npm run gen:*` desharía el
+ * texto. No hay enlace a política de privacidad: el cliente aún no la ha
+ * facilitado (pendiente de anotar en BACKLOG.md).
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
@@ -19,7 +25,7 @@ export function CookieNotice() {
             </div>
             <div className="cookies_card_b">
               <div className="l1 a-center mob_a-left">
-                This website uses cookies to ensure you get the best experience on website.
+                This website uses cookies to ensure you get the best experience on our website.
               </div>
               <div className="u-24"></div>
               <div className="cookies_card_btn-list">

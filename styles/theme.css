@@ -164,3 +164,23 @@ body {
 .flower.flower.other        { transform: scaleX(-1); }            /* arriba-derecha  */
 .flower.flower.apart        { transform: scaleX(-1); }            /* arriba-derecha  */
 .flower.flower.interior     { transform: scaleX(-1); }            /* arriba-derecha  */
+
+/* --------------------------------------------------------
+ *  Ubicación: el fondo aéreo es un <video>, no un <img>
+ *
+ *  components/home/Location.tsx sustituye el <img class="img h-auto">
+ *  del master plan por el vídeo de sobrevuelo de la finca (WhatsApp,
+ *  832×464). Conserva las clases, pero webflow.css da `object-fit:
+ *  cover` a `img` POR ETIQUETA, así que el vídeo se quedaría con
+ *  `object-fit: fill` (deformado o con bandas).
+ *
+ *  Además, con `.h-auto` la altura del hueco —y con ella la de toda
+ *  la sección, porque `.loc-s` va absoluta al pie— sale de la
+ *  proporción intrínseca del elemento: la del póster (1920×2160)
+ *  mientras carga y la del vídeo (16:9) al reproducirse, con brinco
+ *  de maquetación entre ambas. Se fija la proporción del póster para
+ *  que el hueco no cambie respecto a la imagen que había, y el vídeo
+ *  lo cubre recortando por los lados (el perímetro del master plan va
+ *  centrado, así que no se pierde).
+ * -------------------------------------------------------- */
+.loc-w_bg_img video.img { aspect-ratio: 1920 / 2160; object-fit: cover; }

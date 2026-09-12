@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bahía Mar — Open Graph 1200x630</title>
+<!--
+  Plantilla de la imagen Open Graph de Bahía Mar (1200x630).
+
+  Se renderiza UNA vez con Playwright/Brave (scratchpad/og-render.mjs) y el
+  resultado se guarda como public/images/open-graph.webp. Las fuentes se
+  cargan de Google sólo para este render: son las mismas familias que el
+  sitio auto-hospeda (Instrument Serif para titulares, Archivo para texto).
+
+  Paleta del brief: verde profundo #022725, claro #EFEEE9, arena #E8D8C8.
+  Fondo: render diurno de la villa (bahiamar-hero-day) bajo un velo verde.
+
+  El isotipo va como <img> y no con máscara CSS como en el Header: al abrir
+  la plantilla por file:// Chromium pide las mask-image en modo CORS y las
+  bloquea. scratchpad/og-isotype-sand.png es el isotipo recoloreado a arena
+  con ffmpeg (alpha del original como máscara), 512x371.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Instrument+Serif:ital@0;1&display=block" rel="stylesheet">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #022725;
+  }
+
+  .card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #022725;
+    color: #EFEEE9;
+  }
+
+  .card__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 62%;
+    display: block;
+  }
+
+  /* Velo verde: deja intuir la villa y las palmeras sin robar contraste. */
+  .card__veil {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(2, 39, 37, 0.94) 0%, rgba(2, 39, 37, 0.86) 48%, rgba(2, 39, 37, 0.62) 100%),
+      linear-gradient(180deg, rgba(2, 39, 37, 0.35) 0%, rgba(2, 39, 37, 0) 40%, rgba(2, 39, 37, 0.55) 100%);
+  }
+
+  .card__content {
+    position: absolute;
+    left: 88px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  /* Isotipo (la ola) ya recoloreado a arena, ver nota de cabecera. */
+  .card__isotype {
+    display: block;
+    width: 132px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .card__title {
+    font-family: "Instrument Serif", "Times New Roman", Georgia, serif;
+    font-weight: 400;
+    font-size: 168px;
+    line-height: 0.9;
+    letter-spacing: -0.015em;
+    margin: 0 0 30px;
+    color: #EFEEE9;
+  }
+
+  .card__subtitle {
+    font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #E8D8C8;
+    margin: 0;
+  }
+
+  .card__subtitle .dot {
+    display: inline-block;
+    margin: 0 0.6em;
+    opacity: 0.7;
+  }
+
+  /* Línea fina de pie, como el sello circular de la web. */
+  .card__footer {
+    position: absolute;
+    left: 88px;
+    right: 88px;
+    bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(239, 238, 233, 0.72);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="card__photo" src="../public/images/bahiamar-hero-day-p-1600.webp" alt="">
+    <div class="card__veil"></div>
+
+    <div class="card__content">
+      <img class="card__isotype" src="og-isotype-sand.png" alt="Bahía Mar isotype">
+      <h1 class="card__title">Bahía Mar</h1>
+      <p class="card__subtitle">Boutique Residences<span class="dot">·</span>Las Terrenas, Samaná</p>
+    </div>
+
+    <div class="card__footer">
+      <span>Dominican Republic</span>
+      <span>Residences &amp; Beach Resort</span>
+    </div>
+  </div>
+</body>
+</html>

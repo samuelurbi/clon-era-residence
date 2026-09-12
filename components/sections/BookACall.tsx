@@ -1,9 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-shared-sections.mjs — no editar a mano.
- *
  * Pie con el formulario «Book a call». Idéntico en todas las páginas salvo
  * por el enlace de vuelta arriba, que sólo lleva la home.
+ *
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-shared-sections.mjs
+ * sobre el marcado de ERA Residence, pero al personalizarlo para Bahía
+ * Mar pasa a mantenerse a mano. Regenerarlo devolvería la marca, los PDF
+ * legales y el crédito de agencia del sitio de Estepona.
+ *
+ * Pendiente (ver BACKLOG.md): política de privacidad y términos de uso de
+ * Bahía Mar todavía no existen, por eso los enlaces apuntan a «#». El
+ * teléfono es el placeholder de la política del brief, no un número real.
  */
 
 export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
@@ -66,13 +73,13 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
                       <div data-text="ctn" role="listitem" className="loc-cms_list_item w-dyn-item">
                         <h3 className="l1 reg a-center">Sales Office</h3>
                         <div className="u-4"></div>
-                        <a hover-nav-item="" aria-label="Agua Buena, Los Naranjos, Sánchez, Samaná, Dominican Republic" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Las Terrenas, Samaná, Dominican Republic (address TBC)" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Agua Buena, Los Naranjos, Sánchez, Samaná, Dominican Republic</div>
+                              <div hover="text" className="l1">Las Terrenas, Samaná, Dominican Republic (address TBC)</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Agua Buena, Los Naranjos, Sánchez, Samaná, Dominican Republic</div>
+                              <div hover="text" className="l1">Las Terrenas, Samaná, Dominican Republic (address TBC)</div>
                             </div>
                           </div>
                         </a>
@@ -85,7 +92,7 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
             <div className="footer-s_b">
               <div className="grid">
                 <div className="footer-s_info">
-                  <div data-text="p" className="l1">Era Residence.</div>
+                  <div data-text="p" className="l1">Bahía Mar.</div>
                   <div data-text="p" className="l1 reg no-wrap">
                     ©
                     <span className="year">2026</span>
@@ -95,7 +102,7 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
                   <div data-text="p" className="legal-cms w-dyn-list">
                     <div data-comma-list="" role="list" className="legal-cms_list w-dyn-items">
                       <div role="listitem" className="legal-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="Privacy policy" href="/documents/politica_privacidad_era_residence.pdf" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Privacy policy" href="#" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text"><div hover="text" className="l1">Privacy policy</div></div>
                             <div className="nav-item_label_text is-2"><div hover="text" className="l1">Privacy policy</div></div>
@@ -104,7 +111,7 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
                         <div data-comma="" className="l1">,</div>
                       </div>
                       <div role="listitem" className="legal-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="Terms of Use" href="/images/terms_of_use_era_residence%20(1).pdf" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Terms of Use" href="#" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text"><div hover="text" className="l1">Terms of Use</div></div>
                             <div className="nav-item_label_text is-2"><div hover="text" className="l1">Terms of Use</div></div>
@@ -117,17 +124,17 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
                 </div>
                 <div className="footer-s_credits">
                   <div hover-nav-item-trigger="" className="credits">
-                    <a aria-label="The First The Last" href="https://thefirstthelast.agency/?utm_source=era-residence&utm_medium=article&utm_campaign=promo" target="_blank" className="credits_link w-inline-block"></a>
+                    <a aria-label="Bahía Mar Residences & Beach Resort" href="#" className="credits_link w-inline-block"></a>
                     <div data-text="ctn" data-scrub-reveal="ctn" className="credits_logo-w">
-                      <div data-json="https://pub-157506367d4c4fa1825d7a6d26b687a2.r2.dev/tftl-logo_white.json" className="credits_logo"></div>
+                      <div data-json="" className="credits_logo"></div>
                     </div>
                     <div className="u-12"></div>
-                    <div data-text="p" className="l1 reg a-right">Made by</div>
+                    <div data-text="p" className="l1 reg a-right">Las Terrenas, Samaná</div>
                     <div data-text="p">
-                      <a hover-nav-item="" aria-label="Thefirstthelast" href="#" className="nav-item w-inline-block">
+                      <a hover-nav-item="" aria-label="Bahía Mar Residences & Beach Resort" href="#" className="nav-item w-inline-block">
                         <div className="nav-item_label">
-                          <div className="nav-item_label_text"><div hover="text" className="l1">Thefirstthelast</div></div>
-                          <div className="nav-item_label_text is-2"><div hover="text" className="l1">Thefirstthelast</div></div>
+                          <div className="nav-item_label_text"><div hover="text" className="l1">Bahía Mar Residences &amp; Beach Resort</div></div>
+                          <div className="nav-item_label_text is-2"><div hover="text" className="l1">Bahía Mar Residences &amp; Beach Resort</div></div>
                         </div>
                       </a>
                     </div>

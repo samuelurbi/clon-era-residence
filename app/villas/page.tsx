@@ -8,8 +8,9 @@ import { BookACall } from '@/components/sections/BookACall';
 export const metadata: Metadata = {
   title: 'Villas',
   description:
-    'Browse the available residences at ERA Residence: ground floor homes, ' +
-    'penthouses and duplexes on the New Golden Mile, Estepona.',
+    'Five villa typologies at Bahía Mar, Las Terrenas, Samaná: Villa Cosón, ' +
+    'Helecho, Remanso, Ámbar and Carolina — single-level and two-level villas ' +
+    'with private pool, jacuzzi, solarium and views over Samaná Bay.',
 };
 
 export default function VillasPage() {

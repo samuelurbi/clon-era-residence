@@ -1,9 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-villa-card.mjs — no editar a mano.
+ * Tarjeta de villa del listado y del bloque «otras villas» de la ficha.
+ * El marcado es el del sitio original (clases de Webflow intactas) con los
+ * valores sustituidos por los de data/villa-cards.ts.
  *
- * Tarjeta de apartamento del listado. El marcado es el del sitio original
- * (clases de Webflow intactas) con los valores sustituidos por datos.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-apartment-card.mjs sobre
+ * la tarjeta del sitio de origen; al personalizarla para Bahía Mar pasa a
+ * mantenerse a mano y regenerarla desharía estos cambios.
+ *
+ * Los huecos de la tarjeta no son los del original (bloque, planta, m²,
+ * terraza): ver la cabecera de data/villa-cards.ts. Cuando el master plan
+ * no da unidades (tipos D y E) el segundo hueco enseña los niveles.
  */
 
 import type { VillaCardData } from '@/data/villa-cards';
@@ -36,7 +43,7 @@ export function VillaCard({ card }: { card: VillaCardData }) {
               </p>
               <div className="data-divider"></div>
               <p id="" className="l2 reg a-center">
-                <span>{card.unitsLabel ?? `${card.levels} levels`}</span>
+                <span>{card.unitsLabel ?? `${card.levels} ${card.levels === '1' ? 'level' : 'levels'}`}</span>
               </p>
               <div className="data-divider"></div>
               <p id="" className="l2 reg a-center">

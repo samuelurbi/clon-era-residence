@@ -1,14 +1,53 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * Ficha de villa. Marcado del original con las clases de Webflow
- * intactas; los valores salen de data/villas.ts.
+ * Ficha de villa de Bahía Mar. Marcado del original con las clases de
+ * Webflow intactas; todos los valores salen de data/villas.ts.
  *
- * YA NO ESTÁ GENERADO: venía de scripts/generate-apartment-detail.mjs
- * sobre el marcado de ERA Residence. Al personalizarlo para Bahía Mar
- * pasa a mantenerse a mano; regenerarlo desharía estos cambios.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-apartment-detail.mjs
+ * sobre el marcado del sitio de origen (ERA Residence, del que ya no queda
+ * ninguna imagen ni texto aquí). Al personalizarlo para Bahía Mar pasa a
+ * mantenerse a mano; regenerarlo desharía estos cambios.
+ *
+ * Qué se pinta y de dónde:
+ *   - Plano principal: `villa.plans[0]`.
+ *   - Galería (móvil en carrusel horizontal, escritorio en columna bajo el
+ *     plano): `villa.gallery`, cuatro exteriores (g1..g4) y cuatro
+ *     interiores (i1..i4) de cada villa; con srcset() de data/villas.ts.
+ *   - Pestaña INFO: `villa.description`, un <p> por párrafo.
+ *   - Pestaña BENEFITS: la lista «cada unidad cuenta con» del brochure
+ *     (BRIEF.md), común a las cinco tipologías.
  */
 
+import { Fragment } from 'react';
 import { srcset, type Villa } from '@/data/villas';
+
+/**
+ * Lo que trae cada villa según el brochure («cada unidad cuenta con»).
+ * Es común a las cinco tipologías; lo específico de cada una (cava,
+ * terrazas lounge, pérgolas…) va en `villa.features`.
+ */
+const BENEFITS = [
+  'Beach, bay & Los Haitises views',
+  'Private pool',
+  'BBQ terrace & lounge garden',
+  'Pergola porch',
+  'Bamboo floors',
+  'Chukum walls',
+  'Home automation',
+  'Eco-efficient kitchen',
+  'Solar panels',
+];
+
+/**
+ * Texto alternativo de cada imagen de la galería a partir de su nombre
+ * (`villa-<slug>-g1..g4` exteriores, `i1..i4` interiores; ver villas.ts).
+ */
+function galleryAlt(villa: Villa, src: string): string {
+  const m = src.match(/-([gi])(\d)\.webp$/);
+  if (!m) return villa.name;
+  const kind = m[1] === 'g' ? 'exterior' : 'interior';
+  return `${villa.name} — ${kind} render ${m[2]}`;
+}
 
 export function VillaDetail({
   villa,
@@ -55,7 +94,7 @@ export function VillaDetail({
                         <div role="list" className="lot-media-cms_list w-dyn-items">
                           {villa.gallery.map((src) => (
                             <div key={src} role="listitem" className="lot-media-cms_list_item w-dyn-item w-dyn-repeater-item">
-                              <img src={src} loading="lazy" data-lightbox="" alt={villa.name} sizes="100vw" srcSet={srcset(src)} className="img _w-auto" />
+                              <img src={src} loading="lazy" data-lightbox="" alt={galleryAlt(villa, src)} sizes="100vw" srcSet={srcset(src)} className="img _w-auto" />
                             </div>
                           ))}
                           
@@ -100,33 +139,25 @@ export function VillaDetail({
                       <div className="lot-s_info_more_contents">
                         <div data-tab-content="desc" className="lot-s_info_more_content is-1">
                           <div className="u-16"></div>
-                          <p data-tab="p" className="p1">
-                            {villa.description}
-                          </p>
+                          {villa.description.map((paragraph, i) => (
+                            <Fragment key={i}>
+                              {i > 0 && <div className="u-16"></div>}
+                              <p data-tab="p" className="p1">
+                                {paragraph}
+                              </p>
+                            </Fragment>
+                          ))}
                           <div className="u-160 b-desk"></div>
                         </div>
                         <div data-tab-content="benefits" className="lot-s_info_more_content">
                           <div className="u-16"></div>
                           <div className="benefits-tag-cms w-dyn-list">
                             <div role="list" className="benefits-tag-cms_list tag-list w-dyn-items">
-                              <div data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item">
-                                <div className="tag"><h4 className="p2">Pool & gym</h4></div>
-                              </div>
-                              <div data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item"><div className="tag"><h4 className="p2">Storage</h4></div></div>
-                              <div data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item"><div className="tag"><h4 className="p2">Energy B</h4></div></div>
-                              <div data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item"><div className="tag"><h4 className="p2">Parking</h4></div></div>
-                              <div data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item">
-                                <div className="tag"><h4 className="p2">Aerothermal</h4></div>
-                              </div>
-                              <div data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item">
-                                <div className="tag"><h4 className="p2">Stone floors</h4></div>
-                              </div>
-                              <div data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item">
-                                <div className="tag"><h4 className="p2">Villeroy & Boch</h4></div>
-                              </div>
-                              <div data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item">
-                                <div className="tag"><h4 className="p2">Underfloor heating</h4></div>
-                              </div>
+                              {BENEFITS.map((benefit) => (
+                                <div key={benefit} data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item">
+                                  <div className="tag"><h4 className="p2">{benefit}</h4></div>
+                                </div>
+                              ))}
                             </div>
                           </div>
                           <div className="u-160 b-desk"></div>
@@ -191,78 +222,32 @@ export function VillaDetail({
                   </div>
                   <div className="lot-media-cms w-dyn-list">
                     <div role="list" className="lot-media-cms_list w-dyn-items">
-                      <div role="listitem" className="lot-media-cms_list_item w-dyn-item w-dyn-repeater-item">
-                        <div hover-pin-trigger="" hover-media-item="" className="lot-media-item theme_on-color">
-                          <div className="img-w h-auto">
-                            <img src="/images/era-residence-bathroom.webp" loading="eager" data-lightbox="" alt="" sizes="100vw" srcSet="/images/era-residence-bathroom-p-500.webp 500w, /images/era-residence-bathroom-p-800.webp 800w, /images/era-residence-bathroom-p-1080.webp 1080w, /images/era-residence-bathroom-p-1600.webp 1600w, /images/era-residence-bathroom.webp 1920w" className="img h-auto" />
-                            <div hover="btn" className="lot-media-item_btn">
-                              <div hover-pin="" className="pin">
-                                <div hover="bg" className="pin_dot">
-                                  <div hover="ico" className="ico-16 theme_on-light">
-                                    <div className="ico w-embed">
-                                      <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.5292 3.52827C11.7896 3.26792 12.2123 3.26792 12.4726 3.52827C12.733 3.78862 12.733 4.21128 12.4726 4.47163L8.94429 7.99995L12.4726 11.5283C12.733 11.7886 12.733 12.2113 12.4726 12.4716C12.2123 12.732 11.7896 12.732 11.5292 12.4716L8.00093 8.94331L4.47261 12.4716C4.21226 12.732 3.7896 12.732 3.52925 12.4716C3.2689 12.2113 3.2689 11.7886 3.52925 11.5283L7.05757 7.99995L3.52925 4.47163C3.2689 4.21128 3.2689 3.78862 3.52925 3.52827C3.7896 3.26792 4.21226 3.26792 4.47261 3.52827L8.00093 7.05659L11.5292 3.52827Z" fill="currentColor"></path>
-                                      </svg>
+                      {villa.gallery.map((src) => (
+                        <div key={src} role="listitem" className="lot-media-cms_list_item w-dyn-item w-dyn-repeater-item">
+                          <div hover-pin-trigger="" hover-media-item="" className="lot-media-item theme_on-color">
+                            <div className="img-w h-auto">
+                              <img src={src} loading="eager" data-lightbox="" alt={galleryAlt(villa, src)} sizes="100vw" srcSet={srcset(src)} className="img h-auto" />
+                              <div hover="btn" className="lot-media-item_btn">
+                                <div hover-pin="" className="pin">
+                                  <div hover="bg" className="pin_dot">
+                                    <div hover="ico" className="ico-16 theme_on-light">
+                                      <div className="ico w-embed">
+                                        <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M11.5292 3.52827C11.7896 3.26792 12.2123 3.26792 12.4726 3.52827C12.733 3.78862 12.733 4.21128 12.4726 4.47163L8.94429 7.99995L12.4726 11.5283C12.733 11.7886 12.733 12.2113 12.4726 12.4716C12.2123 12.732 11.7896 12.732 11.5292 12.4716L8.00093 8.94331L4.47261 12.4716C4.21226 12.732 3.7896 12.732 3.52925 12.4716C3.2689 12.2113 3.2689 11.7886 3.52925 11.5283L7.05757 7.99995L3.52925 4.47163C3.2689 4.21128 3.2689 3.78862 3.52925 3.52827C3.7896 3.26792 4.21226 3.26792 4.47261 3.52827L8.00093 7.05659L11.5292 3.52827Z" fill="currentColor"></path>
+                                        </svg>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div className="pin_bg">
-                                  <div data-pin-pulse="" className="pin_bg_pulse"></div>
-                                  <div data-pin-pulse="" className="pin_bg_pulse"></div>
+                                  <div className="pin_bg">
+                                    <div data-pin-pulse="" className="pin_bg_pulse"></div>
+                                    <div data-pin-pulse="" className="pin_bg_pulse"></div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div role="listitem" className="lot-media-cms_list_item w-dyn-item w-dyn-repeater-item">
-                        <div hover-pin-trigger="" hover-media-item="" className="lot-media-item theme_on-color">
-                          <div className="img-w h-auto">
-                            <img src="/images/era-residence-ground-floor.webp" loading="eager" data-lightbox="" alt="" sizes="100vw" srcSet="/images/era-residence-ground-floor-p-500.webp 500w, /images/era-residence-ground-floor-p-800.webp 800w, /images/era-residence-ground-floor-p-1080.webp 1080w, /images/era-residence-ground-floor-p-1600.webp 1600w, /images/era-residence-ground-floor.webp 1920w" className="img h-auto" />
-                            <div hover="btn" className="lot-media-item_btn">
-                              <div hover-pin="" className="pin">
-                                <div hover="bg" className="pin_dot">
-                                  <div hover="ico" className="ico-16 theme_on-light">
-                                    <div className="ico w-embed">
-                                      <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.5292 3.52827C11.7896 3.26792 12.2123 3.26792 12.4726 3.52827C12.733 3.78862 12.733 4.21128 12.4726 4.47163L8.94429 7.99995L12.4726 11.5283C12.733 11.7886 12.733 12.2113 12.4726 12.4716C12.2123 12.732 11.7896 12.732 11.5292 12.4716L8.00093 8.94331L4.47261 12.4716C4.21226 12.732 3.7896 12.732 3.52925 12.4716C3.2689 12.2113 3.2689 11.7886 3.52925 11.5283L7.05757 7.99995L3.52925 4.47163C3.2689 4.21128 3.2689 3.78862 3.52925 3.52827C3.7896 3.26792 4.21226 3.26792 4.47261 3.52827L8.00093 7.05659L11.5292 3.52827Z" fill="currentColor"></path>
-                                      </svg>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="pin_bg">
-                                  <div data-pin-pulse="" className="pin_bg_pulse"></div>
-                                  <div data-pin-pulse="" className="pin_bg_pulse"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div role="listitem" className="lot-media-cms_list_item w-dyn-item w-dyn-repeater-item">
-                        <div hover-pin-trigger="" hover-media-item="" className="lot-media-item theme_on-color">
-                          <div className="img-w h-auto">
-                            <img src="/images/6a1e3e0cf0513cfd006653b6_era-residence-kitchen.webp" loading="eager" data-lightbox="" alt="" sizes="100vw" srcSet="/images/6a1e3e0cf0513cfd006653b6_era-residence-kitchen-p-500.webp 500w, /images/6a1e3e0cf0513cfd006653b6_era-residence-kitchen-p-800.webp 800w, /images/6a1e3e0cf0513cfd006653b6_era-residence-kitchen-p-1080.webp 1080w, /images/6a1e3e0cf0513cfd006653b6_era-residence-kitchen-p-1600.webp 1600w, /images/6a1e3e0cf0513cfd006653b6_era-residence-kitchen.webp 1920w" className="img h-auto" />
-                            <div hover="btn" className="lot-media-item_btn">
-                              <div hover-pin="" className="pin">
-                                <div hover="bg" className="pin_dot">
-                                  <div hover="ico" className="ico-16 theme_on-light">
-                                    <div className="ico w-embed">
-                                      <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.5292 3.52827C11.7896 3.26792 12.2123 3.26792 12.4726 3.52827C12.733 3.78862 12.733 4.21128 12.4726 4.47163L8.94429 7.99995L12.4726 11.5283C12.733 11.7886 12.733 12.2113 12.4726 12.4716C12.2123 12.732 11.7896 12.732 11.5292 12.4716L8.00093 8.94331L4.47261 12.4716C4.21226 12.732 3.7896 12.732 3.52925 12.4716C3.2689 12.2113 3.2689 11.7886 3.52925 11.5283L7.05757 7.99995L3.52925 4.47163C3.2689 4.21128 3.2689 3.78862 3.52925 3.52827C3.7896 3.26792 4.21226 3.26792 4.47261 3.52827L8.00093 7.05659L11.5292 3.52827Z" fill="currentColor"></path>
-                                      </svg>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="pin_bg">
-                                  <div data-pin-pulse="" className="pin_bg_pulse"></div>
-                                  <div data-pin-pulse="" className="pin_bg_pulse"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                     <div className="cms_empty-none w-dyn-hide w-dyn-empty"></div>
                   </div>

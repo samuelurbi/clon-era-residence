@@ -3,7 +3,9 @@ import { ComingSoonMain } from '@/components/pages/ComingSoonMain';
 
 export const metadata: Metadata = {
   title: 'Coming soon',
-  description: 'The next selection of ERA Residence villas will be released shortly.',
+  description:
+    'The next selection of Bahía Mar villas in Las Terrenas, Samaná, will be ' +
+    'released shortly. Contact us to find out which villas are still available.',
 };
 
 /**

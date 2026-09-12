@@ -11,8 +11,10 @@
  * el aspecto (ver styles/webflow.css y components.css). Sólo cambian
  * textos, src/srcSet/alt y href. Teléfono, correo, redes y dirección de
  * la oficina de ventas son placeholders (ver BRIEF.md): el cliente no ha
- * facilitado ninguno. El horario tampoco se conoce, por eso el pin dice
- * «by appointment» y no unas horas inventadas.
+ * facilitado ninguno. El horario tampoco se conoce, así que el pin sobre
+ * la imagen (el pórtico de entrada, «PÓRTICO INGRESO 01» de 00. AMENIDADES)
+ * no inventa horas ni política de visitas: sólo dice «Bahía Mar · Las
+ * Terrenas, Samaná», que es lo que muestra la foto.
  */
 
 export function ContactMain() {
@@ -58,13 +60,13 @@ export function ContactMain() {
                       <div data-prevent-flicker="" data-scroll-reveal="ctn" role="listitem" className="loc-cms_list_item w-dyn-item">
                         <h3 className="l1 reg a-center">Sales office</h3>
                         <div className="u-4"></div>
-                        <a hover-nav-item="" aria-label="Las Terrenas, Samaná, Dominican Republic (address TBC)" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Las Terrenas, Samaná (address TBC)" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Las Terrenas, Samaná, Dominican Republic (address TBC)</div>
+                              <div hover="text" className="l1">Las Terrenas, Samaná (address TBC)</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Las Terrenas, Samaná, Dominican Republic (address TBC)</div>
+                              <div hover="text" className="l1">Las Terrenas, Samaná (address TBC)</div>
                             </div>
                           </div>
                         </a>
@@ -159,12 +161,12 @@ export function ContactMain() {
                 </div>
                 <div data-parallax="w" data-scroll-reveal="ctn" data-prevent-flicker="" className="contact-s_map">
                   <div data-parallax="img" className="contact-s_map_c">
-                    <img src="/images/bahiamar-entrance-1.webp" loading="eager" sizes="100vw" srcSet="/images/bahiamar-entrance-1-p-500.webp 500w, /images/bahiamar-entrance-1-p-800.webp 800w, /images/bahiamar-entrance-1-p-1080.webp 1080w, /images/bahiamar-entrance-1-p-1600.webp 1600w, /images/bahiamar-entrance-1-p-2000.webp 2000w, /images/bahiamar-entrance-1.webp 2350w" alt="The entrance to Bahía Mar: two stone arches over the access road, a wave sculpture between them and the sea beyond." className="img h-auto" />
+                    <img src="/images/bahiamar-entrance-1.webp" loading="eager" sizes="100vw" srcSet="/images/bahiamar-entrance-1-p-500.webp 500w, /images/bahiamar-entrance-1-p-800.webp 800w, /images/bahiamar-entrance-1-p-1080.webp 1080w, /images/bahiamar-entrance-1-p-1600.webp 1600w, /images/bahiamar-entrance-1-p-2000.webp 2000w, /images/bahiamar-entrance-1.webp 2350w" alt="The entrance to Bahía Mar: two arches over the access road, a whale-tail sculpture between them, tropical vegetation on both sides and the sea beyond." className="img h-auto" />
                     <div className="contact-s_map_pin">
                       <div className="contact-s_map_pin_c theme_on-dark">
                         <div className="contact-s_map_pin_info">
-                          <div className="l2"><strong>sales office</strong></div>
-                          <div className="l2 reg">Visits by appointment</div>
+                          <div className="l2"><strong>Bahía Mar</strong></div>
+                          <div className="l2 reg">Las Terrenas, Samaná</div>
                         </div>
                         <div data-modal-close="menu" aria-label="Bahía Mar" className="logo_symbol ico-28">
                           <div className="logo w-embed">
