@@ -12,12 +12,7 @@
 
 import { AmenitiesIntro, Arch, Architecture, Concept, Developer, Hero, Location, Pillars, PillarsMedia, SpaceToLive, VillasPreview } from '@/components-home';
 import { Breadcrumbs, ScrollRail } from '@/components-layout';
-import { Amenities, BookACall, ComingSoonMain, ContactMain, SeaViewsCta } from '@/components-pages';
-import { LightboxModal } from '@/components/villas/LightboxModal';
-import { RelatedVillas } from '@/components/villas/RelatedVillas';
-import { VillaArch } from '@/components/villas/VillaArch';
-import { VillaDetail } from '@/components/villas/VillaDetail';
-import { VillasListing } from '@/components/villas/VillasListing';
+import { Amenities, BookACall, ComingSoonMain, ContactMain, LightboxModal, RelatedVillas, SeaViewsCta, VillaArch, VillaDetail, VillasListing } from '@/components-pages';
 import { CTA_IMAGES, villaBySlug, villaCards, villas } from '@/data';
 import { usePageMeta } from '@/shims';
 import { useParams } from 'react-router-dom';

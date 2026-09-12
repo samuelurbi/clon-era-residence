@@ -59,12 +59,16 @@ const GRUPOS = [
    *
    * El corte es por zonas del sitio y es seguro: ningún componente
    * importa a otro de un bloque distinto (comprobado en el grafo — la
-   * única importación entre componentes es ApartmentCard, y se queda
-   * dentro de su propio bloque).
+   * única importación entre componentes es VillaCard, y se queda
+   * dentro de su propio bloque). `components/villas` sustituyó a
+   * `components/apartments` en Bahía Mar: si se añade una carpeta nueva
+   * de componentes hay que darla de alta aquí, o pages.tsx saldrá
+   * importando rutas que en Vibe no existen (visto el 12-09-2026: el
+   * listado de villas no se montaba).
    */
   { nombre: 'comp-layout', dirs: ['components/layout', 'components/providers'], destino: 'src/components-layout.tsx', alias: '@/components-layout' },
   { nombre: 'comp-home', dirs: ['components/home'], destino: 'src/components-home.tsx', alias: '@/components-home' },
-  { nombre: 'comp-pages', dirs: ['components/apartments', 'components/sections', 'components/pages'], destino: 'src/components-pages.tsx', alias: '@/components-pages' },
+  { nombre: 'comp-pages', dirs: ['components/villas', 'components/sections', 'components/pages'], destino: 'src/components-pages.tsx', alias: '@/components-pages' },
   { nombre: 'pages', dirs: ['pages'], destino: 'src/pages.tsx', alias: '@/pages' },
 ];
 
@@ -76,7 +80,7 @@ const REESCRITURAS = [
   // El orden importa: lo específico antes que lo general.
   [/^@\/components\/(layout|providers)\/.+$/, '@/components-layout'],
   [/^@\/components\/home\/.+$/, '@/components-home'],
-  [/^@\/components\/(apartments|sections|pages)\/.+$/, '@/components-pages'],
+  [/^@\/components\/(villas|sections|pages)\/.+$/, '@/components-pages'],
   [/^@\/pages\/.+$/, '@/pages'],
 ];
 
@@ -284,9 +288,15 @@ for (const grupo of GRUPOS) {
   for (const f of archivos) {
     const txt = readFileSync(f, 'utf8');
     const d = new Set();
-    for (const m of txt.matchAll(/from '\.\/([^']+)'/g)) {
+    /*
+     * Dependencias DENTRO del grupo, escritas como `./x` o con el alias
+     * (`@/data/x`): data/villa-cards.ts deriva de `@/data/villas`, y si no
+     * se detecta, `villas` queda concatenado después de quien lo usa y el
+     * módulo revienta al evaluarse («used before its declaration»).
+     */
+    for (const m of txt.matchAll(/from '(?:\.\/|@\/[^']*\/)([^'/]+)'/g)) {
       const objetivo = porNombre.get(m[1].replace(/\.tsx?$/, ''));
-      if (objetivo) d.add(objetivo);
+      if (objetivo && objetivo !== f) d.add(objetivo);
     }
     deps.set(f, d);
   }
