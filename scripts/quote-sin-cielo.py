@@ -12,9 +12,11 @@ entre fondo e imagen. Aquí se hace lo mismo con el render de Villa Cosón:
      cristales (encerrados por la carpintería) y las cortinas no lo tocan.
   3. Las palmeras de arriba a la izquierda salían cortadas por el borde
      del render (y con huecos de cielo entre las frondas): se quitan con un
-     corte en ángulo que sigue la línea del tejado —de (0, 366) al vértice
-     (1066, 165) a 2350 px, unos 13 px por dentro de la fascia para que no
-     quede ningún resto—. Las palmeras de la derecha se conservan; sus
+     corte en ángulo que sigue la línea del tejado: recta ajustada por
+     mínimos cuadrados sobre el tramo sin palmeras (y = 335 − 0,177·x a
+     2350 px; fascia de 20 px), trazada 3 px por dentro de la fascia —de
+     (0, 343) al vértice (1050, 152); el extremo izquierdo va 5 px más adentro porque el borde real se curva un poco hacia arriba—: invisible sobre 20 px de fascia y
+     sin pelusa de frondas por encima. Las palmeras de la derecha se conservan; sus
      huecos de cielo (componentes azules pequeñas de la mitad superior) se
      vacían también.
   4. El cielo se encoge 1 px para comerse el halo azul de las frondas y el
@@ -65,7 +67,7 @@ def main():
     # corte en ángulo por encima del tejado: fuera las palmeras cortadas
     W, H = im.size
     poli = Image.new('L', (W, H), 0)
-    ImageDraw.Draw(poli).polygon([(0, 0), (0, round(366 * W / 2350)), (round(1066 * W / 2350), round(165 * W / 2350)), (round(1066 * W / 2350), 0)], fill=255)
+    ImageDraw.Draw(poli).polygon([(0, 0), (0, round(343 * W / 2350)), (round(1050 * W / 2350), round(152 * W / 2350)), (round(1050 * W / 2350), 0)], fill=255)
     cielo |= np.asarray(poli) > 0
     cielo = ndimage.binary_dilation(cielo, iterations=1)   # come el halo azul de los bordes
     alfa = ndimage.gaussian_filter(np.where(cielo, 0.0, 255.0), 1.2)
