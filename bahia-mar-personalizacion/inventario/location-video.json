@@ -13,5 +13,10 @@
     "destino": "public/images/bahiamar-aerial.webp",
     "origen": "(ya existente; procesada por un agente anterior — ver su inventario)",
     "uso": "Home > sección Ubicación: póster del <video> aéreo (fallback mientras carga o si el vídeo no se reproduce). Su proporción 1920x2160 es la que fija el hueco en styles/theme.css. Capturas de comprobación: scratchpad/capturas/location-video-1440.png, -1440-b.png, -390.png, -390-b.png."
+  },
+  {
+    "destino": "/images/bahiamar-aerial-poster.webp",
+    "origen": "archivos-extra-whatsapp/VIDEO PORTADA.mp4 (último fotograma)",
+    "uso": "Home › Location › póster del vídeo aéreo (lote ya dibujado), 1920×1080 + variantes -p-500/800/1080/1600."
   }
 ]

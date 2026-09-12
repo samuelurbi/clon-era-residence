@@ -32,17 +32,29 @@ que no pueda pasar por real.
   dice «Las Terrenas, Samaná / Bahía Mar Residences & Beach Resort». Si el
   cliente quiere acreditar a Landmass Capital / Estudio Dolla, es decisión suya.
 - **Contenedor GTM.** El de ERA se desactivó; falta el propio.
-- **Vídeo aéreo.** Colocado el de WhatsApp (832×464) como fondo tras las nubes
-  de Location, con la aérea del brochure de póster. El cliente dijo que
-  enviará una versión en mejor calidad. El reescalado por IA se cotizó en
-  Magnific a 3.497 créditos (un 41 % del saldo) y NO se hizo: a esa
-  resolución se ve blando a pantalla completa.
 - **Planos de las villas.** Llevan los rótulos en español horneados en la
   imagen (RECIBIDOR, COCINA, PISCINA, PICUZZI…); el resto de la web está en
   inglés. Pedir al estudio una exportación en inglés o sin rótulos.
-- **Póster del vídeo aéreo.** La aérea del brochure (playa de Cosón) es otra
-  escena distinta del vídeo (colinas con el lote): en conexiones lentas se ve
-  el cambio. Si llega el vídeo en calidad, extraer de él un fotograma de póster.
+- **Pines del hero.** Los tres puntos interactivos sobre la imagen (abren
+  los tips flotantes) conservan las posiciones de ERA, pensadas para una sola
+  foto; ahora el fondo rota entre cinco villas y caen donde caen. Decidir si
+  se quitan o se ubican por villa.
+
+## Resuelto en la segunda pasada del hero (12-09-2026)
+
+- **Vídeo aéreo en buena calidad.** El cliente envió `VIDEO PORTADA.mp4`
+  (2560×1440, 60 fps); se sirve a 1920×1080 / 30 fps (webm + mp4) con su
+  último fotograma de póster. El de WhatsApp (832×464) queda como referencia
+  en `archivos-extra-whatsapp/`. No hizo falta reescalar por IA.
+- **Hero como el de ERA.** Sin versión día/noche. Las cinco villas pasan de
+  fondo en bucle con la cortina del slider de los pilares
+  (`lib/animations/hero-slider.ts`), y la línea bajo el titular lleva los
+  cinco nombres con el activo iluminado. Las imágenes
+  (`bahiamar-hero-<villa>.webp`, 1920×1728) se expandieron hacia arriba con
+  Magnific (5 × 50 créditos, más un duplicado por un timeout: 300 en total)
+  para tener el 42 % de cielo de la foto de ERA: así al cargar sólo hay cielo
+  detrás del titular y la villa aparece al hacer scroll. `bahiamar-hero-day`
+  y `-night` ya no se usan.
 - **Nombre en el pie.** Conviven «Bahía Mar.» (línea de copyright) y «Bahía
   Mar Residences & Beach Resort» (crédito). Decisión: nombre legal en el
   crédito, marca corta en el resto.

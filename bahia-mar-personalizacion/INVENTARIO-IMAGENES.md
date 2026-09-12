@@ -9,7 +9,7 @@ Todas las imágenes están convertidas a WebP (calidad 82) con variantes
 conservan su proporción; los que van en tarjetas o huecos concretos se
 recortan a la proporción del hueco original.
 
-Total: 94 elementos.
+Total: 100 elementos.
 
 
 ## Bloque CTA «Sea views» (todas las páginas)
@@ -120,13 +120,19 @@ Total: 94 elementos.
 
 | En la web | Origen (material del cliente) | Uso |
 |---|---|---|
+| `/images/bahiamar-hero-ambar.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png | Home › Hero › fondo del slider de villas (Villa Ámbar). Recorte 16:9 del render frontal, expandido hacia arriba con Magnific (images_expand 1:1, 50 créditos) hasta la proporción 10:9 de la imagen de ERA (1920×1728) con ~42 % de cielo; el cielo liso se estira y la villa se compone a plena resolución desde el original. Variantes -p-500/800/1080/1600. |
+| `/images/bahiamar-hero-carolina.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R1_3.png | Home › Hero › fondo del slider de villas (Villa Carolina). Recorte 16:9 del render frontal, expandido hacia arriba con Magnific (images_expand 1:1, 50 créditos) hasta la proporción 10:9 de la imagen de ERA (1920×1728) con ~42 % de cielo; el cielo liso se estira y la villa se compone a plena resolución desde el original. Variantes -p-500/800/1080/1600. |
+| `/images/bahiamar-hero-coson.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R1_1.png | Home › Hero › fondo del slider de villas (Villa Cosón). Recorte 16:9 del render frontal, expandido hacia arriba con Magnific (images_expand 1:1, 50 créditos) hasta la proporción 10:9 de la imagen de ERA (1920×1728) con ~42 % de cielo; el cielo liso se estira y la villa se compone a plena resolución desde el original. Variantes -p-500/800/1080/1600. |
 | `/images/bahiamar-hero-day.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R1_1.png | Home › Hero, versión de día (misma toma que la tarjeta de Villa Cosón). |
+| `/images/bahiamar-hero-helecho.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png | Home › Hero › fondo del slider de villas (Villa Helecho). Recorte 16:9 del render frontal, expandido hacia arriba con Magnific (images_expand 1:1, 50 créditos) hasta la proporción 10:9 de la imagen de ERA (1920×1728) con ~42 % de cielo; el cielo liso se estira y la villa se compone a plena resolución desde el original. Variantes -p-500/800/1080/1600. |
 | `/images/bahiamar-hero-night.webp` | Derivada de R1_1.png con Magnific (relight nocturno + escala 2x); sin fichero del cliente | Home › Hero, versión de noche (efecto día/noche del titular). |
+| `/images/bahiamar-hero-remanso.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png | Home › Hero › fondo del slider de villas (Villa Remanso). Recorte 16:9 del render frontal, expandido hacia arriba con Magnific (images_expand 1:1, 50 créditos) hasta la proporción 10:9 de la imagen de ERA (1920×1728) con ~42 % de cielo; el cielo liso se estira y la villa se compone a plena resolución desde el original. Variantes -p-500/800/1080/1600. |
 
 ## Home › Location
 
 | En la web | Origen (material del cliente) | Uso |
 |---|---|---|
+| `/images/bahiamar-aerial-poster.webp` | archivos-extra-whatsapp/VIDEO PORTADA.mp4 (último fotograma) | Home › Location › póster del vídeo aéreo (lote ya dibujado), 1920×1080 + variantes -p-500/800/1080/1600. |
 | `/images/bahiamar-aerial.webp` | BAHIA MAR/BOCHURE PAGINAS_ (aérea de la bahía del brochure) | Home › Location: póster/respaldo del vídeo aéreo. |
 | `public/images/bahiamar-aerial.webp` | (ya existente; procesada por un agente anterior — ver su inventario) | Home > sección Ubicación: póster del <video> aéreo (fallback mientras carga o si el vídeo no se reproduce). Su proporción 1920x2160 es la que fija el hueco en styles/theme.css. Capturas de comprobación: scratchpad/capturas/location-video-1440.png, -1440-b.png, -390.png, -390-b.png. |
 | `public/videos/bahiamar-aerial.mp4` | archivos-extra-whatsapp/WhatsApp Video 2026-09-11 at 9.15.57 AM.mp4 | Home > sección Ubicación (components/home/Location.tsx): mismo vídeo, <source> H.264 de respaldo (832x464, 30 fps, crf 23, yuv420p, sin audio, faststart, 1,2 MB). |

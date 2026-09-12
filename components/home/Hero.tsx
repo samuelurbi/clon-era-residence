@@ -5,15 +5,38 @@
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
- * Las URLs del CDN ya están reescritas a /public.
+ *
+ * Diferencias con ERA, pedidas por el cliente:
+ *
+ *  - El fondo no es una foto con versión de día y de noche, sino las CINCO
+ *    villas pasando en bucle con el mismo barrido en cortina del slider de
+ *    los pilares (lib/animations/hero-slider.ts reutiliza `animateSlide`).
+ *    Las capas se apilan en el hueco de la antigua «day»: la primera es
+ *    `relative` y da la altura, el resto `absolute` (regla en theme.css).
+ *  - Las imágenes (public/images/bahiamar-hero-<villa>.webp, 1920×1728)
+ *    tienen la proporción 10:9 de la de ERA: los renders frontales se
+ *    expandieron hacia arriba con Magnific para que, como en el original,
+ *    al principio sólo se vea cielo detrás del titular y la villa aparezca
+ *    al hacer scroll (coreografía en lib/animations/home-flow.ts).
+ *  - Donde ERA ponía «A place · by day / by night · to return to» van los
+ *    nombres de las cinco villas; el activo se ilumina al ritmo del fondo
+ *    y al pulsar uno se salta a su villa.
  */
+
+import { villas } from '@/data/villas';
+
+/** Ancho completo + variantes de los heros del slider (1920 de ancho). */
+function heroSrcset(slug: string): string {
+  const base = `/images/bahiamar-hero-${slug}`;
+  return [500, 800, 1080, 1600].map((w) => `${base}-p-${w}.webp ${w}w`).concat(`${base}.webp 1920w`).join(', ');
+}
 
 export function Hero() {
   return (
     <section id="hero" className="section clip theme_on-color">
       <div className="container">
         <div className="hero-scroll-area">
-          <div data-tabs-hero="" className="hero-w">
+          <div className="hero-w">
             <div className="hero-s">
               <div className="u-48"></div>
               <div className="u-272 b-mob"></div>
@@ -32,23 +55,24 @@ export function Hero() {
               <div className="u-48"></div>
               <div className="grid">
                 <h3 className="hero-s_title h5">
-                  <span data-scroll-reveal="h" data-prevent-flicker="" className="a-left"><div className="span">A place</div></span>
-                  <div data-prevent-flicker="" data-scroll-reveal="ctn" className="hero-s_tabs">
-                    <a hover-tab="" aria-label="by day" hover-nav-item-l2="" data-tab-trigger="day" href="#" className="nav-item w-inline-block">
-                      <div className="nav-item_label">
-                        <div hover="text" className="nav-item_label_text"><div className="l2">by day</div></div>
-                        <div hover="text" className="nav-item_label_text is-2"><div className="l2">by day</div></div>
-                      </div>
-                    </a>
-                    <div className="hero-s_tabs_divider"></div>
-                    <a hover-tab="" aria-label="by night" hover-nav-item-l2="" data-tab-trigger="night" href="#" className="nav-item w-inline-block">
-                      <div className="nav-item_label">
-                        <div hover="text" className="nav-item_label_text"><div className="l2">by night</div></div>
-                        <div hover="text" className="nav-item_label_text is-2"><div className="l2">by night</div></div>
-                      </div>
-                    </a>
+                  <div data-prevent-flicker="" data-scroll-reveal="ctn" data-hero-villas="" className="hero-s_tabs">
+                    {villas.map((villa, i) => (
+                      <a
+                        key={villa.slug}
+                        hover-tab=""
+                        aria-label={villa.name}
+                        hover-nav-item-l2=""
+                        data-hero-villa={villa.slug}
+                        href={`/villas/${villa.slug}`}
+                        className={`nav-item w-inline-block${i === 0 ? ' is-active' : ''}`}
+                      >
+                        <div className="nav-item_label">
+                          <div hover="text" className="nav-item_label_text"><div className="span">{villa.name.replace('Villa ', '')}</div></div>
+                          <div hover="text" className="nav-item_label_text is-2"><div className="span">{villa.name.replace('Villa ', '')}</div></div>
+                        </div>
+                      </a>
+                    ))}
                   </div>
-                  <span data-scroll-reveal="h" data-prevent-flicker="" className="a-right"><div className="span">to return to</div></span>
                 </h3>
               </div>
             </div>
@@ -113,15 +137,19 @@ export function Hero() {
                       </div>
                     </div>
                   </div>
-                  <div data-tab-content="day" className="hero-w_bg_master_img_day">
-                    <div data-tab="img" className="img-w h-auto">
-                      <img loading="eager" src="/images/bahiamar-hero-day.webp" alt="Villa Cosón at Bahía Mar, in daylight: a two-level tropical villa with infinity pool and palm trees" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-hero-day-p-500.webp 500w, /images/bahiamar-hero-day-p-800.webp 800w, /images/bahiamar-hero-day-p-1080.webp 1080w, /images/bahiamar-hero-day-p-1600.webp 1600w, /images/bahiamar-hero-day.webp 1920w" className="img h-auto hero-img" />
-                    </div>
-                  </div>
-                  <div data-tab-content="night" className="hero-w_bg_master_img_night">
-                    <div data-tab="img" className="img-w h-auto">
-                      <img loading="eager" src="/images/bahiamar-hero-night.webp" alt="Villa Cosón at Bahía Mar, at night: a two-level tropical villa with infinity pool and palm trees" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-hero-night-p-500.webp 500w, /images/bahiamar-hero-night-p-800.webp 800w, /images/bahiamar-hero-night-p-1080.webp 1080w, /images/bahiamar-hero-night-p-1600.webp 1600w, /images/bahiamar-hero-night.webp 1920w" className="img h-auto hero-img" />
-                    </div>
+                  <div data-hero-slider="" className="hero-w_bg_master_img_day">
+                    {villas.map((villa, i) => (
+                      <div key={villa.slug} data-hero-slide={villa.slug} className="img-w h-auto">
+                        <img
+                          loading={i === 0 ? 'eager' : 'lazy'}
+                          src={`/images/bahiamar-hero-${villa.slug}.webp`}
+                          alt={`${villa.name} at Bahía Mar: front view of the villa, its private pool and the palm trees under a clear sky`}
+                          sizes="(max-width: 1920px) 100vw, 1920px"
+                          srcSet={heroSrcset(villa.slug)}
+                          className="img h-auto hero-img"
+                        />
+                      </div>
+                    ))}
                   </div>
                   <div className="img-over-grad from-top _100vh"></div>
                   <div className="img-over-grad from-bot bot _6x"></div>

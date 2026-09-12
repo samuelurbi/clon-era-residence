@@ -13,6 +13,11 @@
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
  * El <video> hereda las clases del <img> al que sustituye; lo que el <img>
  * recibía por etiqueta (object-fit) se lo da styles/theme.css.
+ *
+ * Vídeo: sobrevuelo de la finca con el lote del master plan dibujándose,
+ * enviado por el cliente en 2560×1440 (sustituye al de WhatsApp de 832×464);
+ * servido a 1920×1080 / 30 fps en webm y mp4. Póster: su último fotograma,
+ * con el lote ya dibujado, para que no haya salto de escena al arrancar.
  */
 
 export function Location() {
@@ -127,7 +132,7 @@ export function Location() {
             <div className="loc-w_bg_img">
               <div className="pins-cms w-dyn-list"><div className="cms_empty-none w-dyn-empty"></div></div>
               <div className="img-w h-auto">
-                <video muted playsInline loop autoPlay disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="/images/bahiamar-aerial.webp" aria-label="Aerial flyover of the Bahía Mar hills above Las Terrenas, with the master plan outlined over the terrain." className="img h-auto">
+                <video muted playsInline loop autoPlay disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="/images/bahiamar-aerial-poster.webp" aria-label="Aerial flyover of the Bahía Mar hills above Las Terrenas, with the master plan outlined over the terrain." className="img h-auto">
                   <source src="/videos/bahiamar-aerial.webm" type="video/webm" />
                   <source src="/videos/bahiamar-aerial.mp4" type="video/mp4" />
                 </video>
