@@ -2,11 +2,18 @@
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * marcado de ERA Residence (home.html), pero al personalizarlo para Bahía
+ * Mar pasa a mantenerse a mano. Regenerarlo lo devolvería a los textos de
+ * Estepona.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
  * Las URLs del CDN ya están reescritas a /public.
+ *
+ * Los tres textos salen de los hechos del brief (materiales, terrazas,
+ * villas independientes); los atributos `floating-tip="…"` son los ids
+ * que disparan los pines del hero (Hero.tsx) y NO se cambian.
  */
 
 export function FloatingTips() {
@@ -18,7 +25,7 @@ export function FloatingTips() {
             <div className="floating-tip-card_t"><h1 className="h5">Crafted to Endure</h1></div>
             <div className="floating-tip-card_b">
               <p className="p1">
-                Natural stone façades were selected for their timeless appearance, durability and ease of maintenance, allowing the architecture to age beautifully over time
+                Bamboo floors, chukum wall finishes, stone and natural timber, with solar panels on every villa — materials chosen to belong to the landscape and settle into it over time.
               </p>
             </div>
             <div className="card_decor">
@@ -72,7 +79,7 @@ export function FloatingTips() {
             <div className="floating-tip-card_t"><h1 className="h5">Light & Flow</h1></div>
             <div className="floating-tip-card_b">
               <p className="p1">
-                Terraces, rooftop solariums and expansive openings maximize natural light while creating a seamless indoor outdoor lifestyle.
+                Terraces, solariums, pergola-shaded porches and wide openings draw in the light and let the day flow from inside to out.
               </p>
             </div>
             <div className="card_decor">
@@ -126,7 +133,7 @@ export function FloatingTips() {
             <div className="floating-tip-card_t"><h1 className="h5">Your Private Sanctuary</h1></div>
             <div className="floating-tip-card_b">
               <p className="p1">
-                Instead of corridors, walking paths connect the apartments — making Era Residence feel closer to a group of private homes than a standard apartment building.
+                Every villa stands apart, with its own pool, jacuzzi, fire pit and terraces set into the vegetation — closer to a private home in the hills than a room in a resort.
               </p>
             </div>
             <div className="card_decor">

@@ -20,7 +20,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { Animations, BookCallModal, CookieNotice, FloatingTips, Header, LandscapeCover, MasterPreloader, MenuModal, PageTransitions, Preloader, SmoothScroll } from '@/components-layout';
-import { ApartmentPage, ApartmentsPage, ComingSoonPage, ContactPage, HomePage, NotFoundPage } from '@/pages';
+import { ComingSoonPage, ContactPage, HomePage, NotFoundPage, VillaPage, VillasPage } from '@/pages';
 
 
 
@@ -52,8 +52,8 @@ export function App() {
         <SmoothScroll>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/apartments" element={<ApartmentsPage />} />
-            <Route path="/apartments/:code" element={<ApartmentPage />} />
+            <Route path="/villas" element={<VillasPage />} />
+            <Route path="/villas/:slug" element={<VillaPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/coming-soon" element={<ComingSoonPage />} />
             <Route path="*" element={<NotFoundPage />} />

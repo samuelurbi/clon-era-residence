@@ -38,10 +38,18 @@ import { fileURLToPath } from 'node:url';
 
 const AQUI = dirname(fileURLToPath(import.meta.url));
 
-/* Comprobados contra las URLs del bundle que está subido. */
+/*
+ * Bahía Mar: carpeta NUEVA en el mismo host, sin el `%5C` de ERA. Ahí se
+ * descomprime `bahia-mar-personalizacion/bahiamar-assets.zip` (lo genera
+ * scripts/vibe-assets-zip.py con `/` correctos), de modo que quedan
+ * images/, videos/, documents/ e icons/ colgando de esta URL. Si el
+ * cliente la sube a otro sitio, se cambia aquí y en ningún otro lado.
+ *
+ * ERA seguía en `…/urbatrix/era` con ASSET_SEP '%5C' (ver vibe-export.mjs).
+ */
 const PRODUCCION = {
-  ASSET_BASE: 'https://puntacanadinnerinthesky.com/urbatrix/era',
-  ASSET_SEP: '%5C',
+  ASSET_BASE: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar',
+  ASSET_SEP: '/',
 };
 
 const local = process.argv.includes('--local');

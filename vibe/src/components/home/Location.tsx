@@ -2,11 +2,24 @@
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * Ubicación: Las Terrenas, Samaná. Tras las tres capas de nubes, el fondo a
+ * sangre es el vídeo aéreo de la finca (sobrevuelo de las lomas con el
+ * perímetro del master plan dibujado), con la aérea fija como póster.
+ *
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * home.html de ERA Residence, pero al personalizarlo para Bahía Mar pasa a
+ * mantenerse a mano. Regenerarlo desharía este trabajo (volvería el master
+ * plan de Estepona como <img>).
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
- * Las URLs del CDN ya están reescritas a /public.
+ * El <video> hereda las clases del <img> al que sustituye; lo que el <img>
+ * recibía por etiqueta (object-fit) se lo da styles/theme.css.
+ *
+ * Vídeo: sobrevuelo de la finca con el lote del master plan dibujándose,
+ * enviado por el cliente en 2560×1440 (sustituye al de WhatsApp de 832×464);
+ * servido a 1920×1080 / 30 fps en webm y mp4. Póster: su último fotograma,
+ * con el lote ya dibujado, para que no haya salto de escena al arrancar.
  */
 
 export function Location() {
@@ -21,40 +34,18 @@ export function Location() {
               <div data-marquee-css="track" className="marquee_track">
                 <div data-marquee-css="list" className="marquee_list">
                   <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33.avif" loading="eager" sizes="(max-width: 2146px) 100vw, 2146px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33-p-500.avif 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33.avif 2146w" alt="" className="clouds is-33" />
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33.avif" loading="eager" sizes="(max-width: 2146px) 100vw, 2146px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33-p-500.avif 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33.avif 2146w" alt="" className="clouds is-33" />
                   </div>
                   <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33.avif" loading="eager" sizes="(max-width: 2146px) 100vw, 2146px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33-p-500.avif 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33.avif 2146w" alt="" className="clouds is-33" />
-                  </div>
-                </div>
-                <div data-marquee-css="list" className="marquee_list">
-                  <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33.avif" loading="eager" sizes="(max-width: 2146px) 100vw, 2146px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33-p-500.avif 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33.avif 2146w" alt="" className="clouds is-33" />
-                  </div>
-                  <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33.avif" loading="eager" sizes="(max-width: 2146px) 100vw, 2146px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33-p-500.avif 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_33.avif 2146w" alt="" className="clouds is-33" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="loc-w_clouds">
-            <div data-marquee-css="" className="marquee">
-              <div data-marquee-css="track" className="marquee_track">
-                <div data-marquee-css="list" className="marquee_list">
-                  <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_47.avif" loading="eager" alt="" className="clouds is-47" />
-                  </div>
-                  <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_47.avif" loading="eager" alt="" className="clouds is-47" />
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33.avif" loading="eager" sizes="(max-width: 2146px) 100vw, 2146px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33-p-500.avif 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33.avif 2146w" alt="" className="clouds is-33" />
                   </div>
                 </div>
                 <div data-marquee-css="list" className="marquee_list">
                   <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_47.avif" loading="eager" alt="" className="clouds is-47" />
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33.avif" loading="eager" sizes="(max-width: 2146px) 100vw, 2146px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33-p-500.avif 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33.avif 2146w" alt="" className="clouds is-33" />
                   </div>
                   <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_47.avif" loading="eager" alt="" className="clouds is-47" />
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33.avif" loading="eager" sizes="(max-width: 2146px) 100vw, 2146px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33-p-500.avif 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_33.avif 2146w" alt="" className="clouds is-33" />
                   </div>
                 </div>
               </div>
@@ -65,18 +56,40 @@ export function Location() {
               <div data-marquee-css="track" className="marquee_track">
                 <div data-marquee-css="list" className="marquee_list">
                   <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_02.avif" loading="eager" alt="" className="clouds is-02" />
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_47.avif" loading="eager" alt="" className="clouds is-47" />
                   </div>
                   <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_02.avif" loading="eager" alt="" className="clouds is-02" />
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_47.avif" loading="eager" alt="" className="clouds is-47" />
                   </div>
                 </div>
                 <div data-marquee-css="list" className="marquee_list">
                   <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_02.avif" loading="eager" alt="" className="clouds is-02" />
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_47.avif" loading="eager" alt="" className="clouds is-47" />
                   </div>
                   <div className="marquee_list_item">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_clouds_02.avif" loading="eager" alt="" className="clouds is-02" />
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_47.avif" loading="eager" alt="" className="clouds is-47" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="loc-w_clouds">
+            <div data-marquee-css="" className="marquee">
+              <div data-marquee-css="track" className="marquee_track">
+                <div data-marquee-css="list" className="marquee_list">
+                  <div className="marquee_list_item">
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_02.avif" loading="eager" alt="" className="clouds is-02" />
+                  </div>
+                  <div className="marquee_list_item">
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_02.avif" loading="eager" alt="" className="clouds is-02" />
+                  </div>
+                </div>
+                <div data-marquee-css="list" className="marquee_list">
+                  <div className="marquee_list_item">
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_02.avif" loading="eager" alt="" className="clouds is-02" />
+                  </div>
+                  <div className="marquee_list_item">
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/img_clouds_02.avif" loading="eager" alt="" className="clouds is-02" />
                   </div>
                 </div>
               </div>
@@ -87,11 +100,11 @@ export function Location() {
               <div className="loc-s_desc">
                 <div className="b-desk">
                   <div className="loc-s_desc_line"><div data-scroll-reveal="line" className="line-v"></div></div>
-                  <h3 data-scroll-reveal="p" className="l1">New Golden Mile, Estepona</h3>
+                  <h3 data-scroll-reveal="p" className="l1">Las Terrenas, Samaná</h3>
                   <div className="u-32"></div>
-                  <h4 data-scroll-reveal="p" className="p1">Costa del Sol</h4>
+                  <h4 data-scroll-reveal="p" className="p1">Samaná Peninsula</h4>
                   <div className="u-32"></div>
-                  <h5 data-scroll-reveal="p" className="p1">Spain</h5>
+                  <h5 data-scroll-reveal="p" className="p1">Dominican Republic</h5>
                 </div>
                 <div className="b-mob">
                   <div className="l1-list">
@@ -121,7 +134,10 @@ export function Location() {
             <div className="loc-w_bg_img">
               <div className="pins-cms w-dyn-list"><div className="cms_empty-none w-dyn-empty"></div></div>
               <div className="img-w h-auto">
-                <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-master-plan.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-master-plan-p-500.png 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-master-plan-p-800.png 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-master-plan-p-1080.png 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-master-plan.webp 1920w" alt="Coastal residential complex with pools, beachfront, roads, and distant mountains under clear blue sky." className="img h-auto" />
+                <video muted playsInline loop autoPlay disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-aerial-poster.webp" aria-label="Aerial flyover of the Bahía Mar hills above Las Terrenas, with the master plan outlined over the terrain." className="img h-auto">
+                  <source src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/videos/bahiamar-aerial.webm" type="video/webm" />
+                  <source src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/videos/bahiamar-aerial.mp4" type="video/mp4" />
+                </video>
                 <div className="img-over-grad from-bot bot _100vh"></div>
               </div>
             </div>

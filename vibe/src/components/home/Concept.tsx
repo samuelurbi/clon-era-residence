@@ -2,7 +2,10 @@
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * home.html del sitio original, pero al personalizarlo para Bahía Mar pasa
+ * a mantenerse a mano (textos, imágenes, alt y el recorrido de lugares en
+ * SVG). Regenerarlo con `npm run gen:sections` DESHARÍA este trabajo.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
@@ -31,7 +34,7 @@ export function Concept() {
                     <div className="grid">
                       <div className="info-s_lead">
                         <h3 data-part="p" className="h4 a-center">
-                          ERA Residences is a boutique gated community of only 25 residences, designed around privacy, wellbeing and timeless Mediterranean living
+                          Bahía Mar is a boutique resort community of villas across 349,146 m² of tropical landscape on the Samaná peninsula, designed around privacy, wellbeing and a life lived outdoors
                         </h3>
                       </div>
                     </div>
@@ -41,22 +44,28 @@ export function Concept() {
                     <div className="grid">
                       <div className="info-s_desc">
                         <p data-part="p" className="p1 a-center">
-                          Inspired by the atmosphere of Marbella’s golden era, the project combines contemporary architecture with warm materials, natural landscaping and carefully curated spaces.
+                          Shaped by the calm of Samaná Bay, the project combines contemporary tropical architecture with warm natural materials, native planting and spaces that open straight onto the landscape.
                         </p>
                         <div className="u-32"></div>
                         <div className="s_logo">
                           <div data-part="ctn" className="logo_symbol ico-48">
                             <div className="logo w-embed">
-                              <svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.55544 9.1241C4.81712 7.38578 4.69025 4.69428 4.69025 4.69428C4.69025 4.69428 7.38176 4.82115 9.12007 6.55947C10.8584 8.29779 10.9853 10.9893 10.9853 10.9893C10.9853 10.9893 8.29376 10.8624 6.55544 9.1241Z" fill="currentColor"></path>
-                                <path d="M20 0.00151769L16.1569 8.1194C15.5932 9.31006 15.5931 10.6907 16.1568 11.8814L18.4988 16.8291C17.7735 17.1796 17.1891 17.7755 16.8534 18.5091L11.8814 16.1558C10.6907 15.5923 9.31007 15.5923 8.11946 16.156L0 20V19.177C0 18.3493 0.423339 17.5792 1.12211 17.1356L7.64451 12.9953C9.08249 12.0825 10.9183 12.0824 12.3564 12.9951L14.1067 14.1059L12.9961 12.3565C12.0833 10.9184 12.0833 9.08239 12.9962 7.64431L17.1364 1.12212C17.5799 0.423353 18.3501 1.51793e-05 19.1777 1.51793e-05L20 0.00151769Z" fill="currentColor"></path>
-                                <path d="M33.4446 30.8759C35.1829 32.6142 35.3097 35.3057 35.3097 35.3057C35.3097 35.3057 32.6182 35.1788 30.8799 33.4405C29.1416 31.7022 29.0147 29.0107 29.0147 29.0107C29.0147 29.0107 31.7062 29.1375 33.4446 30.8759Z" fill="currentColor"></path>
-                                <path d="M20 39.9984L23.8431 31.8806C24.4068 30.6899 24.4069 29.3092 23.8432 28.1185L21.5012 23.1708C22.2265 22.8204 22.8109 22.2244 23.1466 21.4909L28.1186 23.8441C29.3093 24.4077 30.6899 24.4076 31.8805 23.8439L40 19.9999V20.8229C40 21.6506 39.5767 22.4208 38.8779 22.8643L32.3555 27.0047C30.9175 27.9175 29.0817 27.9176 27.6436 27.0049L25.8933 25.894L27.0039 27.6435C27.9167 29.0816 27.9167 30.9176 27.0038 32.3556L22.8636 38.8778C22.4201 39.5766 21.6499 39.9999 20.8223 39.9999L20 39.9984Z" fill="currentColor"></path>
-                                <path d="M30.8759 6.55544C32.6142 4.81712 35.3057 4.69026 35.3057 4.69026C35.3057 4.69026 35.1789 7.38176 33.4405 9.12008C31.7022 10.8584 29.0107 10.9853 29.0107 10.9853C29.0107 10.9853 29.1376 8.29376 30.8759 6.55544Z" fill="currentColor"></path>
-                                <path d="M39.9985 20L31.8806 16.1569C30.69 15.5932 29.3093 15.5931 28.1186 16.1568L23.1709 18.4988C22.8204 17.7735 22.2245 17.1891 21.4909 16.8534L23.8442 11.8814C24.4078 10.6907 24.4077 9.31007 23.844 8.11946L20 0L20.823 3.59746e-08C21.6507 7.2153e-08 22.4208 0.423339 22.8644 1.12211L27.0047 7.64451C27.9175 9.08249 27.9176 10.9183 27.0049 12.3564L25.8941 14.1067L27.6435 12.9961C29.0816 12.0833 30.9176 12.0833 32.3557 12.9962L38.8779 17.1364C39.5767 17.5799 40 18.3501 40 19.1777L39.9985 20Z" fill="currentColor"></path>
-                                <path d="M9.12417 33.4445C7.38585 35.1828 4.69435 35.3097 4.69435 35.3097C4.69435 35.3097 4.82122 32.6182 6.55954 30.8799C8.29786 29.1416 10.9894 29.0147 10.9894 29.0147C10.9894 29.0147 10.8625 31.7062 9.12417 33.4445Z" fill="currentColor"></path>
-                                <path d="M0.00159168 20L8.11947 23.8431C9.31013 24.4068 10.6908 24.4068 11.8815 23.8432L16.8292 21.5012C17.1796 22.2265 17.7756 22.8109 18.5092 23.1466L16.1559 28.1186C15.5923 29.3093 15.5924 30.6899 16.1561 31.8805L20.0001 40H19.1771C18.3494 40 17.5793 39.5766 17.1357 38.8779L12.9954 32.3555C12.0825 30.9175 12.0825 29.0816 12.9951 27.6436L14.106 25.8933L12.3566 27.0038C10.9185 27.9167 9.08247 27.9167 7.64438 27.0038L1.1222 22.8636C0.423427 22.42 8.89523e-05 21.6499 8.90608e-05 20.8222L0.00159168 20Z" fill="currentColor"></path>
-                              </svg>
+                              <div
+                aria-hidden="true"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: 'currentColor',
+                  WebkitMaskImage: 'url(https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-isotype.png)',
+                  maskImage: 'url(https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-isotype.png)',
+                  WebkitMaskSize: 'contain',
+                  maskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center',
+                  maskPosition: 'center',
+                }}
+              />
                             </div>
                           </div>
                         </div>
@@ -66,9 +75,8 @@ export function Concept() {
                   </div>
                 </div>
                 <div data-parallax="ctn-down" className="flower loc-info">
-                  <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cbougainvillea-flowers_01.avif" className="video">
-                    <source src="https://puntacanadinnerinthesky.com/urbatrix/era/videos%5Cbougainvillea-flowers_01.webm" type="video/webm" />
-                    <source src="https://puntacanadinnerinthesky.com/urbatrix/era/videos%5Cbougainvillea-flowers_01.mov" type="video/mp4" />
+                  <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/palm-fronds_01.webp" className="video">
+                    <source src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/videos/palm-fronds_01.webm" type="video/webm" />
                   </video>
                 </div>
               </div>
@@ -78,40 +86,40 @@ export function Concept() {
                   <div className="u-160 b-mob"></div>
                   <div className="grid _13-columns fill">
                     <div className="loc-intro-s_cap">
-                      <h4 data-scroll-reveal="h" className="c1 a-center">Spain</h4>
+                      <h4 data-scroll-reveal="h" className="c1 a-center">Dominican Republic</h4>
                     </div>
                     <div className="loc-intro-s_title">
                       <h3 data-scroll-reveal="h" className="h1">
-                        <span className="loc-intro-s_title_line is-1">New</span>
-                        <span className="loc-intro-s_title_line is-2 mob_a-right">Golden</span>
-                        <span className="loc-intro-s_title_line">Mile</span>
+                        <span className="loc-intro-s_title_line is-1">The</span>
+                        <span className="loc-intro-s_title_line is-2 mob_a-right">Samaná</span>
+                        <span className="loc-intro-s_title_line">Peninsula</span>
                       </h3>
                     </div>
                     <div className="loc-intro-s_img">
                       <div className="u-32 b-mob"></div>
                       <div data-scroll-reveal="slide" className="img-w">
-                        <img loading="eager" src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-terrace.webp" alt="Sunlit modern terrace with cushioned sofas, wooden tables, climbing plants, and ocean view under clear sky." sizes="(max-width: 1920px) 100vw, 1920px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-terrace-p-500.png 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-terrace-p-800.png 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-terrace-p-1080.png 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-terrace-p-1600.png 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-terrace.webp 1920w" className="img" />
+                        <img loading="eager" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3.webp" alt="Villa terrace with sun loungers beside an infinity pool, palm trees and the Caribbean sea beyond." sizes="(max-width: 2350px) 100vw, 2350px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3.webp 2350w" className="img" />
                       </div>
                     </div>
                     <div className="loc-intro-s_desc">
                       <div className="u-32 b-mob"></div>
-                      <h3 data-scroll-reveal="p" className="h5">Between Marbella and Estepona</h3>
+                      <h3 data-scroll-reveal="p" className="h5">Between Las Terrenas and Cosón Bay</h3>
                       <div className="u-16"></div>
                       <p data-scroll-reveal="p" className="p1">
-                        Surrounded by beaches, golf courses, wellness clubs and established lifestyle destinations, the project combines privacy with effortless connectivity to everything essential for Mediterranean living. A location designed not around movement — but around returning.
+                        Surrounded by white-sand beaches, waterfalls, rainforest and the unhurried rhythm of the Samaná peninsula, the project combines privacy with easy reach of everything that makes Caribbean living effortless. A location designed not around movement — but around returning.
                       </p>
                       <div className="u-96 b-mob"></div>
                     </div>
                     <div data-scroll-reveal="ctn" className="loc-intro-s_btn">
                       <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                         <div data-magnetic-inner="" className="btn-circle_label">
-                          <a hover-nav-item="" aria-label="View available apartments" href="/apartments" className="nav-item w-inline-block">
+                          <a hover-nav-item="" aria-label="View available villas" href="/villas" className="nav-item w-inline-block">
                             <div className="nav-item_label">
                               <div className="nav-item_label_text">
-                                <div hover="text" className="l1">View available apartments</div>
+                                <div hover="text" className="l1">View available villas</div>
                               </div>
                               <div className="nav-item_label_text is-2">
-                                <div hover="text" className="l1">View available apartments</div>
+                                <div hover="text" className="l1">View available villas</div>
                               </div>
                             </div>
                           </a>
@@ -123,16 +131,15 @@ export function Concept() {
                             <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                           </svg>
                         </div>
-                        <a aria-label="View available apartments" href="/apartments" className="btn-circle_link w-inline-block"></a>
+                        <a aria-label="View available villas" href="/villas" className="btn-circle_link w-inline-block"></a>
                       </div>
                     </div>
                   </div>
                   <div className="u-48"></div>
                 </div>
                 <div className="flower loc-intro">
-                  <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cbougainvillea-flowers_02.avif" className="video">
-                    <source src="https://puntacanadinnerinthesky.com/urbatrix/era/videos%5Cbougainvillea-flowers_02.webm" type="video/webm" />
-                    <source src="https://puntacanadinnerinthesky.com/urbatrix/era/videos%5Cbougainvillea-flowers_02.mov" type="video/mp4" />
+                  <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/palm-fronds_02.webp" className="video">
+                    <source src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/videos/palm-fronds_02.webm" type="video/webm" />
                   </video>
                 </div>
               </div>
@@ -148,7 +155,7 @@ export function Concept() {
                         <h2 className="h3 a-center">
                           <span data-scroll-reveal="h" className="loc-path-s_title_line">The coast you wanted</span>
                           <span data-scroll-reveal="a" className="loc-path-s_title_a a2">yours</span>
-                          <span data-scroll-reveal="h" className="loc-path-s_title_line">this year</span>
+                          <span data-scroll-reveal="h" className="loc-path-s_title_line">year after year</span>
                         </h2>
                       </div>
                     </div>
@@ -158,8 +165,142 @@ export function Concept() {
                     <div className="grid">
                       <div className="loc-path-s_path scrollbar-none">
                         <div className="loc-path-s_path_c">
-                          <img loading="eager" src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cloc_path.svg" alt="" className="img loc-path" />
-                          <img data-scroll-reveal="ctn" loading="eager" alt="" src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cloc_path_labels.svg" className="img h-auto" />
+                          {/*
+                            Recorrido de lugares cercanos. Antes eran dos SVG
+                            externos con el texto trazado; ahora va en línea
+                            para que herede tipografía y color, y para poder
+                            cambiar un nombre sin redibujar nada.
+                          */}
+                          <svg
+                            data-scroll-reveal="ctn"
+                            viewBox="0 0 1072 208"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            /*
+                              width/height EN LÍNEA y no las clases del original:
+                              `.loc-path` es `position:absolute; inset:0`, y el alto
+                              del contenedor lo daba el segundo <img> (el de las
+                              etiquetas). Al unificar los dos en un solo SVG, ese
+                              segundo elemento ya no existe: si este también fuera
+                              absoluto, el contenedor mediría 0 y no se vería nada.
+                            */
+                            style={{ width: "100%", height: "auto", display: "block" }}
+                            role="img"
+                            aria-label="Places near Bahía Mar and approximate drive times, to be confirmed"
+                          >
+                            {/* La costa: una línea que ondula de oeste a este. */}
+                            <path
+                              d="M24 168C96 166 140 150 196 146C252 142 268 156 324 152C380 148 404 132 460 130C516 128 524 142 580 140C636 138 660 120 716 118C772 116 792 130 848 126C904 122 936 106 1048 102"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                            />
+                            {/*
+                              Los tiempos son una ESTIMACIÓN pendiente de que
+                              el cliente la confirme (BRIEF.md): van con «~»
+                              delante y con la nota «(TBC)» al pie del mapa,
+                              para que nada se lea como dato firme. Al
+                              confirmarlos, quitar el «~» y la nota.
+                            */}
+                            {[
+                              { x: 62, y: 167, nombre: 'El Catey Airport', tiempo: '~40 min' },
+                              { x: 216, y: 147, nombre: 'Sánchez', tiempo: '~30 min' },
+                              { x: 372, y: 150, nombre: 'Playa Cosón', tiempo: '~5 min' },
+                              { x: 700, y: 118, nombre: 'Las Terrenas', tiempo: '~15 min' },
+                              { x: 856, y: 126, nombre: 'El Limón Waterfall', tiempo: '~30 min' },
+                              { x: 1006, y: 104, nombre: 'Samaná', tiempo: '~50 min' },
+                            ].map((p) => (
+                              <g key={p.nombre}>
+                                <circle cx={p.x} cy={p.y} r="3" fill="currentColor" />
+                                <text
+                                  x={p.x}
+                                  y={p.y - 46}
+                                  textAnchor="middle"
+                                  fill="currentColor"
+                                  style={{
+                                    fontFamily: 'var(--_fonts---font-body, sans-serif)',
+                                    fontSize: '12px',
+                                    fontWeight: 700,
+                                    letterSpacing: '0.6px',
+                                    textTransform: 'uppercase',
+                                  }}
+                                >
+                                  {p.nombre}
+                                </text>
+                                <text
+                                  x={p.x}
+                                  y={p.y - 28}
+                                  textAnchor="middle"
+                                  fill="currentColor"
+                                  style={{
+                                    fontFamily: 'var(--_fonts---font-body, sans-serif)',
+                                    fontSize: '11px',
+                                    letterSpacing: '0.6px',
+                                    textTransform: 'uppercase',
+                                    opacity: 0.7,
+                                  }}
+                                >
+                                  {p.tiempo}
+                                </text>
+                              </g>
+                            ))}
+
+                            {/*
+                              El proyecto, en el centro del recorrido: el isotipo
+                              es un NODO de la línea, no un adorno encima. Un halo
+                              del color de fondo de la sección interrumpe la costa
+                              justo bajo la ola (antes la línea la cruzaba por la
+                              mitad), y el rótulo va arriba como en los demás
+                              puntos. La línea sigue entera debajo: si cambia el
+                              fondo de la sección, el halo lo sigue por el token.
+                            */}
+                            <circle cx="540" cy="138" r="36" fill="var(--_colors---other--bg)" />
+                            <image
+                              href="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-isotype.png"
+                              x="508"
+                              y="115"
+                              width="64"
+                              height="46"
+                              preserveAspectRatio="xMidYMid meet"
+                            />
+                            <text
+                              x="540"
+                              y="90"
+                              textAnchor="middle"
+                              fill="currentColor"
+                              style={{
+                                fontFamily: 'var(--_fonts---font-body, sans-serif)',
+                                fontSize: '12px',
+                                fontWeight: 700,
+                                letterSpacing: '1.2px',
+                                textTransform: 'uppercase',
+                              }}
+                            >
+                              Bahía Mar
+                            </text>
+
+                            {/*
+                              Nota visible de que los tiempos son aproximados y
+                              están por confirmar. Va centrada bajo el proyecto
+                              porque en móvil el mapa se desplaza a su centro
+                              (lib/animations/misc.ts) y es la zona que se ve.
+                            */}
+                            <text
+                              x="540"
+                              y="184"
+                              textAnchor="middle"
+                              fill="currentColor"
+                              style={{
+                                fontFamily: 'var(--_fonts---font-body, sans-serif)',
+                                fontSize: '10px',
+                                letterSpacing: '0.8px',
+                                textTransform: 'uppercase',
+                                opacity: 0.7,
+                              }}
+                            >
+                              Approximate drive times (TBC)
+                            </text>
+                          </svg>
                         </div>
                       </div>
                     </div>
@@ -168,9 +309,8 @@ export function Concept() {
                 </div>
                 <div className="loc-path-w_flower">
                   <div className="flower loc-path">
-                    <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cbougainvillea-flowers_03.avif" className="video">
-                      <source src="https://puntacanadinnerinthesky.com/urbatrix/era/videos%5Cbougainvillea-flowers_03.webm" type="video/webm" />
-                      <source src="https://puntacanadinnerinthesky.com/urbatrix/era/videos%5Cbougainvillea-flowers_03.mov" type="video/mp4" />
+                    <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/palm-fronds_03.webp" className="video">
+                      <source src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/videos/palm-fronds_03.webm" type="video/webm" />
                     </video>
                   </div>
                 </div>

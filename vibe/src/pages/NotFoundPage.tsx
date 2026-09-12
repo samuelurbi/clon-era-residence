@@ -29,7 +29,7 @@ export function NotFoundPage() {
         <h1 style={{ fontFamily: 'var(--_fonts---font-display)' }}>Page not found</h1>
         <p style={{ fontFamily: 'var(--_fonts---font-body)' }}>
           The page you were looking for is not here.{' '}
-          <a href="/apartments">Browse the apartments</a> or{' '}
+          <a href="/villas">Browse the villas</a> or{' '}
           <a href="/">go back to the homepage</a>.
         </p>
       </section>

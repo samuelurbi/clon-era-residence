@@ -10,7 +10,7 @@
  *  [[sustituir-fuentes-de-pago]]—; lo único que cambia es de dónde
  *  vienen los ficheros:
  *
- *    ambroise-francois-std (Adobe)  ->  Instrument Serif
+ *    ambroise-francois-std (Adobe)  ->  Italiana (la del brochure de Bahía Mar)
  *    Maison Neue Extended (Milieu)  ->  Archivo
  *    sloop-script-three (Adobe)     ->  Pinyon Script
  *
@@ -21,7 +21,7 @@
  * ============================================================ */
 
 :root {
-  --font-display: "Instrument Serif";
+  --font-display: "Italiana";
   --font-body: "Archivo";
   --font-accent: "Pinyon Script";
 }

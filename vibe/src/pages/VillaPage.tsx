@@ -1,10 +1,10 @@
 /* ============================================================
- *  Port de `app/apartments/[code]/page.tsx`.
+ *  Port de `app/villas/[slug]/page.tsx`.
  *
  *  Dos cambios respecto al original de Next, ambos del mismo motivo —
  *  aquí no hay servidor:
  *
- *    - `generateStaticParams()` desaparece. En Next las 25 fichas se
+ *    - `generateStaticParams()` desaparece. En Next las cinco fichas se
  *      prerrenderizaban (SSG); en Vibe son UNA ruta dinámica que se
  *      resuelve en el cliente. El contenido es idéntico, lo que se
  *      pierde es el HTML servido ya hecho.
@@ -18,28 +18,32 @@
 import { useParams } from 'react-router-dom';
 
 import { CTA_IMAGES } from '@/data/cta-images';
-import { apartments } from '@/data/apartments';
-import { apartmentExtras } from '@/data/apartment-extras';
-import { apartmentCards } from '@/data/apartment-cards';
+import { villas, villaBySlug } from '@/data/villas';
+import { villaCards } from '@/data/villa-cards';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
-import { ApartmentDetail } from '@/components/apartments/ApartmentDetail';
-import { ApartmentArch } from '@/components/apartments/ApartmentArch';
-import { RelatedApartments } from '@/components/apartments/RelatedApartments';
-import { LightboxModal } from '@/components/apartments/LightboxModal';
+import { VillaDetail } from '@/components/villas/VillaDetail';
+import { VillaArch } from '@/components/villas/VillaArch';
+import { RelatedVillas } from '@/components/villas/RelatedVillas';
+import { LightboxModal } from '@/components/villas/LightboxModal';
 import { Amenities } from '@/components/sections/Amenities';
 import { SeaViewsCta } from '@/components/sections/SeaViewsCta';
 import { BookACall } from '@/components/sections/BookACall';
 import { usePageMeta } from '@/shims/page-meta';
 import { NotFoundPage } from './NotFoundPage';
 
-/** Cuántas viviendas se sugieren al pie de la ficha, como en el original. */
-const RELATED_COUNT = 6;
+/**
+ * Cuántas villas se sugieren al pie.
+ *
+ * En ERA eran seis de veinticinco. Aquí sólo hay cinco en total, así que
+ * se muestran LAS CUATRO RESTANTES: cualquier número menor dejaría fuera
+ * parte del catálogo sin motivo.
+ */
+const RELATED_COUNT = villas.length - 1;
 
-export function ApartmentPage() {
-  const { code = '' } = useParams<{ code: string }>();
+export function VillaPage() {
+  const { slug = '' } = useParams<{ slug: string }>();
 
-  const apartment = apartments.find((a) => a.slug === code);
-  const extras = apartmentExtras[code];
+  const villa = villaBySlug(slug);
 
   /*
    * El hook va SIEMPRE, antes de cualquier return: si solo se llamara
@@ -47,20 +51,20 @@ export function ApartmentPage() {
    * entre renders al navegar de una ficha válida a una inexistente.
    */
   usePageMeta({
-    title: apartment?.name,
-    description: apartment ? apartment.seo.description || apartment.description : undefined,
+    title: villa?.seo.title,
+    description: villa?.seo.description,
   });
 
-  if (!apartment || !extras) return <NotFoundPage />;
+  if (!villa) return <NotFoundPage />;
 
   /*
    * Relacionadas: las siguientes por orden de catálogo, dando la vuelta al
    * llegar al final, de modo que ninguna ficha se sugiera a sí misma y
-   * todas tengan las mismas seis.
+   * todas enseñen el resto del catálogo completo.
    */
-  const index = apartmentCards.findIndex((c) => c.code === code);
+  const index = villaCards.findIndex((c) => c.slug === slug);
   const related = Array.from({ length: RELATED_COUNT }, (_, i) => {
-    return apartmentCards[(index + 1 + i) % apartmentCards.length];
+    return villaCards[(index + 1 + i) % villaCards.length];
   }).filter(Boolean);
 
   return (
@@ -68,15 +72,15 @@ export function ApartmentPage() {
       <Breadcrumbs
         trail={[
           { label: 'Home', href: '/' },
-          { label: 'Select an Apartment', href: '/apartments' },
-          { label: apartment.code },
+          { label: 'Select a Villa', href: '/villas' },
+          { label: villa.name },
         ]}
       />
-      <ApartmentDetail apartment={apartment} extras={extras} />
+      <VillaDetail villa={villa} />
       <Amenities />
-      <ApartmentArch />
-      <RelatedApartments cards={related} />
-      <SeaViewsCta image={CTA_IMAGES.apartment} />
+      <VillaArch />
+      <RelatedVillas cards={related} />
+      <SeaViewsCta image={CTA_IMAGES.villa} />
       <BookACall />
       <LightboxModal />
     </>

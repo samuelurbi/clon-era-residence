@@ -32,8 +32,8 @@ import { LandscapeCover } from '@/components/layout/LandscapeCover';
 import { CookieNotice } from '@/components/layout/CookieNotice';
 
 import { HomePage } from '@/pages/HomePage';
-import { ApartmentsPage } from '@/pages/ApartmentsPage';
-import { ApartmentPage } from '@/pages/ApartmentPage';
+import { VillasPage } from '@/pages/VillasPage';
+import { VillaPage } from '@/pages/VillaPage';
 import { ContactPage } from '@/pages/ContactPage';
 import { ComingSoonPage } from '@/pages/ComingSoonPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
@@ -66,8 +66,8 @@ export function App() {
         <SmoothScroll>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/apartments" element={<ApartmentsPage />} />
-            <Route path="/apartments/:code" element={<ApartmentPage />} />
+            <Route path="/villas" element={<VillasPage />} />
+            <Route path="/villas/:slug" element={<VillaPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/coming-soon" element={<ComingSoonPage />} />
             <Route path="*" element={<NotFoundPage />} />

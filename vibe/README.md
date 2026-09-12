@@ -77,6 +77,32 @@ imagen no aparece y no hay error en consola que lo delate.
 - **Las fuentes se piden a Google en runtime**, ya no salen de nuestro
   dominio.
 
+## Subir Bahía Mar a GHL Vibe (12-09-2026)
+
+El cascarón (`src/App.tsx`, `src/pages/*`, `src/fonts.css`,
+`index.template.html`) ya está al día con Bahía Mar: rutas `/villas` y
+`/villas/:slug`, Italiana, metadatos del sitio y sin el GTM de ERA. El orden:
+
+1. **Assets al host externo, ANTES que el código.** Vibe no aloja binarios y
+   una imagen sin subir es un 404 mudo. `python scripts/vibe-assets-zip.py`
+   deja en `bahia-mar-personalizacion/bahiamar-assets.zip` (228 MB, 564
+   ficheros) sólo lo que la web referencia: `images/`, `videos/`,
+   `documents/` e `icons/`. Se descomprime en el host en la carpeta que
+   apunta `ASSET_BASE` de `scripts/vibe-preparar.mjs`
+   (`…/urbatrix/bahiamar`); si va a otra carpeta, se cambia esa línea. Es
+   un ZIP con `/` correctos: NO hace falta el `%5C` de ERA.
+2. **Comprobar que el host responde:** `node scripts/audit-vibe-assets.mjs`
+   pide cada fichero a la URL final (parte A) y avisa del que falte.
+3. **Generar lo que se pega:** `node scripts/vibe-preparar.mjs` (export +
+   bundle con las URLs de producción). Luego `node scripts/vibe-copiar.mjs
+   --cambios` dice qué bundles difieren de lo que ya está en Vibe.
+4. **Pegar en Vibe** como explica `vibe-bundle/CREAR-ARCHIVOS.md`: si el
+   proyecto es nuevo, primero se piden a la IA los archivos vacíos (un solo
+   mensaje, el del documento); después `node scripts/vibe-copiar.mjs N`
+   copia cada bundle al portapapeles, Ctrl+A / Ctrl+V en el editor, y
+   `--ok` para dejarlo registrado. Sin la IA de por medio en el contenido.
+5. **Publicar y mirar** las cinco rutas en la vista previa de Vibe.
+
 ## Estado verificado (2026-08-12)
 
 - `tsc --noEmit` limpio y `vite build` verde: 119 módulos, 748 KB JS,

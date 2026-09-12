@@ -327,82 +327,10 @@ function pins(): () => void {
 }
 
 /* ------------------------------------------------------------------
- *  Switch BY DAY / BY NIGHT del hero
+ *  (Aquí vivía el switch BY DAY / BY NIGHT del hero de ERA, `heroTabs`.
+ *  Bahía Mar no usa las dos versiones del render: el fondo del hero es
+ *  un slider de las cinco villas, en lib/animations/hero-slider.ts.)
  * ------------------------------------------------------------------ */
-
-/**
- * Cruza las dos versiones del render del hero. El truco del original: la
- * entrante pasa a `relative` y la saliente a `absolute` para que ocupen el
- * mismo hueco durante el fundido y no haya salto de maquetación.
- */
-function heroTabs(): () => void {
-  const component = q('[data-tabs-hero]');
-  if (!component) return () => {};
-
-  const triggers = qa<HTMLElement>('[data-tab-trigger]', component);
-  const hilight = q<HTMLElement>('.hero-s_tabs_divider', component);
-  if (!triggers.length) return () => {};
-
-  let activeIndex = 0;
-  let animating = false;
-
-  triggers[0].classList.add('is-active');
-
-  const updateHilight = () => {
-    const active = q<HTMLElement>('[data-tab-trigger].is-active', component);
-    if (!active || !hilight) return;
-    hilight.className = hilight.className.replace(/\bis-\S+/g, '').trim();
-    hilight.classList.add(`is-${active.getAttribute('data-tab-trigger')}`);
-  };
-
-  updateHilight();
-
-  const handlers: Array<[HTMLElement, () => void]> = [];
-
-  triggers.forEach((trigger, newIndex) => {
-    const onClick = () => {
-      if (newIndex === activeIndex || animating) return;
-
-      const oldTrigger = triggers[activeIndex];
-      const oldContent = q<HTMLElement>(
-        `[data-tab-content="${oldTrigger.getAttribute('data-tab-trigger')}"]`,
-        component,
-      );
-      const newContent = q<HTMLElement>(
-        `[data-tab-content="${trigger.getAttribute('data-tab-trigger')}"]`,
-        component,
-      );
-      if (!oldContent || !newContent) return;
-
-      const newImg = q('[data-tab="img"]', newContent);
-
-      gsap.killTweensOf([oldContent, newContent]);
-      animating = true;
-
-      gsap
-        .timeline({ onComplete: () => (animating = false) })
-        .set(newContent, { display: 'block', position: 'relative', zIndex: 1 })
-        .set(oldContent, { display: 'block', position: 'absolute', zIndex: 0 })
-        // El alto cambia al intercambiar: sin refrescar, las coreografías
-        // del hero seguirían midiendo contra el render anterior.
-        .add(() => ScrollTrigger.refresh())
-        .fromTo(newImg, { opacity: 0 }, { opacity: 1, duration: DUR.m, ease: 'InOut', overwrite: true })
-        .set(oldContent, { display: 'none' });
-
-      oldTrigger.classList.remove('is-active');
-      trigger.classList.add('is-active');
-      activeIndex = newIndex;
-      updateHilight();
-    };
-
-    trigger.addEventListener('click', onClick);
-    handlers.push([trigger, onClick]);
-  });
-
-  return () => {
-    for (const [el, fn] of handlers) el.removeEventListener('click', fn);
-  };
-}
 
 /* ------------------------------------------------------------------
  *  Enlace de la página actual
@@ -444,7 +372,7 @@ function markCurrentLink(): () => void {
    * navegación. Webflow marcaba con `w--current` cualquier enlace que
    * apuntara a la página actual, estuviera donde estuviera: la auditoría de
    * scripts/audit-shared-blocks.mjs encontró que también afecta al botón
-   * «View available apartments» del CTA y a los del menú.
+   * «View available villas» del CTA y a los del menú.
    */
   for (const link of qa<HTMLAnchorElement>('a[href]')) {
     const href = link.getAttribute('href');
@@ -474,7 +402,6 @@ export function initChrome(): () => void {
     rotatingLogo(),
     scrollBar(),
     pins(),
-    heroTabs(),
     markCurrentLink(),
   ];
   return () => {

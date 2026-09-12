@@ -2,11 +2,18 @@
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * Sección «Architecture» de la home, personalizada para Bahía Mar.
+ *
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre
+ * el home.html del sitio original, pero al personalizarlo para Bahía Mar pasa a
+ * mantenerse a mano. Regenerarlo con npm run gen:* DESHARÍA este trabajo.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
- * Las URLs del CDN ya están reescritas a /public.
+ * Sólo cambian textos, src/srcSet/alt y href. Copy: brief y data/villas.ts.
+ * Imagen: render exterior de la Villa Cosón, R8_1, recortado a 4:3 anclado a la
+ * izquierda para que el voladizo de madera cubra la franja alta y el título
+ * blanco no caiga sobre cielo claro (ver inventario/architecture.json).
  */
 
 export function Architecture() {
@@ -19,15 +26,13 @@ export function Architecture() {
               <div className="arch-intro-s_bg_l"></div>
               <div className="arch-intro-s_bg_r"><div className="w-embed"></div></div>
               <div className="flower arch-intro-l">
-                <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cbougainvillea-flowers_05.avif" className="video">
-                  <source src="https://puntacanadinnerinthesky.com/urbatrix/era/videos%5Cbougainvillea-flowers_05.webm" type="video/webm" />
-                  <source src="https://puntacanadinnerinthesky.com/urbatrix/era/videos%5Cbougainvillea-flowers_05.mov" type="video/mp4" />
+                <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/palm-fronds_02.webp" className="video">
+                  <source src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/videos/palm-fronds_02.webm" type="video/webm" />
                 </video>
               </div>
               <div className="flower arch-intro-r">
-                <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cbougainvillea-flowers_07.avif" className="video">
-                  <source src="https://puntacanadinnerinthesky.com/urbatrix/era/videos%5Cbougainvillea-flowers_07.webm" type="video/webm" />
-                  <source src="https://puntacanadinnerinthesky.com/urbatrix/era/videos%5Cbougainvillea-flowers_07.mov" type="video/mp4" />
+                <video muted playsInline loop disablePictureInPicture webkit-playsinline="webkit-playsinline" poster="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/palm-fronds_01.webp" className="video">
+                  <source src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/videos/palm-fronds_01.webm" type="video/webm" />
                 </video>
               </div>
             </div>
@@ -39,7 +44,7 @@ export function Architecture() {
                 <h2 data-text="h" data-fit-text="" className="h1 a-center">Architecture</h2>
                 <div className="u-32"></div>
                 <div className="grid">
-                  <div className="arch-s_desc"><p data-text="p" className="l1 a-center"></p></div>
+                  <div className="arch-s_desc"><p data-text="p" className="l1 a-center">Contemporary tropical architecture, made for a life lived outdoors</p></div>
                 </div>
               </div>
               <div className="arch-s_b">
@@ -47,13 +52,13 @@ export function Architecture() {
                   <div className="arch-s_quote w-clearfix">
                     <div className="red-line"></div>
                     <h3 data-part="p" className="h5">
-                      The architecture of ERA Residences balances clean contemporary lines with Mediterranean warmth and texture
+                      The architecture of Bahía Mar pairs timber, pale stone and chukum with wide overhangs and terraces that open each villa to the landscape
                     </h3>
                     <div className="u-64"></div>
                     <div className="grid _4-columns">
                       <div className="arch-s_author">
-                        <div data-part="p" className="l1">By Schiemann Weyers</div>
-                        <div data-part="p" className="l1 reg">Architects OCWA Architects</div>
+                        <div data-part="p" className="l1">By Estudio Dolla</div>
+                        <div data-part="p" className="l1 reg">Architects</div>
                       </div>
                     </div>
                     <div className="u-160 b-desk"></div>
@@ -84,7 +89,7 @@ export function Architecture() {
             </div>
             <div className="w_bg">
               <div data-desk="off" data-parallax="w" className="img-w">
-                <img className="img" src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_cam_02.webp" alt="Modern terrace apartments with green plants, flowering vines, and outdoor seating on a sunny day." sizes="(max-width: 1920px) 100vw, 1920px" data-parallax="img" loading="eager" srcSet="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_cam_02-p-500.png 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_cam_02-p-800.png 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_cam_02-p-1080.png 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_cam_02.webp 1920w" />
+                <img className="img" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2.webp" alt="Villa Cosón at Bahía Mar: a wide timber overhang over the pool terrace, glass fronts opening the living area to the garden and a dark stone wall on the side." sizes="(max-width: 1920px) 100vw, 1920px" data-parallax="img" loading="eager" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2.webp 2350w" />
                 <div className="img-over-grad bot _100vh"></div>
                 <div className="img-over-grad bot _100vh"></div>
               </div>

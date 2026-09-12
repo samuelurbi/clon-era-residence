@@ -1,5 +1,5 @@
 /* ============================================================
- *  ANIMATIONS — 20 módulos del repo en un solo archivo.
+ *  ANIMATIONS — 21 módulos del repo en un solo archivo.
  *
  *  GENERADO por scripts/vibe-bundle.mjs — no editar aquí.
  *  Se agrupa porque en GoHighLevel Vibe cada archivo nuevo hay que
@@ -1190,82 +1190,10 @@ function pins(): () => void {
 }
 
 /* ------------------------------------------------------------------
- *  Switch BY DAY / BY NIGHT del hero
+ *  (Aquí vivía el switch BY DAY / BY NIGHT del hero de ERA, `heroTabs`.
+ *  Bahía Mar no usa las dos versiones del render: el fondo del hero es
+ *  un slider de las cinco villas, en lib/animations/hero-slider.ts.)
  * ------------------------------------------------------------------ */
-
-/**
- * Cruza las dos versiones del render del hero. El truco del original: la
- * entrante pasa a `relative` y la saliente a `absolute` para que ocupen el
- * mismo hueco durante el fundido y no haya salto de maquetación.
- */
-function heroTabs(): () => void {
-  const component = q__chrome('[data-tabs-hero]');
-  if (!component) return () => {};
-
-  const triggers = qa__chrome<HTMLElement>('[data-tab-trigger]', component);
-  const hilight = q__chrome<HTMLElement>('.hero-s_tabs_divider', component);
-  if (!triggers.length) return () => {};
-
-  let activeIndex = 0;
-  let animating = false;
-
-  triggers[0].classList.add('is-active');
-
-  const updateHilight = () => {
-    const active = q__chrome<HTMLElement>('[data-tab-trigger].is-active', component);
-    if (!active || !hilight) return;
-    hilight.className = hilight.className.replace(/\bis-\S+/g, '').trim();
-    hilight.classList.add(`is-${active.getAttribute('data-tab-trigger')}`);
-  };
-
-  updateHilight();
-
-  const handlers: Array<[HTMLElement, () => void]> = [];
-
-  triggers.forEach((trigger, newIndex) => {
-    const onClick = () => {
-      if (newIndex === activeIndex || animating) return;
-
-      const oldTrigger = triggers[activeIndex];
-      const oldContent = q__chrome<HTMLElement>(
-        `[data-tab-content="${oldTrigger.getAttribute('data-tab-trigger')}"]`,
-        component,
-      );
-      const newContent = q__chrome<HTMLElement>(
-        `[data-tab-content="${trigger.getAttribute('data-tab-trigger')}"]`,
-        component,
-      );
-      if (!oldContent || !newContent) return;
-
-      const newImg = q__chrome('[data-tab="img"]', newContent);
-
-      gsap.killTweensOf([oldContent, newContent]);
-      animating = true;
-
-      gsap
-        .timeline({ onComplete: () => (animating = false) })
-        .set(newContent, { display: 'block', position: 'relative', zIndex: 1 })
-        .set(oldContent, { display: 'block', position: 'absolute', zIndex: 0 })
-        // El alto cambia al intercambiar: sin refrescar, las coreografías
-        // del hero seguirían midiendo contra el render anterior.
-        .add(() => ScrollTrigger.refresh())
-        .fromTo(newImg, { opacity: 0 }, { opacity: 1, duration: DUR.m, ease: 'InOut', overwrite: true })
-        .set(oldContent, { display: 'none' });
-
-      oldTrigger.classList.remove('is-active');
-      trigger.classList.add('is-active');
-      activeIndex = newIndex;
-      updateHilight();
-    };
-
-    trigger.addEventListener('click', onClick);
-    handlers.push([trigger, onClick]);
-  });
-
-  return () => {
-    for (const [el, fn] of handlers) el.removeEventListener('click', fn);
-  };
-}
 
 /* ------------------------------------------------------------------
  *  Enlace de la página actual
@@ -1307,7 +1235,7 @@ function markCurrentLink(): () => void {
    * navegación. Webflow marcaba con `w--current` cualquier enlace que
    * apuntara a la página actual, estuviera donde estuviera: la auditoría de
    * scripts/audit-shared-blocks.mjs encontró que también afecta al botón
-   * «View available apartments» del CTA y a los del menú.
+   * «View available villas» del CTA y a los del menú.
    */
   for (const link of qa__chrome<HTMLAnchorElement>('a[href]')) {
     const href = link.getAttribute('href');
@@ -1337,7 +1265,6 @@ export function initChrome(): () => void {
     rotatingLogo(),
     scrollBar(),
     pins(),
-    heroTabs(),
     markCurrentLink(),
   ];
   return () => {
@@ -1356,7 +1283,7 @@ export function initChrome(): () => void {
  * Filtros, ordenación y desplegables del listado — port de `initFilter()`,
  * `initSort()` e `initSelect()` del original.
  *
- * Sólo actúan en `/apartments`, que es donde está la barra de controles.
+ * Sólo actúan en `/villas`, que es donde está la barra de controles.
  *
  * El filtro sincroniza el estado con la query string (`?typology=...`), así
  * que una selección se puede compartir por enlace y sobrevive a recargar.
@@ -1682,6 +1609,157 @@ export function initFilters(): () => void {
   const cleanups = [sorting(), filters(), selects(), resetButton()];
   return () => {
     for (const c of cleanups) c();
+  };
+}
+
+/* ============================================================
+   lib/animations/hero-slider.ts
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
+/**
+ * Slider de fondo del hero — propio de Bahía Mar, no viene de ERA.
+ *
+ * ERA tenía una foto con dos versiones (día/noche) que se cruzaban con un
+ * fundido al pulsar «by day / by night» (`heroTabs`, ya retirado de
+ * chrome.ts). El cliente quiere las cinco villas pasando en bucle con el
+ * mismo barrido en cortina que usa el slider de los pilares, y que la
+ * línea de nombres bajo el titular ilumine la villa que está en pantalla.
+ *
+ * Se reutiliza `animateSlide` (reveal.ts) tal cual: la entrante se abre en
+ * diagonal por `clip-path` mientras su imagen desamplía, y la saliente se
+ * cierra hacia el otro lado. Todas las capas miden lo mismo (10:9), así
+ * que, a diferencia del slider general, no hace falta intercambiar
+ * `relative`/`absolute` ni refrescar ScrollTrigger: la primera capa da la
+ * altura y las demás van encima (theme.css). La saliente no se oculta con
+ * `display: none` —dejaría sin altura al hueco cuando toca a la primera—,
+ * queda cerrada por el propio `clip-path`.
+ *
+ * Avance automático cada 6 s, como el slider, sólo con el hero a la vista
+ * y la pestaña en primer plano. Pulsar un nombre salta a esa villa.
+ */
+
+
+
+
+/** Segundos que se queda cada villa antes de pasar sola. */
+const AUTO_DURATION__hero_slider = 6;
+
+/** Fracción del hero que debe verse para que el bucle corra. */
+const VISIBLE_THRESHOLD__hero_slider = 0.2;
+
+const FULL = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)';
+
+export function initHeroSlider(): () => void {
+  const root = document.querySelector<HTMLElement>('[data-hero-slider]');
+  if (!root) return () => {};
+
+  const slides = [...root.querySelectorAll<HTMLElement>('[data-hero-slide]')];
+  const names = [...document.querySelectorAll<HTMLElement>('[data-hero-villa]')];
+  if (slides.length < 2) return () => {};
+
+  let current = 0;
+  let animating = false;
+  let autoTimer: ReturnType<typeof setInterval> | undefined;
+  let settle: gsap.core.Tween | undefined;
+
+  // Estado inicial: la primera a la vista, el resto cerradas.
+  slides.forEach((slide, i) => {
+    slide.style.zIndex = i === 0 ? '1' : '0';
+    if (i === 0) gsap.set(slide, { clipPath: FULL });
+    else animateSlide([slide], 'initial');
+  });
+
+  const markActive = (index: number) => {
+    names.forEach((name, i) => name.classList.toggle('is-active', i === index));
+  };
+
+  const goTo = (index: number) => {
+    if (index === current || animating) return;
+    const prev = slides[current];
+    const next = slides[index];
+
+    animating = true;
+    slides.forEach((slide) => (slide.style.zIndex = '0'));
+    prev.style.zIndex = '1';
+    next.style.zIndex = '2';
+
+    gsap.killTweensOf([prev, next, prev.firstElementChild, next.firstElementChild].filter(Boolean));
+    animateSlide([next], 'reveal', 0);
+    animateSlide([prev], 'hide', 0);
+    settle?.kill();
+    settle = gsap.delayedCall(DUR.l, () => {
+      animating = false;
+    });
+
+    current = index;
+    markActive(index);
+  };
+
+  const goNext = () => goTo(current === slides.length - 1 ? 0 : current + 1);
+
+  const stopAuto = () => {
+    clearInterval(autoTimer);
+    autoTimer = undefined;
+  };
+
+  /*
+   * El hero está a la vista desde el primer instante, pero durante el
+   * preloader (~9 s) nadie lo ve: si el bucle arrancara ya, al levantarse
+   * la cortina la primera villa habría pasado. Se espera a que el
+   * preloader se haya retirado (termina con `display: none`).
+   */
+  const preloader = document.querySelector<HTMLElement>('[data-preloader]');
+  const preloaderDone = () => !preloader || getComputedStyle(preloader).display === 'none';
+  let waitTimer: ReturnType<typeof setInterval> | undefined;
+
+  const startAuto = () => {
+    stopAuto();
+    clearInterval(waitTimer);
+    if (preloaderDone()) {
+      autoTimer = setInterval(goNext, AUTO_DURATION__hero_slider * 1000);
+      return;
+    }
+    waitTimer = setInterval(() => {
+      if (!preloaderDone()) return;
+      clearInterval(waitTimer);
+      autoTimer = setInterval(goNext, AUTO_DURATION__hero_slider * 1000);
+    }, 250);
+  };
+
+  markActive(0);
+
+  const observer = new IntersectionObserver(
+    ([entry]) => (entry.isIntersecting ? startAuto() : stopAuto()),
+    { threshold: VISIBLE_THRESHOLD__hero_slider },
+  );
+  observer.observe(root);
+
+  const onVisibility = () => (document.hidden ? stopAuto() : startAuto());
+  document.addEventListener('visibilitychange', onVisibility);
+
+  // Los nombres enlazan a la ficha de cada villa, pero en el hero hacen de
+  // pestañas: pulsar salta a esa villa en el fondo y reinicia la cuenta.
+  const handlers = names.map((name, i) => {
+    const onClick = (event: Event) => {
+      event.preventDefault();
+      if (animating) return;
+      goTo(i);
+      startAuto();
+    };
+    name.addEventListener('click', onClick);
+    return [name, onClick] as const;
+  });
+
+  return () => {
+    observer.disconnect();
+    document.removeEventListener('visibilitychange', onVisibility);
+    for (const [name, fn] of handlers) name.removeEventListener('click', fn);
+    stopAuto();
+    clearInterval(waitTimer);
+    settle?.kill();
   };
 }
 
@@ -2787,7 +2865,7 @@ function linkHover(): () => void {
      *
      * El original la partía sólo en palabras, y funcionaba porque con
      * Ambroise François las dos copias rompían en el mismo sitio. Con
-     * Instrument Serif, que es un 37% más ancha, «an Apartment» ya no cabe
+     * Instrument Serif, que es un 37% más ancha, «a Villa» ya no cabe
      * en la caja: la copia 1 conserva las 2 líneas que SplitText le fijó y
      * la 2 refluía a 3, así que el enlace crecía de alto al pasar el cursor.
      * Partiendo ambas igual, las dos comparten el mismo corte.
@@ -3691,10 +3769,10 @@ export function runPreloader(onDone?: () => void): () => void {
 
 
 /** Segundos que dura cada diapositiva antes de pasar sola. */
-const AUTO_DURATION = 6;
+const AUTO_DURATION__slider = 6;
 
 /** Fracción del slider que debe verse para que arranque el automático. */
-const VISIBLE_THRESHOLD = 0.2;
+const VISIBLE_THRESHOLD__slider = 0.2;
 
 type Parts = {
   headlines: Element[];
@@ -3808,7 +3886,7 @@ function setupSlider(root: HTMLElement): () => void {
 
   const startProgress = () => {
     if (!progressEl) return;
-    gsap.fromTo(progressEl, { width: '0%' }, { width: '100%', duration: AUTO_DURATION, ease: 'none' });
+    gsap.fromTo(progressEl, { width: '0%' }, { width: '100%', duration: AUTO_DURATION__slider, ease: 'none' });
   };
 
   const stopProgress = () => {
@@ -3829,7 +3907,7 @@ function setupSlider(root: HTMLElement): () => void {
     autoTimer = setInterval(() => {
       goNext();
       startProgress();
-    }, AUTO_DURATION * 1000);
+    }, AUTO_DURATION__slider * 1000);
   };
 
   updateCounter();
@@ -3837,7 +3915,7 @@ function setupSlider(root: HTMLElement): () => void {
   // Sólo corre mientras se ve.
   const observer = new IntersectionObserver(
     ([entry]) => (entry.isIntersecting ? startAuto() : stopAuto()),
-    { threshold: VISIBLE_THRESHOLD },
+    { threshold: VISIBLE_THRESHOLD__slider },
   );
   observer.observe(root);
 
@@ -3994,9 +4072,9 @@ export function initTabsHilight(): () => void {
  *
  * El cruce es el mismo patrón que usa el slider: la entrante pasa a
  * `relative` y la saliente a `absolute` para que compartan hueco durante la
- * transición y el bloque no dé un salto de altura. La diferencia con el
- * switch día/noche del hero (`heroTabs` en chrome.ts) es que aquí también
- * entra el texto, animado con los mismos animadores que los reveals.
+ * transición y el bloque no dé un salto de altura. Aquí además entra el
+ * texto, animado con los mismos animadores que los reveals. (El hero ya no
+ * lleva pestañas: su fondo es el slider de villas de hero-slider.ts.)
  */
 
 
@@ -4092,9 +4170,9 @@ function setupTabs(component: HTMLElement): () => void {
 
 export function initTabs(): () => void {
   /*
-   * `[data-tabs-hero]` lo gobierna `heroTabs` en chrome.ts, que hace un
-   * cruce distinto (sólo imagen, sin texto). Se excluye para que no lo
-   * manejen dos módulos a la vez.
+   * `[data-tabs-hero]` era el switch día/noche del hero de ERA, con su propio
+   * cruce; ya no existe en el marcado, pero se sigue excluyendo por si el
+   * generador de secciones volviera a emitirlo.
    */
   const components = qa__tabs<HTMLElement>('[data-tabs]').filter((el) => !el.hasAttribute('data-tabs-hero'));
 

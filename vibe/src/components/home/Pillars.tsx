@@ -2,12 +2,41 @@
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * marcado del sitio original, pero al personalizarlo para Bahía Mar pasa a
+ * mantenerse a mano (textos, imágenes y alt). Regenerarlo con
+ * `npm run gen:sections` DESHARÍA este trabajo.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
  * Las URLs del CDN ya están reescritas a /public.
+ *
+ * ERA tenía aquí tres razones («Real-Life Location», «Built to stay»,
+ * «Boutique concept»); el cliente pide CINCO, una por villa. Las
+ * diapositivas salen de data/villas.ts: nombre, tagline + primera frase
+ * de la descripción, y una línea con tipo, niveles, dormitorios y
+ * unidades. Imágenes: bahiamar-pillar-<villa>.webp (4:3, del mismo
+ * render frontal que el hero). El slider (lib/animations/slider.ts)
+ * cuenta las diapositivas solo, así que la paginación pasa a 1/5.
  */
+
+import { villas, srcset, type Villa } from '@/data/villas';
+
+/** Primera frase de un párrafo, para el pie de cada villa. */
+function firstSentence(text: string): string {
+  const m = text.match(/^.*?[.!?](?=\s|$)/);
+  return m ? m[0] : text;
+}
+
+/** «Type A · Two levels · 4 bedrooms · 77 units». */
+function caption(villa: Villa): string {
+  return [
+    `Type ${villa.type}`,
+    villa.category,
+    `${villa.bedrooms} bedrooms`,
+    villa.units ? `${villa.units} units` : null,
+  ].filter(Boolean).join(' · ');
+}
 
 export function Pillars() {
   return (
@@ -50,117 +79,52 @@ export function Pillars() {
                 </div>
                 <div className="benefits-cms w-dyn-list">
                   <div role="list" className="benefits-cms_list w-dyn-items">
-                    <div data-reveal-first="" data-slider="slide" role="listitem" className="benefits-cms_list_item w-dyn-item">
-                      <div className="benefit-slide">
-                        <div className="benefit-slide_t">
-                          <div className="u-48 b-desk"></div>
-                          <div className="u-272 b-mob"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h1 a-center b-desk">Real-Life Location</h3>
-                          <div data-scroll-reveal="h" data-slider="h" className="h2 a-center b-mob">Real-Life Location</div>
-                          <div className="u-48"></div>
-                        </div>
-                        <div className="benefit-slide_c">
-                          <div className="u-16"></div>
-                          <div className="benefit-slide_img">
-                            <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                              <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a150affaf1d8cc969d57dd0_img_cam_02.webp" loading="eager" alt="" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_cam_02-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_cam_02-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_cam_02-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cimg_cam_02-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a150affaf1d8cc969d57dd0_img_cam_02.webp 1920w" className="img" />
-                            </div>
+                    {villas.map((villa) => (
+                      <div key={villa.slug} data-reveal-first="" data-slider="slide" role="listitem" className="benefits-cms_list_item w-dyn-item">
+                        <div className="benefit-slide">
+                          <div className="benefit-slide_t">
+                            <div className="u-48 b-desk"></div>
+                            <div className="u-272 b-mob"></div>
+                            <h3 data-scroll-reveal="h" data-slider="h" className="h1 a-center b-desk">{villa.name}</h3>
+                            <div data-scroll-reveal="h" data-slider="h" className="h2 a-center b-mob">{villa.name}</div>
+                            <div className="u-48"></div>
                           </div>
-                          <div className="u-16"></div>
-                        </div>
-                        <div className="benefit-slide_b">
-                          <div className="u-48"></div>
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_desc">
-                              <p data-scroll-reveal="p" data-slider="p" className="p1 a-center">
-                                Nestled between pristine beaches, world-class golf courses and exclusive wellness clubs, Era Residence offers a rare balance of seclusion and seamless access to the finest Mediterranean lifestyle.
-                              </p>
+                          <div className="benefit-slide_c">
+                            <div className="u-16"></div>
+                            <div className="benefit-slide_img">
+                              <div data-scroll-reveal="slide" data-slider="img" className="img-w">
+                                <img
+                                  src={`https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-pillar-${villa.slug}.webp`}
+                                  loading="eager"
+                                  alt={`${villa.name}: front view of the villa with its private pool and the palm trees behind`}
+                                  sizes="(max-width: 2350px) 100vw, 2350px"
+                                  srcSet={srcset(`https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-pillar-${villa.slug}.webp`)}
+                                  className="img"
+                                />
+                              </div>
                             </div>
+                            <div className="u-16"></div>
                           </div>
-                          <div className="u-48"></div>
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_cap">
-                              <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">Designed as a community, not a complex</p>
+                          <div className="benefit-slide_b">
+                            <div className="u-48"></div>
+                            <div className="grid _8-columns">
+                              <div className="benefit-slide_desc">
+                                <p data-scroll-reveal="p" data-slider="p" className="p1 a-center">
+                                  {villa.tagline} {firstSentence(villa.description[0])}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                          <div className="u-48"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div data-reveal-first="" data-slider="slide" role="listitem" className="benefits-cms_list_item w-dyn-item">
-                      <div className="benefit-slide">
-                        <div className="benefit-slide_t">
-                          <div className="u-48 b-desk"></div>
-                          <div className="u-272 b-mob"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h1 a-center b-desk">Built to stay</h3>
-                          <div data-scroll-reveal="h" data-slider="h" className="h2 a-center b-mob">Built to stay</div>
-                          <div className="u-48"></div>
-                        </div>
-                        <div className="benefit-slide_c">
-                          <div className="u-16"></div>
-                          <div className="benefit-slide_img">
-                            <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                              <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a150bbc2a39862be04f2cd5_era-residence-terrace.webp" loading="eager" alt="" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-terrace-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-terrace-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-terrace-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-terrace-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a150bbc2a39862be04f2cd5_era-residence-terrace.webp 1920w" className="img" />
+                            <div className="u-48"></div>
+                            <div className="grid _8-columns">
+                              <div className="benefit-slide_cap">
+                                <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">{caption(villa)}</p>
+                              </div>
                             </div>
+                            <div className="u-48"></div>
                           </div>
-                          <div className="u-16"></div>
-                        </div>
-                        <div className="benefit-slide_b">
-                          <div className="u-48"></div>
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_desc">
-                              <p data-scroll-reveal="p" data-slider="p" className="p1 a-center">
-                                Drawing on the spirit of Marbella&#x27;s golden age, the design blends modern architecture with natural materials, lush landscaping and thoughtfully crafted spaces.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="u-48"></div>
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_cap">
-                              <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">Designed as a community, not a complex</p>
-                            </div>
-                          </div>
-                          <div className="u-48"></div>
                         </div>
                       </div>
-                    </div>
-                    <div data-reveal-first="" data-slider="slide" role="listitem" className="benefits-cms_list_item w-dyn-item">
-                      <div className="benefit-slide">
-                        <div className="benefit-slide_t">
-                          <div className="u-48 b-desk"></div>
-                          <div className="u-272 b-mob"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h1 a-center b-desk">Boutique concept</h3>
-                          <div data-scroll-reveal="h" data-slider="h" className="h2 a-center b-mob">Boutique concept</div>
-                          <div className="u-48"></div>
-                        </div>
-                        <div className="benefit-slide_c">
-                          <div className="u-16"></div>
-                          <div className="benefit-slide_img">
-                            <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                              <img src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-garden.webp" loading="eager" alt="" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-garden-p-500.png 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-garden-p-800.png 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-garden.webp 1920w" className="img" />
-                            </div>
-                          </div>
-                          <div className="u-16"></div>
-                        </div>
-                        <div className="benefit-slide_b">
-                          <div className="u-48"></div>
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_desc">
-                              <p data-scroll-reveal="p" data-slider="p" className="p1 a-center">
-                                A boutique gated community of 25 residences on Costa del Sol, designed around privacy, wellbeing and timeless Mediterranean living.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="u-48"></div>
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_cap">
-                              <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">Designed as a community, not a complex</p>
-                            </div>
-                          </div>
-                          <div className="u-48"></div>
-                        </div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

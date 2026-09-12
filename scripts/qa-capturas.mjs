@@ -78,7 +78,9 @@ for (const [ancho, alto] of anchos) {
     }
     await pagina.evaluate(() => window.scrollTo(0, 0))
     await pagina.waitForTimeout(800)
-    await pagina.screenshot({ path: `${salida}/${nombre}-full.png`, fullPage: true })
+    // La de página completa es opcional: en páginas muy altas con vídeo puede
+    // agotar el tiempo (visto con el dev server de Vite) y no debe tumbar el resto.
+    await pagina.screenshot({ path: `${salida}/${nombre}-full.png`, fullPage: true, timeout: 20_000 }).catch(() => console.warn(`   (sin captura completa de ${nombre})`))
 
     // Recortes: vegetación de esquina y sello.
     const recortes = await pagina.evaluate(() => {

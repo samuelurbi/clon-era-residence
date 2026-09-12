@@ -2,67 +2,71 @@
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-apartment-card.mjs — no editar a mano.
+ * Tarjeta de villa del listado y del bloque «otras villas» de la ficha.
+ * El marcado es el del sitio original (clases de Webflow intactas) con los
+ * valores sustituidos por los de data/villa-cards.ts.
  *
- * Tarjeta de apartamento del listado. El marcado es el del sitio original
- * (clases de Webflow intactas) con los valores sustituidos por datos.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-apartment-card.mjs sobre
+ * la tarjeta del sitio de origen; al personalizarla para Bahía Mar pasa a
+ * mantenerse a mano y regenerarla desharía estos cambios.
+ *
+ * Los huecos de la tarjeta no son los del original (bloque, planta, m²,
+ * terraza): ver la cabecera de data/villa-cards.ts. Cuando el master plan
+ * no da unidades (tipos D y E) el segundo hueco enseña los niveles.
  */
 
-import type { ApartmentCardData } from '@/data/apartment-cards';
+import type { VillaCardData } from '@/data/villa-cards';
 
-export function ApartmentCard({ card }: { card: ApartmentCardData }) {
+export function VillaCard({ card }: { card: VillaCardData }) {
   return (
     <div data-sort-item="" data-filter-item="" role="listitem" className="apart-cms_list_item w-dyn-item">
-      <a data-sort-relevant={card.sortRelevant ?? undefined} hover-apart-card="" href={card.href} className="apart-card w-inline-block">
+      <a data-sort-relevant={card.sortRelevant} hover-apart-card="" href={card.href} className="apart-card w-inline-block">
         <div className="apart-card_c">
           <div className="apart-card_t">
-            <h2 data-type={card.filterType ?? undefined} className="l2 a-center">{card.category}</h2>
+            <h2 data-type={card.filterType} className="l2 a-center">{card.name}</h2>
             <div className="u-4"></div>
             <p id="" className="l2 reg a-center">
-              <span>Completion:</span>
+              <span>Completion:{' '}</span>
               <span>{card.completion}</span>
             </p>
           </div>
           <div className="u-16"></div>
           <div className="apart-card_img">
             <div className="apart-card_img_prim">
-              <img src={card.image ?? undefined} loading="eager" alt="" sizes="100vw" srcSet={card.imageSrcset ?? undefined} className="img contain" />
+              <img src={card.image} loading="eager" alt={card.name} sizes="100vw" srcSet={card.imageSrcset} className="img contain" />
             </div>
           </div>
           <div className="u-16"></div>
           <div className="apart-card_b">
             <div className="apart-card_data-list">
               <p id="" className="l2 reg a-center">
-                <span>№</span>
-                <span>{card.code}</span>
+                <span>Type{' '}</span>
+                <span>{card.type}</span>
               </p>
               <div className="data-divider"></div>
               <p id="" className="l2 reg a-center">
-                <span>Block</span>
-                <span>{card.block}</span>
+                <span>{card.unitsLabel ?? `${card.levels} ${card.levels === '1' ? 'level' : 'levels'}`}</span>
               </p>
               <div className="data-divider"></div>
               <p id="" className="l2 reg a-center">
-                <span>{card.floor}</span>
-                <span>floor</span>
+                <span>{card.bathrooms}</span>
+                <span>{' '}bath</span>
               </p>
             </div>
             <div className="u-16"></div>
             <div className="apart-card_info">
-              <h3 id="" data-bed={card.filterBed ?? undefined} className="h5">
+              <h3 id="" data-bed={card.filterBed} className="h5">
                 <span>{card.bedrooms}</span>
-                <span>bed</span>
+                <span>{' '}bed</span>
               </h3>
               <div className="h5">/</div>
-              <h4 data-sort-area={card.sortArea ?? undefined} className="h5"><span>{card.area}</span></h4>
+              <h4 data-sort-size={card.sortSize} className="h5"><span>{card.category}</span></h4>
             </div>
             <div className="u-16"></div>
             <div className="apart-card_add">
               <h5 id="" className="l1 a-center">
                 <span>+</span>
-                <span>{card.terrace}</span>
-                <span></span>
-                <span>Terrace</span>
+                <span>{' '}{card.extra}</span>
               </h5>
             </div>
           </div>

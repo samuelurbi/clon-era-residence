@@ -13,23 +13,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f3f3ec" />
 
-    <title>ERA Residence — Contemporary Mediterranean Residences in Estepona</title>
+    <title>Bahía Mar — Boutique Villas on the Samaná Peninsula, Dominican Republic</title>
     <meta
       name="description"
-      content="Boutique residences on the New Golden Mile combining contemporary architecture, natural materials and resort-style living near Marbella and Estepona."
+      content="Five villa typologies in a boutique beach resort community on the Samaná peninsula, combining contemporary tropical architecture, private pools and views over Samaná Bay, with the beach, the rainforest and Las Terrenas close by."
     />
 
     <!-- Open Graph / Twitter. URLs absolutas obligatorias: las redes no
          resuelven rutas relativas. -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="ERA Residence" />
+    <meta property="og:site_name" content="Bahía Mar Residences &amp; Beach Resort" />
     <meta
       property="og:title"
-      content="ERA Residence — Contemporary Mediterranean Residences in Estepona"
+      content="Bahía Mar — Boutique Villas on the Samaná Peninsula, Dominican Republic"
     />
     <meta
       property="og:description"
-      content="Boutique residences on the New Golden Mile combining contemporary architecture, natural materials and resort-style living near Marbella and Estepona."
+      content="Five villa typologies in a boutique beach resort community on the Samaná peninsula, combining contemporary tropical architecture, private pools and views over Samaná Bay, with the beach, the rainforest and Las Terrenas close by."
     />
     <meta property="og:image" content="{{ASSET_BASE}}/images/open-graph.webp" />
     <meta property="og:image:width" content="1200" />
@@ -48,7 +48,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Italiana&family=Pinyon+Script&display=swap"
       rel="stylesheet"
     />
 
@@ -66,31 +66,12 @@
     </style>
   </head>
   <body class="body">
-    <!-- GTM. En Next era <Script strategy="afterInteractive">; aquí va
-         al final del body, que consigue lo mismo: fuera de la ruta
-         crítica de render. -->
+    <!-- GTM: VACÍO A PROPÓSITO, como en app/layout.tsx. El contenedor que
+         venía aquí (GTM-WMDRV3P6) era el del sitio original de ERA; con él
+         la analítica de Bahía Mar iría a la cuenta de otro promotor. Cuando
+         el cliente tenga el suyo, va aquí, al final del body. -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-WMDRV3P6');
-    </script>
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-WMDRV3P6"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe>
-    </noscript>
   </body>
 </html>

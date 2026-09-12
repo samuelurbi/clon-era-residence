@@ -8,7 +8,7 @@ import { Pillars } from '@/components/home/Pillars';
 import { PillarsMedia } from '@/components/home/PillarsMedia';
 import { Concept } from '@/components/home/Concept';
 import { Location } from '@/components/home/Location';
-import { ApartmentsPreview } from '@/components/home/ApartmentsPreview';
+import { VillasPreview } from '@/components/home/VillasPreview';
 import { AmenitiesIntro } from '@/components/home/AmenitiesIntro';
 import { Amenities } from '@/components/sections/Amenities';
 import { SpaceToLive } from '@/components/home/SpaceToLive';
@@ -31,7 +31,7 @@ export function HomePage() {
       <PillarsMedia />
       <Concept />
       <Location />
-      <ApartmentsPreview />
+      <VillasPreview />
       <AmenitiesIntro />
       <Amenities />
       <SpaceToLive />

@@ -29,8 +29,8 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PUBLIC = join(ROOT, 'public');
 
-const ASSET_BASE = (process.env.ASSET_BASE || 'https://puntacanadinnerinthesky.com/urbatrix/era').replace(/\/+$/, '');
-const ASSET_SEP = process.env.ASSET_SEP || '%5C';
+const ASSET_BASE = (process.env.ASSET_BASE || 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar').replace(/\/+$/, '');
+const ASSET_SEP = process.env.ASSET_SEP || '/';
 const LOCAL_ONLY = process.argv.includes('--local');
 
 /** Carpetas de `public/` que el sitio referencia. */

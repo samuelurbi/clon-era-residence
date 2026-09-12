@@ -13,7 +13,7 @@ export function LandscapeCover() {
   return (
     <div className="landscape-cover">
       <div className="landscape-cover_img">
-        <img loading="eager" src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Clandscape.svg" alt="" className="img contain" />
+        <img loading="eager" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/landscape.svg" alt="" className="img contain" />
       </div>
       <div className="landscape-cover_bg"></div>
     </div>

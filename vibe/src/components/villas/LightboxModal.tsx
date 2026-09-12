@@ -2,7 +2,7 @@
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde apartments/011.html — no editar a mano.
+ * GENERADO por scripts/generate-sections.mjs desde villas/011.html — no editar a mano.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
@@ -30,7 +30,7 @@ export function LightboxModal() {
             </div>
           </div>
           <div data-lightbox-content="" className="modal_lightbox_content">
-            <img data-lightbox-img="" loading="lazy" alt="" src="https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cplaceholder.60f9b1840c.svg" className="img modal_lightbox_img" />
+            <img data-lightbox-img="" loading="lazy" alt="" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/placeholder.60f9b1840c.svg" className="img modal_lightbox_img" />
           </div>
           <div className="modal_lightbox_pag">
             <div className="u-24"></div>

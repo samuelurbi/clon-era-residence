@@ -2,14 +2,19 @@
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde apartments/011.html — no editar a mano.
+ * Título del bloque «otras villas» que precede a RelatedVillas en la ficha
+ * (/villas/<slug>). Sólo texto: no lleva imagen.
  *
- * Marcado portado del sitio original conservando las clases de Webflow,
- * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
- * Las URLs del CDN ya están reescritas a /public.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre la
+ * ficha de apartamento del sitio de origen; al personalizarlo para Bahía
+ * Mar («Other villas» en vez de «Other apartments») pasa a mantenerse a
+ * mano y regenerarlo desharía el cambio.
+ *
+ * Marcado portado conservando las clases de Webflow, que es lo que le da
+ * el aspecto (ver styles/webflow.css y components.css).
  */
 
-export function ApartmentArch() {
+export function VillaArch() {
   return (
     <section className="section arch clip">
       <div className="container">
@@ -30,7 +35,7 @@ export function ApartmentArch() {
               <div className="grid">
                 <div className="s_title">
                   <p data-scroll-reveal="p" className="l1 a-center">
-                    Other apartments 
+                    Other villas 
                     <br />
                     that might suit your needs
                   </p>

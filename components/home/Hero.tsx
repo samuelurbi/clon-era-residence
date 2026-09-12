@@ -13,7 +13,7 @@
  *    los pilares (lib/animations/hero-slider.ts reutiliza `animateSlide`).
  *    Las capas se apilan en el hueco de la antigua «day»: la primera es
  *    `relative` y da la altura, el resto `absolute` (regla en theme.css).
- *  - Las imágenes (public/images/bahiamar-hero-<villa>.webp, 1920×1728)
+ *  - Las imágenes (bahiamar-hero-<villa>.webp en public, 1920×1728)
  *    tienen la proporción 10:9 de la de ERA: los renders frontales se
  *    expandieron hacia arriba con Magnific para que, como en el original,
  *    al principio sólo se vea cielo detrás del titular y la villa aparezca
