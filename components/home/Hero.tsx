@@ -18,9 +18,12 @@
  *    expandieron hacia arriba con Magnific para que, como en el original,
  *    al principio sólo se vea cielo detrás del titular y la villa aparezca
  *    al hacer scroll (coreografía en lib/animations/home-flow.ts).
- *  - Donde ERA ponía «A place · by day / by night · to return to» van los
- *    nombres de las cinco villas; el activo se ilumina al ritmo del fondo
- *    y al pulsar uno se salta a su villa.
+ *  - La línea «A place · by day / by night · to return to» desaparece del
+ *    titular. Los nombres de las cinco villas van abajo, con el botón
+ *    circular (`.hero-s_b`, fijo al pie de la imagen): así acompañan a la
+ *    villa cuando ya se ve entera, en vez de subir con el titular. El
+ *    activo se ilumina al ritmo del fondo y pulsar uno cambia de villa
+ *    (href="#": PageTransitions ignora esos enlaces y no navega).
  */
 
 import { villas } from '@/data/villas';
@@ -51,29 +54,6 @@ export function Hero() {
                     <h2 data-prevent-flicker="" data-scroll-reveal="a" className="a2">Las Terrenas</h2>
                   </div>
                 </div>
-              </div>
-              <div className="u-48"></div>
-              <div className="grid">
-                <h3 className="hero-s_title h5">
-                  <div data-prevent-flicker="" data-scroll-reveal="ctn" data-hero-villas="" className="hero-s_tabs">
-                    {villas.map((villa, i) => (
-                      <a
-                        key={villa.slug}
-                        hover-tab=""
-                        aria-label={villa.name}
-                        hover-nav-item-l2=""
-                        data-hero-villa={villa.slug}
-                        href={`/villas/${villa.slug}`}
-                        className={`nav-item w-inline-block${i === 0 ? ' is-active' : ''}`}
-                      >
-                        <div className="nav-item_label">
-                          <div hover="text" className="nav-item_label_text"><div className="span">{villa.name.replace('Villa ', '')}</div></div>
-                          <div hover="text" className="nav-item_label_text is-2"><div className="span">{villa.name.replace('Villa ', '')}</div></div>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </h3>
               </div>
             </div>
             <div className="hero-w_bg">
@@ -156,6 +136,29 @@ export function Hero() {
                   <div className="img-over-grad from-bot bot _6x"></div>
                 </div>
                 <div className="hero-s_b">
+                  <div className="grid">
+                    <h3 className="hero-s_title h5">
+                      <div data-prevent-flicker="" data-scroll-reveal="ctn" data-hero-villas="" className="hero-s_tabs">
+                        {villas.map((villa, i) => (
+                          <a
+                            key={villa.slug}
+                            hover-tab=""
+                            aria-label={villa.name}
+                            hover-nav-item-l2=""
+                            data-hero-villa={villa.slug}
+                            href="#"
+                            className={`nav-item w-inline-block${i === 0 ? ' is-active' : ''}`}
+                          >
+                            <div className="nav-item_label">
+                              <div hover="text" className="nav-item_label_text"><div className="span">{villa.name.replace('Villa ', '')}</div></div>
+                              <div hover="text" className="nav-item_label_text is-2"><div className="span">{villa.name.replace('Villa ', '')}</div></div>
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                    </h3>
+                  </div>
+                  <div className="u-32"></div>
                   <div data-prevent-flicker="" data-scroll-reveal="ctn" className="hero-s_btn">
                     <div className="e-auto">
                       <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">

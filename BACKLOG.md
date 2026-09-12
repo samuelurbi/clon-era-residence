@@ -48,8 +48,9 @@ que no pueda pasar por real.
   en `archivos-extra-whatsapp/`. No hizo falta reescalar por IA.
 - **Hero como el de ERA.** Sin versión día/noche. Las cinco villas pasan de
   fondo en bucle con la cortina del slider de los pilares
-  (`lib/animations/hero-slider.ts`), y la línea bajo el titular lleva los
-  cinco nombres con el activo iluminado. Las imágenes
+  (`lib/animations/hero-slider.ts`), y sobre el botón circular, al pie de la
+  imagen, van los cinco nombres con el activo iluminado: pulsar uno cambia
+  de villa (no lleva a la ficha; para eso está el botón). Las imágenes
   (`bahiamar-hero-<villa>.webp`, 1920×1728) se expandieron hacia arriba con
   Magnific (5 × 50 créditos, más un duplicado por un timeout: 300 en total)
   para tener el 42 % de cielo de la foto de ERA: así al cargar sólo hay cielo
