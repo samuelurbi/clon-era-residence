@@ -403,7 +403,14 @@ body {
  *  {display:none}` ≤991px) porque el switch no tenía sentido táctil; los
  *  nombres sí, así que se muestra en todos los anchos, más compacta.
  * -------------------------------------------------------- */
-[data-hero-slider] { position: relative; }
+/*
+ * `z-index: 0` crea un contexto de apilamiento PROPIO para las capas: el
+ * slider les da z 1/2 durante la cortina, y sin este aislamiento la capa
+ * activa (z 2) tapaba los degradados de ERA (.img-over-grad, z 1) — que
+ * sólo asomaban un instante al arrancar cada transición. Con el contexto
+ * aislado, el contenedor entero queda bajo degradados y pines (z 5).
+ */
+[data-hero-slider] { position: relative; z-index: 0; }
 [data-hero-slide] { will-change: clip-path; }
 [data-hero-slide]:not(:first-child) { position: absolute; inset: 0 auto auto 0; width: 100%; }
 
