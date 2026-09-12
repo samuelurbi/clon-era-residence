@@ -10,16 +10,22 @@ entre fondo e imagen. Aquí se hace lo mismo con el render de Villa Cosón:
   2. Cielo = píxeles claros, poco saturados y azulados (o casi blancos)
      CONECTADOS con el borde superior. El mar (turquesa, saturado), los
      cristales (encerrados por la carpintería) y las cortinas no lo tocan.
-  3. El cielo se encoge 1 px para comerse el halo azul de las palmeras y
-     el alfa se suaviza 1,2 px.
-  4. WebP con alfa + variantes -p-500/800/1080/1600/2000.
+  3. Las palmeras de arriba a la izquierda salían cortadas por el borde
+     del render (y con huecos de cielo entre las frondas): se quitan con un
+     corte en ángulo que sigue la línea del tejado —de (0, 366) al vértice
+     (1066, 165) a 2350 px, unos 13 px por dentro de la fascia para que no
+     quede ningún resto—. Las palmeras de la derecha se conservan; sus
+     huecos de cielo (componentes azules pequeñas de la mitad superior) se
+     vacían también.
+  4. El cielo se encoge 1 px para comerse el halo azul de las frondas y el
+     alfa se suaviza 1,2 px. WebP con alfa + variantes -p-500/800/1080/1600/2000.
 
     python scripts/quote-sin-cielo.py
 """
 import os
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw
 from scipy import ndimage
 
 Image.MAX_IMAGE_PIXELS = None
@@ -50,6 +56,17 @@ def main():
     # nada de lo que toque el borde inferior
     abajo = np.unique(etiquetas[-1, :])
     cielo &= ~np.isin(etiquetas, abajo[abajo != 0])
+    # huecos de cielo entre frondas: componentes azules pequeñas de la mitad
+    # superior que no tocan el borde (no son ni mar ni cristal: esos son grandes)
+    tam = ndimage.sum(cand, etiquetas, range(1, n + 1))
+    cy = ndimage.center_of_mass(cand, etiquetas, range(1, n + 1))
+    huecos = [k + 1 for k in range(n) if tam[k] < 3000 and cy[k][0] < a.shape[0] * 0.55]
+    cielo |= np.isin(etiquetas, huecos)
+    # corte en ángulo por encima del tejado: fuera las palmeras cortadas
+    W, H = im.size
+    poli = Image.new('L', (W, H), 0)
+    ImageDraw.Draw(poli).polygon([(0, 0), (0, round(366 * W / 2350)), (round(1066 * W / 2350), round(165 * W / 2350)), (round(1066 * W / 2350), 0)], fill=255)
+    cielo |= np.asarray(poli) > 0
     cielo = ndimage.binary_dilation(cielo, iterations=1)   # come el halo azul de los bordes
     alfa = ndimage.gaussian_filter(np.where(cielo, 0.0, 255.0), 1.2)
     rgba = np.dstack([a, np.clip(alfa, 0, 255).astype(np.uint8)])
