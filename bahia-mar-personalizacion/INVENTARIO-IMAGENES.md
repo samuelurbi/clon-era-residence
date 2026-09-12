@@ -156,7 +156,7 @@ Total: 105 elementos.
 | `/images/bahiamar-community-1.webp` | 00. AMENIDADES/PISCINA/PISCINA 01.png | components/home/Pillars.tsx — pillar 3 «A boutique resort» (slide image, community lagoon pool; crop to the original slot aspect 1.29:1 + srcset -p-500/800/1080/1600/2000) |
 | `/images/bahiamar-eco-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R5.png | components/home/Pillars.tsx — pillar 2 «True eco-luxury» (slide image, Villa Ámbar exterior; 4:5 portrait crop like the original slot + srcset -p-500/800/1080/1600/2000) |
 | `/images/bahiamar-location-1.webp` | 00. AMENIDADES/Z. FOGATAS 02.jpeg | SIN USO desde el 12-09-2026: los pilares pasaron de tres razones a una por villa (bahiamar-pillar-<villa>). Fichero conservado en public/ por si se recupera. |
-| `/images/bahiamar-quote-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R13.png | components/home/PillarsMedia.tsx — background of the quote block (Villa Cosón exterior; 4:3 centre crop + srcset -p-500/800/1080/1600/2000) |
+| `/images/bahiamar-quote-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R13.png | Home › bloque de cita (PillarsMedia) › fondo: Villa Cosón R13, recorte 4:3, CON EL CIELO TRANSPARENTE (scripts/quote-sin-cielo.py) para que el edificio se pose sobre el fondo de la sección sin corte, como el img_cam_05_alpha de ERA. Variantes -p-500/800/1080/1600/2000. |
 
 ## Identidad y vegetación decorativa
 

@@ -2,7 +2,7 @@
   {
     "destino": "/images/bahiamar-quote-1.webp",
     "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R13.png",
-    "uso": "components/home/PillarsMedia.tsx — background of the quote block (Villa Cosón exterior; 4:3 centre crop + srcset -p-500/800/1080/1600/2000)"
+    "uso": "Home › bloque de cita (PillarsMedia) › fondo: Villa Cosón R13, recorte 4:3, CON EL CIELO TRANSPARENTE (scripts/quote-sin-cielo.py) para que el edificio se pose sobre el fondo de la sección sin corte, como el img_cam_05_alpha de ERA. Variantes -p-500/800/1080/1600/2000."
   },
   {
     "destino": "/images/bahiamar-location-1.webp",
