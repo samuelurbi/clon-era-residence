@@ -4,8 +4,8 @@ import { ComingSoonMain } from '@/components/pages/ComingSoonMain';
 export const metadata: Metadata = {
   title: 'Coming soon',
   description:
-    'The next selection of Bahía Mar villas in Las Terrenas, Samaná, will be ' +
-    'released shortly. Contact us to find out which villas are still available.',
+    'Villa availability at Bahía Mar, Las Terrenas, Samaná, is confirmed ' +
+    'directly by our team. Contact us to find out which villas are currently available.',
 };
 
 /**

@@ -263,7 +263,7 @@ export function VillasListing() {
           <div className="apart_themes">
             <div className="themes_row">
               <div data-bg="light" className="apart_themes_light-1"></div>
-              <div data-bg="color" className="apart_themes_color-1"></div>
+              <div data-bg="light" className="apart_themes_color-1"></div>
             </div>
             <div data-bg="light" className="apart_themes_light-2"></div>
           </div>

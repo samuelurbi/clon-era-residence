@@ -1,6 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * home.html del sitio original, pero al personalizarlo para Bahía Mar pasa
+ * a mantenerse a mano (textos, imágenes, alt y el recorrido de lugares en
+ * SVG). Regenerarlo con `npm run gen:sections` DESHARÍA este trabajo.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
@@ -29,7 +32,7 @@ export function Concept() {
                     <div className="grid">
                       <div className="info-s_lead">
                         <h3 data-part="p" className="h4 a-center">
-                          Bahía Mar is a gated resort community of 246 boutique villas across 349,000 m² of Caribbean forest, designed around privacy, wellbeing and a life lived outdoors
+                          Bahía Mar is a boutique resort community of villas across 349,146 m² of tropical landscape on the Samaná peninsula, designed around privacy, wellbeing and a life lived outdoors
                         </h3>
                       </div>
                     </div>
@@ -150,7 +153,7 @@ export function Concept() {
                         <h2 className="h3 a-center">
                           <span data-scroll-reveal="h" className="loc-path-s_title_line">The coast you wanted</span>
                           <span data-scroll-reveal="a" className="loc-path-s_title_a a2">yours</span>
-                          <span data-scroll-reveal="h" className="loc-path-s_title_line">this year</span>
+                          <span data-scroll-reveal="h" className="loc-path-s_title_line">year after year</span>
                         </h2>
                       </div>
                     </div>
@@ -181,7 +184,7 @@ export function Concept() {
                             */
                             style={{ width: "100%", height: "auto", display: "block" }}
                             role="img"
-                            aria-label="Places near Bahía Mar and approximate drive times"
+                            aria-label="Places near Bahía Mar and approximate drive times, to be confirmed"
                           >
                             {/* La costa: una línea que ondula de oeste a este. */}
                             <path
@@ -190,13 +193,20 @@ export function Concept() {
                               strokeWidth="1.5"
                               strokeLinecap="round"
                             />
+                            {/*
+                              Los tiempos son una ESTIMACIÓN pendiente de que
+                              el cliente la confirme (BRIEF.md): van con «~»
+                              delante y con la nota «(TBC)» al pie del mapa,
+                              para que nada se lea como dato firme. Al
+                              confirmarlos, quitar el «~» y la nota.
+                            */}
                             {[
-                              { x: 62, y: 167, nombre: 'El Catey Airport', tiempo: '40 min' },
-                              { x: 216, y: 147, nombre: 'Sánchez', tiempo: '30 min' },
-                              { x: 372, y: 150, nombre: 'Playa Cosón', tiempo: '5 min' },
-                              { x: 700, y: 118, nombre: 'Las Terrenas', tiempo: '15 min' },
-                              { x: 856, y: 126, nombre: 'El Limón Waterfall', tiempo: '30 min' },
-                              { x: 1006, y: 104, nombre: 'Samaná', tiempo: '50 min' },
+                              { x: 62, y: 167, nombre: 'El Catey Airport', tiempo: '~40 min' },
+                              { x: 216, y: 147, nombre: 'Sánchez', tiempo: '~30 min' },
+                              { x: 372, y: 150, nombre: 'Playa Cosón', tiempo: '~5 min' },
+                              { x: 700, y: 118, nombre: 'Las Terrenas', tiempo: '~15 min' },
+                              { x: 856, y: 126, nombre: 'El Limón Waterfall', tiempo: '~30 min' },
+                              { x: 1006, y: 104, nombre: 'Samaná', tiempo: '~50 min' },
                             ].map((p) => (
                               <g key={p.nombre}>
                                 <circle cx={p.x} cy={p.y} r="3" fill="currentColor" />
@@ -256,6 +266,28 @@ export function Concept() {
                               }}
                             >
                               Bahía Mar
+                            </text>
+
+                            {/*
+                              Nota visible de que los tiempos son aproximados y
+                              están por confirmar. Va centrada bajo el proyecto
+                              porque en móvil el mapa se desplaza a su centro
+                              (lib/animations/misc.ts) y es la zona que se ve.
+                            */}
+                            <text
+                              x="540"
+                              y="184"
+                              textAnchor="middle"
+                              fill="currentColor"
+                              style={{
+                                fontFamily: 'var(--_fonts---font-body, sans-serif)',
+                                fontSize: '10px',
+                                letterSpacing: '0.8px',
+                                textTransform: 'uppercase',
+                                opacity: 0.7,
+                              }}
+                            >
+                              Approximate drive times (TBC)
                             </text>
                           </svg>
                         </div>

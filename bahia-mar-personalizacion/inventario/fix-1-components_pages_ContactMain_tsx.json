@@ -1,0 +1,7 @@
+[
+  {
+    "destino": "/images/bahiamar-clubhouse-1.webp",
+    "origen": "00. AMENIDADES/CASA CLUB/INGRESO CASA CLUB 08.png",
+    "uso": "/contact > hueco del mapa (components/pages/ContactMain.tsx, .contact-s_map_c): sustituye a bahiamar-entrance-1 por PALETTE-BRAND-02 (ronda 1 de QA). Render 5504x3072 recortado centrado a 1.895:1 (la proporción del SVG original de 1440x760) y escalado a 2350x1240; variantes -p-500/800/1080/1600/2000 con las dimensiones que declara el srcSet. Elegido por ser de tono claro en las zonas que cubre el cromo fijo (luminancia media Y≈162 en la columna del sello, ≈140 en la del menú, ≈159 en la caja de redes; el pórtico anterior daba 85/73/113), de modo que el verde profundo del tema light contrasta. bahiamar-entrance-1.webp queda sin uso en el código; no se ha borrado."
+  }
+]

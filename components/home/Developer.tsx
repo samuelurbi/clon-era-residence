@@ -12,6 +12,10 @@
  * Sólo cambian textos, src/srcSet/alt y href. Los hechos salen del brief
  * (brochure p.10 y p.52, master plan Fase II); la fecha de entrega es el
  * placeholder «2027 (TBC)» de la política de placeholders, no un dato.
+ *
+ * Tarjeta «Developer»: el brochure (p.52) sólo dice «es un proyecto gestionado
+ * por Landmass Capital» + LandmassCapital.com. No añadir dirección postal ni
+ * descripción de la firma sin fuente documentada (QA ronda 1, CONTENT-TRUTH-05).
  */
 
 export function Developer() {
@@ -23,7 +27,7 @@ export function Developer() {
             <div className="u-48"></div>
             <div className="grid">
               <div className="s_title">
-                <p data-scroll-reveal="p" className="l1 a-center">A place to return to, year after year</p>
+                <p data-scroll-reveal="p" className="l1 a-center">The people behind Bahía Mar</p>
               </div>
             </div>
             <div className="u-48"></div>
@@ -54,9 +58,9 @@ export function Developer() {
                           <div className="grid _6-columns">
                             <div className="other-card_info_desc">
                               <p data-accordion-card="p" className="p1 a-center">
-                                Bahía Mar Residences &amp; Beach Resort is developed by Landmass Capital, a real-estate investment and development firm operating in the Dominican Republic.
+                                Bahía Mar Residences &amp; Beach Resort is a project managed by Landmass Capital.
                                 <br />
-                                LandmassCapital.com · Plaza Comercial Atala I, Suite 203, Santo Domingo
+                                LandmassCapital.com
                               </p>
                               <div className="u-32"></div>
                               <div data-accordion-card="ctn" className="info_divider"><div className="line-h"></div></div>
@@ -93,7 +97,7 @@ export function Developer() {
                               <p data-accordion-card="p" className="p1 a-center">
                                 Estudio Dolla
                                 <br />
-                                The architecture of Bahía Mar and its five villa typologies is by Estudio Dolla: timber, pale stone and chukum, wide overhangs and terraces that open every villa to the landscape.
+                                Estudio Dolla designed the master plan and the five villa typologies, from the two-level Villa Cosón to the single-level Villa Ámbar, each with its own private pool and terraces.
                               </p>
                               <div className="u-32"></div>
                               <div data-accordion-card="ctn" className="info_divider"><div className="line-h"></div></div>

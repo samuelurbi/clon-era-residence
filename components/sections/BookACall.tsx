@@ -94,9 +94,7 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
                 <div className="footer-s_info">
                   <div data-text="p" className="l1">Bahía Mar.</div>
                   <div data-text="p" className="l1 reg no-wrap">
-                    ©
-                    <span className="year">2026</span>
-                     All rights reserved
+                    ©<span className="year">2026</span>{' '}All rights reserved
                   </div>
                   <div className="u-12"></div>
                   <div data-text="p" className="legal-cms w-dyn-list">

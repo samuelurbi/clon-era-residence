@@ -115,7 +115,7 @@ export function VillaDetail({
                       <div className="data-item">
                         <h4 className="l1 reg">Bathrooms</h4>
                         <div className="u-8"></div>
-                        <h5 className="h5">{villa.bathrooms}{villa.halfBath ? ' + 1' : ''}</h5>
+                        <h5 className="h5">{villa.bathrooms}{villa.halfBath ? ' + ½' : ''}</h5>
                       </div>
                       <div className="data-item">
                         <h4 className="l1 reg">Levels</h4>

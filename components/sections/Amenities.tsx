@@ -120,7 +120,7 @@ export function Amenities() {
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  A coworking space, a club house and boutique hotel, seven restaurants and shops, a gym, a party hall, courts and children’s parks.
+                                  A coworking space, a clubhouse and boutique hotel, seven restaurants and shops, a gym, a party hall, courts and children’s parks.
                                 </h4>
                               </div>
                             </div>

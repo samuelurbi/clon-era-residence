@@ -1,0 +1,42 @@
+[
+  {
+    "destino": "/images/villa-coson-plan-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/00. PLANOS/COMERCIALES/A-01-PRIMER NIVEL.png",
+    "uso": "Ficha /villas/coson > plano principal «Villa Cosón — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+  },
+  {
+    "destino": "/images/villa-coson-plan-2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/00. PLANOS/COMERCIALES/A-02-SEGUNDO NIVEL.png",
+    "uso": "Ficha /villas/coson > plano principal «Villa Cosón — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+  },
+  {
+    "destino": "/images/villa-helecho-plan-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
+    "uso": "Ficha /villas/helecho > plano principal «Villa Helecho — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+  },
+  {
+    "destino": "/images/villa-helecho-plan-2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-02-SEGUNDO NIVEL.png",
+    "uso": "Ficha /villas/helecho > plano principal «Villa Helecho — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+  },
+  {
+    "destino": "/images/villa-remanso-plan-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
+    "uso": "Ficha /villas/remanso > plano principal «Villa Remanso — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+  },
+  {
+    "destino": "/images/villa-ambar-plan-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
+    "uso": "Ficha /villas/ambar > plano principal «Villa Ámbar — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+  },
+  {
+    "destino": "/images/villa-carolina-plan-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
+    "uso": "Ficha /villas/carolina > plano principal «Villa Carolina — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+  },
+  {
+    "destino": "/images/villa-carolina-plan-2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-02-SEGUNDO NIVEL.png",
+    "uso": "Ficha /villas/carolina > plano principal «Villa Carolina — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs)."
+  }
+]

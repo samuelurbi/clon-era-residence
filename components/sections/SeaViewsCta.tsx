@@ -22,7 +22,7 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
             <div className="grid">
               <div className="cta-s_desc">
                 <p data-scroll-reveal="p" className="l1 a-center">
-                  A short conversation is enough to understand which of the five villas fits the way you want to live in Las Terrenas — a family home facing the bay, a longer stay each season, or a place to return to year after year.
+                  A short conversation is enough to understand which of the five villas fits the way you want to live in Las Terrenas — a family home facing the bay, a longer stay each season, or a base for the winter months.
                 </p>
               </div>
             </div>

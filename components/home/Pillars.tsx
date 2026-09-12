@@ -148,7 +148,7 @@ export function Pillars() {
                           <div className="grid _8-columns">
                             <div className="benefit-slide_desc">
                               <p data-scroll-reveal="p" data-slider="p" className="p1 a-center">
-                                A boutique resort community of 246 villas in five typologies across 349,000 m² of tropical landscape, sharing a beach club, clubhouse, hot springs and spa — and the first funicular in the Caribbean to move between them.
+                                A boutique resort community in five villa typologies across 349,146 m² of tropical landscape, sharing a beach club, clubhouse, thermal waters and spa — and the first funicular in the Caribbean to move between them.
                               </p>
                             </div>
                           </div>

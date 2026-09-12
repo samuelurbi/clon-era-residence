@@ -12,9 +12,18 @@
  * textos, src/srcSet/alt y href. Teléfono, correo, redes y dirección de
  * la oficina de ventas son placeholders (ver BRIEF.md): el cliente no ha
  * facilitado ninguno. El horario tampoco se conoce, así que el pin sobre
- * la imagen (el pórtico de entrada, «PÓRTICO INGRESO 01» de 00. AMENIDADES)
- * no inventa horas ni política de visitas: sólo dice «Bahía Mar · Las
- * Terrenas, Samaná», que es lo que muestra la foto.
+ * la imagen no inventa horas ni política de visitas: sólo dice «Bahía Mar ·
+ * Las Terrenas, Samaná», que es lo que muestra la foto.
+ *
+ * La imagen del hueco del mapa es la entrada de la casa club («INGRESO CASA
+ * CLUB 08» de 00. AMENIDADES), recortada a la proporción del SVG original
+ * (1440x760). Antes era el pórtico de entrada (bahiamar-entrance-1), pero
+ * ese render es oscuro y la sección sigue siendo `data-bg="light"`: el
+ * sello, el menú y la caja de redes se pintaban en verde profundo sobre
+ * follaje y no se leían (QA ronda 1, PALETTE-BRAND-02). El cromo se fija por
+ * marcadores `data-bg` con geometría propia de Webflow (hero_themes…), que
+ * aquí no existen y no se pueden crear sin clases nuevas, así que la
+ * solución es una imagen de tono claro en la que el verde sí contrasta.
  */
 
 export function ContactMain() {
@@ -103,10 +112,10 @@ export function ContactMain() {
                         </a>
                       </div>
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="Whatsapp" href="https://wa.me/18090000000" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="WhatsApp" href="https://wa.me/18090000000" className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div className="nav-item_label_text"><div hover="text" className="l1">Whatsapp</div></div>
-                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">Whatsapp</div></div>
+                            <div className="nav-item_label_text"><div hover="text" className="l1">WhatsApp</div></div>
+                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">WhatsApp</div></div>
                           </div>
                         </a>
                       </div>
@@ -161,7 +170,7 @@ export function ContactMain() {
                 </div>
                 <div data-parallax="w" data-scroll-reveal="ctn" data-prevent-flicker="" className="contact-s_map">
                   <div data-parallax="img" className="contact-s_map_c">
-                    <img src="/images/bahiamar-entrance-1.webp" loading="eager" sizes="100vw" srcSet="/images/bahiamar-entrance-1-p-500.webp 500w, /images/bahiamar-entrance-1-p-800.webp 800w, /images/bahiamar-entrance-1-p-1080.webp 1080w, /images/bahiamar-entrance-1-p-1600.webp 1600w, /images/bahiamar-entrance-1-p-2000.webp 2000w, /images/bahiamar-entrance-1.webp 2350w" alt="The entrance to Bahía Mar: two arches over the access road, a whale-tail sculpture between them, tropical vegetation on both sides and the sea beyond." className="img h-auto" />
+                    <img src="/images/bahiamar-clubhouse-1.webp" loading="eager" sizes="100vw" srcSet="/images/bahiamar-clubhouse-1-p-500.webp 500w, /images/bahiamar-clubhouse-1-p-800.webp 800w, /images/bahiamar-clubhouse-1-p-1080.webp 1080w, /images/bahiamar-clubhouse-1-p-1600.webp 1600w, /images/bahiamar-clubhouse-1-p-2000.webp 2000w, /images/bahiamar-clubhouse-1.webp 2350w" alt="The clubhouse entrance at Bahía Mar: pale stone arcades around a paved forecourt, a planted island of palms and ferns in the middle, and light canopies shaped like leaves opening overhead." className="img h-auto" />
                     <div className="contact-s_map_pin">
                       <div className="contact-s_map_pin_c theme_on-dark">
                         <div className="contact-s_map_pin_info">

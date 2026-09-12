@@ -1,5 +1,9 @@
 /* ============================================================
- *  GENERADO por scripts/extract-embedded-styles.mjs — no editar a mano.
+ *  YA NO ESTÁ GENERADO: nació de scripts/extract-embedded-styles.mjs
+ *  sobre el HTML de ERA Residence, pero al personalizarlo para Bahía
+ *  Mar pasa a mantenerse a mano. Regenerarlo DESHARÍA el trabajo:
+ *  volvería a apuntar la máscara del preloader ([data-preloader]) al
+ *  CDN de Webflow del sitio de origen en vez de a /images/.
  *
  *  CSS "custom code" que el sitio original llevaba incrustado en el
  *  HTML de cada página (Webflow no lo compila al .css compartido).
@@ -576,7 +580,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     --arch-h: calc(var(--arch-w) / (560 / 2592));
     --arch-y: 100vh;
 
-    mask-image: linear-gradient(white, white), linear-gradient(white, white), linear-gradient(white, white), url('https://cdn.prod.website-files.com/6a068da7ad91b057365bf967/6a23fd3e3546e70bdf8420a0_preloader_arch-l.svg');
+    /* Silueta del arco servida en local (copia idéntica del SVG original,
+       ya descargada por scripts/download-assets.mjs y registrada en
+       scripts/asset-manifest.json). Antes apuntaba al CDN de Webflow del
+       sitio de origen: si borraban el asset, la máscara se rompía. */
+    mask-image: linear-gradient(white, white), linear-gradient(white, white), linear-gradient(white, white), url('/images/preloader_arch-l.svg');
     mask-size:
       calc(50% - (var(--arch-w) / 2) + 2px) 100%,
       calc(var(--arch-w) + 4px) calc(var(--arch-y) + 2px),

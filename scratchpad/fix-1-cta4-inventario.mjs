@@ -1,0 +1,18 @@
+// Escribe el inventario de este fix (LAYOUT-IMAGES-03). La carpeta
+// bahia-mar-personalizacion del worktree es un junction, así que se escribe
+// desde Node con UTF-8 explícito.
+import { writeFileSync } from 'node:fs';
+
+const ROOT = 'C:/Users/kevin/OneDrive/Documentos/Claude Code/clon-era-residence/.claude/worktrees/bahia-mar-finish';
+const OUT = `${ROOT}/bahia-mar-personalizacion/inventario/fix-1-data_cta_images_ts_entry_villa_public_images_bahiamar_cta_4_webp_rendered_by_components_sections_SeaViewsCta_tsx.json`;
+
+const inventario = [
+  {
+    destino: '/images/bahiamar-cta-4.webp',
+    origen: '00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R5.png',
+    uso: 'Fichas /villas/<slug> (las cinco) > CTA «Sea views from every villa» (fondo a pantalla completa, clave `villa` de data/cta-images.ts). RE-ENCUADRE del fix LAYOUT-IMAGES-03 (QA ronda 1): mismo render, pero ahora ventana 10:11 de 2000x2200 px con origen en (1012,1400) del render de 3012x4518, pegada al borde derecho para que la pared de piedra, la pérgola y la piscina caigan en el 29,5 % central que se ve a 390 px. Exportada a su ancho nativo (2000 px, sin escalar hacia arriba) con variantes -p-500/800/1080/1600; la antigua -p-2000 se borró (sería idéntica al completo) y el srcset ya no la lista. Sustituye a la entrada de bahiamar-cta-4 de inventario/cta.json, que describe el recorte anterior (ancho completo desde y=800) y una variante -p-2000 que ya no existe.',
+  },
+];
+
+writeFileSync(OUT, JSON.stringify(inventario, null, 2) + '\n', 'utf8');
+console.log('escrito', OUT);

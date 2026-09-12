@@ -60,7 +60,7 @@ export function Arch() {
             <div className="u-48"></div>
             <div className="grid">
               <div className="s_title">
-                <p data-scroll-reveal="p" className="l1 a-center">A place to live — to return year after year</p>
+                <p data-scroll-reveal="p" className="l1 a-center">Life on the Samaná peninsula</p>
               </div>
             </div>
             <div className="u-96"></div>

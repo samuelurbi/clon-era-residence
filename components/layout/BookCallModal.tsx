@@ -69,7 +69,7 @@ export function BookCallModal() {
                         </div>
                         <div className="u-32 b-mob"></div>
                         <p className="l1 mob_a-center">
-                          Leave your details and we will get back to you within 24 hours.
+                          Leave your details and the sales team will get back to you.
                         </p>
                       </div>
                     </div>
@@ -259,7 +259,7 @@ export function BookCallModal() {
                     <div className="form_success_desc">
                       <div className="u-48 b-mob"></div>
                       <p className="p1 a-center">
-                        Our sales manager will review your message and respond personally. We typically reply within one business day.
+                        Our sales team will review your message and respond personally.
                       </p>
                     </div>
                   </div>

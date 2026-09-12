@@ -1,0 +1,187 @@
+# Inventario de imágenes y vídeos — Bahía Mar
+
+Qué imagen va en cada sitio de la web, de qué fichero del material del
+cliente (`bahia-mar-personalizacion/`) sale y para qué se usa. Generado por
+`scripts/inventario-imagenes.py` a partir de `inventario/*.json`; no editar a mano.
+
+Todas las imágenes están convertidas a WebP (calidad 82) con variantes
+`-p-500/800/1080/1600/2000` para el `srcset`. Los renders sin recorte
+conservan su proporción; los que van en tarjetas o huecos concretos se
+recortan a la proporción del hueco original.
+
+Total: 94 elementos.
+
+
+## Bloque CTA «Sea views» (todas las páginas)
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/bahiamar-cta-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R10_2.png | Home > CTA «Sea views from every villa» (fondo a pantalla completa, clave `home` de data/cta-images.ts; recorte 4:5 como el hueco original; variantes -p-500/800/1080/1600/2000). Generada por el agente anterior; origen identificado visualmente en esta sesión. |
+| `/images/bahiamar-cta-2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R9_1.png | Listado /villas > CTA «Sea views from every villa» (fondo a pantalla completa, clave `villas`; proporción 3:4 como el hueco original; variantes -p-500/800/1080/1600/2000). Generada por el agente anterior; origen identificado visualmente en esta sesión. |
+| `/images/bahiamar-cta-3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R8.png | /contact > CTA «Sea views from every villa» (fondo a pantalla completa, clave `contact`; recorte 11:10 como el hueco original; variantes -p-500/800/1080/1600/2000). Generada por el agente anterior; origen identificado visualmente en esta sesión. |
+| `/images/bahiamar-cta-4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R5.png | Fichas /villas/<slug> (las cinco) > CTA «Sea views from every villa» (fondo a pantalla completa, clave `villa` de data/cta-images.ts). RE-ENCUADRE del fix LAYOUT-IMAGES-03 (QA ronda 1): mismo render, pero ahora ventana 10:11 de 2000x2200 px con origen en (1012,1400) del render de 3012x4518, pegada al borde derecho para que la pared de piedra, la pérgola y la piscina caigan en el 29,5 % central que se ve a 390 px. Exportada a su ancho nativo (2000 px, sin escalar hacia arriba) con variantes -p-500/800/1080/1600; la antigua -p-2000 se borró (sería idéntica al completo) y el srcset ya no la lista. Sustituye a la entrada de bahiamar-cta-4 de inventario/cta.json, que describe el recorte anterior (ancho completo desde y=800) y una variante -p-2000 que ya no existe. |
+
+## Fichas de villa › Villa Carolina
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/villa-carolina-g1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R3_3.png | Ficha /villas/carolina > galería (exterior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-carolina-g2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R4_4.png | Ficha /villas/carolina > galería (exterior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-carolina-g3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R6_3.png | Ficha /villas/carolina > galería (exterior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-carolina-g4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R9_2.png | Ficha /villas/carolina > galería (exterior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-carolina-hero.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R1_3.png | Tarjeta de Villa Carolina (VillaCard) en /villas y en el bloque «Other villas» de las otras cuatro fichas; variantes -p-500/800/1080/1600/2000. |
+| `/images/villa-carolina-i1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Zona Social 01.jpg | Ficha /villas/carolina > galería (interior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-carolina-i2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Zona Social 03.jpg | Ficha /villas/carolina > galería (interior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-carolina-i3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.jpg | Ficha /villas/carolina > galería (interior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-carolina-i4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Picuzzi Terraza 01.jpg | Ficha /villas/carolina > galería (interior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-carolina-plan-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png | Ficha /villas/carolina > plano principal «Villa Carolina — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). |
+| `/images/villa-carolina-plan-2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-02-SEGUNDO NIVEL.png | Ficha /villas/carolina > plano principal «Villa Carolina — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). |
+
+## Fichas de villa › Villa Cosón
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/villa-coson-g1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R12.png | Ficha /villas/coson > galería (exterior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-coson-g2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R11_2.png | Ficha /villas/coson > galería (exterior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-coson-g3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R7_1.png | Ficha /villas/coson > galería (exterior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-coson-g4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R8_1.png | Ficha /villas/coson > galería (exterior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-coson-hero.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R1_1.png | Tarjeta de Villa Cosón (VillaCard) en /villas y en el bloque «Other villas» de las otras cuatro fichas; variantes -p-500/800/1080/1600/2000. |
+| `/images/villa-coson-i1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 01.png | Ficha /villas/coson > galería (interior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-coson-i2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-004/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Cocina.png | Ficha /villas/coson > galería (interior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-coson-i3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio Principal 01.png | Ficha /villas/coson > galería (interior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-coson-i4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Sala TV 01.png | Ficha /villas/coson > galería (interior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-coson-plan-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/00. PLANOS/COMERCIALES/A-01-PRIMER NIVEL.png | Ficha /villas/coson > plano principal «Villa Cosón — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). |
+| `/images/villa-coson-plan-2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/00. PLANOS/COMERCIALES/A-02-SEGUNDO NIVEL.png | Ficha /villas/coson > plano principal «Villa Cosón — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). |
+
+## Fichas de villa › Villa Helecho
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/villa-helecho-g1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R2.png | Ficha /villas/helecho > galería (exterior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-helecho-g2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R5.png | Ficha /villas/helecho > galería (exterior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-helecho-g3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R6.png | Ficha /villas/helecho > galería (exterior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-helecho-g4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R7.png | Ficha /villas/helecho > galería (exterior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-helecho-hero.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png | Tarjeta de Villa Helecho (VillaCard) en /villas y en el bloque «Other villas» de las otras cuatro fichas; variantes -p-500/800/1080/1600/2000. |
+| `/images/villa-helecho-i1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 01.png | Ficha /villas/helecho > galería (interior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-helecho-i2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 03.png | Ficha /villas/helecho > galería (interior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-helecho-i3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.png | Ficha /villas/helecho > galería (interior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-helecho-i4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Baño principal 01.png | Ficha /villas/helecho > galería (interior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-helecho-plan-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png | Ficha /villas/helecho > plano principal «Villa Helecho — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). |
+| `/images/villa-helecho-plan-2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-02-SEGUNDO NIVEL.png | Ficha /villas/helecho > plano principal «Villa Helecho — Second level» (escritorio y móvil, abre en lightbox; hoy VillaDetail.tsx solo pinta plans[0], el segundo nivel queda referenciado en data/villas.ts). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). |
+
+## Fichas de villa › Villa Remanso
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/villa-remanso-g1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R3.png | Ficha /villas/remanso > galería (exterior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-remanso-g2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R6.png | Ficha /villas/remanso > galería (exterior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-remanso-g3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R7.png | Ficha /villas/remanso > galería (exterior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-remanso-g4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R10.png | Ficha /villas/remanso > galería (exterior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-remanso-hero.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png | Tarjeta de Villa Remanso (VillaCard) en /villas y en el bloque «Other villas» de las otras cuatro fichas; variantes -p-500/800/1080/1600/2000. |
+| `/images/villa-remanso-i1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Zona social  01.png | Ficha /villas/remanso > galería (interior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-remanso-i2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Zona social  03.png | Ficha /villas/remanso > galería (interior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-remanso-i3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.png | Ficha /villas/remanso > galería (interior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-remanso-i4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Baño principal 01.png | Ficha /villas/remanso > galería (interior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-remanso-plan-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png | Ficha /villas/remanso > plano principal «Villa Remanso — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). |
+
+## Fichas de villa › Villa Ámbar
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/villa-ambar-g1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R2.png | Ficha /villas/ambar > galería (exterior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-ambar-g2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R3.png | Ficha /villas/ambar > galería (exterior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-ambar-g3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R4.png | Ficha /villas/ambar > galería (exterior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-ambar-g4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R7.png | Ficha /villas/ambar > galería (exterior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-ambar-hero.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png | Tarjeta de Villa Ámbar (VillaCard) en /villas y en el bloque «Other villas» de las otras cuatro fichas; variantes -p-500/800/1080/1600/2000. |
+| `/images/villa-ambar-i1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 01.png | Ficha /villas/ambar > galería (interior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-ambar-i2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 03.png | Ficha /villas/ambar > galería (interior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-ambar-i3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-004/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.jpg | Ficha /villas/ambar > galería (interior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-ambar-i4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Baño principal 01.jpg | Ficha /villas/ambar > galería (interior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban. |
+| `/images/villa-ambar-plan-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png | Ficha /villas/ambar > plano principal «Villa Ámbar — First level» (escritorio y móvil, abre en lightbox). REGENERADO en fix-1 (LAYOUT-IMAGES-01): recorte detectado por hoja al dibujo completo, sin leyenda ni cajetín, relleno blanco a 1600:1505 y exportado a 2350 px con variantes -p-500/800/1080/1600/2000 (scratchpad/fix-1-plans-crop.mjs). |
+
+## Home › Amenities
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/bahiamar-amenities-1.webp` | 00. AMENIDADES/PORTICO INGRESO/PÓRTICO INGRESO 02.png | Home y ficha de villa > sección Amenities, diapositiva 1 «Entrance» (fondo a pantalla completa; variantes -p-500/800/1080/1600/2000) |
+| `/images/bahiamar-amenities-2.webp` | 00. AMENIDADES/PISCINA/PISCINA 02.png | Home y ficha de villa > sección Amenities, diapositiva 2 «Beach & pools» (fondo a pantalla completa; variantes -p-500/800/1080/1600/2000) |
+| `/images/bahiamar-amenities-3.webp` | 00. AMENIDADES/SAUNA RELAX/RELAX SAUNA 06.png | Home y ficha de villa > sección Amenities, diapositiva 3 «Thermal waters» (fondo a pantalla completa; variantes -p-500/800/1080/1600/2000) |
+| `/images/bahiamar-amenities-4.webp` | 00. AMENIDADES/COWORK/COWORK 06.png | Home y ficha de villa > sección Amenities, diapositiva 4 «Coworking» (fondo a pantalla completa; variantes -p-500/800/1080/1600/2000) |
+| `/images/bahiamar-amenities-5.webp` | 00. AMENIDADES/SENDERO/SENDERO 02.png | Home y ficha de villa > sección Amenities, diapositiva 5 «Forest trails» (fondo a pantalla completa; variantes -p-500/800/1080/1600/2000) |
+
+## Home › Architecture y Developer
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/bahiamar-architecture-2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R8_1.png | Home › Architecture › imagen de fondo del bloque con el título «Architecture» (4:3, recorte anclado a la izquierda; sustituye a bahiamar-architecture-1, Villa Carolina R7_3, cuyo cielo claro dejaba el título blanco ilegible). Variantes -p-500/800/1080/1600/2000. |
+| `/images/bahiamar-developer-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R4.png | Home › bloque Developer, tarjeta «Architects» (Estudio Dolla): imagen del hueco .other-card_info_logo (192 px, 3:2) que antes ocupaba el logo de la comercializadora (components/home/Developer.tsx). Recorte 3:2, 2350 px + variantes -p-500/800/1080/1600/2000 (en el srcSet sólo van 500/800/1080). Villa Helecho con arco de piedra frente al mar. |
+
+## Home › Hero
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/bahiamar-hero-day.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R1_1.png | Home › Hero, versión de día (misma toma que la tarjeta de Villa Cosón). |
+| `/images/bahiamar-hero-night.webp` | Derivada de R1_1.png con Magnific (relight nocturno + escala 2x); sin fichero del cliente | Home › Hero, versión de noche (efecto día/noche del titular). |
+
+## Home › Location
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/bahiamar-aerial.webp` | BAHIA MAR/BOCHURE PAGINAS_ (aérea de la bahía del brochure) | Home › Location: póster/respaldo del vídeo aéreo. |
+| `public/images/bahiamar-aerial.webp` | (ya existente; procesada por un agente anterior — ver su inventario) | Home > sección Ubicación: póster del <video> aéreo (fallback mientras carga o si el vídeo no se reproduce). Su proporción 1920x2160 es la que fija el hueco en styles/theme.css. Capturas de comprobación: scratchpad/capturas/location-video-1440.png, -1440-b.png, -390.png, -390-b.png. |
+| `public/videos/bahiamar-aerial.mp4` | archivos-extra-whatsapp/WhatsApp Video 2026-09-11 at 9.15.57 AM.mp4 | Home > sección Ubicación (components/home/Location.tsx): mismo vídeo, <source> H.264 de respaldo (832x464, 30 fps, crf 23, yuv420p, sin audio, faststart, 1,2 MB). |
+| `public/videos/bahiamar-aerial.webm` | archivos-extra-whatsapp/WhatsApp Video 2026-09-11 at 9.15.57 AM.mp4 | Home > sección Ubicación (components/home/Location.tsx): fondo a sangre tras las nubes, <source> VP9 (832x464, 30 fps, crf 33, sin audio, 1,1 MB). Sobrevuelo de las lomas con el perímetro del master plan dibujado. Resolución de origen conservada (no se ha escalado); el cliente prometió una versión en mayor resolución. |
+
+## Home › The space to live in
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/bahiamar-space-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Picuzzi Terraza 02.jpg | Home › The space to live in › imagen izquierda (porche bajo pérgola con jacuzzi), recorte 3:4, + variantes -p-500/800/1080/1600/2000 |
+| `/images/bahiamar-space-2.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Zona Social 05.jpg | Home › The space to live in › imagen derecha (zona social abierta al paisaje), recorte 4:3, + variantes -p-500/800/1080/1600/2000 |
+| `/images/bahiamar-space-3.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 02.png | Home › The space to live in › galería slide 1 (cocina y comedor con piscina), recorte 16:10, + variantes -p-500/800/1080/1600/2000 |
+| `/images/bahiamar-space-4.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 03.png | Home › The space to live in › galería slide 2 (dormitorio principal abierto a terraza con mar), recorte 16:10, + variantes -p-500/800/1080/1600/2000 |
+| `/images/bahiamar-space-5.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Baño Dormitorio principal 01.jpg | Home › The space to live in › galería slide 3 (baño con paredes de chukum), recorte 16:10, + variantes -p-500/800/1080/1600/2000 |
+| `/images/bahiamar-space-6.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 04.png | Home › The space to live in › galería slide 4 (sala y comedor abiertos a las palmeras), recorte 16:10, + variantes -p-500/800/1080/1600/2000 |
+
+## Home › Three reasons (pilares)
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/bahiamar-community-1.webp` | 00. AMENIDADES/PISCINA/PISCINA 01.png | components/home/Pillars.tsx — pillar 3 «A boutique resort» (slide image, community lagoon pool; crop to the original slot aspect 1.29:1 + srcset -p-500/800/1080/1600/2000) |
+| `/images/bahiamar-eco-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R5.png | components/home/Pillars.tsx — pillar 2 «True eco-luxury» (slide image, Villa Ámbar exterior; 4:5 portrait crop like the original slot + srcset -p-500/800/1080/1600/2000) |
+| `/images/bahiamar-location-1.webp` | 00. AMENIDADES/Z. FOGATAS 02.jpeg | components/home/Pillars.tsx — pillar 1 «Facing Samaná Bay» (slide image; 4:3 centre crop + srcset -p-500/800/1080/1600/2000) |
+| `/images/bahiamar-quote-1.webp` | 00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R13.png | components/home/PillarsMedia.tsx — background of the quote block (Villa Cosón exterior; 4:3 centre crop + srcset -p-500/800/1080/1600/2000) |
+
+## Identidad y vegetación decorativa
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/bahiamar-isotype.png` | BAHIA MAR/LOGOS (isotipo, ola) | Isotipo en header, preloader, sello circular, menú, modal y favicons (se pinta con máscara CSS). |
+| `/images/bahiamar-logo.png` | BAHIA MAR/LOGOS (logo completo) | Referencia de marca; el sitio usa el isotipo y el nombre tipografiado. |
+| `/videos/palm-fronds_01.webm` | (generado con Magnific: vídeo de follaje tropical con alfa; sin fichero de origen) | Vegetación decorativa de esquina: home (Concept, AmenitiesIntro, Architecture, Developer). Póster /images/palm-fronds_01.webp. |
+| `/videos/palm-fronds_02.webm` | (generado con Magnific; sin fichero de origen) | Vegetación decorativa: home (Architecture, abajo-izquierda) y listado /villas (arriba-derecha). Póster /images/palm-fronds_02.webp. |
+| `/videos/palm-fronds_03.webm` | (generado con Magnific; sin fichero de origen) | Vegetación decorativa: home (Concept, recorrido; Space to live in). Póster /images/palm-fronds_03.webp. |
+
+## Listado /villas
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `public/images/placeholder.60f9b1840c.svg` | (no es del cliente) placeholder genérico de Webflow, descargado de https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg — cuadrado gris con icono de imagen, 140x140, sin marca | components/villas/LightboxModal.tsx — src inicial del <img data-lightbox-img> antes de que el JS cargue la foto real; el fichero faltaba en public/ (404 silencioso) |
+
+## Marca: favicons y OpenGraph
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `public/icons/apple-touch-icon.png` | (derivado) public/images/bahiamar-isotype.png — scratchpad/build-favicons.mjs | app/layout.tsx → metadata.icons.apple (180x180) |
+| `public/icons/favicon-192.png` | (derivado) public/images/bahiamar-isotype.png — scratchpad/build-favicons.mjs | app/layout.tsx → metadata.icons.icon (192x192) |
+| `public/icons/favicon-32.png` | (derivado) public/images/bahiamar-isotype.png — ola recoloreada a arena #E8D8C8 sobre verde profundo #022725 (scratchpad/build-favicons.mjs) | app/layout.tsx → metadata.icons.icon (32x32) |
+| `public/icons/favicon-48.png` | (derivado) public/images/bahiamar-isotype.png — scratchpad/build-favicons.mjs | app/layout.tsx → metadata.icons.icon (48x48) |
+| `public/icons/favicon-512.png` | (derivado) public/images/bahiamar-isotype.png — scratchpad/build-favicons.mjs | app/layout.tsx → metadata.icons.icon (512x512) |
+| `public/images/open-graph.webp` | (render) scratchpad/og-template.html → Playwright/Brave 1200x630 → WebP q85 (scratchpad/og-render.mjs). Fondo: public/images/bahiamar-hero-day-p-1600.webp (render diurno de la villa, ya procesado); isotipo: public/images/bahiamar-isotype.png recoloreado a arena (scratchpad/og-isotype-sand.png) | app/layout.tsx → metadata.openGraph.images y metadata.twitter.images (vista previa al compartir) |
+
+## Página de contacto
+
+| En la web | Origen (material del cliente) | Uso |
+|---|---|---|
+| `/images/bahiamar-clubhouse-1.webp` | 00. AMENIDADES/CASA CLUB/INGRESO CASA CLUB 08.png | /contact > hueco del mapa (components/pages/ContactMain.tsx, .contact-s_map_c): sustituye a bahiamar-entrance-1 por PALETTE-BRAND-02 (ronda 1 de QA). Render 5504x3072 recortado centrado a 1.895:1 (la proporción del SVG original de 1440x760) y escalado a 2350x1240; variantes -p-500/800/1080/1600/2000 con las dimensiones que declara el srcSet. Elegido por ser de tono claro en las zonas que cubre el cromo fijo (luminancia media Y≈162 en la columna del sello, ≈140 en la del menú, ≈159 en la caja de redes; el pórtico anterior daba 85/73/113), de modo que el verde profundo del tema light contrasta. bahiamar-entrance-1.webp queda sin uso en el código; no se ha borrado. |
+| `/images/bahiamar-entrance-1.webp` | 00. AMENIDADES/PORTICO INGRESO/PÓRTICO INGRESO 01.png | /contact > bloque de contacto (components/pages/ContactMain.tsx), imagen a todo el ancho que sustituye al mapa SVG de la oficina de ventas del original (1440x760); recorte 2350x1240 (1.895:1, misma proporción que el SVG) desde el render de 5504x3072; variantes -p-500/800/1080/1600/2000, todas existentes y con las dimensiones que declara el srcSet. No se ha generado ninguna imagen nueva en esta pasada: se verificó la del agente anterior, se identificó su origen y se mantuvo. La imagen del CTA «Sea views from every villa» de /contact (bahiamar-cta-3) está inventariada en cta.json. |

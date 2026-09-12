@@ -1,0 +1,148 @@
+[
+  {
+    "ruta": "/",
+    "ancho": 1440,
+    "consola": [],
+    "red": [],
+    "desborde": 0,
+    "imagenesRotas": [],
+    "videos": [
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_01.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_02.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_03.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/bahiamar-aerial.webm",
+        "ready": 4,
+        "w": 832,
+        "h": 464,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_01.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_03.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_02.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_01.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_01.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      }
+    ]
+  },
+  {
+    "ruta": "/",
+    "ancho": 390,
+    "consola": [],
+    "red": [],
+    "desborde": 0,
+    "imagenesRotas": [],
+    "videos": [
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_01.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_02.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_03.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/bahiamar-aerial.webm",
+        "ready": 4,
+        "w": 832,
+        "h": 464,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_01.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_03.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_02.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_01.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      },
+      {
+        "src": "http://localhost:3000/videos/palm-fronds_01.webm",
+        "ready": 4,
+        "w": 864,
+        "h": 864,
+        "paused": true
+      }
+    ]
+  }
+]

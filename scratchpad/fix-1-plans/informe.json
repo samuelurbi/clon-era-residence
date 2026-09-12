@@ -1,0 +1,66 @@
+[
+  {
+    "base": "villa-coson-plan-1",
+    "hoja": "15000x10582",
+    "bbox": "x 4343-12607 y 1413-8839",
+    "recorte": "8264x7426",
+    "lienzo": "8264x7773",
+    "margen": 197
+  },
+  {
+    "base": "villa-coson-plan-2",
+    "hoja": "15000x10582",
+    "bbox": "x 4373-12637 y 1803-9229",
+    "recorte": "8264x7426",
+    "lienzo": "8264x7773",
+    "margen": 197
+  },
+  {
+    "base": "villa-helecho-plan-1",
+    "hoja": "15000x10582",
+    "bbox": "x 4569-12161 y 2669-8003",
+    "recorte": "7592x5334",
+    "lienzo": "7592x7141",
+    "margen": 181
+  },
+  {
+    "base": "villa-helecho-plan-2",
+    "hoja": "15000x10582",
+    "bbox": "x 4431-12369 y 2711-8161",
+    "recorte": "7938x5450",
+    "lienzo": "7938x7467",
+    "margen": 189
+  },
+  {
+    "base": "villa-remanso-plan-1",
+    "hoja": "15000x10582",
+    "bbox": "x 2377-12573 y 3787-9335",
+    "recorte": "10196x5548",
+    "lienzo": "10196x9591",
+    "margen": 243
+  },
+  {
+    "base": "villa-ambar-plan-1",
+    "hoja": "15000x10582",
+    "bbox": "x 1678-11822 y 3678-8484",
+    "recorte": "10144x4806",
+    "lienzo": "10144x9542",
+    "margen": 242
+  },
+  {
+    "base": "villa-carolina-plan-1",
+    "hoja": "15000x10582",
+    "bbox": "x 2633-12587 y 3583-8009",
+    "recorte": "9954x4426",
+    "lienzo": "9954x9363",
+    "margen": 237
+  },
+  {
+    "base": "villa-carolina-plan-2",
+    "hoja": "15000x10582",
+    "bbox": "x 2366-12604 y 3816-8256",
+    "recorte": "10238x4440",
+    "lienzo": "10238x9630",
+    "margen": 244
+  }
+]

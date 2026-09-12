@@ -79,6 +79,41 @@ html {
   font-size: calc(var(--_fonts---h1--size) * 0.84);
 }
 
+/*
+ * Tildes en mayúsculas dentro de las máscaras de línea
+ *
+ * Los titulares que entran línea a línea (SplitText con mask: 'lines')
+ * envuelven cada línea en un <span class="split-line-mask"> con
+ * `overflow: clip` en línea. Los titulares van en mayúsculas con
+ * interlineado ≤ 100% (h4: 88,9%), así que la caja de línea es más
+ * baja que el glifo: en Instrument Serif la tilde de Í/Á sube 0,97em
+ * sobre la línea base y la base queda a 0,758em del borde superior de
+ * la máscara (medido: scratchpad/measure-accent-overshoot.mjs), luego
+ * sobresale 0,21em y la máscara la corta: «BAHIA MAR», «SAMANA BAY».
+ * ERA no lo sufría porque no tenía ninguna mayúscula acentuada.
+ *
+ * Se da a la máscara 0,25em de margen por arriba sin mover el texto:
+ * el relleno crece hacia arriba y el margen negativo lo compensa, así
+ * que la caja de línea mide lo mismo y la maquetación no cambia. El
+ * recorte sigue actuando por abajo, que es por donde entra el reveal
+ * (yPercent 110 → 0), de modo que la animación no deja ver nada antes
+ * de tiempo.
+ *
+ * Contrapartida, comprobada: en el estado «hide» (yPercent −110) el
+ * pie de las letras del h4 de escritorio (interlineado 88,9%) queda
+ * ~0,03em dentro del relleno y se vería como una fila de guiones. En
+ * esta web no llega a verse: el único h4 que se oculta al retroceder
+ * es el del Concepto, y su bloque (.loc-info-s) está a opacidad 0 en
+ * ese mismo tramo (scratchpad/verify-hide-opacity.mjs); en las
+ * transiciones de página el «hide» va a la vez que el fundido de toda
+ * la página. Los h5 (interlineado 100%) no lo sufren por geometría.
+ */
+.h4 .split-line-mask,
+.h5 .split-line-mask {
+  padding-top: 0.25em;
+  margin-top: -0.25em;
+}
+
 :root,
 body {
   --_fonts---font-display:
@@ -164,6 +199,127 @@ body {
 .flower.flower.other        { transform: scaleX(-1); }            /* arriba-derecha  */
 .flower.flower.apart        { transform: scaleX(-1); }            /* arriba-derecha  */
 .flower.flower.interior     { transform: scaleX(-1); }            /* arriba-derecha  */
+
+/*
+ * loc-intro: el clip nace pegado a DOS bordes de su cuadro (el izquierdo
+ * y el superior del vídeo original), y ese cuadro no coincide con ningún
+ * borde de panel: a 1440 su lado izquierdo cae en mitad de la tira
+ * horizontal, sobre crema liso, y en móvil (bottom: 0) su lado inferior
+ * coincide con el final del bloque, que es del mismo color que el
+ * siguiente. En ambos casos las hojas terminan en una recta perfecta.
+ *
+ * Se funden esos dos bordes con una máscara. Va en el espacio local del
+ * elemento (antes del scaleY), así que «to right» es el borde izquierdo
+ * del clip y «to bottom» el superior, que tras el volteo son el corte
+ * vertical de escritorio y el horizontal de móvil. Las dos rampas se
+ * intersecan (mask-composite) para que ambas actúen a la vez; la esquina
+ * donde se juntan queda fuera de pantalla en los dos anchos.
+ */
+.flower.flower.loc-intro {
+  -webkit-mask-image:
+    linear-gradient(to right,  transparent, #000 16%),
+    linear-gradient(to bottom, transparent, #000 16%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right,  transparent, #000 16%),
+    linear-gradient(to bottom, transparent, #000 16%);
+  mask-composite: intersect;
+}
+
+/*
+ * …y aun así no funciona: con la rampa al 16% el lado izquierdo sigue
+ * leyéndose como el borde difuminado de un rectángulo (capturas de la
+ * ronda 2, 1440-home-step-07/08 y 390-home-step-06), y una rampa más
+ * larga se come la masa del racimo, que en este clip nace justo de ese
+ * lado. El hueco de ERA estaba pensado para un racimo suelto de flores,
+ * no para follaje de esquina: no hay borde de panel ni de viewport al
+ * que anclarlo en ningún ancho. Se retira; la sección conserva loc-info
+ * (arriba a la izquierda) y loc-path.
+ */
+.flower.flower.loc-intro { display: none; }
+
+/*
+ * arch-intro-l (Architecture, abajo-izquierda, volteado): al pasar la
+ * sección, el borde inferior visible del cuadro —el superior del clip,
+ * del que cuelga el follaje— entra en el viewport sobre crema liso y las
+ * hojas terminan en una recta (1440-home-step-22). Se baja el cuadro
+ * 144 unidades más y se funde ese borde en el espacio local del clip
+ * («to bottom» = borde superior original = base visible tras el volteo).
+ */
+.flower.flower.arch-intro-l {
+  bottom: calc((240rem / var(--_special-units---scale-ratio)) * -1);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 30%);
+  mask-image: linear-gradient(to bottom, transparent, #000 30%);
+}
+
+/*
+ * apart (listado de villas, arriba-derecha): el racimo cae justo sobre
+ * «Select a villa / Book a call / Contact» y, en móvil, sobre MENU. Se
+ * saca hacia la esquina para que sólo asomen las puntas de las hojas
+ * por debajo y a la izquierda de los enlaces.
+ */
+.flower.flower.apart {
+  top: calc((200rem / var(--_special-units---scale-ratio)) * -1);
+  right: calc(((200rem / var(--_special-units---scale-ratio)) * -1) - var(--_special-units---offset-r));
+}
+
+/*
+ * Móvil (≤991px, el mismo corte en el que webflow.css encoge .flower a
+ * 400 unidades): los clips de Bahía Mar son mucho más densos que la
+ * buganvilla de ERA y, con las posiciones heredadas, tapan texto.
+ *
+ *  - apart-info (AmenitiesIntro): el racimo se subía hasta el párrafo y
+ *    tapaba las primeras palabras de cada línea. Se baja 144 unidades y
+ *    se saca 96 hacia fuera, de modo que sólo las puntas de las hojas
+ *    asomen por la esquina inferior izquierda, unos 30px por debajo del
+ *    texto: margen para el parallax ctn-down, que lo mueve ±10% de su
+ *    alto según el scroll (medido con scratchpad/probe-flowers-390.mjs).
+ *  - other (Developer): la fronda superior llegaba hasta la última
+ *    palabra de la etiqueta centrada. Se reduce el cuadro de 10 a 7
+ *    unidades: sigue colgando de la misma esquina pero ya no alcanza
+ *    la columna de texto.
+ */
+@media screen and (max-width: 991px) {
+  .flower.flower.apart-info {
+    bottom: calc((144rem / var(--_special-units---scale-ratio)) * -1);
+    left: calc(((96rem / var(--_special-units---scale-ratio)) * -1) - var(--_special-units---offset-l));
+  }
+  .flower.flower.other {
+    width: calc(var(--40px) * 7);
+    height: calc(var(--40px) * 7);
+  }
+  /* apart (listado): en móvil tapaba el botón MENU (390-villas-step-00).
+     Cuadro de 6 unidades y más hacia fuera: sólo asoman las puntas. */
+  .flower.flower.apart {
+    width: calc(var(--40px) * 6);
+    height: calc(var(--40px) * 6);
+    top: calc((140rem / var(--_special-units---scale-ratio)) * -1);
+    right: calc(((140rem / var(--_special-units---scale-ratio)) * -1) - var(--_special-units---offset-r));
+  }
+}
+
+/* --------------------------------------------------------
+ *  Ubicación, titular «The Samaná Peninsula» en móvil
+ *
+ *  ERA ponía ahí «The Golden Mile» y, al lado, «Spain». En la rejilla
+ *  de móvil la etiqueta ocupa las columnas 1-3 y el titular las 2-5,
+ *  solapados, y con «Dominican Republic» y «Peninsula» ambos se parten
+ *  a media palabra (390-home-step-05). La etiqueta pasa a su propia
+ *  fila a ancho completo y el titular baja de 96 a 80 unidades, con lo
+ *  que «PENINSULA» entra en una línea a 390px.
+ * -------------------------------------------------------- */
+@media screen and (max-width: 767px) {
+  .loc-intro-s_cap { grid-area: 1 / 1 / 2 / -1; align-self: start; }
+  /* «Dominican Republic» con el tracking de .8em de la etiqueta mide más de
+     390px: se reduce a .5em, con lo que cabe en una línea sin recortarse. */
+  .loc-intro-s_cap .c1 { white-space: nowrap; letter-spacing: .5em; }
+  .loc-intro-s_title { grid-area: 2 / 1 / 3 / -1; }
+  .loc-intro-s_title .h1 { font-size: calc(80rem / var(--_special-units---scale-ratio)); }
+  /* El resto de la columna baja una fila: foto, texto y botón. */
+  .loc-intro-s_img { grid-area: 3 / 2 / 4 / 5; }
+  .loc-intro-s_desc { grid-area: 4 / 2 / 5 / 5; }
+  .loc-intro-s_btn { grid-area: 5 / 2 / 6 / 5; }
+}
 
 /* --------------------------------------------------------
  *  Ubicación: el fondo aéreo es un <video>, no un <img>

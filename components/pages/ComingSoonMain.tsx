@@ -10,6 +10,10 @@
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
  * Las URLs del CDN ya están reescritas a /public.
+ *
+ * Copy: ningún documento del cliente confirma una «próxima entrega» de
+ * villas, así que la página no anuncia ninguna; sólo remite a contactar
+ * para conocer la disponibilidad actual.
  */
 
 export function ComingSoonMain() {
@@ -21,12 +25,12 @@ export function ComingSoonMain() {
             <div className="grid">
               <div className="soon-s_title">
                 <div className="u-160"></div>
-                <h1 data-scroll-reveal="h" className="h2 a-center">next villas coming soon</h1>
+                <h1 data-scroll-reveal="h" className="h2 a-center">villas available on request</h1>
                 <div className="u-32"></div>
                 <div className="grid _4-columns">
                   <div className="soon-s_desc">
                     <p data-scroll-reveal="p" className="p1 a-center">
-                      A new selection of Bahía Mar villas in Las Terrenas will be released shortly. Contact us directly to find out which villas are still available.
+                      Villa availability at Bahía Mar is confirmed directly by our team. Contact us to find out which villas in Las Terrenas are currently available.
                     </p>
                   </div>
                 </div>

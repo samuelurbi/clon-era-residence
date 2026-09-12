@@ -47,16 +47,33 @@ for (const [ancho, alto] of anchos) {
     pagina.on('response', (r) => { if (r.status() >= 400) red.push(`${r.status()} ${r.url()}`) })
 
     await pagina.goto(BASE + ruta, { waitUntil: 'load', timeout: 90_000 })
-    await pagina.waitForTimeout(9_500) // preloader
+    // Dos fotogramas del preloader (dura ~9 s) antes de esperar a que acabe.
+    await pagina.waitForTimeout(1_200)
+    await pagina.screenshot({ path: `${salida}/${nombre}-preloader-1s.png` })
+    await pagina.waitForTimeout(3_800)
+    await pagina.screenshot({ path: `${salida}/${nombre}-preloader-5s.png` })
+    await pagina.waitForTimeout(4_500)
     await pagina.evaluate(() => document.querySelectorAll('.cookies').forEach((n) => n.remove()))
     await pagina.waitForTimeout(500)
 
     // Pasos de viewport (para las secciones fijadas) y página completa.
+    // Con QA_SMOOTH=1 se baja con la rueda del ratón en tramos cortos, que
+    // es lo que dispara los cambios de tema del header (ScrollTrigger +
+    // Lenis) igual que para un visitante; `scrollTo` salta y los deja atrás.
+    const suave = process.env.QA_SMOOTH === '1'
     const altoDoc = await pagina.evaluate(() => document.documentElement.scrollHeight)
     const pasos = Math.min(60, Math.ceil(altoDoc / alto))
+    if (suave) await pagina.mouse.move(ancho / 2, alto / 2)
     for (let i = 0; i < pasos; i++) {
-      await pagina.evaluate((y) => window.scrollTo(0, y), i * alto)
-      await pagina.waitForTimeout(ruta === '/' ? 900 : 500)
+      if (suave) {
+        if (i > 0) {
+          for (let k = 0; k < 6; k++) { await pagina.mouse.wheel(0, alto / 6); await pagina.waitForTimeout(90) }
+          await pagina.waitForTimeout(ruta === '/' ? 1_100 : 700)
+        }
+      } else {
+        await pagina.evaluate((y) => window.scrollTo(0, y), i * alto)
+        await pagina.waitForTimeout(ruta === '/' ? 900 : 500)
+      }
       await pagina.screenshot({ path: `${salida}/${nombre}-step-${String(i).padStart(2, '0')}.png` })
     }
     await pagina.evaluate(() => window.scrollTo(0, 0))

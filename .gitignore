@@ -58,3 +58,10 @@ next-env.d.ts
 !/bahia-mar-personalizacion/INVENTARIO-IMAGENES.json
 !/bahia-mar-personalizacion/INVENTARIO-IMAGENES.md
 !/bahia-mar-personalizacion/inventario/
+
+# Capturas y miniaturas que dejan los scripts de QA en scratchpad/: se
+# versionan los scripts, no sus resultados.
+/scratchpad/**/*.png
+/scratchpad/**/*.jpg
+/scratchpad/**/*.jpeg
+/scratchpad/**/*.webp

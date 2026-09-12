@@ -1,0 +1,426 @@
+components\home\AmenitiesIntro.tsx:27: A place to return to — a life lived outdoors
+components\home\AmenitiesIntro.tsx:34: Five villa typologies on one or two levels, each with its private pool, jacuzzi, solarium and fire pit — and views over the beach, Samaná Bay and Los Haitises.
+components\home\AmenitiesIntro.tsx:41: Around them, a community planned in line with LEED for Cities and Communities: a Beach Club, thermal waters and spa, coworking, forest trails and the first funicular in the Caribbean.
+components\home\AmenitiesIntro.tsx:47: aria-hidden="true"
+components\home\Arch.tsx:32: Samaná
+components\home\Arch.tsx:37: aria-hidden="true"
+components\home\Arch.tsx:55: Peninsula
+components\home\Arch.tsx:63: A place to live — to return year after year
+components\home\Arch.tsx:74: Three reasons for Bahía Mar
+components\home\Arch.tsx:84: Three reasons for Bahía Mar
+components\home\Architecture.tsx:40: Architecture
+components\home\Architecture.tsx:43: Contemporary tropical architecture, made for a life lived outdoors
+components\home\Architecture.tsx:51: The architecture of Bahía Mar pairs timber, pale stone and chukum with wide overhangs and terraces that open each villa to the landscape
+components\home\Architecture.tsx:56: By Estudio Dolla
+components\home\Architecture.tsx:57: Architects
+components\home\Architecture.tsx:65: [attr] Book a call now
+components\home\Architecture.tsx:67: Book a call now
+components\home\Architecture.tsx:68: Book a call now
+components\home\Architecture.tsx:79: [attr] Book a call now
+components\home\Architecture.tsx:88: [attr] Villa Carolina at Bahía Mar: pale stone and timber volumes under wide overhangs, terraces stepping down a palm-covered hillside towards the sea.
+components\home\Concept.tsx:25: The concept
+components\home\Concept.tsx:32: Bahía Mar is a gated resort community of 246 boutique villas across 349,000 m² of Caribbean forest, designed around privacy, wellbeing and a life lived outdoors
+components\home\Concept.tsx:42: Shaped by the calm of Samaná Bay, the project combines contemporary tropical architecture with warm natural materials, native planting and spaces that open straight onto the landscape.
+components\home\Concept.tsx:49: aria-hidden="true"
+components\home\Concept.tsx:84: Dominican Republic
+components\home\Concept.tsx:88: The
+components\home\Concept.tsx:89: Samaná
+components\home\Concept.tsx:90: Peninsula
+components\home\Concept.tsx:96: [attr] Villa terrace with sun loungers beside an infinity pool, palm trees and the Caribbean sea beyond.
+components\home\Concept.tsx:101: Between Las Terrenas and Cosón Bay
+components\home\Concept.tsx:104: Surrounded by white-sand beaches, waterfalls, rainforest and the unhurried rhythm of the Samaná peninsula, the project combines privacy with easy reach of everything that makes Caribbean living effortless. A location designed not around movement — but around returning.
+components\home\Concept.tsx:111: [attr] View available villas
+components\home\Concept.tsx:114: View available villas
+components\home\Concept.tsx:117: View available villas
+components\home\Concept.tsx:129: [attr] View available villas
+components\home\Concept.tsx:151: The coast you wanted
+components\home\Concept.tsx:152: yours
+components\home\Concept.tsx:153: this year
+components\home\Concept.tsx:164: Recorrido de lugares cercanos. Antes eran dos SVG
+components\home\Concept.tsx:165: externos con el texto trazado; ahora va en línea
+components\home\Concept.tsx:166: para que herede tipografía y color, y para poder
+components\home\Concept.tsx:167: cambiar un nombre sin redibujar nada.
+components\home\Concept.tsx:170: data-scroll-reveal="ctn"
+components\home\Concept.tsx:176: `.loc-path` es `position:absolute; inset:0`, y el alto
+components\home\Concept.tsx:178: etiquetas). Al unificar los dos en un solo SVG, ese
+components\home\Concept.tsx:179: segundo elemento ya no existe: si este también fuera
+components\home\Concept.tsx:180: absoluto, el contenedor mediría 0 y no se vería nada.
+components\home\Concept.tsx:184: aria-label="Places near Bahía Mar and approximate drive times"
+components\home\Concept.tsx:184: [attr] Places near Bahía Mar and approximate drive times
+components\home\Concept.tsx:258: Bahía Mar
+components\home\Developer.tsx:26: A place to return to, year after year
+components\home\Developer.tsx:40: Developer
+components\home\Developer.tsx:57: Bahía Mar Residences &amp; Beach Resort is developed by Landmass Capital, a real-estate investment and development firm operating in the Dominican Republic.
+components\home\Developer.tsx:59: LandmassCapital.com · Plaza Comercial Atala I, Suite 203, Santo Domingo
+components\home\Developer.tsx:73: Architects
+components\home\Developer.tsx:90: [attr] Villa Helecho at Bahía Mar: a stone and timber villa under a deep roof overhang, facing the sea.
+components\home\Developer.tsx:94: Estudio Dolla
+components\home\Developer.tsx:96: The architecture of Bahía Mar and its five villa typologies is by Estudio Dolla: timber, pale stone and chukum, wide overhangs and terraces that open every villa to the landscape.
+components\home\Developer.tsx:110: Sustainability
+components\home\Developer.tsx:127: The master plan is aligned with LEED for Cities and Communities certification. Every villa is fitted with solar panels, home automation, energy-efficient kitchen appliances, bamboo flooring and chukum wall finishes.
+components\home\Developer.tsx:141: 2027 (TBC)
+components\home\Developer.tsx:158: Estimated delivery, to be confirmed. The Phase II master plan comprises 246 villas: 77 Villa Cosón, 88 Villa Helecho and 81 Villa Remanso, each with its own private pool.
+components\home\Hero.tsx:23: Bahía
+components\home\Hero.tsx:25: Mar
+components\home\Hero.tsx:28: Las Terrenas
+components\home\Hero.tsx:35: A place
+components\home\Hero.tsx:37: [attr] by day
+components\home\Hero.tsx:39: by day
+components\home\Hero.tsx:40: by day
+components\home\Hero.tsx:44: [attr] by night
+components\home\Hero.tsx:46: by night
+components\home\Hero.tsx:47: by night
+components\home\Hero.tsx:51: to return to
+components\home\Hero.tsx:116: [attr] day
+components\home\Hero.tsx:118: [attr] Villa Cosón at Bahía Mar, in daylight: a two-level tropical villa with infinity pool and palm trees
+components\home\Hero.tsx:121: [attr] night
+components\home\Hero.tsx:123: [attr] Villa Cosón at Bahía Mar, at night: a two-level tropical villa with infinity pool and palm trees
+components\home\Hero.tsx:135: [attr] View available villas
+components\home\Hero.tsx:138: View available villas
+components\home\Hero.tsx:141: View available villas
+components\home\Hero.tsx:153: [attr] View available villas
+components\home\Location.tsx:14: hereda las clases del
+components\home\Location.tsx:14: al que sustituye; lo que el
+components\home\Location.tsx:96: Las Terrenas, Samaná
+components\home\Location.tsx:98: Samaná Peninsula
+components\home\Location.tsx:100: Dominican Republic
+components\home\Location.tsx:111: Drag to see more
+components\home\Location.tsx:130: [attr] Aerial flyover of the Bahía Mar hills above Las Terrenas, with the master plan outlined over the terrain.
+components\home\Pillars.tsx:59: Facing Samaná Bay
+components\home\Pillars.tsx:60: Facing Samaná Bay
+components\home\Pillars.tsx:67: [attr] Circular fire-pit lounge on a wooden lookout above the palms, with the coast and the sea of Samaná at sunset.
+components\home\Pillars.tsx:77: On the Samaná peninsula, with Las Terrenas nearby, every villa looks out over the beach, Samaná Bay and Los Haitises — seclusion and open horizons, with the restaurants, bars and beaches of the town close at hand.
+components\home\Pillars.tsx:84: Las Terrenas · Samaná · Dominican Republic
+components\home\Pillars.tsx:96: True eco-luxury
+components\home\Pillars.tsx:97: True eco-luxury
+components\home\Pillars.tsx:104: [attr] Villa Ámbar: pale stone walls and a timber pergola over the private pool, with the sea behind the palms.
+components\home\Pillars.tsx:114: A master plan aligned with LEED for Cities and Communities, and villas built to last: solar panels, bamboo floors, chukum-finished walls, eco-efficient kitchens and home automation.
+components\home\Pillars.tsx:121: Boutique residences in a setting full of vegetation
+components\home\Pillars.tsx:133: A boutique resort
+components\home\Pillars.tsx:134: A boutique resort
+components\home\Pillars.tsx:141: [attr] Lagoon-style community pool edged with rocks and sun loungers, looking out over the treetops to Samaná Bay.
+components\home\Pillars.tsx:151: A boutique resort community of 246 villas in five typologies across 349,000 m² of tropical landscape, sharing a beach club, clubhouse, hot springs and spa — and the first funicular in the Caribbean to move between them.
+components\home\Pillars.tsx:158: Five villas. Five ways to live Bahía Mar
+components\home\PillarsMedia.tsx:35: Walking trails, mountain bridges and the first funicular in the Caribbean link the villas — so Bahía Mar feels less like a complex and more like a landscape you move through.
+components\home\PillarsMedia.tsx:40: Master plan
+components\home\PillarsMedia.tsx:41: Bahía Mar Residences &amp; Beach Resort
+components\home\PillarsMedia.tsx:52: [attr] Two-level Villa Cosón with timber cladding over a stone base, its private pool and terrace among the palms, the sea behind.
+components\home\SpaceToLive.tsx:28: The
+components\home\SpaceToLive.tsx:30: space
+components\home\SpaceToLive.tsx:35: Live in
+components\home\SpaceToLive.tsx:46: [attr] Covered porch under a timber pergola with a private jacuzzi, woven lounge seating and tropical planting.
+components\home\SpaceToLive.tsx:60: • Private pool and jacuzzi
+components\home\SpaceToLive.tsx:62: • Terrace with BBQ and lounge garden
+components\home\SpaceToLive.tsx:64: • Porch under a pergola
+components\home\SpaceToLive.tsx:74: [attr] Open-plan living area with sliding glass walls onto the hills, woven pendant lamps and a linen sofa.
+components\home\SpaceToLive.tsx:81: Every material was chosen so the house breathes with the landscape: bamboo underfoot, chukum on the walls, the bay in every opening
+components\home\SpaceToLive.tsx:87: Bamboo floors throughout. Chukum wall finishes. Home automation. Kitchens with eco-efficient appliances and glass-ceramic hobs. Solar panels. Views of the beach, Samaná Bay and Los Haitises from every villa.
+components\home\SpaceToLive.tsx:94: [attr] Explore the villas
+components\home\SpaceToLive.tsx:97: Explore the villas
+components\home\SpaceToLive.tsx:100: Explore the villas
+components\home\SpaceToLive.tsx:112: [attr] Explore the villas
+components\home\SpaceToLive.tsx:126: [attr] Kitchen and dining room in pale timber and stone, open to the terrace and the private pool.
+components\home\SpaceToLive.tsx:133: [attr] Principal bedroom with a glass wall sliding open onto a terrace that faces the sea.
+components\home\SpaceToLive.tsx:140: [attr] Bathroom with chukum-finished walls, a timber vanity and a walk-in shower beside a window onto the palms.
+components\home\SpaceToLive.tsx:147: [attr] Living and dining area with bamboo floors, timber joinery and full-height openings onto the palms and the pool.
+components\home\VillasPreview.tsx:30: Bedrooms
+components\home\VillasPreview.tsx:35: Bathrooms
+components\home\VillasPreview.tsx:44: Private basement, direct outdoor access and a dedicated lower level.
+components\home\VillasPreview.tsx:48: [attr] Explore two-level villas
+components\home\VillasPreview.tsx:51: Explore two-level villas
+components\home\VillasPreview.tsx:54: Explore two-level villas
+components\home\VillasPreview.tsx:66: Two levels
+components\home\VillasPreview.tsx:86: Bedrooms
+components\home\VillasPreview.tsx:91: Bathrooms
+components\home\VillasPreview.tsx:100: Step directly onto your terrace and into the communal gardens, blending indoor comfort with outdoor living.
+components\home\VillasPreview.tsx:104: [attr] Explore single-level villas
+components\home\VillasPreview.tsx:106: Explore single-level villas
+components\home\VillasPreview.tsx:107: Explore single-level villas
+components\home\VillasPreview.tsx:118: Single level
+components\home\VillasPreview.tsx:138: Bedrooms
+components\home\VillasPreview.tsx:143: Bathrooms
+components\home\VillasPreview.tsx:152: Two floors crowned with panoramic views and a private rooftop solarium — the ultimate expression of luxury living.
+components\home\VillasPreview.tsx:156: [attr] Explore all villas
+components\home\VillasPreview.tsx:158: Explore all villas
+components\home\VillasPreview.tsx:159: Explore all villas
+components\home\VillasPreview.tsx:170: All five villas
+components\layout\BookCallModal.tsx:25: [attr] Label
+components\layout\BookCallModal.tsx:43: Book a call
+components\layout\BookCallModal.tsx:44: Book a call
+components\layout\BookCallModal.tsx:50: [attr] Bahía Mar logo
+components\layout\BookCallModal.tsx:53: aria-hidden="true"
+components\layout\BookCallModal.tsx:72: Leave your details and we will get back to you within 24 hours.
+components\layout\BookCallModal.tsx:80: [attr] Bahía Mar logo
+components\layout\BookCallModal.tsx:83: aria-hidden="true"
+components\layout\BookCallModal.tsx:139: el navegador reparte los glifos por TODO el anillo, sin
+components\layout\BookCallModal.tsx:140: hueco al final. Sin esto el texto acababa donde acababa y
+components\layout\BookCallModal.tsx:141: dejaba un cuarto de círculo vacío.
+components\layout\BookCallModal.tsx:161: Name:
+components\layout\BookCallModal.tsx:165: Email:
+components\layout\BookCallModal.tsx:169: Phone:
+components\layout\BookCallModal.tsx:174: Message:
+components\layout\BookCallModal.tsx:188: By submitting, you agree to our&nbsp;
+components\layout\BookCallModal.tsx:192: Privacy policy
+components\layout\BookCallModal.tsx:198: [attr] Submit
+components\layout\BookCallModal.tsx:200: Submit
+components\layout\BookCallModal.tsx:201: Submit
+components\layout\BookCallModal.tsx:212: We’ve received your request
+components\layout\BookCallModal.tsx:215: Thank you
+components\layout\BookCallModal.tsx:221: [attr] Linkedin
+components\layout\BookCallModal.tsx:233: [attr] Facebook
+components\layout\BookCallModal.tsx:245: [attr] Instagram
+components\layout\BookCallModal.tsx:262: Our sales manager will review your message and respond personally. We typically reply within one business day.
+components\layout\BookCallModal.tsx:268: Oops! Something went wrong while submitting the form.
+components\layout\CookieNotice.tsx:23: Cookies
+components\layout\CookieNotice.tsx:24: Cookies
+components\layout\CookieNotice.tsx:28: This website uses cookies to ensure you get the best experience on our website.
+components\layout\CookieNotice.tsx:32: [attr] Accept
+components\layout\CookieNotice.tsx:34: Accept
+components\layout\CookieNotice.tsx:35: Accept
+components\layout\CookieNotice.tsx:39: [attr] Decline
+components\layout\CookieNotice.tsx:41: Decline
+components\layout\CookieNotice.tsx:42: Decline
+components\layout\FloatingTips.tsx:23: Crafted to Endure
+components\layout\FloatingTips.tsx:26: Bamboo floors, chukum wall finishes, stone and natural timber, with solar panels on every villa — materials chosen to belong to the landscape and settle into it over time.
+components\layout\FloatingTips.tsx:77: Light & Flow
+components\layout\FloatingTips.tsx:80: Terraces, solariums, pergola-shaded porches and wide openings draw in the light and let the day flow from inside to out.
+components\layout\FloatingTips.tsx:131: Your Private Sanctuary
+components\layout\FloatingTips.tsx:134: Every villa stands apart, with its own pool, jacuzzi, fire pit and terraces set into the vegetation — closer to a private home in the hills than a room in a resort.
+components\layout\Header.tsx:27: [attr] Bahía Mar logo
+components\layout\Header.tsx:30: aria-hidden="true"
+components\layout\Header.tsx:64: el navegador reparte los glifos por TODO el anillo, sin
+components\layout\Header.tsx:65: hueco al final. Sin esto el texto acababa donde acababa y
+components\layout\Header.tsx:66: dejaba un cuarto de círculo vacío.
+components\layout\Header.tsx:91: textLength = 2π·34.67 ≈ 218 reparte el texto por todo el anillo.
+components\layout\Header.tsx:104: [attr] Menu
+components\layout\Header.tsx:106: Menu
+components\layout\Header.tsx:107: Menu
+components\layout\Header.tsx:112: [attr] Close
+components\layout\Header.tsx:114: Close
+components\layout\Header.tsx:115: Close
+components\layout\Header.tsx:140: [attr] Select  a Villa
+components\layout\Header.tsx:144: Select
+components\layout\Header.tsx:146: a Villa
+components\layout\Header.tsx:151: Select
+components\layout\Header.tsx:153: a Villa
+components\layout\Header.tsx:159: [attr] Book a call
+components\layout\Header.tsx:161: Book a call
+components\layout\Header.tsx:162: Book a call
+components\layout\Header.tsx:166: [attr] Contact
+components\layout\Header.tsx:168: Contact
+components\layout\Header.tsx:169: Contact
+components\layout\MenuModal.tsx:25: The
+components\layout\MenuModal.tsx:26: Menu
+components\layout\MenuModal.tsx:33: [attr] Home
+components\layout\MenuModal.tsx:35: Home
+components\layout\MenuModal.tsx:36: Home
+components\layout\MenuModal.tsx:39: [attr] Select a Villa
+components\layout\MenuModal.tsx:41: Select a Villa
+components\layout\MenuModal.tsx:42: Select a Villa
+components\layout\MenuModal.tsx:45: [attr] Book a call
+components\layout\MenuModal.tsx:47: Book a call
+components\layout\MenuModal.tsx:48: Book a call
+components\layout\MenuModal.tsx:51: [attr] Contact
+components\layout\MenuModal.tsx:53: Contact
+components\layout\MenuModal.tsx:54: Contact
+components\layout\MenuModal.tsx:65: aria-hidden="true"
+components\layout\Preloader.tsx:13: en línea con un
+components\layout\Preloader.tsx:30: aria-hidden="true"
+components\layout\Preloader.tsx:51: Samaná
+components\layout\Preloader.tsx:54: Bahía
+components\layout\Preloader.tsx:56: Mar
+components\layout\Preloader.tsx:59: Las Terrenas
+components\layout\Preloader.tsx:62: Peninsula
+components\layout\Preloader.tsx:73: Bahía Mar
+components\layout\Preloader.tsx:75: A place to return to.
+components\layout\Preloader.tsx:96: Samaná
+components\layout\ScrollRail.tsx:26: Scroll
+components\pages\ComingSoonMain.tsx:24: next villas coming soon
+components\pages\ComingSoonMain.tsx:29: A new selection of Bahía Mar villas in Las Terrenas will be released shortly. Contact us directly to find out which villas are still available.
+components\pages\ComingSoonMain.tsx:37: [attr] Book a call now
+components\pages\ComingSoonMain.tsx:39: Book a call now
+components\pages\ComingSoonMain.tsx:40: Book a call now
+components\pages\ComingSoonMain.tsx:51: [attr] Book a call now
+components\pages\ContactMain.tsx:31: Get in touch
+components\pages\ContactMain.tsx:37: Write to us
+components\pages\ContactMain.tsx:42: [attr] info@bahiamar.example
+components\pages\ContactMain.tsx:45: info@bahiamar.example
+components\pages\ContactMain.tsx:48: info@bahiamar.example
+components\pages\ContactMain.tsx:61: Sales office
+components\pages\ContactMain.tsx:63: [attr] Las Terrenas, Samaná (address TBC)
+components\pages\ContactMain.tsx:66: Las Terrenas, Samaná (address TBC)
+components\pages\ContactMain.tsx:69: Las Terrenas, Samaná (address TBC)
+components\pages\ContactMain.tsx:75: The site
+components\pages\ContactMain.tsx:77: [attr] Bahía Mar, Las Terrenas, Samaná, Dominican Republic
+components\pages\ContactMain.tsx:80: Bahía Mar, Las Terrenas, Samaná, Dominican Republic
+components\pages\ContactMain.tsx:83: Bahía Mar, Las Terrenas, Samaná, Dominican Republic
+components\pages\ContactMain.tsx:93: Call or message us
+components\pages\ContactMain.tsx:98: [attr] +1 (809) 000-0000
+components\pages\ContactMain.tsx:106: [attr] Whatsapp
+components\pages\ContactMain.tsx:108: Whatsapp
+components\pages\ContactMain.tsx:109: Whatsapp
+components\pages\ContactMain.tsx:124: [attr] Linkedin
+components\pages\ContactMain.tsx:136: [attr] Facebook
+components\pages\ContactMain.tsx:148: [attr] Instagram
+components\pages\ContactMain.tsx:164: [attr] The entrance to Bahía Mar: two arches over the access road, a whale-tail sculpture between them, tropical vegetation on both sides and the sea beyond.
+components\pages\ContactMain.tsx:168: Bahía Mar
+components\pages\ContactMain.tsx:169: Las Terrenas, Samaná
+components\pages\ContactMain.tsx:171: [attr] Bahía Mar
+components\pages\ContactMain.tsx:174: aria-hidden="true"
+components\pages\ContactMain.tsx:198: [attr] Book a call now
+components\pages\ContactMain.tsx:200: Book a call now
+components\pages\ContactMain.tsx:201: Book a call now
+components\pages\ContactMain.tsx:212: [attr] Book a call now
+components\providers\Animations.tsx:94: initScrollReveal(document),
+components\providers\Animations.tsx:95: initParallax(document),
+components\providers\Animations.tsx:96: initHomeFlow(),
+components\providers\Animations.tsx:97: initChrome(),
+components\providers\Animations.tsx:98: initInteractions(),
+components\providers\Animations.tsx:99: initModals(),
+components\providers\Animations.tsx:100: initUi(),
+components\providers\Animations.tsx:101: initSlider(),
+components\providers\Animations.tsx:102: initAccordion(),
+components\providers\Animations.tsx:103: initLightbox(),
+components\providers\Animations.tsx:104: initFilters(),
+components\providers\Animations.tsx:105: initImageZoom(),
+components\providers\Animations.tsx:106: initTabs(),
+components\providers\Animations.tsx:107: initTabsHilight(),
+components\providers\Animations.tsx:108: initLocalScroll(document),
+components\providers\Animations.tsx:109: initMisc(),
+components\providers\PageTransitions.tsx:52: container,
+components\sections\Amenities.tsx:28: [attr] entrance
+components\sections\Amenities.tsx:33: Entrance
+components\sections\Amenities.tsx:39: Past the entrance arches, the first funicular in the Caribbean links the whole community, together with a network of cart paths.
+components\sections\Amenities.tsx:48: [attr] Entrance to Bahía Mar: a sequence of arches over the access road with a whale-tail sculpture at sunset
+components\sections\Amenities.tsx:56: [attr] pools
+components\sections\Amenities.tsx:61: Beach & pools
+components\sections\Amenities.tsx:67: Three community pools set among the palms, a lagoon, and a Beach Club with its own access to the beach.
+components\sections\Amenities.tsx:76: [attr] Community pool of Bahía Mar surrounded by palms and rocks, with the sea on the horizon
+components\sections\Amenities.tsx:84: [attr] thermal
+components\sections\Amenities.tsx:89: Thermal waters
+components\sections\Amenities.tsx:95: Thermal waters, a spa with meditation huts, a center for meditation and healing, and a wellness center for yoga and pilates.
+components\sections\Amenities.tsx:104: [attr] Circular thermal pool of the Bahía Mar spa under an open oculus draped with hanging plants
+components\sections\Amenities.tsx:112: [attr] coworking
+components\sections\Amenities.tsx:117: Coworking
+components\sections\Amenities.tsx:123: A coworking space, a club house and boutique hotel, seven restaurants and shops, a gym, a party hall, courts and children’s parks.
+components\sections\Amenities.tsx:132: [attr] Bahía Mar coworking lounge with a reflecting pool down its center and floor-to-ceiling glass towards the palms and the sea
+components\sections\Amenities.tsx:140: [attr] trails
+components\sections\Amenities.tsx:145: Forest trails
+components\sections\Amenities.tsx:151: Hiking trails, waterfalls and climbing, mountain bridges and two viewpoints — and an area of BBQs and fire pits for the evenings.
+components\sections\Amenities.tsx:160: [attr] Raised wooden walkway winding through the forest of Bahía Mar beside a stream, under a sculpted white canopy
+components\sections\Amenities.tsx:177: Entrance
+components\sections\Amenities.tsx:182: Beach & pools
+components\sections\Amenities.tsx:187: Thermal waters
+components\sections\Amenities.tsx:191: Coworking
+components\sections\Amenities.tsx:195: Forest trails
+components\sections\Amenities.tsx:211: [attr] Book a call now
+components\sections\Amenities.tsx:213: Book a call now
+components\sections\Amenities.tsx:214: Book a call now
+components\sections\Amenities.tsx:225: [attr] Book a call now
+components\sections\BookACall.tsx:23: To top
+components\sections\BookACall.tsx:40: aria-hidden="true"
+components\sections\BookACall.tsx:74: Sales Office
+components\sections\BookACall.tsx:76: [attr] Las Terrenas, Samaná, Dominican Republic (address TBC)
+components\sections\BookACall.tsx:79: Las Terrenas, Samaná, Dominican Republic (address TBC)
+components\sections\BookACall.tsx:82: Las Terrenas, Samaná, Dominican Republic (address TBC)
+components\sections\BookACall.tsx:95: Bahía Mar.
+components\sections\BookACall.tsx:99: All rights reserved
+components\sections\BookACall.tsx:105: [attr] Privacy policy
+components\sections\BookACall.tsx:107: Privacy policy
+components\sections\BookACall.tsx:108: Privacy policy
+components\sections\BookACall.tsx:114: [attr] Terms of Use
+components\sections\BookACall.tsx:116: Terms of Use
+components\sections\BookACall.tsx:117: Terms of Use
+components\sections\BookACall.tsx:127: [attr] Bahía Mar Residences & Beach Resort
+components\sections\BookACall.tsx:132: Las Terrenas, Samaná
+components\sections\BookACall.tsx:134: [attr] Bahía Mar Residences & Beach Resort
+components\sections\BookACall.tsx:136: Bahía Mar Residences &amp; Beach Resort
+components\sections\BookACall.tsx:137: Bahía Mar Residences &amp; Beach Resort
+components\sections\SeaViewsCta.tsx:25: A short conversation is enough to understand which of the five villas fits the way you want to live in Las Terrenas — a family home facing the bay, a longer stay each season, or a place to return to year after year.
+components\sections\SeaViewsCta.tsx:33: Sea views
+components\sections\SeaViewsCta.tsx:35: from every villa
+components\sections\SeaViewsCta.tsx:38: Samaná Bay through the palms
+components\sections\SeaViewsCta.tsx:43: [attr] View available villas
+components\sections\SeaViewsCta.tsx:46: View available villas
+components\sections\SeaViewsCta.tsx:49: View available villas
+components\sections\SeaViewsCta.tsx:61: [attr] View available villas
+components\villas\LightboxModal.tsx:17: [attr] Close
+components\villas\LightboxModal.tsx:45: [attr] Prev
+components\villas\LightboxModal.tsx:58: [attr] Next
+components\villas\RelatedVillas.tsx:30: [attr] View all
+components\villas\RelatedVillas.tsx:32: View all
+components\villas\RelatedVillas.tsx:33: View all
+components\villas\VillaArch.tsx:25: similar options
+components\villas\VillaArch.tsx:36: Other villas
+components\villas\VillaArch.tsx:38: that might suit your needs
+components\villas\VillaDetail.tsx:30: 'Beach, bay & Los Haitises views',
+components\villas\VillaDetail.tsx:31: 'Private pool',
+components\villas\VillaDetail.tsx:32: 'BBQ terrace & lounge garden',
+components\villas\VillaDetail.tsx:33: 'Pergola porch',
+components\villas\VillaDetail.tsx:34: 'Bamboo floors',
+components\villas\VillaDetail.tsx:35: 'Chukum walls',
+components\villas\VillaDetail.tsx:36: 'Home automation',
+components\villas\VillaDetail.tsx:37: 'Eco-efficient kitchen',
+components\villas\VillaDetail.tsx:38: 'Solar panels',
+components\villas\VillaDetail.tsx:53: villa,
+components\villas\VillaDetail.tsx:111: Bedrooms
+components\villas\VillaDetail.tsx:116: Bathrooms
+components\villas\VillaDetail.tsx:121: Levels
+components\villas\VillaDetail.tsx:126: Living areas
+components\villas\VillaDetail.tsx:134: Info
+components\villas\VillaDetail.tsx:135: Benefits
+components\villas\VillaDetail.tsx:140: [attr] desc
+components\villas\VillaDetail.tsx:152: [attr] benefits
+components\villas\VillaDetail.tsx:172: [attr] Submit a request
+components\villas\VillaDetail.tsx:174: Submit a request
+components\villas\VillaDetail.tsx:175: Submit a request
+components\villas\VillaDetail.tsx:179: [attr] pdf
+components\villas\VillaDetail.tsx:181: pdf
+components\villas\VillaDetail.tsx:182: pdf
+components\villas\VillasListing.tsx:26: Villas
+components\villas\VillasListing.tsx:36: Typology
+components\villas\VillasListing.tsx:38: [attr] All
+components\villas\VillasListing.tsx:40: All
+components\villas\VillasListing.tsx:41: All
+components\villas\VillasListing.tsx:55: All
+components\villas\VillasListing.tsx:72: Bedrooms
+components\villas\VillasListing.tsx:74: [attr] All
+components\villas\VillasListing.tsx:76: All
+components\villas\VillasListing.tsx:77: All
+components\villas\VillasListing.tsx:91: All
+components\villas\VillasListing.tsx:108: Sort by
+components\villas\VillasListing.tsx:110: [attr] Relevant
+components\villas\VillasListing.tsx:112: Relevant
+components\villas\VillasListing.tsx:113: Relevant
+components\villas\VillasListing.tsx:127: Relevant
+components\villas\VillasListing.tsx:128: Fewest bedrooms
+components\villas\VillasListing.tsx:129: Most bedrooms
+components\villas\VillasListing.tsx:133: [attr] Reset
+components\villas\VillasListing.tsx:135: Reset
+components\villas\VillasListing.tsx:136: Reset
+components\villas\VillasListing.tsx:245: nothing found
+components\villas\VillasListing.tsx:248: We didn&#x27;t find any villa matching your selection. Please try changing the typology or bedroom filters.
+app\coming-soon\page.tsx:7: 'The next selection of Bahía Mar villas in Las Terrenas, Samaná, will be ' +
+app\coming-soon\page.tsx:8: 'released shortly. Contact us to find out which villas are still available.',
+app\contact\page.tsx:11: 'Get in touch with the Bahía Mar team in Las Terrenas, Samaná, for villa ' +
+app\contact\page.tsx:12: 'availability, floor plans and a private presentation of the project.',
+app\fonts.ts:56: fontDisplay.variable,
+app\fonts.ts:57: fontBody.variable,
+app\fonts.ts:58: fontAccent.variable,
+app\layout.tsx:35: 'Five villa typologies in a boutique beach resort community on the Samaná ' +
+app\layout.tsx:36: 'peninsula, combining contemporary tropical architecture, private pools and ' +
+app\layout.tsx:93: `.transition-wrapper` es el envoltorio que el original marcaba con
+app\layout.tsx:94: data-barba="wrapper". Barba sobra —el router de Next hace las
+app\layout.tsx:95: transiciones—, pero la clase la usa el CSS heredado, así que se queda.
+app\layout.tsx:99: El orden es el del original: las cortinas van ANTES que nada,
+app\layout.tsx:100: porque el master-preloader tapa la página hasta que arranca el JS.
+app\layout.tsx:107: `main.transition-container` es el contenedor que Barba sustituía
+app\layout.tsx:108: en cada navegación. Aquí no se sustituye —el router de Next
+app\layout.tsx:109: conserva el layout— pero sigue siendo el elemento que se funde en
+app\layout.tsx:110: las transiciones de ruta, y la cabecera va DENTRO, como en el
+app\layout.tsx:111: original.
+app\layout.tsx:127: Sin contenedor NO se inyecta nada. Si se dejara el script con el
+app\layout.tsx:128: id vacío, cada visita pediría un gtm.js?id= que devuelve error, y
+app\villas\page.tsx:11: 'Five villa typologies at Bahía Mar, Las Terrenas, Samaná: Villa Cosón, ' +
+app\villas\page.tsx:12: 'Helecho, Remanso, Ámbar and Carolina — single-level and two-level villas ' +
+app\villas\page.tsx:13: 'with private pool, jacuzzi, solarium and views over Samaná Bay.',
