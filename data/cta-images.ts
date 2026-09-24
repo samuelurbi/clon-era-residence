@@ -27,8 +27,8 @@ function responsive(name: string): CtaImage {
 
 export const CTA_IMAGES = {
   home: responsive('img_cta_1920'),
-  apartments: responsive('era-residence-garden-2'),
+  villas: responsive('era-residence-garden-2'),
   contact: responsive('img_cam_09'),
   /** Las 25 fichas comparten la misma. */
-  apartment: responsive('era-residence-ground-floor-2'),
+  villa: responsive('era-residence-ground-floor-2'),
 } satisfies Record<string, CtaImage>;

@@ -51,18 +51,45 @@ function heroFlow(): () => void {
   let tl: gsap.core.Timeline | null = null;
 
   const build = () => {
-    const bgHeight = bg.offsetHeight;
-
+    /*
+     * Las distancias van como FUNCIÓN, no como número, y el trigger lleva
+     * `invalidateOnRefresh`. Medir una sola vez en una constante hacía que
+     * el desplazamiento se congelara con la altura que hubiera en ese
+     * instante.
+     *
+     * El síntoma es muy concreto: la sección del hero es `theme_on-color`,
+     * o sea que su fondo BASE es el morado (velvet plum, #340c24) y el
+     * cielo azul es una imagen encima. Si el fondo no sube lo que le toca,
+     * asoma una franja morada por debajo justo antes de que entre la
+     * sección siguiente a taparla.
+     *
+     * Se destapó al servir los assets desde un host externo: con latencia
+     * de red la medición inicial llega mal, y además ahora hay más
+     * `ScrollTrigger.refresh()` en juego (los dispara el carril horizontal
+     * al cargar sus imágenes) — y un refresh no puede recalcular un valor
+     * literal ya resuelto.
+     */
     tl = gsap.timeline({
-      scrollTrigger: { trigger: area, start: 'top top', end: 'bottom bottom', scrub: true },
+      scrollTrigger: {
+        trigger: area,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
     });
 
     if (!mobile) {
       tl.fromTo(
         heroS,
         { y: 0 },
-        { y: -(bgHeight * 1.25 - window.innerHeight), ease: 'Ease', duration: 0.6 },
-      ).fromTo(bg, { y: 0 }, { y: -(bgHeight - window.innerHeight), ease: 'Ease', duration: 0.6 }, '<');
+        { y: () => -(bg.offsetHeight * 1.25 - window.innerHeight), ease: 'Ease', duration: 0.6 },
+      ).fromTo(
+        bg,
+        { y: 0 },
+        { y: () => -(bg.offsetHeight - window.innerHeight), ease: 'Ease', duration: 0.6 },
+        '<',
+      );
     }
 
     tl.fromTo(
@@ -215,12 +242,31 @@ function locationTrack(): () => void {
     const observer = new ResizeObserver(applyHeight);
     observer.observe(area);
 
-    const distance = track.scrollWidth - area.offsetWidth;
-
+    /*
+     * La distancia va como FUNCIÓN, no como número, y con
+     * `invalidateOnRefresh`. Con un número fijo se congela en el valor que
+     * hubiera al arrancar, y `applyHeight()` —que sí vuelve a medir cuando
+     * cargan las imágenes— sólo podía corregir la altura: `refresh()` no
+     * recalcula un valor literal ya resuelto.
+     *
+     * Se vio al servir los assets desde un host externo (GoHighLevel Vibe
+     * no aloja binarios). En local las imágenes salían del disco y daba
+     * tiempo a medir bien; con latencia de red la carrera se pierde, el
+     * recorrido se queda corto y —esto es lo que se ve— la línea del
+     * trazado NO APARECE: su ScrollTrigger usa este tween como
+     * `containerAnimation`, así que si el recorrido no llega, el disparador
+     * tampoco, y el `clipPath` se queda cerrado a cero.
+     */
     const horizontal = gsap.to(track, {
-      x: -distance,
+      x: () => -(track.scrollWidth - area.offsetWidth),
       ease: 'horScroll',
-      scrollTrigger: { trigger: area, start: '2.5% top', end: '97.5% bottom', scrub: 0.25 },
+      scrollTrigger: {
+        trigger: area,
+        start: '2.5% top',
+        end: '97.5% bottom',
+        scrub: 0.25,
+        invalidateOnRefresh: true,
+      },
     });
     area._horizontalTween = horizontal;
 

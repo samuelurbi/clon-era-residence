@@ -1,10 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * Amenidades de Bahía Mar: cinco diapositivas con pestañas.
+ *
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * home.html del sitio original, pero al personalizarlo para Bahía Mar pasa
+ * a mantenerse a mano. Regenerarlo lo devolvería a las amenidades del
+ * sitio clonado y desharía este trabajo.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
- * Las URLs del CDN ya están reescritas a /public.
+ * Los textos salen del brochure y del master plan (bahia-mar-personalizacion/
+ * BRIEF.md); las fotos, de 00. AMENIDADES (inventario/amenities.json).
+ * Hay exactamente cinco elementos porque la animación los cuenta.
  */
 
 export function Amenities() {
@@ -18,18 +25,18 @@ export function Amenities() {
                 <div data-tabs-hilight="ver" data-tabs="" className="amen-s_cms">
                   <div className="amen-cms w-dyn-list">
                     <div role="list" className="amen-cms_list w-dyn-items">
-                      <div data-reveal-first="" data-tab-content="gated-community" role="listitem" className="amen-cms_list_item w-dyn-item">
+                      <div data-reveal-first="" data-tab-content="entrance" role="listitem" className="amen-cms_list_item w-dyn-item">
                         <div data-parallax="w" className="amen-slide">
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Gated community</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Entrance</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Instead of corridors, walking paths connect the apartments — making Era Residence feel closer to a group of private homes than a standard
+                                  Past the entrance arches, the first funicular in the Caribbean links the whole community, together with a network of cart paths.
                                 </h4>
                               </div>
                             </div>
@@ -38,7 +45,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="" src="/images/era-residence-gated-community.webp" sizes="100vw" srcSet="/images/era-residence-gated-community-p-500.webp 500w, /images/era-residence-gated-community-p-800.webp 800w, /images/era-residence-gated-community-p-1080.webp 1080w, /images/era-residence-gated-community-p-1600.webp 1600w, /images/era-residence-gated-community.webp 1920w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt="Entrance to Bahía Mar: a sequence of arches over the access road with a whale-tail sculpture at sunset" src="/images/bahiamar-amenities-1.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-1-p-500.webp 500w, /images/bahiamar-amenities-1-p-800.webp 800w, /images/bahiamar-amenities-1-p-1080.webp 1080w, /images/bahiamar-amenities-1-p-1600.webp 1600w, /images/bahiamar-amenities-1-p-2000.webp 2000w, /images/bahiamar-amenities-1.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -46,18 +53,18 @@ export function Amenities() {
                           </div>
                         </div>
                       </div>
-                      <div data-reveal-first="" data-tab-content="swimming-pool-2" role="listitem" className="amen-cms_list_item w-dyn-item">
+                      <div data-reveal-first="" data-tab-content="pools" role="listitem" className="amen-cms_list_item w-dyn-item">
                         <div data-parallax="w" className="amen-slide">
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Swimming Pool</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Beach & pools</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Saltwater swimming pool, Children’s pool, Sauna, jacuzzi and wellness shower
+                                  Three community pools set among the palms, a lagoon, and a Beach Club with its own access to the beach.
                                 </h4>
                               </div>
                             </div>
@@ -66,7 +73,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="" src="/images/era-residence-pool.webp" sizes="100vw" srcSet="/images/era-residence-pool-p-500.webp 500w, /images/era-residence-pool-p-800.webp 800w, /images/era-residence-pool-p-1080.webp 1080w, /images/era-residence-pool-p-1600.webp 1600w, /images/era-residence-pool.webp 1920w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt="Community pool of Bahía Mar surrounded by palms and rocks, with the sea on the horizon" src="/images/bahiamar-amenities-2.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-2-p-500.webp 500w, /images/bahiamar-amenities-2-p-800.webp 800w, /images/bahiamar-amenities-2-p-1080.webp 1080w, /images/bahiamar-amenities-2-p-1600.webp 1600w, /images/bahiamar-amenities-2-p-2000.webp 2000w, /images/bahiamar-amenities-2.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -74,18 +81,18 @@ export function Amenities() {
                           </div>
                         </div>
                       </div>
-                      <div data-reveal-first="" data-tab-content="swimming-pool" role="listitem" className="amen-cms_list_item w-dyn-item">
+                      <div data-reveal-first="" data-tab-content="thermal" role="listitem" className="amen-cms_list_item w-dyn-item">
                         <div data-parallax="w" className="amen-slide">
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Parking area</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Thermal waters</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Each parking space includes pre-installation for optional EV charging.
+                                  Thermal waters, a spa with meditation huts, a center for meditation and healing, and a wellness center for yoga and pilates.
                                 </h4>
                               </div>
                             </div>
@@ -94,7 +101,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="" src="/images/era-residence-parking.webp" sizes="100vw" srcSet="/images/era-residence-parking-p-500.png 500w, /images/era-residence-parking-p-800.png 800w, /images/era-residence-parking.webp 1920w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt="Circular thermal pool of the Bahía Mar spa under an open oculus draped with hanging plants" src="/images/bahiamar-amenities-3.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-3-p-500.webp 500w, /images/bahiamar-amenities-3-p-800.webp 800w, /images/bahiamar-amenities-3-p-1080.webp 1080w, /images/bahiamar-amenities-3-p-1600.webp 1600w, /images/bahiamar-amenities-3-p-2000.webp 2000w, /images/bahiamar-amenities-3.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -102,18 +109,18 @@ export function Amenities() {
                           </div>
                         </div>
                       </div>
-                      <div data-reveal-first="" data-tab-content="spa-gym" role="listitem" className="amen-cms_list_item w-dyn-item">
+                      <div data-reveal-first="" data-tab-content="coworking" role="listitem" className="amen-cms_list_item w-dyn-item">
                         <div data-parallax="w" className="amen-slide">
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Spa & gym</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Coworking</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Designed exclusively for residents and their guests, the amenities at ERA encourage a slower and more balanced Mediterranean lifestyle
+                                  A coworking space, a club house and boutique hotel, seven restaurants and shops, a gym, a party hall, courts and children’s parks.
                                 </h4>
                               </div>
                             </div>
@@ -122,7 +129,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="" src="/images/era-residence-spa-&-gym.webp" sizes="100vw" srcSet="/images/era-residence-spa-&-gym-p-500.webp 500w, /images/era-residence-spa-&-gym-p-800.webp 800w, /images/era-residence-spa-&-gym-p-1080.webp 1080w, /images/era-residence-spa-&-gym-p-1600.webp 1600w, /images/era-residence-spa-&-gym.webp 1920w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt="Bahía Mar coworking lounge with a reflecting pool down its center and floor-to-ceiling glass towards the palms and the sea" src="/images/bahiamar-amenities-4.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-4-p-500.webp 500w, /images/bahiamar-amenities-4-p-800.webp 800w, /images/bahiamar-amenities-4-p-1080.webp 1080w, /images/bahiamar-amenities-4-p-1600.webp 1600w, /images/bahiamar-amenities-4-p-2000.webp 2000w, /images/bahiamar-amenities-4.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -130,18 +137,18 @@ export function Amenities() {
                           </div>
                         </div>
                       </div>
-                      <div data-reveal-first="" data-tab-content="landscaping" role="listitem" className="amen-cms_list_item w-dyn-item">
+                      <div data-reveal-first="" data-tab-content="trails" role="listitem" className="amen-cms_list_item w-dyn-item">
                         <div data-parallax="w" className="amen-slide">
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Landscaping</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Forest trails</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  The landscaping concept was designed to soften the architecture and strengthen the connection between the residences and the Mediterranean environment.
+                                  Hiking trails, waterfalls and climbing, mountain bridges and two viewpoints — and an area of BBQs and fire pits for the evenings.
                                 </h4>
                               </div>
                             </div>
@@ -150,7 +157,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="" src="/images/era-residence-landscaping.webp" sizes="100vw" srcSet="/images/era-residence-landscaping-p-500.png 500w, /images/era-residence-landscaping-p-800.png 800w, /images/era-residence-landscaping-p-1080.png 1080w, /images/era-residence-landscaping.webp 1920w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt="Raised wooden walkway winding through the forest of Bahía Mar beside a stream, under a sculpted white canopy" src="/images/bahiamar-amenities-5.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-5-p-500.webp 500w, /images/bahiamar-amenities-5-p-800.webp 800w, /images/bahiamar-amenities-5-p-1080.webp 1080w, /images/bahiamar-amenities-5-p-1600.webp 1600w, /images/bahiamar-amenities-5-p-2000.webp 2000w, /images/bahiamar-amenities-5.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -166,26 +173,26 @@ export function Amenities() {
                         <div className="amen-tabs-cms w-dyn-list">
                           <div role="list" className="amen-tabs-cms_list w-dyn-items">
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
-                              <div data-tab="" data-tab-trigger="gated-community" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Gated community</div>
+                              <div data-tab="" data-tab-trigger="entrance" className="amen-tab">
+                                <div data-scroll-reveal="p" className="h5">Entrance</div>
                               </div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
-                              <div data-tab="" data-tab-trigger="swimming-pool-2" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Swimming Pool</div>
+                              <div data-tab="" data-tab-trigger="pools" className="amen-tab">
+                                <div data-scroll-reveal="p" className="h5">Beach & pools</div>
                               </div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
-                              <div data-tab="" data-tab-trigger="swimming-pool" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Parking area</div>
+                              <div data-tab="" data-tab-trigger="thermal" className="amen-tab">
+                                <div data-scroll-reveal="p" className="h5">Thermal waters</div>
                               </div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
-                              <div data-tab="" data-tab-trigger="spa-gym" className="amen-tab"><div data-scroll-reveal="p" className="h5">Spa & gym</div></div>
+                              <div data-tab="" data-tab-trigger="coworking" className="amen-tab"><div data-scroll-reveal="p" className="h5">Coworking</div></div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
-                              <div data-tab="" data-tab-trigger="landscaping" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Landscaping</div>
+                              <div data-tab="" data-tab-trigger="trails" className="amen-tab">
+                                <div data-scroll-reveal="p" className="h5">Forest trails</div>
                               </div>
                             </div>
                           </div>

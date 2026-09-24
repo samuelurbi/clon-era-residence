@@ -246,7 +246,7 @@ function linkHover(): () => void {
      *
      * El original la partía sólo en palabras, y funcionaba porque con
      * Ambroise François las dos copias rompían en el mismo sitio. Con
-     * Instrument Serif, que es un 37% más ancha, «an Apartment» ya no cabe
+     * Instrument Serif, que es un 37% más ancha, «a Villa» ya no cabe
      * en la caja: la copia 1 conserva las 2 líneas que SplitText le fijó y
      * la 2 refluía a 3, así que el enlace crecía de alto al pasar el cursor.
      * Partiendo ambas igual, las dos comparten el mismo corte.

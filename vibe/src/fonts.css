@@ -1,0 +1,27 @@
+/* ============================================================
+ *  Tipografías — equivalente de `app/fonts.ts`.
+ *
+ *  En Next, `next/font/google` descargaba los ficheros en tiempo de
+ *  BUILD y los servía desde el propio dominio. Vibe no tiene ese paso,
+ *  así que se piden a Google en runtime (el `<link>` va en index.html).
+ *
+ *  Las tres siguen siendo las MISMAS y por las mismas razones —la
+ *  elección se hizo midiendo el ancho renderizado, ver el playbook
+ *  [[sustituir-fuentes-de-pago]]—; lo único que cambia es de dónde
+ *  vienen los ficheros:
+ *
+ *    ambroise-francois-std (Adobe)  ->  Instrument Serif
+ *    Maison Neue Extended (Milieu)  ->  Archivo
+ *    sloop-script-three (Adobe)     ->  Pinyon Script
+ *
+ *  Lo que SÍ se pierde respecto a next/font son las métricas de
+ *  respaldo ajustadas, que evitaban el salto de maquetación al cargar.
+ *  Por eso `styles/theme.css` encadena fallbacks a mano detrás de estas
+ *  variables — ya estaban puestos, aquí no hay nada que añadir.
+ * ============================================================ */
+
+:root {
+  --font-display: "Instrument Serif";
+  --font-body: "Archivo";
+  --font-accent: "Pinyon Script";
+}

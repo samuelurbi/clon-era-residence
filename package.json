@@ -13,7 +13,10 @@
     "gen:sections": "node scripts/generate-sections.mjs build",
     "gen:apartments": "node scripts/extract-apartment-extras.mjs && node scripts/extract-apartment-cards.mjs && node scripts/generate-apartment-card.mjs && node scripts/generate-apartments-listing.mjs && node scripts/generate-apartment-detail.mjs",
     "gen:header": "node scripts/generate-header.mjs",
-    "gen:shared": "node scripts/generate-shared-sections.mjs"
+    "gen:shared": "node scripts/generate-shared-sections.mjs",
+    "vibe": "node scripts/vibe-preparar.mjs",
+    "vibe:local": "node scripts/vibe-preparar.mjs --local",
+    "vibe:cambios": "node scripts/vibe-copiar.mjs --cambios"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

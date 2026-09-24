@@ -1,0 +1,98 @@
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+   La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+/* ============================================================
+ *  CAPA DE PERSONALIZACIÓN — editable a mano.
+ *
+ *  webflow.css y tokens.css se regeneran con scripts; este NO.
+ *  Se carga el último, así que cualquier token que redefinas aquí
+ *  gana. Es el sitio donde vive la marca del cliente.
+ * ============================================================ */
+
+/* --------------------------------------------------------
+ *  Tipografías
+ *
+ *  Las originales (`ambroise-francois-std` y `sloop-script-three`
+ *  de Adobe, `Maison Neue Extended` de Milieu Grotesque) eran de
+ *  pago y estaban atadas al dominio del proyecto original. Aquí se
+ *  sustituyen por tres familias con licencia SIL OFL, que se pueden
+ *  desplegar en cualquier dominio:
+ *
+ *    Titulares   Instrument Serif  (sustituye a Ambroise François)
+ *    Texto       Archivo           (sustituye a Maison Neue Extended)
+ *    Floritura   Pinyon Script     (sustituye a Sloop Script)
+ *
+ *  Las variables --font-* las publica next/font desde app/fonts.ts,
+ *  que además genera respaldos con métricas ajustadas; las cadenas
+ *  de aquí son la última red por si el CSS carga sin el <html class>.
+ *
+ *  Se declara sobre `:root` Y sobre `body` a propósito: tokens.css
+ *  redefine estos tokens en `body` dentro de su media query de
+ *  ≤991px, y `body` gana a `:root` por ser más específico en el
+ *  árbol. Sin la segunda declaración, el móvil se quedaría con las
+ *  familias de Adobe.
+ * -------------------------------------------------------- */
+
+/* --------------------------------------------------------
+ *  Hueco de la barra de scroll
+ *
+ *  El preloader y los modales bloqueaban el scroll con
+ *  `overflow: hidden`, lo que hace desaparecer la barra: el
+ *  viewport de maquetación gana 15px de golpe y la página da
+ *  un brinco lateral al abrir y otro al cerrar.
+ *
+ *  `scrollbar-gutter: stable` NO vale aquí: por especificación
+ *  sólo reserva hueco cuando el desbordamiento es `auto` o
+ *  `scroll`, nunca con `hidden`. Se probó y seguía saltando.
+ *
+ *  La solución es que la barra no llegue a desaparecer: se
+ *  fuerza siempre presente y el bloqueo se hace por eventos
+ *  (ver lib/animations/scroll-lock.ts) en vez de tocando el
+ *  desbordamiento. Así el ancho disponible nunca cambia.
+ *
+ *  Es una desviación del original, que compensaba con
+ *  `padding-right` en el body y aun así saltaba.
+ * -------------------------------------------------------- */
+html {
+  overflow-y: scroll;
+}
+
+/* --------------------------------------------------------
+ *  Ajustes por el ancho de la tipografía sustituida
+ *
+ *  Instrument Serif es ~37% más ancha que Ambroise François,
+ *  la didona comprimida del original. Las cajas del CSS
+ *  heredado están dimensionadas para aquélla, así que algunos
+ *  textos que allí entraban en una línea aquí se parten.
+ *
+ *  Cada caso se corrige donde ocurre, no con un cambio global
+ *  de escala: bajar el h1 en todo el sitio encogería también
+ *  el hero, que entra perfectamente.
+ * -------------------------------------------------------- */
+
+/*
+ * Los tres titulares del bloque de pilares («Real-Life Location»,
+ * «Built to stay», «Boutique concept») deben ir en UNA línea.
+ *
+ * Medido: el más largo necesita 1648px en una línea y su caja mide
+ * 1429 — hace falta un 0,867 del cuerpo. Se aplica 0,84 para dejar
+ * margen si cambian los textos.
+ */
+.section.z-2 .h1 {
+  font-size: calc(var(--_fonts---h1--size) * 0.84);
+}
+
+:root,
+body {
+  --_fonts---font-display:
+    var(--font-display),
+    "Bodoni MT", "Didot", "Times New Roman", serif;
+
+  --_fonts---font-body:
+    var(--font-body),
+    "Helvetica Neue", Arial, sans-serif;
+
+  --_fonts---font-accent:
+    var(--font-accent),
+    "Snell Roundhand", "Apple Chancery", cursive;
+}
+

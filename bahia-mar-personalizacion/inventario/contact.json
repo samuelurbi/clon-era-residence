@@ -1,0 +1,7 @@
+[
+  {
+    "destino": "/images/bahiamar-entrance-1.webp",
+    "origen": "00. AMENIDADES/PORTICO INGRESO/PÓRTICO INGRESO 01.png",
+    "uso": "/contact > bloque de contacto (components/pages/ContactMain.tsx), imagen a todo el ancho que sustituye al mapa SVG de la oficina de ventas del original (1440x760); recorte 2350x1240 (1.895:1, misma proporción que el SVG) desde el render de 5504x3072; variantes -p-500/800/1080/1600/2000, todas existentes y con las dimensiones que declara el srcSet. Generada por el agente anterior; origen identificado visualmente en esta sesión comparando con los cuatro renders de la carpeta (arcos dobles, mar al fondo entre ellos y cartel «Bahía Mar» a la derecha = 01)."
+  }
+]

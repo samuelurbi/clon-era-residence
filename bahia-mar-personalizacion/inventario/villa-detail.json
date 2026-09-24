@@ -1,0 +1,267 @@
+[
+  {
+    "destino": "/images/villa-coson-plan-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/00. PLANOS/COMERCIALES/A-01-PRIMER NIVEL.png",
+    "uso": "Ficha /villas/coson > plano principal «Villa Cosón — First level» (escritorio y móvil, abre en lightbox). Procesado en una sesión anterior; origen identificado por nombre."
+  },
+  {
+    "destino": "/images/villa-coson-plan-2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/00. PLANOS/COMERCIALES/A-02-SEGUNDO NIVEL.png",
+    "uso": "Ficha /villas/coson > plano principal «Villa Cosón — Second level» (escritorio y móvil, abre en lightbox). Procesado en una sesión anterior; origen identificado por nombre."
+  },
+  {
+    "destino": "/images/villa-coson-hero.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R1_1.png",
+    "uso": "Tarjeta de Villa Cosón (VillaCard) en /villas y en el bloque «Other villas» de las otras cuatro fichas; variantes -p-500/800/1080/1600/2000."
+  },
+  {
+    "destino": "/images/villa-coson-g1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R12.png",
+    "uso": "Ficha /villas/coson > galería (exterior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-coson-g2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R11_2.png",
+    "uso": "Ficha /villas/coson > galería (exterior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-coson-g3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R7_1.png",
+    "uso": "Ficha /villas/coson > galería (exterior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-coson-g4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R8_1.png",
+    "uso": "Ficha /villas/coson > galería (exterior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-coson-i1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 01.png",
+    "uso": "Ficha /villas/coson > galería (interior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-coson-i2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-004/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Cocina.png",
+    "uso": "Ficha /villas/coson > galería (interior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-coson-i3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio Principal 01.png",
+    "uso": "Ficha /villas/coson > galería (interior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-coson-i4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/02. RENDERS INTERIORES/Sala TV 01.png",
+    "uso": "Ficha /villas/coson > galería (interior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-helecho-plan-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
+    "uso": "Ficha /villas/helecho > plano principal «Villa Helecho — First level» (escritorio y móvil, abre en lightbox). Procesado en una sesión anterior; origen identificado por nombre."
+  },
+  {
+    "destino": "/images/villa-helecho-plan-2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-02-SEGUNDO NIVEL.png",
+    "uso": "Ficha /villas/helecho > plano principal «Villa Helecho — Second level» (escritorio y móvil, abre en lightbox). Procesado en una sesión anterior; origen identificado por nombre."
+  },
+  {
+    "destino": "/images/villa-helecho-hero.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Tarjeta de Villa Helecho (VillaCard) en /villas y en el bloque «Other villas» de las otras cuatro fichas; variantes -p-500/800/1080/1600/2000."
+  },
+  {
+    "destino": "/images/villa-helecho-g1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R2.png",
+    "uso": "Ficha /villas/helecho > galería (exterior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-helecho-g2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R5.png",
+    "uso": "Ficha /villas/helecho > galería (exterior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-helecho-g3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R6.png",
+    "uso": "Ficha /villas/helecho > galería (exterior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-helecho-g4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R7.png",
+    "uso": "Ficha /villas/helecho > galería (exterior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-helecho-i1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 01.png",
+    "uso": "Ficha /villas/helecho > galería (interior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-helecho-i2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 03.png",
+    "uso": "Ficha /villas/helecho > galería (interior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-helecho-i3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.png",
+    "uso": "Ficha /villas/helecho > galería (interior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-helecho-i4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Baño principal 01.png",
+    "uso": "Ficha /villas/helecho > galería (interior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-remanso-plan-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
+    "uso": "Ficha /villas/remanso > plano principal «Villa Remanso — First level» (escritorio y móvil, abre en lightbox). Procesado en una sesión anterior; origen identificado por nombre."
+  },
+  {
+    "destino": "/images/villa-remanso-hero.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Tarjeta de Villa Remanso (VillaCard) en /villas y en el bloque «Other villas» de las otras cuatro fichas; variantes -p-500/800/1080/1600/2000."
+  },
+  {
+    "destino": "/images/villa-remanso-g1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R3.png",
+    "uso": "Ficha /villas/remanso > galería (exterior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-remanso-g2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R6.png",
+    "uso": "Ficha /villas/remanso > galería (exterior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-remanso-g3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R7.png",
+    "uso": "Ficha /villas/remanso > galería (exterior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-remanso-g4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R10.png",
+    "uso": "Ficha /villas/remanso > galería (exterior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-remanso-i1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Zona social  01.png",
+    "uso": "Ficha /villas/remanso > galería (interior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-remanso-i2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Zona social  03.png",
+    "uso": "Ficha /villas/remanso > galería (interior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-remanso-i3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.png",
+    "uso": "Ficha /villas/remanso > galería (interior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-remanso-i4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/02. RENDERS INTERIORES/Baño principal 01.png",
+    "uso": "Ficha /villas/remanso > galería (interior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-ambar-plan-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
+    "uso": "Ficha /villas/ambar > plano principal «Villa Ámbar — First level» (escritorio y móvil, abre en lightbox). Procesado en una sesión anterior; origen identificado por nombre."
+  },
+  {
+    "destino": "/images/villa-ambar-hero.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Tarjeta de Villa Ámbar (VillaCard) en /villas y en el bloque «Other villas» de las otras cuatro fichas; variantes -p-500/800/1080/1600/2000."
+  },
+  {
+    "destino": "/images/villa-ambar-g1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R2.png",
+    "uso": "Ficha /villas/ambar > galería (exterior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-ambar-g2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R3.png",
+    "uso": "Ficha /villas/ambar > galería (exterior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-ambar-g3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R4.png",
+    "uso": "Ficha /villas/ambar > galería (exterior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-ambar-g4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R7.png",
+    "uso": "Ficha /villas/ambar > galería (exterior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-ambar-i1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 01.png",
+    "uso": "Ficha /villas/ambar > galería (interior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-ambar-i2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 03.png",
+    "uso": "Ficha /villas/ambar > galería (interior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-ambar-i3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-004/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.jpg",
+    "uso": "Ficha /villas/ambar > galería (interior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-ambar-i4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Baño principal 01.jpg",
+    "uso": "Ficha /villas/ambar > galería (interior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-carolina-plan-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-01-PRIMER NIVEL.png",
+    "uso": "Ficha /villas/carolina > plano principal «Villa Carolina — First level» (escritorio y móvil, abre en lightbox). Procesado en una sesión anterior; origen identificado por nombre."
+  },
+  {
+    "destino": "/images/villa-carolina-plan-2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/00. PLANOS/PLANOS COMERCIALES/A-02-SEGUNDO NIVEL.png",
+    "uso": "Ficha /villas/carolina > plano principal «Villa Carolina — Second level» (escritorio y móvil, abre en lightbox). Procesado en una sesión anterior; origen identificado por nombre."
+  },
+  {
+    "destino": "/images/villa-carolina-hero.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R1_3.png",
+    "uso": "Tarjeta de Villa Carolina (VillaCard) en /villas y en el bloque «Other villas» de las otras cuatro fichas; variantes -p-500/800/1080/1600/2000."
+  },
+  {
+    "destino": "/images/villa-carolina-g1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R3_3.png",
+    "uso": "Ficha /villas/carolina > galería (exterior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-carolina-g2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R4_4.png",
+    "uso": "Ficha /villas/carolina > galería (exterior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-carolina-g3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R6_3.png",
+    "uso": "Ficha /villas/carolina > galería (exterior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-carolina-g4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R9_2.png",
+    "uso": "Ficha /villas/carolina > galería (exterior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-carolina-i1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Zona Social 01.jpg",
+    "uso": "Ficha /villas/carolina > galería (interior 1): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-carolina-i2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Zona Social 03.jpg",
+    "uso": "Ficha /villas/carolina > galería (interior 2): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-carolina-i3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 01.jpg",
+    "uso": "Ficha /villas/carolina > galería (interior 3): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  },
+  {
+    "destino": "/images/villa-carolina-i4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Picuzzi Terraza 01.jpg",
+    "uso": "Ficha /villas/carolina > galería (interior 4): columna bajo el plano en escritorio y carrusel horizontal en móvil, con lightbox; variantes -p-500/800/1080/1600/2000. En escritorio sustituye a las tres fotos de ERA que quedaban."
+  }
+]

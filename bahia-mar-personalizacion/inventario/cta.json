@@ -1,0 +1,22 @@
+[
+  {
+    "destino": "/images/bahiamar-cta-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R10_2.png",
+    "uso": "Home > CTA «Sea views from every villa» (fondo a pantalla completa, clave `home` de data/cta-images.ts; recorte 4:5 como el hueco original; variantes -p-500/800/1080/1600/2000). Generada por el agente anterior; origen identificado visualmente en esta sesión."
+  },
+  {
+    "destino": "/images/bahiamar-cta-2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R9_1.png",
+    "uso": "Listado /villas > CTA «Sea views from every villa» (fondo a pantalla completa, clave `villas`; proporción 3:4 como el hueco original; variantes -p-500/800/1080/1600/2000). Generada por el agente anterior; origen identificado visualmente en esta sesión."
+  },
+  {
+    "destino": "/images/bahiamar-cta-3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-003/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R8.png",
+    "uso": "/contact > CTA «Sea views from every villa» (fondo a pantalla completa, clave `contact`; recorte 11:10 como el hueco original; variantes -p-500/800/1080/1600/2000). Generada por el agente anterior; origen identificado visualmente en esta sesión."
+  },
+  {
+    "destino": "/images/bahiamar-cta-4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R5.png",
+    "uso": "Fichas /villas/<slug> (las cinco) > CTA «Sea views from every villa» (fondo a pantalla completa, clave `villa`; recorte 10:11 como el hueco original, ventana vertical desde y=800 del render 3012x4518; variantes -p-500/800/1080/1600/2000)."
+  }
+]

@@ -20,6 +20,15 @@
 # production
 /build
 
+# gemelo Vite para GoHighLevel Vibe: el código SÍ se versiona (es lo que se
+# pega en el editor y se quiere poder diffear), pero no sus dependencias ni
+# su build. Ver vibe/README.md.
+/vibe/node_modules
+/vibe/dist
+/vibe-bundle/node_modules
+/vibe-bundle/dist
+/vibe-bundle/.progreso
+
 # misc
 .DS_Store
 *.pem
@@ -39,3 +48,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+/vibe-bundle/.pegado.json
+
+# material bruto del cliente (renders, zips, capturas de QA): pesa GB, vive
+# fuera de git. Solo se versionan el brief y los inventarios.
+/bahia-mar-personalizacion/*
+!/bahia-mar-personalizacion/BRIEF.md
+!/bahia-mar-personalizacion/INVENTARIO-IMAGENES.md
+!/bahia-mar-personalizacion/INVENTARIO-IMAGENES.json
+!/bahia-mar-personalizacion/inventario/
+
+# capturas HAR de GHL (~80 MB, llevan tokens de sesión)
+*.har

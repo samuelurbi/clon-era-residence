@@ -1,0 +1,12 @@
+[
+  {
+    "destino": "/images/bahiamar-architecture-2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R8_1.png",
+    "uso": "Home › Architecture › imagen de fondo del bloque con el título «Architecture» (4:3, recorte anclado a la izquierda; sustituye a bahiamar-architecture-1, Villa Carolina R7_3, cuyo cielo claro dejaba el título blanco ilegible). Variantes -p-500/800/1080/1600/2000."
+  },
+  {
+    "destino": "/images/bahiamar-developer-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R4.png",
+    "uso": "Home › bloque Developer, tarjeta «Architects» (Estudio Dolla): imagen del hueco .other-card_info_logo (192 px, 3:2) que antes ocupaba el logo de la comercializadora (components/home/Developer.tsx). Recorte 3:2, 2350 px + variantes -p-500/800/1080/1600/2000 (en el srcSet sólo van 500/800/1080). Villa Helecho con arco de piedra frente al mar."
+  }
+]

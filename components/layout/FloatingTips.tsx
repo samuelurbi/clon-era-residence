@@ -124,7 +124,7 @@ export function FloatingTips() {
             <div className="floating-tip-card_t"><h1 className="h5">Your Private Sanctuary</h1></div>
             <div className="floating-tip-card_b">
               <p className="p1">
-                Instead of corridors, walking paths connect the apartments — making Era Residence feel closer to a group of private homes than a standard apartment building.
+                Instead of corridors, walking paths connect the villas — making Era Residence feel closer to a group of private homes than a standard villa building.
               </p>
             </div>
             <div className="card_decor">

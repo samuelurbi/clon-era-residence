@@ -19,7 +19,7 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
             <div className="grid">
               <div className="cta-s_desc">
                 <p data-scroll-reveal="p" className="l1 a-center">
-                  A short conversation is enough to understand which apartment fits your use case — whether it is a family second home, a longer stay, or a place to return to year after year.
+                  A short conversation is enough to understand which villa fits your use case — whether it is a family second home, a longer stay, or a place to return to year after year.
                 </p>
               </div>
             </div>
@@ -37,13 +37,13 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
                 <div data-scroll-reveal="ctn" className="cta-s_title_btn">
                   <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                     <div data-magnetic-inner="" className="btn-circle_label">
-                      <a hover-nav-item="" aria-label="View available apartments" href="/apartments" className="nav-item w-inline-block">
+                      <a hover-nav-item="" aria-label="View available villas" href="/villas" className="nav-item w-inline-block">
                         <div className="nav-item_label">
                           <div className="nav-item_label_text">
-                            <div hover="text" className="l1">View available apartments</div>
+                            <div hover="text" className="l1">View available villas</div>
                           </div>
                           <div className="nav-item_label_text is-2">
-                            <div hover="text" className="l1">View available apartments</div>
+                            <div hover="text" className="l1">View available villas</div>
                           </div>
                         </div>
                       </a>
@@ -55,7 +55,7 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
                         <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                       </svg>
                     </div>
-                    <a aria-label="View available apartments" href="/apartments" className="btn-circle_link w-inline-block"></a>
+                    <a aria-label="View available villas" href="/villas" className="btn-circle_link w-inline-block"></a>
                   </div>
                 </div>
               </div>

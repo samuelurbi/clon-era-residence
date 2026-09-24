@@ -32,7 +32,7 @@ de 99 fotogramas enganchada al cursor: al entrar avanza hasta la mitad y al
 salir completa el recorrido, sin volver atrás.
 
 **Decisión tomada:** no se porta. Esa firma es del estudio anterior y va a
-sustituirse por la marca del cliente, **Caribeclic**.
+sustituirse por la de la agencia que entrega este sitio, **Caribeclic**.
 
 **Pendiente:** crear un Lottie con el **isotipo de Caribeclic** y montarlo en
 ese mismo hueco (`.credits` → `.credits_logo`, con la ruta del JSON en

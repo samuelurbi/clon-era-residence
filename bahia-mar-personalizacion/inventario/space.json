@@ -1,0 +1,32 @@
+[
+  {
+    "destino": "/images/bahiamar-space-1.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Picuzzi Terraza 02.jpg",
+    "uso": "Home › The space to live in › imagen izquierda (porche bajo pérgola con jacuzzi), recorte 3:4, + variantes -p-500/800/1080/1600/2000"
+  },
+  {
+    "destino": "/images/bahiamar-space-2.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Zona Social 05.jpg",
+    "uso": "Home › The space to live in › imagen derecha (zona social abierta al paisaje), recorte 4:3, + variantes -p-500/800/1080/1600/2000"
+  },
+  {
+    "destino": "/images/bahiamar-space-3.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 02.png",
+    "uso": "Home › The space to live in › galería slide 1 (cocina y comedor con piscina), recorte 16:10, + variantes -p-500/800/1080/1600/2000"
+  },
+  {
+    "destino": "/images/bahiamar-space-4.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/02. RENDERS INTERIORES/Dormitorio principal 03.png",
+    "uso": "Home › The space to live in › galería slide 2 (dormitorio principal abierto a terraza con mar), recorte 16:10, + variantes -p-500/800/1080/1600/2000"
+  },
+  {
+    "destino": "/images/bahiamar-space-5.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/02. RENDERS INTERIORES/Baño Dormitorio principal 01.jpg",
+    "uso": "Home › The space to live in › galería slide 3 (baño con paredes de chukum), recorte 16:10, + variantes -p-500/800/1080/1600/2000"
+  },
+  {
+    "destino": "/images/bahiamar-space-6.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/02. RENDERS INTERIORES/Zona social 04.png",
+    "uso": "Home › The space to live in › galería slide 4 (sala y comedor abiertos a las palmeras), recorte 16:10, + variantes -p-500/800/1080/1600/2000"
+  }
+]

@@ -1,10 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde contact.html — no editar a mano.
+ * Página de contacto de Bahía Mar.
  *
- * Marcado portado del sitio original conservando las clases de Webflow,
- * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
- * Las URLs del CDN ya están reescritas a /public.
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
+ * contact.html del sitio original, pero al personalizarlo para Bahía Mar
+ * pasa a mantenerse a mano. Regenerarlo DESHARÍA el trabajo (volvería a
+ * los datos y al mapa de la oficina de ventas de la promoción original).
+ *
+ * Marcado portado conservando las clases de Webflow, que es lo que le da
+ * el aspecto (ver styles/webflow.css y components.css). Sólo cambian
+ * textos, src/srcSet/alt y href. Teléfono, correo, redes y dirección de
+ * la oficina de ventas son placeholders (ver BRIEF.md): el cliente no ha
+ * facilitado ninguno. El horario tampoco se conoce, por eso el pin dice
+ * «by appointment» y no unas horas inventadas.
  */
 
 export function ContactMain() {
@@ -18,24 +26,24 @@ export function ContactMain() {
               <div className="u-272 b-mob"></div>
               <div className="grid">
                 <div className="contact-s_title">
-                  <h1 data-prevent-flicker="" data-scroll-reveal="h" className="h1 a-center">Contact us</h1>
+                  <h1 data-prevent-flicker="" data-scroll-reveal="h" className="h1 a-center">Get in touch</h1>
                 </div>
               </div>
               <div className="u-96"></div>
               <div className="grid">
                 <div data-prevent-flicker="" data-scroll-reveal="ctn" className="contact-s_email">
-                  <h2 className="l1 reg a-center">Write us</h2>
+                  <h2 className="l1 reg a-center">Write to us</h2>
                   <div className="u-4"></div>
                   <div className="contact-cms w-dyn-list">
                     <div role="list" className="contact-cms_list w-dyn-items">
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="info@era-residence.com" href="mailto:info@era-residence.com" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="info@bahiamar.example" href="mailto:info@bahiamar.example" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">info@era-residence.com</div>
+                              <div hover="text" className="l1">info@bahiamar.example</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">info@era-residence.com</div>
+                              <div hover="text" className="l1">info@bahiamar.example</div>
                             </div>
                           </div>
                         </a>
@@ -48,29 +56,29 @@ export function ContactMain() {
                   <div className="loc-cms w-dyn-list">
                     <div role="list" className="loc-cms_list w-dyn-items">
                       <div data-prevent-flicker="" data-scroll-reveal="ctn" role="listitem" className="loc-cms_list_item w-dyn-item">
-                        <h3 className="l1 reg a-center">Sales Office</h3>
+                        <h3 className="l1 reg a-center">Sales office</h3>
                         <div className="u-4"></div>
-                        <a hover-nav-item="" aria-label="Avenida Litoral, 29680 Estepona, Málaga, Spain" href="https://maps.app.goo.gl/EzyfT2M6vR5aBdMu9" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Las Terrenas, Samaná, Dominican Republic (address TBC)" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Avenida Litoral, 29680 Estepona, Málaga, Spain</div>
+                              <div hover="text" className="l1">Las Terrenas, Samaná, Dominican Republic (address TBC)</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Avenida Litoral, 29680 Estepona, Málaga, Spain</div>
+                              <div hover="text" className="l1">Las Terrenas, Samaná, Dominican Republic (address TBC)</div>
                             </div>
                           </div>
                         </a>
                       </div>
                       <div data-prevent-flicker="" data-scroll-reveal="ctn" role="listitem" className="loc-cms_list_item w-dyn-item">
-                        <h3 className="l1 reg a-center">Location</h3>
+                        <h3 className="l1 reg a-center">The site</h3>
                         <div className="u-4"></div>
-                        <a hover-nav-item="" aria-label="New Golden Mile, Estepona Costa del Sol, Spain" href="https://maps.app.goo.gl/5FY2BUESnAmcybFe8" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Bahía Mar, Las Terrenas, Samaná, Dominican Republic" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">New Golden Mile, Estepona Costa del Sol, Spain</div>
+                              <div hover="text" className="l1">Bahía Mar, Las Terrenas, Samaná, Dominican Republic</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">New Golden Mile, Estepona Costa del Sol, Spain</div>
+                              <div hover="text" className="l1">Bahía Mar, Las Terrenas, Samaná, Dominican Republic</div>
                             </div>
                           </div>
                         </a>
@@ -80,20 +88,20 @@ export function ContactMain() {
                   <div className="u-32"></div>
                 </div>
                 <div data-prevent-flicker="" data-scroll-reveal="ctn" className="contact-s_phone">
-                  <h3 className="l1 reg a-center">Talk to us</h3>
+                  <h3 className="l1 reg a-center">Call or message us</h3>
                   <div className="u-4"></div>
                   <div className="contact-cms w-dyn-list">
                     <div role="list" className="contact-cms_list w-dyn-items">
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="+34 (655) 408-648" href="tel:+34655408648" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="+1 (809) 000-0000" href="tel:+18090000000" className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div className="nav-item_label_text"><div hover="text" className="l1">+34 (655) 408-648</div></div>
-                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">+34 (655) 408-648</div></div>
+                            <div className="nav-item_label_text"><div hover="text" className="l1">+1 (809) 000-0000</div></div>
+                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">+1 (809) 000-0000</div></div>
                           </div>
                         </a>
                       </div>
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="Whatsapp" href="https://wa.me/34655408648" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Whatsapp" href="https://wa.me/18090000000" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text"><div hover="text" className="l1">Whatsapp</div></div>
                             <div className="nav-item_label_text is-2"><div hover="text" className="l1">Whatsapp</div></div>
@@ -111,7 +119,7 @@ export function ContactMain() {
                   <div className="social-cms w-dyn-list">
                     <div data-comma-list="" role="list" className="social-cms_list w-dyn-items">
                       <div role="listitem" className="social-cms_list_item w-dyn-item">
-                        <a aria-label="Linkedin" hover-social="" href="https://www.linkedin.com/company/eraresidenceestepona/?viewAsMember=true" target="_blank" className="social-btn w-inline-block">
+                        <a aria-label="Linkedin" hover-social="" href="#" target="_blank" className="social-btn w-inline-block">
                           <div hover="ico" className="ico-16">
                             <div className="ico w-embed">
                               <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +131,7 @@ export function ContactMain() {
                         </a>
                       </div>
                       <div role="listitem" className="social-cms_list_item w-dyn-item">
-                        <a aria-label="Facebook" hover-social="" href="https://www.facebook.com/era.residence.estepona" target="_blank" className="social-btn w-inline-block">
+                        <a aria-label="Facebook" hover-social="" href="#" target="_blank" className="social-btn w-inline-block">
                           <div hover="ico" className="ico-16">
                             <div className="ico w-embed">
                               <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,7 +143,7 @@ export function ContactMain() {
                         </a>
                       </div>
                       <div role="listitem" className="social-cms_list_item w-dyn-item">
-                        <a aria-label="Instagram" hover-social="" href="https://www.instagram.com/era.residence.estepona" target="_blank" className="social-btn w-inline-block">
+                        <a aria-label="Instagram" hover-social="" href="#" target="_blank" className="social-btn w-inline-block">
                           <div hover="ico" className="ico-16">
                             <div className="ico w-embed">
                               <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,25 +159,31 @@ export function ContactMain() {
                 </div>
                 <div data-parallax="w" data-scroll-reveal="ctn" data-prevent-flicker="" className="contact-s_map">
                   <div data-parallax="img" className="contact-s_map_c">
-                    <img src="/images/map_sales-office.svg" loading="eager" alt="" className="img h-auto" />
+                    <img src="/images/bahiamar-entrance-1.webp" loading="eager" sizes="100vw" srcSet="/images/bahiamar-entrance-1-p-500.webp 500w, /images/bahiamar-entrance-1-p-800.webp 800w, /images/bahiamar-entrance-1-p-1080.webp 1080w, /images/bahiamar-entrance-1-p-1600.webp 1600w, /images/bahiamar-entrance-1-p-2000.webp 2000w, /images/bahiamar-entrance-1.webp 2350w" alt="The entrance to Bahía Mar: two stone arches over the access road, a wave sculpture between them and the sea beyond." className="img h-auto" />
                     <div className="contact-s_map_pin">
                       <div className="contact-s_map_pin_c theme_on-dark">
                         <div className="contact-s_map_pin_info">
                           <div className="l2"><strong>sales office</strong></div>
-                          <div className="l2 reg">Daily 09:00 – 21:00</div>
+                          <div className="l2 reg">Visits by appointment</div>
                         </div>
-                        <div data-modal-close="menu" aria-label="logo envy maison" className="logo_symbol ico-28">
+                        <div data-modal-close="menu" aria-label="Bahía Mar" className="logo_symbol ico-28">
                           <div className="logo w-embed">
-                            <svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6.55544 9.1241C4.81712 7.38578 4.69025 4.69428 4.69025 4.69428C4.69025 4.69428 7.38176 4.82115 9.12007 6.55947C10.8584 8.29779 10.9853 10.9893 10.9853 10.9893C10.9853 10.9893 8.29376 10.8624 6.55544 9.1241Z" fill="currentColor"></path>
-                              <path d="M20 0.00151769L16.1569 8.1194C15.5932 9.31006 15.5931 10.6907 16.1568 11.8814L18.4988 16.8291C17.7735 17.1796 17.1891 17.7755 16.8534 18.5091L11.8814 16.1558C10.6907 15.5923 9.31007 15.5923 8.11946 16.156L0 20V19.177C0 18.3493 0.423339 17.5792 1.12211 17.1356L7.64451 12.9953C9.08249 12.0825 10.9183 12.0824 12.3564 12.9951L14.1067 14.1059L12.9961 12.3565C12.0833 10.9184 12.0833 9.08239 12.9962 7.64431L17.1364 1.12212C17.5799 0.423353 18.3501 1.51793e-05 19.1777 1.51793e-05L20 0.00151769Z" fill="currentColor"></path>
-                              <path d="M33.4446 30.8759C35.1829 32.6142 35.3097 35.3057 35.3097 35.3057C35.3097 35.3057 32.6182 35.1788 30.8799 33.4405C29.1416 31.7022 29.0147 29.0107 29.0147 29.0107C29.0147 29.0107 31.7062 29.1375 33.4446 30.8759Z" fill="currentColor"></path>
-                              <path d="M20 39.9984L23.8431 31.8806C24.4068 30.6899 24.4069 29.3092 23.8432 28.1185L21.5012 23.1708C22.2265 22.8204 22.8109 22.2244 23.1466 21.4909L28.1186 23.8441C29.3093 24.4077 30.6899 24.4076 31.8805 23.8439L40 19.9999V20.8229C40 21.6506 39.5767 22.4208 38.8779 22.8643L32.3555 27.0047C30.9175 27.9175 29.0817 27.9176 27.6436 27.0049L25.8933 25.894L27.0039 27.6435C27.9167 29.0816 27.9167 30.9176 27.0038 32.3556L22.8636 38.8778C22.4201 39.5766 21.6499 39.9999 20.8223 39.9999L20 39.9984Z" fill="currentColor"></path>
-                              <path d="M30.8759 6.55544C32.6142 4.81712 35.3057 4.69026 35.3057 4.69026C35.3057 4.69026 35.1789 7.38176 33.4405 9.12008C31.7022 10.8584 29.0107 10.9853 29.0107 10.9853C29.0107 10.9853 29.1376 8.29376 30.8759 6.55544Z" fill="currentColor"></path>
-                              <path d="M39.9985 20L31.8806 16.1569C30.69 15.5932 29.3093 15.5931 28.1186 16.1568L23.1709 18.4988C22.8204 17.7735 22.2245 17.1891 21.4909 16.8534L23.8442 11.8814C24.4078 10.6907 24.4077 9.31007 23.844 8.11946L20 0L20.823 3.59746e-08C21.6507 7.2153e-08 22.4208 0.423339 22.8644 1.12211L27.0047 7.64451C27.9175 9.08249 27.9176 10.9183 27.0049 12.3564L25.8941 14.1067L27.6435 12.9961C29.0816 12.0833 30.9176 12.0833 32.3557 12.9962L38.8779 17.1364C39.5767 17.5799 40 18.3501 40 19.1777L39.9985 20Z" fill="currentColor"></path>
-                              <path d="M9.12417 33.4445C7.38585 35.1828 4.69435 35.3097 4.69435 35.3097C4.69435 35.3097 4.82122 32.6182 6.55954 30.8799C8.29786 29.1416 10.9894 29.0147 10.9894 29.0147C10.9894 29.0147 10.8625 31.7062 9.12417 33.4445Z" fill="currentColor"></path>
-                              <path d="M0.00159168 20L8.11947 23.8431C9.31013 24.4068 10.6908 24.4068 11.8815 23.8432L16.8292 21.5012C17.1796 22.2265 17.7756 22.8109 18.5092 23.1466L16.1559 28.1186C15.5923 29.3093 15.5924 30.6899 16.1561 31.8805L20.0001 40H19.1771C18.3494 40 17.5793 39.5766 17.1357 38.8779L12.9954 32.3555C12.0825 30.9175 12.0825 29.0816 12.9951 27.6436L14.106 25.8933L12.3566 27.0038C10.9185 27.9167 9.08247 27.9167 7.64438 27.0038L1.1222 22.8636C0.423427 22.42 8.89523e-05 21.6499 8.90608e-05 20.8222L0.00159168 20Z" fill="currentColor"></path>
-                            </svg>
+                            <div
+                aria-hidden="true"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: 'currentColor',
+                  WebkitMaskImage: 'url(/images/bahiamar-isotype.png)',
+                  maskImage: 'url(/images/bahiamar-isotype.png)',
+                  WebkitMaskSize: 'contain',
+                  maskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center',
+                  maskPosition: 'center',
+                }}
+              />
                           </div>
                         </div>
                       </div>

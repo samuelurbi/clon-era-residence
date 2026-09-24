@@ -1,0 +1,27 @@
+[
+  {
+    "destino": "/images/bahiamar-hero-coson.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA A - BAHÍA MAR/01. RENDERS EXTERIORES/R1_1.png",
+    "uso": "Home › Hero › fondo del slider de villas (Villa Cosón). Recorte 16:9 del render frontal, expandido hacia arriba con Magnific (images_expand 1:1, 50 créditos) hasta la proporción 10:9 de la imagen de ERA (1920×1728) con ~42 % de cielo; el cielo liso se estira y la villa se compone a plena resolución desde el original. Variantes -p-500/800/1080/1600."
+  },
+  {
+    "destino": "/images/bahiamar-hero-helecho.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA B - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Home › Hero › fondo del slider de villas (Villa Helecho). Recorte 16:9 del render frontal, expandido hacia arriba con Magnific (images_expand 1:1, 50 créditos) hasta la proporción 10:9 de la imagen de ERA (1920×1728) con ~42 % de cielo; el cielo liso se estira y la villa se compone a plena resolución desde el original. Variantes -p-500/800/1080/1600."
+  },
+  {
+    "destino": "/images/bahiamar-hero-remanso.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA C - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Home › Hero › fondo del slider de villas (Villa Remanso). Recorte 16:9 del render frontal, expandido hacia arriba con Magnific (images_expand 1:1, 50 créditos) hasta la proporción 10:9 de la imagen de ERA (1920×1728) con ~42 % de cielo; el cielo liso se estira y la villa se compone a plena resolución desde el original. Variantes -p-500/800/1080/1600."
+  },
+  {
+    "destino": "/images/bahiamar-hero-ambar.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO-20260911T175532Z-1-002/00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA D - BAHÍA MAR/01. RENDERS EXTERIORES/R1.png",
+    "uso": "Home › Hero › fondo del slider de villas (Villa Ámbar). Recorte 16:9 del render frontal, expandido hacia arriba con Magnific (images_expand 1:1, 50 créditos) hasta la proporción 10:9 de la imagen de ERA (1920×1728) con ~42 % de cielo; el cielo liso se estira y la villa se compone a plena resolución desde el original. Variantes -p-500/800/1080/1600."
+  },
+  {
+    "destino": "/images/bahiamar-hero-carolina.webp",
+    "origen": "00. BAHÍA MAR_RENDERS_AGOSTO/00. RENDERS VILLA E - BAHÍA MAR/01. RENDERS EXTERIORES/R1_3.png",
+    "uso": "Home › Hero › fondo del slider de villas (Villa Carolina). Recorte 16:9 del render frontal, expandido hacia arriba con Magnific (images_expand 1:1, 50 créditos) hasta la proporción 10:9 de la imagen de ERA (1920×1728) con ~42 % de cielo; el cielo liso se estira y la villa se compone a plena resolución desde el original. Variantes -p-500/800/1080/1600."
+  }
+]
