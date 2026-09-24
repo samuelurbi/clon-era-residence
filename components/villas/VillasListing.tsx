@@ -245,7 +245,7 @@ export function VillasListing() {
                       <div className="apart-s_cms_empty_title"><div className="c1 a-center">nothing found</div></div>
                       <div className="u-24"></div>
                       <div className="p1 a-center">
-                        We didn&#x27;t find anything for your request. Please, try changing your search settings
+                        We didn&#x27;t find any villa matching your selection. Please try changing the typology or bedroom filters.
                       </div>
                     </div>
                   </div>
@@ -263,7 +263,7 @@ export function VillasListing() {
           <div className="apart_themes">
             <div className="themes_row">
               <div data-bg="light" className="apart_themes_light-1"></div>
-              <div data-bg="color" className="apart_themes_color-1"></div>
+              <div data-bg="light" className="apart_themes_color-1"></div>
             </div>
             <div data-bg="light" className="apart_themes_light-2"></div>
           </div>

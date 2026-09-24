@@ -6,7 +6,7 @@
  * Filtros, ordenación y desplegables del listado — port de `initFilter()`,
  * `initSort()` e `initSelect()` del original.
  *
- * Sólo actúan en `/apartments`, que es donde está la barra de controles.
+ * Sólo actúan en `/villas`, que es donde está la barra de controles.
  *
  * El filtro sincroniza el estado con la query string (`?typology=...`), así
  * que una selección se puede compartir por enlace y sobrevive a recargar.

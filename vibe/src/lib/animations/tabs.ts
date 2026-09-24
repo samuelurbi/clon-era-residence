@@ -10,9 +10,9 @@
  *
  * El cruce es el mismo patrón que usa el slider: la entrante pasa a
  * `relative` y la saliente a `absolute` para que compartan hueco durante la
- * transición y el bloque no dé un salto de altura. La diferencia con el
- * switch día/noche del hero (`heroTabs` en chrome.ts) es que aquí también
- * entra el texto, animado con los mismos animadores que los reveals.
+ * transición y el bloque no dé un salto de altura. Aquí además entra el
+ * texto, animado con los mismos animadores que los reveals. (El hero ya no
+ * lleva pestañas: su fondo es el slider de villas de hero-slider.ts.)
  */
 
 import { gsap, ScrollTrigger } from './gsap';
@@ -109,9 +109,9 @@ function setupTabs(component: HTMLElement): () => void {
 
 export function initTabs(): () => void {
   /*
-   * `[data-tabs-hero]` lo gobierna `heroTabs` en chrome.ts, que hace un
-   * cruce distinto (sólo imagen, sin texto). Se excluye para que no lo
-   * manejen dos módulos a la vez.
+   * `[data-tabs-hero]` era el switch día/noche del hero de ERA, con su propio
+   * cruce; ya no existe en el marcado, pero se sigue excluyendo por si el
+   * generador de secciones volviera a emitirlo.
    */
   const components = qa<HTMLElement>('[data-tabs]').filter((el) => !el.hasAttribute('data-tabs-hero'));
 

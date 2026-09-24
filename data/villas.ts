@@ -32,6 +32,13 @@
 export interface Villa {
   /** Slug de la ruta: /villas/<slug>. */
   slug: string;
+  /**
+   * Slug de los assets (imágenes, PDF): los ficheros del CDN se sirven con el
+   * nombre original de cada tipología (coson, helecho, remanso, ambar,
+   * carolina). Al renombrar las villas se conserva este slug para que las
+   * URLs de imágenes y planos no se rompan.
+   */
+  assetSlug: string;
   /** Letra de tipología del estudio de arquitectura. */
   type: 'A' | 'B' | 'C' | 'D' | 'E';
   /** Nombre comercial, con su tilde. */
@@ -62,7 +69,7 @@ export interface Villa {
   bathrooms: number;
   /** Aseo de cortesía. La Villa Ámbar es la única que no lo lista. */
   halfBath: boolean;
-  /** Salas de estar: la Cosón es la única con dos. */
+  /** Salas de estar: la Horizonte es la única con dos. */
   livingAreas: number;
   /** Cuarto y baño de servicio independientes. */
   serviceQuarters: boolean;
@@ -88,12 +95,13 @@ export function srcset(image: string): string {
 
 export const villas: Villa[] = [
   {
-    slug: 'coson',
+    slug: 'horizonte',
+    assetSlug: 'coson',
     type: 'A',
-    name: 'Villa Cosón',
+    name: 'Villa Horizonte',
     tagline: 'Architecture of great presence, for a life without limits.',
     description: [
-      'Villa Cosón is the widest expression of Bahía Mar: a two-level residence for those who want an exclusive way of living in the Dominican Republic, surrounded by nature, space and privileged views.',
+      'Villa Horizonte is the most generous of the five Bahía Mar villas: a two-level residence for those who want an exclusive way of living in the Dominican Republic, surrounded by nature, space and privileged views.',
       'Its contemporary architecture combines refined interiors with generous social areas and exteriors designed for rest — pool, solarium, fire pit, jacuzzi, terraces and lounge spaces. Every setting offers a different experience, from dinner facing the landscape to an afternoon by the water or a night around the fire.',
       'More than a villa, it proposes a private resort experience. Interior and exterior connect fluidly while the architecture follows the terrain, letting each level uncover the tropical landscape anew.',
     ],
@@ -154,19 +162,20 @@ export const villas: Villa[] = [
       '/images/villa-coson-i4.webp',
     ],
     seo: {
-      title: 'Villa Cosón',
+      title: 'Villa Horizonte',
       description:
         'Four-bedroom, two-level villa in Las Terrenas with private pool, jacuzzi, solarium and panoramic views over Samaná Bay.',
     },
   },
 
   {
-    slug: 'helecho',
+    slug: 'esencia',
+    assetSlug: 'helecho',
     type: 'B',
-    name: 'Villa Helecho',
+    name: 'Villa Esencia',
     tagline: 'Elegance in its most essential form.',
     description: [
-      'Villa Helecho is a two-level luxury residence for those after a more compact, efficient proposition — without giving up visual space, architectural elegance or the connection to the landscape.',
+      'Villa Esencia is a two-level luxury residence for those after a more compact, efficient proposition — without giving up visual space, architectural elegance or the connection to the landscape.',
       'Its longitudinal plan organises social, private and outdoor areas with clarity, weaving kitchen, dining room, living room, guest bedroom, terraces, pool, solarium, fire pit and jacuzzi into one sophisticated, relaxed whole.',
       'On the second level, the principal suite, the secondary bedroom and the lounge terraces lift the experience of comfort, privacy and contemplation further still.',
     ],
@@ -226,19 +235,20 @@ export const villas: Villa[] = [
       '/images/villa-helecho-i4.webp',
     ],
     seo: {
-      title: 'Villa Helecho',
+      title: 'Villa Esencia',
       description:
         'Three-bedroom, two-level villa in Las Terrenas with a longitudinal plan, private pool, lounge terraces and open views.',
     },
   },
 
   {
-    slug: 'remanso',
+    slug: 'armonia',
+    assetSlug: 'remanso',
     type: 'C',
-    name: 'Villa Remanso',
+    name: 'Villa Armonía',
     tagline: 'All the privilege of Bahía Mar, on a single level.',
     description: [
-      'Villa Remanso is a single-level luxury residence for those who want ease, privacy and a direct connection to the tropical landscape.',
+      'Villa Armonía is a single-level luxury residence for those who want ease, privacy and a direct connection to the tropical landscape.',
       'Its linear layout lets every space unfold fluidly and functionally, bringing kitchen, dining room, living room, bedrooms and outdoor areas onto one floor. That makes it the most practical villa of the project, easy to inhabit without losing any of its exclusivity.',
       'The social area opens onto a wide outdoor terrace with pool, solarium, fire pit and jacuzzi, creating a private resort experience. Every space is designed to enjoy the Caribbean climate, the natural views and life outdoors.',
     ],
@@ -287,7 +297,7 @@ export const villas: Villa[] = [
       '/images/villa-remanso-i4.webp',
     ],
     seo: {
-      title: 'Villa Remanso',
+      title: 'Villa Armonía',
       description:
         'Two-bedroom single-level villa in Las Terrenas: a contemporary pavilion with private pool, solarium and direct access to the garden.',
     },
@@ -295,6 +305,7 @@ export const villas: Villa[] = [
 
   {
     slug: 'ambar',
+    assetSlug: 'ambar',
     type: 'D',
     name: 'Villa Ámbar',
     tagline: 'The serenity of the Caribbean, made architecture.',
@@ -354,12 +365,13 @@ export const villas: Villa[] = [
   },
 
   {
-    slug: 'carolina',
+    slug: 'remanso',
+    assetSlug: 'carolina',
     type: 'E',
-    name: 'Villa Carolina',
+    name: 'Villa Remanso',
     tagline: 'Two levels open to an extraordinary horizon.',
     description: [
-      'Villa Carolina is a two-level residence designed to make the most of the views towards the horizon, the tropical landscape and the natural surroundings of Las Terrenas, in the Dominican Republic.',
+      'Villa Remanso is a two-level residence designed to make the most of the views towards the horizon, the tropical landscape and the natural surroundings of Las Terrenas, in the Dominican Republic.',
       'The villa is built on a contemporary tropical architecture that is warm, rustic and natural. Its proposal combines pale stone, timber, sand-toned microcement, open terraces, pergolas, tropical planting and outdoor spaces meant for the Caribbean climate.',
       'The principal rooms face the landscape. Kitchen, dining room, living room, bedrooms and terraces open outward, holding a constant relationship with natural light, vegetation, the pool and the horizon.',
     ],
@@ -418,7 +430,7 @@ export const villas: Villa[] = [
       '/images/villa-carolina-i4.webp',
     ],
     seo: {
-      title: 'Villa Carolina',
+      title: 'Villa Remanso',
       description:
         'Three-bedroom, two-level villa in Las Terrenas that follows the slope to open every room to the horizon.',
     },

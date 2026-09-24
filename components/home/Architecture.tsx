@@ -9,7 +9,9 @@
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
  * Sólo cambian textos, src/srcSet/alt y href. Copy: brief y data/villas.ts.
- * Imagen: render exterior de la Villa Carolina (ver inventario/architecture.json).
+ * Imagen: render exterior de la Villa Cosón, R8_1, recortado a 4:3 anclado a la
+ * izquierda para que el voladizo de madera cubra la franja alta y el título
+ * blanco no caiga sobre cielo claro (ver inventario/architecture.json).
  */
 
 export function Architecture() {
@@ -60,9 +62,9 @@ export function Architecture() {
                     <div className="u-160 b-desk"></div>
                   </div>
                   <div data-part="ctn" className="arch-s_btn b-desk">
-                    <div data-modal-cta-btn="book-a-call" data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
+                    <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                       <div data-magnetic-inner="" className="btn-circle_label">
-                        <a hover-nav-item="" aria-label="Book a call now" href="#" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
                             <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
@@ -76,7 +78,7 @@ export function Architecture() {
                           <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                         </svg>
                       </div>
-                      <a aria-label="Book a call now" href="#" className="btn-circle_link w-inline-block"></a>
+                      <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                     </div>
                   </div>
                 </div>
@@ -85,7 +87,7 @@ export function Architecture() {
             </div>
             <div className="w_bg">
               <div data-desk="off" data-parallax="w" className="img-w">
-                <img className="img" src="/images/bahiamar-architecture-1.webp" alt="Villa Carolina at Bahía Mar: pale stone and timber volumes under wide overhangs, terraces stepping down a palm-covered hillside towards the sea." sizes="(max-width: 1920px) 100vw, 1920px" data-parallax="img" loading="eager" srcSet="/images/bahiamar-architecture-1-p-500.webp 500w, /images/bahiamar-architecture-1-p-800.webp 800w, /images/bahiamar-architecture-1-p-1080.webp 1080w, /images/bahiamar-architecture-1-p-1600.webp 1600w, /images/bahiamar-architecture-1-p-2000.webp 2000w, /images/bahiamar-architecture-1.webp 2350w" />
+                <img className="img" src="/images/bahiamar-architecture-2.webp" alt="Villa Horizonte at Bahía Mar: a wide timber overhang over the pool terrace, glass fronts opening the living area to the garden and a dark stone wall on the side." sizes="(max-width: 1920px) 100vw, 1920px" data-parallax="img" loading="eager" srcSet="/images/bahiamar-architecture-2-p-500.webp 500w, /images/bahiamar-architecture-2-p-800.webp 800w, /images/bahiamar-architecture-2-p-1080.webp 1080w, /images/bahiamar-architecture-2-p-1600.webp 1600w, /images/bahiamar-architecture-2-p-2000.webp 2000w, /images/bahiamar-architecture-2.webp 2350w" />
                 <div className="img-over-grad bot _100vh"></div>
                 <div className="img-over-grad bot _100vh"></div>
               </div>

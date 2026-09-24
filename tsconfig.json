@@ -33,6 +33,7 @@
   "exclude": [
     "node_modules",
     "vibe",
-    "vibe-bundle"
+    "vibe-bundle",
+    "referencia-ghl"
   ]
 }

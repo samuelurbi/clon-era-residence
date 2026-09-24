@@ -10,7 +10,6 @@ import { FloatingTips } from '@/components/layout/FloatingTips';
 import { Preloader } from '@/components/layout/Preloader';
 import { MasterPreloader } from '@/components/layout/MasterPreloader';
 import { LandscapeCover } from '@/components/layout/LandscapeCover';
-import { CookieNotice } from '@/components/layout/CookieNotice';
 import { fontVariables } from './fonts';
 import '@/styles/globals.css';
 
@@ -32,9 +31,11 @@ const GTM_ID = '';
 
 const TITLE = 'Bahía Mar — Boutique Villas on the Samaná Peninsula, Dominican Republic';
 const DESCRIPTION =
-  'Five villa typologies in a gated resort community on the Samaná peninsula, ' +
-  'combining contemporary tropical architecture, private pools and direct access ' +
-  'to the beach, the rainforest and Cosón Bay.';
+  'Luxury villas in Las Terrenas, Samaná (Dominican Republic): private pools, ' +
+  'bay views and eco-friendly design between beach and mountain. Discover Bahía Mar.';
+
+/** Título para compartir (OG / Twitter). El de la pestaña es TITLE. */
+const SHARE_TITLE = 'Bahía Mar® Boutique Villas on the Samaná, Dominican Republic';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   openGraph: {
     type: 'website',
-    title: TITLE,
+    title: SHARE_TITLE,
     description: DESCRIPTION,
     url: SITE_URL,
     siteName: 'Bahía Mar Residences & Beach Resort',
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: TITLE,
+    title: SHARE_TITLE,
     description: DESCRIPTION,
     images: ['/images/open-graph.webp'],
   },
@@ -98,7 +99,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <LandscapeCover />
           <MasterPreloader />
           <Preloader />
-          <CookieNotice />
+          {/* Sin aviso de cookies: se quitó en GHL (2026-09-24). El
+              componente sigue en components/layout/CookieNotice.tsx. */}
           {/*
             `main.transition-container` es el contenedor que Barba sustituía
             en cada navegación. Aquí no se sustituye —el router de Next

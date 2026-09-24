@@ -60,3 +60,6 @@ next-env.d.ts
 
 # capturas HAR de GHL (~80 MB, llevan tokens de sesión)
 *.har
+
+# snapshot de GHL Vibe y los diffs de sincronización (regenerables desde el HAR)
+/referencia-ghl/

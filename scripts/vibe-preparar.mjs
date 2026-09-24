@@ -38,10 +38,12 @@ import { fileURLToPath } from 'node:url';
 
 const AQUI = dirname(fileURLToPath(import.meta.url));
 
-/* Comprobados contra las URLs del bundle que está subido. */
+/* Comprobados contra las URLs del bundle que está subido (GHL, 2026-09-24):
+   Bahía Mar vive en `/bahiamar`, con carpetas de verdad, así que el
+   separador ya es `/` y la deuda del `%5C` no aplica a este host. */
 const PRODUCCION = {
-  ASSET_BASE: 'https://puntacanadinnerinthesky.com/urbatrix/era',
-  ASSET_SEP: '%5C',
+  ASSET_BASE: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar',
+  ASSET_SEP: '/',
 };
 
 const local = process.argv.includes('--local');

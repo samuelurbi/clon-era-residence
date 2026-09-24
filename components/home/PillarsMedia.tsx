@@ -49,7 +49,7 @@ export function PillarsMedia() {
             <div className="img-w h-auto quote-w_bg_img">
               <div className="img-over-grad from-bot bot _4x b-desk"></div>
               <div className="img-over-grad from-bot bot _4x b-desk"></div>
-              <img className="img h-auto quote-w_bg_img" src="/images/bahiamar-quote-1.webp" alt="Two-level Villa Cosón with timber cladding over a stone base, its private pool and terrace among the palms, the sea behind." sizes="(max-width: 2350px) 100vw, 2350px" data-parallax="img-out" loading="eager" srcSet="/images/bahiamar-quote-1-p-500.webp 500w, /images/bahiamar-quote-1-p-800.webp 800w, /images/bahiamar-quote-1-p-1080.webp 1080w, /images/bahiamar-quote-1-p-1600.webp 1600w, /images/bahiamar-quote-1-p-2000.webp 2000w, /images/bahiamar-quote-1.webp 2350w" />
+              <img className="img h-auto quote-w_bg_img" src="/images/bahiamar-quote-1.webp" alt="Two-level Villa Horizonte with timber cladding over a stone base, its private pool and terrace among the palms, the sea behind." sizes="(max-width: 2350px) 100vw, 2350px" data-parallax="img-out" loading="eager" srcSet="/images/bahiamar-quote-1-p-500.webp 500w, /images/bahiamar-quote-1-p-800.webp 800w, /images/bahiamar-quote-1-p-1080.webp 1080w, /images/bahiamar-quote-1-p-1600.webp 1600w, /images/bahiamar-quote-1-p-2000.webp 2000w, /images/bahiamar-quote-1.webp 2350w" />
             </div>
           </div>
           <div className="w_themes">

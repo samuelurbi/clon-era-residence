@@ -33,7 +33,7 @@ const BLOQUES = [
   { titulo: 'Estilos', dir: 'src/styles',
     nota: 'El orden de `globals.css` importa: es la cascada de 5 capas del port.' },
   { titulo: 'Datos', dir: 'src/data',
-    nota: 'Ficheros grandes y planos. `apartments.ts` lleva las 25 fichas.' },
+    nota: 'Ficheros grandes y planos. `villas.ts` lleva las 5 fichas.' },
   { titulo: 'Tipos', dir: 'src/types',
     nota: 'Declaraciones de los atributos `data-*` que usa el marcado de Webflow.' },
   { titulo: 'Capa de animación', dir: 'src/lib',

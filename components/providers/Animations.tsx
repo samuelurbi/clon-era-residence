@@ -24,6 +24,7 @@ import { initInteractions } from '@/lib/animations/interactions';
 import { initModals } from '@/lib/animations/modals';
 import { initUi } from '@/lib/animations/ui';
 import { initSlider } from '@/lib/animations/slider';
+import { initHeroSlider } from '@/lib/animations/hero-slider';
 import { initAccordion } from '@/lib/animations/accordion';
 import { initLightbox } from '@/lib/animations/lightbox';
 import { initFilters } from '@/lib/animations/filters';
@@ -99,6 +100,7 @@ export function Animations() {
           initModals(),
           initUi(),
           initSlider(),
+          initHeroSlider(),
           initAccordion(),
           initLightbox(),
           initFilters(),

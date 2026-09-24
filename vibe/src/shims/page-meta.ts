@@ -16,8 +16,8 @@
 import { useEffect } from 'react';
 
 /** Título por defecto y plantilla, calcados de `app/layout.tsx`. */
-const SITE = 'ERA Residence';
-const DEFAULT_TITLE = `${SITE} — Contemporary Mediterranean Residences in Estepona`;
+const SITE = 'Bahía Mar';
+const DEFAULT_TITLE = `${SITE} — Boutique Villas on the Samaná Peninsula, Dominican Republic`;
 
 type Meta = {
   /** Sin el sufijo del sitio: se añade aquí, como hacía `template`. */

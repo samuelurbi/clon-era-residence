@@ -1,5 +1,5 @@
 /* ============================================================
- *  DATA — 4 módulos del repo en un solo archivo.
+ *  DATA — 3 módulos del repo en un solo archivo.
  *
  *  GENERADO por scripts/vibe-bundle.mjs — no editar aquí.
  *  Se agrupa porque en GoHighLevel Vibe cada archivo nuevo hay que
@@ -12,1460 +12,6 @@
 
 
 /* ============================================================
-   data/apartment-cards.ts
-   ============================================================ */
-
-/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
- * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
-/**
- * GENERADO por scripts/extract-apartment-cards.mjs — no editar a mano.
- *
- * Lo que muestra la tarjeta de apartamento en el listado, copiado literal
- * del original. Ojo: algunas cifras NO coinciden con las de la ficha del
- * mismo apartamento (la terraza, por ejemplo), así que no se derivan de
- * data/apartments.ts.
- */
-
-export interface ApartmentCardData {
-  code: string;
-  href: string;
-  category: string | null;
-  completion: string | null;
-  block: string | null;
-  floor: string | null;
-  bedrooms: string | null;
-  area: string | null;
-  terrace: string | null;
-  /** Valores por los que filtra y ordena el listado. */
-  filterType: string | null;
-  filterBed: string | null;
-  sortArea: string | null;
-  sortRelevant: string | null;
-  image: string | null;
-  imageSrcset: string | null;
-}
-
-export const apartmentCards: ApartmentCardData[] = [
-  {
-    "code": "011",
-    "href": "/apartments/011",
-    "category": "Ground floor + basement",
-    "completion": "4Q 2026",
-    "block": "B1",
-    "floor": "0",
-    "bedrooms": "3",
-    "area": "132 m²",
-    "terrace": "29 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11.webp",
-    "filterType": "ground-floor-basement",
-    "filterBed": "3",
-    "sortArea": "132 m²",
-    "sortRelevant": "1",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11.webp 2350w"
-  },
-  {
-    "code": "012",
-    "href": "/apartments/012",
-    "category": "Ground floor + basement",
-    "completion": "4Q 2026",
-    "block": "B1",
-    "floor": "0",
-    "bedrooms": "3",
-    "area": "132 m²",
-    "terrace": "29 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12.webp",
-    "filterType": "ground-floor-basement",
-    "filterBed": "3",
-    "sortArea": "132 m²",
-    "sortRelevant": "2",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12.webp 2350w"
-  },
-  {
-    "code": "031",
-    "href": "/apartments/031",
-    "category": "Ground floor + basement",
-    "completion": "4Q 2026",
-    "block": "B3",
-    "floor": "0",
-    "bedrooms": "3",
-    "area": "134 m²",
-    "terrace": "44 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31.webp",
-    "filterType": "ground-floor-basement",
-    "filterBed": "3",
-    "sortArea": "134 m²",
-    "sortRelevant": "3",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31.webp 2350w"
-  },
-  {
-    "code": "032",
-    "href": "/apartments/032",
-    "category": "Ground floor + basement",
-    "completion": "4Q 2026",
-    "block": "B3",
-    "floor": "0",
-    "bedrooms": "3",
-    "area": "134 m²",
-    "terrace": "44 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32.webp",
-    "filterType": "ground-floor-basement",
-    "filterBed": "3",
-    "sortArea": "134 m²",
-    "sortRelevant": "4",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32.webp 2350w"
-  },
-  {
-    "code": "033",
-    "href": "/apartments/033",
-    "category": "Ground floor + basement",
-    "completion": "4Q 2026",
-    "block": "B3",
-    "floor": "0",
-    "bedrooms": "3",
-    "area": "134 m²",
-    "terrace": "44 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33.webp",
-    "filterType": "ground-floor-basement",
-    "filterBed": "3",
-    "sortArea": "134 m²",
-    "sortRelevant": "5",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33.webp 2350w"
-  },
-  {
-    "code": "034",
-    "href": "/apartments/034",
-    "category": "Ground floor + basement",
-    "completion": "4Q 2026",
-    "block": "B3",
-    "floor": "0",
-    "bedrooms": "3",
-    "area": "134 m²",
-    "terrace": "45 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34.webp",
-    "filterType": "ground-floor-basement",
-    "filterBed": "3",
-    "sortArea": "134 m²",
-    "sortRelevant": "6",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34.webp 2350w"
-  },
-  {
-    "code": "111",
-    "href": "/apartments/111",
-    "category": "Ground Floor",
-    "completion": "4Q 2026",
-    "block": "B1",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "75 m²",
-    "terrace": "29 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-    "filterType": "ground-floor",
-    "filterBed": "2",
-    "sortArea": "75 m²",
-    "sortRelevant": "7",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp 2350w"
-  },
-  {
-    "code": "112",
-    "href": "/apartments/112",
-    "category": "Ground Floor",
-    "completion": "4Q 2026",
-    "block": "B1",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "75 m²",
-    "terrace": "29 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-    "filterType": "ground-floor",
-    "filterBed": "2",
-    "sortArea": "75 m²",
-    "sortRelevant": "8",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp 2350w"
-  },
-  {
-    "code": "113",
-    "href": "/apartments/113",
-    "category": "Ground Floor",
-    "completion": "4Q 2026",
-    "block": "B1",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "75 m²",
-    "terrace": "29 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-    "filterType": "ground-floor",
-    "filterBed": "2",
-    "sortArea": "75 m²",
-    "sortRelevant": "9",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp 2350w"
-  },
-  {
-    "code": "114",
-    "href": "/apartments/114",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B1",
-    "floor": "1",
-    "bedrooms": "3",
-    "area": "89 m²",
-    "terrace": "151 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d472_114_1.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "3",
-    "sortArea": "89 m²",
-    "sortRelevant": "10",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d472_114_1-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d472_114_1-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d472_114_1-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d472_114_1-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d472_114_1-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d472_114_1.webp 2350w"
-  },
-  {
-    "code": "121",
-    "href": "/apartments/121",
-    "category": "Ground Floor",
-    "completion": "4Q 2026",
-    "block": "B2",
-    "floor": "0",
-    "bedrooms": "2",
-    "area": "75 m²",
-    "terrace": "29 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-    "filterType": "ground-floor",
-    "filterBed": "2",
-    "sortArea": "75 m²",
-    "sortRelevant": "11",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp 2350w"
-  },
-  {
-    "code": "122",
-    "href": "/apartments/122",
-    "category": "Ground Floor",
-    "completion": "4Q 2026",
-    "block": "B2",
-    "floor": "0",
-    "bedrooms": "2",
-    "area": "75 m²",
-    "terrace": "29 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-    "filterType": "ground-floor",
-    "filterBed": "2",
-    "sortArea": "75 m²",
-    "sortRelevant": "12",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp 2350w"
-  },
-  {
-    "code": "123",
-    "href": "/apartments/123",
-    "category": "Ground Floor",
-    "completion": "4Q 2026",
-    "block": "B2",
-    "floor": "0",
-    "bedrooms": "2",
-    "area": "75 m²",
-    "terrace": "29 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp",
-    "filterType": "ground-floor",
-    "filterBed": "2",
-    "sortArea": "75 m²",
-    "sortRelevant": "13",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp 2350w"
-  },
-  {
-    "code": "124",
-    "href": "/apartments/124",
-    "category": "Ground Floor",
-    "completion": "4Q 2026",
-    "block": "B2",
-    "floor": "0",
-    "bedrooms": "2",
-    "area": "75 m²",
-    "terrace": "29 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7668c723c7c1bc2fcd_124.webp",
-    "filterType": "ground-floor",
-    "filterBed": "2",
-    "sortArea": "75 m²",
-    "sortRelevant": "14",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7668c723c7c1bc2fcd_124-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7668c723c7c1bc2fcd_124-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7668c723c7c1bc2fcd_124-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7668c723c7c1bc2fcd_124-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7668c723c7c1bc2fcd_124-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7668c723c7c1bc2fcd_124.webp 2350w"
-  },
-  {
-    "code": "131",
-    "href": "/apartments/131",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B3",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "60 m²",
-    "terrace": "64 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76f340b7301bf20530_131.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "60 m²",
-    "sortRelevant": "15",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76f340b7301bf20530_131-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76f340b7301bf20530_131-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76f340b7301bf20530_131-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76f340b7301bf20530_131-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76f340b7301bf20530_131-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76f340b7301bf20530_131.webp 2350w"
-  },
-  {
-    "code": "132",
-    "href": "/apartments/132",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B3",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "60 m²",
-    "terrace": "64 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b4cc4746b16e875d_132.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "60 m²",
-    "sortRelevant": "16",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b4cc4746b16e875d_132-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b4cc4746b16e875d_132-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b4cc4746b16e875d_132-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b4cc4746b16e875d_132-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b4cc4746b16e875d_132-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b4cc4746b16e875d_132.webp 2350w"
-  },
-  {
-    "code": "133",
-    "href": "/apartments/133",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B3",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "60 m²",
-    "terrace": "64 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c786da993be14f64ed5_133.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "60 m²",
-    "sortRelevant": "17",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c786da993be14f64ed5_133-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c786da993be14f64ed5_133-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c786da993be14f64ed5_133-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c786da993be14f64ed5_133-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c786da993be14f64ed5_133-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c786da993be14f64ed5_133.webp 2350w"
-  },
-  {
-    "code": "134",
-    "href": "/apartments/134",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B3",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "67 m²",
-    "terrace": "71 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7844b8416906f3ffd8_134.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "67 m²",
-    "sortRelevant": "18",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7844b8416906f3ffd8_134-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7844b8416906f3ffd8_134-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7844b8416906f3ffd8_134-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7844b8416906f3ffd8_134-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7844b8416906f3ffd8_134-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7844b8416906f3ffd8_134.webp 2350w"
-  },
-  {
-    "code": "211",
-    "href": "/apartments/211",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B1",
-    "floor": "2",
-    "bedrooms": "2",
-    "area": "60 m²",
-    "terrace": "61 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7827147ebfc4bc0f4b_211.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "60 m²",
-    "sortRelevant": "19",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7827147ebfc4bc0f4b_211-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7827147ebfc4bc0f4b_211-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7827147ebfc4bc0f4b_211-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7827147ebfc4bc0f4b_211-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7827147ebfc4bc0f4b_211-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7827147ebfc4bc0f4b_211.webp 2350w"
-  },
-  {
-    "code": "212",
-    "href": "/apartments/212",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B1",
-    "floor": "2",
-    "bedrooms": "2",
-    "area": "60 m²",
-    "terrace": "61 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b492933cc245ff76_212.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "60 m²",
-    "sortRelevant": "20",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b492933cc245ff76_212-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b492933cc245ff76_212-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b492933cc245ff76_212-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b492933cc245ff76_212-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b492933cc245ff76_212-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b492933cc245ff76_212.webp 2350w"
-  },
-  {
-    "code": "213",
-    "href": "/apartments/213",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B1",
-    "floor": "2",
-    "bedrooms": "2",
-    "area": "60 m²",
-    "terrace": "62 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a6_213.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "60 m²",
-    "sortRelevant": "21",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a6_213-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a6_213-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a6_213-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a6_213-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a6_213-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a6_213.webp 2350w"
-  },
-  {
-    "code": "221",
-    "href": "/apartments/221",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B2",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "60 m²",
-    "terrace": "61 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a3_221.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "60 m²",
-    "sortRelevant": "22",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a3_221-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a3_221-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a3_221-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a3_221-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a3_221-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a3_221.webp 2350w"
-  },
-  {
-    "code": "222",
-    "href": "/apartments/222",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B2",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "60 m²",
-    "terrace": "61 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c789c5162a25ad50df3_222.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "60 m²",
-    "sortRelevant": "23",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c789c5162a25ad50df3_222-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c789c5162a25ad50df3_222-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c789c5162a25ad50df3_222-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c789c5162a25ad50df3_222-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c789c5162a25ad50df3_222-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c789c5162a25ad50df3_222.webp 2350w"
-  },
-  {
-    "code": "223",
-    "href": "/apartments/223",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B2",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "60 m²",
-    "terrace": "61 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c788f01ce67d4e9365b_223.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "60 m²",
-    "sortRelevant": "24",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c788f01ce67d4e9365b_223-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c788f01ce67d4e9365b_223-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c788f01ce67d4e9365b_223-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c788f01ce67d4e9365b_223-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c788f01ce67d4e9365b_223-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c788f01ce67d4e9365b_223.webp 2350w"
-  },
-  {
-    "code": "224",
-    "href": "/apartments/224",
-    "category": "Penthouse duplex",
-    "completion": "4Q 2026",
-    "block": "B2",
-    "floor": "1",
-    "bedrooms": "2",
-    "area": "60 m²",
-    "terrace": "62 M²",
-    "image": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78a24587924e09d9dc_224.webp",
-    "filterType": "penthouse-duplex",
-    "filterBed": "2",
-    "sortArea": "60 m²",
-    "sortRelevant": "25",
-    "imageSrcset": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78a24587924e09d9dc_224-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78a24587924e09d9dc_224-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78a24587924e09d9dc_224-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78a24587924e09d9dc_224-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78a24587924e09d9dc_224-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78a24587924e09d9dc_224.webp 2350w"
-  }
-];
-
-/* ============================================================
-   data/apartment-extras.ts
-   ============================================================ */
-
-/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
- * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
-/**
- * GENERADO por scripts/extract-apartment-extras.mjs — no editar a mano.
- *
- * Campos por apartamento que viven sólo en el marcado de su ficha:
- * la rotación de la rosa de los vientos, la superficie de terraza, el
- * diagrama del bloque y el PDF descargable.
- */
-
-export interface ApartmentExtras {
-  /** Grados de rotación de la brújula del plano. */
-  compassDeg: number | null;
-  /** Etiqueta de terraza tal cual se muestra; "-" cuando no tiene. */
-  terraceLabel: string | null;
-  blockDiagram: string | null;
-  brochure: string | null;
-}
-
-export const apartmentExtras: Record<string, ApartmentExtras> = {
-  "111": {
-    "compassDeg": -165,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-1.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C111apt_compressed.pdf"
-  },
-  "112": {
-    "compassDeg": -165,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-1.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C112apt_compressed.pdf"
-  },
-  "113": {
-    "compassDeg": -165,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-1.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C113apt_compressed.pdf"
-  },
-  "114": {
-    "compassDeg": -165,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-1.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C114apt merged.pdf"
-  },
-  "121": {
-    "compassDeg": -150,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-2.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C121apt_compressed.pdf"
-  },
-  "122": {
-    "compassDeg": -150,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-2.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C122apt_compressed.pdf"
-  },
-  "123": {
-    "compassDeg": -150,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-2.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C123apt_compressed.pdf"
-  },
-  "124": {
-    "compassDeg": -150,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-2.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C124apt_compressed.pdf"
-  },
-  "131": {
-    "compassDeg": -135,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-3.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C131apt_compressed.pdf"
-  },
-  "132": {
-    "compassDeg": -135,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-3.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C132apt_compressed.pdf"
-  },
-  "133": {
-    "compassDeg": -135,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-3.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C133apt_compressed.pdf"
-  },
-  "134": {
-    "compassDeg": -135,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-3.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C134apt_compressed.pdf"
-  },
-  "211": {
-    "compassDeg": -165,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-1.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C211apt_compressed.pdf"
-  },
-  "212": {
-    "compassDeg": -165,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-1.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C212apt_compressed.pdf"
-  },
-  "213": {
-    "compassDeg": -165,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-1.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C213apt_compressed.pdf"
-  },
-  "221": {
-    "compassDeg": -150,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-2.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C221apt_compressed.pdf"
-  },
-  "222": {
-    "compassDeg": -150,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-2.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C222apt_compressed.pdf"
-  },
-  "223": {
-    "compassDeg": -150,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-2.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C223apt_compressed.pdf"
-  },
-  "224": {
-    "compassDeg": -150,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-2.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C224apt_compressed.pdf"
-  },
-  "011": {
-    "compassDeg": -165,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-1.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C011apt_compressed.pdf"
-  },
-  "012": {
-    "compassDeg": -165,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-1.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C012apt_compressed.pdf"
-  },
-  "031": {
-    "compassDeg": -135,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-3.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C031apt_compressed.pdf"
-  },
-  "032": {
-    "compassDeg": -135,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-3.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C032apt_compressed.pdf"
-  },
-  "033": {
-    "compassDeg": -135,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-3.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C033apt_compressed.pdf"
-  },
-  "034": {
-    "compassDeg": -135,
-    "terraceLabel": "29",
-    "blockDiagram": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cdiagram_block-3.svg",
-    "brochure": "https://puntacanadinnerinthesky.com/urbatrix/era/documents%5C034apt_compressed.pdf"
-  }
-};
-
-/* ============================================================
-   data/apartments.ts
-   ============================================================ */
-
-/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
- * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
-/**
- * Catálogo de apartamentos de ERA Residence.
- *
- * GENERADO por scripts/extract-apartments.mjs a partir del JSON-LD de las
- * fichas originales. Al personalizar el sitio, este fichero pasa a editarse
- * a mano (o a sustituirse por un CMS) — la firma de `Apartment` es el
- * contrato que consumen los componentes.
- */
-
-export interface Apartment {
-  /**
-   * Código de 3 dígitos y slug de la ruta.
-   * El 2º dígito es el bloque (verificado contra el campo `Block` en las 25
-   * fichas). El 1º agrupa series de vivienda y el 3º es el número de unidad.
-   */
-  code: string;
-  slug: string;
-  name: string;
-  description: string;
-  /** Tipología: "Ground floor + basement" | "Ground Floor" | "Penthouse duplex" */
-  category: string;
-  /**
-   * Primer dígito del código. Correlaciona con la tipología pero NO de forma
-   * limpia (la serie 1 mezcla "Ground Floor" y "Penthouse duplex"), así que no
-   * lo uses como planta hasta confirmarlo con el promotor.
-   */
-  series: number;
-  /** Etiqueta del bloque: "B1" | "B2" | "B3". */
-  block: string;
-  blockNumber: number;
-  /** Tal cual se muestra: "3" en pisos, "2-3" en los duplex. */
-  bedroomsLabel: string;
-  bedroomsMin: number;
-  bedroomsMax: number;
-  interiorAreaSqm: number;
-  /** Etiqueta tal cual aparece en el sitio, p. ej. "132 m²". */
-  interiorAreaLabel: string;
-  completion: string;
-  heroImage: string;
-  /** Plano de la vivienda. */
-  layoutImage: string;
-  gallery: string[];
-  seo: { title: string; description: string };
-}
-
-export const apartments: Apartment[] = [
-  {
-    "code": "011",
-    "slug": "011",
-    "name": "Apartment №011",
-    "description": "Three bedrooms, open-plan living, and a large terrace that connects directly to the communal garden and pool area.",
-    "category": "Ground floor + basement",
-    "series": 0,
-    "block": "B1",
-    "blockNumber": 1,
-    "bedroomsLabel": "3",
-    "bedroomsMin": 3,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 132,
-    "interiorAreaLabel": "132 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-ground-floor-basement.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34.webp"
-    ],
-    "seo": {
-      "title": "Apartment №011 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "012",
-    "slug": "012",
-    "name": "Apartment №012",
-    "description": "Three bedrooms, open-plan living, and a large terrace that connects directly to the communal garden and pool area.",
-    "category": "Ground floor + basement",
-    "series": 0,
-    "block": "B1",
-    "blockNumber": 1,
-    "bedroomsLabel": "3",
-    "bedroomsMin": 3,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 132,
-    "interiorAreaLabel": "132 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-ground-floor-basement.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34.webp"
-    ],
-    "seo": {
-      "title": "Apartment №012 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "031",
-    "slug": "031",
-    "name": "Apartment №031",
-    "description": "Three bedrooms, open-plan living, and a large terrace that connects directly to the communal garden and pool area.",
-    "category": "Ground floor + basement",
-    "series": 0,
-    "block": "B3",
-    "blockNumber": 3,
-    "bedroomsLabel": "3",
-    "bedroomsMin": 3,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 134,
-    "interiorAreaLabel": "134 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-ground-floor-basement.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34.webp"
-    ],
-    "seo": {
-      "title": "Apartment №031 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "032",
-    "slug": "032",
-    "name": "Apartment №032",
-    "description": "Three bedrooms, open-plan living, and a large terrace that connects directly to the communal garden and pool area.",
-    "category": "Ground floor + basement",
-    "series": 0,
-    "block": "B3",
-    "blockNumber": 3,
-    "bedroomsLabel": "3",
-    "bedroomsMin": 3,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 134,
-    "interiorAreaLabel": "134 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-ground-floor-basement.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34.webp"
-    ],
-    "seo": {
-      "title": "Apartment №032 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "033",
-    "slug": "033",
-    "name": "Apartment №033",
-    "description": "Three bedrooms, open-plan living, and a large terrace that connects directly to the communal garden and pool area.",
-    "category": "Ground floor + basement",
-    "series": 0,
-    "block": "B3",
-    "blockNumber": 3,
-    "bedroomsLabel": "3",
-    "bedroomsMin": 3,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 134,
-    "interiorAreaLabel": "134 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-ground-floor-basement.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34.webp"
-    ],
-    "seo": {
-      "title": "Apartment №033 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "034",
-    "slug": "034",
-    "name": "Apartment №034",
-    "description": "Three bedrooms, open-plan living, and a large terrace that connects directly to the communal garden and pool area.",
-    "category": "Ground floor + basement",
-    "series": 0,
-    "block": "B3",
-    "blockNumber": 3,
-    "bedroomsLabel": "3",
-    "bedroomsMin": 3,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 134,
-    "interiorAreaLabel": "134 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5Cera-residence-ground-floor-basement.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33.webp"
-    ],
-    "seo": {
-      "title": "Apartment №034 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "111",
-    "slug": "111",
-    "name": "Apartment №111",
-    "description": "Step directly onto your terrace and into thecommunal gardens, blending indoor comfortwith outdoor living.",
-    "category": "Ground Floor",
-    "series": 1,
-    "block": "B1",
-    "blockNumber": 1,
-    "bedroomsLabel": "2",
-    "bedroomsMin": 2,
-    "bedroomsMax": 2,
-    "interiorAreaSqm": 75,
-    "interiorAreaLabel": "75 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a1575f46655e8c4e795ec64_era-residence-landscaping.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №111 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "112",
-    "slug": "112",
-    "name": "Apartment №112",
-    "description": "Step directly onto your terrace and into thecommunal gardens, blending indoor comfortwith outdoor living.",
-    "category": "Ground Floor",
-    "series": 1,
-    "block": "B1",
-    "blockNumber": 1,
-    "bedroomsLabel": "2",
-    "bedroomsMin": 2,
-    "bedroomsMax": 2,
-    "interiorAreaSqm": 75,
-    "interiorAreaLabel": "75 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a1575f46655e8c4e795ec64_era-residence-landscaping.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №112 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "113",
-    "slug": "113",
-    "name": "Apartment №113",
-    "description": "Step directly onto your terrace and into thecommunal gardens, blending indoor comfortwith outdoor living.",
-    "category": "Ground Floor",
-    "series": 1,
-    "block": "B1",
-    "blockNumber": 1,
-    "bedroomsLabel": "2",
-    "bedroomsMin": 2,
-    "bedroomsMax": 2,
-    "interiorAreaSqm": 75,
-    "interiorAreaLabel": "75 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a1575f46655e8c4e795ec64_era-residence-landscaping.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №113 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "114",
-    "slug": "114",
-    "name": "Apartment №114",
-    "description": "Step directly onto your terrace and into thecommunal gardens, blending indoor comfortwith outdoor living.",
-    "category": "Penthouse duplex",
-    "series": 1,
-    "block": "B1",
-    "blockNumber": 1,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 89,
-    "interiorAreaLabel": "89 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d472_114_1.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c764aeb3252978e8751_11.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38d7_12.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7619f7f97bbc89d475_31.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76c1fcff139914bf10_32.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7622a1a12b6817e697_33.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c761bb0eb457f544c19_34.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76595803f21cba74c1_114_2.webp"
-    ],
-    "seo": {
-      "title": "Apartment №114 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "121",
-    "slug": "121",
-    "name": "Apartment №121",
-    "description": "Step directly onto your terrace and into thecommunal gardens, blending indoor comfortwith outdoor living.",
-    "category": "Ground Floor",
-    "series": 1,
-    "block": "B2",
-    "blockNumber": 2,
-    "bedroomsLabel": "2",
-    "bedroomsMin": 2,
-    "bedroomsMax": 2,
-    "interiorAreaSqm": 75,
-    "interiorAreaLabel": "75 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a1575f46655e8c4e795ec64_era-residence-landscaping.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №121 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "122",
-    "slug": "122",
-    "name": "Apartment №122",
-    "description": "Step directly onto your terrace and into thecommunal gardens, blending indoor comfortwith outdoor living.",
-    "category": "Ground Floor",
-    "series": 1,
-    "block": "B2",
-    "blockNumber": 2,
-    "bedroomsLabel": "2",
-    "bedroomsMin": 2,
-    "bedroomsMax": 2,
-    "interiorAreaSqm": 75,
-    "interiorAreaLabel": "75 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a1575f46655e8c4e795ec64_era-residence-landscaping.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №122 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "123",
-    "slug": "123",
-    "name": "Apartment №123",
-    "description": "Step directly onto your terrace and into thecommunal gardens, blending indoor comfortwith outdoor living.",
-    "category": "Ground Floor",
-    "series": 1,
-    "block": "B2",
-    "blockNumber": 2,
-    "bedroomsLabel": "2",
-    "bedroomsMin": 2,
-    "bedroomsMax": 2,
-    "interiorAreaSqm": 75,
-    "interiorAreaLabel": "75 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a1575f46655e8c4e795ec64_era-residence-landscaping.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp"
-    ],
-    "seo": {
-      "title": "Apartment №123 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "124",
-    "slug": "124",
-    "name": "Apartment №124",
-    "description": "Step directly onto your terrace and into thecommunal gardens, blending indoor comfortwith outdoor living.",
-    "category": "Ground Floor",
-    "series": 1,
-    "block": "B2",
-    "blockNumber": 2,
-    "bedroomsLabel": "2",
-    "bedroomsMin": 2,
-    "bedroomsMax": 2,
-    "interiorAreaSqm": 75,
-    "interiorAreaLabel": "75 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a1575f46655e8c4e795ec64_era-residence-landscaping.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7668c723c7c1bc2fcd_124.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №124 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "131",
-    "slug": "131",
-    "name": "Apartment №131",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 1,
-    "block": "B3",
-    "blockNumber": 3,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 60,
-    "interiorAreaLabel": "60 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76f340b7301bf20530_131.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №131 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "132",
-    "slug": "132",
-    "name": "Apartment №132",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 1,
-    "block": "B3",
-    "blockNumber": 3,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 60,
-    "interiorAreaLabel": "60 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b4cc4746b16e875d_132.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №132 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "133",
-    "slug": "133",
-    "name": "Apartment №133",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 1,
-    "block": "B3",
-    "blockNumber": 3,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 60,
-    "interiorAreaLabel": "60 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c786da993be14f64ed5_133.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №133 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "134",
-    "slug": "134",
-    "name": "Apartment №134",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 1,
-    "block": "B3",
-    "blockNumber": 3,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 67,
-    "interiorAreaLabel": "67 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7844b8416906f3ffd8_134.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №134 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "211",
-    "slug": "211",
-    "name": "Apartment №211",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 2,
-    "block": "B1",
-    "blockNumber": 1,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 60,
-    "interiorAreaLabel": "60 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7827147ebfc4bc0f4b_211.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №211 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "212",
-    "slug": "212",
-    "name": "Apartment №212",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 2,
-    "block": "B1",
-    "blockNumber": 1,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 60,
-    "interiorAreaLabel": "60 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78b492933cc245ff76_212.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №212 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "213",
-    "slug": "213",
-    "name": "Apartment №213",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 2,
-    "block": "B1",
-    "blockNumber": 1,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 60,
-    "interiorAreaLabel": "60 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a6_213.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №213 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "221",
-    "slug": "221",
-    "name": "Apartment №221",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 2,
-    "block": "B2",
-    "blockNumber": 2,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 60,
-    "interiorAreaLabel": "60 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78ac4c78a4157613a3_221.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №221 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "222",
-    "slug": "222",
-    "name": "Apartment №222",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 2,
-    "block": "B2",
-    "blockNumber": 2,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 60,
-    "interiorAreaLabel": "60 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c789c5162a25ad50df3_222.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №222 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "223",
-    "slug": "223",
-    "name": "Apartment №223",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 2,
-    "block": "B2",
-    "blockNumber": 2,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 60,
-    "interiorAreaLabel": "60 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c788f01ce67d4e9365b_223.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №223 — ERA Residence Estepona",
-      "description": ""
-    }
-  },
-  {
-    "code": "224",
-    "slug": "224",
-    "name": "Apartment №224",
-    "description": "Two floors crowned with panoramic viewsand a private rooftop solarium — the ultimateexpression of luxury living",
-    "category": "Penthouse duplex",
-    "series": 2,
-    "block": "B2",
-    "blockNumber": 2,
-    "bedroomsLabel": "2-3",
-    "bedroomsMin": 2,
-    "bedroomsMax": 3,
-    "interiorAreaSqm": 60,
-    "interiorAreaLabel": "60 m²",
-    "completion": "4Q 2026",
-    "heroImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a15153b797c328a9f2f5964_era-residence-terrace.webp",
-    "layoutImage": "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c78a24587924e09d9dc_224.webp",
-    "gallery": [
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c7661bb6f90181aecf7_111.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76e6cffe217741c680_112.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76afaf96dac2a461df_113.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c75afaf96dac2a4619d_121.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c762f8a29dd9c9b38ab_122.webp",
-      "https://puntacanadinnerinthesky.com/urbatrix/era/images%5C6a345c76bd54890c94c2d280_123.webp"
-    ],
-    "seo": {
-      "title": "Apartment №224 — ERA Residence Estepona",
-      "description": ""
-    }
-  }
-];
-
-export const getApartment = (code: string): Apartment | undefined =>
-  apartments.find((a) => a.code === code);
-
-export const apartmentCodes = apartments.map((a) => a.code);
-
-/** Agrupados por bloque (B1 · B2 · B3). */
-export const apartmentsByBlock = apartments.reduce<Record<string, Apartment[]>>(
-  (acc, a) => {
-    (acc[a.block] ??= []).push(a);
-    return acc;
-  },
-  {},
-);
-
-/** Agrupados por tipología. */
-export const apartmentsByCategory = apartments.reduce<Record<string, Apartment[]>>(
-  (acc, a) => {
-    (acc[a.category] ??= []).push(a);
-    return acc;
-  },
-  {},
-);
-
-/* ============================================================
    data/cta-images.ts
    ============================================================ */
 
@@ -1474,34 +20,623 @@ export const apartmentsByCategory = apartments.reduce<Record<string, Apartment[]
 /**
  * Imágenes de fondo del CTA «Perfect sea views».
  *
- * El bloque se repite en 28 de las 29 páginas con el mismo marcado, pero
- * cada sección del sitio usa su propia foto. Se comprobó comparando el
- * original página a página: hay cuatro, no una.
+ * El bloque se repite en casi todas las páginas con el mismo marcado, pero
+ * cada sección del sitio usa su propia foto. Se comprobó en el sitio del que
+ * se portó el marcado comparando página a página: hay cuatro, no una.
+ *
+ * Para Bahía Mar las cuatro son renders exteriores de las villas
+ * (00. BAHÍA MAR_RENDERS_AGOSTO*, carpetas 01. RENDERS EXTERIORES),
+ * recortados a la MISMA proporción que tenía cada hueco en el original para
+ * que el `object-fit: cover` del fondo encuadre igual:
+ *
+ *   home    → bahiamar-cta-1  Villa A (Cosón)  R10_2   4:5    (0,800)
+ *   villas  → bahiamar-cta-2  Villa A (Cosón)  R9_1    3:4    (0,750)
+ *   contact → bahiamar-cta-3  Villa B (Helecho) R8     11:10  (1,100)
+ *   villa   → bahiamar-cta-4  Villa D (Ámbar)  R5      10:11  (0,909)
+ *
+ * Origen y destino de cada una, en bahia-mar-personalizacion/inventario/cta.json.
+ * Se convirtieron con ffmpeg (WebP calidad 82, ancho completo 2350 px) más
+ * las variantes -p-500/800/1080/1600/2000, todas .webp.
+ *
+ * OJO con el encuadre: el hueco es MUY alto en móvil (`.cta-s` pasa a
+ * aspect-ratio 2/6 por debajo de 992 px y el fondo mide el 140 % del alto
+ * para el parallax), así que a 390 px sólo se ve el 29,5 % central del ancho
+ * de la foto; a 1440, el 71,6 %. El sujeto tiene que estar en el tercio
+ * central. Por eso bahiamar-cta-4 se re-encuadró (QA ronda 1,
+ * LAYOUT-IMAGES-03): antes cogía todo el ancho del render R5, con la casa
+ * pegada al borde derecho, y en móvil sólo quedaban árboles y jardinera.
+ * Ahora es una ventana de 2000x2200 pegada a ese borde (pared de piedra,
+ * pérgola y piscina en el centro), exportada a su ancho nativo sin escalar
+ * hacia arriba: el completo mide 2000 px y no hay variante -p-2000
+ * (scratchpad/fix-1-cta4-convert.mjs).
  */
 
 export interface CtaImage {
   src: string;
   srcSet: string;
+  /** Texto alternativo: el fondo lleva texto encima, pero la foto no es decorativa. */
+  alt: string;
 }
 
-/** Construye el srcset con las variantes que exporta Webflow. */
-function responsive(name: string): CtaImage {
+/**
+ * Ancho completo (2350 px salvo que se indique otro) + los tamaños del srcset
+ * que sean más estrechos que él, todos .webp. Así el srcset sólo lista
+ * ficheros que existen: una foto exportada a 2000 px no tiene -p-2000.
+ */
+function responsive(name: string, alt: string, fullWidth = 2350): CtaImage {
+  const variants = [500, 800, 1080, 1600, 2000].filter((w) => w < fullWidth);
   return {
-    src: `https://puntacanadinnerinthesky.com/urbatrix/era/images%5C${name}.webp`,
+    src: `https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/${name}.webp`,
     srcSet: [
-      `https://puntacanadinnerinthesky.com/urbatrix/era/images%5C${name}-p-500.png 500w`,
-      `https://puntacanadinnerinthesky.com/urbatrix/era/images%5C${name}-p-800.png 800w`,
-      `https://puntacanadinnerinthesky.com/urbatrix/era/images%5C${name}-p-1080.png 1080w`,
-      `https://puntacanadinnerinthesky.com/urbatrix/era/images%5C${name}-p-1600.png 1600w`,
-      `https://puntacanadinnerinthesky.com/urbatrix/era/images%5C${name}.webp 1920w`,
+      ...variants.map((w) => `https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/${name}-p-${w}.webp ${w}w`),
+      `https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/${name}.webp ${fullWidth}w`,
     ].join(', '),
+    alt,
   };
 }
 
 export const CTA_IMAGES = {
-  home: responsive('img_cta_1920'),
-  apartments: responsive('era-residence-garden-2'),
-  contact: responsive('img_cam_09'),
-  /** Las 25 fichas comparten la misma. */
-  apartment: responsive('era-residence-ground-floor-2'),
+  home: responsive(
+    'bahiamar-cta-1',
+    'Sun loungers on a villa terrace beside an infinity pool, with palm trees and Samaná Bay beyond',
+  ),
+  villas: responsive(
+    'bahiamar-cta-2',
+    'Timber-clad villa opening onto its terrace and private pool, palm trees and the sea in the distance',
+  ),
+  contact: responsive(
+    'bahiamar-cta-3',
+    'Steps leading from a villa living room to a pool with planted islands, palm trees and the sea beyond',
+  ),
+  /** Las cinco fichas de villa comparten la misma. Ventana de 2000 px (ver cabecera). */
+  villa: responsive(
+    'bahiamar-cta-4',
+    'Stone-and-wood villa with a pergola-shaded porch and private pool, the sea glimpsed through the trees',
+    2000,
+  ),
 } satisfies Record<string, CtaImage>;
+
+/* ============================================================
+   data/villa-cards.ts
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+/**
+ * Lo que muestra la tarjeta de villa en el listado.
+ *
+ * A DIFERENCIA del `apartment-cards.ts` que sustituye, esto NO es un
+ * volcado: se deriva de `data/villas.ts`, que es la única fuente. En el
+ * original los dos ficheros se contradecían (la terraza de la tarjeta no
+ * coincidía con la de la ficha) porque ambos venían de un CMS editado a
+ * mano; aquí eso no puede pasar.
+ *
+ * LOS HUECOS DE LA TARJETA NO SON LOS MISMOS
+ *
+ * El marcado de Webflow tiene huecos pensados para un apartamento:
+ * bloque, planta, superficie y terraza. De esos, a una villa exenta solo
+ * le aplican dos. Como NO hay superficies construidas en el material del
+ * cliente (ver la cabecera de villas.ts), los huecos se han reasignado a
+ * datos que sí existen — tipología, niveles y baños — en vez de dejar
+ * campos vacíos o inventar cifras.
+ */
+
+
+export interface VillaCardData {
+  slug: string;
+  href: string;
+  name: string;
+  /** "Type A" — la letra que usa el estudio de arquitectura. */
+  typeLabel: string;
+  type: string;
+  /** "Two levels" | "Single level". */
+  category: string;
+  levels: string;
+  bedrooms: string;
+  bathrooms: string;
+  /** «77 units» o null cuando el master plan no lo dice (tipos D y E). */
+  unitsLabel: string | null;
+  /** Provisional, con «(TBC)» a la vista. Ver villas.ts. */
+  completion: string;
+  /** Lo que va tras el «+» al pie de la tarjeta. */
+  extra: string;
+  image: string;
+  imageSrcset: string;
+  /** Valores por los que filtra y ordena el listado. */
+  filterType: string;
+  filterBed: string;
+  /** El orden del catálogo: A, B, C, D, E. */
+  sortRelevant: string;
+  /** Sin m², se ordena por número de habitaciones. */
+  sortSize: string;
+}
+
+/** "Two levels" -> "two-levels", que es lo que leen los data-filter-*. */
+function slugifyType(category: string): string {
+  return category.toLowerCase().replace(/\s+/g, '-');
+}
+
+export const villaCards: VillaCardData[] = villas.map((v, i) => ({
+  slug: v.slug,
+  href: `/villas/${v.slug}`,
+  name: v.name,
+  typeLabel: `Type ${v.type}`,
+  type: v.type,
+  category: v.category,
+  levels: String(v.levels),
+  bedrooms: String(v.bedrooms),
+  bathrooms: String(v.bathrooms),
+  unitsLabel: v.units === null ? null : String(v.units) + ' units',
+  completion: v.completion,
+  extra: 'Private pool',
+  // Como en ERA, la portada de la tarjeta es el PLANO recortado sobre
+  // transparente (nivel 1), no el render: `img contain` lo deja flotar
+  // sobre el fondo de la tarjeta. Los renders siguen en la ficha.
+  image: v.plans[0].image,
+  imageSrcset: srcset(v.plans[0].image),
+  filterType: slugifyType(v.category),
+  filterBed: String(v.bedrooms),
+  sortRelevant: String(i + 1),
+  sortSize: String(v.bedrooms),
+}));
+
+/** Opciones del desplegable «Type» del listado, sin repetir. */
+export const typeFilters = [...new Set(villas.map((v) => v.category))].map((c) => ({
+  label: c,
+  value: slugifyType(c),
+}));
+
+/** Opciones del desplegable «Bedrooms», de menos a más. */
+export const bedFilters = [...new Set(villas.map((v) => v.bedrooms))]
+  .sort((a, b) => a - b)
+  .map(String);
+
+/* ============================================================
+   data/villas.ts
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+/**
+ * Catálogo de villas de Bahía Mar Residences & Beach Resort.
+ *
+ * DE DÓNDE SALEN LOS DATOS
+ *
+ * Este fichero SÍ se edita a mano: sustituye al `data/apartments.ts`
+ * generado del JSON-LD de ERA Residence. Cada campo viene de material del
+ * cliente, y conviene saber de cuál porque no todo dice lo mismo:
+ *
+ *   - Nombres, taglines y los recuentos de habitaciones/baños salen de las
+ *     fichas «Bahía Mar - Boutique Residences / Tipos de villas» que el
+ *     cliente pasó por WhatsApp (bahia-mar-personalizacion/
+ *     archivos-extra-whatsapp/). Son la fuente MÁS RECIENTE y la única que
+ *     nombra las villas.
+ *   - Las descripciones largas y el listado de estancias vienen de los
+ *     planos comerciales por tipología (00. PLANOS/PLANOS COMERCIALES),
+ *     traducidos al inglés.
+ *   - El brochure de agosto (BAHIA MAR/BOCHURE PAGINAS_) solo documenta
+ *     cuatro tipologías y las llama A, B, C y D. NO menciona la Villa
+ *     Carolina (tipo E), que es posterior. Si algo se contradice, mandan
+ *     las fichas de WhatsApp.
+ *
+ * LO QUE NO HAY (y por eso no hay campo)
+ *
+ * En NINGÚN documento aparece la superficie construida ni la fecha de
+ * entrega. El sitio original mostraba «132 m²» y «4Q 2026» en cada
+ * tarjeta; aquí esos huecos se han sustituido por datos que sí tenemos
+ * (nivel, baños, piscina privada) en vez de inventarlos. Ver
+ * BACKLOG.md.
+ */
+
+export interface Villa {
+  /** Slug de la ruta: /villas/<slug>. */
+  slug: string;
+  /**
+   * Slug de los assets (imágenes, PDF): los ficheros del CDN se sirven con el
+   * nombre original de cada tipología (coson, helecho, remanso, ambar,
+   * carolina). Al renombrar las villas se conserva este slug para que las
+   * URLs de imágenes y planos no se rompan.
+   */
+  assetSlug: string;
+  /** Letra de tipología del estudio de arquitectura. */
+  type: 'A' | 'B' | 'C' | 'D' | 'E';
+  /** Nombre comercial, con su tilde. */
+  name: string;
+  /** Frase de una línea de la ficha del cliente. */
+  tagline: string;
+  /** Dos o tres párrafos para la cabecera de la ficha. */
+  description: string[];
+  /**
+   * Unidades de esta tipología en el complejo.
+   *
+   * Del «FASE II MASTER PLAN - LOTIFICACIÓN»: 246 villas en total, de las
+   * que 77 son tipo A, 88 tipo B y 81 tipo C. Ese master plan NO incluye
+   * las tipologías D ni E, que son posteriores: hasta que el cliente
+   * mande su reparto, van a null y la ficha no enseña el dato.
+   */
+  units: number | null;
+  /**
+   * PROVISIONAL. No hay fecha de entrega en ningún documento del cliente;
+   * se muestra con «(TBC)» a la vista para que nadie la tome por firme.
+   */
+  completion: string;
+  /** "Two levels" | "Single level" — es lo que separa unas de otras. */
+  category: string;
+  levels: 1 | 2;
+  bedrooms: number;
+  /** Baños completos. El de servicio NO cuenta, como marca la ficha. */
+  bathrooms: number;
+  /** Aseo de cortesía. La Villa Ámbar es la única que no lo lista. */
+  halfBath: boolean;
+  /** Salas de estar: la Horizonte es la única con dos. */
+  livingAreas: number;
+  /** Cuarto y baño de servicio independientes. */
+  serviceQuarters: boolean;
+  /** Lo que se pinta como lista de iconos en la ficha. */
+  features: string[];
+  /** Estancias por planta, del plano comercial. */
+  rooms: { level: string; items: string[] }[];
+  heroImage: string;
+  /** Planos comerciales. Las de un nivel solo tienen el primero. */
+  plans: { label: string; image: string }[];
+  gallery: string[];
+  seo: { title: string; description: string };
+}
+
+/** Ancho completo + los cinco tamaños del srcset que genera villas-assets.mjs. */
+export function srcset(image: string): string {
+  const base = image.replace(/\.webp$/, '');
+  return [500, 800, 1080, 1600, 2000]
+    .map((w) => `${base}-p-${w}.webp ${w}w`)
+    .concat(`${image} 2350w`)
+    .join(', ');
+}
+
+export const villas: Villa[] = [
+  {
+    slug: 'horizonte',
+    assetSlug: 'coson',
+    type: 'A',
+    name: 'Villa Horizonte',
+    tagline: 'Architecture of great presence, for a life without limits.',
+    description: [
+      'Villa Horizonte is the most generous of the five Bahía Mar villas: a two-level residence for those who want an exclusive way of living in the Dominican Republic, surrounded by nature, space and privileged views.',
+      'Its contemporary architecture combines refined interiors with generous social areas and exteriors designed for rest — pool, solarium, fire pit, jacuzzi, terraces and lounge spaces. Every setting offers a different experience, from dinner facing the landscape to an afternoon by the water or a night around the fire.',
+      'More than a villa, it proposes a private resort experience. Interior and exterior connect fluidly while the architecture follows the terrain, letting each level uncover the tropical landscape anew.',
+    ],
+    units: 77,
+    completion: '2027 (TBC)',
+    category: 'Two levels',
+    levels: 2,
+    bedrooms: 4,
+    bathrooms: 4,
+    halfBath: true,
+    livingAreas: 2,
+    serviceQuarters: true,
+    features: [
+      'Private pool',
+      'Jacuzzi',
+      'Solarium',
+      'Fire pit',
+      'BBQ area',
+      'Terraces',
+      'Wine cellar',
+      'Service quarters',
+    ],
+    rooms: [
+      {
+        level: 'First level',
+        items: [
+          'Main entrance', 'Reception hall', 'Guest powder room', 'Vestibule',
+          'Wine cellar', 'Main stair', 'Kitchen', 'Dining room', 'Living room',
+          'Guest bedroom', 'Guest bathroom', 'Service bathroom', 'Service room',
+          'Laundry area', 'BBQ area', 'Main terrace', 'Side terraces',
+          'Solarium', 'Pool', 'Fire pit area', 'Jacuzzi',
+        ],
+      },
+      {
+        level: 'Second level',
+        items: [
+          'Upper vestibule', 'TV room', 'Secondary bedroom 01',
+          'Secondary bedroom 01 bathroom', 'Secondary bedroom 02',
+          'Secondary bedroom 02 bathroom', 'Principal bedroom',
+          'Principal walk-in closet', 'Principal bathroom',
+          'Upper perimeter terrace', 'Private upper terraces',
+        ],
+      },
+    ],
+    heroImage: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-hero.webp',
+    plans: [
+      { label: 'First level', image: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-plan-1.webp' },
+      { label: 'Second level', image: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-plan-2.webp' },
+    ],
+    gallery: [
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g1.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g2.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g4.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-i1.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-i2.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-i3.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-i4.webp',
+    ],
+    seo: {
+      title: 'Villa Horizonte',
+      description:
+        'Four-bedroom, two-level villa in Las Terrenas with private pool, jacuzzi, solarium and panoramic views over Samaná Bay.',
+    },
+  },
+
+  {
+    slug: 'esencia',
+    assetSlug: 'helecho',
+    type: 'B',
+    name: 'Villa Esencia',
+    tagline: 'Elegance in its most essential form.',
+    description: [
+      'Villa Esencia is a two-level luxury residence for those after a more compact, efficient proposition — without giving up visual space, architectural elegance or the connection to the landscape.',
+      'Its longitudinal plan organises social, private and outdoor areas with clarity, weaving kitchen, dining room, living room, guest bedroom, terraces, pool, solarium, fire pit and jacuzzi into one sophisticated, relaxed whole.',
+      'On the second level, the principal suite, the secondary bedroom and the lounge terraces lift the experience of comfort, privacy and contemplation further still.',
+    ],
+    units: 88,
+    completion: '2027 (TBC)',
+    category: 'Two levels',
+    levels: 2,
+    bedrooms: 3,
+    bathrooms: 3,
+    halfBath: true,
+    livingAreas: 1,
+    serviceQuarters: true,
+    features: [
+      'Private pool',
+      'Jacuzzi',
+      'Solarium',
+      'Fire pit',
+      'BBQ area',
+      'Terraces',
+      'Lounge terraces',
+      'Service quarters',
+    ],
+    rooms: [
+      {
+        level: 'First level',
+        items: [
+          'Main entrance', 'Entrance vestibule', 'Guest powder room', 'Kitchen',
+          'Dining room', 'TV room / living room', 'Guest bedroom',
+          'Guest walk-in closet', 'Guest bathroom', 'Service bathroom',
+          'Service room', 'Laundry area', 'BBQ area', 'Outdoor terrace',
+          'Solarium', 'Fire pit area', 'Pool', 'Jacuzzi', 'Pool terrace',
+        ],
+      },
+      {
+        level: 'Second level',
+        items: [
+          'Main stair', 'Upper vestibule / circulation', 'Principal bedroom',
+          'Principal walk-in closet', 'Principal bathroom', 'Secondary bedroom',
+          'Secondary bedroom bathroom', 'Left upper terrace',
+          'Front upper terrace', 'Right upper terrace / outdoor lounge',
+        ],
+      },
+    ],
+    heroImage: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-hero.webp',
+    plans: [
+      { label: 'First level', image: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-plan-1.webp' },
+      { label: 'Second level', image: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-plan-2.webp' },
+    ],
+    gallery: [
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-g1.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-g2.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-g3.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-g4.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-i1.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-i2.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-i3.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-helecho-i4.webp',
+    ],
+    seo: {
+      title: 'Villa Esencia',
+      description:
+        'Three-bedroom, two-level villa in Las Terrenas with a longitudinal plan, private pool, lounge terraces and open views.',
+    },
+  },
+
+  {
+    slug: 'armonia',
+    assetSlug: 'remanso',
+    type: 'C',
+    name: 'Villa Armonía',
+    tagline: 'All the privilege of Bahía Mar, on a single level.',
+    description: [
+      'Villa Armonía is a single-level luxury residence for those who want ease, privacy and a direct connection to the tropical landscape.',
+      'Its linear layout lets every space unfold fluidly and functionally, bringing kitchen, dining room, living room, bedrooms and outdoor areas onto one floor. That makes it the most practical villa of the project, easy to inhabit without losing any of its exclusivity.',
+      'The social area opens onto a wide outdoor terrace with pool, solarium, fire pit and jacuzzi, creating a private resort experience. Every space is designed to enjoy the Caribbean climate, the natural views and life outdoors.',
+    ],
+    units: 81,
+    completion: '2027 (TBC)',
+    category: 'Single level',
+    levels: 1,
+    bedrooms: 2,
+    bathrooms: 2,
+    halfBath: true,
+    livingAreas: 1,
+    serviceQuarters: true,
+    features: [
+      'Private pool',
+      'Jacuzzi',
+      'Solarium',
+      'Fire pit',
+      'BBQ area',
+      'Terraces',
+      'Single-level living',
+      'Service quarters',
+    ],
+    rooms: [
+      {
+        level: 'First level',
+        items: [
+          'Main entrance', 'Entrance vestibule', 'Guest powder room', 'Kitchen',
+          'Dining room', 'TV room / living room', 'Secondary bedroom',
+          'Secondary walk-in closet', 'Secondary bathroom', 'Principal bedroom',
+          'Principal walk-in closet', 'Principal bathroom', 'Service bathroom',
+          'Service room', 'Laundry area', 'BBQ area', 'Main terrace',
+          'Solarium', 'Fire pit area', 'Pool', 'Jacuzzi', 'Pool terrace',
+        ],
+      },
+    ],
+    heroImage: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-remanso-hero.webp',
+    plans: [{ label: 'First level', image: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-remanso-plan-1.webp' }],
+    gallery: [
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-remanso-g1.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-remanso-g2.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-remanso-g3.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-remanso-g4.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-remanso-i1.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-remanso-i2.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-remanso-i3.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-remanso-i4.webp',
+    ],
+    seo: {
+      title: 'Villa Armonía',
+      description:
+        'Two-bedroom single-level villa in Las Terrenas: a contemporary pavilion with private pool, solarium and direct access to the garden.',
+    },
+  },
+
+  {
+    slug: 'ambar',
+    assetSlug: 'ambar',
+    type: 'D',
+    name: 'Villa Ámbar',
+    tagline: 'The serenity of the Caribbean, made architecture.',
+    description: [
+      'Villa Ámbar starts from the idea of living the landscape through single-level architecture: open, natural and connected to the Caribbean climate.',
+      'Its design is organised linearly, separating private, social and outdoor areas with clarity. The bedrooms run along one side of the house while kitchen, dining room and living room fold into the terraces and open areas.',
+      'The project is not conceived as a closed house but as a sequence of spaces expanding outward. Terrace, jacuzzi, solarium, pool, BBQ area and fire pit terrace are an active part of daily life. Its materials reinforce that intent: pale stone, natural timber, sand-toned microcement, natural-fibre furniture, pergolas and tropical planting.',
+    ],
+    units: null,
+    completion: '2027 (TBC)',
+    category: 'Single level',
+    levels: 1,
+    bedrooms: 2,
+    bathrooms: 2,
+    halfBath: false,
+    livingAreas: 1,
+    serviceQuarters: false,
+    features: [
+      'Private pool',
+      'Jacuzzi',
+      'Solarium',
+      'Fire pit',
+      'BBQ area',
+      'Terraces',
+      'Pergolas',
+      'Single-level living',
+    ],
+    rooms: [
+      {
+        level: 'First level',
+        items: [
+          'Main entrance', 'Entrance vestibule', 'Kitchen', 'Laundry area',
+          'Dining room', 'TV room / living room', 'Secondary bedroom',
+          'Shared bathroom', 'Principal bedroom', 'Principal walk-in closet',
+          'Principal bathroom', 'Terraces', 'Jacuzzi', 'BBQ area', 'Solarium',
+          'Fire pit terrace', 'Pool',
+        ],
+      },
+    ],
+    heroImage: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-ambar-hero.webp',
+    plans: [{ label: 'First level', image: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-ambar-plan-1.webp' }],
+    gallery: [
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-ambar-g1.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-ambar-g2.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-ambar-g3.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-ambar-g4.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-ambar-i1.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-ambar-i2.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-ambar-i3.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-ambar-i4.webp',
+    ],
+    seo: {
+      title: 'Villa Ámbar',
+      description:
+        'Two-bedroom single-level villa in Las Terrenas: pale stone, timber and pergolas around a private pool and fire pit terrace.',
+    },
+  },
+
+  {
+    slug: 'remanso',
+    assetSlug: 'carolina',
+    type: 'E',
+    name: 'Villa Remanso',
+    tagline: 'Two levels open to an extraordinary horizon.',
+    description: [
+      'Villa Remanso is a two-level residence designed to make the most of the views towards the horizon, the tropical landscape and the natural surroundings of Las Terrenas, in the Dominican Republic.',
+      'The villa is built on a contemporary tropical architecture that is warm, rustic and natural. Its proposal combines pale stone, timber, sand-toned microcement, open terraces, pergolas, tropical planting and outdoor spaces meant for the Caribbean climate.',
+      'The principal rooms face the landscape. Kitchen, dining room, living room, bedrooms and terraces open outward, holding a constant relationship with natural light, vegetation, the pool and the horizon.',
+    ],
+    units: null,
+    completion: '2027 (TBC)',
+    category: 'Two levels',
+    levels: 2,
+    bedrooms: 3,
+    bathrooms: 3,
+    halfBath: true,
+    livingAreas: 1,
+    serviceQuarters: true,
+    features: [
+      'Private pool',
+      'Jacuzzi',
+      'Solarium',
+      'Fire pit',
+      'BBQ area',
+      'Terraces',
+      'Balconies',
+      'Hillside views',
+    ],
+    rooms: [
+      {
+        level: 'First level',
+        items: [
+          'Main entrance', 'Entrance vestibule', 'Guest powder room', 'Kitchen',
+          'Dining room', 'TV room / living room', 'Guest bedroom',
+          'Guest walk-in closet', 'Guest bathroom', 'Service bathroom',
+          'Service room', 'Laundry area', 'BBQ area', 'Outdoor terrace',
+          'Solarium', 'Fire pit area', 'Pool', 'Jacuzzi', 'Pool terrace',
+        ],
+      },
+      {
+        level: 'Second level',
+        items: [
+          'Main stair', 'Upper vestibule / circulation', 'Principal bedroom',
+          'Principal walk-in closet', 'Principal bathroom', 'Secondary bedroom',
+          'Secondary bedroom bathroom', 'Balconies',
+        ],
+      },
+    ],
+    heroImage: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-hero.webp',
+    plans: [
+      { label: 'First level', image: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-plan-1.webp' },
+      { label: 'Second level', image: 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-plan-2.webp' },
+    ],
+    gallery: [
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-g1.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-g2.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-g3.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-g4.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-i1.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-i2.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-i3.webp',
+      'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-carolina-i4.webp',
+    ],
+    seo: {
+      title: 'Villa Remanso',
+      description:
+        'Three-bedroom, two-level villa in Las Terrenas that follows the slope to open every room to the horizon.',
+    },
+  },
+];
+
+/** Búsqueda por slug para la ruta /villas/[slug]. */
+export function villaBySlug(slug: string): Villa | undefined {
+  return villas.find((v) => v.slug === slug);
+}

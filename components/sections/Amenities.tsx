@@ -120,7 +120,7 @@ export function Amenities() {
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  A coworking space, a club house and boutique hotel, seven restaurants and shops, a gym, a party hall, courts and children’s parks.
+                                  A coworking space, a clubhouse and boutique hotel, seven restaurants and shops, a gym, a party hall, courts and children’s parks.
                                 </h4>
                               </div>
                             </div>
@@ -206,9 +206,9 @@ export function Amenities() {
                   <div className="amm-s_cms_btn-w b-desk">
                     <div className="grid">
                       <div data-scroll-reveal="ctn" className="amm-s_cms_btn">
-                        <div data-modal-cta-btn="book-a-call" data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
+                        <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                           <div data-magnetic-inner="" className="btn-circle_label">
-                            <a hover-nav-item="" aria-label="Book a call now" href="#" className="nav-item w-inline-block">
+                            <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                               <div className="nav-item_label">
                                 <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
                                 <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
@@ -222,7 +222,7 @@ export function Amenities() {
                               <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                             </svg>
                           </div>
-                          <a aria-label="Book a call now" href="#" className="btn-circle_link w-inline-block"></a>
+                          <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                         </div>
                       </div>
                     </div>

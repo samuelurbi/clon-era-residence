@@ -91,7 +91,7 @@ export function SpaceToLive() {
                   <div data-scroll-reveal="ctn" className="interior-s_r_btn">
                     <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                       <div data-magnetic-inner="" className="btn-circle_label">
-                        <a hover-nav-item="" aria-label="Explore the villas" href="/villas" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Explore the villas" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
                               <div hover="text" className="l1">Explore the villas</div>
@@ -109,7 +109,7 @@ export function SpaceToLive() {
                           <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                         </svg>
                       </div>
-                      <a aria-label="Explore the villas" href="/villas" className="btn-circle_link w-inline-block"></a>
+                      <a aria-label="Explore the villas" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                     </div>
                   </div>
                 </div>

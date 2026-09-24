@@ -9,7 +9,9 @@ import { usePageMeta } from '@/shims/page-meta';
 export function ComingSoonPage() {
   usePageMeta({
     title: 'Coming soon',
-    description: 'The next selection of ERA Residence apartments will be released shortly.',
+    description:
+      'Villa availability at Bahía Mar, Las Terrenas, Samaná, is confirmed ' +
+      'directly by our team. Contact us to find out which villas are currently available.',
   });
 
   return <ComingSoonMain />;

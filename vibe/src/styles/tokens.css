@@ -119,6 +119,7 @@
 
   /* special-units */
   --_special-units---100vh: 100vh;
+  --_special-units---100vh: 100dvh;
   --_special-units---offset-r: var(--48px);
   --_special-units---offset-l: var(--48px);
   --_special-units---grid-gap: var(--16px);

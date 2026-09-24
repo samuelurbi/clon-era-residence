@@ -26,6 +26,7 @@ import { initInteractions } from '@/lib/animations/interactions';
 import { initModals } from '@/lib/animations/modals';
 import { initUi } from '@/lib/animations/ui';
 import { initSlider } from '@/lib/animations/slider';
+import { initHeroSlider } from '@/lib/animations/hero-slider';
 import { initAccordion } from '@/lib/animations/accordion';
 import { initLightbox } from '@/lib/animations/lightbox';
 import { initFilters } from '@/lib/animations/filters';
@@ -84,7 +85,7 @@ export function Animations() {
      * coincide con el corte guardado.
      *
      * (Esta espera se añadió sospechando que causaba el salto de líneas de
-     * «Select an Apartment». Se comprobó que NO era eso —lo era la asimetría
+     * «Select a Villa». Se comprobó que NO era eso —lo era la asimetría
      * al partir las dos copias, ver lib/animations/interactions.ts— pero se
      * mantiene porque el problema que evita es real de todos modos.)
      */
@@ -101,6 +102,7 @@ export function Animations() {
           initModals(),
           initUi(),
           initSlider(),
+          initHeroSlider(),
           initAccordion(),
           initLightbox(),
           initFilters(),

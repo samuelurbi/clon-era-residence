@@ -1,6 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 /**
- * GENERADO por scripts/generate-sections.mjs desde home.html — no editar a mano.
+ * Menú a pantalla completa (móvil).
+ *
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre
+ * home.html del sitio original, pero al personalizarlo para Bahía Mar
+ * (isotipo con máscara CSS al pie) pasa a mantenerse a mano. Regenerarlo
+ * con `npm run gen:*` desharía ese trabajo.
  *
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).

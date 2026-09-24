@@ -59,12 +59,12 @@ const GRUPOS = [
    *
    * El corte es por zonas del sitio y es seguro: ningún componente
    * importa a otro de un bloque distinto (comprobado en el grafo — la
-   * única importación entre componentes es ApartmentCard, y se queda
+   * única importación entre componentes es VillaCard, y se queda
    * dentro de su propio bloque).
    */
   { nombre: 'comp-layout', dirs: ['components/layout', 'components/providers'], destino: 'src/components-layout.tsx', alias: '@/components-layout' },
   { nombre: 'comp-home', dirs: ['components/home'], destino: 'src/components-home.tsx', alias: '@/components-home' },
-  { nombre: 'comp-pages', dirs: ['components/apartments', 'components/sections', 'components/pages'], destino: 'src/components-pages.tsx', alias: '@/components-pages' },
+  { nombre: 'comp-pages', dirs: ['components/villas', 'components/sections', 'components/pages'], destino: 'src/components-pages.tsx', alias: '@/components-pages' },
   { nombre: 'pages', dirs: ['pages'], destino: 'src/pages.tsx', alias: '@/pages' },
 ];
 
@@ -76,7 +76,7 @@ const REESCRITURAS = [
   // El orden importa: lo específico antes que lo general.
   [/^@\/components\/(layout|providers)\/.+$/, '@/components-layout'],
   [/^@\/components\/home\/.+$/, '@/components-home'],
-  [/^@\/components\/(apartments|sections|pages)\/.+$/, '@/components-pages'],
+  [/^@\/components\/(villas|sections|pages)\/.+$/, '@/components-pages'],
   [/^@\/pages\/.+$/, '@/pages'],
 ];
 

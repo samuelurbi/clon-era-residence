@@ -11,8 +11,19 @@
  * el aspecto (ver styles/webflow.css y components.css). Sólo cambian
  * textos, src/srcSet/alt y href. Teléfono, correo, redes y dirección de
  * la oficina de ventas son placeholders (ver BRIEF.md): el cliente no ha
- * facilitado ninguno. El horario tampoco se conoce, por eso el pin dice
- * «by appointment» y no unas horas inventadas.
+ * facilitado ninguno. El horario tampoco se conoce, así que el pin sobre
+ * la imagen no inventa horas ni política de visitas: sólo dice «Bahía Mar ·
+ * Las Terrenas, Samaná», que es lo que muestra la foto.
+ *
+ * La imagen del hueco del mapa es la entrada de la casa club («INGRESO CASA
+ * CLUB 08» de 00. AMENIDADES), recortada a la proporción del SVG original
+ * (1440x760). Antes era el pórtico de entrada (bahiamar-entrance-1), pero
+ * ese render es oscuro y la sección sigue siendo `data-bg="light"`: el
+ * sello, el menú y la caja de redes se pintaban en verde profundo sobre
+ * follaje y no se leían (QA ronda 1, PALETTE-BRAND-02). El cromo se fija por
+ * marcadores `data-bg` con geometría propia de Webflow (hero_themes…), que
+ * aquí no existen y no se pueden crear sin clases nuevas, así que la
+ * solución es una imagen de tono claro en la que el verde sí contrasta.
  */
 
 export function ContactMain() {
@@ -58,13 +69,13 @@ export function ContactMain() {
                       <div data-prevent-flicker="" data-scroll-reveal="ctn" role="listitem" className="loc-cms_list_item w-dyn-item">
                         <h3 className="l1 reg a-center">Sales office</h3>
                         <div className="u-4"></div>
-                        <a hover-nav-item="" aria-label="Las Terrenas, Samaná, Dominican Republic (address TBC)" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="Las Terrenas, Samaná (address TBC)" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Las Terrenas, Samaná, Dominican Republic (address TBC)</div>
+                              <div hover="text" className="l1">Las Terrenas, Samaná (address TBC)</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Las Terrenas, Samaná, Dominican Republic (address TBC)</div>
+                              <div hover="text" className="l1">Las Terrenas, Samaná (address TBC)</div>
                             </div>
                           </div>
                         </a>
@@ -101,10 +112,10 @@ export function ContactMain() {
                         </a>
                       </div>
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="Whatsapp" href="https://wa.me/18090000000" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="WhatsApp" href="https://wa.me/18090000000" className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div className="nav-item_label_text"><div hover="text" className="l1">Whatsapp</div></div>
-                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">Whatsapp</div></div>
+                            <div className="nav-item_label_text"><div hover="text" className="l1">WhatsApp</div></div>
+                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">WhatsApp</div></div>
                           </div>
                         </a>
                       </div>
@@ -159,12 +170,12 @@ export function ContactMain() {
                 </div>
                 <div data-parallax="w" data-scroll-reveal="ctn" data-prevent-flicker="" className="contact-s_map">
                   <div data-parallax="img" className="contact-s_map_c">
-                    <img src="/images/bahiamar-entrance-1.webp" loading="eager" sizes="100vw" srcSet="/images/bahiamar-entrance-1-p-500.webp 500w, /images/bahiamar-entrance-1-p-800.webp 800w, /images/bahiamar-entrance-1-p-1080.webp 1080w, /images/bahiamar-entrance-1-p-1600.webp 1600w, /images/bahiamar-entrance-1-p-2000.webp 2000w, /images/bahiamar-entrance-1.webp 2350w" alt="The entrance to Bahía Mar: two stone arches over the access road, a wave sculpture between them and the sea beyond." className="img h-auto" />
+                    <img src="/images/bahiamar-clubhouse-1.webp" loading="eager" sizes="100vw" srcSet="/images/bahiamar-clubhouse-1-p-500.webp 500w, /images/bahiamar-clubhouse-1-p-800.webp 800w, /images/bahiamar-clubhouse-1-p-1080.webp 1080w, /images/bahiamar-clubhouse-1-p-1600.webp 1600w, /images/bahiamar-clubhouse-1-p-2000.webp 2000w, /images/bahiamar-clubhouse-1.webp 2350w" alt="The clubhouse entrance at Bahía Mar: pale stone arcades around a paved forecourt, a planted island of palms and ferns in the middle, and light canopies shaped like leaves opening overhead." className="img h-auto" />
                     <div className="contact-s_map_pin">
                       <div className="contact-s_map_pin_c theme_on-dark">
                         <div className="contact-s_map_pin_info">
-                          <div className="l2"><strong>sales office</strong></div>
-                          <div className="l2 reg">Visits by appointment</div>
+                          <div className="l2"><strong>Bahía Mar</strong></div>
+                          <div className="l2 reg">Las Terrenas, Samaná</div>
                         </div>
                         <div data-modal-close="menu" aria-label="Bahía Mar" className="logo_symbol ico-28">
                           <div className="logo w-embed">
@@ -191,9 +202,9 @@ export function ContactMain() {
                   </div>
                 </div>
                 <div data-prevent-flicker="" data-scroll-reveal="ctn" className="contact-s_btn">
-                  <div data-modal-cta-btn="book-a-call" data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
+                  <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                     <div data-magnetic-inner="" className="btn-circle_label">
-                      <a hover-nav-item="" aria-label="Book a call now" href="#" className="nav-item w-inline-block">
+                      <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                         <div className="nav-item_label">
                           <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
                           <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
@@ -207,7 +218,7 @@ export function ContactMain() {
                         <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                       </svg>
                     </div>
-                    <a aria-label="Book a call now" href="#" className="btn-circle_link w-inline-block"></a>
+                    <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                   </div>
                 </div>
               </div>

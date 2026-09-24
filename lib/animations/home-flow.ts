@@ -83,7 +83,7 @@ function heroFlow(): () => void {
       tl.fromTo(
         heroS,
         { y: 0 },
-        { y: () => -(bg.offsetHeight * 1.25 - window.innerHeight), ease: 'Ease', duration: 0.6 },
+        { y: () => -(bg.offsetHeight * 1.0 - window.innerHeight), ease: 'Ease', duration: 0.6 },
       ).fromTo(
         bg,
         { y: 0 },

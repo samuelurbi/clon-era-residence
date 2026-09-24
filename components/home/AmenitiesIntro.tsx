@@ -24,21 +24,21 @@ export function AmenitiesIntro() {
             <div className="u-48"></div>
             <div className="grid">
               <div className="s_title">
-                <p data-scroll-reveal="p" className="l1 a-center">A place to return to — a life lived outdoors</p>
+                <p data-scroll-reveal="p" className="l1 a-center">Life inside the community</p>
               </div>
             </div>
             <div className="u-160"></div>
             <div className="grid">
               <div className="info-s_lead">
                 <h3 data-scroll-reveal="p" className="h4 a-center">
-                  Five villa typologies on one or two levels, each with its private pool, jacuzzi, solarium and fire pit — and views over the beach, Samaná Bay and Los Haitises.
+                  Every villa is private. Everything around it is shared: a beach to swim from, thermal waters to soak in, trails to walk and places to gather.
                 </h3>
               </div>
             </div>
             <div className="u-160"></div>
             <div className="grid">
               <div className="info-s_desc">
-                <p data-scroll-reveal="p" className="p1 a-center">Around them, a community planned in line with LEED for Cities and Communities: a Beach Club, thermal waters and spa, coworking, forest trails and the first funicular in the Caribbean.</p>
+                <p data-scroll-reveal="p" className="p1 a-center">Beach Club and pools, spa and wellness center, coworking, restaurants and shops, trails and viewpoints — a community planned around slow days and quiet evenings, with all of it within easy reach.</p>
                 <div className="u-32"></div>
                 <div className="s_logo">
                   <div data-scroll-reveal="ctn" className="logo_symbol ico-48">
