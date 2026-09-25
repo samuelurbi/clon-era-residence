@@ -52,15 +52,14 @@ html {
  *
  *  Los .flower son vídeos .webm con canal alfa: en Chrome y
  *  Firefox se ven transparentes (las hojas flotan sobre el
- *  fondo de la sección). Safari no soporta .webm, así que el
- *  <video> no arranca y muestra el póster — que SÍ tiene alfa
- *  (VP8X con flag de transparencia) pero el elemento <video>
- *  pinta un fondo opaco por defecto al no poder decodificar.
+ *  fondo de la sección). Safari reproduce WebM pero IGNORA el
+ *  alfa, así que ahí se sustituyen por un MP4 de «alfa
+ *  apilado» pintado en un <canvas>: ver
+ *  lib/animations/alpha-video.ts, que es el arreglo de verdad.
  *
- *  background: transparent elimina ese fondo opaco; la
- *  imagen del póster (con su alfa) se queda sola y las hojas
- *  se ven igual que en Chrome. Sin esto, en iOS/macOS cada
- *  .flower aparece como un recuadro sólido que tapa el texto.
+ *  Estas reglas se quedan como red: si el vídeo no llega a
+ *  arrancar, el póster (que SÍ tiene alfa) se ve sin el fondo
+ *  opaco que <video> pinta por defecto.
  * -------------------------------------------------------- */
 .flower,
 .flower .video {
@@ -111,10 +110,14 @@ html {
     );
   }
 
-  /* Botón circular más pequeño en móvil */
+  /* Botón circular algo más pequeño en móvil.
+     En vw y no en rem: aquí el rem escala con el ancho (1rem ≈ 3.9px a
+     390px), y los `9.5rem` que se pusieron en GHL dejaban el botón en
+     37px con el texto a 2.6px. 39vw ≈ 152px en un iPhone, que es lo que
+     se buscaba (9.5 × 16px); sin esta regla mediría 165px. */
   .btn-circle {
-    height: 9.5rem !important;
-    width: 9.5rem !important;
+    height: 39vw !important;
+    width: 39vw !important;
     padding: var(--_units---u-16) !important;
   }
 
@@ -124,7 +127,7 @@ html {
   }
 
   .btn-circle_label .l1 {
-    font-size: 0.68rem;
+    font-size: 2.8vw; /* ≈ 11px a 390px; en rem salía a 2.6px */
     letter-spacing: 0.08em;
   }
 

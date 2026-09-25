@@ -337,7 +337,8 @@ function videoPlayPause(): () => void {
   const triggers: ScrollTrigger[] = [];
 
   for (const wrapper of qa<HTMLElement>('[data-video-playpause]')) {
-    const videos = qa<HTMLVideoElement>('.video', wrapper);
+    // `video.video` y no `.video`: el canvas de alpha-video.ts lleva la misma clase.
+    const videos = qa<HTMLVideoElement>('video.video', wrapper);
     if (!videos.length) continue;
 
     for (const video of videos) {
