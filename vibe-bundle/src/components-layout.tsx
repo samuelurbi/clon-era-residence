@@ -10,7 +10,7 @@
  *  bloque, para poder volver atrás sin adivinar.
  */
 
-import { DUR, LENIS_OPTIONS, ScrollTrigger, animateVisibleElements, gsap, initAccordion, initChrome, initFilters, initHeroSlider, initHomeFlow, initImageZoom, initInteractions, initLightbox, initLocalScroll, initMisc, initModals, initParallax, initScrollReveal, initSlider, initTabs, initTabsHilight, initUi, registerLenis, runPreloader } from '@/animations';
+import { DUR, LENIS_OPTIONS, ScrollTrigger, animateVisibleElements, gsap, initAccordion, initAlphaVideo, initChrome, initFilters, initHeroSlider, initHomeFlow, initImageZoom, initInteractions, initLightbox, initLocalScroll, initMisc, initModals, initParallax, initScrollReveal, initSlider, initTabs, initTabsHilight, initUi, registerLenis, runPreloader } from '@/animations';
 import { usePathname, useRouter } from '@/shims';
 import Lenis from 'lenis';
 import { Fragment, useEffect, useRef } from 'react';
@@ -1111,6 +1111,7 @@ export function ScrollRail() {
 
 
 
+
 /**
  * El preloader va una sola vez por CARGA de página, no por montaje del
  * componente. La bandera vive en el módulo, no en un `useRef`, a propósito:
@@ -1172,6 +1173,9 @@ export function Animations() {
           initParallax(document),
           initHomeFlow(),
           initChrome(),
+          // Antes que initInteractions: cambia la fuente de los vídeos
+          // que ésta carga con `load()` (ver alpha-video.ts).
+          initAlphaVideo(),
           initInteractions(),
           initModals(),
           initUi(),

@@ -22,6 +22,7 @@ import { initScrollReveal } from '@/lib/animations/reveal';
 import { initParallax } from '@/lib/animations/parallax';
 import { initHomeFlow } from '@/lib/animations/home-flow';
 import { initChrome } from '@/lib/animations/chrome';
+import { initAlphaVideo } from '@/lib/animations/alpha-video';
 import { initInteractions } from '@/lib/animations/interactions';
 import { initModals } from '@/lib/animations/modals';
 import { initUi } from '@/lib/animations/ui';
@@ -98,6 +99,9 @@ export function Animations() {
           initParallax(document),
           initHomeFlow(),
           initChrome(),
+          // Antes que initInteractions: cambia la fuente de los vídeos
+          // que ésta carga con `load()` (ver alpha-video.ts).
+          initAlphaVideo(),
           initInteractions(),
           initModals(),
           initUi(),

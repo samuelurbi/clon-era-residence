@@ -276,10 +276,17 @@ for (const grupo of GRUPOS) {
   }
   if (!archivos.length) continue;
 
-  /* Orden topológico por imports relativos: si A importa de B, B va
-     antes. Importa para los `const` que se evalúan al cargar el módulo
-     (las funciones se elevan solas, pero las constantes no). */
+  /* Orden topológico por imports dentro del grupo: si A importa de B, B
+     va antes. Importa para los `const` que se evalúan al cargar el módulo
+     (las funciones se elevan solas, pero las constantes no).
+
+     Cuentan los relativos (`./x`) Y los de alias (`@/data/villas`). Solo
+     con los relativos, `villa-cards` (que hace `villas.map(…)` al cargar)
+     caía antes que `villas` por orden alfabético, y el bundle petaba al
+     arrancar con «Cannot access … before initialization». En GHL se había
+     reordenado a mano; repegar data.ts lo habría roto. */
   const porNombre = new Map(archivos.map((f) => [basename(f).replace(/\.tsx?$/, ''), f]));
+  const porAlias = new Map(archivos.map((f) => ['@/' + relative(SRC, f).split('\\').join('/').replace(/\.tsx?$/, ''), f]));
   const deps = new Map();
   for (const f of archivos) {
     const txt = readFileSync(f, 'utf8');
@@ -287,6 +294,10 @@ for (const grupo of GRUPOS) {
     for (const m of txt.matchAll(/from '\.\/([^']+)'/g)) {
       const objetivo = porNombre.get(m[1].replace(/\.tsx?$/, ''));
       if (objetivo) d.add(objetivo);
+    }
+    for (const m of txt.matchAll(/from '(@\/[^']+)'/g)) {
+      const objetivo = porAlias.get(m[1].replace(/\.tsx?$/, ''));
+      if (objetivo && objetivo !== f) d.add(objetivo);
     }
     deps.set(f, d);
   }
@@ -424,23 +435,22 @@ for (const grupo of GRUPOS) {
 /*
  * `globals.css` es una lista de @import y el ORDEN es el contrato del
  * port (webflow -> lenis -> tokens -> components -> theme). Se inlinea
- * en ese mismo orden. El @import de lenis se queda como import real y
- * ARRIBA DEL TODO, porque CSS exige que los @import precedan a
- * cualquier regla; si queda en medio, el navegador lo descarta en
- * silencio y se pierde el CSS del scroll suave.
+ * en ese mismo orden, INCLUIDO el CSS de paquetes (lenis): se lee de
+ * node_modules y va en su sitio de la cascada.
+ *
+ * Antes el de lenis se dejaba como `@import "lenis/dist/lenis.css"`, y
+ * en GHL alguien lo acabó sustituyendo a mano por las reglas pegadas
+ * (2026-09-24): un @import de paquete dentro de un .css pegado en Vibe
+ * no es fiable. Inlineado, repegar site.css ya no lo deshace.
  */
 const globals = readFileSync(join(SRC, 'styles', 'globals.css'), 'utf8');
 const orden = [...globals.matchAll(/@import\s+"([^"]+)"/g)].map((m) => m[1]);
 
-const cssExternos = [];
 const cssPartes = [];
 for (const ref of orden) {
-  if (ref.startsWith('./')) {
-    const f = join(SRC, 'styles', ref.slice(2));
-    cssPartes.push(`/* ${'='.repeat(56)}\n   ${ref.slice(2)}\n   ${'='.repeat(56)} */\n\n${readFileSync(f, 'utf8')}`);
-  } else {
-    cssExternos.push(ref);
-  }
+  const f = ref.startsWith('./') ? join(SRC, 'styles', ref.slice(2)) : join(ROOT, 'node_modules', ref);
+  const nombre = ref.startsWith('./') ? ref.slice(2) : ref;
+  cssPartes.push(`/* ${'='.repeat(56)}\n   ${nombre}\n   ${'='.repeat(56)} */\n\n${readFileSync(f, 'utf8')}`);
 }
 // Lo que globals.css trae DESPUÉS de los @import (ajustes propios del port).
 cssPartes.push(`/* ${'='.repeat(56)}\n   ajustes propios (de globals.css)\n   ${'='.repeat(56)} */\n\n${globals.replace(/@import\s+"[^"]+";\s*/g, '')}`);
@@ -453,8 +463,6 @@ const css = [
   ' *  webflow -> lenis -> tokens -> components -> theme. NO reordenar:',
   ' *  cada capa está escrita para pisar a la anterior.',
   ' */',
-  '',
-  ...cssExternos.map((e) => `@import "${e}";`),
   '',
   cssPartes.join('\n\n'),
 ].join('\n');
