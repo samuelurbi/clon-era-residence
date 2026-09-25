@@ -91,12 +91,13 @@ html {
 
 /* Hero en móvil: la villa se ve más lejos / proporcionada, fondo con más cielo bajo el titular */
 @media screen and (max-width: 767px) {
-  /* Escala y posición del render de fondo en móvil */
+  /* Posición del render de fondo en móvil.
+     Sin `transform: scale(0.9)`: se puso para que la villa se viera más
+     lejos, pero escala la CAJA, no la foto dentro de ella: dejaba un marco
+     verde arriba y a los lados y la villa igual de recortada. */
   .hero-w_bg_master_img_day .hero-img {
     object-fit: cover;
     object-position: center 85%;
-    transform: scale(0.9);
-    transform-origin: center bottom;
   }
 
   /* Degradado superior más profundo para que el titular blanco contraste nítido sobre el cielo */
