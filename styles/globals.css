@@ -77,6 +77,16 @@ html {
   }
 }
 
+/* Una palabra partida en letras no se corta nunca por dentro.
+   SplitText envuelve cada letra en un inline-block, y entre dos
+   inline-blocks el navegador puede saltar de línea. En Safari, que mide
+   Italiana/Archivo con más decimales, «MENU» del header perdía la U y
+   «Peninsula» del preloader la última a. Las palabras siguen pudiendo
+   pasar de línea entre ellas; solo se prohíbe romperlas. */
+.split-word {
+  white-space: nowrap;
+}
+
 /* Preloader logo: Bahía Mar en una sola línea */
 .preloader_logo_title {
   white-space: nowrap;
