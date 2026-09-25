@@ -129,6 +129,12 @@ function mount(video: HTMLVideoElement, stackedSrc: string): (() => void) | null
   // Fuente nueva: se guardan las originales para devolverlas al desmontar.
   const originales = [...video.querySelectorAll('source')];
   for (const s of originales) s.remove();
+  /* En Vibe el vídeo viene de OTRO dominio (el host de assets): sin CORS,
+     WebGL no puede leer sus fotogramas (`texImage2D` lanza SecurityError).
+     El host ya manda `Access-Control-Allow-Origin: *` (su .htaccess); falta
+     pedirlo en modo CORS, y tiene que ser antes del `load()`. */
+  const crossOrigin = video.getAttribute('crossorigin');
+  video.crossOrigin = 'anonymous';
   const source = document.createElement('source');
   source.src = stackedSrc;
   source.type = 'video/mp4';
@@ -161,6 +167,8 @@ function mount(video: HTMLVideoElement, stackedSrc: string): (() => void) | null
     source.remove();
     video.append(...originales);
     if (poster) video.setAttribute('poster', poster);
+    if (crossOrigin === null) video.removeAttribute('crossorigin');
+    else video.setAttribute('crossorigin', crossOrigin);
     if (estilo === null) video.removeAttribute('style');
     else video.setAttribute('style', estilo);
     gl.getExtension('WEBGL_lose_context')?.loseContext();
