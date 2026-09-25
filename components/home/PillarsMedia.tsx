@@ -8,6 +8,11 @@
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
  * Las URLs del CDN ya están reescritas a /public.
+ *
+ * La foto es `bahiamar-quote-1-cutout`: la misma villa sin cielo ni las
+ * palmeras de arriba a la izquierda, con fondo transparente para que asome
+ * el beige de la sección (pedido del cliente, 25-09-2026). Se genera con
+ * scripts/recorte-quote-1.py; el original sigue en bahiamar-quote-1.
  */
 
 export function PillarsMedia() {
@@ -49,7 +54,7 @@ export function PillarsMedia() {
             <div className="img-w h-auto quote-w_bg_img">
               <div className="img-over-grad from-bot bot _4x b-desk"></div>
               <div className="img-over-grad from-bot bot _4x b-desk"></div>
-              <img className="img h-auto quote-w_bg_img" src="/images/bahiamar-quote-1.webp" alt="Two-level Villa Horizonte with timber cladding over a stone base, its private pool and terrace among the palms, the sea behind." sizes="(max-width: 2350px) 100vw, 2350px" data-parallax="img-out" loading="eager" srcSet="/images/bahiamar-quote-1-p-500.webp 500w, /images/bahiamar-quote-1-p-800.webp 800w, /images/bahiamar-quote-1-p-1080.webp 1080w, /images/bahiamar-quote-1-p-1600.webp 1600w, /images/bahiamar-quote-1-p-2000.webp 2000w, /images/bahiamar-quote-1.webp 2350w" />
+              <img className="img h-auto quote-w_bg_img" src="/images/bahiamar-quote-1-cutout.webp" alt="Two-level Villa Horizonte with timber cladding over a stone base, its private pool and terrace among the palms, the sea behind." sizes="(max-width: 2350px) 100vw, 2350px" data-parallax="img-out" loading="eager" srcSet="/images/bahiamar-quote-1-cutout-p-500.webp 500w, /images/bahiamar-quote-1-cutout-p-800.webp 800w, /images/bahiamar-quote-1-cutout-p-1080.webp 1080w, /images/bahiamar-quote-1-cutout-p-1600.webp 1600w, /images/bahiamar-quote-1-cutout-p-2000.webp 2000w, /images/bahiamar-quote-1-cutout.webp 2350w" />
             </div>
           </div>
           <div className="w_themes">
