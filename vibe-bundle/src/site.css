@@ -1830,14 +1830,12 @@ html {
     letter-spacing: 0.08em;
   }
 
-  /* Pestañas de villas del hero: sin blur, sólo sombra de texto para contraste */
+  /* Pestañas de villas del hero: sin blur, sólo sombra de texto para contraste.
+     La opacidad es la de escritorio (0.45 / 1, theme.css): con las inactivas
+     al 0.8 que se puso en GHL no se distinguía cuál es la villa en pantalla.
+     La sombra es lo que las mantiene legibles sobre el render. */
   .hero-s_tabs .nav-item {
-    opacity: 0.8;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
-  }
-
-  .hero-s_tabs .nav-item.is-active {
-    opacity: 1;
   }
 
   /* Botón circular del hero: visible y clicable sobre el render */
