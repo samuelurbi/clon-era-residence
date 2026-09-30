@@ -1,5 +1,5 @@
 /* ============================================================
- *  COMP-LAYOUT — 13 módulos del repo en un solo archivo.
+ *  COMP-LAYOUT — 15 módulos del repo en un solo archivo.
  *
  *  GENERADO por scripts/vibe-bundle.mjs — no editar aquí.
  *  Se agrupa porque en GoHighLevel Vibe cada archivo nuevo hay que
@@ -10,10 +10,11 @@
  *  bloque, para poder volver atrás sin adivinar.
  */
 
-import { DUR, LENIS_OPTIONS, ScrollTrigger, animateVisibleElements, gsap, initAccordion, initAlphaVideo, initChrome, initFilters, initHeroSlider, initHomeFlow, initImageZoom, initInteractions, initLightbox, initLocalScroll, initMisc, initModals, initParallax, initScrollReveal, initSlider, initTabs, initTabsHilight, initUi, registerLenis, runPreloader } from '@/animations';
+import { DUR, LANGS, LENIS_OPTIONS, ScrollTrigger, animateVisibleElements, gsap, initAccordion, initAlphaVideo, initChrome, initFilters, initHeroSlider, initHomeFlow, initImageZoom, initInteractions, initLightbox, initLocalScroll, initMisc, initModals, initParallax, initScrollReveal, initSlider, initTabs, initTabsHilight, initUi, langFromPath, localize, pick, registerLenis, runPreloader, stripLang, type Lang, useLang } from '@/animations';
+import { Crumb } from '@/data';
 import { usePathname, useRouter } from '@/shims';
 import Lenis from 'lenis';
-import { Fragment, useEffect, useRef } from 'react';
+import { Fragment, type ReactNode, useEffect, useRef, useState } from 'react';
 
 /* ============================================================
    components/layout/BookCallModal.tsx
@@ -21,6 +22,7 @@ import { Fragment, useEffect, useRef } from 'react';
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Modal «Book a call». Marcado portado del sitio original conservando las
@@ -32,11 +34,53 @@ import { Fragment, useEffect, useRef } from 'react';
  * Mar pasa a mantenerse a mano. Regenerarlo devolvería el isotipo, el sello
  * y el PDF legal de Estepona.
  *
- * Pendiente (ver BACKLOG.md): la política de privacidad de Bahía Mar aún
- * no existe; el enlace del formulario apunta a «#» hasta que llegue.
+ * El aviso del formulario enlaza a la política de privacidad de /legal
+ * (#privacy) en el idioma de la página. Textos en inglés y español según
+ * la URL (lib/use-lang.ts).
  */
 
+
+
+const T__BookCallModal = {
+  en: {
+    close: 'Label',
+    title: 'Book a call',
+    logo: 'Bahía Mar logo',
+    desc: 'Leave your details and the sales team will get back to you.',
+    name: 'Name:',
+    email: 'Email:',
+    phone: 'Phone:',
+    message: 'Message:',
+    agree: 'By submitting, you agree to our\u00a0',
+    privacy: 'Privacy policy',
+    submit: 'Submit',
+    received: 'We’ve received your request',
+    thanks: 'Thank you',
+    reply: 'Our sales team will review your message and respond personally.',
+    error: 'Oops! Something went wrong while submitting the form.',
+  },
+  es: {
+    close: 'Cerrar',
+    title: 'Agende una llamada',
+    logo: 'Logotipo de Bahía Mar',
+    desc: 'Déjenos sus datos y el equipo de ventas se pondrá en contacto con usted.',
+    name: 'Nombre:',
+    email: 'Correo electrónico:',
+    phone: 'Teléfono:',
+    message: 'Mensaje:',
+    agree: 'Al enviar este formulario, acepta nuestra\u00a0',
+    privacy: 'Política de privacidad',
+    submit: 'Enviar',
+    received: 'Hemos recibido su solicitud',
+    thanks: 'Gracias',
+    reply: 'Nuestro equipo de ventas revisará su mensaje y le responderá personalmente.',
+    error: 'Lo sentimos, algo salió mal al enviar el formulario.',
+  },
+};
+
 export function BookCallModal() {
+  const lang = useLang();
+  const t = T__BookCallModal[lang];
   return (
     <div data-modal-cta="book-a-call" className="modal">
       <div className="modal_c">
@@ -45,7 +89,7 @@ export function BookCallModal() {
             <div data-lenis-scroll="" data-modal-container="" className="modal_cta_c">
               <div className="modal_cta_close">
                 <div data-modal-close="" hover-btn="" className="btn-ico">
-                  <a aria-label="Label" href="#" className="btn-ico_link w-inline-block"></a>
+                  <a aria-label={t.close} href="#" className="btn-ico_link w-inline-block"></a>
                   <div hover="ico" className="btn_ico">
                     <div className="ico-16">
                       <div className="ico w-embed">
@@ -63,14 +107,14 @@ export function BookCallModal() {
                   <div className="modal_cta_l">
                     <div className="modal_cta_l_t">
                       <div className="modal_cta_a">
-                        <h1 className="a2 b-desk">Book a call</h1>
-                        <div className="a1 b-mob">Book a call</div>
+                        <h1 className="a2 b-desk">{t.title}</h1>
+                        <div className="a1 b-mob">{t.title}</div>
                       </div>
                       <div className="u-24"></div>
                     </div>
                     <div className="modal_cta_l_b">
                       <div className="modal_cta_desc">
-                        <div data-modal-close="menu" aria-label="Bahía Mar logo" className="logo_symbol ico-48 b-mob">
+                        <div data-modal-close="menu" aria-label={t.logo} className="logo_symbol ico-48 b-mob">
                           <div className="logo w-embed">
                             <div
                 aria-hidden="true"
@@ -92,7 +136,7 @@ export function BookCallModal() {
                         </div>
                         <div className="u-32 b-mob"></div>
                         <p className="l1 mob_a-center">
-                          Leave your details and the sales team will get back to you.
+                          {t.desc}
                         </p>
                       </div>
                     </div>
@@ -100,7 +144,7 @@ export function BookCallModal() {
                   <div className="modal_cta_c_c">
                     <div className="modal_cta_c_line"><div data-scroll-reveal="line" className="line-v"></div></div>
                     <div className="modal_cta_c_logo">
-                      <div data-modal-close="menu" aria-label="Bahía Mar logo" className="logo_symbol header">
+                      <div data-modal-close="menu" aria-label={t.logo} className="logo_symbol header">
                         <div className="logo w-embed">
                           <div
                 aria-hidden="true"
@@ -181,20 +225,20 @@ export function BookCallModal() {
                       <div className="form_block_list">
                         <input className="d-none w-input" maxLength={256} name="title" data-name="title" placeholder="" type="text" id="title" />
                         <div className="input">
-                          <div className="input_label"><label htmlFor="name" className="l1 reg">Name:</label></div>
+                          <div className="input_label"><label htmlFor="name" className="l1 reg">{t.name}</label></div>
                           <input className="input_field l1 w-input" autoComplete="name" maxLength={256} name="name" data-name="name" placeholder="" type="text" id="name" required />
                         </div>
                         <div className="input">
-                          <div className="input_label"><label htmlFor="email" className="l1 reg">Email:</label></div>
+                          <div className="input_label"><label htmlFor="email" className="l1 reg">{t.email}</label></div>
                           <input className="input_field l1 w-input" autoComplete="email" maxLength={256} name="email" data-name="email" placeholder="" type="email" id="email" required />
                         </div>
                         <div className="input">
-                          <div className="input_label"><label htmlFor="phone" className="l1 reg">Phone:</label></div>
+                          <div className="input_label"><label htmlFor="phone" className="l1 reg">{t.phone}</label></div>
                           <input className="input_field l1 w-input" autoComplete="phone" maxLength={256} name="phone" data-name="phone" placeholder="" type="tel" id="phone" required />
                         </div>
                         <div className="input">
                           <div className="input_label">
-                            <label htmlFor="message" className="l1 reg">Message:</label>
+                            <label htmlFor="message" className="l1 reg">{t.message}</label>
                           </div>
                           <textarea id="message" name="message" maxLength={5000} data-name="message" placeholder="" className="input_field area l1 w-input"></textarea>
                         </div>
@@ -208,20 +252,20 @@ export function BookCallModal() {
                       </div>
                       <div className="form_block_b">
                         <div className="form_block_legal">
-                          <div className="p2 inline">By submitting, you agree to our&nbsp;</div>
+                          <div className="p2 inline">{t.agree}</div>
                           <div data-text="p" className="legal-cms inline w-dyn-list">
                             <div data-comma-list="" role="list" className="legal-cms_list inline w-dyn-items">
                               <div role="listitem" className="legal-cms_list_item inline w-dyn-item">
-                                <a href="#" className="text-link inline w-inline-block"><div className="p2 inline">Privacy policy</div></a>
+                                <a href={localize('/legal', lang) + '#privacy'} className="text-link inline w-inline-block"><div className="p2 inline">{t.privacy}</div></a>
                                 <div data-comma="" className="p2 inline">,</div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <a data-form-btn="" hover-btn="" hover-nav-item="" aria-label="Submit" data-wf--btn--variant="sec" href="#" className="btn w-inline-block">
+                        <a data-form-btn="" hover-btn="" hover-nav-item="" aria-label={t.submit} data-wf--btn--variant="sec" href="#" className="btn w-inline-block">
                           <div className="btn_label">
-                            <div className="btn_label_text"><div hover="text" className="l1">Submit</div></div>
-                            <div className="btn_label_text is-2"><div hover="text" className="l1">Submit</div></div>
+                            <div className="btn_label_text"><div hover="text" className="l1">{t.submit}</div></div>
+                            <div className="btn_label_text is-2"><div hover="text" className="l1">{t.submit}</div></div>
                           </div>
                           <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                         </a>
@@ -232,10 +276,10 @@ export function BookCallModal() {
                 <div className="form_success w-form-done">
                   <div className="form_success_c">
                     <div className="form_success_title">
-                      <p className="l1 a-center">We’ve received your request</p>
+                      <p className="l1 a-center">{t.received}</p>
                       <div className="u-160 b-mob"></div>
                     </div>
-                    <div className="form_success_a"><p className="a2 a-center">Thank you</p></div>
+                    <div className="form_success_a"><p className="a2 a-center">{t.thanks}</p></div>
                     <div className="form_success_social">
                       <div className="u-96 b-mob"></div>
                       <div className="social-cms w-dyn-list">
@@ -282,13 +326,13 @@ export function BookCallModal() {
                     <div className="form_success_desc">
                       <div className="u-48 b-mob"></div>
                       <p className="p1 a-center">
-                        Our sales team will review your message and respond personally.
+                        {t.reply}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="form_error theme_on-dark w-form-fail">
-                  <div className="l1 a-center">Oops! Something went wrong while submitting the form.</div>
+                  <div className="l1 a-center">{t.error}</div>
                 </div>
               </div>
             </div>
@@ -306,40 +350,48 @@ export function BookCallModal() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 
+
+
+
 /**
- * GENERADO por scripts/generate-header.mjs — no editar a mano.
  * Rastro de migas de las páginas interiores. Sustituye a la barra de
  * progreso de la home en el mismo hueco de la cabecera.
+ *
+ * YA NO ESTÁ GENERADO: nació de scripts/generate-header.mjs, pero con los
+ * dos idiomas pasa a mantenerse a mano. Es cliente para leer el idioma de
+ * la URL: las páginas son las mismas en inglés y en español, así que les
+ * pasan los rótulos en los dos y aquí se elige. Los `href` se escriben en
+ * inglés (`/villas`) y se localizan aquí.
  *
  * El rótulo va DUPLICADO en el marcado a propósito: el intercambio al
  * pasar el cursor necesita dos copias (ver navItemHover en
  * lib/animations/interactions.ts).
  */
 
-export interface Crumb {
-  label: string;
-  /** Sin href, la miga es la página actual y no enlaza a ningún sitio. */
-  href?: string;
-}
-
 export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
+  const lang = useLang();
+
   return (
     <div data-theme="" className="header-cramps">
-      {trail.map((crumb, i) => (
-        <Fragment key={crumb.label}>
+      {trail.map((crumb, i) => {
+        const label = typeof crumb.label === 'string' ? crumb.label : crumb.label[lang];
+        return (
+        <Fragment key={label}>
           {i > 0 && (
         <div className="l2 text-disabled">/</div>
           )}
-        <a hover-tab="" aria-label={crumb.label} hover-nav-item-l2="" data-crumb-item="" href={crumb.href ?? "#"} className="nav-item w-inline-block">
+        <a hover-tab="" aria-label={label} hover-nav-item-l2="" data-crumb-item="" href={crumb.href ? localize(crumb.href, lang) : "#"} className="nav-item w-inline-block">
           <div className="nav-item_label">
-            <div hover="text" className="nav-item_label_text"><div className="l2">{crumb.label}</div></div>
-            <div hover="text" className="nav-item_label_text is-2"><div className="l2">{crumb.label}</div></div>
+            <div hover="text" className="nav-item_label_text"><div className="l2">{label}</div></div>
+            <div hover="text" className="nav-item_label_text is-2"><div className="l2">{label}</div></div>
           </div>
         </a>
         </Fragment>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -375,6 +427,7 @@ export function CookieNotice() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -389,18 +442,42 @@ export function CookieNotice() {
  * Los tres textos salen de los hechos del brief (materiales, terrazas,
  * villas independientes); los atributos `floating-tip="…"` son los ids
  * que disparan los pines del hero (Hero.tsx) y NO se cambian.
+ *
+ * Textos en inglés y español según la URL (lib/use-lang.ts).
  */
 
+
+const T__FloatingTips = {
+  en: {
+    endureTitle: 'Crafted to Endure',
+    endure: 'Bamboo floors, chukum wall finishes, stone and natural timber, with solar panels on every villa — materials chosen to belong to the landscape and settle into it over time.',
+    lightTitle: 'Light & Flow',
+    light: 'Terraces, solariums, pergola-shaded porches and wide openings draw in the light and let the day flow from inside to out.',
+    sanctuaryTitle: 'Your Private Sanctuary',
+    sanctuary: 'Every villa stands apart, with its own pool, jacuzzi, fire pit and terraces set into the vegetation — closer to a private home in the hills than a room in a resort.',
+  },
+  es: {
+    endureTitle: 'Hecho para perdurar',
+    endure: 'Pisos de bambú, muros con acabado de chukum, piedra y madera natural, y paneles solares en cada villa: materiales elegidos para pertenecer al paisaje y asentarse en él con el paso del tiempo.',
+    lightTitle: 'Luz y fluidez',
+    light: 'Terrazas, soláriums, porches a la sombra de pérgolas y amplias aberturas dejan entrar la luz y hacen que el día fluya del interior al exterior.',
+    sanctuaryTitle: 'Su refugio privado',
+    sanctuary: 'Cada villa se levanta por sí sola, con su propia piscina, jacuzzi, fogatero y terrazas integradas en la vegetación: más cerca de una casa privada en las colinas que de una habitación de resort.',
+  },
+};
+
 export function FloatingTips() {
+  const lang = useLang();
+  const t = T__FloatingTips[lang];
   return (
     <div className="floating-tips w-dyn-list">
       <div role="list" className="floating-tips_list w-dyn-items">
         <div floating-tip="crafted-to-endure" role="listitem" className="floating-tip w-dyn-item">
           <div className="floating-tip-card">
-            <div className="floating-tip-card_t"><h1 className="h5">Crafted to Endure</h1></div>
+            <div className="floating-tip-card_t"><h1 className="h5">{t.endureTitle}</h1></div>
             <div className="floating-tip-card_b">
               <p className="p1">
-                Bamboo floors, chukum wall finishes, stone and natural timber, with solar panels on every villa — materials chosen to belong to the landscape and settle into it over time.
+                {t.endure}
               </p>
             </div>
             <div className="card_decor">
@@ -451,10 +528,10 @@ export function FloatingTips() {
         </div>
         <div floating-tip="light-flow" role="listitem" className="floating-tip w-dyn-item">
           <div className="floating-tip-card">
-            <div className="floating-tip-card_t"><h1 className="h5">Light & Flow</h1></div>
+            <div className="floating-tip-card_t"><h1 className="h5">{t.lightTitle}</h1></div>
             <div className="floating-tip-card_b">
               <p className="p1">
-                Terraces, solariums, pergola-shaded porches and wide openings draw in the light and let the day flow from inside to out.
+                {t.light}
               </p>
             </div>
             <div className="card_decor">
@@ -505,10 +582,10 @@ export function FloatingTips() {
         </div>
         <div floating-tip="your-private-sanctuary" role="listitem" className="floating-tip w-dyn-item">
           <div className="floating-tip-card">
-            <div className="floating-tip-card_t"><h1 className="h5">Your Private Sanctuary</h1></div>
+            <div className="floating-tip-card_t"><h1 className="h5">{t.sanctuaryTitle}</h1></div>
             <div className="floating-tip-card_b">
               <p className="p1">
-                Every villa stands apart, with its own pool, jacuzzi, fire pit and terraces set into the vegetation — closer to a private home in the hills than a room in a resort.
+                {t.sanctuary}
               </p>
             </div>
             <div className="card_decor">
@@ -581,18 +658,49 @@ export function FloatingTips() {
  * móvil) pasa a mantenerse a mano. Regenerarlo con `npm run gen:*`
  * desharía ese trabajo.
  *
- * Es cliente sólo para saber en qué ruta estamos: el logo enlaza a
- * «volver arriba» en la home y a «Home» en el resto.
+ * Es cliente para saber en qué ruta estamos: el logo enlaza a «volver
+ * arriba» en la home (`/` o `/es`) y a la home del idioma en el resto. El
+ * idioma sale de la misma ruta (lib/use-lang.ts).
  */
 
 
+
+
+const T__Header = {
+  en: {
+    toTop: 'Back to top',
+    home: 'Home',
+    logo: 'Bahía Mar logo',
+    menu: 'Menu',
+    close: 'Close',
+    selectLabel: 'Select  a Villa',
+    select: ['Select', 'a Villa'],
+    book: 'Book a call',
+    contact: 'Contact',
+  },
+  es: {
+    toTop: 'Volver arriba',
+    home: 'Inicio',
+    logo: 'Logotipo de Bahía Mar',
+    menu: 'Menú',
+    close: 'Cerrar',
+    selectLabel: 'Elija su villa',
+    select: ['Elija', 'su villa'],
+    book: 'Agende una llamada',
+    contact: 'Contacto',
+  },
+};
+
 export function Header() {
-  const isHome = usePathname() === '/';
+  const pathname = usePathname() || '/';
+  const lang = useLang();
+  const t = T__Header[lang];
+  const isHome = stripLang(pathname) === '/';
 
   return (
     <div className="theme_on-color">
-      <a aria-label={isHome ? "Back to top" : "Home"} data-theme="" href={isHome ? "#hero" : "/"} className="header-logo w-inline-block">
-        <div data-modal-close="menu" aria-label="Bahía Mar logo" className="logo_symbol header">
+      <a aria-label={isHome ? t.toTop : t.home} data-theme="" href={isHome ? "#hero" : localize('/', lang)} className="header-logo w-inline-block">
+        <div data-modal-close="menu" aria-label={t.logo} className="logo_symbol header">
           <div className="logo w-embed">
             <div
                 aria-hidden="true"
@@ -669,18 +777,18 @@ export function Header() {
         <div className="header-nav_list f-mob">
           <div hover-nav-item-l2-trigger="" data-modal-menu-btn="mob" className="btn-menu">
             <div className="btn-menu_label is-active">
-              <a hover-nav-item-l2="" aria-label="Menu" href="#" className="nav-item w-inline-block">
+              <a hover-nav-item-l2="" aria-label={t.menu} href="#" className="nav-item w-inline-block">
                 <div className="nav-item_label">
-                  <div hover="text" className="nav-item_label_text"><div className="l2">Menu</div></div>
-                  <div hover="text" className="nav-item_label_text is-2"><div className="l2">Menu</div></div>
+                  <div hover="text" className="nav-item_label_text"><div className="l2">{t.menu}</div></div>
+                  <div hover="text" className="nav-item_label_text is-2"><div className="l2">{t.menu}</div></div>
                 </div>
               </a>
             </div>
             <div className="btn-menu_label">
-              <a hover-nav-item-l2="" aria-label="Close" href="#" className="nav-item w-inline-block">
+              <a hover-nav-item-l2="" aria-label={t.close} href="#" className="nav-item w-inline-block">
                 <div className="nav-item_label">
-                  <div hover="text" className="nav-item_label_text"><div className="l2">Close</div></div>
-                  <div hover="text" className="nav-item_label_text is-2"><div className="l2">Close</div></div>
+                  <div hover="text" className="nav-item_label_text"><div className="l2">{t.close}</div></div>
+                  <div hover="text" className="nav-item_label_text is-2"><div className="l2">{t.close}</div></div>
                 </div>
               </a>
             </div>
@@ -705,36 +813,36 @@ export function Header() {
           </div>
         </div>
         <div className="header-nav_list f-desk">
-          <a hover-link="" aria-label="Select  a Villa" href="/villas" className="link w-inline-block">
+          <a hover-link="" aria-label={t.selectLabel} href={localize('/villas', lang)} className="link w-inline-block">
             <div className="link_label">
               <div className="link_label_text">
                 <div hover="text" className="h6">
-                  Select 
+                  {t.select[0]}
                   <br />
-                  a Villa
+                  {t.select[1]}
                 </div>
               </div>
               <div className="link_label_text is-2">
                 <div hover="text" className="h6">
-                  Select 
+                  {t.select[0]}
                   <br />
-                  a Villa
+                  {t.select[1]}
                 </div>
               </div>
             </div>
           </a>
           <div className="u-24"></div>
-          <a data-modal-cta-btn="book-a-call" aria-label="Book a call" hover-nav-item-l2="" href="#" className="nav-item w-inline-block">
+          <a data-modal-cta-btn="book-a-call" aria-label={t.book} hover-nav-item-l2="" href="#" className="nav-item w-inline-block">
             <div className="nav-item_label">
-              <div hover="text" className="nav-item_label_text"><div className="l2">Book a call</div></div>
-              <div hover="text" className="nav-item_label_text is-2"><div className="l2">Book a call</div></div>
+              <div hover="text" className="nav-item_label_text"><div className="l2">{t.book}</div></div>
+              <div hover="text" className="nav-item_label_text is-2"><div className="l2">{t.book}</div></div>
             </div>
           </a>
           <div className="u-4"></div>
-          <a hover-nav-item-l2="" aria-label="Contact" href="/contact" className="nav-item w-inline-block">
+          <a hover-nav-item-l2="" aria-label={t.contact} href={localize('/contact', lang)} className="nav-item w-inline-block">
             <div className="nav-item_label">
-              <div hover="text" className="nav-item_label_text"><div className="l2">Contact</div></div>
-              <div hover="text" className="nav-item_label_text is-2"><div className="l2">Contact</div></div>
+              <div hover="text" className="nav-item_label_text"><div className="l2">{t.contact}</div></div>
+              <div hover="text" className="nav-item_label_text is-2"><div className="l2">{t.contact}</div></div>
             </div>
           </a>
         </div>
@@ -770,6 +878,121 @@ export function LandscapeCover() {
 }
 
 /* ============================================================
+   components/layout/LangSwitcher.tsx
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
+/**
+ * Selector de idioma, fijo abajo a la derecha en todas las páginas.
+ *
+ * Aspecto de interruptor: una pastilla con los dos idiomas y un «pulgar»
+ * (`.lang-switch_thumb`) que marca el activo y se desliza al otro al pulsar.
+ *
+ * Por dentro siguen siendo enlaces normales (`/villas` ↔ `/es/villas`):
+ * cambiar de idioma es navegar (ver lib/i18n.ts). Así lo intercepta
+ * PageTransitions como cualquier otro enlace —misma salida animada— y la
+ * capa de animación se reinicia sobre el texto nuevo.
+ *
+ * El pulgar se mueve EN EL CLIC, no al terminar la navegación: la salida
+ * animada tarda casi un segundo y un interruptor que responde tarde parece
+ * roto. Se guarda el idioma pulsado junto con la ruta desde la que se
+ * pulsó; en cuanto la ruta cambia, esa marca deja de aplicar sola y manda
+ * la URL. Sin efectos ni estados que limpiar.
+ *
+ * Este componente vive FUERA de LangKeyed, así que no se remonta al
+ * cambiar de idioma: por eso la transición CSS del pulgar llega a verse.
+ *
+ * Se conservan la query y el ancla: en el listado de villas los filtros
+ * viven en la query y no se pierden al cambiar de idioma.
+ *
+ * Capa: la de la cabecera (1200 en webflow.css). Por debajo de los modales
+ * (5000) y del preloader (11000), que deben taparlo.
+ */
+
+
+
+
+const LABEL: Record<Lang, { short: string; name: string }> = {
+  en: { short: 'EN', name: 'English' },
+  es: { short: 'ES', name: 'Español' },
+};
+
+export function LangSwitcher() {
+  const pathname = usePathname() || '/';
+  const current = langFromPath(pathname);
+  const base = stripLang(pathname);
+
+  /* Idioma pulsado y desde qué ruta: vale solo mientras no cambie la ruta. */
+  const [pressed, setPressed] = useState<{ lang: Lang; from: string } | null>(null);
+  const shown = pressed && pressed.from === pathname ? pressed.lang : current;
+
+  /*
+   * La query y el ancla solo existen en cliente. Se añaden al enlace tras
+   * montar, escribiendo el `href` en el DOM: así el primer render coincide
+   * con el del servidor (sin avisos de hidratación). PageTransitions lee el
+   * `href` del elemento en el clic, así que ve ya la versión completa.
+   */
+  const navRef = useRef<HTMLElement>(null);
+  const syncHref = () => {
+    const suffix = window.location.search + window.location.hash;
+    for (const link of navRef.current?.querySelectorAll<HTMLAnchorElement>('a[hreflang]') ?? []) {
+      link.setAttribute('href', localize(base, link.hreflang as Lang) + suffix);
+    }
+  };
+  useEffect(syncHref);
+  /*
+   * Y otra vez justo antes del clic: los filtros del listado cambian la
+   * query con `history.replaceState`, sin cambio de ruta ni render.
+   * `pointerdown` y `focus` llegan siempre antes que el `click`.
+   */
+
+  /* `<html lang>` sigue a la ruta: lectores de pantalla y traductores. */
+  useEffect(() => {
+    document.documentElement.lang = current;
+  }, [current]);
+
+  return (
+    <nav
+      ref={navRef}
+      onPointerDown={syncHref}
+      onFocus={syncHref}
+      className="lang-switch"
+      data-active={shown}
+      aria-label={current === 'es' ? 'Idioma' : 'Language'}
+    >
+      <span className="lang-switch_thumb" aria-hidden="true" />
+      {LANGS.map((lang) =>
+        lang === current ? (
+          <span
+            key={lang}
+            className={`lang-switch_link${lang === shown ? ' is-active' : ''}`}
+            aria-current="true"
+            title={LABEL[lang].name}
+          >
+            {LABEL[lang].short}
+          </span>
+        ) : (
+          <a
+            key={lang}
+            className={`lang-switch_link${lang === shown ? ' is-active' : ''}`}
+            href={localize(base, lang)}
+            hrefLang={lang}
+            lang={lang}
+            title={LABEL[lang].name}
+            aria-label={LABEL[lang].name}
+            onClick={() => setPressed({ lang, from: pathname })}
+          >
+            {LABEL[lang].short}
+          </a>
+        ),
+      )}
+    </nav>
+  );
+}
+
+/* ============================================================
    components/layout/MasterPreloader.tsx
    ============================================================ */
 
@@ -796,6 +1019,7 @@ export function MasterPreloader() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Menú a pantalla completa (móvil).
@@ -808,9 +1032,21 @@ export function MasterPreloader() {
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
  * Las URLs del CDN ya están reescritas a /public.
+ *
+ * Textos en inglés y español según la URL (lib/use-lang.ts); los enlaces
+ * internos llevan el prefijo del idioma con `localize`.
  */
 
+
+
+const T__MenuModal = {
+  en: { the: 'The', menu: 'Menu', home: 'Home', select: 'Select a Villa', book: 'Book a call', contact: 'Contact' },
+  es: { the: 'El', menu: 'Menú', home: 'Inicio', select: 'Elija su villa', book: 'Agende una llamada', contact: 'Contacto' },
+};
+
 export function MenuModal() {
+  const lang = useLang();
+  const t = T__MenuModal[lang];
   return (
     <div data-modal-menu="mob" className="modal menu theme_on-dark">
       <div className="modal_c">
@@ -820,36 +1056,36 @@ export function MenuModal() {
             <div className="u-272 b-mob"></div>
             <div className="grid">
               <div className="modal_menu_title">
-                <div className="modal_menu_a"><div data-part="a" className="a1 a-center">The</div></div>
-                <div data-part="h" className="h1 a-center">Menu</div>
+                <div className="modal_menu_a"><div data-part="a" className="a1 a-center">{t.the}</div></div>
+                <div data-part="h" className="h1 a-center">{t.menu}</div>
               </div>
             </div>
           </div>
           <div className="modal_menu_c">
             <div className="grid">
               <div className="modal_menu_list">
-                <a data-part="ctn" aria-label="Home" hover-link="" data-modal-close="mob" href="/" aria-current="page" className="link w-inline-block w--current">
+                <a data-part="ctn" aria-label={t.home} hover-link="" data-modal-close="mob" href={localize('/', lang)} aria-current="page" className="link w-inline-block w--current">
                   <div className="link_label">
-                    <div className="link_label_text"><div hover="text" className="h6">Home</div></div>
-                    <div className="link_label_text is-2"><div hover="text" className="h6">Home</div></div>
+                    <div className="link_label_text"><div hover="text" className="h6">{t.home}</div></div>
+                    <div className="link_label_text is-2"><div hover="text" className="h6">{t.home}</div></div>
                   </div>
                 </a>
-                <a data-part="ctn" aria-label="Select a Villa" hover-link="" data-modal-close="mob" href="/villas" className="link w-inline-block">
+                <a data-part="ctn" aria-label={t.select} hover-link="" data-modal-close="mob" href={localize('/villas', lang)} className="link w-inline-block">
                   <div className="link_label">
-                    <div className="link_label_text"><div hover="text" className="h6">Select a Villa</div></div>
-                    <div className="link_label_text is-2"><div hover="text" className="h6">Select a Villa</div></div>
+                    <div className="link_label_text"><div hover="text" className="h6">{t.select}</div></div>
+                    <div className="link_label_text is-2"><div hover="text" className="h6">{t.select}</div></div>
                   </div>
                 </a>
-                <a data-part="ctn" aria-label="Book a call" hover-link="" data-modal-cta-btn="book-a-call" data-modal-close="mob" href="#" className="link w-inline-block">
+                <a data-part="ctn" aria-label={t.book} hover-link="" data-modal-cta-btn="book-a-call" data-modal-close="mob" href="#" className="link w-inline-block">
                   <div className="link_label">
-                    <div className="link_label_text"><div hover="text" className="h6">Book a call</div></div>
-                    <div className="link_label_text is-2"><div hover="text" className="h6">Book a call</div></div>
+                    <div className="link_label_text"><div hover="text" className="h6">{t.book}</div></div>
+                    <div className="link_label_text is-2"><div hover="text" className="h6">{t.book}</div></div>
                   </div>
                 </a>
-                <a data-part="ctn" aria-label="Contact" hover-link="" data-modal-close="mob" href="/contact" className="link w-inline-block">
+                <a data-part="ctn" aria-label={t.contact} hover-link="" data-modal-close="mob" href={localize('/contact', lang)} className="link w-inline-block">
                   <div className="link_label">
-                    <div className="link_label_text"><div hover="text" className="h6">Contact</div></div>
-                    <div className="link_label_text is-2"><div hover="text" className="h6">Contact</div></div>
+                    <div className="link_label_text"><div hover="text" className="h6">{t.contact}</div></div>
+                    <div className="link_label_text is-2"><div hover="text" className="h6">{t.contact}</div></div>
                   </div>
                 </a>
               </div>
@@ -893,6 +1129,7 @@ export function MenuModal() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -910,9 +1147,20 @@ export function MenuModal() {
  * como --_fonts---font-accent). Mismo viewBox (1440×864) y misma clase
  * `.img`, así que webflow.css lo dimensiona igual que a la imagen; la
  * palabra desborda el borde derecho a propósito, como el original.
+ *
+ * Sólo se ve en la primera carga, pero ésta puede ser una URL en español:
+ * los textos siguen el idioma de la URL (lib/use-lang.ts).
  */
 
+
+const T__Preloader = {
+  en: { peninsula: 'Peninsula', tagline: 'A place to return to.' },
+  es: { peninsula: 'Península', tagline: 'Un lugar al que volver.' },
+};
+
 export function Preloader() {
+  const lang = useLang();
+  const t = T__Preloader[lang];
   return (
     <div data-preloader="" className="preloader theme_on-dark">
       <div className="preloader_ctn">
@@ -952,7 +1200,7 @@ export function Preloader() {
                 <div data-part="a" className="a2 preloader_a a-center">Las Terrenas</div>
               </div>
             </div>
-            <div className="preloader_title-r"><div data-part="h" className="c1 a-center">Peninsula</div></div>
+            <div className="preloader_title-r"><div data-part="h" className="c1 a-center">{t.peninsula}</div></div>
           </div>
         </div>
         <div className="preloader_b">
@@ -962,11 +1210,15 @@ export function Preloader() {
                 <div className="preloader_progress_fill"><div className="preloader_progress_track"></div></div>
               </div>
               <div className="u-32"></div>
-              <p data-part="p" className="l1 a-center">
-                Bahía Mar
-                <br />
-                A place to return to.
-              </p>
+              {/*
+                Dos párrafos y no uno con <br />: SplitText trocea por
+                líneas y el salto (y cualquier bloque interior) no
+                sobrevive, así que con el hueco ancho —teléfono en
+                horizontal— salía «BAHÍA MARA PLACE TO RETURN TO.». Cada
+                párrafo se trocea y anima por su cuenta, en cascada.
+              */}
+              <p data-part="p" className="l1 a-center">Bahía Mar</p>
+              <p data-part="p" className="l1 a-center">{t.tagline}</p>
             </div>
           </div>
           <div className="u-48"></div>
@@ -1039,6 +1291,7 @@ export function Preloader() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * GENERADO por scripts/generate-header.mjs — no editar a mano.
@@ -1046,9 +1299,15 @@ export function Preloader() {
  * puede arrastrar, ver scrollBar() en lib/animations/chrome.ts— y el
  * indicador «Scroll». En las páginas interiores NO existe: ahí va el
  * rastro de migas.
+ *
+ * El rótulo «Scroll» sigue el idioma de la URL (lib/use-lang.ts). Ese
+ * cambio es a mano: regenerar el archivo lo devolvería a sólo inglés.
  */
 
+
+
 export function ScrollRail() {
+  const lang = useLang();
   return (
     <>
       <div data-theme="" className="s-bar-w">
@@ -1064,7 +1323,7 @@ export function ScrollRail() {
             <path d="M7.36533 3C7.10389 3.54701 6.85117 4.02564 6.60716 4.4359C6.34572 4.84615 6.09299 5.18804 5.84899 5.46154L45 5.46154L45 6.53846L5.84899 6.53846C6.09299 6.82906 6.34572 7.17949 6.60716 7.58974C6.85117 8 7.10389 8.47009 7.36533 9L6.45029 9C5.35226 7.75214 4.20193 6.82906 2.99932 6.23077L2.99932 5.76923C4.20193 5.18804 5.35226 4.26496 6.45029 3L7.36533 3Z" fill="currentColor"></path>
           </svg>
         </div>
-        <div className="l2">Scroll</div>
+        <div className="l2">{pick(lang, 'Scroll', 'Deslice')}</div>
       </div>
     </>
   );
@@ -1213,6 +1472,32 @@ export function Animations() {
 }
 
 /* ============================================================
+   components/providers/LangKeyed.tsx
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
+/**
+ * Remonta el cromo compartido (cabecera, menú, modales, tips) al cambiar de
+ * idioma.
+ *
+ * Las páginas se remontan solas porque cambian de ruta; el cromo vive en el
+ * layout y React solo actualizaría sus textos en su sitio. Eso no vale aquí:
+ * SplitText ya ha troceado esos textos en `<div>` por letra, y React
+ * escribiría sobre nodos que ya no son los suyos. Con la `key` del idioma
+ * se tira el árbol entero y se monta limpio; la capa de animación, que se
+ * reinicia en el mismo cambio de `pathname`, lo trocea de nuevo.
+ */
+
+
+
+export function LangKeyed({ children }: { children: ReactNode }) {
+  const lang = useLang();
+  return <Fragment key={lang}>{children}</Fragment>;
+}
+
+/* ============================================================
    components/providers/PageTransitions.tsx
    ============================================================ */
 
@@ -1320,7 +1605,9 @@ export function PageTransitions() {
       const go = () => {
         if (navigated) return;
         navigated = true;
-        router.push(to);
+        // Con el ancla: `/legal#privacy` desde otra página debe llegar a la
+        // sección, no arriba del todo (la página de destino hace el salto).
+        router.push(href);
       };
 
       // Primero se van los elementos, luego se apaga el conjunto: es el

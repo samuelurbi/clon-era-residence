@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Sección «The space to live in» de la home: interiores y terrazas de
@@ -15,7 +16,53 @@
  * bahia-mar-personalizacion/inventario/space.json.
  */
 
+import { type Lang } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    title1: 'The',
+    title2: 'space',
+    title3: 'to',
+    titleA: 'Live in',
+    alt1: 'Covered porch under a timber pergola with a private jacuzzi, woven lounge seating and tropical planting.',
+    listIntro: 'Every villa opens outdoors:',
+    list1: '• Private pool and jacuzzi',
+    list2: '• Terrace with BBQ and lounge garden',
+    list3: '• Porch under a pergola',
+    alt2: 'Open-plan living area with sliding glass walls onto the hills, woven pendant lamps and a linen sofa.',
+    lead: 'Every material was chosen so the house breathes with the landscape: bamboo underfoot, chukum on the walls, the bay in every opening',
+    desc: 'Bamboo floors throughout. Chukum wall finishes. Home automation. Kitchens with eco-efficient appliances and glass-ceramic hobs. Solar panels. Views of the beach, Samaná Bay and Los Haitises from every villa.',
+    cta: 'Explore the villas',
+    alt3: 'Kitchen and dining room in pale timber and stone, open to the terrace and the private pool.',
+    alt4: 'Principal bedroom with a glass wall sliding open onto a terrace that faces the sea.',
+    alt5: 'Bathroom with chukum-finished walls, a timber vanity and a walk-in shower beside a window onto the palms.',
+    alt6: 'Living and dining area with bamboo floors, timber joinery and full-height openings onto the palms and the pool.',
+  },
+  es: {
+    title1: 'El',
+    title2: 'espacio',
+    title3: 'para',
+    titleA: 'Vivir',
+    alt1: 'Porche cubierto bajo una pérgola de madera, con jacuzzi privado, asientos tejidos y vegetación tropical.',
+    listIntro: 'Cada villa se abre al exterior:',
+    list1: '• Piscina privada y jacuzzi',
+    list2: '• Terraza con BBQ y jardín de estar',
+    list3: '• Porche bajo una pérgola',
+    alt2: 'Salón de planta abierta con paredes de vidrio correderas hacia las colinas, lámparas colgantes tejidas y un sofá de lino.',
+    lead: 'Cada material se eligió para que la casa respire con el paisaje: bambú bajo los pies, chukum en los muros y la bahía en cada ventana',
+    desc: 'Pisos de bambú en toda la casa. Muros acabados en chukum. Domótica. Cocinas con electrodomésticos eficientes y vitrocerámica. Paneles solares. Vistas a la playa, la bahía de Samaná y Los Haitises desde cada villa.',
+    cta: 'Descubrir las villas',
+    alt3: 'Cocina y comedor en madera clara y piedra, abiertos a la terraza y a la piscina privada.',
+    alt4: 'Habitación principal con una pared de vidrio que se desliza hacia una terraza frente al mar.',
+    alt5: 'Baño con muros acabados en chukum, mueble de madera y ducha abierta junto a una ventana hacia las palmeras.',
+    alt6: 'Salón comedor con pisos de bambú, carpintería de madera y vanos de piso a techo hacia las palmeras y la piscina.',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function SpaceToLive() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <section className="section arch clip">
       <div className="container">
@@ -25,14 +72,14 @@ export function SpaceToLive() {
             <div className="grid">
               <div className="interior-s_title">
                 <h2 data-scroll-reveal="h" className="h1 a-center">
-                  The
+                  {t.title1}
                   <br />
-                  space
+                  {t.title2}
                   <br />
-                  to
+                  {t.title3}
                 </h2>
                 <div className="interior-s_title_a">
-                  <h3 data-scroll-reveal="a" className="a1 a-center">Live in</h3>
+                  <h3 data-scroll-reveal="a" className="a1 a-center">{t.titleA}</h3>
                 </div>
               </div>
             </div>
@@ -43,7 +90,7 @@ export function SpaceToLive() {
                   <div data-video-playpause="" className="interior-s_l_img-w">
                     <div className="interior-s_l_img">
                       <div data-scroll-reveal="slide" className="img-w">
-                        <img src="/images/bahiamar-space-1.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-space-1-p-500.webp 500w, /images/bahiamar-space-1-p-800.webp 800w, /images/bahiamar-space-1-p-1080.webp 1080w, /images/bahiamar-space-1-p-1600.webp 1600w, /images/bahiamar-space-1-p-2000.webp 2000w, /images/bahiamar-space-1.webp 2350w" alt="Covered porch under a timber pergola with a private jacuzzi, woven lounge seating and tropical planting." className="img" />
+                        <img src="/images/bahiamar-space-1.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-space-1-p-500.webp 500w, /images/bahiamar-space-1-p-800.webp 800w, /images/bahiamar-space-1-p-1080.webp 1080w, /images/bahiamar-space-1-p-1600.webp 1600w, /images/bahiamar-space-1-p-2000.webp 2000w, /images/bahiamar-space-1.webp 2350w" alt={t.alt1} className="img" />
                       </div>
                     </div>
                     <div data-parallax="ctn-up" className="flower interior">
@@ -55,13 +102,13 @@ export function SpaceToLive() {
                   <div className="interior-s_l_desc">
                     <div className="u-16"></div>
                     <h4 data-scroll-reveal="p" className="l1">
-                      Every villa opens outdoors:
+                      {t.listIntro}
                       <br />
-                      • Private pool and jacuzzi
+                      {t.list1}
                       <br />
-                      • Terrace with BBQ and lounge garden
+                      {t.list2}
                       <br />
-                      • Porch under a pergola
+                      {t.list3}
                     </h4>
                     <div className="u-160 b-mob"></div>
                   </div>
@@ -71,33 +118,33 @@ export function SpaceToLive() {
                 <div className="grid _5-columns">
                   <div className="interior-s_r_img">
                     <div data-scroll-reveal="slide" className="img-w">
-                      <img src="/images/bahiamar-space-2.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-space-2-p-500.webp 500w, /images/bahiamar-space-2-p-800.webp 800w, /images/bahiamar-space-2-p-1080.webp 1080w, /images/bahiamar-space-2-p-1600.webp 1600w, /images/bahiamar-space-2-p-2000.webp 2000w, /images/bahiamar-space-2.webp 2350w" alt="Open-plan living area with sliding glass walls onto the hills, woven pendant lamps and a linen sofa." className="img" />
+                      <img src="/images/bahiamar-space-2.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="/images/bahiamar-space-2-p-500.webp 500w, /images/bahiamar-space-2-p-800.webp 800w, /images/bahiamar-space-2-p-1080.webp 1080w, /images/bahiamar-space-2-p-1600.webp 1600w, /images/bahiamar-space-2-p-2000.webp 2000w, /images/bahiamar-space-2.webp 2350w" alt={t.alt2} className="img" />
                     </div>
                   </div>
                   <div className="interior-s_r_lead w-clearfix">
                     <div className="u-16"></div>
                     <div className="red-line"></div>
                     <h4 data-scroll-reveal="p" className="h5">
-                      Every material was chosen so the house breathes with the landscape: bamboo underfoot, chukum on the walls, the bay in every opening
+                      {t.lead}
                     </h4>
                   </div>
                   <div className="interior-s_r_desc">
                     <div className="u-64"></div>
                     <p data-scroll-reveal="p" className="p1">
-                      Bamboo floors throughout. Chukum wall finishes. Home automation. Kitchens with eco-efficient appliances and glass-ceramic hobs. Solar panels. Views of the beach, Samaná Bay and Los Haitises from every villa.
+                      {t.desc}
                     </p>
                     <div className="u-96"></div>
                   </div>
                   <div data-scroll-reveal="ctn" className="interior-s_r_btn">
                     <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                       <div data-magnetic-inner="" className="btn-circle_label">
-                        <a hover-nav-item="" aria-label="Explore the villas" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Explore the villas</div>
+                              <div hover="text" className="l1">{t.cta}</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Explore the villas</div>
+                              <div hover="text" className="l1">{t.cta}</div>
                             </div>
                           </div>
                         </a>
@@ -109,7 +156,7 @@ export function SpaceToLive() {
                           <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                         </svg>
                       </div>
-                      <a aria-label="Explore the villas" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
+                      <a aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                     </div>
                   </div>
                 </div>
@@ -123,28 +170,28 @@ export function SpaceToLive() {
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="/images/bahiamar-space-3.webp" loading="eager" alt="Kitchen and dining room in pale timber and stone, open to the terrace and the private pool." sizes="100vw" srcSet="/images/bahiamar-space-3-p-500.webp 500w, /images/bahiamar-space-3-p-800.webp 800w, /images/bahiamar-space-3-p-1080.webp 1080w, /images/bahiamar-space-3-p-1600.webp 1600w, /images/bahiamar-space-3-p-2000.webp 2000w, /images/bahiamar-space-3.webp 2350w" className="img" />
+                          <img src="/images/bahiamar-space-3.webp" loading="eager" alt={t.alt3} sizes="100vw" srcSet="/images/bahiamar-space-3-p-500.webp 500w, /images/bahiamar-space-3-p-800.webp 800w, /images/bahiamar-space-3-p-1080.webp 1080w, /images/bahiamar-space-3-p-1600.webp 1600w, /images/bahiamar-space-3-p-2000.webp 2000w, /images/bahiamar-space-3.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="/images/bahiamar-space-4.webp" loading="eager" alt="Principal bedroom with a glass wall sliding open onto a terrace that faces the sea." sizes="100vw" srcSet="/images/bahiamar-space-4-p-500.webp 500w, /images/bahiamar-space-4-p-800.webp 800w, /images/bahiamar-space-4-p-1080.webp 1080w, /images/bahiamar-space-4-p-1600.webp 1600w, /images/bahiamar-space-4-p-2000.webp 2000w, /images/bahiamar-space-4.webp 2350w" className="img" />
+                          <img src="/images/bahiamar-space-4.webp" loading="eager" alt={t.alt4} sizes="100vw" srcSet="/images/bahiamar-space-4-p-500.webp 500w, /images/bahiamar-space-4-p-800.webp 800w, /images/bahiamar-space-4-p-1080.webp 1080w, /images/bahiamar-space-4-p-1600.webp 1600w, /images/bahiamar-space-4-p-2000.webp 2000w, /images/bahiamar-space-4.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="/images/bahiamar-space-5.webp" loading="eager" alt="Bathroom with chukum-finished walls, a timber vanity and a walk-in shower beside a window onto the palms." sizes="100vw" srcSet="/images/bahiamar-space-5-p-500.webp 500w, /images/bahiamar-space-5-p-800.webp 800w, /images/bahiamar-space-5-p-1080.webp 1080w, /images/bahiamar-space-5-p-1600.webp 1600w, /images/bahiamar-space-5-p-2000.webp 2000w, /images/bahiamar-space-5.webp 2350w" className="img" />
+                          <img src="/images/bahiamar-space-5.webp" loading="eager" alt={t.alt5} sizes="100vw" srcSet="/images/bahiamar-space-5-p-500.webp 500w, /images/bahiamar-space-5-p-800.webp 800w, /images/bahiamar-space-5-p-1080.webp 1080w, /images/bahiamar-space-5-p-1600.webp 1600w, /images/bahiamar-space-5-p-2000.webp 2000w, /images/bahiamar-space-5.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="/images/bahiamar-space-6.webp" loading="eager" alt="Living and dining area with bamboo floors, timber joinery and full-height openings onto the palms and the pool." sizes="100vw" srcSet="/images/bahiamar-space-6-p-500.webp 500w, /images/bahiamar-space-6-p-800.webp 800w, /images/bahiamar-space-6-p-1080.webp 1080w, /images/bahiamar-space-6-p-1600.webp 1600w, /images/bahiamar-space-6-p-2000.webp 2000w, /images/bahiamar-space-6.webp 2350w" className="img" />
+                          <img src="/images/bahiamar-space-6.webp" loading="eager" alt={t.alt6} sizes="100vw" srcSet="/images/bahiamar-space-6-p-500.webp 500w, /images/bahiamar-space-6-p-800.webp 800w, /images/bahiamar-space-6-p-1080.webp 1080w, /images/bahiamar-space-6-p-1600.webp 1600w, /images/bahiamar-space-6-p-2000.webp 2000w, /images/bahiamar-space-6.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>

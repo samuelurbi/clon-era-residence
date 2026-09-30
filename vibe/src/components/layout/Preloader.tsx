@@ -1,5 +1,7 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -17,9 +19,21 @@
  * como --_fonts---font-accent). Mismo viewBox (1440×864) y misma clase
  * `.img`, así que webflow.css lo dimensiona igual que a la imagen; la
  * palabra desborda el borde derecho a propósito, como el original.
+ *
+ * Sólo se ve en la primera carga, pero ésta puede ser una URL en español:
+ * los textos siguen el idioma de la URL (lib/use-lang.ts).
  */
 
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: { peninsula: 'Peninsula', tagline: 'A place to return to.' },
+  es: { peninsula: 'Península', tagline: 'Un lugar al que volver.' },
+};
+
 export function Preloader() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <div data-preloader="" className="preloader theme_on-dark">
       <div className="preloader_ctn">
@@ -59,7 +73,7 @@ export function Preloader() {
                 <div data-part="a" className="a2 preloader_a a-center">Las Terrenas</div>
               </div>
             </div>
-            <div className="preloader_title-r"><div data-part="h" className="c1 a-center">Peninsula</div></div>
+            <div className="preloader_title-r"><div data-part="h" className="c1 a-center">{t.peninsula}</div></div>
           </div>
         </div>
         <div className="preloader_b">
@@ -69,11 +83,15 @@ export function Preloader() {
                 <div className="preloader_progress_fill"><div className="preloader_progress_track"></div></div>
               </div>
               <div className="u-32"></div>
-              <p data-part="p" className="l1 a-center">
-                Bahía Mar
-                <br />
-                A place to return to.
-              </p>
+              {/*
+                Dos párrafos y no uno con <br />: SplitText trocea por
+                líneas y el salto (y cualquier bloque interior) no
+                sobrevive, así que con el hueco ancho —teléfono en
+                horizontal— salía «BAHÍA MARA PLACE TO RETURN TO.». Cada
+                párrafo se trocea y anima por su cuenta, en cascada.
+              */}
+              <p data-part="p" className="l1 a-center">Bahía Mar</p>
+              <p data-part="p" className="l1 a-center">{t.tagline}</p>
             </div>
           </div>
           <div className="u-48"></div>

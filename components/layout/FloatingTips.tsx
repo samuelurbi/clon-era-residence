@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -12,18 +14,43 @@
  * Los tres textos salen de los hechos del brief (materiales, terrazas,
  * villas independientes); los atributos `floating-tip="…"` son los ids
  * que disparan los pines del hero (Hero.tsx) y NO se cambian.
+ *
+ * Textos en inglés y español según la URL (lib/use-lang.ts).
  */
 
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    endureTitle: 'Crafted to Endure',
+    endure: 'Bamboo floors, chukum wall finishes, stone and natural timber, with solar panels on every villa — materials chosen to belong to the landscape and settle into it over time.',
+    lightTitle: 'Light & Flow',
+    light: 'Terraces, solariums, pergola-shaded porches and wide openings draw in the light and let the day flow from inside to out.',
+    sanctuaryTitle: 'Your Private Sanctuary',
+    sanctuary: 'Every villa stands apart, with its own pool, jacuzzi, fire pit and terraces set into the vegetation — closer to a private home in the hills than a room in a resort.',
+  },
+  es: {
+    endureTitle: 'Hecho para perdurar',
+    endure: 'Pisos de bambú, muros con acabado de chukum, piedra y madera natural, y paneles solares en cada villa: materiales elegidos para pertenecer al paisaje y asentarse en él con el paso del tiempo.',
+    lightTitle: 'Luz y fluidez',
+    light: 'Terrazas, soláriums, porches a la sombra de pérgolas y amplias aberturas dejan entrar la luz y hacen que el día fluya del interior al exterior.',
+    sanctuaryTitle: 'Su refugio privado',
+    sanctuary: 'Cada villa se levanta por sí sola, con su propia piscina, jacuzzi, fogatero y terrazas integradas en la vegetación: más cerca de una casa privada en las colinas que de una habitación de resort.',
+  },
+};
+
 export function FloatingTips() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <div className="floating-tips w-dyn-list">
       <div role="list" className="floating-tips_list w-dyn-items">
         <div floating-tip="crafted-to-endure" role="listitem" className="floating-tip w-dyn-item">
           <div className="floating-tip-card">
-            <div className="floating-tip-card_t"><h1 className="h5">Crafted to Endure</h1></div>
+            <div className="floating-tip-card_t"><h1 className="h5">{t.endureTitle}</h1></div>
             <div className="floating-tip-card_b">
               <p className="p1">
-                Bamboo floors, chukum wall finishes, stone and natural timber, with solar panels on every villa — materials chosen to belong to the landscape and settle into it over time.
+                {t.endure}
               </p>
             </div>
             <div className="card_decor">
@@ -74,10 +101,10 @@ export function FloatingTips() {
         </div>
         <div floating-tip="light-flow" role="listitem" className="floating-tip w-dyn-item">
           <div className="floating-tip-card">
-            <div className="floating-tip-card_t"><h1 className="h5">Light & Flow</h1></div>
+            <div className="floating-tip-card_t"><h1 className="h5">{t.lightTitle}</h1></div>
             <div className="floating-tip-card_b">
               <p className="p1">
-                Terraces, solariums, pergola-shaded porches and wide openings draw in the light and let the day flow from inside to out.
+                {t.light}
               </p>
             </div>
             <div className="card_decor">
@@ -128,10 +155,10 @@ export function FloatingTips() {
         </div>
         <div floating-tip="your-private-sanctuary" role="listitem" className="floating-tip w-dyn-item">
           <div className="floating-tip-card">
-            <div className="floating-tip-card_t"><h1 className="h5">Your Private Sanctuary</h1></div>
+            <div className="floating-tip-card_t"><h1 className="h5">{t.sanctuaryTitle}</h1></div>
             <div className="floating-tip-card_b">
               <p className="p1">
-                Every villa stands apart, with its own pool, jacuzzi, fire pit and terraces set into the vegetation — closer to a private home in the hills than a room in a resort.
+                {t.sanctuary}
               </p>
             </div>
             <div className="card_decor">

@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { pageMetadata } from '@/app/page-metadata';
 import { ScrollRail } from '@/components/layout/ScrollRail';
 import { Hero } from '@/components/home/Hero';
 import { Arch } from '@/components/home/Arch';
@@ -13,6 +15,8 @@ import { Architecture } from '@/components/home/Architecture';
 import { Developer } from '@/components/home/Developer';
 import { SeaViewsCta } from '@/components/sections/SeaViewsCta';
 import { BookACall } from '@/components/sections/BookACall';
+
+export const metadata: Metadata = pageMetadata('home', 'en', '/');
 
 /**
  * Home. El orden de las secciones es el del sitio original; el cromo

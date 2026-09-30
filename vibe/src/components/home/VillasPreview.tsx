@@ -1,5 +1,6 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Slider de tipologías de la home: «Two levels» (Cosón, Helecho, Carolina),
@@ -16,7 +17,47 @@
  * Las URLs del CDN ya están reescritas a /public.
  */
 
+import { localize, type Lang } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    bedrooms: 'Bedrooms',
+    bathrooms: 'Bathrooms',
+    twoDesc:
+      'Villa Horizonte, Esencia and Remanso: living areas, pool and terraces on the first level; the principal suite and its upper terraces on the second, following the slope of the land.',
+    twoBtn: 'Explore two-level villas',
+    twoTitle: 'Two levels',
+    singleDesc:
+      'Villa Armonía and Ámbar: kitchen, living areas and bedrooms on one floor, opening straight onto the pool terrace, solarium and fire pit.',
+    singleBtn: 'Explore single-level villas',
+    singleTitle: 'Single level',
+    allDesc:
+      'Five typologies on one or two levels, each with private pool, jacuzzi, solarium, fire pit and BBQ area — and views over the beach, Samaná Bay and Los Haitises.',
+    allBtn: 'Explore all villas',
+    allTitle: 'All five villas',
+  },
+  es: {
+    bedrooms: 'Habitaciones',
+    bathrooms: 'Baños',
+    twoDesc:
+      'Villa Horizonte, Esencia y Remanso: salones, piscina y terrazas en el primer nivel; la suite principal y sus terrazas altas en el segundo, siguiendo la pendiente del terreno.',
+    twoBtn: 'Descubrir las villas de dos niveles',
+    twoTitle: 'Dos niveles',
+    singleDesc:
+      'Villa Armonía y Ámbar: cocina, salones y habitaciones en una sola planta, abiertos directamente a la terraza de la piscina, el solárium y el fogatero.',
+    singleBtn: 'Descubrir las villas de un nivel',
+    singleTitle: 'Un nivel',
+    allDesc:
+      'Cinco tipologías de uno o dos niveles, todas con piscina privada, jacuzzi, solárium, fogatero y zona de BBQ, y vistas a la playa, la bahía de Samaná y Los Haitises.',
+    allBtn: 'Descubrir todas las villas',
+    allTitle: 'Las cinco villas',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function VillasPreview() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <section data-bg="light" data-snap="" className="section theme_on-brand">
       <div className="container">
@@ -36,12 +77,12 @@ export function VillasPreview() {
                             <div className="apart-type-slide_data">
                               <div className="data-list">
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bedrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bedrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">3 — 4</h5>
                                 </div>
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bathrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bathrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">3 — 4</h5>
                                 </div>
@@ -50,17 +91,17 @@ export function VillasPreview() {
                             </div>
                             <div className="apart-type-slide_desc">
                               <p data-scroll-reveal="p" data-slider="p" className="p1 mob_a-center">
-                                Villa Horizonte, Esencia and Remanso: living areas, pool and terraces on the first level; the principal suite and its upper terraces on the second, following the slope of the land.
+                                {t.twoDesc}
                               </p>
                               <div className="u-24"></div>
                               <div data-scroll-reveal="ctn" data-slider="ctn" className="apart-type-slide_btn">
-                                <a aria-label="Explore two-level villas" hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn w-inline-block">
+                                <a aria-label={t.twoBtn} hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn w-inline-block">
                                   <div className="btn_label">
                                     <div className="btn_label_text">
-                                      <div hover="text" className="l1">Explore two-level villas</div>
+                                      <div hover="text" className="l1">{t.twoBtn}</div>
                                     </div>
                                     <div className="btn_label_text is-2">
-                                      <div hover="text" className="l1">Explore two-level villas</div>
+                                      <div hover="text" className="l1">{t.twoBtn}</div>
                                     </div>
                                   </div>
                                   <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
@@ -72,7 +113,7 @@ export function VillasPreview() {
                         </div>
                         <div className="apart-type-slide_b">
                           <div className="u-48 b-desk"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">Two levels</h3>
+                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">{t.twoTitle}</h3>
                           <div className="u-32 b-mob"></div>
                         </div>
                         <div className="apart-type-slide_img-w">
@@ -92,12 +133,12 @@ export function VillasPreview() {
                             <div className="apart-type-slide_data">
                               <div className="data-list">
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bedrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bedrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">2</h5>
                                 </div>
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bathrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bathrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">2</h5>
                                 </div>
@@ -106,14 +147,14 @@ export function VillasPreview() {
                             </div>
                             <div className="apart-type-slide_desc">
                               <p data-scroll-reveal="p" data-slider="p" className="p1 mob_a-center">
-                                Villa Armonía and Ámbar: kitchen, living areas and bedrooms on one floor, opening straight onto the pool terrace, solarium and fire pit.
+                                {t.singleDesc}
                               </p>
                               <div className="u-24"></div>
                               <div data-scroll-reveal="ctn" data-slider="ctn" className="apart-type-slide_btn">
-                                <a aria-label="Explore single-level villas" hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href="/villas?type=single-level" className="btn w-inline-block">
+                                <a aria-label={t.singleBtn} hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href={localize('/villas?type=single-level', lang)} className="btn w-inline-block">
                                   <div className="btn_label">
-                                    <div className="btn_label_text"><div hover="text" className="l1">Explore single-level villas</div></div>
-                                    <div className="btn_label_text is-2"><div hover="text" className="l1">Explore single-level villas</div></div>
+                                    <div className="btn_label_text"><div hover="text" className="l1">{t.singleBtn}</div></div>
+                                    <div className="btn_label_text is-2"><div hover="text" className="l1">{t.singleBtn}</div></div>
                                   </div>
                                   <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                                 </a>
@@ -124,7 +165,7 @@ export function VillasPreview() {
                         </div>
                         <div className="apart-type-slide_b">
                           <div className="u-48 b-desk"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">Single level</h3>
+                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">{t.singleTitle}</h3>
                           <div className="u-32 b-mob"></div>
                         </div>
                         <div className="apart-type-slide_img-w">
@@ -144,12 +185,12 @@ export function VillasPreview() {
                             <div className="apart-type-slide_data">
                               <div className="data-list">
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bedrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bedrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">2 — 4</h5>
                                 </div>
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bathrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bathrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">2 — 4</h5>
                                 </div>
@@ -158,14 +199,14 @@ export function VillasPreview() {
                             </div>
                             <div className="apart-type-slide_desc">
                               <p data-scroll-reveal="p" data-slider="p" className="p1 mob_a-center">
-                                Five typologies on one or two levels, each with private pool, jacuzzi, solarium, fire pit and BBQ area — and views over the beach, Samaná Bay and Los Haitises.
+                                {t.allDesc}
                               </p>
                               <div className="u-24"></div>
                               <div data-scroll-reveal="ctn" data-slider="ctn" className="apart-type-slide_btn">
-                                <a aria-label="Explore all villas" hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href="/villas" className="btn w-inline-block">
+                                <a aria-label={t.allBtn} hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href={localize('/villas', lang)} className="btn w-inline-block">
                                   <div className="btn_label">
-                                    <div className="btn_label_text"><div hover="text" className="l1">Explore all villas</div></div>
-                                    <div className="btn_label_text is-2"><div hover="text" className="l1">Explore all villas</div></div>
+                                    <div className="btn_label_text"><div hover="text" className="l1">{t.allBtn}</div></div>
+                                    <div className="btn_label_text is-2"><div hover="text" className="l1">{t.allBtn}</div></div>
                                   </div>
                                   <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                                 </a>
@@ -176,7 +217,7 @@ export function VillasPreview() {
                         </div>
                         <div className="apart-type-slide_b">
                           <div className="u-48 b-desk"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">All five villas</h3>
+                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">{t.allTitle}</h3>
                           <div className="u-32 b-mob"></div>
                         </div>
                         <div className="apart-type-slide_img-w">

@@ -10,7 +10,8 @@
  *  bloque, para poder volver atrás sin adivinar.
  */
 
-import { srcset, type Villa, villas } from '@/data';
+import { localize, type Lang, useLang } from '@/animations';
+import { localizeVilla, srcset, type Villa, villas } from '@/data';
 
 /* ============================================================
    components/home/AmenitiesIntro.tsx
@@ -18,6 +19,7 @@ import { srcset, type Villa, villas } from '@/data';
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Introducción a las amenidades de Bahía Mar (puente entre el avance de
@@ -33,7 +35,24 @@ import { srcset, type Villa, villas } from '@/data';
  * Los textos salen del brochure (bahia-mar-personalizacion/BRIEF.md).
  */
 
+
+
+const T__AmenitiesIntro = {
+  en: {
+    kicker: 'Life inside the community',
+    lead: 'Every villa is private. Everything around it is shared: a beach to swim from, thermal waters to soak in, trails to walk and places to gather.',
+    desc: 'Beach Club and pools, spa and wellness center, coworking, restaurants and shops, trails and viewpoints — a community planned around slow days and quiet evenings, with all of it within easy reach.',
+  },
+  es: {
+    kicker: 'La vida dentro de la comunidad',
+    lead: 'Cada villa es privada. Todo lo que la rodea se comparte: una playa donde nadar, aguas termales donde sumergirse, senderos que recorrer y lugares donde reunirse.',
+    desc: 'Beach Club y piscinas, spa y centro de bienestar, coworking, restaurantes y tiendas, senderos y miradores: una comunidad pensada para días sin prisa y noches tranquilas, con todo a su alcance.',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function AmenitiesIntro() {
+  const lang = useLang();
+  const t = T__AmenitiesIntro[lang];
   return (
     <section data-bg="light" className="section clip theme_on-brand">
       <div className="container">
@@ -44,21 +63,21 @@ export function AmenitiesIntro() {
             <div className="u-48"></div>
             <div className="grid">
               <div className="s_title">
-                <p data-scroll-reveal="p" className="l1 a-center">Life inside the community</p>
+                <p data-scroll-reveal="p" className="l1 a-center">{t.kicker}</p>
               </div>
             </div>
             <div className="u-160"></div>
             <div className="grid">
               <div className="info-s_lead">
                 <h3 data-scroll-reveal="p" className="h4 a-center">
-                  Every villa is private. Everything around it is shared: a beach to swim from, thermal waters to soak in, trails to walk and places to gather.
+                  {t.lead}
                 </h3>
               </div>
             </div>
             <div className="u-160"></div>
             <div className="grid">
               <div className="info-s_desc">
-                <p data-scroll-reveal="p" className="p1 a-center">Beach Club and pools, spa and wellness center, coworking, restaurants and shops, trails and viewpoints — a community planned around slow days and quiet evenings, with all of it within easy reach.</p>
+                <p data-scroll-reveal="p" className="p1 a-center">{t.desc}</p>
                 <div className="u-32"></div>
                 <div className="s_logo">
                   <div data-scroll-reveal="ctn" className="logo_symbol ico-48">
@@ -103,6 +122,7 @@ export function AmenitiesIntro() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -124,7 +144,22 @@ export function AmenitiesIntro() {
  * en escritorio), así que se usa esa sin tocar el trazado.
  */
 
+
+/*
+ * En español, «Cinco claves de Bahía Mar» y no «Cinco razones para Bahía
+ * Mar»: con el word-spacing abierto al hacer scroll, la frase baja por los
+ * lados del arco, y la de «razones» ocupaba el 57% del círculo en móvil
+ * (la inglesa, el 53%): «Cinco» y «Mar» se salían por los bordes. «Cinco
+ * claves» ocupa el 36% en reposo y el 51,6% abierta, menos que la inglesa
+ * (medido con scratchpad/arch-measure.mjs).
+ */
+const T__Arch = {
+  en: { peninsula: 'Peninsula', life: 'Life on the Samaná peninsula', arch: 'Five reasons for Bahía Mar' },
+  es: { peninsula: 'Península', life: 'La vida en la península de Samaná', arch: 'Cinco claves de Bahía Mar' },
+};
+
 export function Arch() {
+  const t = T__Arch[useLang()];
   return (
     <section className="section arch clip theme_on-brand">
       <div className="container">
@@ -157,7 +192,7 @@ export function Arch() {
                 </div>
               </div>
               <div className="info-s_logo_r">
-                <div data-scroll-reveal="p" className="l1 a-center">Peninsula</div>
+                <div data-scroll-reveal="p" className="l1 a-center">{t.peninsula}</div>
               </div>
             </div>
             <div className="u-48"></div>
@@ -165,7 +200,7 @@ export function Arch() {
             <div className="u-48"></div>
             <div className="grid">
               <div className="s_title">
-                <p data-scroll-reveal="p" className="l1 a-center">Life on the Samaná peninsula</p>
+                <p data-scroll-reveal="p" className="l1 a-center">{t.life}</p>
               </div>
             </div>
             <div className="u-96"></div>
@@ -176,7 +211,7 @@ export function Arch() {
                     <path id="circle-desk" d="M 800,800 m -676,0 a 676,676 0 1,1 1352,0 a 676,676 0 1,1 -1352,0"></path>
                   </defs>
                   <text data-circle-text="" className="h4" textAnchor="middle" fill="currentColor">
-                    <textPath href="#circle-desk" startOffset="25%">Five reasons for Bahía Mar</textPath>
+                    <textPath href="#circle-desk" startOffset="25%">{t.arch}</textPath>
                   </text>
                 </svg>
               </div>
@@ -186,7 +221,7 @@ export function Arch() {
                     <path id="circle-mob" d="M 208,208 m -160,0 a 160,160 0 1,1 320,0 a 160,160 0 1,1 -320,0"></path>
                   </defs>
                   <text data-circle-text="" className="h4" textAnchor="middle" fill="currentColor">
-                    <textPath href="#circle-mob" startOffset="25%">Five reasons for Bahía Mar</textPath>
+                    <textPath href="#circle-mob" startOffset="25%">{t.arch}</textPath>
                   </text>
                 </svg>
               </div>
@@ -204,6 +239,7 @@ export function Arch() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Sección «Architecture» de la home, personalizada para Bahía Mar.
@@ -220,7 +256,32 @@ export function Arch() {
  * blanco no caiga sobre cielo claro (ver inventario/architecture.json).
  */
 
+
+
+const T__Architecture = {
+  en: {
+    title: 'Architecture',
+    desc: 'Contemporary tropical architecture, made for a life lived outdoors',
+    quote: 'The architecture of Bahía Mar pairs timber, pale stone and chukum with wide overhangs and terraces that open each villa to the landscape',
+    by: 'By Estudio Dolla',
+    role: 'Architects',
+    cta: 'Book a call now',
+    alt: 'Villa Horizonte at Bahía Mar: a wide timber overhang over the pool terrace, glass fronts opening the living area to the garden and a dark stone wall on the side.',
+  },
+  es: {
+    title: 'Arquitectura',
+    desc: 'Arquitectura tropical contemporánea, pensada para vivir al aire libre',
+    quote: 'La arquitectura de Bahía Mar combina madera, piedra clara y chukum con amplios aleros y terrazas que abren cada villa al paisaje',
+    by: 'Por Estudio Dolla',
+    role: 'Arquitectos',
+    cta: 'Agende una llamada',
+    alt: 'Villa Horizonte en Bahía Mar: un amplio alero de madera sobre la terraza de la piscina, frentes de vidrio que abren el salón al jardín y un muro de piedra oscura a un lado.',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function Architecture() {
+  const lang = useLang();
+  const t = T__Architecture[lang];
   return (
     <section className="section clip">
       <div className="container">
@@ -245,10 +306,10 @@ export function Architecture() {
             <div className="arch-s">
               <div className="arch-s_t">
                 <div className="u-48"></div>
-                <h2 data-text="h" data-fit-text="" className="h1 a-center">Architecture</h2>
+                <h2 data-text="h" data-fit-text="" className="h1 a-center">{t.title}</h2>
                 <div className="u-32"></div>
                 <div className="grid">
-                  <div className="arch-s_desc"><p data-text="p" className="l1 a-center">Contemporary tropical architecture, made for a life lived outdoors</p></div>
+                  <div className="arch-s_desc"><p data-text="p" className="l1 a-center">{t.desc}</p></div>
                 </div>
               </div>
               <div className="arch-s_b">
@@ -256,13 +317,13 @@ export function Architecture() {
                   <div className="arch-s_quote w-clearfix">
                     <div className="red-line"></div>
                     <h3 data-part="p" className="h5">
-                      The architecture of Bahía Mar pairs timber, pale stone and chukum with wide overhangs and terraces that open each villa to the landscape
+                      {t.quote}
                     </h3>
                     <div className="u-64"></div>
                     <div className="grid _4-columns">
                       <div className="arch-s_author">
-                        <div data-part="p" className="l1">By Estudio Dolla</div>
-                        <div data-part="p" className="l1 reg">Architects</div>
+                        <div data-part="p" className="l1">{t.by}</div>
+                        <div data-part="p" className="l1 reg">{t.role}</div>
                       </div>
                     </div>
                     <div className="u-160 b-desk"></div>
@@ -270,10 +331,10 @@ export function Architecture() {
                   <div data-part="ctn" className="arch-s_btn b-desk">
                     <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                       <div data-magnetic-inner="" className="btn-circle_label">
-                        <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
-                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
+                            <div className="nav-item_label_text"><div hover="text" className="l1">{t.cta}</div></div>
+                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">{t.cta}</div></div>
                           </div>
                         </a>
                       </div>
@@ -284,7 +345,7 @@ export function Architecture() {
                           <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                         </svg>
                       </div>
-                      <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
+                      <a aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                     </div>
                   </div>
                 </div>
@@ -293,7 +354,7 @@ export function Architecture() {
             </div>
             <div className="w_bg">
               <div data-desk="off" data-parallax="w" className="img-w">
-                <img className="img" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2.webp" alt="Villa Horizonte at Bahía Mar: a wide timber overhang over the pool terrace, glass fronts opening the living area to the garden and a dark stone wall on the side." sizes="(max-width: 1920px) 100vw, 1920px" data-parallax="img" loading="eager" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2.webp 2350w" />
+                <img className="img" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2.webp" alt={t.alt} sizes="(max-width: 1920px) 100vw, 1920px" data-parallax="img" loading="eager" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2.webp 2350w" />
                 <div className="img-over-grad bot _100vh"></div>
                 <div className="img-over-grad bot _100vh"></div>
               </div>
@@ -317,6 +378,7 @@ export function Architecture() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -329,7 +391,56 @@ export function Architecture() {
  * Las URLs del CDN ya están reescritas a /public.
  */
 
+
+
+const T__Concept = {
+  en: {
+    concept: 'The concept',
+    lead: 'Bahía Mar is a boutique resort community of villas across 349,146 m² of tropical landscape on the Samaná peninsula, designed around privacy, wellbeing and a life lived outdoors',
+    desc: 'Shaped by the calm of Samaná Bay, the project combines contemporary tropical architecture with warm natural materials, native planting and spaces that open straight onto the landscape.',
+    country: 'Dominican Republic',
+    titleThe: 'The',
+    titleMiddle: 'Samaná',
+    titlePeninsula: 'Peninsula',
+    introImgAlt: 'Villa terrace with sun loungers beside an infinity pool, palm trees and the Caribbean sea beyond.',
+    between: 'Between Las Terrenas and Cosón Bay',
+    introP: 'Surrounded by white-sand beaches, waterfalls, rainforest and the unhurried rhythm of the Samaná peninsula, the project combines privacy with easy reach of everything that makes Caribbean living effortless. A location designed not around movement — but around returning.',
+    cta: 'View available villas',
+    pathLine1: 'The coast you wanted',
+    pathA: 'yours',
+    pathLine2: 'year after year',
+    mapAria: 'Places near Bahía Mar and approximate drive times, to be confirmed',
+    airport: 'El Catey Airport',
+    waterfall: 'El Limón Waterfall',
+    mapNote: 'Approximate drive times (TBC)',
+  },
+  es: {
+    concept: 'El concepto',
+    lead: 'Bahía Mar es una comunidad boutique de villas sobre 349.146 m² de paisaje tropical en la península de Samaná, pensada para la privacidad, el bienestar y una vida al aire libre',
+    desc: 'Inspirado en la calma de la bahía de Samaná, el proyecto une arquitectura tropical contemporánea con materiales naturales y cálidos, vegetación autóctona y espacios que se abren directamente al paisaje.',
+    country: 'República Dominicana',
+    titleThe: 'La',
+    /* «La Samaná Península» es un calco: en español el orden es
+       «La / Península / de Samaná», en las mismas tres líneas. */
+    titleMiddle: 'Península',
+    titlePeninsula: 'de Samaná',
+    introImgAlt: 'Terraza de una villa con tumbonas junto a una piscina infinita, palmeras y el mar Caribe al fondo.',
+    between: 'Entre Las Terrenas y la bahía de Cosón',
+    introP: 'Rodeado de playas de arena blanca, cascadas, selva tropical y el ritmo sin prisas de la península de Samaná, el proyecto une la privacidad con la cercanía a todo lo que hace fácil la vida en el Caribe. Un lugar pensado no para ir y venir, sino para volver.',
+    cta: 'Ver villas disponibles',
+    pathLine1: 'La costa que soñaba',
+    pathA: 'suya',
+    pathLine2: 'año tras año',
+    mapAria: 'Lugares cercanos a Bahía Mar y tiempos aproximados en coche, por confirmar',
+    airport: 'Aeropuerto El Catey',
+    waterfall: 'Salto El Limón',
+    mapNote: 'Tiempos aproximados en coche (por confirmar)',
+  },
+};
+
 export function Concept() {
+  const lang = useLang();
+  const t = T__Concept[lang];
   return (
     <section data-bg="light" data-slow-scroll="" className="section clip">
       <div className="container loc">
@@ -344,14 +455,14 @@ export function Concept() {
                   </div>
                   <div className="loc-info-s_c">
                     <div className="grid">
-                      <div className="s_title"><h2 data-part="p" className="l1 a-center">The concept</h2></div>
+                      <div className="s_title"><h2 data-part="p" className="l1 a-center">{t.concept}</h2></div>
                     </div>
                     <div className="u-32 b-desk"></div>
                     <div className="u-160 b-mob"></div>
                     <div className="grid">
                       <div className="info-s_lead">
                         <h3 data-part="p" className="h4 a-center">
-                          Bahía Mar is a boutique resort community of villas across 349,146 m² of tropical landscape on the Samaná peninsula, designed around privacy, wellbeing and a life lived outdoors
+                          {t.lead}
                         </h3>
                       </div>
                     </div>
@@ -361,7 +472,7 @@ export function Concept() {
                     <div className="grid">
                       <div className="info-s_desc">
                         <p data-part="p" className="p1 a-center">
-                          Shaped by the calm of Samaná Bay, the project combines contemporary tropical architecture with warm natural materials, native planting and spaces that open straight onto the landscape.
+                          {t.desc}
                         </p>
                         <div className="u-32"></div>
                         <div className="s_logo">
@@ -403,40 +514,40 @@ export function Concept() {
                   <div className="u-160 b-mob"></div>
                   <div className="grid _13-columns fill">
                     <div className="loc-intro-s_cap">
-                      <h4 data-scroll-reveal="h" className="c1 a-center">Dominican Republic</h4>
+                      <h4 data-scroll-reveal="h" className="c1 a-center" lang={lang}>{t.country}</h4>
                     </div>
                     <div className="loc-intro-s_title">
-                      <h3 data-scroll-reveal="h" className="h1">
-                        <span className="loc-intro-s_title_line is-1">The</span>
-                        <span className="loc-intro-s_title_line is-2 mob_a-right">Samaná</span>
-                        <span className="loc-intro-s_title_line">Peninsula</span>
+                      <h3 data-scroll-reveal="h" className="h1" lang={lang}>
+                        <span className="loc-intro-s_title_line is-1">{t.titleThe}</span>
+                        <span className="loc-intro-s_title_line is-2 mob_a-right">{t.titleMiddle}</span>
+                        <span className="loc-intro-s_title_line">{t.titlePeninsula}</span>
                       </h3>
                     </div>
                     <div className="loc-intro-s_img">
                       <div className="u-32 b-mob"></div>
                       <div data-scroll-reveal="slide" className="img-w">
-                        <img loading="eager" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3.webp" alt="Villa terrace with sun loungers beside an infinity pool, palm trees and the Caribbean sea beyond." sizes="(max-width: 2350px) 100vw, 2350px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3.webp 2350w" className="img" />
+                        <img loading="eager" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3.webp" alt={t.introImgAlt} sizes="(max-width: 2350px) 100vw, 2350px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/villa-coson-g3.webp 2350w" className="img" />
                       </div>
                     </div>
                     <div className="loc-intro-s_desc">
                       <div className="u-32 b-mob"></div>
-                      <h3 data-scroll-reveal="p" className="h5">Between Las Terrenas and Cosón Bay</h3>
+                      <h3 data-scroll-reveal="p" className="h5">{t.between}</h3>
                       <div className="u-16"></div>
                       <p data-scroll-reveal="p" className="p1">
-                        Surrounded by white-sand beaches, waterfalls, rainforest and the unhurried rhythm of the Samaná peninsula, the project combines privacy with easy reach of everything that makes Caribbean living effortless. A location designed not around movement — but around returning.
+                        {t.introP}
                       </p>
                       <div className="u-96 b-mob"></div>
                     </div>
                     <div data-scroll-reveal="ctn" className="loc-intro-s_btn">
                       <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                         <div data-magnetic-inner="" className="btn-circle_label">
-                          <a hover-nav-item="" aria-label="View available villas" href="/villas" className="nav-item w-inline-block">
+                          <a hover-nav-item="" aria-label={t.cta} href={localize('/villas', lang)} className="nav-item w-inline-block">
                             <div className="nav-item_label">
                               <div className="nav-item_label_text">
-                                <div hover="text" className="l1">View available villas</div>
+                                <div hover="text" className="l1">{t.cta}</div>
                               </div>
                               <div className="nav-item_label_text is-2">
-                                <div hover="text" className="l1">View available villas</div>
+                                <div hover="text" className="l1">{t.cta}</div>
                               </div>
                             </div>
                           </a>
@@ -448,7 +559,7 @@ export function Concept() {
                             <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                           </svg>
                         </div>
-                        <a aria-label="View available villas" href="/villas" className="btn-circle_link w-inline-block"></a>
+                        <a aria-label={t.cta} href={localize('/villas', lang)} className="btn-circle_link w-inline-block"></a>
                       </div>
                     </div>
                   </div>
@@ -470,9 +581,9 @@ export function Concept() {
                     <div className="grid">
                       <div className="loc-path-s_title">
                         <h2 className="h3 a-center">
-                          <span data-scroll-reveal="h" className="loc-path-s_title_line">The coast you wanted</span>
-                          <span data-scroll-reveal="a" className="loc-path-s_title_a a2">yours</span>
-                          <span data-scroll-reveal="h" className="loc-path-s_title_line">year after year</span>
+                          <span data-scroll-reveal="h" className="loc-path-s_title_line">{t.pathLine1}</span>
+                          <span data-scroll-reveal="a" className="loc-path-s_title_a a2">{t.pathA}</span>
+                          <span data-scroll-reveal="h" className="loc-path-s_title_line">{t.pathLine2}</span>
                         </h2>
                       </div>
                     </div>
@@ -503,7 +614,7 @@ export function Concept() {
                             */
                             style={{ width: "100%", height: "auto", display: "block" }}
                             role="img"
-                            aria-label="Places near Bahía Mar and approximate drive times, to be confirmed"
+                            aria-label={t.mapAria}
                           >
                             {/* La costa: una línea que ondula de oeste a este. */}
                             <path
@@ -520,11 +631,11 @@ export function Concept() {
                               confirmarlos, quitar el «~» y la nota.
                             */}
                             {[
-                              { x: 62, y: 167, nombre: 'El Catey Airport', tiempo: '~40 min' },
+                              { x: 62, y: 167, nombre: t.airport, tiempo: '~40 min' },
                               { x: 216, y: 147, nombre: 'Sánchez', tiempo: '~30 min' },
                               { x: 372, y: 150, nombre: 'Playa Cosón', tiempo: '~5 min' },
                               { x: 700, y: 118, nombre: 'Las Terrenas', tiempo: '~15 min' },
-                              { x: 856, y: 126, nombre: 'El Limón Waterfall', tiempo: '~30 min' },
+                              { x: 856, y: 126, nombre: t.waterfall, tiempo: '~30 min' },
                               { x: 1006, y: 104, nombre: 'Samaná', tiempo: '~50 min' },
                             ].map((p) => (
                               <g key={p.nombre}>
@@ -615,7 +726,7 @@ export function Concept() {
                                 opacity: 0.7,
                               }}
                             >
-                              Approximate drive times (TBC)
+                              {t.mapNote}
                             </text>
                           </svg>
                         </div>
@@ -647,6 +758,7 @@ export function Concept() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Bloque «Developer» de la home (promotor, arquitectos, sostenibilidad y
@@ -667,7 +779,38 @@ export function Concept() {
  * descripción de la firma sin fuente documentada (QA ronda 1, CONTENT-TRUTH-05).
  */
 
+
+
+const T__Developer = {
+  en: {
+    kicker: 'The people behind Bahía Mar',
+    developer: 'Developer',
+    developerDesc: 'Bahía Mar Residences & Beach Resort is a project managed by Landmass Capital.',
+    architects: 'Architects',
+    architectsAlt: 'Villa Esencia at Bahía Mar: a stone and timber villa under a deep roof overhang, facing the sea.',
+    architectsDesc: 'Estudio Dolla designed the master plan and the five villa typologies, from the two-level Villa Horizonte to the single-level Villa Ámbar, each with its own private pool and terraces.',
+    sustainability: 'Sustainability',
+    sustainabilityDesc: 'The master plan is aligned with LEED for Cities and Communities certification. Every villa is fitted with solar panels, home automation, energy-efficient kitchen appliances, bamboo flooring and chukum wall finishes.',
+    delivery: '2027 (TBC)',
+    deliveryDesc: 'Estimated delivery, to be confirmed. The Phase II master plan comprises 246 villas: 77 Villa Horizonte, 88 Villa Esencia and 81 Villa Armonía, each with its own private pool.',
+  },
+  es: {
+    kicker: 'Quiénes están detrás de Bahía Mar',
+    developer: 'Promotor',
+    developerDesc: 'Bahía Mar Residences & Beach Resort es un proyecto gestionado por Landmass Capital.',
+    architects: 'Arquitectos',
+    architectsAlt: 'Villa Esencia en Bahía Mar: una villa de piedra y madera bajo un profundo alero, frente al mar.',
+    architectsDesc: 'Estudio Dolla diseñó el plan maestro y las cinco tipologías de villa, desde la Villa Horizonte de dos niveles hasta la Villa Ámbar de un nivel, cada una con su propia piscina privada y terrazas.',
+    sustainability: 'Sostenibilidad',
+    sustainabilityDesc: 'El plan maestro está alineado con la certificación LEED for Cities and Communities. Todas las villas cuentan con paneles solares, domótica, electrodomésticos de cocina eficientes, pisos de bambú y muros acabados en chukum.',
+    delivery: '2027 (por confirmar)',
+    deliveryDesc: 'Entrega estimada, por confirmar. El plan maestro de la Fase II comprende 246 villas: 77 Villa Horizonte, 88 Villa Esencia y 81 Villa Armonía, cada una con su propia piscina privada.',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function Developer() {
+  const lang = useLang();
+  const t = T__Developer[lang];
   return (
     <section data-bg="light" className="section clip">
       <div className="container">
@@ -676,7 +819,7 @@ export function Developer() {
             <div className="u-48"></div>
             <div className="grid">
               <div className="s_title">
-                <p data-scroll-reveal="p" className="l1 a-center">The people behind Bahía Mar</p>
+                <p data-scroll-reveal="p" className="l1 a-center">{t.kicker}</p>
               </div>
             </div>
             <div className="u-48"></div>
@@ -690,7 +833,7 @@ export function Developer() {
                       <div data-accordion-card="" className="other-card">
                         <div className="other-card_name">
                           <div className="other-card_name_label">
-                            <h4 data-scroll-reveal="h" className="h3 a-center">Developer</h4>
+                            <h4 data-scroll-reveal="h" className="h3 a-center">{t.developer}</h4>
                             <div data-scroll-reveal="ctn" data-ico-plus="" className="other-card_ico">
                               <div className="ico-16">
                                 <div className="ico w-embed">
@@ -707,7 +850,7 @@ export function Developer() {
                           <div className="grid _6-columns">
                             <div className="other-card_info_desc">
                               <p data-accordion-card="p" className="p1 a-center">
-                                Bahía Mar Residences &amp; Beach Resort is a project managed by Landmass Capital.
+                                {t.developerDesc}
                                 <br />
                                 LandmassCapital.com
                               </p>
@@ -723,7 +866,7 @@ export function Developer() {
                       <div data-accordion-card="" className="other-card">
                         <div className="other-card_name">
                           <div className="other-card_name_label">
-                            <h4 data-scroll-reveal="h" className="h3 a-center">Architects</h4>
+                            <h4 data-scroll-reveal="h" className="h3 a-center">{t.architects}</h4>
                             <div data-scroll-reveal="ctn" data-ico-plus="" className="other-card_ico">
                               <div className="ico-16">
                                 <div className="ico w-embed">
@@ -740,13 +883,13 @@ export function Developer() {
                           <div className="grid _6-columns">
                             <div className="other-card_info_desc">
                               <div data-accordion-card="ctn" className="other-card_info_logo">
-                                <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-developer-1.webp" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-developer-1-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-developer-1-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-developer-1-p-1080.webp 1080w" sizes="(max-width: 991px) 144px, 192px" loading="eager" alt="Villa Esencia at Bahía Mar: a stone and timber villa under a deep roof overhang, facing the sea." className="logo b" />
+                                <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-developer-1.webp" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-developer-1-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-developer-1-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-developer-1-p-1080.webp 1080w" sizes="(max-width: 991px) 144px, 192px" loading="eager" alt={t.architectsAlt} className="logo b" />
                               </div>
                               <div className="u-32"></div>
                               <p data-accordion-card="p" className="p1 a-center">
                                 Estudio Dolla
                                 <br />
-                                Estudio Dolla designed the master plan and the five villa typologies, from the two-level Villa Horizonte to the single-level Villa Ámbar, each with its own private pool and terraces.
+                                {t.architectsDesc}
                               </p>
                               <div className="u-32"></div>
                               <div data-accordion-card="ctn" className="info_divider"><div className="line-h"></div></div>
@@ -760,7 +903,7 @@ export function Developer() {
                       <div data-accordion-card="" className="other-card">
                         <div className="other-card_name">
                           <div className="other-card_name_label">
-                            <h4 data-scroll-reveal="h" className="h3 a-center">Sustainability</h4>
+                            <h4 data-scroll-reveal="h" className="h3 a-center">{t.sustainability}</h4>
                             <div data-scroll-reveal="ctn" data-ico-plus="" className="other-card_ico">
                               <div className="ico-16">
                                 <div className="ico w-embed">
@@ -777,7 +920,7 @@ export function Developer() {
                           <div className="grid _6-columns">
                             <div className="other-card_info_desc">
                               <p data-accordion-card="p" className="p1 a-center">
-                                The master plan is aligned with LEED for Cities and Communities certification. Every villa is fitted with solar panels, home automation, energy-efficient kitchen appliances, bamboo flooring and chukum wall finishes.
+                                {t.sustainabilityDesc}
                               </p>
                               <div className="u-32"></div>
                               <div data-accordion-card="ctn" className="info_divider"><div className="line-h"></div></div>
@@ -791,7 +934,7 @@ export function Developer() {
                       <div data-accordion-card="" className="other-card">
                         <div className="other-card_name">
                           <div className="other-card_name_label">
-                            <h4 data-scroll-reveal="h" className="h3 a-center">2027 (TBC)</h4>
+                            <h4 data-scroll-reveal="h" className="h3 a-center">{t.delivery}</h4>
                             <div data-scroll-reveal="ctn" data-ico-plus="" className="other-card_ico">
                               <div className="ico-16">
                                 <div className="ico w-embed">
@@ -808,7 +951,7 @@ export function Developer() {
                           <div className="grid _6-columns">
                             <div className="other-card_info_desc">
                               <p data-accordion-card="p" className="p1 a-center">
-                                Estimated delivery, to be confirmed. The Phase II master plan comprises 246 villas: 77 Villa Horizonte, 88 Villa Esencia and 81 Villa Armonía, each with its own private pool.
+                                {t.deliveryDesc}
                               </p>
                               <div className="u-32"></div>
                               <div data-accordion-card="ctn" className="info_divider"><div className="line-h"></div></div>
@@ -841,6 +984,7 @@ export function Developer() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Personalizado para Bahía Mar: se mantiene A MANO. Venía de
@@ -870,6 +1014,19 @@ export function Developer() {
  */
 
 
+
+
+const T__Hero = {
+  en: {
+    alt: (name: string) => `${name} at Bahía Mar: front view of the villa, its private pool and the palm trees under a clear sky`,
+    cta: 'View available villas',
+  },
+  es: {
+    alt: (name: string) => `${name} en Bahía Mar: vista frontal de la villa, su piscina privada y las palmeras bajo un cielo despejado`,
+    cta: 'Ver villas disponibles',
+  },
+};
+
 /** Ancho completo + variantes de los heros del slider (1920 de ancho). */
 function heroSrcset(assetSlug: string): string {
   const base = `https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-hero-${assetSlug}`;
@@ -880,6 +1037,8 @@ function heroSrcset(assetSlug: string): string {
 }
 
 export function Hero() {
+  const lang = useLang();
+  const t = T__Hero[lang];
   return (
     <section id="hero" className="section clip theme_on-color">
       <div className="container">
@@ -917,7 +1076,7 @@ export function Hero() {
                         <img
                           loading={i === 0 ? 'eager' : 'lazy'}
                           src={`https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-hero-${villa.assetSlug}.webp`}
-                          alt={`${villa.name} at Bahía Mar: front view of the villa, its private pool and the palm trees under a clear sky`}
+                          alt={t.alt(villa.name)}
                           sizes="(max-width: 1920px) 100vw, 1920px"
                           srcSet={heroSrcset(villa.assetSlug)}
                           className="img h-auto hero-img"
@@ -957,13 +1116,13 @@ export function Hero() {
                     <div className="e-auto">
                       <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                         <div data-magnetic-inner="" className="btn-circle_label">
-                          <a hover-nav-item="" aria-label="View available villas" href="/villas" className="nav-item w-inline-block">
+                          <a hover-nav-item="" aria-label={t.cta} href={localize('/villas', lang)} className="nav-item w-inline-block">
                             <div className="nav-item_label">
                               <div className="nav-item_label_text">
-                                <div hover="text" className="l1">View available villas</div>
+                                <div hover="text" className="l1">{t.cta}</div>
                               </div>
                               <div className="nav-item_label_text is-2">
-                                <div hover="text" className="l1">View available villas</div>
+                                <div hover="text" className="l1">{t.cta}</div>
                               </div>
                             </div>
                           </a>
@@ -975,7 +1134,7 @@ export function Hero() {
                             <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                           </svg>
                         </div>
-                        <a aria-label="View available villas" href="/villas" className="btn-circle_link w-inline-block"></a>
+                        <a aria-label={t.cta} href={localize('/villas', lang)} className="btn-circle_link w-inline-block"></a>
                       </div>
                     </div>
                   </div>
@@ -1004,6 +1163,7 @@ export function Hero() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Ubicación: Las Terrenas, Samaná. Tras las tres capas de nubes, el fondo a
@@ -1026,7 +1186,24 @@ export function Hero() {
  * con el lote ya dibujado, para que no haya salto de escena al arrancar.
  */
 
+
+const T__Location = {
+  en: {
+    peninsula: 'Samaná Peninsula',
+    country: 'Dominican Republic',
+    drag: 'Drag to see more',
+    video: 'Aerial flyover of the Bahía Mar hills above Las Terrenas, with the master plan outlined over the terrain.',
+  },
+  es: {
+    peninsula: 'Península de Samaná',
+    country: 'República Dominicana',
+    drag: 'Deslice para ver más',
+    video: 'Vuelo aéreo sobre las lomas de Bahía Mar, por encima de Las Terrenas, con el plan maestro trazado sobre el terreno.',
+  },
+};
+
 export function Location() {
+  const t = T__Location[useLang()];
   return (
     <section data-bg="color" className="section clip theme_on-color">
       <div className="container">
@@ -1106,9 +1283,9 @@ export function Location() {
                   <div className="loc-s_desc_line"><div data-scroll-reveal="line" className="line-v"></div></div>
                   <h3 data-scroll-reveal="p" className="l1">Las Terrenas, Samaná</h3>
                   <div className="u-32"></div>
-                  <h4 data-scroll-reveal="p" className="p1">Samaná Peninsula</h4>
+                  <h4 data-scroll-reveal="p" className="p1">{t.peninsula}</h4>
                   <div className="u-32"></div>
-                  <h5 data-scroll-reveal="p" className="p1">Dominican Republic</h5>
+                  <h5 data-scroll-reveal="p" className="p1">{t.country}</h5>
                 </div>
                 <div className="b-mob">
                   <div className="l1-list">
@@ -1119,7 +1296,7 @@ export function Location() {
                         </svg>
                       </div>
                     </div>
-                    <div className="l1">Drag to see more</div>
+                    <div className="l1">{t.drag}</div>
                     <div className="ico-16">
                       <div className="ico w-embed">
                         <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1146,7 +1323,7 @@ export function Location() {
                   disablePictureInPicture
                   webkit-playsinline="webkit-playsinline"
                   poster="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-aerial-poster.webp"
-                  aria-label="Aerial flyover of the Bahía Mar hills above Las Terrenas, with the master plan outlined over the terrain."
+                  aria-label={t.video}
                   className="img h-auto"
                 >
                   <source src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/videos/bahiamar-aerial.webm" type="video/webm" />
@@ -1168,6 +1345,7 @@ export function Location() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -1189,20 +1367,33 @@ export function Location() {
  */
 
 
+
+
 /** Primera frase de un párrafo, para el pie de cada villa. */
 function firstSentence(text: string): string {
   const m = text.match(/^.*?[.!?](?=\s|$)/);
   return m ? m[0] : text;
 }
 
-/** «Type A · Two levels · 4 bedrooms · 77 units». */
-function caption(villa: Villa): string {
-  return [`Type ${villa.type}`, villa.category, `${villa.bedrooms} bedrooms`, villa.units ? `${villa.units} units` : null]
+/**
+ * «Type A · Two levels · 4 bedrooms · 77 units» / «Tipo A · Dos niveles ·
+ * 4 habitaciones · 77 unidades». La categoría ya llega traducida por
+ * localizeVilla.
+ */
+function caption(villa: Villa, lang: Lang): string {
+  const es = lang === 'es';
+  return [
+    `${es ? 'Tipo' : 'Type'} ${villa.type}`,
+    villa.category,
+    `${villa.bedrooms} ${es ? 'habitaciones' : 'bedrooms'}`,
+    villa.units ? `${villa.units} ${es ? 'unidades' : 'units'}` : null,
+  ]
     .filter(Boolean)
     .join(' · ');
 }
 
 export function Pillars() {
+  const lang = useLang();
   return (
     <section data-bg="light" data-snap="" className="section z-2 theme_on-brand">
       <div className="container">
@@ -1243,7 +1434,7 @@ export function Pillars() {
                 </div>
                 <div className="benefits-cms w-dyn-list">
                   <div role="list" className="benefits-cms_list w-dyn-items">
-                    {villas.map((villa) => (
+                    {villas.map((v) => localizeVilla(v, lang)).map((villa) => (
                       <div key={villa.slug} data-reveal-first="" data-slider="slide" role="listitem" className="benefits-cms_list_item w-dyn-item">
                         <div className="benefit-slide">
                           <div className="benefit-slide_t">
@@ -1260,7 +1451,9 @@ export function Pillars() {
                                 <img
                                   src={`https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-pillar-${villa.assetSlug}.webp`}
                                   loading="eager"
-                                  alt={`${villa.name}: front view of the villa with its private pool and the palm trees behind`}
+                                  alt={lang === 'es'
+                                    ? `${villa.name}: vista frontal de la villa con su piscina privada y las palmeras detrás`
+                                    : `${villa.name}: front view of the villa with its private pool and the palm trees behind`}
                                   sizes="(max-width: 2350px) 100vw, 2350px"
                                   srcSet={srcset(`https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-pillar-${villa.assetSlug}.webp`)}
                                   className="img"
@@ -1281,7 +1474,7 @@ export function Pillars() {
                             <div className="u-48"></div>
                             <div className="grid _8-columns">
                               <div className="benefit-slide_cap">
-                                <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">{caption(villa)}</p>
+                                <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">{caption(villa, lang)}</p>
                               </div>
                             </div>
                             <div className="u-48"></div>
@@ -1306,6 +1499,7 @@ export function Pillars() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -1323,7 +1517,22 @@ export function Pillars() {
  * scripts/recorte-quote-1.py; el original sigue en bahiamar-quote-1.
  */
 
+
+const T__PillarsMedia = {
+  en: {
+    quote: 'Walking trails, mountain bridges and the first funicular in the Caribbean link the villas — so Bahía Mar feels less like a complex and more like a landscape you move through.',
+    author: 'Master plan',
+    alt: 'Two-level Villa Horizonte with timber cladding over a stone base, its private pool and terrace among the palms, the sea behind.',
+  },
+  es: {
+    quote: 'Senderos, puentes de montaña y el primer funicular del Caribe unen las villas: Bahía Mar se vive menos como un complejo y más como un paisaje que se recorre.',
+    author: 'Plan maestro',
+    alt: 'Villa Horizonte, de dos niveles, revestida de madera sobre una base de piedra, con su piscina privada y su terraza entre las palmeras y el mar detrás.',
+  },
+};
+
 export function PillarsMedia() {
+  const t = T__PillarsMedia[useLang()];
   return (
     <section className="section z-2 theme_on-brand">
       <div className="container">
@@ -1345,12 +1554,12 @@ export function PillarsMedia() {
                 </div>
                 <div className="red-line"></div>
                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                  Walking trails, mountain bridges and the first funicular in the Caribbean link the villas — so Bahía Mar feels less like a complex and more like a landscape you move through.
+                  {t.quote}
                 </h4>
                 <div className="u-64"></div>
                 <div className="grid _4-columns">
                   <div className="quote-s_author">
-                    <div data-scroll-reveal="p" className="l1">Master plan</div>
+                    <div data-scroll-reveal="p" className="l1">{t.author}</div>
                     <div data-scroll-reveal="p" className="l1 reg">Bahía Mar Residences &amp; Beach Resort</div>
                   </div>
                 </div>
@@ -1362,7 +1571,7 @@ export function PillarsMedia() {
             <div className="img-w h-auto quote-w_bg_img">
               <div className="img-over-grad from-bot bot _4x b-desk"></div>
               <div className="img-over-grad from-bot bot _4x b-desk"></div>
-              <img className="img h-auto quote-w_bg_img" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout.webp" alt="Two-level Villa Horizonte with timber cladding over a stone base, its private pool and terrace among the palms, the sea behind." sizes="(max-width: 2350px) 100vw, 2350px" data-parallax="img-out" loading="eager" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout.webp 2350w" />
+              <img className="img h-auto quote-w_bg_img" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout.webp" alt={t.alt} sizes="(max-width: 2350px) 100vw, 2350px" data-parallax="img-out" loading="eager" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-quote-1-cutout.webp 2350w" />
             </div>
           </div>
           <div className="w_themes">
@@ -1386,6 +1595,7 @@ export function PillarsMedia() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Sección «The space to live in» de la home: interiores y terrazas de
@@ -1403,7 +1613,52 @@ export function PillarsMedia() {
  * bahia-mar-personalizacion/inventario/space.json.
  */
 
+
+
+const T__SpaceToLive = {
+  en: {
+    title1: 'The',
+    title2: 'space',
+    title3: 'to',
+    titleA: 'Live in',
+    alt1: 'Covered porch under a timber pergola with a private jacuzzi, woven lounge seating and tropical planting.',
+    listIntro: 'Every villa opens outdoors:',
+    list1: '• Private pool and jacuzzi',
+    list2: '• Terrace with BBQ and lounge garden',
+    list3: '• Porch under a pergola',
+    alt2: 'Open-plan living area with sliding glass walls onto the hills, woven pendant lamps and a linen sofa.',
+    lead: 'Every material was chosen so the house breathes with the landscape: bamboo underfoot, chukum on the walls, the bay in every opening',
+    desc: 'Bamboo floors throughout. Chukum wall finishes. Home automation. Kitchens with eco-efficient appliances and glass-ceramic hobs. Solar panels. Views of the beach, Samaná Bay and Los Haitises from every villa.',
+    cta: 'Explore the villas',
+    alt3: 'Kitchen and dining room in pale timber and stone, open to the terrace and the private pool.',
+    alt4: 'Principal bedroom with a glass wall sliding open onto a terrace that faces the sea.',
+    alt5: 'Bathroom with chukum-finished walls, a timber vanity and a walk-in shower beside a window onto the palms.',
+    alt6: 'Living and dining area with bamboo floors, timber joinery and full-height openings onto the palms and the pool.',
+  },
+  es: {
+    title1: 'El',
+    title2: 'espacio',
+    title3: 'para',
+    titleA: 'Vivir',
+    alt1: 'Porche cubierto bajo una pérgola de madera, con jacuzzi privado, asientos tejidos y vegetación tropical.',
+    listIntro: 'Cada villa se abre al exterior:',
+    list1: '• Piscina privada y jacuzzi',
+    list2: '• Terraza con BBQ y jardín de estar',
+    list3: '• Porche bajo una pérgola',
+    alt2: 'Salón de planta abierta con paredes de vidrio correderas hacia las colinas, lámparas colgantes tejidas y un sofá de lino.',
+    lead: 'Cada material se eligió para que la casa respire con el paisaje: bambú bajo los pies, chukum en los muros y la bahía en cada ventana',
+    desc: 'Pisos de bambú en toda la casa. Muros acabados en chukum. Domótica. Cocinas con electrodomésticos eficientes y vitrocerámica. Paneles solares. Vistas a la playa, la bahía de Samaná y Los Haitises desde cada villa.',
+    cta: 'Descubrir las villas',
+    alt3: 'Cocina y comedor en madera clara y piedra, abiertos a la terraza y a la piscina privada.',
+    alt4: 'Habitación principal con una pared de vidrio que se desliza hacia una terraza frente al mar.',
+    alt5: 'Baño con muros acabados en chukum, mueble de madera y ducha abierta junto a una ventana hacia las palmeras.',
+    alt6: 'Salón comedor con pisos de bambú, carpintería de madera y vanos de piso a techo hacia las palmeras y la piscina.',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function SpaceToLive() {
+  const lang = useLang();
+  const t = T__SpaceToLive[lang];
   return (
     <section className="section arch clip">
       <div className="container">
@@ -1413,14 +1668,14 @@ export function SpaceToLive() {
             <div className="grid">
               <div className="interior-s_title">
                 <h2 data-scroll-reveal="h" className="h1 a-center">
-                  The
+                  {t.title1}
                   <br />
-                  space
+                  {t.title2}
                   <br />
-                  to
+                  {t.title3}
                 </h2>
                 <div className="interior-s_title_a">
-                  <h3 data-scroll-reveal="a" className="a1 a-center">Live in</h3>
+                  <h3 data-scroll-reveal="a" className="a1 a-center">{t.titleA}</h3>
                 </div>
               </div>
             </div>
@@ -1431,7 +1686,7 @@ export function SpaceToLive() {
                   <div data-video-playpause="" className="interior-s_l_img-w">
                     <div className="interior-s_l_img">
                       <div data-scroll-reveal="slide" className="img-w">
-                        <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1.webp 2350w" alt="Covered porch under a timber pergola with a private jacuzzi, woven lounge seating and tropical planting." className="img" />
+                        <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-1.webp 2350w" alt={t.alt1} className="img" />
                       </div>
                     </div>
                     <div data-parallax="ctn-up" className="flower interior">
@@ -1443,13 +1698,13 @@ export function SpaceToLive() {
                   <div className="interior-s_l_desc">
                     <div className="u-16"></div>
                     <h4 data-scroll-reveal="p" className="l1">
-                      Every villa opens outdoors:
+                      {t.listIntro}
                       <br />
-                      • Private pool and jacuzzi
+                      {t.list1}
                       <br />
-                      • Terrace with BBQ and lounge garden
+                      {t.list2}
                       <br />
-                      • Porch under a pergola
+                      {t.list3}
                     </h4>
                     <div className="u-160 b-mob"></div>
                   </div>
@@ -1459,33 +1714,33 @@ export function SpaceToLive() {
                 <div className="grid _5-columns">
                   <div className="interior-s_r_img">
                     <div data-scroll-reveal="slide" className="img-w">
-                      <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2.webp 2350w" alt="Open-plan living area with sliding glass walls onto the hills, woven pendant lamps and a linen sofa." className="img" />
+                      <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2.webp" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-2.webp 2350w" alt={t.alt2} className="img" />
                     </div>
                   </div>
                   <div className="interior-s_r_lead w-clearfix">
                     <div className="u-16"></div>
                     <div className="red-line"></div>
                     <h4 data-scroll-reveal="p" className="h5">
-                      Every material was chosen so the house breathes with the landscape: bamboo underfoot, chukum on the walls, the bay in every opening
+                      {t.lead}
                     </h4>
                   </div>
                   <div className="interior-s_r_desc">
                     <div className="u-64"></div>
                     <p data-scroll-reveal="p" className="p1">
-                      Bamboo floors throughout. Chukum wall finishes. Home automation. Kitchens with eco-efficient appliances and glass-ceramic hobs. Solar panels. Views of the beach, Samaná Bay and Los Haitises from every villa.
+                      {t.desc}
                     </p>
                     <div className="u-96"></div>
                   </div>
                   <div data-scroll-reveal="ctn" className="interior-s_r_btn">
                     <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                       <div data-magnetic-inner="" className="btn-circle_label">
-                        <a hover-nav-item="" aria-label="Explore the villas" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Explore the villas</div>
+                              <div hover="text" className="l1">{t.cta}</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Explore the villas</div>
+                              <div hover="text" className="l1">{t.cta}</div>
                             </div>
                           </div>
                         </a>
@@ -1497,7 +1752,7 @@ export function SpaceToLive() {
                           <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                         </svg>
                       </div>
-                      <a aria-label="Explore the villas" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
+                      <a aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                     </div>
                   </div>
                 </div>
@@ -1511,28 +1766,28 @@ export function SpaceToLive() {
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3.webp" loading="eager" alt="Kitchen and dining room in pale timber and stone, open to the terrace and the private pool." sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3.webp 2350w" className="img" />
+                          <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3.webp" loading="eager" alt={t.alt3} sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-3.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4.webp" loading="eager" alt="Principal bedroom with a glass wall sliding open onto a terrace that faces the sea." sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4.webp 2350w" className="img" />
+                          <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4.webp" loading="eager" alt={t.alt4} sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-4.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5.webp" loading="eager" alt="Bathroom with chukum-finished walls, a timber vanity and a walk-in shower beside a window onto the palms." sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5.webp 2350w" className="img" />
+                          <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5.webp" loading="eager" alt={t.alt5} sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-5.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>
                     <div data-reveal-first="" data-slider="slide" role="listitem" className="gallery-cms_list_item w-dyn-item">
                       <div className="gallery-slide">
                         <div data-scroll-reveal="slide" data-slider="img" className="img-w">
-                          <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6.webp" loading="eager" alt="Living and dining area with bamboo floors, timber joinery and full-height openings onto the palms and the pool." sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6.webp 2350w" className="img" />
+                          <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6.webp" loading="eager" alt={t.alt6} sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-space-6.webp 2350w" className="img" />
                         </div>
                       </div>
                     </div>
@@ -1590,6 +1845,7 @@ export function SpaceToLive() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Slider de tipologías de la home: «Two levels» (Cosón, Helecho, Carolina),
@@ -1606,7 +1862,46 @@ export function SpaceToLive() {
  * Las URLs del CDN ya están reescritas a /public.
  */
 
+
+
+const T__VillasPreview = {
+  en: {
+    bedrooms: 'Bedrooms',
+    bathrooms: 'Bathrooms',
+    twoDesc:
+      'Villa Horizonte, Esencia and Remanso: living areas, pool and terraces on the first level; the principal suite and its upper terraces on the second, following the slope of the land.',
+    twoBtn: 'Explore two-level villas',
+    twoTitle: 'Two levels',
+    singleDesc:
+      'Villa Armonía and Ámbar: kitchen, living areas and bedrooms on one floor, opening straight onto the pool terrace, solarium and fire pit.',
+    singleBtn: 'Explore single-level villas',
+    singleTitle: 'Single level',
+    allDesc:
+      'Five typologies on one or two levels, each with private pool, jacuzzi, solarium, fire pit and BBQ area — and views over the beach, Samaná Bay and Los Haitises.',
+    allBtn: 'Explore all villas',
+    allTitle: 'All five villas',
+  },
+  es: {
+    bedrooms: 'Habitaciones',
+    bathrooms: 'Baños',
+    twoDesc:
+      'Villa Horizonte, Esencia y Remanso: salones, piscina y terrazas en el primer nivel; la suite principal y sus terrazas altas en el segundo, siguiendo la pendiente del terreno.',
+    twoBtn: 'Descubrir las villas de dos niveles',
+    twoTitle: 'Dos niveles',
+    singleDesc:
+      'Villa Armonía y Ámbar: cocina, salones y habitaciones en una sola planta, abiertos directamente a la terraza de la piscina, el solárium y el fogatero.',
+    singleBtn: 'Descubrir las villas de un nivel',
+    singleTitle: 'Un nivel',
+    allDesc:
+      'Cinco tipologías de uno o dos niveles, todas con piscina privada, jacuzzi, solárium, fogatero y zona de BBQ, y vistas a la playa, la bahía de Samaná y Los Haitises.',
+    allBtn: 'Descubrir todas las villas',
+    allTitle: 'Las cinco villas',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function VillasPreview() {
+  const lang = useLang();
+  const t = T__VillasPreview[lang];
   return (
     <section data-bg="light" data-snap="" className="section theme_on-brand">
       <div className="container">
@@ -1626,12 +1921,12 @@ export function VillasPreview() {
                             <div className="apart-type-slide_data">
                               <div className="data-list">
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bedrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bedrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">3 — 4</h5>
                                 </div>
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bathrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bathrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">3 — 4</h5>
                                 </div>
@@ -1640,17 +1935,17 @@ export function VillasPreview() {
                             </div>
                             <div className="apart-type-slide_desc">
                               <p data-scroll-reveal="p" data-slider="p" className="p1 mob_a-center">
-                                Villa Horizonte, Esencia and Remanso: living areas, pool and terraces on the first level; the principal suite and its upper terraces on the second, following the slope of the land.
+                                {t.twoDesc}
                               </p>
                               <div className="u-24"></div>
                               <div data-scroll-reveal="ctn" data-slider="ctn" className="apart-type-slide_btn">
-                                <a aria-label="Explore two-level villas" hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn w-inline-block">
+                                <a aria-label={t.twoBtn} hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn w-inline-block">
                                   <div className="btn_label">
                                     <div className="btn_label_text">
-                                      <div hover="text" className="l1">Explore two-level villas</div>
+                                      <div hover="text" className="l1">{t.twoBtn}</div>
                                     </div>
                                     <div className="btn_label_text is-2">
-                                      <div hover="text" className="l1">Explore two-level villas</div>
+                                      <div hover="text" className="l1">{t.twoBtn}</div>
                                     </div>
                                   </div>
                                   <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
@@ -1662,7 +1957,7 @@ export function VillasPreview() {
                         </div>
                         <div className="apart-type-slide_b">
                           <div className="u-48 b-desk"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">Two levels</h3>
+                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">{t.twoTitle}</h3>
                           <div className="u-32 b-mob"></div>
                         </div>
                         <div className="apart-type-slide_img-w">
@@ -1682,12 +1977,12 @@ export function VillasPreview() {
                             <div className="apart-type-slide_data">
                               <div className="data-list">
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bedrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bedrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">2</h5>
                                 </div>
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bathrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bathrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">2</h5>
                                 </div>
@@ -1696,14 +1991,14 @@ export function VillasPreview() {
                             </div>
                             <div className="apart-type-slide_desc">
                               <p data-scroll-reveal="p" data-slider="p" className="p1 mob_a-center">
-                                Villa Armonía and Ámbar: kitchen, living areas and bedrooms on one floor, opening straight onto the pool terrace, solarium and fire pit.
+                                {t.singleDesc}
                               </p>
                               <div className="u-24"></div>
                               <div data-scroll-reveal="ctn" data-slider="ctn" className="apart-type-slide_btn">
-                                <a aria-label="Explore single-level villas" hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href="/villas?type=single-level" className="btn w-inline-block">
+                                <a aria-label={t.singleBtn} hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href={localize('/villas?type=single-level', lang)} className="btn w-inline-block">
                                   <div className="btn_label">
-                                    <div className="btn_label_text"><div hover="text" className="l1">Explore single-level villas</div></div>
-                                    <div className="btn_label_text is-2"><div hover="text" className="l1">Explore single-level villas</div></div>
+                                    <div className="btn_label_text"><div hover="text" className="l1">{t.singleBtn}</div></div>
+                                    <div className="btn_label_text is-2"><div hover="text" className="l1">{t.singleBtn}</div></div>
                                   </div>
                                   <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                                 </a>
@@ -1714,7 +2009,7 @@ export function VillasPreview() {
                         </div>
                         <div className="apart-type-slide_b">
                           <div className="u-48 b-desk"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">Single level</h3>
+                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">{t.singleTitle}</h3>
                           <div className="u-32 b-mob"></div>
                         </div>
                         <div className="apart-type-slide_img-w">
@@ -1734,12 +2029,12 @@ export function VillasPreview() {
                             <div className="apart-type-slide_data">
                               <div className="data-list">
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bedrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bedrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">2 — 4</h5>
                                 </div>
                                 <div className="data-item">
-                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">Bathrooms</h4>
+                                  <h4 data-scroll-reveal="p" data-slider="p" className="l1 reg">{t.bathrooms}</h4>
                                   <div className="u-8"></div>
                                   <h5 data-scroll-reveal="p" data-slider="p" className="h5">2 — 4</h5>
                                 </div>
@@ -1748,14 +2043,14 @@ export function VillasPreview() {
                             </div>
                             <div className="apart-type-slide_desc">
                               <p data-scroll-reveal="p" data-slider="p" className="p1 mob_a-center">
-                                Five typologies on one or two levels, each with private pool, jacuzzi, solarium, fire pit and BBQ area — and views over the beach, Samaná Bay and Los Haitises.
+                                {t.allDesc}
                               </p>
                               <div className="u-24"></div>
                               <div data-scroll-reveal="ctn" data-slider="ctn" className="apart-type-slide_btn">
-                                <a aria-label="Explore all villas" hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href="/villas" className="btn w-inline-block">
+                                <a aria-label={t.allBtn} hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href={localize('/villas', lang)} className="btn w-inline-block">
                                   <div className="btn_label">
-                                    <div className="btn_label_text"><div hover="text" className="l1">Explore all villas</div></div>
-                                    <div className="btn_label_text is-2"><div hover="text" className="l1">Explore all villas</div></div>
+                                    <div className="btn_label_text"><div hover="text" className="l1">{t.allBtn}</div></div>
+                                    <div className="btn_label_text is-2"><div hover="text" className="l1">{t.allBtn}</div></div>
                                   </div>
                                   <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                                 </a>
@@ -1766,7 +2061,7 @@ export function VillasPreview() {
                         </div>
                         <div className="apart-type-slide_b">
                           <div className="u-48 b-desk"></div>
-                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">All five villas</h3>
+                          <h3 data-scroll-reveal="h" data-slider="h" className="h2 a-center">{t.allTitle}</h3>
                           <div className="u-32 b-mob"></div>
                         </div>
                         <div className="apart-type-slide_img-w">

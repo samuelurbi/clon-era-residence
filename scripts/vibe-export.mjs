@@ -174,7 +174,10 @@ for (const dir of MIRRORED) {
  */
 const template = join(ROOT, 'vibe', 'index.template.html');
 const indexOut = join(ROOT, 'vibe', 'index.html');
-let html = readFileSync(template, 'utf8').replaceAll('{{ASSET_BASE}}', ASSET_BASE);
+let html = readFileSync(template, 'utf8')
+  .replaceAll('{{ASSET_BASE}}', ASSET_BASE)
+  // El mismo script que app/layout.tsx mete en el <head> de Next.
+  .replace('{{PHONE_LANDSCAPE_SCRIPT}}', () => readFileSync(join(ROOT, 'lib', 'phone-landscape.inline.js'), 'utf8').trim());
 
 /* La plantilla escribe las rutas con `/`; si el host usa otro separador,
    se aplica aquí también — anclando en la base ya sustituida, para no tocar

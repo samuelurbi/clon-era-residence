@@ -1,5 +1,6 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * CTA «Sea views from every villa». El marcado es común a casi todas las
@@ -13,8 +14,44 @@
  */
 
 import { CTA_IMAGES, type CtaImage } from '@/data/cta-images';
+import { localize, type Lang } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    desc: 'A short conversation is enough to understand which of the five villas fits the way you want to live in Las Terrenas — a family home facing the bay, a longer stay each season, or a base for the winter months.',
+    title1: 'Sea views',
+    title2: 'from every villa',
+    subtitle: 'Samaná Bay through the palms',
+    cta: 'View available villas',
+  },
+  es: {
+    desc: 'Basta una breve conversación para saber cuál de las cinco villas se ajusta a la forma en que usted quiere vivir en Las Terrenas: una casa familiar frente a la bahía, estancias largas cada temporada o un refugio para los meses de invierno.',
+    title1: 'Vistas al mar',
+    title2: 'desde cada villa',
+    subtitle: 'La bahía de Samaná entre las palmeras',
+    cta: 'Ver villas disponibles',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
+/**
+ * El `alt` de cada fondo en español, por `src`. El inglés vive en
+ * data/cta-images.ts; si una foto nueva no está aquí, se queda en inglés.
+ */
+const ALT_ES: Record<string, string> = {
+  'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-cta-1.webp':
+    'Tumbonas en la terraza de una villa junto a una piscina infinita, con palmeras y la bahía de Samaná al fondo',
+  'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-cta-2.webp':
+    'Villa revestida de madera abierta a su terraza y su piscina privada, con palmeras y el mar a lo lejos',
+  'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-cta-3.webp':
+    'Escalones que bajan del salón de una villa a una piscina con islas ajardinadas, palmeras y el mar al fondo',
+  'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-cta-4.webp':
+    'Villa de piedra y madera con un porche bajo pérgola y piscina privada, y el mar asomando entre los árboles',
+};
 
 export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <section data-bg="color" className="section theme_on-color">
       <div data-footer-clip="" className="container">
@@ -24,7 +61,7 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
             <div className="grid">
               <div className="cta-s_desc">
                 <p data-scroll-reveal="p" className="l1 a-center">
-                  A short conversation is enough to understand which of the five villas fits the way you want to live in Las Terrenas — a family home facing the bay, a longer stay each season, or a base for the winter months.
+                  {t.desc}
                 </p>
               </div>
             </div>
@@ -32,23 +69,23 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
             <div className="grid">
               <div className="cta-s_title">
                 <h2 data-scroll-reveal="h" className="h1 a-center">
-                  Sea views
+                  {t.title1}
                   <br />
-                  from every villa
+                  {t.title2}
                 </h2>
                 <div className="u-32"></div>
-                <h3 data-scroll-reveal="h" className="c1 a-center">Samaná Bay through the palms</h3>
+                <h3 data-scroll-reveal="h" className="c1 a-center">{t.subtitle}</h3>
                 <div className="u-160"></div>
                 <div data-scroll-reveal="ctn" className="cta-s_title_btn">
                   <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                     <div data-magnetic-inner="" className="btn-circle_label">
-                      <a hover-nav-item="" aria-label="View available villas" href="/villas" className="nav-item w-inline-block">
+                      <a hover-nav-item="" aria-label={t.cta} href={localize('/villas', lang)} className="nav-item w-inline-block">
                         <div className="nav-item_label">
                           <div className="nav-item_label_text">
-                            <div hover="text" className="l1">View available villas</div>
+                            <div hover="text" className="l1">{t.cta}</div>
                           </div>
                           <div className="nav-item_label_text is-2">
-                            <div hover="text" className="l1">View available villas</div>
+                            <div hover="text" className="l1">{t.cta}</div>
                           </div>
                         </div>
                       </a>
@@ -60,7 +97,7 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
                         <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                       </svg>
                     </div>
-                    <a aria-label="View available villas" href="/villas" className="btn-circle_link w-inline-block"></a>
+                    <a aria-label={t.cta} href={localize('/villas', lang)} className="btn-circle_link w-inline-block"></a>
                   </div>
                 </div>
               </div>
@@ -68,7 +105,7 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
           </div>
           <div className="w_bg">
             <div data-parallax="w" className="img-w">
-              <img data-parallax="img" loading="eager" alt={image.alt} src={image.src} sizes="(max-width: 2350px) 100vw, 2350px" srcSet={image.srcSet} className="img-p" />
+              <img data-parallax="img" loading="eager" alt={lang === 'es' ? (ALT_ES[image.src] ?? image.alt) : image.alt} src={image.src} sizes="(max-width: 2350px) 100vw, 2350px" srcSet={image.srcSet} className="img-p" />
               <div className="img-over-grad from-top _4x"></div>
               <div className="img-over-grad"></div>
               <div className="img-over-grad"></div>

@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Ficha de villa de Bahía Mar. Marcado del original con las clases de
@@ -19,41 +20,90 @@
  */
 
 import { Fragment } from 'react';
-import { srcset, type Villa } from '@/data/villas';
+import { srcset, localizeVilla, type Villa } from '@/data/villas';
+import { useLang } from '@/lib/use-lang';
+import type { Lang } from '@/lib/i18n';
 
 /**
  * Lo que trae cada villa según el brochure («cada unidad cuenta con»).
  * Es común a las cinco tipologías; lo específico de cada una (cava,
  * terrazas lounge, pérgolas…) va en `villa.features`.
  */
-const BENEFITS = [
-  'Beach, bay & Los Haitises views',
-  'Private pool',
-  'BBQ terrace & lounge garden',
-  'Pergola porch',
-  'Bamboo floors',
-  'Chukum walls',
-  'Home automation',
-  'Eco-efficient kitchen',
-  'Solar panels',
-];
+const BENEFITS: Record<Lang, string[]> = {
+  en: [
+    'Beach, bay & Los Haitises views',
+    'Private pool',
+    'BBQ terrace & lounge garden',
+    'Pergola porch',
+    'Bamboo floors',
+    'Chukum walls',
+    'Home automation',
+    'Eco-efficient kitchen',
+    'Solar panels',
+  ],
+  es: [
+    'Vistas a la playa, la bahía y Los Haitises',
+    'Piscina privada',
+    'Terraza BBQ y jardín lounge',
+    'Porche con pérgola',
+    'Pisos de bambú',
+    'Muros de chukum',
+    'Domótica',
+    'Cocina ecoeficiente',
+    'Paneles solares',
+  ],
+};
+
+const T = {
+  en: {
+    typology: 'Typology:',
+    type: 'Type',
+    bedrooms: 'Bedrooms',
+    bathrooms: 'Bathrooms',
+    levels: 'Levels',
+    livingAreas: 'Living areas',
+    info: 'Info',
+    benefits: 'Benefits',
+    request: 'Submit a request',
+    exterior: 'exterior',
+    interior: 'interior',
+  },
+  es: {
+    typology: 'Tipología:',
+    type: 'Tipo',
+    bedrooms: 'Habitaciones',
+    bathrooms: 'Baños',
+    levels: 'Niveles',
+    livingAreas: 'Salas de estar',
+    info: 'Info',
+    benefits: 'Beneficios',
+    request: 'Envíe una solicitud',
+    exterior: 'exterior',
+    interior: 'interior',
+  },
+};
 
 /**
  * Texto alternativo de cada imagen de la galería a partir de su nombre
  * (`villa-<slug>-g1..g4` exteriores, `i1..i4` interiores; ver villas.ts).
  */
-function galleryAlt(villa: Villa, src: string): string {
+function galleryAlt(villa: Villa, src: string, lang: Lang): string {
   const m = src.match(/-([gi])(\d)\.webp$/);
   if (!m) return villa.name;
-  const kind = m[1] === 'g' ? 'exterior' : 'interior';
-  return `${villa.name} — ${kind} render ${m[2]}`;
+  const kind = m[1] === 'g' ? T[lang].exterior : T[lang].interior;
+  return lang === 'es'
+    ? `${villa.name} — render ${kind} ${m[2]}`
+    : `${villa.name} — ${kind} render ${m[2]}`;
 }
 
 export function VillaDetail({
-  villa,
+  villa: villaEn,
 }: {
   villa: Villa;
 }) {
+  const lang = useLang();
+  const t = T[lang];
+  const villa = localizeVilla(villaEn, lang);
   return (
     <section data-bg="light" className="section clip">
       <div className="container">
@@ -78,8 +128,8 @@ export function VillaDetail({
                     <h2 className="l2">{villa.category}</h2>
                     <div className="u-4"></div>
                     <h3 id="" className="l2 reg">
-                      <span>Typology:{' '}</span>
-                      <span>Type {villa.type}</span>
+                      <span>{t.typology}{' '}</span>
+                      <span>{t.type} {villa.type}</span>
                     </h3>
                     <div className="u-16"></div>
                   </div>
@@ -94,7 +144,7 @@ export function VillaDetail({
                         <div role="list" className="lot-media-cms_list w-dyn-items">
                           {villa.gallery.map((src) => (
                             <div key={src} role="listitem" className="lot-media-cms_list_item w-dyn-item w-dyn-repeater-item">
-                              <img src={src} loading="lazy" data-lightbox="" alt={galleryAlt(villa, src)} sizes="100vw" srcSet={srcset(src)} className="img _w-auto" />
+                              <img src={src} loading="lazy" data-lightbox="" alt={galleryAlt(villa, src, lang)} sizes="100vw" srcSet={srcset(src)} className="img _w-auto" />
                             </div>
                           ))}
                         </div>
@@ -106,22 +156,22 @@ export function VillaDetail({
                     <div className="u-64"></div>
                     <div className="lot-s_info_data">
                       <div className="data-item">
-                        <h4 className="l1 reg">Bedrooms</h4>
+                        <h4 className="l1 reg">{t.bedrooms}</h4>
                         <div className="u-8"></div>
                         <h5 className="h5">{villa.bedrooms}</h5>
                       </div>
                       <div className="data-item">
-                        <h4 className="l1 reg">Bathrooms</h4>
+                        <h4 className="l1 reg">{t.bathrooms}</h4>
                         <div className="u-8"></div>
                         <h5 className="h5">{villa.bathrooms}{villa.halfBath ? ' + ½' : ''}</h5>
                       </div>
                       <div className="data-item">
-                        <h4 className="l1 reg">Levels</h4>
+                        <h4 className="l1 reg">{t.levels}</h4>
                         <div className="u-8"></div>
                         <h5 className="h5">{villa.levels}</h5>
                       </div>
                       <div className="data-item">
-                        <h4 className="l1 reg">Living areas</h4>
+                        <h4 className="l1 reg">{t.livingAreas}</h4>
                         <div className="u-8"></div>
                         <h5 className="h5">{villa.livingAreas}</h5>
                       </div>
@@ -129,8 +179,8 @@ export function VillaDetail({
                     <div className="u-48"></div>
                     <div data-tabs="" className="lot-s_info_more">
                       <div data-tabs-hilight="hor" className="tabs">
-                        <div data-tab="" data-tab-trigger="desc" hover-tab="" className="tab"><div className="l1">Info</div></div>
-                        <div data-tab="" data-tab-trigger="benefits" hover-tab="" className="tab"><div className="l1">Benefits</div></div>
+                        <div data-tab="" data-tab-trigger="desc" hover-tab="" className="tab"><div className="l1">{t.info}</div></div>
+                        <div data-tab="" data-tab-trigger="benefits" hover-tab="" className="tab"><div className="l1">{t.benefits}</div></div>
                         <div className="tabs_line"><div className="line-h"></div></div>
                         <div data-tab-hilight="" className="tabs_hilight"></div>
                       </div>
@@ -151,7 +201,7 @@ export function VillaDetail({
                           <div className="u-16"></div>
                           <div className="benefits-tag-cms w-dyn-list">
                             <div role="list" className="benefits-tag-cms_list tag-list w-dyn-items">
-                              {BENEFITS.map((benefit) => (
+                              {BENEFITS[lang].map((benefit) => (
                                 <div key={benefit} data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item">
                                   <div className="tag"><h4 className="p2">{benefit}</h4></div>
                                 </div>
@@ -167,10 +217,10 @@ export function VillaDetail({
                     <div className="u-48 b-mob"></div>
                     <div className="u-16 b-desk"></div>
                     <div className="btn-list">
-                      <a hover-btn="" hover-nav-item="" aria-label="Submit a request" data-wf--btn--variant="sec" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn w-inline-block">
+                      <a hover-btn="" hover-nav-item="" aria-label={t.request} data-wf--btn--variant="sec" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn w-inline-block">
                         <div className="btn_label">
-                          <div className="btn_label_text"><div hover="text" className="l1">Submit a request</div></div>
-                          <div className="btn_label_text is-2"><div hover="text" className="l1">Submit a request</div></div>
+                          <div className="btn_label_text"><div hover="text" className="l1">{t.request}</div></div>
+                          <div className="btn_label_text is-2"><div hover="text" className="l1">{t.request}</div></div>
                         </div>
                         <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                       </a>
@@ -223,7 +273,7 @@ export function VillaDetail({
                         <div key={src} role="listitem" className="lot-media-cms_list_item w-dyn-item w-dyn-repeater-item">
                           <div hover-pin-trigger="" hover-media-item="" className="lot-media-item theme_on-color">
                             <div className="img-w h-auto">
-                              <img src={src} loading="eager" data-lightbox="" alt={galleryAlt(villa, src)} sizes="100vw" srcSet={srcset(src)} className="img h-auto" />
+                              <img src={src} loading="eager" data-lightbox="" alt={galleryAlt(villa, src, lang)} sizes="100vw" srcSet={srcset(src)} className="img h-auto" />
                               <div hover="btn" className="lot-media-item_btn">
                                 <div hover-pin="" className="pin">
                                   <div hover="bg" className="pin_dot">

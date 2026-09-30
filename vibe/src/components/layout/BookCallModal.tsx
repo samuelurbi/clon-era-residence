@@ -1,5 +1,7 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Modal «Book a call». Marcado portado del sitio original conservando las
@@ -11,11 +13,54 @@
  * Mar pasa a mantenerse a mano. Regenerarlo devolvería el isotipo, el sello
  * y el PDF legal de Estepona.
  *
- * Pendiente (ver BACKLOG.md): la política de privacidad de Bahía Mar aún
- * no existe; el enlace del formulario apunta a «#» hasta que llegue.
+ * El aviso del formulario enlaza a la política de privacidad de /legal
+ * (#privacy) en el idioma de la página. Textos en inglés y español según
+ * la URL (lib/use-lang.ts).
  */
 
+import { localize } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    close: 'Label',
+    title: 'Book a call',
+    logo: 'Bahía Mar logo',
+    desc: 'Leave your details and the sales team will get back to you.',
+    name: 'Name:',
+    email: 'Email:',
+    phone: 'Phone:',
+    message: 'Message:',
+    agree: 'By submitting, you agree to our\u00a0',
+    privacy: 'Privacy policy',
+    submit: 'Submit',
+    received: 'We’ve received your request',
+    thanks: 'Thank you',
+    reply: 'Our sales team will review your message and respond personally.',
+    error: 'Oops! Something went wrong while submitting the form.',
+  },
+  es: {
+    close: 'Cerrar',
+    title: 'Agende una llamada',
+    logo: 'Logotipo de Bahía Mar',
+    desc: 'Déjenos sus datos y el equipo de ventas se pondrá en contacto con usted.',
+    name: 'Nombre:',
+    email: 'Correo electrónico:',
+    phone: 'Teléfono:',
+    message: 'Mensaje:',
+    agree: 'Al enviar este formulario, acepta nuestra\u00a0',
+    privacy: 'Política de privacidad',
+    submit: 'Enviar',
+    received: 'Hemos recibido su solicitud',
+    thanks: 'Gracias',
+    reply: 'Nuestro equipo de ventas revisará su mensaje y le responderá personalmente.',
+    error: 'Lo sentimos, algo salió mal al enviar el formulario.',
+  },
+};
+
 export function BookCallModal() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <div data-modal-cta="book-a-call" className="modal">
       <div className="modal_c">
@@ -24,7 +69,7 @@ export function BookCallModal() {
             <div data-lenis-scroll="" data-modal-container="" className="modal_cta_c">
               <div className="modal_cta_close">
                 <div data-modal-close="" hover-btn="" className="btn-ico">
-                  <a aria-label="Label" href="#" className="btn-ico_link w-inline-block"></a>
+                  <a aria-label={t.close} href="#" className="btn-ico_link w-inline-block"></a>
                   <div hover="ico" className="btn_ico">
                     <div className="ico-16">
                       <div className="ico w-embed">
@@ -42,14 +87,14 @@ export function BookCallModal() {
                   <div className="modal_cta_l">
                     <div className="modal_cta_l_t">
                       <div className="modal_cta_a">
-                        <h1 className="a2 b-desk">Book a call</h1>
-                        <div className="a1 b-mob">Book a call</div>
+                        <h1 className="a2 b-desk">{t.title}</h1>
+                        <div className="a1 b-mob">{t.title}</div>
                       </div>
                       <div className="u-24"></div>
                     </div>
                     <div className="modal_cta_l_b">
                       <div className="modal_cta_desc">
-                        <div data-modal-close="menu" aria-label="Bahía Mar logo" className="logo_symbol ico-48 b-mob">
+                        <div data-modal-close="menu" aria-label={t.logo} className="logo_symbol ico-48 b-mob">
                           <div className="logo w-embed">
                             <div
                 aria-hidden="true"
@@ -71,7 +116,7 @@ export function BookCallModal() {
                         </div>
                         <div className="u-32 b-mob"></div>
                         <p className="l1 mob_a-center">
-                          Leave your details and the sales team will get back to you.
+                          {t.desc}
                         </p>
                       </div>
                     </div>
@@ -79,7 +124,7 @@ export function BookCallModal() {
                   <div className="modal_cta_c_c">
                     <div className="modal_cta_c_line"><div data-scroll-reveal="line" className="line-v"></div></div>
                     <div className="modal_cta_c_logo">
-                      <div data-modal-close="menu" aria-label="Bahía Mar logo" className="logo_symbol header">
+                      <div data-modal-close="menu" aria-label={t.logo} className="logo_symbol header">
                         <div className="logo w-embed">
                           <div
                 aria-hidden="true"
@@ -160,20 +205,20 @@ export function BookCallModal() {
                       <div className="form_block_list">
                         <input className="d-none w-input" maxLength={256} name="title" data-name="title" placeholder="" type="text" id="title" />
                         <div className="input">
-                          <div className="input_label"><label htmlFor="name" className="l1 reg">Name:</label></div>
+                          <div className="input_label"><label htmlFor="name" className="l1 reg">{t.name}</label></div>
                           <input className="input_field l1 w-input" autoComplete="name" maxLength={256} name="name" data-name="name" placeholder="" type="text" id="name" required />
                         </div>
                         <div className="input">
-                          <div className="input_label"><label htmlFor="email" className="l1 reg">Email:</label></div>
+                          <div className="input_label"><label htmlFor="email" className="l1 reg">{t.email}</label></div>
                           <input className="input_field l1 w-input" autoComplete="email" maxLength={256} name="email" data-name="email" placeholder="" type="email" id="email" required />
                         </div>
                         <div className="input">
-                          <div className="input_label"><label htmlFor="phone" className="l1 reg">Phone:</label></div>
+                          <div className="input_label"><label htmlFor="phone" className="l1 reg">{t.phone}</label></div>
                           <input className="input_field l1 w-input" autoComplete="phone" maxLength={256} name="phone" data-name="phone" placeholder="" type="tel" id="phone" required />
                         </div>
                         <div className="input">
                           <div className="input_label">
-                            <label htmlFor="message" className="l1 reg">Message:</label>
+                            <label htmlFor="message" className="l1 reg">{t.message}</label>
                           </div>
                           <textarea id="message" name="message" maxLength={5000} data-name="message" placeholder="" className="input_field area l1 w-input"></textarea>
                         </div>
@@ -187,20 +232,20 @@ export function BookCallModal() {
                       </div>
                       <div className="form_block_b">
                         <div className="form_block_legal">
-                          <div className="p2 inline">By submitting, you agree to our&nbsp;</div>
+                          <div className="p2 inline">{t.agree}</div>
                           <div data-text="p" className="legal-cms inline w-dyn-list">
                             <div data-comma-list="" role="list" className="legal-cms_list inline w-dyn-items">
                               <div role="listitem" className="legal-cms_list_item inline w-dyn-item">
-                                <a href="#" className="text-link inline w-inline-block"><div className="p2 inline">Privacy policy</div></a>
+                                <a href={localize('/legal', lang) + '#privacy'} className="text-link inline w-inline-block"><div className="p2 inline">{t.privacy}</div></a>
                                 <div data-comma="" className="p2 inline">,</div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <a data-form-btn="" hover-btn="" hover-nav-item="" aria-label="Submit" data-wf--btn--variant="sec" href="#" className="btn w-inline-block">
+                        <a data-form-btn="" hover-btn="" hover-nav-item="" aria-label={t.submit} data-wf--btn--variant="sec" href="#" className="btn w-inline-block">
                           <div className="btn_label">
-                            <div className="btn_label_text"><div hover="text" className="l1">Submit</div></div>
-                            <div className="btn_label_text is-2"><div hover="text" className="l1">Submit</div></div>
+                            <div className="btn_label_text"><div hover="text" className="l1">{t.submit}</div></div>
+                            <div className="btn_label_text is-2"><div hover="text" className="l1">{t.submit}</div></div>
                           </div>
                           <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                         </a>
@@ -211,10 +256,10 @@ export function BookCallModal() {
                 <div className="form_success w-form-done">
                   <div className="form_success_c">
                     <div className="form_success_title">
-                      <p className="l1 a-center">We’ve received your request</p>
+                      <p className="l1 a-center">{t.received}</p>
                       <div className="u-160 b-mob"></div>
                     </div>
-                    <div className="form_success_a"><p className="a2 a-center">Thank you</p></div>
+                    <div className="form_success_a"><p className="a2 a-center">{t.thanks}</p></div>
                     <div className="form_success_social">
                       <div className="u-96 b-mob"></div>
                       <div className="social-cms w-dyn-list">
@@ -261,13 +306,13 @@ export function BookCallModal() {
                     <div className="form_success_desc">
                       <div className="u-48 b-mob"></div>
                       <p className="p1 a-center">
-                        Our sales team will review your message and respond personally.
+                        {t.reply}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="form_error theme_on-dark w-form-fail">
-                  <div className="l1 a-center">Oops! Something went wrong while submitting the form.</div>
+                  <div className="l1 a-center">{t.error}</div>
                 </div>
               </div>
             </div>

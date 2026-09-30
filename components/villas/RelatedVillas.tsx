@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * GENERADO por scripts/generate-villa-detail.mjs — no editar a mano.
@@ -8,8 +9,12 @@
 
 import type { VillaCardData } from '@/data/villa-cards';
 import { VillaCard } from './VillaCard';
+import { localize, pick } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
 
 export function RelatedVillas({ cards }: { cards: VillaCardData[] }) {
+  const lang = useLang();
+  const viewAll = pick(lang, 'View all', 'Ver todas');
   return (
     <section data-bg="light" className="section z-2 clip">
       <div className="container">
@@ -27,10 +32,10 @@ export function RelatedVillas({ cards }: { cards: VillaCardData[] }) {
               </div>
               <div className="u-32"></div>
               <div className="btn-list center">
-                <a aria-label="View all" hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href="/villas" className="btn w-inline-block">
+                <a aria-label={viewAll} hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href={localize('/villas', lang)} className="btn w-inline-block">
                   <div className="btn_label">
-                    <div className="btn_label_text"><div hover="text" className="l1">View all</div></div>
-                    <div className="btn_label_text is-2"><div hover="text" className="l1">View all</div></div>
+                    <div className="btn_label_text"><div hover="text" className="l1">{viewAll}</div></div>
+                    <div className="btn_label_text is-2"><div hover="text" className="l1">{viewAll}</div></div>
                   </div>
                   <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                 </a>

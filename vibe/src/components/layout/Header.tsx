@@ -14,19 +14,50 @@
  * móvil) pasa a mantenerse a mano. Regenerarlo con `npm run gen:*`
  * desharía ese trabajo.
  *
- * Es cliente sólo para saber en qué ruta estamos: el logo enlaza a
- * «volver arriba» en la home y a «Home» en el resto.
+ * Es cliente para saber en qué ruta estamos: el logo enlaza a «volver
+ * arriba» en la home (`/` o `/es`) y a la home del idioma en el resto. El
+ * idioma sale de la misma ruta (lib/use-lang.ts).
  */
 
 import { usePathname } from '@/shims/next-navigation';
+import { localize, stripLang } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    toTop: 'Back to top',
+    home: 'Home',
+    logo: 'Bahía Mar logo',
+    menu: 'Menu',
+    close: 'Close',
+    selectLabel: 'Select  a Villa',
+    select: ['Select', 'a Villa'],
+    book: 'Book a call',
+    contact: 'Contact',
+  },
+  es: {
+    toTop: 'Volver arriba',
+    home: 'Inicio',
+    logo: 'Logotipo de Bahía Mar',
+    menu: 'Menú',
+    close: 'Cerrar',
+    selectLabel: 'Elija su villa',
+    select: ['Elija', 'su villa'],
+    book: 'Agende una llamada',
+    contact: 'Contacto',
+  },
+};
 
 export function Header() {
-  const isHome = usePathname() === '/';
+  const pathname = usePathname() || '/';
+  const lang = useLang();
+  const t = T[lang];
+  const isHome = stripLang(pathname) === '/';
 
   return (
     <div className="theme_on-color">
-      <a aria-label={isHome ? "Back to top" : "Home"} data-theme="" href={isHome ? "#hero" : "/"} className="header-logo w-inline-block">
-        <div data-modal-close="menu" aria-label="Bahía Mar logo" className="logo_symbol header">
+      <a aria-label={isHome ? t.toTop : t.home} data-theme="" href={isHome ? "#hero" : localize('/', lang)} className="header-logo w-inline-block">
+        <div data-modal-close="menu" aria-label={t.logo} className="logo_symbol header">
           <div className="logo w-embed">
             <div
                 aria-hidden="true"
@@ -103,18 +134,18 @@ export function Header() {
         <div className="header-nav_list f-mob">
           <div hover-nav-item-l2-trigger="" data-modal-menu-btn="mob" className="btn-menu">
             <div className="btn-menu_label is-active">
-              <a hover-nav-item-l2="" aria-label="Menu" href="#" className="nav-item w-inline-block">
+              <a hover-nav-item-l2="" aria-label={t.menu} href="#" className="nav-item w-inline-block">
                 <div className="nav-item_label">
-                  <div hover="text" className="nav-item_label_text"><div className="l2">Menu</div></div>
-                  <div hover="text" className="nav-item_label_text is-2"><div className="l2">Menu</div></div>
+                  <div hover="text" className="nav-item_label_text"><div className="l2">{t.menu}</div></div>
+                  <div hover="text" className="nav-item_label_text is-2"><div className="l2">{t.menu}</div></div>
                 </div>
               </a>
             </div>
             <div className="btn-menu_label">
-              <a hover-nav-item-l2="" aria-label="Close" href="#" className="nav-item w-inline-block">
+              <a hover-nav-item-l2="" aria-label={t.close} href="#" className="nav-item w-inline-block">
                 <div className="nav-item_label">
-                  <div hover="text" className="nav-item_label_text"><div className="l2">Close</div></div>
-                  <div hover="text" className="nav-item_label_text is-2"><div className="l2">Close</div></div>
+                  <div hover="text" className="nav-item_label_text"><div className="l2">{t.close}</div></div>
+                  <div hover="text" className="nav-item_label_text is-2"><div className="l2">{t.close}</div></div>
                 </div>
               </a>
             </div>
@@ -139,36 +170,36 @@ export function Header() {
           </div>
         </div>
         <div className="header-nav_list f-desk">
-          <a hover-link="" aria-label="Select  a Villa" href="/villas" className="link w-inline-block">
+          <a hover-link="" aria-label={t.selectLabel} href={localize('/villas', lang)} className="link w-inline-block">
             <div className="link_label">
               <div className="link_label_text">
                 <div hover="text" className="h6">
-                  Select 
+                  {t.select[0]}
                   <br />
-                  a Villa
+                  {t.select[1]}
                 </div>
               </div>
               <div className="link_label_text is-2">
                 <div hover="text" className="h6">
-                  Select 
+                  {t.select[0]}
                   <br />
-                  a Villa
+                  {t.select[1]}
                 </div>
               </div>
             </div>
           </a>
           <div className="u-24"></div>
-          <a data-modal-cta-btn="book-a-call" aria-label="Book a call" hover-nav-item-l2="" href="#" className="nav-item w-inline-block">
+          <a data-modal-cta-btn="book-a-call" aria-label={t.book} hover-nav-item-l2="" href="#" className="nav-item w-inline-block">
             <div className="nav-item_label">
-              <div hover="text" className="nav-item_label_text"><div className="l2">Book a call</div></div>
-              <div hover="text" className="nav-item_label_text is-2"><div className="l2">Book a call</div></div>
+              <div hover="text" className="nav-item_label_text"><div className="l2">{t.book}</div></div>
+              <div hover="text" className="nav-item_label_text is-2"><div className="l2">{t.book}</div></div>
             </div>
           </a>
           <div className="u-4"></div>
-          <a hover-nav-item-l2="" aria-label="Contact" href="/contact" className="nav-item w-inline-block">
+          <a hover-nav-item-l2="" aria-label={t.contact} href={localize('/contact', lang)} className="nav-item w-inline-block">
             <div className="nav-item_label">
-              <div hover="text" className="nav-item_label_text"><div className="l2">Contact</div></div>
-              <div hover="text" className="nav-item_label_text is-2"><div className="l2">Contact</div></div>
+              <div hover="text" className="nav-item_label_text"><div className="l2">{t.contact}</div></div>
+              <div hover="text" className="nav-item_label_text is-2"><div className="l2">{t.contact}</div></div>
             </div>
           </a>
         </div>

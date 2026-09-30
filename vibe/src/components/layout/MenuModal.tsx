@@ -1,5 +1,7 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Menú a pantalla completa (móvil).
@@ -12,9 +14,22 @@
  * Marcado portado del sitio original conservando las clases de Webflow,
  * que es lo que le da el aspecto (ver styles/webflow.css y components.css).
  * Las URLs del CDN ya están reescritas a /public.
+ *
+ * Textos en inglés y español según la URL (lib/use-lang.ts); los enlaces
+ * internos llevan el prefijo del idioma con `localize`.
  */
 
+import { localize } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: { the: 'The', menu: 'Menu', home: 'Home', select: 'Select a Villa', book: 'Book a call', contact: 'Contact' },
+  es: { the: 'El', menu: 'Menú', home: 'Inicio', select: 'Elija su villa', book: 'Agende una llamada', contact: 'Contacto' },
+};
+
 export function MenuModal() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <div data-modal-menu="mob" className="modal menu theme_on-dark">
       <div className="modal_c">
@@ -24,36 +39,36 @@ export function MenuModal() {
             <div className="u-272 b-mob"></div>
             <div className="grid">
               <div className="modal_menu_title">
-                <div className="modal_menu_a"><div data-part="a" className="a1 a-center">The</div></div>
-                <div data-part="h" className="h1 a-center">Menu</div>
+                <div className="modal_menu_a"><div data-part="a" className="a1 a-center">{t.the}</div></div>
+                <div data-part="h" className="h1 a-center">{t.menu}</div>
               </div>
             </div>
           </div>
           <div className="modal_menu_c">
             <div className="grid">
               <div className="modal_menu_list">
-                <a data-part="ctn" aria-label="Home" hover-link="" data-modal-close="mob" href="/" aria-current="page" className="link w-inline-block w--current">
+                <a data-part="ctn" aria-label={t.home} hover-link="" data-modal-close="mob" href={localize('/', lang)} aria-current="page" className="link w-inline-block w--current">
                   <div className="link_label">
-                    <div className="link_label_text"><div hover="text" className="h6">Home</div></div>
-                    <div className="link_label_text is-2"><div hover="text" className="h6">Home</div></div>
+                    <div className="link_label_text"><div hover="text" className="h6">{t.home}</div></div>
+                    <div className="link_label_text is-2"><div hover="text" className="h6">{t.home}</div></div>
                   </div>
                 </a>
-                <a data-part="ctn" aria-label="Select a Villa" hover-link="" data-modal-close="mob" href="/villas" className="link w-inline-block">
+                <a data-part="ctn" aria-label={t.select} hover-link="" data-modal-close="mob" href={localize('/villas', lang)} className="link w-inline-block">
                   <div className="link_label">
-                    <div className="link_label_text"><div hover="text" className="h6">Select a Villa</div></div>
-                    <div className="link_label_text is-2"><div hover="text" className="h6">Select a Villa</div></div>
+                    <div className="link_label_text"><div hover="text" className="h6">{t.select}</div></div>
+                    <div className="link_label_text is-2"><div hover="text" className="h6">{t.select}</div></div>
                   </div>
                 </a>
-                <a data-part="ctn" aria-label="Book a call" hover-link="" data-modal-cta-btn="book-a-call" data-modal-close="mob" href="#" className="link w-inline-block">
+                <a data-part="ctn" aria-label={t.book} hover-link="" data-modal-cta-btn="book-a-call" data-modal-close="mob" href="#" className="link w-inline-block">
                   <div className="link_label">
-                    <div className="link_label_text"><div hover="text" className="h6">Book a call</div></div>
-                    <div className="link_label_text is-2"><div hover="text" className="h6">Book a call</div></div>
+                    <div className="link_label_text"><div hover="text" className="h6">{t.book}</div></div>
+                    <div className="link_label_text is-2"><div hover="text" className="h6">{t.book}</div></div>
                   </div>
                 </a>
-                <a data-part="ctn" aria-label="Contact" hover-link="" data-modal-close="mob" href="/contact" className="link w-inline-block">
+                <a data-part="ctn" aria-label={t.contact} hover-link="" data-modal-close="mob" href={localize('/contact', lang)} className="link w-inline-block">
                   <div className="link_label">
-                    <div className="link_label_text"><div hover="text" className="h6">Contact</div></div>
-                    <div className="link_label_text is-2"><div hover="text" className="h6">Contact</div></div>
+                    <div className="link_label_text"><div hover="text" className="h6">{t.contact}</div></div>
+                    <div className="link_label_text is-2"><div hover="text" className="h6">{t.contact}</div></div>
                   </div>
                 </a>
               </div>

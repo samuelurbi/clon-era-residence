@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from 'next';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import Script from 'next/script';
 import { SmoothScroll } from '@/components/providers/SmoothScroll';
 import { Animations } from '@/components/providers/Animations';
@@ -9,7 +11,8 @@ import { BookCallModal } from '@/components/layout/BookCallModal';
 import { FloatingTips } from '@/components/layout/FloatingTips';
 import { Preloader } from '@/components/layout/Preloader';
 import { MasterPreloader } from '@/components/layout/MasterPreloader';
-import { LandscapeCover } from '@/components/layout/LandscapeCover';
+import { LangSwitcher } from '@/components/layout/LangSwitcher';
+import { LangKeyed } from '@/components/providers/LangKeyed';
 import { fontVariables } from './fonts';
 import '@/styles/globals.css';
 
@@ -17,7 +20,19 @@ import '@/styles/globals.css';
  * Dominio público del sitio. Al pasar a producción con el dominio del
  * cliente, cambiar aquí: alimenta las URLs absolutas de Open Graph.
  */
-const SITE_URL = 'https://www.bahiamar.example'; // PROVISIONAL: falta el dominio real
+const SITE_URL = 'https://bahiamarterrenas.com';
+
+/**
+ * Teléfono en horizontal = web de escritorio encajada en pantalla (ver el
+ * propio archivo). Se lee de disco y va EN LÍNEA en el <head>: tiene que
+ * cambiar la etiqueta viewport antes del primer pintado. El gemelo de Vibe
+ * inyecta el mismo archivo en su index.html (scripts/vibe-export.mjs).
+ */
+function phoneLandscapeScript(): string {
+  // Dentro de una función y no al cargar el módulo: así `next dev` sirve
+  // la versión actual del archivo sin reiniciar. En el build da igual.
+  return readFileSync(join(process.cwd(), 'lib', 'phone-landscape.inline.js'), 'utf8');
+}
 
 /**
  * Contenedor de Google Tag Manager.
@@ -84,7 +99,15 @@ export const viewport: Viewport = {
  */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={fontVariables}>
+    /*
+      suppressHydrationWarning: el script del <head> añade la clase
+      `phone-landscape` al <html> antes de hidratar, y el switcher de idioma
+      le cambia el `lang`. Solo afecta a los atributos de esta etiqueta.
+    */
+    <html lang="en" className={fontVariables} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: phoneLandscapeScript() }} />
+      </head>
       <body className="body">
         {/*
           `.transition-wrapper` es el envoltorio que el original marcaba con
@@ -96,7 +119,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             El orden es el del original: las cortinas van ANTES que nada,
             porque el master-preloader tapa la página hasta que arranca el JS.
           */}
-          <LandscapeCover />
+          {/* Sin cortina de «gire el teléfono»: en horizontal se ve la web
+              (ver «Móvil en horizontal» en styles/theme.css). */}
           <MasterPreloader />
           <Preloader />
           {/* Sin aviso de cookies: se quitó en GHL (2026-09-24). El
@@ -109,14 +133,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             original.
           */}
           <main className="transition-container">
-            <Header />
+            <LangKeyed>
+              <Header />
+            </LangKeyed>
             <SmoothScroll>{children}</SmoothScroll>
           </main>
           <Animations />
           <PageTransitions />
-          <BookCallModal />
-          <MenuModal />
-          <FloatingTips />
+          {/* El cromo se remonta al cambiar de idioma: ver LangKeyed. */}
+          <LangKeyed>
+            <BookCallModal />
+            <MenuModal />
+            <FloatingTips />
+          </LangKeyed>
+          <LangSwitcher />
         </div>
 
         {/*

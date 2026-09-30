@@ -1,5 +1,5 @@
 /* ============================================================
- *  COMP-PAGES — 11 módulos del repo en un solo archivo.
+ *  COMP-PAGES — 12 módulos del repo en un solo archivo.
  *
  *  GENERADO por scripts/vibe-bundle.mjs — no editar aquí.
  *  Se agrupa porque en GoHighLevel Vibe cada archivo nuevo hay que
@@ -10,8 +10,10 @@
  *  bloque, para poder volver atrás sin adivinar.
  */
 
-import { CTA_IMAGES, VillaCardData, bedFilters, srcset, type CtaImage, type Villa, typeFilters, villaCards } from '@/data';
-import { Fragment } from 'react';
+import { Lang, getLenis, localize, pick, useLang } from '@/animations';
+import { LegalEn, LegalEs } from '@/components-legal';
+import { CTA_IMAGES, EMAIL, EMAIL_HREF, OFFICE_MAPS_URL, PHONE, PHONE_HREF, VillaCardData, bedFilters, localizeCard, localizeVilla, officeAddress, srcset, type CtaImage, type Villa, typeFiltersFor, villaCards } from '@/data';
+import { Fragment, useEffect, useRef } from 'react';
 
 /* ============================================================
    components/pages/ComingSoonMain.tsx
@@ -19,6 +21,7 @@ import { Fragment } from 'react';
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Página de espera («coming soon»).
@@ -35,9 +38,27 @@ import { Fragment } from 'react';
  * Copy: ningún documento del cliente confirma una «próxima entrega» de
  * villas, así que la página no anuncia ninguna; sólo remite a contactar
  * para conocer la disponibilidad actual.
+ *
+ * Textos en inglés y español según la URL (lib/use-lang.ts).
  */
 
+
+const T__ComingSoonMain = {
+  en: {
+    title: 'villas available on request',
+    desc: 'Villa availability at Bahía Mar is confirmed directly by our team. Contact us to find out which villas in Las Terrenas are currently available.',
+    book: 'Book a call now',
+  },
+  es: {
+    title: 'villas disponibles bajo consulta',
+    desc: 'Nuestro equipo confirma directamente la disponibilidad de las villas de Bahía Mar. Contáctenos para saber qué villas en Las Terrenas están disponibles en este momento.',
+    book: 'Agende una llamada',
+  },
+};
+
 export function ComingSoonMain() {
+  const lang = useLang();
+  const t = T__ComingSoonMain[lang];
   return (
     <section data-footer-clip="" data-bg="light" className="section z-2 theme_on-brand">
       <div className="container">
@@ -46,12 +67,12 @@ export function ComingSoonMain() {
             <div className="grid">
               <div className="soon-s_title">
                 <div className="u-160"></div>
-                <h1 data-scroll-reveal="h" className="h2 a-center">villas available on request</h1>
+                <h1 data-scroll-reveal="h" className="h2 a-center">{t.title}</h1>
                 <div className="u-32"></div>
                 <div className="grid _4-columns">
                   <div className="soon-s_desc">
                     <p data-scroll-reveal="p" className="p1 a-center">
-                      Villa availability at Bahía Mar is confirmed directly by our team. Contact us to find out which villas in Las Terrenas are currently available.
+                      {t.desc}
                     </p>
                   </div>
                 </div>
@@ -59,10 +80,10 @@ export function ComingSoonMain() {
                 <div data-scroll-reveal="ctn" className="soon-s_btn">
                   <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                     <div data-magnetic-inner="" className="btn-circle_label">
-                      <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
+                      <a hover-nav-item="" aria-label={t.book} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                         <div className="nav-item_label">
-                          <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
-                          <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
+                          <div className="nav-item_label_text"><div hover="text" className="l1">{t.book}</div></div>
+                          <div className="nav-item_label_text is-2"><div hover="text" className="l1">{t.book}</div></div>
                         </div>
                       </a>
                     </div>
@@ -73,7 +94,7 @@ export function ComingSoonMain() {
                         <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                       </svg>
                     </div>
-                    <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
+                    <a aria-label={t.book} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                   </div>
                 </div>
               </div>
@@ -91,6 +112,7 @@ export function ComingSoonMain() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Página de contacto de Bahía Mar.
@@ -102,9 +124,12 @@ export function ComingSoonMain() {
  *
  * Marcado portado conservando las clases de Webflow, que es lo que le da
  * el aspecto (ver styles/webflow.css y components.css). Sólo cambian
- * textos, src/srcSet/alt y href. Teléfono, correo, redes y dirección de
- * la oficina de ventas son placeholders (ver BRIEF.md): el cliente no ha
- * facilitado ninguno. El horario tampoco se conoce, así que el pin sobre
+ * textos, src/srcSet/alt y href. Teléfono, correo y dirección de la
+ * oficina de ventas son los oficiales (data/contact.ts); la oficina es la
+ * de Landmass Capital en Punta Cana, y la segunda dirección («The site»)
+ * es la ubicación del proyecto en Las Terrenas. El WhatsApp usa el mismo
+ * número. Las redes siguen en «#»: el cliente no las ha facilitado. El
+ * horario tampoco se conoce, así que el pin sobre
  * la imagen no inventa horas ni política de visitas: sólo dice «Bahía Mar ·
  * Las Terrenas, Samaná», que es lo que muestra la foto.
  *
@@ -117,9 +142,42 @@ export function ComingSoonMain() {
  * marcadores `data-bg` con geometría propia de Webflow (hero_themes…), que
  * aquí no existen y no se pueden crear sin clases nuevas, así que la
  * solución es una imagen de tono claro en la que el verde sí contrasta.
+ *
+ * Textos en inglés y español según la URL (lib/use-lang.ts).
  */
 
+
+
+/** wa.me quiere el número sólo con dígitos: `tel:+18295997785` → `18295997785`. */
+const WHATSAPP_HREF = `https://wa.me/${PHONE_HREF.replace(/[^0-9]/g, '')}`;
+
+const T__ContactMain = {
+  en: {
+    title: 'Get in touch',
+    write: 'Write to us',
+    office: 'Sales office',
+    site: 'The site',
+    siteAddress: 'Bahía Mar, Las Terrenas, Samaná, Dominican Republic',
+    call: 'Call or message us',
+    alt: 'The clubhouse entrance at Bahía Mar: pale stone arcades around a paved forecourt, a planted island of palms and ferns in the middle, and light canopies shaped like leaves opening overhead.',
+    book: 'Book a call now',
+  },
+  es: {
+    title: 'Contáctenos',
+    write: 'Escríbanos',
+    office: 'Oficina de ventas',
+    site: 'El proyecto',
+    siteAddress: 'Bahía Mar, Las Terrenas, Samaná, República Dominicana',
+    call: 'Llámenos o escríbanos',
+    alt: 'La entrada de la casa club de Bahía Mar: arcadas de piedra clara en torno a un patio pavimentado, una isla ajardinada de palmeras y helechos en el centro y ligeras marquesinas en forma de hoja que se abren en lo alto.',
+    book: 'Agende una llamada',
+  },
+};
+
 export function ContactMain() {
+  const lang = useLang();
+  const t = T__ContactMain[lang];
+  const office = officeAddress(lang);
   return (
     <section data-bg="light" className="section clip theme_on-brand">
       <div className="container">
@@ -130,24 +188,24 @@ export function ContactMain() {
               <div className="u-272 b-mob"></div>
               <div className="grid">
                 <div className="contact-s_title">
-                  <h1 data-prevent-flicker="" data-scroll-reveal="h" className="h1 a-center">Get in touch</h1>
+                  <h1 data-prevent-flicker="" data-scroll-reveal="h" className="h1 a-center">{t.title}</h1>
                 </div>
               </div>
               <div className="u-96"></div>
               <div className="grid">
                 <div data-prevent-flicker="" data-scroll-reveal="ctn" className="contact-s_email">
-                  <h2 className="l1 reg a-center">Write to us</h2>
+                  <h2 className="l1 reg a-center">{t.write}</h2>
                   <div className="u-4"></div>
                   <div className="contact-cms w-dyn-list">
                     <div role="list" className="contact-cms_list w-dyn-items">
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="info@bahiamar.example" href="mailto:info@bahiamar.example" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={EMAIL} href={EMAIL_HREF} className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">info@bahiamar.example</div>
+                              <div hover="text" className="l1">{EMAIL}</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">info@bahiamar.example</div>
+                              <div hover="text" className="l1">{EMAIL}</div>
                             </div>
                           </div>
                         </a>
@@ -160,29 +218,29 @@ export function ContactMain() {
                   <div className="loc-cms w-dyn-list">
                     <div role="list" className="loc-cms_list w-dyn-items">
                       <div data-prevent-flicker="" data-scroll-reveal="ctn" role="listitem" className="loc-cms_list_item w-dyn-item">
-                        <h3 className="l1 reg a-center">Sales office</h3>
+                        <h3 className="l1 reg a-center">{t.office}</h3>
                         <div className="u-4"></div>
-                        <a hover-nav-item="" aria-label="Las Terrenas, Samaná (address TBC)" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={office} href={OFFICE_MAPS_URL} className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Las Terrenas, Samaná (address TBC)</div>
+                              <div hover="text" className="l1">{office}</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Las Terrenas, Samaná (address TBC)</div>
+                              <div hover="text" className="l1">{office}</div>
                             </div>
                           </div>
                         </a>
                       </div>
                       <div data-prevent-flicker="" data-scroll-reveal="ctn" role="listitem" className="loc-cms_list_item w-dyn-item">
-                        <h3 className="l1 reg a-center">The site</h3>
+                        <h3 className="l1 reg a-center">{t.site}</h3>
                         <div className="u-4"></div>
-                        <a hover-nav-item="" aria-label="Bahía Mar, Las Terrenas, Samaná, Dominican Republic" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={t.siteAddress} href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Bahía Mar, Las Terrenas, Samaná, Dominican Republic</div>
+                              <div hover="text" className="l1">{t.siteAddress}</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Bahía Mar, Las Terrenas, Samaná, Dominican Republic</div>
+                              <div hover="text" className="l1">{t.siteAddress}</div>
                             </div>
                           </div>
                         </a>
@@ -192,20 +250,20 @@ export function ContactMain() {
                   <div className="u-32"></div>
                 </div>
                 <div data-prevent-flicker="" data-scroll-reveal="ctn" className="contact-s_phone">
-                  <h3 className="l1 reg a-center">Call or message us</h3>
+                  <h3 className="l1 reg a-center">{t.call}</h3>
                   <div className="u-4"></div>
                   <div className="contact-cms w-dyn-list">
                     <div role="list" className="contact-cms_list w-dyn-items">
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="+1 (809) 000-0000" href="tel:+18090000000" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={PHONE} href={PHONE_HREF} className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div className="nav-item_label_text"><div hover="text" className="l1">+1 (809) 000-0000</div></div>
-                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">+1 (809) 000-0000</div></div>
+                            <div className="nav-item_label_text"><div hover="text" className="l1">{PHONE}</div></div>
+                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">{PHONE}</div></div>
                           </div>
                         </a>
                       </div>
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="WhatsApp" href="https://wa.me/18090000000" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="WhatsApp" href={WHATSAPP_HREF} className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text"><div hover="text" className="l1">WhatsApp</div></div>
                             <div className="nav-item_label_text is-2"><div hover="text" className="l1">WhatsApp</div></div>
@@ -263,7 +321,7 @@ export function ContactMain() {
                 </div>
                 <div data-parallax="w" data-scroll-reveal="ctn" data-prevent-flicker="" className="contact-s_map">
                   <div data-parallax="img" className="contact-s_map_c">
-                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1.webp" loading="eager" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1.webp 2350w" alt="The clubhouse entrance at Bahía Mar: pale stone arcades around a paved forecourt, a planted island of palms and ferns in the middle, and light canopies shaped like leaves opening overhead." className="img h-auto" />
+                    <img src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1.webp" loading="eager" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-clubhouse-1.webp 2350w" alt={t.alt} className="img h-auto" />
                     <div className="contact-s_map_pin">
                       <div className="contact-s_map_pin_c theme_on-dark">
                         <div className="contact-s_map_pin_info">
@@ -297,10 +355,10 @@ export function ContactMain() {
                 <div data-prevent-flicker="" data-scroll-reveal="ctn" className="contact-s_btn">
                   <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                     <div data-magnetic-inner="" className="btn-circle_label">
-                      <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
+                      <a hover-nav-item="" aria-label={t.book} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                         <div className="nav-item_label">
-                          <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
-                          <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
+                          <div className="nav-item_label_text"><div hover="text" className="l1">{t.book}</div></div>
+                          <div className="nav-item_label_text is-2"><div hover="text" className="l1">{t.book}</div></div>
                         </div>
                       </a>
                     </div>
@@ -311,7 +369,7 @@ export function ContactMain() {
                         <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                       </svg>
                     </div>
-                    <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
+                    <a aria-label={t.book} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                   </div>
                 </div>
               </div>
@@ -325,11 +383,146 @@ export function ContactMain() {
 }
 
 /* ============================================================
+   components/pages/LegalMain.tsx
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
+/**
+ * Página de políticas legales: aviso legal, privacidad, cookies, términos de
+ * uso e información del proyecto.
+ *
+ * El contenido es el documento definitivo del cliente, uno por idioma
+ * (legal/LegalEn.tsx y legal/LegalEs.tsx): son textos jurídicos que no se
+ * traducen uno del otro frase a frase, así que no comparten un objeto de
+ * textos como el resto de componentes.
+ *
+ * Es una página para leer, no para recorrer: SIN coreografía. Nada de
+ * `data-scroll-reveal`, parallax ni SplitText, y tampoco
+ * `data-prevent-flicker` — ese atributo oculta el elemento hasta que una
+ * animación lo destapa, y aquí no hay animación que lo haga.
+ *
+ * Anclas del índice: Lenis gobierna el scroll de la ventana, así que el
+ * salto nativo a `#privacy` llega de golpe y sin respetar la cabecera fija.
+ * Aquí se interceptan los enlaces `#…` de la propia página y se desplaza con
+ * `lenis.scrollTo`, restando el `scroll-margin-top` que el CSS da a cada
+ * artículo (una sola fuente para el hueco de la cabecera; sin Lenis —quien
+ * pide menos movimiento— `scrollIntoView` ya lo respeta por sí solo).
+ */
+
+
+
+
+
+
+/**
+ * Desplaza hasta `target` dejando libre el hueco de la cabecera.
+ *
+ * El destino se calcula con `scrollY` real y no pasándole el elemento a
+ * Lenis: Lenis lo mediría contra su posición interna, que va con retraso si
+ * la página acaba de moverse por otra vía (scroll táctil nativo, el
+ * navegador trayendo un enlace a la vista) y acabaría en otro sitio.
+ */
+function scrollToSection(target: HTMLElement, immediate = false) {
+  const lenis = getLenis();
+  if (lenis) {
+    const margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+    const y = target.getBoundingClientRect().top + window.scrollY - margin;
+    lenis.scrollTo(Math.max(0, y), { immediate, force: true });
+  } else {
+    target.scrollIntoView({ behavior: immediate ? 'auto' : 'smooth', block: 'start' });
+  }
+  // Para teclado y lectores de pantalla: el foco sigue al salto.
+  if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+  target.focus({ preventScroll: true });
+}
+
+/**
+ * El preloader bloquea el scroll mientras está en pantalla. La cortina
+ * inerte (`data-master-preloader`) desaparece cuando arranca, y el propio
+ * preloader queda en `display: none` al terminar; en las navegaciones
+ * internas ninguno de los dos está ya.
+ */
+function preloaderDone(): boolean {
+  if (document.querySelector('[data-master-preloader]')) return false;
+  const preloader = document.querySelector<HTMLElement>('[data-preloader]');
+  if (preloader && getComputedStyle(preloader).display !== 'none') return false;
+  const lenis = getLenis();
+  return !lenis || !lenis.isStopped;
+}
+
+export function LegalMain() {
+  const lang = useLang();
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+
+    const onClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const link = (e.target as Element | null)?.closest?.('a');
+      if (!(link instanceof HTMLAnchorElement)) return;
+      /*
+       * Vale tanto `#privacy` (índice y texto) como `/legal#privacy` (los
+       * enlaces legales del pie, que están fuera de esta página): lo que
+       * cuenta es que apunte a ESTA ruta y lleve ancla. Por eso se escucha
+       * en el documento y no solo dentro de la página.
+       */
+      if (!link.getAttribute('href')) return;
+      const url = new URL(link.href);
+      if (url.origin !== location.origin || url.pathname !== location.pathname) return;
+      if (url.hash.length < 2) return;
+      const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+      if (!target || !root.contains(target)) return;
+
+      e.preventDefault();
+      scrollToSection(target);
+      // La URL refleja la sección (se puede compartir) sin apilar historial.
+      history.replaceState(history.state, '', url.hash);
+    };
+    document.addEventListener('click', onClick);
+
+    // Llegada con ancla (/legal#cookies): esperar a que acabe el preloader y
+    // a que SmoothScroll haga su «arriba del todo» del cambio de ruta, que
+    // corre DESPUÉS de este efecto (el padre ejecuta sus efectos al final).
+    let raf = 0;
+    const hash = window.location.hash;
+    const initial = hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (initial && root.contains(initial)) {
+      const started = performance.now();
+      const wait = () => {
+        if (preloaderDone() || performance.now() - started > 20000) {
+          scrollToSection(initial, true);
+        } else {
+          raf = requestAnimationFrame(wait);
+        }
+      };
+      raf = requestAnimationFrame(() => (raf = requestAnimationFrame(wait)));
+    }
+
+    return () => {
+      document.removeEventListener('click', onClick);
+      cancelAnimationFrame(raf);
+    };
+  }, [lang]);
+
+  return (
+    <div ref={rootRef} className="legal-page">
+      {lang === 'es' ? <LegalEs /> : <LegalEn />}
+    </div>
+  );
+}
+
+/* ============================================================
    components/sections/Amenities.tsx
    ============================================================ */
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Amenidades de Bahía Mar: cinco diapositivas con pestañas.
@@ -346,7 +539,50 @@ export function ContactMain() {
  * Hay exactamente cinco elementos porque la animación los cuenta.
  */
 
+
+
+const T__Amenities = {
+  en: {
+    entrance: 'Entrance',
+    entranceDesc: 'Past the entrance arches, the first funicular in the Caribbean links the whole community, together with a network of cart paths.',
+    entranceAlt: 'Entrance to Bahía Mar: a sequence of arches over the access road with a whale-tail sculpture at sunset',
+    pools: 'Beach & pools',
+    poolsDesc: 'Three community pools set among the palms, a lagoon, and a Beach Club with its own access to the beach.',
+    poolsAlt: 'Community pool of Bahía Mar surrounded by palms and rocks, with the sea on the horizon',
+    thermal: 'Thermal waters',
+    thermalDesc: 'Thermal waters, a spa with meditation huts, a center for meditation and healing, and a wellness center for yoga and pilates.',
+    thermalAlt: 'Circular thermal pool of the Bahía Mar spa under an open oculus draped with hanging plants',
+    coworking: 'Coworking',
+    coworkingDesc: 'A coworking space, a clubhouse and boutique hotel, seven restaurants and shops, a gym, a party hall, courts and children’s parks.',
+    coworkingAlt: 'Bahía Mar coworking lounge with a reflecting pool down its center and floor-to-ceiling glass towards the palms and the sea',
+    trails: 'Forest trails',
+    trailsDesc: 'Hiking trails, waterfalls and climbing, mountain bridges and two viewpoints — and an area of BBQs and fire pits for the evenings.',
+    trailsAlt: 'Raised wooden walkway winding through the forest of Bahía Mar beside a stream, under a sculpted white canopy',
+    cta: 'Book a call now',
+  },
+  es: {
+    entrance: 'Entrada',
+    entranceDesc: 'Tras los arcos de la entrada, el primer funicular del Caribe conecta toda la comunidad, junto con una red de caminos para carritos.',
+    entranceAlt: 'Entrada a Bahía Mar: una sucesión de arcos sobre el camino de acceso con una escultura de cola de ballena al atardecer',
+    pools: 'Playa y piscinas',
+    poolsDesc: 'Tres piscinas comunitarias entre las palmeras, una laguna y un Beach Club con acceso propio a la playa.',
+    poolsAlt: 'Piscina comunitaria de Bahía Mar rodeada de palmeras y rocas, con el mar en el horizonte',
+    thermal: 'Aguas termales',
+    thermalDesc: 'Aguas termales, un spa con cabañas de meditación, un centro de meditación y sanación, y un centro de bienestar para yoga y pilates.',
+    thermalAlt: 'Piscina termal circular del spa de Bahía Mar bajo un óculo abierto cubierto de plantas colgantes',
+    coworking: 'Coworking',
+    coworkingDesc: 'Un espacio de coworking, una casa club y hotel boutique, siete restaurantes y tiendas, gimnasio, salón de fiestas, canchas y parques infantiles.',
+    coworkingAlt: 'Sala de coworking de Bahía Mar con un espejo de agua en el centro y vidrio de piso a techo hacia las palmeras y el mar',
+    trails: 'Senderos del bosque',
+    trailsDesc: 'Senderos de caminata, cascadas y escalada, puentes de montaña y dos miradores, además de una zona de BBQ y fogateros para las noches.',
+    trailsAlt: 'Pasarela elevada de madera que serpentea por el bosque de Bahía Mar junto a un arroyo, bajo una cubierta blanca esculpida',
+    cta: 'Agende una llamada',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function Amenities() {
+  const lang = useLang();
+  const t = T__Amenities[lang];
   return (
     <div className="amen-scroll-area">
       <div className="scroll-area_screen">
@@ -362,13 +598,13 @@ export function Amenities() {
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Entrance</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">{t.entrance}</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Past the entrance arches, the first funicular in the Caribbean links the whole community, together with a network of cart paths.
+                                  {t.entranceDesc}
                                 </h4>
                               </div>
                             </div>
@@ -377,7 +613,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="Entrance to Bahía Mar: a sequence of arches over the access road with a whale-tail sculpture at sunset" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1.webp" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1.webp 2350w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt={t.entranceAlt} src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1.webp" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-1.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -390,13 +626,13 @@ export function Amenities() {
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Beach & pools</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">{t.pools}</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Three community pools set among the palms, a lagoon, and a Beach Club with its own access to the beach.
+                                  {t.poolsDesc}
                                 </h4>
                               </div>
                             </div>
@@ -405,7 +641,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="Community pool of Bahía Mar surrounded by palms and rocks, with the sea on the horizon" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2.webp" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2.webp 2350w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt={t.poolsAlt} src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2.webp" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-2.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -418,13 +654,13 @@ export function Amenities() {
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Thermal waters</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">{t.thermal}</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Thermal waters, a spa with meditation huts, a center for meditation and healing, and a wellness center for yoga and pilates.
+                                  {t.thermalDesc}
                                 </h4>
                               </div>
                             </div>
@@ -433,7 +669,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="Circular thermal pool of the Bahía Mar spa under an open oculus draped with hanging plants" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3.webp" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3.webp 2350w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt={t.thermalAlt} src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3.webp" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-3.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -446,13 +682,13 @@ export function Amenities() {
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Coworking</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">{t.coworking}</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  A coworking space, a clubhouse and boutique hotel, seven restaurants and shops, a gym, a party hall, courts and children’s parks.
+                                  {t.coworkingDesc}
                                 </h4>
                               </div>
                             </div>
@@ -461,7 +697,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="Bahía Mar coworking lounge with a reflecting pool down its center and floor-to-ceiling glass towards the palms and the sea" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4.webp" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4.webp 2350w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt={t.coworkingAlt} src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4.webp" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-4.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -474,13 +710,13 @@ export function Amenities() {
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Forest trails</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">{t.trails}</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Hiking trails, waterfalls and climbing, mountain bridges and two viewpoints — and an area of BBQs and fire pits for the evenings.
+                                  {t.trailsDesc}
                                 </h4>
                               </div>
                             </div>
@@ -489,7 +725,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="Raised wooden walkway winding through the forest of Bahía Mar beside a stream, under a sculpted white canopy" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5.webp" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5.webp 2350w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt={t.trailsAlt} src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5.webp" sizes="100vw" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-amenities-5.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -506,25 +742,25 @@ export function Amenities() {
                           <div role="list" className="amen-tabs-cms_list w-dyn-items">
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
                               <div data-tab="" data-tab-trigger="entrance" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Entrance</div>
+                                <div data-scroll-reveal="p" className="h5">{t.entrance}</div>
                               </div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
                               <div data-tab="" data-tab-trigger="pools" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Beach & pools</div>
+                                <div data-scroll-reveal="p" className="h5">{t.pools}</div>
                               </div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
                               <div data-tab="" data-tab-trigger="thermal" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Thermal waters</div>
+                                <div data-scroll-reveal="p" className="h5">{t.thermal}</div>
                               </div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
-                              <div data-tab="" data-tab-trigger="coworking" className="amen-tab"><div data-scroll-reveal="p" className="h5">Coworking</div></div>
+                              <div data-tab="" data-tab-trigger="coworking" className="amen-tab"><div data-scroll-reveal="p" className="h5">{t.coworking}</div></div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
                               <div data-tab="" data-tab-trigger="trails" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Forest trails</div>
+                                <div data-scroll-reveal="p" className="h5">{t.trails}</div>
                               </div>
                             </div>
                           </div>
@@ -540,10 +776,10 @@ export function Amenities() {
                       <div data-scroll-reveal="ctn" className="amm-s_cms_btn">
                         <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                           <div data-magnetic-inner="" className="btn-circle_label">
-                            <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
+                            <a hover-nav-item="" aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                               <div className="nav-item_label">
-                                <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
-                                <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
+                                <div className="nav-item_label_text"><div hover="text" className="l1">{t.cta}</div></div>
+                                <div className="nav-item_label_text is-2"><div hover="text" className="l1">{t.cta}</div></div>
                               </div>
                             </a>
                           </div>
@@ -554,7 +790,7 @@ export function Amenities() {
                               <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                             </svg>
                           </div>
-                          <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
+                          <a aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                         </div>
                       </div>
                     </div>
@@ -579,6 +815,7 @@ export function Amenities() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Pie con el formulario «Book a call». Idéntico en todas las páginas salvo
@@ -589,19 +826,45 @@ export function Amenities() {
  * Mar pasa a mantenerse a mano. Regenerarlo devolvería la marca, los PDF
  * legales y el crédito de agencia del sitio de Estepona.
  *
- * Pendiente (ver BACKLOG.md): política de privacidad y términos de uso de
- * Bahía Mar todavía no existen, por eso los enlaces apuntan a «#». El
- * teléfono es el placeholder de la política del brief, no un número real.
+ * Teléfono, correo y oficina de ventas son los datos oficiales de
+ * data/contact.ts; el correo va bajo el teléfono con el mismo marcado de
+ * enlace que el de la página de contacto. Los enlaces legales llevan a
+ * /legal (#privacy, #terms). Textos en inglés y español según la URL
+ * (lib/use-lang.ts).
  */
 
+
+
+
+const T__BookACall = {
+  en: {
+    toTop: 'To top',
+    office: 'Sales Office',
+    rights: 'All rights reserved',
+    privacy: 'Privacy policy',
+    terms: 'Terms of Use',
+  },
+  es: {
+    toTop: 'Arriba',
+    office: 'Oficina de ventas',
+    rights: 'Todos los derechos reservados',
+    privacy: 'Política de privacidad',
+    terms: 'Términos de uso',
+  },
+};
+
 export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
+  const lang = useLang();
+  const t = T__BookACall[lang];
+  const office = officeAddress(lang);
+  const legal = localize('/legal', lang);
   return (
     <section data-bg="dark" className="section theme_on-dark">
       <div className="container">
         <div className="footer-w">
           {showToTop && (
           <a href="#hero" className="footer-s_s-top w-inline-block">
-            <div className="l2">To top</div>
+            <div className="l2">{t.toTop}</div>
             <div className="s-down_arrow w-embed">
               <svg width="100%" height="100%" viewBox="0 0 48 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M40.6345 9C40.8959 8.45299 41.1486 7.97436 41.3926 7.56411C41.6541 7.15385 41.9068 6.81197 42.1508 6.53846L2.99981 6.53846L2.99981 5.46154L42.1508 5.46154C41.9068 5.17094 41.6541 4.82051 41.3926 4.41026C41.1486 4 40.8959 3.52992 40.6345 3L41.5495 3C42.6475 4.24787 43.7979 5.17094 45.0005 5.76923L45.0005 6.23077C43.7979 6.81197 42.6475 7.73504 41.5495 9L40.6345 9Z" fill="currentColor"></path>
@@ -640,8 +903,20 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
                   <div className="contact-cms w-dyn-list">
                     <div role="list" className="contact-cms_list w-dyn-items">
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a href="tel:+18090000000" target="_blank" className="nav-item w-inline-block">
-                          <div data-text="h" className="h2 a-center">+1 (809) 000-0000</div>
+                        <a href={PHONE_HREF} target="_blank" className="nav-item w-inline-block">
+                          <div data-text="h" className="h2 a-center">{PHONE}</div>
+                        </a>
+                      </div>
+                      <div role="listitem" className="contact-cms_list_item w-dyn-item">
+                        <a hover-nav-item="" aria-label={EMAIL} href={EMAIL_HREF} className="nav-item w-inline-block">
+                          <div className="nav-item_label">
+                            <div className="nav-item_label_text">
+                              <div hover="text" className="l1">{EMAIL}</div>
+                            </div>
+                            <div className="nav-item_label_text is-2">
+                              <div hover="text" className="l1">{EMAIL}</div>
+                            </div>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -652,15 +927,15 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
                   <div className="loc-cms w-dyn-list">
                     <div role="list" className="loc-cms_list w-dyn-items">
                       <div data-text="ctn" role="listitem" className="loc-cms_list_item w-dyn-item">
-                        <h3 className="l1 reg a-center">Sales Office</h3>
+                        <h3 className="l1 reg a-center">{t.office}</h3>
                         <div className="u-4"></div>
-                        <a hover-nav-item="" aria-label="Las Terrenas, Samaná, Dominican Republic (address TBC)" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={office} href={OFFICE_MAPS_URL} className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Las Terrenas, Samaná, Dominican Republic (address TBC)</div>
+                              <div hover="text" className="l1">{office}</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Las Terrenas, Samaná, Dominican Republic (address TBC)</div>
+                              <div hover="text" className="l1">{office}</div>
                             </div>
                           </div>
                         </a>
@@ -675,25 +950,25 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
                 <div className="footer-s_info">
                   <div data-text="p" className="l1">Bahía Mar.</div>
                   <div data-text="p" className="l1 reg no-wrap">
-                    ©<span className="year">2026</span> All rights reserved
+                    ©<span className="year">2026</span> {t.rights}
                   </div>
                   <div className="u-12"></div>
                   <div data-text="p" className="legal-cms w-dyn-list">
                     <div data-comma-list="" role="list" className="legal-cms_list w-dyn-items">
                       <div role="listitem" className="legal-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="Privacy policy" href="#" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={t.privacy} href={legal + '#privacy'} className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div className="nav-item_label_text"><div hover="text" className="l1">Privacy policy</div></div>
-                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">Privacy policy</div></div>
+                            <div className="nav-item_label_text"><div hover="text" className="l1">{t.privacy}</div></div>
+                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">{t.privacy}</div></div>
                           </div>
                         </a>
                         <div data-comma="" className="l1">,</div>
                       </div>
                       <div role="listitem" className="legal-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="Terms of Use" href="#" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={t.terms} href={legal + '#terms'} className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div className="nav-item_label_text"><div hover="text" className="l1">Terms of Use</div></div>
-                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">Terms of Use</div></div>
+                            <div className="nav-item_label_text"><div hover="text" className="l1">{t.terms}</div></div>
+                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">{t.terms}</div></div>
                           </div>
                         </a>
                         <div data-comma="" className="l1">,</div>
@@ -736,6 +1011,7 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * CTA «Sea views from every villa». El marcado es común a casi todas las
@@ -749,7 +1025,43 @@ export function BookACall({ showToTop = false }: { showToTop?: boolean }) {
  */
 
 
+
+
+const T__SeaViewsCta = {
+  en: {
+    desc: 'A short conversation is enough to understand which of the five villas fits the way you want to live in Las Terrenas — a family home facing the bay, a longer stay each season, or a base for the winter months.',
+    title1: 'Sea views',
+    title2: 'from every villa',
+    subtitle: 'Samaná Bay through the palms',
+    cta: 'View available villas',
+  },
+  es: {
+    desc: 'Basta una breve conversación para saber cuál de las cinco villas se ajusta a la forma en que usted quiere vivir en Las Terrenas: una casa familiar frente a la bahía, estancias largas cada temporada o un refugio para los meses de invierno.',
+    title1: 'Vistas al mar',
+    title2: 'desde cada villa',
+    subtitle: 'La bahía de Samaná entre las palmeras',
+    cta: 'Ver villas disponibles',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
+/**
+ * El `alt` de cada fondo en español, por `src`. El inglés vive en
+ * data/cta-images.ts; si una foto nueva no está aquí, se queda en inglés.
+ */
+const ALT_ES: Record<string, string> = {
+  'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-cta-1.webp':
+    'Tumbonas en la terraza de una villa junto a una piscina infinita, con palmeras y la bahía de Samaná al fondo',
+  'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-cta-2.webp':
+    'Villa revestida de madera abierta a su terraza y su piscina privada, con palmeras y el mar a lo lejos',
+  'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-cta-3.webp':
+    'Escalones que bajan del salón de una villa a una piscina con islas ajardinadas, palmeras y el mar al fondo',
+  'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-cta-4.webp':
+    'Villa de piedra y madera con un porche bajo pérgola y piscina privada, y el mar asomando entre los árboles',
+};
+
 export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
+  const lang = useLang();
+  const t = T__SeaViewsCta[lang];
   return (
     <section data-bg="color" className="section theme_on-color">
       <div data-footer-clip="" className="container">
@@ -759,7 +1071,7 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
             <div className="grid">
               <div className="cta-s_desc">
                 <p data-scroll-reveal="p" className="l1 a-center">
-                  A short conversation is enough to understand which of the five villas fits the way you want to live in Las Terrenas — a family home facing the bay, a longer stay each season, or a base for the winter months.
+                  {t.desc}
                 </p>
               </div>
             </div>
@@ -767,23 +1079,23 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
             <div className="grid">
               <div className="cta-s_title">
                 <h2 data-scroll-reveal="h" className="h1 a-center">
-                  Sea views
+                  {t.title1}
                   <br />
-                  from every villa
+                  {t.title2}
                 </h2>
                 <div className="u-32"></div>
-                <h3 data-scroll-reveal="h" className="c1 a-center">Samaná Bay through the palms</h3>
+                <h3 data-scroll-reveal="h" className="c1 a-center">{t.subtitle}</h3>
                 <div className="u-160"></div>
                 <div data-scroll-reveal="ctn" className="cta-s_title_btn">
                   <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                     <div data-magnetic-inner="" className="btn-circle_label">
-                      <a hover-nav-item="" aria-label="View available villas" href="/villas" className="nav-item w-inline-block">
+                      <a hover-nav-item="" aria-label={t.cta} href={localize('/villas', lang)} className="nav-item w-inline-block">
                         <div className="nav-item_label">
                           <div className="nav-item_label_text">
-                            <div hover="text" className="l1">View available villas</div>
+                            <div hover="text" className="l1">{t.cta}</div>
                           </div>
                           <div className="nav-item_label_text is-2">
-                            <div hover="text" className="l1">View available villas</div>
+                            <div hover="text" className="l1">{t.cta}</div>
                           </div>
                         </div>
                       </a>
@@ -795,7 +1107,7 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
                         <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                       </svg>
                     </div>
-                    <a aria-label="View available villas" href="/villas" className="btn-circle_link w-inline-block"></a>
+                    <a aria-label={t.cta} href={localize('/villas', lang)} className="btn-circle_link w-inline-block"></a>
                   </div>
                 </div>
               </div>
@@ -803,7 +1115,7 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
           </div>
           <div className="w_bg">
             <div data-parallax="w" className="img-w">
-              <img data-parallax="img" loading="eager" alt={image.alt} src={image.src} sizes="(max-width: 2350px) 100vw, 2350px" srcSet={image.srcSet} className="img-p" />
+              <img data-parallax="img" loading="eager" alt={lang === 'es' ? (ALT_ES[image.src] ?? image.alt) : image.alt} src={image.src} sizes="(max-width: 2350px) 100vw, 2350px" srcSet={image.srcSet} className="img-p" />
               <div className="img-over-grad from-top _4x"></div>
               <div className="img-over-grad"></div>
               <div className="img-over-grad"></div>
@@ -821,6 +1133,7 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * GENERADO por scripts/generate-sections.mjs desde villas/011.html — no editar a mano.
@@ -830,14 +1143,21 @@ export function SeaViewsCta({ image = CTA_IMAGES.home }: { image?: CtaImage }) {
  * Las URLs del CDN ya están reescritas a /public.
  */
 
+
+const T__LightboxModal = {
+  en: { close: 'Close', prev: 'Prev', next: 'Next' },
+  es: { close: 'Cerrar', prev: 'Anterior', next: 'Siguiente' },
+};
+
 export function LightboxModal() {
+  const t = T__LightboxModal[useLang()];
   return (
     <div data-lightbox-modal="" className="modal">
       <div className="modal_c">
         <div className="modal_lightbox">
           <div className="modal_close">
             <div data-slider="close" hover-btn="" className="btn-ico">
-              <a aria-label="Close" href="#" className="btn-ico_link w-inline-block"></a>
+              <a aria-label={t.close} href="#" className="btn-ico_link w-inline-block"></a>
               <div hover="ico" className="btn_ico">
                 <div className="ico-16">
                   <div className="ico w-embed">
@@ -865,7 +1185,7 @@ export function LightboxModal() {
               </div>
               <div className="btn-list">
                 <div data-slider="prev" hover-btn="" className="btn-ico">
-                  <a aria-label="Prev" href="#" className="btn-ico_link w-inline-block"></a>
+                  <a aria-label={t.prev} href="#" className="btn-ico_link w-inline-block"></a>
                   <div hover="ico" className="btn_ico">
                     <div className="ico-16">
                       <div className="ico w-embed">
@@ -878,7 +1198,7 @@ export function LightboxModal() {
                   <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                 </div>
                 <div data-slider="next" hover-btn="" className="btn-ico">
-                  <a aria-label="Next" href="#" className="btn-ico_link w-inline-block"></a>
+                  <a aria-label={t.next} href="#" className="btn-ico_link w-inline-block"></a>
                   <div hover="ico" className="btn_ico">
                     <div className="ico-16">
                       <div className="ico w-embed">
@@ -951,6 +1271,7 @@ export function LightboxModal() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Tarjeta de villa del listado y del bloque «otras villas» de la ficha.
@@ -967,16 +1288,26 @@ export function LightboxModal() {
  */
 
 
-export function VillaCard({ card }: { card: VillaCardData }) {
+
+
+const T__VillaCard = {
+  en: { completion: 'Completion:', type: 'Type', level: 'level', levels: 'levels', bath: 'bath', bed: 'bed' },
+  es: { completion: 'Entrega:', type: 'Tipo', level: 'nivel', levels: 'niveles', bath: 'baños', bed: 'hab.' },
+};
+
+export function VillaCard({ card: cardEn }: { card: VillaCardData }) {
+  const lang = useLang();
+  const t = T__VillaCard[lang];
+  const card = localizeCard(cardEn, lang);
   return (
     <div data-sort-item="" data-filter-item="" role="listitem" className="apart-cms_list_item w-dyn-item">
-      <a data-sort-relevant={card.sortRelevant} hover-apart-card="" href={card.href} className="apart-card w-inline-block">
+      <a data-sort-relevant={card.sortRelevant} hover-apart-card="" href={localize(card.href, lang)} className="apart-card w-inline-block">
         <div className="apart-card_c">
           <div className="apart-card_t">
             <h2 data-type={card.filterType} className="l2 a-center">{card.name}</h2>
             <div className="u-4"></div>
             <p id="" className="l2 reg a-center">
-              <span>Completion:{' '}</span>
+              <span>{t.completion}{' '}</span>
               <span>{card.completion}</span>
             </p>
           </div>
@@ -990,24 +1321,24 @@ export function VillaCard({ card }: { card: VillaCardData }) {
           <div className="apart-card_b">
             <div className="apart-card_data-list">
               <p id="" className="l2 reg a-center">
-                <span>Type{' '}</span>
+                <span>{t.type}{' '}</span>
                 <span>{card.type}</span>
               </p>
               <div className="data-divider"></div>
               <p id="" className="l2 reg a-center">
-                <span>{card.unitsLabel ?? `${card.levels} ${card.levels === '1' ? 'level' : 'levels'}`}</span>
+                <span>{card.unitsLabel ?? `${card.levels} ${card.levels === '1' ? t.level : t.levels}`}</span>
               </p>
               <div className="data-divider"></div>
               <p id="" className="l2 reg a-center">
                 <span>{card.bathrooms}</span>
-                <span>{' '}bath</span>
+                <span>{' '}{t.bath}</span>
               </p>
             </div>
             <div className="u-16"></div>
             <div className="apart-card_info">
               <h3 id="" data-bed={card.filterBed} className="h5">
                 <span>{card.bedrooms}</span>
-                <span>{' '}bed</span>
+                <span>{' '}{t.bed}</span>
               </h3>
               <div className="h5">/</div>
               <h4 data-sort-size={card.sortSize} className="h5"><span>{card.category}</span></h4>
@@ -1107,6 +1438,7 @@ export function VillaCard({ card }: { card: VillaCardData }) {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * GENERADO por scripts/generate-villa-detail.mjs — no editar a mano.
@@ -1117,7 +1449,11 @@ export function VillaCard({ card }: { card: VillaCardData }) {
 
 
 
+
+
 export function RelatedVillas({ cards }: { cards: VillaCardData[] }) {
+  const lang = useLang();
+  const viewAll = pick(lang, 'View all', 'Ver todas');
   return (
     <section data-bg="light" className="section z-2 clip">
       <div className="container">
@@ -1135,10 +1471,10 @@ export function RelatedVillas({ cards }: { cards: VillaCardData[] }) {
               </div>
               <div className="u-32"></div>
               <div className="btn-list center">
-                <a aria-label="View all" hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href="/villas" className="btn w-inline-block">
+                <a aria-label={viewAll} hover-btn="" hover-nav-item="" data-wf--btn--variant="sec" href={localize('/villas', lang)} className="btn w-inline-block">
                   <div className="btn_label">
-                    <div className="btn_label_text"><div hover="text" className="l1">View all</div></div>
-                    <div className="btn_label_text is-2"><div hover="text" className="l1">View all</div></div>
+                    <div className="btn_label_text"><div hover="text" className="l1">{viewAll}</div></div>
+                    <div className="btn_label_text is-2"><div hover="text" className="l1">{viewAll}</div></div>
                   </div>
                   <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                 </a>
@@ -1158,6 +1494,7 @@ export function RelatedVillas({ cards }: { cards: VillaCardData[] }) {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Título del bloque «otras villas» que precede a RelatedVillas en la ficha
@@ -1172,7 +1509,14 @@ export function RelatedVillas({ cards }: { cards: VillaCardData[] }) {
  * el aspecto (ver styles/webflow.css y components.css).
  */
 
+
+const T__VillaArch = {
+  en: { title: 'similar options', line1: 'Other villas', line2: 'that might suit your needs' },
+  es: { title: 'opciones similares', line1: 'Otras villas', line2: 'que pueden interesarle' },
+};
+
 export function VillaArch() {
+  const t = T__VillaArch[useLang()];
   return (
     <section className="section arch clip">
       <div className="container">
@@ -1182,7 +1526,7 @@ export function VillaArch() {
               <div className="u-160"></div>
               <div className="grid">
                 <div className="other-title-s_title">
-                  <p data-scroll-reveal="h" className="h3 a-center">similar options</p>
+                  <p data-scroll-reveal="h" className="h3 a-center">{t.title}</p>
                 </div>
               </div>
               <div className="u-48"></div>
@@ -1193,9 +1537,9 @@ export function VillaArch() {
               <div className="grid">
                 <div className="s_title">
                   <p data-scroll-reveal="p" className="l1 a-center">
-                    Other villas 
+                    {t.line1}
                     <br />
-                    that might suit your needs
+                    {t.line2}
                   </p>
                 </div>
               </div>
@@ -1214,6 +1558,7 @@ export function VillaArch() {
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Ficha de villa de Bahía Mar. Marcado del original con las clases de
@@ -1236,39 +1581,88 @@ export function VillaArch() {
 
 
 
+
+
 /**
  * Lo que trae cada villa según el brochure («cada unidad cuenta con»).
  * Es común a las cinco tipologías; lo específico de cada una (cava,
  * terrazas lounge, pérgolas…) va en `villa.features`.
  */
-const BENEFITS = [
-  'Beach, bay & Los Haitises views',
-  'Private pool',
-  'BBQ terrace & lounge garden',
-  'Pergola porch',
-  'Bamboo floors',
-  'Chukum walls',
-  'Home automation',
-  'Eco-efficient kitchen',
-  'Solar panels',
-];
+const BENEFITS: Record<Lang, string[]> = {
+  en: [
+    'Beach, bay & Los Haitises views',
+    'Private pool',
+    'BBQ terrace & lounge garden',
+    'Pergola porch',
+    'Bamboo floors',
+    'Chukum walls',
+    'Home automation',
+    'Eco-efficient kitchen',
+    'Solar panels',
+  ],
+  es: [
+    'Vistas a la playa, la bahía y Los Haitises',
+    'Piscina privada',
+    'Terraza BBQ y jardín lounge',
+    'Porche con pérgola',
+    'Pisos de bambú',
+    'Muros de chukum',
+    'Domótica',
+    'Cocina ecoeficiente',
+    'Paneles solares',
+  ],
+};
+
+const T__VillaDetail = {
+  en: {
+    typology: 'Typology:',
+    type: 'Type',
+    bedrooms: 'Bedrooms',
+    bathrooms: 'Bathrooms',
+    levels: 'Levels',
+    livingAreas: 'Living areas',
+    info: 'Info',
+    benefits: 'Benefits',
+    request: 'Submit a request',
+    exterior: 'exterior',
+    interior: 'interior',
+  },
+  es: {
+    typology: 'Tipología:',
+    type: 'Tipo',
+    bedrooms: 'Habitaciones',
+    bathrooms: 'Baños',
+    levels: 'Niveles',
+    livingAreas: 'Salas de estar',
+    info: 'Info',
+    benefits: 'Beneficios',
+    request: 'Envíe una solicitud',
+    exterior: 'exterior',
+    interior: 'interior',
+  },
+};
 
 /**
  * Texto alternativo de cada imagen de la galería a partir de su nombre
  * (`villa-<slug>-g1..g4` exteriores, `i1..i4` interiores; ver villas.ts).
  */
-function galleryAlt(villa: Villa, src: string): string {
+function galleryAlt(villa: Villa, src: string, lang: Lang): string {
   const m = src.match(/-([gi])(\d)\.webp$/);
   if (!m) return villa.name;
-  const kind = m[1] === 'g' ? 'exterior' : 'interior';
-  return `${villa.name} — ${kind} render ${m[2]}`;
+  const kind = m[1] === 'g' ? T__VillaDetail[lang].exterior : T__VillaDetail[lang].interior;
+  return lang === 'es'
+    ? `${villa.name} — render ${kind} ${m[2]}`
+    : `${villa.name} — ${kind} render ${m[2]}`;
 }
 
 export function VillaDetail({
-  villa,
+  villa: villaEn,
 }: {
   villa: Villa;
 }) {
+  const lang = useLang();
+  const t = T__VillaDetail[lang];
+  const villa = localizeVilla(villaEn, lang);
   return (
     <section data-bg="light" className="section clip">
       <div className="container">
@@ -1293,8 +1687,8 @@ export function VillaDetail({
                     <h2 className="l2">{villa.category}</h2>
                     <div className="u-4"></div>
                     <h3 id="" className="l2 reg">
-                      <span>Typology:{' '}</span>
-                      <span>Type {villa.type}</span>
+                      <span>{t.typology}{' '}</span>
+                      <span>{t.type} {villa.type}</span>
                     </h3>
                     <div className="u-16"></div>
                   </div>
@@ -1309,7 +1703,7 @@ export function VillaDetail({
                         <div role="list" className="lot-media-cms_list w-dyn-items">
                           {villa.gallery.map((src) => (
                             <div key={src} role="listitem" className="lot-media-cms_list_item w-dyn-item w-dyn-repeater-item">
-                              <img src={src} loading="lazy" data-lightbox="" alt={galleryAlt(villa, src)} sizes="100vw" srcSet={srcset(src)} className="img _w-auto" />
+                              <img src={src} loading="lazy" data-lightbox="" alt={galleryAlt(villa, src, lang)} sizes="100vw" srcSet={srcset(src)} className="img _w-auto" />
                             </div>
                           ))}
                         </div>
@@ -1321,22 +1715,22 @@ export function VillaDetail({
                     <div className="u-64"></div>
                     <div className="lot-s_info_data">
                       <div className="data-item">
-                        <h4 className="l1 reg">Bedrooms</h4>
+                        <h4 className="l1 reg">{t.bedrooms}</h4>
                         <div className="u-8"></div>
                         <h5 className="h5">{villa.bedrooms}</h5>
                       </div>
                       <div className="data-item">
-                        <h4 className="l1 reg">Bathrooms</h4>
+                        <h4 className="l1 reg">{t.bathrooms}</h4>
                         <div className="u-8"></div>
                         <h5 className="h5">{villa.bathrooms}{villa.halfBath ? ' + ½' : ''}</h5>
                       </div>
                       <div className="data-item">
-                        <h4 className="l1 reg">Levels</h4>
+                        <h4 className="l1 reg">{t.levels}</h4>
                         <div className="u-8"></div>
                         <h5 className="h5">{villa.levels}</h5>
                       </div>
                       <div className="data-item">
-                        <h4 className="l1 reg">Living areas</h4>
+                        <h4 className="l1 reg">{t.livingAreas}</h4>
                         <div className="u-8"></div>
                         <h5 className="h5">{villa.livingAreas}</h5>
                       </div>
@@ -1344,8 +1738,8 @@ export function VillaDetail({
                     <div className="u-48"></div>
                     <div data-tabs="" className="lot-s_info_more">
                       <div data-tabs-hilight="hor" className="tabs">
-                        <div data-tab="" data-tab-trigger="desc" hover-tab="" className="tab"><div className="l1">Info</div></div>
-                        <div data-tab="" data-tab-trigger="benefits" hover-tab="" className="tab"><div className="l1">Benefits</div></div>
+                        <div data-tab="" data-tab-trigger="desc" hover-tab="" className="tab"><div className="l1">{t.info}</div></div>
+                        <div data-tab="" data-tab-trigger="benefits" hover-tab="" className="tab"><div className="l1">{t.benefits}</div></div>
                         <div className="tabs_line"><div className="line-h"></div></div>
                         <div data-tab-hilight="" className="tabs_hilight"></div>
                       </div>
@@ -1366,7 +1760,7 @@ export function VillaDetail({
                           <div className="u-16"></div>
                           <div className="benefits-tag-cms w-dyn-list">
                             <div role="list" className="benefits-tag-cms_list tag-list w-dyn-items">
-                              {BENEFITS.map((benefit) => (
+                              {BENEFITS[lang].map((benefit) => (
                                 <div key={benefit} data-tab="p" role="listitem" className="benefits-tag-cms_list_item w-dyn-item">
                                   <div className="tag"><h4 className="p2">{benefit}</h4></div>
                                 </div>
@@ -1382,10 +1776,10 @@ export function VillaDetail({
                     <div className="u-48 b-mob"></div>
                     <div className="u-16 b-desk"></div>
                     <div className="btn-list">
-                      <a hover-btn="" hover-nav-item="" aria-label="Submit a request" data-wf--btn--variant="sec" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn w-inline-block">
+                      <a hover-btn="" hover-nav-item="" aria-label={t.request} data-wf--btn--variant="sec" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn w-inline-block">
                         <div className="btn_label">
-                          <div className="btn_label_text"><div hover="text" className="l1">Submit a request</div></div>
-                          <div className="btn_label_text is-2"><div hover="text" className="l1">Submit a request</div></div>
+                          <div className="btn_label_text"><div hover="text" className="l1">{t.request}</div></div>
+                          <div className="btn_label_text is-2"><div hover="text" className="l1">{t.request}</div></div>
                         </div>
                         <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                       </a>
@@ -1438,7 +1832,7 @@ export function VillaDetail({
                         <div key={src} role="listitem" className="lot-media-cms_list_item w-dyn-item w-dyn-repeater-item">
                           <div hover-pin-trigger="" hover-media-item="" className="lot-media-item theme_on-color">
                             <div className="img-w h-auto">
-                              <img src={src} loading="eager" data-lightbox="" alt={galleryAlt(villa, src)} sizes="100vw" srcSet={srcset(src)} className="img h-auto" />
+                              <img src={src} loading="eager" data-lightbox="" alt={galleryAlt(villa, src, lang)} sizes="100vw" srcSet={srcset(src)} className="img h-auto" />
                               <div hover="btn" className="lot-media-item_btn">
                                 <div hover-pin="" className="pin">
                                   <div hover="bg" className="pin_dot">
@@ -1480,6 +1874,7 @@ export function VillaDetail({
 
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Listado de villas. Envoltorio y clases idénticos al original; las
@@ -1493,7 +1888,37 @@ export function VillaDetail({
 
 
 
+
+const T__VillasListing = {
+  en: {
+    typology: 'Typology',
+    all: 'All',
+    bedrooms: 'Bedrooms',
+    sortBy: 'Sort by',
+    relevant: 'Relevant',
+    fewest: 'Fewest bedrooms',
+    most: 'Most bedrooms',
+    reset: 'Reset',
+    emptyTitle: 'nothing found',
+    emptyText: "We didn't find any villa matching your selection. Please try changing the typology or bedroom filters.",
+  },
+  es: {
+    typology: 'Tipología',
+    all: 'Todas',
+    bedrooms: 'Habitaciones',
+    sortBy: 'Ordenar por',
+    relevant: 'Relevancia',
+    fewest: 'Menos habitaciones',
+    most: 'Más habitaciones',
+    reset: 'Restablecer',
+    emptyTitle: 'sin resultados',
+    emptyText: 'No encontramos ninguna villa que coincida con su selección. Pruebe a cambiar los filtros de tipología o de habitaciones.',
+  },
+};
+
 export function VillasListing() {
+  const lang = useLang();
+  const t = T__VillasListing[lang];
   return (
     <section className="section clip">
       <div className="container">
@@ -1514,12 +1939,12 @@ export function VillasListing() {
                       <div className="apart-s_cms_filter_item">
                         <div data-select="" className="filter_select">
                           <div data-select="btn" className="filter_select_btn">
-                            <div className="l2 reg">Typology</div>
+                            <div className="l2 reg">{t.typology}</div>
                             <div className="filter_select_btn_label">
-                              <a hover-nav-item-l2="" aria-label="All" href="#" className="nav-item w-inline-block">
+                              <a hover-nav-item-l2="" aria-label={t.all} href="#" className="nav-item w-inline-block">
                                 <div className="nav-item_label">
-                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">All</div></div>
-                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">All</div></div>
+                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">{t.all}</div></div>
+                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">{t.all}</div></div>
                                 </div>
                               </a>
                               <div hover="ico" className="ico-12">
@@ -1533,10 +1958,10 @@ export function VillasListing() {
                           </div>
                           <div data-select="drop-down" className="filter_select_drop-down">
                             <div className="filter_select_drop-down_list">
-                              <div data-select="item" data-filter-group="type" data-filter-trigger="*" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">All</div></div>
+                              <div data-select="item" data-filter-group="type" data-filter-trigger="*" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.all}</div></div>
                               <div className="cms w-dyn-list">
                                 <div role="list" className="filter_select_drop-down_list w-dyn-items">
-                                  {typeFilters.map((t) => (
+                                  {typeFiltersFor(lang).map((t) => (
                                     <div key={t.value} role="listitem" className="cms_list_item w-dyn-item">
                                       <div data-select="item" data-filter-group="type" data-filter-trigger={t.value} hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.label}</div></div>
                                     </div>
@@ -1550,12 +1975,12 @@ export function VillasListing() {
                       <div className="apart-s_cms_filter_item">
                         <div data-select="" className="filter_select">
                           <div hover-nav-item-l2-trigger="" data-select="btn" className="filter_select_btn">
-                            <div className="l2 reg">Bedrooms</div>
+                            <div className="l2 reg">{t.bedrooms}</div>
                             <div className="filter_select_btn_label">
-                              <a hover-nav-item-l2="" aria-label="All" href="#" className="nav-item w-inline-block">
+                              <a hover-nav-item-l2="" aria-label={t.all} href="#" className="nav-item w-inline-block">
                                 <div className="nav-item_label">
-                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">All</div></div>
-                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">All</div></div>
+                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">{t.all}</div></div>
+                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">{t.all}</div></div>
                                 </div>
                               </a>
                               <div hover="ico" className="ico-12">
@@ -1569,7 +1994,7 @@ export function VillasListing() {
                           </div>
                           <div data-select="drop-down" className="filter_select_drop-down">
                             <div className="filter_select_drop-down_list">
-                              <div data-select="item" data-filter-group="bed" data-filter-trigger="*" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">All</div></div>
+                              <div data-select="item" data-filter-group="bed" data-filter-trigger="*" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.all}</div></div>
                               <div className="cms w-dyn-list">
                                 <div role="list" className="filter_select_drop-down_list w-dyn-items">
                                   {bedFilters.map((b) => (
@@ -1586,12 +2011,12 @@ export function VillasListing() {
                       <div className="apart-s_cms_filter_item is-last">
                         <div data-select="" className="filter_select">
                           <div data-select="btn" className="filter_select_btn">
-                            <div className="l2 reg">Sort by</div>
+                            <div className="l2 reg">{t.sortBy}</div>
                             <div className="filter_select_btn_label">
-                              <a hover-nav-item-l2="" aria-label="Relevant" href="#" className="nav-item w-inline-block">
+                              <a hover-nav-item-l2="" aria-label={t.relevant} href="#" className="nav-item w-inline-block">
                                 <div className="nav-item_label">
-                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">Relevant</div></div>
-                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">Relevant</div></div>
+                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">{t.relevant}</div></div>
+                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">{t.relevant}</div></div>
                                 </div>
                               </a>
                               <div hover="ico" className="ico-12">
@@ -1605,16 +2030,16 @@ export function VillasListing() {
                           </div>
                           <div data-select="drop-down" className="filter_select_drop-down">
                             <div className="filter_select_drop-down_list">
-                              <div data-select="item" data-sort-order="asc" data-sort-trigger="relevant" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">Relevant</div></div>
-                              <div data-select="item" data-sort-order="asc" data-sort-trigger="size" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">Fewest bedrooms</div></div>
-                              <div data-select="item" data-sort-order="desc" data-sort-trigger="size" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">Most bedrooms</div></div>
+                              <div data-select="item" data-sort-order="asc" data-sort-trigger="relevant" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.relevant}</div></div>
+                              <div data-select="item" data-sort-order="asc" data-sort-trigger="size" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.fewest}</div></div>
+                              <div data-select="item" data-sort-order="desc" data-sort-trigger="size" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.most}</div></div>
                             </div>
                           </div>
                         </div>
-                        <a data-reset="" aria-label="Reset" hover-nav-item-l2="" href="#" className="nav-item w-inline-block">
+                        <a data-reset="" aria-label={t.reset} hover-nav-item-l2="" href="#" className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div hover="text" className="nav-item_label_text"><div className="l2">Reset</div></div>
-                            <div hover="text" className="nav-item_label_text is-2"><div className="l2">Reset</div></div>
+                            <div hover="text" className="nav-item_label_text"><div className="l2">{t.reset}</div></div>
+                            <div hover="text" className="nav-item_label_text is-2"><div className="l2">{t.reset}</div></div>
                           </div>
                         </a>
                       </div>
@@ -1723,10 +2148,10 @@ export function VillasListing() {
                   </div>
                   <div className="grid _9-columns">
                     <div className="apart-s_cms_empty_info">
-                      <div className="apart-s_cms_empty_title"><div className="c1 a-center">nothing found</div></div>
+                      <div className="apart-s_cms_empty_title"><div className="c1 a-center">{t.emptyTitle}</div></div>
                       <div className="u-24"></div>
                       <div className="p1 a-center">
-                        We didn&#x27;t find any villa matching your selection. Please try changing the typology or bedroom filters.
+                        {t.emptyText}
                       </div>
                     </div>
                   </div>

@@ -64,7 +64,14 @@ const GRUPOS = [
    */
   { nombre: 'comp-layout', dirs: ['components/layout', 'components/providers'], destino: 'src/components-layout.tsx', alias: '@/components-layout' },
   { nombre: 'comp-home', dirs: ['components/home'], destino: 'src/components-home.tsx', alias: '@/components-home' },
-  { nombre: 'comp-pages', dirs: ['components/villas', 'components/sections', 'components/pages'], destino: 'src/components-pages.tsx', alias: '@/components-pages' },
+  /*
+   * Los textos legales (inglés y español, ~95 KB) van en su propio archivo:
+   * dentro de `comp-pages` lo subían a 202 KB, muy por encima de lo que se
+   * pega con seguridad. Solo los importa LegalMain (comp-pages), así que
+   * va ANTES y no crea ciclo.
+   */
+  { nombre: 'comp-legal', dirs: ['components/pages/legal'], destino: 'src/components-legal.tsx', alias: '@/components-legal' },
+  { nombre: 'comp-pages', dirs: ['components/villas', 'components/sections', 'components/pages'], excluir: ['components/pages/legal'], destino: 'src/components-pages.tsx', alias: '@/components-pages' },
   { nombre: 'pages', dirs: ['pages'], destino: 'src/pages.tsx', alias: '@/pages' },
 ];
 
@@ -76,6 +83,7 @@ const REESCRITURAS = [
   // El orden importa: lo específico antes que lo general.
   [/^@\/components\/(layout|providers)\/.+$/, '@/components-layout'],
   [/^@\/components\/home\/.+$/, '@/components-home'],
+  [/^@\/components\/pages\/legal\/.+$/, '@/components-legal'],
   [/^@\/components\/(villas|sections|pages)\/.+$/, '@/components-pages'],
   [/^@\/pages\/.+$/, '@/pages'],
 ];
@@ -273,6 +281,11 @@ for (const grupo of GRUPOS) {
     const dir = join(SRC, d);
     if (!existsSync(dir)) continue;
     archivos.push(...walk(dir).filter((f) => /\.tsx?$/.test(f) && !f.endsWith('.d.ts')));
+  }
+  // Subcarpetas que van en otro grupo (p. ej. los textos legales).
+  for (const ex of grupo.excluir ?? []) {
+    const dirEx = join(SRC, ex);
+    for (let i = archivos.length - 1; i >= 0; i--) if (archivos[i].startsWith(dirEx)) archivos.splice(i, 1);
   }
   if (!archivos.length) continue;
 

@@ -1,5 +1,6 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -21,7 +22,23 @@
  * en escritorio), así que se usa esa sin tocar el trazado.
  */
 
+import { useLang } from '@/lib/use-lang';
+
+/*
+ * En español, «Cinco claves de Bahía Mar» y no «Cinco razones para Bahía
+ * Mar»: con el word-spacing abierto al hacer scroll, la frase baja por los
+ * lados del arco, y la de «razones» ocupaba el 57% del círculo en móvil
+ * (la inglesa, el 53%): «Cinco» y «Mar» se salían por los bordes. «Cinco
+ * claves» ocupa el 36% en reposo y el 51,6% abierta, menos que la inglesa
+ * (medido con scratchpad/arch-measure.mjs).
+ */
+const T = {
+  en: { peninsula: 'Peninsula', life: 'Life on the Samaná peninsula', arch: 'Five reasons for Bahía Mar' },
+  es: { peninsula: 'Península', life: 'La vida en la península de Samaná', arch: 'Cinco claves de Bahía Mar' },
+};
+
 export function Arch() {
+  const t = T[useLang()];
   return (
     <section className="section arch clip theme_on-brand">
       <div className="container">
@@ -54,7 +71,7 @@ export function Arch() {
                 </div>
               </div>
               <div className="info-s_logo_r">
-                <div data-scroll-reveal="p" className="l1 a-center">Peninsula</div>
+                <div data-scroll-reveal="p" className="l1 a-center">{t.peninsula}</div>
               </div>
             </div>
             <div className="u-48"></div>
@@ -62,7 +79,7 @@ export function Arch() {
             <div className="u-48"></div>
             <div className="grid">
               <div className="s_title">
-                <p data-scroll-reveal="p" className="l1 a-center">Life on the Samaná peninsula</p>
+                <p data-scroll-reveal="p" className="l1 a-center">{t.life}</p>
               </div>
             </div>
             <div className="u-96"></div>
@@ -73,7 +90,7 @@ export function Arch() {
                     <path id="circle-desk" d="M 800,800 m -676,0 a 676,676 0 1,1 1352,0 a 676,676 0 1,1 -1352,0"></path>
                   </defs>
                   <text data-circle-text="" className="h4" textAnchor="middle" fill="currentColor">
-                    <textPath href="#circle-desk" startOffset="25%">Five reasons for Bahía Mar</textPath>
+                    <textPath href="#circle-desk" startOffset="25%">{t.arch}</textPath>
                   </text>
                 </svg>
               </div>
@@ -83,7 +100,7 @@ export function Arch() {
                     <path id="circle-mob" d="M 208,208 m -160,0 a 160,160 0 1,1 320,0 a 160,160 0 1,1 -320,0"></path>
                   </defs>
                   <text data-circle-text="" className="h4" textAnchor="middle" fill="currentColor">
-                    <textPath href="#circle-mob" startOffset="25%">Five reasons for Bahía Mar</textPath>
+                    <textPath href="#circle-mob" startOffset="25%">{t.arch}</textPath>
                   </text>
                 </svg>
               </div>

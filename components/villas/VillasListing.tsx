@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Listado de villas. Envoltorio y clases idénticos al original; las
@@ -9,10 +10,40 @@
  * apartamentos de Estepona.
  */
 
-import { villaCards, typeFilters, bedFilters } from '@/data/villa-cards';
+import { villaCards, typeFiltersFor, bedFilters } from '@/data/villa-cards';
+import { useLang } from '@/lib/use-lang';
 import { VillaCard } from './VillaCard';
 
+const T = {
+  en: {
+    typology: 'Typology',
+    all: 'All',
+    bedrooms: 'Bedrooms',
+    sortBy: 'Sort by',
+    relevant: 'Relevant',
+    fewest: 'Fewest bedrooms',
+    most: 'Most bedrooms',
+    reset: 'Reset',
+    emptyTitle: 'nothing found',
+    emptyText: "We didn't find any villa matching your selection. Please try changing the typology or bedroom filters.",
+  },
+  es: {
+    typology: 'Tipología',
+    all: 'Todas',
+    bedrooms: 'Habitaciones',
+    sortBy: 'Ordenar por',
+    relevant: 'Relevancia',
+    fewest: 'Menos habitaciones',
+    most: 'Más habitaciones',
+    reset: 'Restablecer',
+    emptyTitle: 'sin resultados',
+    emptyText: 'No encontramos ninguna villa que coincida con su selección. Pruebe a cambiar los filtros de tipología o de habitaciones.',
+  },
+};
+
 export function VillasListing() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <section className="section clip">
       <div className="container">
@@ -33,12 +64,12 @@ export function VillasListing() {
                       <div className="apart-s_cms_filter_item">
                         <div data-select="" className="filter_select">
                           <div data-select="btn" className="filter_select_btn">
-                            <div className="l2 reg">Typology</div>
+                            <div className="l2 reg">{t.typology}</div>
                             <div className="filter_select_btn_label">
-                              <a hover-nav-item-l2="" aria-label="All" href="#" className="nav-item w-inline-block">
+                              <a hover-nav-item-l2="" aria-label={t.all} href="#" className="nav-item w-inline-block">
                                 <div className="nav-item_label">
-                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">All</div></div>
-                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">All</div></div>
+                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">{t.all}</div></div>
+                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">{t.all}</div></div>
                                 </div>
                               </a>
                               <div hover="ico" className="ico-12">
@@ -52,10 +83,10 @@ export function VillasListing() {
                           </div>
                           <div data-select="drop-down" className="filter_select_drop-down">
                             <div className="filter_select_drop-down_list">
-                              <div data-select="item" data-filter-group="type" data-filter-trigger="*" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">All</div></div>
+                              <div data-select="item" data-filter-group="type" data-filter-trigger="*" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.all}</div></div>
                               <div className="cms w-dyn-list">
                                 <div role="list" className="filter_select_drop-down_list w-dyn-items">
-                                  {typeFilters.map((t) => (
+                                  {typeFiltersFor(lang).map((t) => (
                                     <div key={t.value} role="listitem" className="cms_list_item w-dyn-item">
                                       <div data-select="item" data-filter-group="type" data-filter-trigger={t.value} hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.label}</div></div>
                                     </div>
@@ -69,12 +100,12 @@ export function VillasListing() {
                       <div className="apart-s_cms_filter_item">
                         <div data-select="" className="filter_select">
                           <div hover-nav-item-l2-trigger="" data-select="btn" className="filter_select_btn">
-                            <div className="l2 reg">Bedrooms</div>
+                            <div className="l2 reg">{t.bedrooms}</div>
                             <div className="filter_select_btn_label">
-                              <a hover-nav-item-l2="" aria-label="All" href="#" className="nav-item w-inline-block">
+                              <a hover-nav-item-l2="" aria-label={t.all} href="#" className="nav-item w-inline-block">
                                 <div className="nav-item_label">
-                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">All</div></div>
-                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">All</div></div>
+                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">{t.all}</div></div>
+                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">{t.all}</div></div>
                                 </div>
                               </a>
                               <div hover="ico" className="ico-12">
@@ -88,7 +119,7 @@ export function VillasListing() {
                           </div>
                           <div data-select="drop-down" className="filter_select_drop-down">
                             <div className="filter_select_drop-down_list">
-                              <div data-select="item" data-filter-group="bed" data-filter-trigger="*" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">All</div></div>
+                              <div data-select="item" data-filter-group="bed" data-filter-trigger="*" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.all}</div></div>
                               <div className="cms w-dyn-list">
                                 <div role="list" className="filter_select_drop-down_list w-dyn-items">
                                   {bedFilters.map((b) => (
@@ -105,12 +136,12 @@ export function VillasListing() {
                       <div className="apart-s_cms_filter_item is-last">
                         <div data-select="" className="filter_select">
                           <div data-select="btn" className="filter_select_btn">
-                            <div className="l2 reg">Sort by</div>
+                            <div className="l2 reg">{t.sortBy}</div>
                             <div className="filter_select_btn_label">
-                              <a hover-nav-item-l2="" aria-label="Relevant" href="#" className="nav-item w-inline-block">
+                              <a hover-nav-item-l2="" aria-label={t.relevant} href="#" className="nav-item w-inline-block">
                                 <div className="nav-item_label">
-                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">Relevant</div></div>
-                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">Relevant</div></div>
+                                  <div hover="text" className="nav-item_label_text"><div data-select="value" className="l2">{t.relevant}</div></div>
+                                  <div hover="text" className="nav-item_label_text is-2"><div data-select="value" className="l2">{t.relevant}</div></div>
                                 </div>
                               </a>
                               <div hover="ico" className="ico-12">
@@ -124,16 +155,16 @@ export function VillasListing() {
                           </div>
                           <div data-select="drop-down" className="filter_select_drop-down">
                             <div className="filter_select_drop-down_list">
-                              <div data-select="item" data-sort-order="asc" data-sort-trigger="relevant" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">Relevant</div></div>
-                              <div data-select="item" data-sort-order="asc" data-sort-trigger="size" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">Fewest bedrooms</div></div>
-                              <div data-select="item" data-sort-order="desc" data-sort-trigger="size" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">Most bedrooms</div></div>
+                              <div data-select="item" data-sort-order="asc" data-sort-trigger="relevant" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.relevant}</div></div>
+                              <div data-select="item" data-sort-order="asc" data-sort-trigger="size" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.fewest}</div></div>
+                              <div data-select="item" data-sort-order="desc" data-sort-trigger="size" hover-select-item="" className="filter_select_drop-down_list_item"><div hover="text" className="l1">{t.most}</div></div>
                             </div>
                           </div>
                         </div>
-                        <a data-reset="" aria-label="Reset" hover-nav-item-l2="" href="#" className="nav-item w-inline-block">
+                        <a data-reset="" aria-label={t.reset} hover-nav-item-l2="" href="#" className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div hover="text" className="nav-item_label_text"><div className="l2">Reset</div></div>
-                            <div hover="text" className="nav-item_label_text is-2"><div className="l2">Reset</div></div>
+                            <div hover="text" className="nav-item_label_text"><div className="l2">{t.reset}</div></div>
+                            <div hover="text" className="nav-item_label_text is-2"><div className="l2">{t.reset}</div></div>
                           </div>
                         </a>
                       </div>
@@ -242,10 +273,10 @@ export function VillasListing() {
                   </div>
                   <div className="grid _9-columns">
                     <div className="apart-s_cms_empty_info">
-                      <div className="apart-s_cms_empty_title"><div className="c1 a-center">nothing found</div></div>
+                      <div className="apart-s_cms_empty_title"><div className="c1 a-center">{t.emptyTitle}</div></div>
                       <div className="u-24"></div>
                       <div className="p1 a-center">
-                        We didn&#x27;t find any villa matching your selection. Please try changing the typology or bedroom filters.
+                        {t.emptyText}
                       </div>
                     </div>
                   </div>

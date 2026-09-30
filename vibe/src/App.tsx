@@ -28,13 +28,15 @@ import { BookCallModal } from '@/components/layout/BookCallModal';
 import { FloatingTips } from '@/components/layout/FloatingTips';
 import { Preloader } from '@/components/layout/Preloader';
 import { MasterPreloader } from '@/components/layout/MasterPreloader';
-import { LandscapeCover } from '@/components/layout/LandscapeCover';
+import { LangSwitcher } from '@/components/layout/LangSwitcher';
+import { LangKeyed } from '@/components/providers/LangKeyed';
 
 import { HomePage } from '@/pages/HomePage';
 import { VillasPage } from '@/pages/VillasPage';
 import { VillaPage } from '@/pages/VillaPage';
 import { ContactPage } from '@/pages/ContactPage';
 import { ComingSoonPage } from '@/pages/ComingSoonPage';
+import { LegalPage } from '@/pages/LegalPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
 export function App() {
@@ -49,7 +51,8 @@ export function App() {
         El orden es el del original: las cortinas van ANTES que nada,
         porque el master-preloader tapa la página hasta que arranca el JS.
       */}
-      <LandscapeCover />
+      {/* Sin cortina de «gire el teléfono»: en horizontal se ve la web
+          (ver «Móvil en horizontal» en styles/theme.css). */}
       <MasterPreloader />
       <Preloader />
       {/* Sin aviso de cookies: se quitó en GHL (2026-09-24). El
@@ -62,23 +65,53 @@ export function App() {
         original.
       */}
       <main className="transition-container">
-        <Header />
+        <LangKeyed>
+          <Header />
+        </LangKeyed>
         <SmoothScroll>
+          {/*
+            Cada ruta dos veces: en inglés en la raíz y en español bajo
+            `/es` (ver lib/i18n.ts). Las páginas son las mismas; leen el
+            idioma de la URL. Es lo que hace `app/es/` en Next.
+          */}
+          {/*
+            LangKeyed también aquí, y es imprescindible: `/villas` y
+            `/es/villas` pintan el MISMO componente en la misma posición,
+            así que React Router lo reutiliza en vez de montarlo de nuevo y
+            React solo cambia los textos. Pero SplitText ya ha troceado
+            titulares y botones en letras sueltas: React escribía en los
+            nodos de texto originales, que ya no están en pantalla, y lo
+            visible se quedaba en el idioma anterior (53 textos en la home
+            al pasar de EN a ES). Con la `key` del idioma la página se monta
+            limpia y la capa de animación la trocea de nuevo. En Next no
+            pasa: app/villas y app/es/villas son rutas distintas.
+          */}
+          <LangKeyed>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/villas" element={<VillasPage />} />
-            <Route path="/villas/:slug" element={<VillaPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/coming-soon" element={<ComingSoonPage />} />
+            {['', '/es'].map((prefix) => (
+              <Route key={prefix || 'en'} path={prefix || '/'}>
+                <Route index element={<HomePage />} />
+                <Route path="villas" element={<VillasPage />} />
+                <Route path="villas/:slug" element={<VillaPage />} />
+                <Route path="contact" element={<ContactPage />} />
+                <Route path="coming-soon" element={<ComingSoonPage />} />
+                <Route path="legal" element={<LegalPage />} />
+              </Route>
+            ))}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
+          </LangKeyed>
         </SmoothScroll>
       </main>
       <Animations />
       <PageTransitions />
-      <BookCallModal />
-      <MenuModal />
-      <FloatingTips />
+      {/* El cromo se remonta al cambiar de idioma: ver LangKeyed. */}
+      <LangKeyed>
+        <BookCallModal />
+        <MenuModal />
+        <FloatingTips />
+      </LangKeyed>
+      <LangSwitcher />
     </div>
   );
 }

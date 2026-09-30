@@ -185,6 +185,13 @@ function navItemHover(): () => void {
       wordsClass: 'split-word',
       charsClass: 'split-char',
       mask: 'words',
+      /*
+       * SplitText normaliza el espacio en blanco y convierte el espacio
+       * duro (U+00A0) en uno normal. La dirección de la oficina los usa
+       * para no partirse por dentro de un tramo (data/contact.ts), así que
+       * en los textos que los llevan se respeta tal cual.
+       */
+      reduceWhiteSpace: !texts[0].textContent?.includes('\u00A0'),
     } as const;
 
     const a = new SplitText(texts[0], vars);
