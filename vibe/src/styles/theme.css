@@ -1162,3 +1162,127 @@ html.phone-landscape .contact-s_loc {
 html.phone-landscape .contact-s_email {
   grid-column: 1 / 4;
 }
+
+
+/* --------------------------------------------------------
+ *  Tablets y pantallas casi cuadradas (Z Fold abierto, iPad…)
+ *
+ *  Entre 600 y 991px de ancho se sirve el diseño de MÓVIL, que
+ *  está dibujado para ~416px de ancho y una pantalla el doble de
+ *  alta (scale-ratio 4.16 en tokens.css). Como `1rem = 1vw`, en
+ *  un Fold abierto (884×1104) todo salía ×2,3 sobre una pantalla
+ *  solo ×1,3 más alta: «BAHÍA MAR» y las pestañas de villa
+ *  montados uno encima de otro, el botón circular debajo de «Las
+ *  Terrenas», el arco «Five reasons» saliéndose por los lados y
+ *  el menú cortado por abajo.
+ *
+ *  Aquí 1rem pasa a ser el MENOR entre el 1% del ancho y el 0,6%
+ *  del alto: en un teléfono no cambia nada (lo limita el ancho),
+ *  y en una pantalla poco alargada lo limita el alto, así que el
+ *  diseño de móvil crece lo que permite la altura y gana ancho en
+ *  vez de agrandarse. 0,6 sale de medir: con 0,6 caben el hero,
+ *  el arco y el menú abierto en 768×840 (la más cuadrada de las
+ *  que caen en este rango), y en 884×1104 el párrafo queda en
+ *  ~20px, buen tamaño de lectura en tablet.
+ *
+ *  `min-height: 601px` para no pisar la red de seguridad del
+ *  teléfono en horizontal (más arriba), que ya mide en svh.
+ * -------------------------------------------------------- */
+@media screen and (min-width: 600px) and (max-width: 991px) and (min-height: 601px) {
+  html {
+    font-size: min(1vw, 0.6vh);
+    font-size: min(1vw, 0.6svh);
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 991px) and (min-height: 601px) {
+  /* Hero: el diseño de móvil deja 48+272px de hueco sobre «BAHÍA MAR»
+     pensando en una pantalla el doble de alta que ancha. En tablet ese
+     hueco pasa a depender del alto, y el botón circular vuelve a la
+     medida del teléfono (39rem, como en el teléfono en horizontal):
+     así el titular, «Las Terrenas», las pestañas de villa y el botón
+     no se montan unos sobre otros. */
+  .hero-s .u-272.b-mob {
+    height: min(var(--272px), 14svh);
+  }
+  .btn-circle {
+    height: 39rem !important;
+    width: 39rem !important;
+  }
+  .btn-circle_label .l1 {
+    font-size: 2.8rem;
+  }
+
+  /* Arco «Five reasons for Bahía Mar»: el texto va dentro de un SVG
+     (viewBox 416, width 100%), así que su font-size se lee en unidades
+     del SVG y luego se escala con él: en rem salía ×2 del arco y se
+     cortaba por los lados. Se fija la medida que tiene en un teléfono
+     de 390px, donde se calibró el 0,76 de arriba (7,31rem × 3,9px):
+     el texto ocupa la misma parte del arco a cualquier ancho. */
+  .benefits-intro-s_title_svg.b-mob .h4 {
+    font-size: 28.5px;
+  }
+}
+
+/* --------------------------------------------------------
+ *  Escritorio estrecho: tablets en horizontal (1024×768,
+ *  1104×884 del Fold abierto…) y ventanas de ~1000px
+ *
+ *  El diseño de escritorio está dibujado a 1600px de ancho y
+ *  todo escala con él (1rem = 1vw). A 1024 el párrafo salía a
+ *  8px y las etiquetas («Book a call», «Contact», «Menu») a 6px:
+ *  ilegibles en una tablet.
+ *
+ *  1. Suelo para el texto pequeño: el tamaño fluido de siempre,
+ *     pero sin bajar de un mínimo legible. Los mínimos están por
+ *     debajo de lo que miden a 1440, así que de ~1300px hacia
+ *     arriba no cambia nada.
+ *  2. Navegación de la cabecera compacta: hasta 1199px se usa la
+ *     del móvil («Menu ⋮», que abre el menú a pantalla completa),
+ *     en vez de la columna de tres enlaces de 8,5vw de ancho, que
+ *     a 1024 partía «Select a villa» y dejaba los otros dos en 6px.
+ * -------------------------------------------------------- */
+@media screen and (min-width: 992px) {
+  :root,
+  body {
+    --_fonts---p1--size: max(calc(13rem / var(--_special-units---scale-ratio)), 11px);
+    --_fonts---p2--size: max(calc(11rem / var(--_special-units---scale-ratio)), 9.5px);
+    --_fonts---l1--size: max(calc(11rem / var(--_special-units---scale-ratio)), 9.5px);
+    --_fonts---l2--size: max(calc(9rem / var(--_special-units---scale-ratio)), 8px);
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .header-nav_list.f-desk {
+    display: none;
+  }
+  .header-nav_list.f-mob {
+    display: flex;
+  }
+  .header-nav {
+    width: calc((var(--_special-units---1-cell-h) * 2) + (var(--_special-units---grid-gap)));
+  }
+  /* El menú a pantalla completa tiene variante de escritorio, pero con
+     los enlaces en h6 y en dos columnas de la rejilla, pensados para
+     no usarse nunca: a 1024 se quedaban pequeños y «Agende una llamada»
+     se partía. Un escalón más grande y a todo el ancho. */
+  .modal_menu_list {
+    grid-column: 1 / -1;
+  }
+  .modal_menu_list .h6 {
+    font-size: var(--_fonts---h5--size);
+    white-space: nowrap;
+  }
+}
+
+/* Hero de escritorio en pantallas algo apaisadas (1024×768, 1104×884
+   del Fold abierto girado, 1280×854…). La foto mide 10:9 del ANCHO y
+   el bloque de abajo (pestañas de villa + botón «View available
+   villas») va pegado a su pie: a 1440×900 queda entero bajo el pliegue
+   y aparece al hacer scroll, y en pantallas cuadradas entra entero.
+   Entre 10:9 y 25:16 se quedaba A MEDIAS: el botón asomaba cortado por
+   el borde de la pantalla. Ahí se ancla al pie de la pantalla en vez
+   de al de la foto (100% es el alto de la foto). */
+@media screen and (min-width: 992px) and (min-aspect-ratio: 10/9) and (max-aspect-ratio: 25/16) {
+  .hero-s_b {
+    bottom: calc(100% - var(--_special-units---100vh));
+  }
+}
