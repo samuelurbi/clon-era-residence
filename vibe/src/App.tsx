@@ -30,6 +30,7 @@ import { Preloader } from '@/components/layout/Preloader';
 import { MasterPreloader } from '@/components/layout/MasterPreloader';
 import { LangSwitcher } from '@/components/layout/LangSwitcher';
 import { LangKeyed } from '@/components/providers/LangKeyed';
+import { FormTracking } from '@/components/FormTracking';
 
 import { HomePage } from '@/pages/HomePage';
 import { VillasPage } from '@/pages/VillasPage';
@@ -105,6 +106,7 @@ export function App() {
       </main>
       <Animations />
       <PageTransitions />
+      <FormTracking />
       {/* El cromo se remonta al cambiar de idioma: ver LangKeyed. */}
       <LangKeyed>
         <BookCallModal />

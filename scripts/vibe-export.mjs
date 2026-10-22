@@ -164,6 +164,23 @@ for (const dir of MIRRORED) {
   }
 }
 
+/* --- Archivos que solo existen en GHL ---------------------------- */
+
+/*
+ * `vibe/solo-ghl/src/` es código escrito en Vibe que no tiene equivalente
+ * en Next: hoy, el envío del formulario «Book a call» al CRM de GHL
+ * (FormTracking + lib/tracking, sincronizado el 2026-10-22). Va encima
+ * de las carpetas espejo, verbatim, en las mismas rutas que en GHL; si
+ * se escribiera en `vibe/src/` lo borraría la copia de arriba.
+ */
+const SOLO_GHL = join(ROOT, 'vibe', 'solo-ghl', 'src');
+for (const file of walk(SOLO_GHL)) {
+  const dest = join(OUT, relative(SOLO_GHL, file));
+  mkdirSync(dirname(dest), { recursive: true });
+  writeFileSync(dest, readFileSync(file));
+  files += 1;
+}
+
 /* --- index.html --------------------------------------------------- */
 
 /*

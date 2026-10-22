@@ -50,6 +50,8 @@ const FILES = [
   ['src/components-legal.tsx', 'Textos de las políticas legales (inglés y español).'],
   ['src/components-pages.tsx', 'Villas, pie, contacto, próximamente y la página de políticas.'],
   ['src/pages.tsx', 'Las páginas (añade la de políticas).'],
+  ['src/components/FormTracking.tsx', 'Envío del formulario «Book a call» al CRM (escrito en GHL).'],
+  ['src/lib/tracking.ts', 'Llamada al CRM que usa el formulario (escrito en GHL).'],
   ['src/App.tsx', 'Las rutas: inglés en la raíz y español bajo /es.'],
   ['src/main.tsx', 'Arranque de la app.'],
   ['src/fonts.css', 'Tipografías.'],

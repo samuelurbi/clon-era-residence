@@ -22,6 +22,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Animations, BookCallModal, FloatingTips, Header, LangKeyed, LangSwitcher, MasterPreloader, MenuModal, PageTransitions, Preloader, SmoothScroll } from '@/components-layout';
 import { ComingSoonPage, ContactPage, HomePage, LegalPage, NotFoundPage, VillaPage, VillasPage } from '@/pages';
 
+import { FormTracking } from '@/components/FormTracking';
 
 
 export function App() {
@@ -90,6 +91,7 @@ export function App() {
       </main>
       <Animations />
       <PageTransitions />
+      <FormTracking />
       {/* El cromo se remonta al cambiar de idioma: ver LangKeyed. */}
       <LangKeyed>
         <BookCallModal />

@@ -43,6 +43,15 @@ const SRC = join(ROOT, 'vibe', 'src');
 const OUT = join(ROOT, 'vibe-bundle');
 
 /**
+ * Código que solo existe en GHL (`vibe/solo-ghl/src/`, ver vibe-export.mjs).
+ * vibe-export lo deja dentro de `vibe/src/`, pero NO se empaqueta: en GHL
+ * son archivos sueltos (`@/components/FormTracking`, `@/lib/tracking`) y
+ * así se quedan, en vez de acabar dentro de `animations.ts`.
+ */
+const SOLO_GHL = join(ROOT, 'vibe', 'solo-ghl', 'src');
+const SOLO_GHL_REL = new Set(existsSync(SOLO_GHL) ? walk(SOLO_GHL).map((f) => relative(SOLO_GHL, f)) : []);
+
+/**
  * Los grupos, en orden de dependencia. `destino` es la ruta final y
  * `alias` es cómo lo importarán los demás grupos.
  */
@@ -287,6 +296,8 @@ for (const grupo of GRUPOS) {
     const dirEx = join(SRC, ex);
     for (let i = archivos.length - 1; i >= 0; i--) if (archivos[i].startsWith(dirEx)) archivos.splice(i, 1);
   }
+  // Los de solo-ghl no se empaquetan: van sueltos, como están en GHL.
+  for (let i = archivos.length - 1; i >= 0; i--) if (SOLO_GHL_REL.has(relative(SRC, archivos[i]))) archivos.splice(i, 1);
   if (!archivos.length) continue;
 
   /* Orden topológico por imports dentro del grupo: si A importa de B, B
@@ -545,6 +556,9 @@ for (const f of ['src/main.tsx', 'src/App.tsx', 'src/fonts.css', 'index.html', '
 // Los tipos de los atributos data-* de Webflow: se copian tal cual.
 const tipos = join(SRC, 'types');
 if (existsSync(tipos)) cpSync(tipos, join(OUT, 'src', 'types'), { recursive: true });
+
+// Lo escrito en GHL sin equivalente en Next (ver vibe-export.mjs): tal cual.
+if (existsSync(SOLO_GHL)) cpSync(SOLO_GHL, join(OUT, 'src'), { recursive: true });
 
 /* ================================================================
  *  Informe
