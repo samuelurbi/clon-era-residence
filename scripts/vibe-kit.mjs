@@ -31,11 +31,12 @@ const BUNDLE = join(ROOT, 'vibe-bundle');
 const OUT = join(ROOT, '_deploy', 'vibe');
 
 /**
- * Lo que hay ahora mismo en GHL. `fc6fccb` = «sync(ghl): trae a local la
- * versión de GoHighLevel Vibe (2026-09-24)»: su vibe-bundle se comparó
- * módulo a módulo con lo descargado de GHL.
+ * Lo que hay ahora mismo en GHL. `f3f0fa9` = «sync(ghl): trae el envío de
+ * «Book a call» al CRM hecho en Vibe (2026-10-22)»: su vibe-bundle se
+ * comparó archivo a archivo con el ZIP de «Descargar base de código».
+ * (Antes, `fc6fccb`: la sincronización del 2026-09-24.)
  */
-const REF_COMMIT = process.env.REF_COMMIT || 'fc6fccb';
+const REF_COMMIT = process.env.REF_COMMIT || 'f3f0fa9';
 
 const ASSET_HOST = 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/';
 
