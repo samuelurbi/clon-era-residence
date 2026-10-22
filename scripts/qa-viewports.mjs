@@ -185,9 +185,14 @@ function heroCheck() {
   const vh = window.innerHeight;
   const rectsOf = (el) => {
     if (!el) return [];
-    const chars = el.querySelectorAll('.split-char');
-    if (chars.length) return [...chars].map((c) => c.getBoundingClientRect()).filter((r) => r.width && r.height);
     const range = document.createRange();
+    // Letra a letra, pero el TEXTO de cada trozo: la caja del trozo de
+    // SplitText lleva relleno para las florituras de la letra manuscrita
+    // (la «L» de «Las» empieza 90px a la izquierda de su tinta).
+    const chars = el.querySelectorAll('.split-char');
+    if (chars.length) {
+      return [...chars].flatMap((c) => { range.selectNodeContents(c); return [...range.getClientRects()]; }).filter((r) => r.width && r.height);
+    }
     range.selectNodeContents(el);
     return [...range.getClientRects()].filter((r) => r.width && r.height);
   };
@@ -205,6 +210,19 @@ function heroCheck() {
     const d = Math.min(b.width, b.height);
     const cap = Math.max(160, 0.22 * Math.min(vw, vh));
     if (d > cap + 1) out.push({ k: 'botón', d: `botón circular de ${Math.round(d)}px (tope ${Math.round(cap)}px)` });
+    // La etiqueta («View available villas») tiene que caber entera: cada
+    // palabra, dentro del ancho del círculo (si no, se corta: «AVAIL»).
+    const lab = btn.querySelector('.nav-item_label_text:not(.is-2) .l1');
+    if (lab) {
+      const range = document.createRange();
+      range.selectNodeContents(lab);
+      const lines = [...range.getClientRects()];
+      const widest = Math.max(0, ...lines.map((r) => r.width));
+      const clip = lab.closest('.nav-item_label_text') || lab;
+      if (lab.scrollWidth > clip.clientWidth + 1 || widest > b.width * 0.86) {
+        out.push({ k: 'etiqueta', d: `«${lab.textContent.trim()}» no cabe en el botón (${Math.round(Math.max(widest, lab.scrollWidth))}px en un círculo de ${Math.round(b.width)}px)` });
+      }
+    }
     const k = (1 - Math.SQRT1_2) / 2; // cuadrado inscrito
     parts.push({ n: 'botón circular', rs: [new DOMRect(b.left + b.width * k, b.top + b.height * k, b.width * Math.SQRT1_2, b.height * Math.SQRT1_2)] });
   }
@@ -233,11 +251,14 @@ function heroCheck() {
 }
 
 const HERO_ONLY = args.includes('--hero');
+const TOUCH = args.includes('--tactil');
 const results = [];
 if (shotsDir) mkdirSync(shotsDir, { recursive: true });
 
 for (const [w, h] of SIZES) {
-  const ctx = await browser.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1 });
+  // --tactil: teléfono de verdad (isMobile + táctil), para que actúe
+  // lib/phone-landscape.inline.js (en horizontal, la web de escritorio a 1024).
+  const ctx = await browser.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1, isMobile: TOUCH, hasTouch: TOUCH });
   await ctx.addInitScript(() => {
     try { sessionStorage.setItem('hasVisited', 'true'); localStorage.setItem('cookies', 'accepted'); } catch {}
   });

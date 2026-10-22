@@ -1213,11 +1213,16 @@ html.phone-landscape .contact-s_email {
   .hero-s_logo_a .a2 {
     font-size: calc(var(--_fonts---a2--size) * 0.82);
   }
-  .btn-circle {
+  /* `html` delante: entre 600 y 767px globals.css (que se carga
+     después) fija el botón a 39vw con !important y ganaba. */
+  html .btn-circle {
     height: clamp(150px, 21vmin, 190px) !important;
     width: clamp(150px, 21vmin, 190px) !important;
+    /* El relleno heredado (u-48, en rem) ya no sigue al círculo y
+       dejaba la etiqueta en 84px: «disponibles» se cortaba. */
+    padding: calc(clamp(150px, 21vmin, 190px) * 0.1) !important;
   }
-  .btn-circle_label .l1 {
+  html .btn-circle_label .l1 {
     font-size: clamp(11px, 1.5vmin, 13px);
   }
 
@@ -1293,5 +1298,87 @@ html.phone-landscape .contact-s_email {
 @media screen and (min-width: 992px) and (min-aspect-ratio: 10/9) and (max-aspect-ratio: 25/16) {
   .hero-s_b {
     bottom: calc(100% - var(--_special-units---100vh));
+  }
+}
+
+/* --------------------------------------------------------
+ *  Hero en el teléfono (por debajo de 600px)
+ *
+ *  El diseño de móvil está calibrado para ~390×844. Fuera de ese
+ *  punto se rompía: en teléfonos bajos (320×568, 360×640, 375×667)
+ *  las pestañas de villa subían hasta «Las Terrenas»; de 430 a 599px
+ *  todo crecía con el ancho (botón de 168-234px) y titular, pestañas
+ *  y botón se montaban; y entre 599 y 600 había un salto contra la
+ *  regla de tablet.
+ *
+ *  - 1rem = min(1vw, 0,6svh), como en tablet: en un teléfono normal
+ *    manda el ancho (390×844 no cambia) y en uno ancho y bajo, el alto.
+ *  - El hueco sobre «BAHÍA MAR» (u-272 = 120px de diseño) se encoge si
+ *    no cabe: alto de pantalla − lo demás (42rem de márgenes y
+ *    pestañas, 2,68 alturas de letra del titular para «BAHÍA / MAR» +
+ *    «Las Terrenas», el botón, medidos a 390×844) − 48px de aire. Y
+ *    nunca más de 14svh, lo mismo que en tablet: empalma en 599/600.
+ *    A 390×844 sigue en sus 112px (el límite no llega a actuar).
+ *  - Titular y «Las Terrenas» con tope en rampa: a 600px valen
+ *    exactamente lo de tablet (×0,82) y el tope crece al estrechar la
+ *    pantalla hasta que deja de actuar hacia 430px. Sin salto en
+ *    599/600, y a 390 no se llega al tope.
+ *  - Botón: 39vw como siempre, con tope de 155px (152 a 390; la
+ *    tablet arranca en 150 a 600px). Etiqueta con tope de 11,5px.
+ *  Lo vigila `scripts/qa-viewports.mjs --hero`.
+ * -------------------------------------------------------- */
+@media screen and (max-width: 599px) and (orientation: portrait) {
+  html {
+    font-size: min(1vw, 0.6vh);
+    font-size: min(1vw, 0.6svh);
+  }
+  .hero-s {
+    --hero-h1: min(var(--_fonts---h1--size), calc(var(--_fonts---h1--size) * 0.82 + (600px - 100vw) * 0.105));
+    --hero-btn: min(39vw, 155px);
+  }
+  .hero-s .u-272.b-mob {
+    height: clamp(0px, min(14svh, calc(100svh - 42rem - 2.68 * var(--hero-h1) - var(--hero-btn) - 48px)), var(--120px));
+  }
+  .hero-s_logo .h1 {
+    font-size: var(--hero-h1);
+  }
+  .hero-s_logo_a .a2 {
+    font-size: min(var(--_fonts---a2--size), calc(var(--_fonts---a2--size) * 0.82 + (600px - 100vw) * 0.08));
+  }
+  html .hero-s_btn .btn-circle {
+    height: min(39vw, 155px) !important; /* = --hero-btn (otro contenedor) */
+    width: min(39vw, 155px) !important;
+  }
+  html .hero-s_btn .btn-circle_label .l1 {
+    font-size: min(2.8vw, 11.5px);
+  }
+}
+
+/* Teléfono en horizontal sin el script de escritorio (una ventana
+   apaisada y baja, o un navegador que no deja cambiar el viewport):
+   aquí 1rem = 1svh (red de seguridad, más arriba) y el hero de móvil
+   no cabe en ~375px de alto: el bloque de pestañas + botón subía hasta
+   arriba y el botón tapaba «BAHÍA MAR». Sin hueco superior, titular
+   y «Las Terrenas» a 0,55 y botón al 24% del alto. */
+@media screen and (orientation: landscape) and (max-width: 991px) and (max-height: 600px) {
+  .hero-s .u-272.b-mob {
+    height: 0;
+  }
+  .hero-s_logo .h1 {
+    font-size: calc(var(--_fonts---h1--size) * 0.55);
+  }
+  .hero-s_logo_a .a2 {
+    font-size: calc(var(--_fonts---a2--size) * 0.55);
+  }
+  html .hero-s_btn .btn-circle {
+    height: 24svh !important;
+    width: 24svh !important;
+    padding: calc(24svh * 0.08) !important;
+  }
+  /* Con el relleno en rem la etiqueta quedaba en 34px y se leía
+     «VIEW AVAIL VILLA»; y entre 600 y 767px globals.css la ponía a
+     2,8vw (19px). Relleno y letra, en proporción al círculo. */
+  html .hero-s_btn .btn-circle_label .l1 {
+    font-size: 2.3svh;
   }
 }
