@@ -1195,19 +1195,30 @@ html.phone-landscape .contact-s_email {
 @media screen and (min-width: 600px) and (max-width: 991px) and (min-height: 601px) {
   /* Hero: el diseño de móvil deja 48+272px de hueco sobre «BAHÍA MAR»
      pensando en una pantalla el doble de alta que ancha. En tablet ese
-     hueco pasa a depender del alto, y el botón circular vuelve a la
-     medida del teléfono (39rem, como en el teléfono en horizontal):
-     así el titular, «Las Terrenas», las pestañas de villa y el botón
-     no se montan unos sobre otros. */
+     hueco pasa a depender del alto.
+
+     El titular y «Las Terrenas» bajan un escalón (×0,82) y el botón
+     circular deja de medirse en rem: con 39rem salía de 240-276px,
+     cuando en el teléfono mide ~152px y a 1440 ~187px. Aquí va al 21%
+     del lado corto de la pantalla, entre 150 y 190px, con la etiqueta
+     en px. Así las pestañas de villa quedan bajo «Las Terrenas» sin
+     pisarlo (lo vigila `scripts/qa-viewports.mjs --hero`, que mide los
+     solapes y el tamaño del botón). */
   .hero-s .u-272.b-mob {
     height: min(var(--272px), 14svh);
   }
+  .hero-s_logo .h1 {
+    font-size: calc(var(--_fonts---h1--size) * 0.82);
+  }
+  .hero-s_logo_a .a2 {
+    font-size: calc(var(--_fonts---a2--size) * 0.82);
+  }
   .btn-circle {
-    height: 39rem !important;
-    width: 39rem !important;
+    height: clamp(150px, 21vmin, 190px) !important;
+    width: clamp(150px, 21vmin, 190px) !important;
   }
   .btn-circle_label .l1 {
-    font-size: 2.8rem;
+    font-size: clamp(11px, 1.5vmin, 13px);
   }
 
   /* Arco «Five reasons for Bahía Mar»: el texto va dentro de un SVG
