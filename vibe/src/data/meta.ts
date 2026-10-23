@@ -37,14 +37,14 @@ export const PAGE_META: Record<PageKey, Record<Lang, PageMeta>> = {
   },
   villas: {
     en: {
-      title: 'Villas',
+      title: 'Villas in Las Terrenas, Samaná',
       description:
         'Five villa typologies at Bahía Mar, Las Terrenas, Samaná: Villa Horizonte, ' +
         'Esencia, Armonía, Ámbar and Remanso — single-level and two-level villas ' +
         'with private pool, jacuzzi, solarium and views over Samaná Bay.',
     },
     es: {
-      title: 'Villas',
+      title: 'Villas en Las Terrenas, Samaná',
       description:
         'Cinco tipologías de villa en Bahía Mar, Las Terrenas, Samaná: Villa Horizonte, ' +
         'Esencia, Armonía, Ámbar y Remanso — villas de una y dos plantas con piscina ' +

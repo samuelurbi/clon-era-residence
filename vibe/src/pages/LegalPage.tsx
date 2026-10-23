@@ -7,9 +7,12 @@ import { BookACall } from '@/components/sections/BookACall';
 import { usePageMeta } from '@/shims/page-meta';
 import { PAGE_META } from '@/data/meta';
 import { useLang } from '@/lib/use-lang';
+import { simplePageLd } from '@/pages/seo';
 
 export function LegalPage() {
-  usePageMeta(PAGE_META.legal[useLang()]);
+  const lang = useLang();
+  const meta = PAGE_META.legal[lang];
+  usePageMeta({ ...meta, jsonLd: simplePageLd(lang, 'WebPage', '/legal', meta.title, meta.description) });
 
   return (
     <>

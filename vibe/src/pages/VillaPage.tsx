@@ -31,6 +31,7 @@ import { Amenities } from '@/components/sections/Amenities';
 import { SeaViewsCta } from '@/components/sections/SeaViewsCta';
 import { BookACall } from '@/components/sections/BookACall';
 import { usePageMeta } from '@/shims/page-meta';
+import { villaLd } from '@/pages/seo';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
 /**
@@ -53,8 +54,17 @@ export function VillaPage() {
    * entre renders al navegar de una ficha válida a una inexistente.
    */
   const lang = useLang();
-  const seo = villa ? localizeVilla(villa, lang).seo : undefined;
-  usePageMeta({ title: seo?.title, description: seo?.description });
+  const localized = villa ? localizeVilla(villa, lang) : undefined;
+  /*
+   * Ficha inexistente: se pinta la 404 y su título/noindex deben ganar. Este
+   * hook corre DESPUÉS del de NotFoundPage (el del padre va último), así
+   * que repite lo mismo en vez de dejar el título por defecto.
+   */
+  usePageMeta(
+    localized
+      ? { title: localized.seo.title, description: localized.seo.description, jsonLd: villaLd(lang, localized) }
+      : { title: lang === 'es' ? 'Página no encontrada' : 'Page not found', noindex: true },
+  );
 
   if (!villa) return <NotFoundPage />;
 

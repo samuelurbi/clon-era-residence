@@ -9,7 +9,8 @@ import { PAGE_META } from '@/data/meta';
 import { useLang } from '@/lib/use-lang';
 
 export function ComingSoonPage() {
-  usePageMeta(PAGE_META.comingSoon[useLang()]);
+  /* Sin enlace desde el sitio y casi sin contenido: no se indexa. */
+  usePageMeta({ ...PAGE_META.comingSoon[useLang()], noindex: true });
 
   return <ComingSoonMain />;
 }

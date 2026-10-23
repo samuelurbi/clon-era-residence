@@ -18,7 +18,8 @@ import { localize } from '@/lib/i18n';
 export function NotFoundPage() {
   const lang = useLang();
   const es = lang === 'es';
-  usePageMeta({ title: es ? 'Página no encontrada' : 'Page not found' });
+  /* El servidor responde 200 a cualquier ruta: sin `noindex` Google la tomaría por página real. */
+  usePageMeta({ title: es ? 'Página no encontrada' : 'Page not found', noindex: true });
 
   return (
     <>

@@ -31,12 +31,14 @@ const BUNDLE = join(ROOT, 'vibe-bundle');
 const OUT = join(ROOT, '_deploy', 'vibe');
 
 /**
- * Lo que hay ahora mismo en GHL. `f3f0fa9` = «sync(ghl): trae el envío de
+ * Lo que hay ahora mismo en GHL. `47a262d` = el CSS responsive publicado el
+ * 2026-10-23 (solo cambió `src/site.css` respecto a `f3f0fa9`).
+ * Antes, `f3f0fa9` = «sync(ghl): trae el envío de
  * «Book a call» al CRM hecho en Vibe (2026-10-22)»: su vibe-bundle se
  * comparó archivo a archivo con el ZIP de «Descargar base de código».
  * (Antes, `fc6fccb`: la sincronización del 2026-09-24.)
  */
-const REF_COMMIT = process.env.REF_COMMIT || 'f3f0fa9';
+const REF_COMMIT = process.env.REF_COMMIT || '47a262d';
 
 const ASSET_HOST = 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/';
 
@@ -58,7 +60,13 @@ const FILES = [
   ['src/fonts.css', 'Tipografías.'],
   ['index.html', 'Cabecera HTML: añade el script que muestra la versión de escritorio con el teléfono en horizontal.'],
   ['package.json', 'Dependencias.'],
+  // Los genera scripts/vibe-seo.mjs. Van en `public/`: Vibe los sirve tal cual.
+  ['public/robots.txt', 'Rastreadores permitidos + enlace al sitemap. Ya existe en Vibe (carpeta public): solo se reemplaza su contenido.'],
+  ['public/sitemap.xml', 'Mapa del sitio: todas las páginas en inglés y español, con hreflang. Archivo nuevo en la carpeta public.'],
 ];
+
+/** Archivos de la lista que YA existen en el proyecto de GHL aunque no estén en REF_COMMIT. */
+const EXISTE_EN_GHL = new Set(['public/robots.txt']);
 
 const norm = (s) => s.replace(/\r\n/g, '\n');
 
@@ -100,7 +108,7 @@ for (const [file, what] of FILES) {
   const text = readFileSync(path, 'utf8');
   const before = atRef(file);
   if (before !== null && norm(before) === norm(text)) continue;
-  plan.push({ file, what, text, isNew: before === null });
+  plan.push({ file, what, text, isNew: before === null && !EXISTE_EN_GHL.has(file) });
 }
 
 const pkgChanged = plan.some((p) => p.file === 'package.json');

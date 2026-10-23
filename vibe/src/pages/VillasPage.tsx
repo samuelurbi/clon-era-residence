@@ -9,9 +9,16 @@ import { BookACall } from '@/components/sections/BookACall';
 import { usePageMeta } from '@/shims/page-meta';
 import { PAGE_META } from '@/data/meta';
 import { useLang } from '@/lib/use-lang';
+import { villas, localizeVilla } from '@/data/villas';
+import { villasLd } from '@/pages/seo';
 
 export function VillasPage() {
-  usePageMeta(PAGE_META.villas[useLang()]);
+  const lang = useLang();
+  const meta = PAGE_META.villas[lang];
+  usePageMeta({
+    ...meta,
+    jsonLd: villasLd(lang, meta.title, meta.description, villas.map((v) => ({ slug: v.slug, name: localizeVilla(v, lang).name }))),
+  });
 
   return (
     <>

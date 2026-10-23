@@ -9,9 +9,12 @@ import { BookACall } from '@/components/sections/BookACall';
 import { usePageMeta } from '@/shims/page-meta';
 import { PAGE_META } from '@/data/meta';
 import { useLang } from '@/lib/use-lang';
+import { simplePageLd } from '@/pages/seo';
 
 export function ContactPage() {
-  usePageMeta(PAGE_META.contact[useLang()]);
+  const lang = useLang();
+  const meta = PAGE_META.contact[lang];
+  usePageMeta({ ...meta, jsonLd: simplePageLd(lang, 'ContactPage', '/contact', meta.title, meta.description) });
 
   return (
     <>

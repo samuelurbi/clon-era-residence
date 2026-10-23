@@ -19,10 +19,13 @@ import { BookACall } from '@/components/sections/BookACall';
 import { usePageMeta } from '@/shims/page-meta';
 import { PAGE_META } from '@/data/meta';
 import { useLang } from '@/lib/use-lang';
+import { homeLd } from '@/pages/seo';
 
 export function HomePage() {
   /* La home lleva el título completo, sin sufijo (como en Next). */
-  usePageMeta({ ...PAGE_META.home[useLang()], absolute: true });
+  const lang = useLang();
+  const meta = PAGE_META.home[lang];
+  usePageMeta({ ...meta, absolute: true, jsonLd: homeLd(lang, meta.description) });
 
   return (
     <>
