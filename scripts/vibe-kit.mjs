@@ -31,14 +31,16 @@ const BUNDLE = join(ROOT, 'vibe-bundle');
 const OUT = join(ROOT, '_deploy', 'vibe');
 
 /**
- * Lo que hay ahora mismo en GHL. `47a262d` = el CSS responsive publicado el
- * 2026-10-23 (solo cambió `src/site.css` respecto a `f3f0fa9`).
+ * Lo que hay ahora mismo en GHL. `0860804` = el SEO publicado el 2026-10-23
+ * (canonical, hreflang, JSON-LD, robots.txt y sitemap.xml). Antes, `47a262d` =
+ * el CSS responsive publicado ese mismo día (solo cambió `src/site.css`
+ * respecto a `f3f0fa9`).
  * Antes, `f3f0fa9` = «sync(ghl): trae el envío de
  * «Book a call» al CRM hecho en Vibe (2026-10-22)»: su vibe-bundle se
  * comparó archivo a archivo con el ZIP de «Descargar base de código».
  * (Antes, `fc6fccb`: la sincronización del 2026-09-24.)
  */
-const REF_COMMIT = process.env.REF_COMMIT || '47a262d';
+const REF_COMMIT = process.env.REF_COMMIT || '0860804';
 
 const ASSET_HOST = 'https://puntacanadinnerinthesky.com/urbatrix/bahiamar/';
 
