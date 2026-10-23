@@ -101,6 +101,13 @@ const DEFAULT_TITLE = `${SITE} — Boutique Villas on the Samaná Peninsula, Dom
 /** Origen público del sitio: canonical, og:url, hreflang y sitemap salen de aquí. */
 export const SITE_ORIGIN = 'https://bahiamarterrenas.com';
 
+/**
+ * Imagen para compartir. Vibe no guarda binarios en `public/`: la subida por el
+ * chat de su IA queda en la CDN del proyecto (vibe.filesafe.space). Es la misma
+ * URL que lleva `index.html`; si cambia, cambia en los dos sitios.
+ */
+const OG_IMAGE = 'https://vibe.filesafe.space/1786543022118088456/attachments/e2426776-fbb7-44a5-ac05-75044e735238.jpg';
+
 /** Título para compartir de la home inglesa (el que ya tenía; ver app/page-metadata.ts). */
 const HOME_SHARE_EN = 'Bahía Mar® Boutique Villas on the Samaná, Dominican Republic';
 
@@ -194,6 +201,8 @@ export function usePageMeta({ title, description, absolute = false, noindex = fa
     alt.setAttribute('data-seo', '');
     document.head.appendChild(alt);
 
+    setTag('meta', 'property', 'og:image', 'content', OG_IMAGE);
+    setTag('meta', 'name', 'twitter:image', 'content', OG_IMAGE);
     setTag('meta', 'property', 'og:title', 'content', shareTitle);
     setTag('meta', 'name', 'twitter:title', 'content', shareTitle);
     if (description) {
