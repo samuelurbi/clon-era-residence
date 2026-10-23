@@ -5,14 +5,11 @@
 
 import { ComingSoonMain } from '@/components/pages/ComingSoonMain';
 import { usePageMeta } from '@/shims/page-meta';
+import { PAGE_META } from '@/data/meta';
+import { useLang } from '@/lib/use-lang';
 
 export function ComingSoonPage() {
-  usePageMeta({
-    title: 'Coming soon',
-    description:
-      'Villa availability at Bahía Mar, Las Terrenas, Samaná, is confirmed ' +
-      'directly by our team. Contact us to find out which villas are currently available.',
-  });
+  usePageMeta(PAGE_META.comingSoon[useLang()]);
 
   return <ComingSoonMain />;
 }

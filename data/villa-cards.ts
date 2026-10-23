@@ -17,7 +17,8 @@
  * campos vacíos o inventar cifras.
  */
 
-import { villas, srcset } from '@/data/villas';
+import { villas, srcset, localizeVilla } from '@/data/villas';
+import type { Lang } from '@/lib/i18n';
 
 export interface VillaCardData {
   slug: string;
@@ -87,3 +88,31 @@ export const typeFilters = [...new Set(villas.map((v) => v.category))].map((c) =
 export const bedFilters = [...new Set(villas.map((v) => v.bedrooms))]
   .sort((a, b) => a - b)
   .map(String);
+
+/**
+ * La tarjeta en el idioma dado. Solo cambian los rótulos: los valores de
+ * filtro y orden (`filterType`, `sort*`) son los mismos en los dos idiomas,
+ * porque son los que leen los `data-filter-*` y la query de la URL.
+ */
+export function localizeCard(card: VillaCardData, lang: Lang): VillaCardData {
+  if (lang === 'en') return card;
+  const villa = villas.find((v) => v.slug === card.slug);
+  if (!villa) return card;
+  const t = localizeVilla(villa, lang);
+  return {
+    ...card,
+    typeLabel: `Tipo ${villa.type}`,
+    category: t.category,
+    unitsLabel: villa.units === null ? null : `${villa.units} unidades`,
+    completion: t.completion,
+    extra: 'Piscina privada',
+  };
+}
+
+/** Opciones del desplegable «Type» en el idioma dado (mismo `value`). */
+export function typeFiltersFor(lang: Lang) {
+  return typeFilters.map((f) => {
+    const villa = villas.find((v) => slugifyType(v.category) === f.value);
+    return villa ? { ...f, label: localizeVilla(villa, lang).category } : f;
+  });
+}

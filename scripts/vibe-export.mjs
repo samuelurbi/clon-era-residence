@@ -164,6 +164,23 @@ for (const dir of MIRRORED) {
   }
 }
 
+/* --- Archivos que solo existen en GHL ---------------------------- */
+
+/*
+ * `vibe/solo-ghl/src/` es código escrito en Vibe que no tiene equivalente
+ * en Next: hoy, el envío del formulario «Book a call» al CRM de GHL
+ * (FormTracking + lib/tracking, sincronizado el 2026-10-22). Va encima
+ * de las carpetas espejo, verbatim, en las mismas rutas que en GHL; si
+ * se escribiera en `vibe/src/` lo borraría la copia de arriba.
+ */
+const SOLO_GHL = join(ROOT, 'vibe', 'solo-ghl', 'src');
+for (const file of walk(SOLO_GHL)) {
+  const dest = join(OUT, relative(SOLO_GHL, file));
+  mkdirSync(dirname(dest), { recursive: true });
+  writeFileSync(dest, readFileSync(file));
+  files += 1;
+}
+
 /* --- index.html --------------------------------------------------- */
 
 /*
@@ -174,7 +191,10 @@ for (const dir of MIRRORED) {
  */
 const template = join(ROOT, 'vibe', 'index.template.html');
 const indexOut = join(ROOT, 'vibe', 'index.html');
-let html = readFileSync(template, 'utf8').replaceAll('{{ASSET_BASE}}', ASSET_BASE);
+let html = readFileSync(template, 'utf8')
+  .replaceAll('{{ASSET_BASE}}', ASSET_BASE)
+  // El mismo script que app/layout.tsx mete en el <head> de Next.
+  .replace('{{PHONE_LANDSCAPE_SCRIPT}}', () => readFileSync(join(ROOT, 'lib', 'phone-landscape.inline.js'), 'utf8').trim());
 
 /* La plantilla escribe las rutas con `/`; si el host usa otro separador,
    se aplica aquí también — anclando en la base ya sustituida, para no tocar

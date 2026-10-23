@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -18,7 +19,9 @@
  * cuenta las diapositivas solo, así que la paginación pasa a 1/5.
  */
 
-import { srcset, villas, type Villa } from '@/data/villas';
+import { localizeVilla, srcset, villas, type Villa } from '@/data/villas';
+import type { Lang } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
 
 /** Primera frase de un párrafo, para el pie de cada villa. */
 function firstSentence(text: string): string {
@@ -26,14 +29,25 @@ function firstSentence(text: string): string {
   return m ? m[0] : text;
 }
 
-/** «Type A · Two levels · 4 bedrooms · 77 units». */
-function caption(villa: Villa): string {
-  return [`Type ${villa.type}`, villa.category, `${villa.bedrooms} bedrooms`, villa.units ? `${villa.units} units` : null]
+/**
+ * «Type A · Two levels · 4 bedrooms · 77 units» / «Tipo A · Dos niveles ·
+ * 4 habitaciones · 77 unidades». La categoría ya llega traducida por
+ * localizeVilla.
+ */
+function caption(villa: Villa, lang: Lang): string {
+  const es = lang === 'es';
+  return [
+    `${es ? 'Tipo' : 'Type'} ${villa.type}`,
+    villa.category,
+    `${villa.bedrooms} ${es ? 'habitaciones' : 'bedrooms'}`,
+    villa.units ? `${villa.units} ${es ? 'unidades' : 'units'}` : null,
+  ]
     .filter(Boolean)
     .join(' · ');
 }
 
 export function Pillars() {
+  const lang = useLang();
   return (
     <section data-bg="light" data-snap="" className="section z-2 theme_on-brand">
       <div className="container">
@@ -74,7 +88,7 @@ export function Pillars() {
                 </div>
                 <div className="benefits-cms w-dyn-list">
                   <div role="list" className="benefits-cms_list w-dyn-items">
-                    {villas.map((villa) => (
+                    {villas.map((v) => localizeVilla(v, lang)).map((villa) => (
                       <div key={villa.slug} data-reveal-first="" data-slider="slide" role="listitem" className="benefits-cms_list_item w-dyn-item">
                         <div className="benefit-slide">
                           <div className="benefit-slide_t">
@@ -91,7 +105,9 @@ export function Pillars() {
                                 <img
                                   src={`/images/bahiamar-pillar-${villa.assetSlug}.webp`}
                                   loading="eager"
-                                  alt={`${villa.name}: front view of the villa with its private pool and the palm trees behind`}
+                                  alt={lang === 'es'
+                                    ? `${villa.name}: vista frontal de la villa con su piscina privada y las palmeras detrás`
+                                    : `${villa.name}: front view of the villa with its private pool and the palm trees behind`}
                                   sizes="(max-width: 2350px) 100vw, 2350px"
                                   srcSet={srcset(`/images/bahiamar-pillar-${villa.assetSlug}.webp`)}
                                   className="img"
@@ -112,7 +128,7 @@ export function Pillars() {
                             <div className="u-48"></div>
                             <div className="grid _8-columns">
                               <div className="benefit-slide_cap">
-                                <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">{caption(villa)}</p>
+                                <p data-scroll-reveal="p" data-slider="p" className="l1 a-center">{caption(villa, lang)}</p>
                               </div>
                             </div>
                             <div className="u-48"></div>

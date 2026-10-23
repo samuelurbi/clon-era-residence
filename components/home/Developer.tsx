@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Bloque «Developer» de la home (promotor, arquitectos, sostenibilidad y
@@ -18,7 +19,39 @@
  * descripción de la firma sin fuente documentada (QA ronda 1, CONTENT-TRUTH-05).
  */
 
+import { type Lang } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    kicker: 'The people behind Bahía Mar',
+    developer: 'Developer',
+    developerDesc: 'Bahía Mar Residences & Beach Resort is a project managed by Landmass Capital.',
+    architects: 'Architects',
+    architectsAlt: 'Villa Esencia at Bahía Mar: a stone and timber villa under a deep roof overhang, facing the sea.',
+    architectsDesc: 'Estudio Dolla designed the master plan and the five villa typologies, from the two-level Villa Horizonte to the single-level Villa Ámbar, each with its own private pool and terraces.',
+    sustainability: 'Sustainability',
+    sustainabilityDesc: 'The master plan is aligned with LEED for Cities and Communities certification. Every villa is fitted with solar panels, home automation, energy-efficient kitchen appliances, bamboo flooring and chukum wall finishes.',
+    delivery: '2027 (TBC)',
+    deliveryDesc: 'Estimated delivery, to be confirmed. The Phase II master plan comprises 246 villas: 77 Villa Horizonte, 88 Villa Esencia and 81 Villa Armonía, each with its own private pool.',
+  },
+  es: {
+    kicker: 'Quiénes están detrás de Bahía Mar',
+    developer: 'Promotor',
+    developerDesc: 'Bahía Mar Residences & Beach Resort es un proyecto gestionado por Landmass Capital.',
+    architects: 'Arquitectos',
+    architectsAlt: 'Villa Esencia en Bahía Mar: una villa de piedra y madera bajo un profundo alero, frente al mar.',
+    architectsDesc: 'Estudio Dolla diseñó el plan maestro y las cinco tipologías de villa, desde la Villa Horizonte de dos niveles hasta la Villa Ámbar de un nivel, cada una con su propia piscina privada y terrazas.',
+    sustainability: 'Sostenibilidad',
+    sustainabilityDesc: 'El plan maestro está alineado con la certificación LEED for Cities and Communities. Todas las villas cuentan con paneles solares, domótica, electrodomésticos de cocina eficientes, pisos de bambú y muros acabados en chukum.',
+    delivery: '2027 (por confirmar)',
+    deliveryDesc: 'Entrega estimada, por confirmar. El plan maestro de la Fase II comprende 246 villas: 77 Villa Horizonte, 88 Villa Esencia y 81 Villa Armonía, cada una con su propia piscina privada.',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function Developer() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <section data-bg="light" className="section clip">
       <div className="container">
@@ -27,7 +60,7 @@ export function Developer() {
             <div className="u-48"></div>
             <div className="grid">
               <div className="s_title">
-                <p data-scroll-reveal="p" className="l1 a-center">The people behind Bahía Mar</p>
+                <p data-scroll-reveal="p" className="l1 a-center">{t.kicker}</p>
               </div>
             </div>
             <div className="u-48"></div>
@@ -41,7 +74,7 @@ export function Developer() {
                       <div data-accordion-card="" className="other-card">
                         <div className="other-card_name">
                           <div className="other-card_name_label">
-                            <h4 data-scroll-reveal="h" className="h3 a-center">Developer</h4>
+                            <h4 data-scroll-reveal="h" className="h3 a-center">{t.developer}</h4>
                             <div data-scroll-reveal="ctn" data-ico-plus="" className="other-card_ico">
                               <div className="ico-16">
                                 <div className="ico w-embed">
@@ -58,7 +91,7 @@ export function Developer() {
                           <div className="grid _6-columns">
                             <div className="other-card_info_desc">
                               <p data-accordion-card="p" className="p1 a-center">
-                                Bahía Mar Residences &amp; Beach Resort is a project managed by Landmass Capital.
+                                {t.developerDesc}
                                 <br />
                                 LandmassCapital.com
                               </p>
@@ -74,7 +107,7 @@ export function Developer() {
                       <div data-accordion-card="" className="other-card">
                         <div className="other-card_name">
                           <div className="other-card_name_label">
-                            <h4 data-scroll-reveal="h" className="h3 a-center">Architects</h4>
+                            <h4 data-scroll-reveal="h" className="h3 a-center">{t.architects}</h4>
                             <div data-scroll-reveal="ctn" data-ico-plus="" className="other-card_ico">
                               <div className="ico-16">
                                 <div className="ico w-embed">
@@ -91,13 +124,13 @@ export function Developer() {
                           <div className="grid _6-columns">
                             <div className="other-card_info_desc">
                               <div data-accordion-card="ctn" className="other-card_info_logo">
-                                <img src="/images/bahiamar-developer-1.webp" srcSet="/images/bahiamar-developer-1-p-500.webp 500w, /images/bahiamar-developer-1-p-800.webp 800w, /images/bahiamar-developer-1-p-1080.webp 1080w" sizes="(max-width: 991px) 144px, 192px" loading="eager" alt="Villa Esencia at Bahía Mar: a stone and timber villa under a deep roof overhang, facing the sea." className="logo b" />
+                                <img src="/images/bahiamar-developer-1.webp" srcSet="/images/bahiamar-developer-1-p-500.webp 500w, /images/bahiamar-developer-1-p-800.webp 800w, /images/bahiamar-developer-1-p-1080.webp 1080w" sizes="(max-width: 991px) 144px, 192px" loading="eager" alt={t.architectsAlt} className="logo b" />
                               </div>
                               <div className="u-32"></div>
                               <p data-accordion-card="p" className="p1 a-center">
                                 Estudio Dolla
                                 <br />
-                                Estudio Dolla designed the master plan and the five villa typologies, from the two-level Villa Horizonte to the single-level Villa Ámbar, each with its own private pool and terraces.
+                                {t.architectsDesc}
                               </p>
                               <div className="u-32"></div>
                               <div data-accordion-card="ctn" className="info_divider"><div className="line-h"></div></div>
@@ -111,7 +144,7 @@ export function Developer() {
                       <div data-accordion-card="" className="other-card">
                         <div className="other-card_name">
                           <div className="other-card_name_label">
-                            <h4 data-scroll-reveal="h" className="h3 a-center">Sustainability</h4>
+                            <h4 data-scroll-reveal="h" className="h3 a-center">{t.sustainability}</h4>
                             <div data-scroll-reveal="ctn" data-ico-plus="" className="other-card_ico">
                               <div className="ico-16">
                                 <div className="ico w-embed">
@@ -128,7 +161,7 @@ export function Developer() {
                           <div className="grid _6-columns">
                             <div className="other-card_info_desc">
                               <p data-accordion-card="p" className="p1 a-center">
-                                The master plan is aligned with LEED for Cities and Communities certification. Every villa is fitted with solar panels, home automation, energy-efficient kitchen appliances, bamboo flooring and chukum wall finishes.
+                                {t.sustainabilityDesc}
                               </p>
                               <div className="u-32"></div>
                               <div data-accordion-card="ctn" className="info_divider"><div className="line-h"></div></div>
@@ -142,7 +175,7 @@ export function Developer() {
                       <div data-accordion-card="" className="other-card">
                         <div className="other-card_name">
                           <div className="other-card_name_label">
-                            <h4 data-scroll-reveal="h" className="h3 a-center">2027 (TBC)</h4>
+                            <h4 data-scroll-reveal="h" className="h3 a-center">{t.delivery}</h4>
                             <div data-scroll-reveal="ctn" data-ico-plus="" className="other-card_ico">
                               <div className="ico-16">
                                 <div className="ico w-embed">
@@ -159,7 +192,7 @@ export function Developer() {
                           <div className="grid _6-columns">
                             <div className="other-card_info_desc">
                               <p data-accordion-card="p" className="p1 a-center">
-                                Estimated delivery, to be confirmed. The Phase II master plan comprises 246 villas: 77 Villa Horizonte, 88 Villa Esencia and 81 Villa Armonía, each with its own private pool.
+                                {t.deliveryDesc}
                               </p>
                               <div className="u-32"></div>
                               <div data-accordion-card="ctn" className="info_divider"><div className="line-h"></div></div>

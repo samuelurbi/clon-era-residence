@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -15,7 +16,23 @@
  * scripts/recorte-quote-1.py; el original sigue en bahiamar-quote-1.
  */
 
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    quote: 'Walking trails, mountain bridges and the first funicular in the Caribbean link the villas — so Bahía Mar feels less like a complex and more like a landscape you move through.',
+    author: 'Master plan',
+    alt: 'Two-level Villa Horizonte with timber cladding over a stone base, its private pool and terrace among the palms, the sea behind.',
+  },
+  es: {
+    quote: 'Senderos, puentes de montaña y el primer funicular del Caribe unen las villas: Bahía Mar se vive menos como un complejo y más como un paisaje que se recorre.',
+    author: 'Plan maestro',
+    alt: 'Villa Horizonte, de dos niveles, revestida de madera sobre una base de piedra, con su piscina privada y su terraza entre las palmeras y el mar detrás.',
+  },
+};
+
 export function PillarsMedia() {
+  const t = T[useLang()];
   return (
     <section className="section z-2 theme_on-brand">
       <div className="container">
@@ -37,12 +54,12 @@ export function PillarsMedia() {
                 </div>
                 <div className="red-line"></div>
                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                  Walking trails, mountain bridges and the first funicular in the Caribbean link the villas — so Bahía Mar feels less like a complex and more like a landscape you move through.
+                  {t.quote}
                 </h4>
                 <div className="u-64"></div>
                 <div className="grid _4-columns">
                   <div className="quote-s_author">
-                    <div data-scroll-reveal="p" className="l1">Master plan</div>
+                    <div data-scroll-reveal="p" className="l1">{t.author}</div>
                     <div data-scroll-reveal="p" className="l1 reg">Bahía Mar Residences &amp; Beach Resort</div>
                   </div>
                 </div>
@@ -54,7 +71,7 @@ export function PillarsMedia() {
             <div className="img-w h-auto quote-w_bg_img">
               <div className="img-over-grad from-bot bot _4x b-desk"></div>
               <div className="img-over-grad from-bot bot _4x b-desk"></div>
-              <img className="img h-auto quote-w_bg_img" src="/images/bahiamar-quote-1-cutout.webp" alt="Two-level Villa Horizonte with timber cladding over a stone base, its private pool and terrace among the palms, the sea behind." sizes="(max-width: 2350px) 100vw, 2350px" data-parallax="img-out" loading="eager" srcSet="/images/bahiamar-quote-1-cutout-p-500.webp 500w, /images/bahiamar-quote-1-cutout-p-800.webp 800w, /images/bahiamar-quote-1-cutout-p-1080.webp 1080w, /images/bahiamar-quote-1-cutout-p-1600.webp 1600w, /images/bahiamar-quote-1-cutout-p-2000.webp 2000w, /images/bahiamar-quote-1-cutout.webp 2350w" />
+              <img className="img h-auto quote-w_bg_img" src="/images/bahiamar-quote-1-cutout.webp" alt={t.alt} sizes="(max-width: 2350px) 100vw, 2350px" data-parallax="img-out" loading="eager" srcSet="/images/bahiamar-quote-1-cutout-p-500.webp 500w, /images/bahiamar-quote-1-cutout-p-800.webp 800w, /images/bahiamar-quote-1-cutout-p-1080.webp 1080w, /images/bahiamar-quote-1-cutout-p-1600.webp 1600w, /images/bahiamar-quote-1-cutout-p-2000.webp 2000w, /images/bahiamar-quote-1-cutout.webp 2350w" />
             </div>
           </div>
           <div className="w_themes">

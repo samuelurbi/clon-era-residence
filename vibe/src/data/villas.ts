@@ -31,6 +31,9 @@
  * BACKLOG.md.
  */
 
+import type { Lang } from '@/lib/i18n';
+import { VILLAS_ES } from '@/data/villas.es';
+
 export interface Villa {
   /** Slug de la ruta: /villas/<slug>. */
   slug: string;
@@ -442,4 +445,37 @@ export const villas: Villa[] = [
 /** Búsqueda por slug para la ruta /villas/[slug]. */
 export function villaBySlug(slug: string): Villa | undefined {
   return villas.find((v) => v.slug === slug);
+}
+
+/**
+ * Los textos de una villa que cambian con el idioma. Lo demás (slug,
+ * recuentos, imágenes) es igual en los dos.
+ */
+export interface VillaText {
+  tagline: string;
+  description: string[];
+  completion: string;
+  category: string;
+  features: string[];
+  rooms: { level: string; items: string[] }[];
+  /** Rótulo de cada plano, en el mismo orden que `plans`. */
+  planLabels: string[];
+  seo: { title: string; description: string };
+}
+
+/**
+ * La villa en el idioma dado. El inglés es el de este fichero; el español
+ * vive en data/villas.es.ts, por slug. Si una villa no tuviera traducción
+ * se queda en inglés en vez de romper la ficha.
+ */
+export function localizeVilla(villa: Villa, lang: Lang): Villa {
+  if (lang === 'en') return villa;
+  const t = VILLAS_ES[villa.slug];
+  if (!t) return villa;
+  const { planLabels, ...text } = t;
+  return {
+    ...villa,
+    ...text,
+    plans: villa.plans.map((plan, i) => ({ ...plan, label: planLabels[i] ?? plan.label })),
+  };
 }

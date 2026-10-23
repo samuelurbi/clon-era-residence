@@ -63,3 +63,6 @@ next-env.d.ts
 
 # snapshot de GHL Vibe y los diffs de sincronización (regenerables desde el HAR)
 /referencia-ghl/
+
+# Kit de pegado para GHL: se regenera con scripts/vibe-kit.mjs
+/_deploy

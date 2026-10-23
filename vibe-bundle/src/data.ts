@@ -1,5 +1,5 @@
 /* ============================================================
- *  DATA — 3 módulos del repo en un solo archivo.
+ *  DATA — 7 módulos del repo en un solo archivo.
  *
  *  GENERADO por scripts/vibe-bundle.mjs — no editar aquí.
  *  Se agrupa porque en GoHighLevel Vibe cada archivo nuevo hay que
@@ -10,6 +10,107 @@
  *  bloque, para poder volver atrás sin adivinar.
  */
 
+import { Lang } from '@/animations';
+
+/* ============================================================
+   data/contact.ts
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+/**
+ * Datos de contacto oficiales de Bahía Mar (confirmados por el cliente,
+ * 2026-09-30). Sustituyen a los placeholders del brief: el +1 (809) 000-0000,
+ * info@bahiamar.example y «Las Terrenas, Samaná (address TBC)».
+ *
+ * Una sola fuente: el pie, la página de contacto y las políticas legales
+ * leen de aquí, así que un cambio de número o de oficina se hace una vez.
+ */
+
+
+export const PHONE = '+1 (829) 599-7785';
+export const PHONE_HREF = 'tel:+18295997785';
+
+export const EMAIL = 'hola@bahiamarterrenas.com';
+export const EMAIL_HREF = `mailto:${EMAIL}`;
+
+/** Dominio público del sitio. */
+export const SITE_DOMAIN = 'bahiamarterrenas.com';
+
+/**
+ * Oficina comercial. Es la de Landmass Capital en Punta Cana, no una
+ * dirección en Las Terrenas: la promoción está en Samaná, pero la venta se
+ * lleva desde esta oficina.
+ *
+ * Se escribe por TRAMOS que no se pueden partir por dentro (espacio duro
+ * entre sus palabras). En el pie y en contacto va en una columna estrecha
+ * y, con espacios normales, salían líneas como «- BLVD. 1RO. DE» o
+ * «CANA 23000 (DOMINICAN». Así el salto solo cae entre tramos, y los
+ * separadores (· y -) quedan al final de la línea, nunca al principio.
+ */
+const OFFICE_PARTS: Record<Lang, string[][]> = {
+  // [tramo, separador que lo sigue]
+  en: [
+    ['Landmass Capital', ' ·'],
+    ['Edificio Cedro', ' ·'],
+    ['Punta Cana Village', ' -'],
+    ['Blvd. 1ro.', ''],
+    ['de Noviembre,', ''],
+    ['Offices 2008 · 2009', ' ·'],
+    ['Punta Cana 23000', ''],
+    ['(Dominican Republic)', ''],
+  ],
+  es: [
+    ['Landmass Capital', ' ·'],
+    ['Edificio Cedro', ' ·'],
+    ['Punta Cana Village', ' -'],
+    ['Blvd. 1ro.', ''],
+    ['de Noviembre,', ''],
+    ['Oficinas 2008 · 2009', ' ·'],
+    ['Punta Cana 23000', ''],
+    ['(República Dominicana)', ''],
+  ],
+};
+
+const NBSP = '\u00A0'; // espacio duro: no se parte
+
+export function officeAddress(lang: Lang): string {
+  return OFFICE_PARTS[lang]
+    .map(([part, sep]) => (part + sep).replace(/ /g, NBSP))
+    .join(' ');
+}
+
+export const OFFICE_MAPS_URL =
+  'https://maps.google.com/?q=Edificio+Cedro,+Punta+Cana+Village,+Blvd.+1ro.+de+Noviembre,+Punta+Cana';
+
+/* ============================================================
+   data/crumbs.ts
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+/**
+ * Migas de pan compartidas. Van aparte de Breadcrumbs.tsx porque ese es un
+ * componente de cliente: exportar un objeto desde un módulo `'use client'`
+ * a una página de servidor lo convierte en una referencia de cliente, y en
+ * el servidor llegaba `undefined` (500 en todas las páginas con migas).
+ */
+
+
+export interface Crumb {
+  /** Un texto fijo (el nombre de una villa) o uno por idioma. */
+  label: string | Record<Lang, string>;
+  /** Sin href, la miga es la página actual y no enlaza a ningún sitio. */
+  href?: string;
+}
+
+/** Las migas que se repiten entre páginas. */
+export const CRUMB = {
+  home: { label: { en: 'Home', es: 'Inicio' }, href: '/' },
+  villas: { label: { en: 'Select a Villa', es: 'Elija su villa' } },
+  contact: { label: { en: 'Contact', es: 'Contacto' } },
+  legal: { label: { en: 'Legal policies', es: 'Políticas legales' } },
+} satisfies Record<string, Crumb>;
 
 /* ============================================================
    data/cta-images.ts
@@ -97,6 +198,361 @@ export const CTA_IMAGES = {
 } satisfies Record<string, CtaImage>;
 
 /* ============================================================
+   data/meta.ts
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+/**
+ * Título y descripción de cada página, en los dos idiomas.
+ *
+ * Vive fuera de `app/` porque lo leen dos sitios: las rutas de Next
+ * (`export const metadata`) y las páginas del gemelo de Vibe
+ * (`usePageMeta`). Las fichas de villa no están aquí: su SEO va con cada
+ * villa en data/villas.ts.
+ */
+
+
+export interface PageMeta {
+  /** Sin la coletilla « — Bahía Mar», que añade la plantilla del layout. */
+  title: string;
+  description: string;
+}
+
+type PageKey = 'home' | 'villas' | 'contact' | 'comingSoon' | 'legal';
+
+export const PAGE_META: Record<PageKey, Record<Lang, PageMeta>> = {
+  /* La home lleva el título completo, sin plantilla (ver app/layout.tsx). */
+  home: {
+    en: {
+      title: 'Bahía Mar — Boutique Villas on the Samaná Peninsula, Dominican Republic',
+      description:
+        'Luxury villas in Las Terrenas, Samaná (Dominican Republic): private pools, ' +
+        'bay views and eco-friendly design between beach and mountain. Discover Bahía Mar.',
+    },
+    es: {
+      title: 'Bahía Mar — Villas boutique en la península de Samaná, República Dominicana',
+      description:
+        'Villas de lujo en Las Terrenas, Samaná (República Dominicana): piscina privada, ' +
+        'vistas a la bahía y diseño sostenible entre playa y montaña. Descubra Bahía Mar.',
+    },
+  },
+  villas: {
+    en: {
+      title: 'Villas',
+      description:
+        'Five villa typologies at Bahía Mar, Las Terrenas, Samaná: Villa Horizonte, ' +
+        'Esencia, Armonía, Ámbar and Remanso — single-level and two-level villas ' +
+        'with private pool, jacuzzi, solarium and views over Samaná Bay.',
+    },
+    es: {
+      title: 'Villas',
+      description:
+        'Cinco tipologías de villa en Bahía Mar, Las Terrenas, Samaná: Villa Horizonte, ' +
+        'Esencia, Armonía, Ámbar y Remanso — villas de una y dos plantas con piscina ' +
+        'privada, jacuzzi, solárium y vistas a la bahía de Samaná.',
+    },
+  },
+  contact: {
+    en: {
+      title: 'Contact',
+      description:
+        'Get in touch with the Bahía Mar team for villa availability, floor plans ' +
+        'and a private presentation of the project in Las Terrenas, Samaná.',
+    },
+    es: {
+      title: 'Contacto',
+      description:
+        'Póngase en contacto con el equipo de Bahía Mar para conocer la disponibilidad ' +
+        'de villas, los planos y una presentación privada del proyecto en Las Terrenas, Samaná.',
+    },
+  },
+  comingSoon: {
+    en: {
+      title: 'Coming soon',
+      description:
+        'Villa availability at Bahía Mar, Las Terrenas, Samaná, is confirmed ' +
+        'directly by our team. Contact us to find out which villas are currently available.',
+    },
+    es: {
+      title: 'Próximamente',
+      description:
+        'La disponibilidad de villas en Bahía Mar, Las Terrenas, Samaná, la confirma ' +
+        'directamente nuestro equipo. Contáctenos para saber qué villas están disponibles.',
+    },
+  },
+  legal: {
+    en: {
+      title: 'Legal policies',
+      description:
+        'Legal notice, privacy policy, cookie policy, terms of use and project information ' +
+        'for Bahía Mar Boutique Residences, Las Terrenas (Samaná). Landmass Capital.',
+    },
+    es: {
+      title: 'Políticas legales',
+      description:
+        'Aviso legal, política de privacidad, política de cookies, términos de uso e información ' +
+        'del proyecto de Bahía Mar Boutique Residences, Las Terrenas (Samaná). Landmass Capital.',
+    },
+  },
+};
+
+/* ============================================================
+   data/villas.es.ts
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+/**
+ * Textos en español de las villas, por slug. `localizeVilla()` (data/villas.ts)
+ * los mezcla sobre la villa inglesa; lo que no depende del idioma (recuentos,
+ * imágenes, slugs) solo vive allí.
+ *
+ * DE DÓNDE SALE LA TERMINOLOGÍA
+ *
+ * El inglés de villas.ts es a su vez traducción de los planos comerciales
+ * por tipología (lámina «PLANO POR TIPOLOGÍA», estudio Landmass), que están
+ * en español. Los nombres de estancia se han recuperado de esas láminas
+ * («Recibidor», «Medio baño de visitas», «Cava de vinos», «Sala TV / sala de
+ * estar», «Walk-in closet principal», «Baño común», «Zona de fogata»…) en vez
+ * de retraducirlos del inglés. Dos excepciones a propósito:
+ *
+ *   - El plano dice «Picuzzi»; aquí va «Jacuzzi», como en el glosario del
+ *     sitio y en el resto de la web.
+ *   - «Fire pit» como prestación es «Fogatero» (glosario); como estancia del
+ *     plano se queda la «Zona de fogata» del cliente.
+ *
+ * Solo se importa el TIPO de villas.ts: villas.ts importa este fichero en
+ * tiempo de ejecución, y un import de valor en sentido contrario haría ciclo.
+ */
+
+
+export const VILLAS_ES: Record<string, VillaText> = {
+  horizonte: {
+    tagline: 'Arquitectura de gran presencia, para una vida sin límites.',
+    description: [
+      'Villa Horizonte es la más generosa de las cinco villas de Bahía Mar: una residencia de dos niveles para quienes buscan una forma de vida exclusiva en República Dominicana, rodeada de naturaleza, amplitud y vistas privilegiadas.',
+      'Su arquitectura contemporánea combina interiores refinados, amplias áreas sociales y exteriores pensados para el descanso: piscina, solárium, fogatero, jacuzzi, terrazas y espacios lounge. Cada ambiente ofrece una experiencia distinta, desde una cena frente al paisaje hasta una tarde junto al agua o una noche alrededor del fuego.',
+      'Más que una villa, es una experiencia de resort privado. Interior y exterior se conectan con fluidez mientras la arquitectura acompaña el terreno, y cada nivel descubre de nuevo el paisaje tropical.',
+    ],
+    completion: '2027 (por confirmar)',
+    category: 'Dos niveles',
+    features: [
+      'Piscina privada',
+      'Jacuzzi',
+      'Solárium',
+      'Fogatero',
+      'Zona BBQ',
+      'Terrazas',
+      'Cava de vinos',
+      'Área de servicio',
+    ],
+    rooms: [
+      {
+        level: 'Primer nivel',
+        items: [
+          'Ingreso principal', 'Recibidor', 'Medio baño de visitas', 'Vestíbulo',
+          'Cava de vinos', 'Escalera principal', 'Cocina', 'Comedor', 'Sala de estar',
+          'Dormitorio de huéspedes', 'Baño de huéspedes', 'Baño de servicio',
+          'Cuarto de servicio', 'Área de lavado', 'Zona BBQ', 'Terraza principal',
+          'Terrazas laterales', 'Solárium', 'Piscina', 'Zona de fogata', 'Jacuzzi',
+        ],
+      },
+      {
+        level: 'Segundo nivel',
+        items: [
+          'Vestíbulo superior', 'Sala TV', 'Dormitorio secundario 01',
+          'Baño del dormitorio secundario 01', 'Dormitorio secundario 02',
+          'Baño del dormitorio secundario 02', 'Dormitorio principal',
+          'Walk-in closet principal', 'Baño principal',
+          'Terraza perimetral superior', 'Terrazas privadas superiores',
+        ],
+      },
+    ],
+    planLabels: ['Primer nivel', 'Segundo nivel'],
+    seo: {
+      title: 'Villa Horizonte',
+      description:
+        'Villa de dos niveles y cuatro habitaciones en Las Terrenas, con piscina privada, jacuzzi, solárium y vistas panorámicas a la bahía de Samaná.',
+    },
+  },
+
+  esencia: {
+    tagline: 'La elegancia en su forma más esencial.',
+    description: [
+      'Villa Esencia es una residencia de lujo de dos niveles para quienes buscan una propuesta más compacta y eficiente, sin renunciar a la amplitud visual, la elegancia arquitectónica ni la conexión con el paisaje.',
+      'Su planta longitudinal ordena con claridad las áreas sociales, privadas y exteriores, y reúne cocina, comedor, sala, dormitorio de huéspedes, terrazas, piscina, solárium, fogatero y jacuzzi en un conjunto sofisticado y relajado.',
+      'En el segundo nivel, la suite principal, el dormitorio secundario y las terrazas lounge elevan aún más la experiencia de confort, privacidad y contemplación.',
+    ],
+    completion: '2027 (por confirmar)',
+    category: 'Dos niveles',
+    features: [
+      'Piscina privada',
+      'Jacuzzi',
+      'Solárium',
+      'Fogatero',
+      'Zona BBQ',
+      'Terrazas',
+      'Terrazas lounge',
+      'Área de servicio',
+    ],
+    rooms: [
+      {
+        level: 'Primer nivel',
+        items: [
+          'Ingreso principal', 'Vestíbulo de ingreso', 'Medio baño de visitas', 'Cocina',
+          'Comedor', 'Sala TV / sala de estar', 'Dormitorio de huéspedes',
+          'Walk-in closet de huéspedes', 'Baño de huéspedes', 'Baño de servicio',
+          'Cuarto de servicio', 'Área de lavado', 'Zona BBQ', 'Terraza exterior',
+          'Solárium', 'Zona de fogata', 'Piscina', 'Jacuzzi', 'Terraza de piscina',
+        ],
+      },
+      {
+        level: 'Segundo nivel',
+        items: [
+          'Escalera principal', 'Vestíbulo superior / circulación', 'Dormitorio principal',
+          'Walk-in closet principal', 'Baño principal', 'Dormitorio secundario',
+          'Baño del dormitorio secundario', 'Terraza superior izquierda',
+          'Terraza superior frontal', 'Terraza superior derecha / lounge exterior',
+        ],
+      },
+    ],
+    planLabels: ['Primer nivel', 'Segundo nivel'],
+    seo: {
+      title: 'Villa Esencia',
+      description:
+        'Villa de dos niveles y tres habitaciones en Las Terrenas, de planta longitudinal, con piscina privada, terrazas lounge y vistas abiertas.',
+    },
+  },
+
+  armonia: {
+    tagline: 'Todo el privilegio de Bahía Mar, en un solo nivel.',
+    description: [
+      'Villa Armonía es una residencia de lujo de un solo nivel para quienes buscan comodidad, privacidad y una conexión directa con el paisaje tropical.',
+      'Su distribución lineal permite que cada espacio se despliegue de forma fluida y funcional, y reúne en una sola planta la cocina, el comedor, la sala, los dormitorios y las áreas exteriores. Es la villa más práctica del proyecto, fácil de habitar sin perder nada de su exclusividad.',
+      'El área social se abre a una amplia terraza exterior con piscina, solárium, fogatero y jacuzzi, que crea una experiencia de resort privado. Cada espacio está pensado para disfrutar del clima caribeño, de las vistas naturales y de la vida al aire libre.',
+    ],
+    completion: '2027 (por confirmar)',
+    category: 'Un nivel',
+    features: [
+      'Piscina privada',
+      'Jacuzzi',
+      'Solárium',
+      'Fogatero',
+      'Zona BBQ',
+      'Terrazas',
+      'Todo en un solo nivel',
+      'Área de servicio',
+    ],
+    rooms: [
+      {
+        level: 'Primer nivel',
+        items: [
+          'Ingreso principal', 'Vestíbulo de ingreso', 'Medio baño de visitas', 'Cocina',
+          'Comedor', 'Sala TV / sala de estar', 'Dormitorio secundario',
+          'Walk-in closet secundario', 'Baño secundario', 'Dormitorio principal',
+          'Walk-in closet principal', 'Baño principal', 'Baño de servicio',
+          'Cuarto de servicio', 'Área de lavado', 'Zona BBQ', 'Terraza principal',
+          'Solárium', 'Zona de fogata', 'Piscina', 'Jacuzzi', 'Terraza de piscina',
+        ],
+      },
+    ],
+    planLabels: ['Primer nivel'],
+    seo: {
+      title: 'Villa Armonía',
+      description:
+        'Villa de un nivel y dos habitaciones en Las Terrenas: un pabellón contemporáneo con piscina privada, solárium y acceso directo al jardín.',
+    },
+  },
+
+  ambar: {
+    tagline: 'La serenidad del Caribe, hecha arquitectura.',
+    description: [
+      'Villa Ámbar parte de la idea de vivir el paisaje desde una arquitectura de un solo nivel: abierta, natural y conectada con el clima caribeño.',
+      'Su diseño se organiza de manera lineal y separa con claridad las áreas privadas, sociales y exteriores. Los dormitorios se disponen a un lado de la vivienda, mientras la cocina, el comedor y la sala se integran con las terrazas y las áreas abiertas.',
+      'El proyecto no se plantea como una vivienda cerrada, sino como una secuencia de espacios que se expanden hacia el exterior. La terraza, el jacuzzi, el solárium, la piscina, la zona BBQ y la terraza de fogata forman parte activa de la vida diaria. La materialidad refuerza esa intención: piedra clara, madera natural, microcemento en tonos arena, mobiliario de fibras naturales, pérgolas y vegetación tropical.',
+    ],
+    completion: '2027 (por confirmar)',
+    category: 'Un nivel',
+    features: [
+      'Piscina privada',
+      'Jacuzzi',
+      'Solárium',
+      'Fogatero',
+      'Zona BBQ',
+      'Terrazas',
+      'Pérgolas',
+      'Todo en un solo nivel',
+    ],
+    rooms: [
+      {
+        level: 'Primer nivel',
+        items: [
+          'Ingreso principal', 'Vestíbulo de ingreso', 'Cocina', 'Área de lavado',
+          'Comedor', 'Sala TV / sala de estar', 'Dormitorio secundario',
+          'Baño común', 'Dormitorio principal', 'Walk-in closet principal',
+          'Baño principal', 'Terrazas', 'Jacuzzi', 'Zona BBQ', 'Solárium',
+          'Terraza de fogata', 'Piscina',
+        ],
+      },
+    ],
+    planLabels: ['Primer nivel'],
+    seo: {
+      title: 'Villa Ámbar',
+      description:
+        'Villa de un nivel y dos habitaciones en Las Terrenas: piedra clara, madera y pérgolas en torno a una piscina privada y una terraza de fogata.',
+    },
+  },
+
+  remanso: {
+    tagline: 'Dos niveles abiertos a un horizonte extraordinario.',
+    description: [
+      'Villa Remanso es una residencia de dos niveles diseñada para aprovechar al máximo las vistas hacia el horizonte, el paisaje tropical y el entorno natural de Las Terrenas, en República Dominicana.',
+      'La villa se levanta sobre una arquitectura tropical contemporánea, cálida, rústica y natural. Su propuesta combina piedra clara, madera, microcemento en tonos arena, terrazas abiertas, pérgolas, vegetación tropical y espacios exteriores pensados para el clima caribeño.',
+      'Las estancias principales miran al paisaje. Cocina, comedor, sala, dormitorios y terrazas se abren hacia el exterior, en relación constante con la luz natural, la vegetación, la piscina y el horizonte.',
+    ],
+    completion: '2027 (por confirmar)',
+    category: 'Dos niveles',
+    features: [
+      'Piscina privada',
+      'Jacuzzi',
+      'Solárium',
+      'Fogatero',
+      'Zona BBQ',
+      'Terrazas',
+      'Balcones',
+      'Vistas desde la ladera',
+    ],
+    rooms: [
+      {
+        level: 'Primer nivel',
+        items: [
+          'Ingreso principal', 'Vestíbulo de ingreso', 'Medio baño de visitas', 'Cocina',
+          'Comedor', 'Sala TV / sala de estar', 'Dormitorio de huéspedes',
+          'Walk-in closet de huéspedes', 'Baño de huéspedes', 'Baño de servicio',
+          'Cuarto de servicio', 'Área de lavado', 'Zona BBQ', 'Terraza exterior',
+          'Solárium', 'Zona de fogata', 'Piscina', 'Jacuzzi', 'Terraza de piscina',
+        ],
+      },
+      {
+        level: 'Segundo nivel',
+        items: [
+          'Escalera principal', 'Vestíbulo superior / circulación', 'Dormitorio principal',
+          'Walk-in closet principal', 'Baño principal', 'Dormitorio secundario',
+          'Baño del dormitorio secundario', 'Balcones',
+        ],
+      },
+    ],
+    planLabels: ['Primer nivel', 'Segundo nivel'],
+    seo: {
+      title: 'Villa Remanso',
+      description:
+        'Villa de dos niveles y tres habitaciones en Las Terrenas, que sigue la pendiente del terreno para abrir cada estancia al horizonte.',
+    },
+  },
+};
+
+/* ============================================================
    data/villas.ts
    ============================================================ */
 
@@ -132,6 +588,8 @@ export const CTA_IMAGES = {
  * (nivel, baños, piscina privada) en vez de inventarlos. Ver
  * BACKLOG.md.
  */
+
+
 
 export interface Villa {
   /** Slug de la ruta: /villas/<slug>. */
@@ -546,6 +1004,39 @@ export function villaBySlug(slug: string): Villa | undefined {
   return villas.find((v) => v.slug === slug);
 }
 
+/**
+ * Los textos de una villa que cambian con el idioma. Lo demás (slug,
+ * recuentos, imágenes) es igual en los dos.
+ */
+export interface VillaText {
+  tagline: string;
+  description: string[];
+  completion: string;
+  category: string;
+  features: string[];
+  rooms: { level: string; items: string[] }[];
+  /** Rótulo de cada plano, en el mismo orden que `plans`. */
+  planLabels: string[];
+  seo: { title: string; description: string };
+}
+
+/**
+ * La villa en el idioma dado. El inglés es el de este fichero; el español
+ * vive en data/villas.es.ts, por slug. Si una villa no tuviera traducción
+ * se queda en inglés en vez de romper la ficha.
+ */
+export function localizeVilla(villa: Villa, lang: Lang): Villa {
+  if (lang === 'en') return villa;
+  const t = VILLAS_ES[villa.slug];
+  if (!t) return villa;
+  const { planLabels, ...text } = t;
+  return {
+    ...villa,
+    ...text,
+    plans: villa.plans.map((plan, i) => ({ ...plan, label: planLabels[i] ?? plan.label })),
+  };
+}
+
 /* ============================================================
    data/villa-cards.ts
    ============================================================ */
@@ -570,6 +1061,7 @@ export function villaBySlug(slug: string): Villa | undefined {
  * datos que sí existen — tipología, niveles y baños — en vez de dejar
  * campos vacíos o inventar cifras.
  */
+
 
 
 export interface VillaCardData {
@@ -640,3 +1132,31 @@ export const typeFilters = [...new Set(villas.map((v) => v.category))].map((c) =
 export const bedFilters = [...new Set(villas.map((v) => v.bedrooms))]
   .sort((a, b) => a - b)
   .map(String);
+
+/**
+ * La tarjeta en el idioma dado. Solo cambian los rótulos: los valores de
+ * filtro y orden (`filterType`, `sort*`) son los mismos en los dos idiomas,
+ * porque son los que leen los `data-filter-*` y la query de la URL.
+ */
+export function localizeCard(card: VillaCardData, lang: Lang): VillaCardData {
+  if (lang === 'en') return card;
+  const villa = villas.find((v) => v.slug === card.slug);
+  if (!villa) return card;
+  const t = localizeVilla(villa, lang);
+  return {
+    ...card,
+    typeLabel: `Tipo ${villa.type}`,
+    category: t.category,
+    unitsLabel: villa.units === null ? null : `${villa.units} unidades`,
+    completion: t.completion,
+    extra: 'Piscina privada',
+  };
+}
+
+/** Opciones del desplegable «Type» en el idioma dado (mismo `value`). */
+export function typeFiltersFor(lang: Lang) {
+  return typeFilters.map((f) => {
+    const villa = villas.find((v) => slugifyType(v.category) === f.value);
+    return villa ? { ...f, label: localizeVilla(villa, lang).category } : f;
+  });
+}

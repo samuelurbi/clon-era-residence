@@ -1,5 +1,6 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Introducción a las amenidades de Bahía Mar (puente entre el avance de
@@ -15,7 +16,25 @@
  * Los textos salen del brochure (bahia-mar-personalizacion/BRIEF.md).
  */
 
+import { type Lang } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    kicker: 'Life inside the community',
+    lead: 'Every villa is private. Everything around it is shared: a beach to swim from, thermal waters to soak in, trails to walk and places to gather.',
+    desc: 'Beach Club and pools, spa and wellness center, coworking, restaurants and shops, trails and viewpoints — a community planned around slow days and quiet evenings, with all of it within easy reach.',
+  },
+  es: {
+    kicker: 'La vida dentro de la comunidad',
+    lead: 'Cada villa es privada. Todo lo que la rodea se comparte: una playa donde nadar, aguas termales donde sumergirse, senderos que recorrer y lugares donde reunirse.',
+    desc: 'Beach Club y piscinas, spa y centro de bienestar, coworking, restaurantes y tiendas, senderos y miradores: una comunidad pensada para días sin prisa y noches tranquilas, con todo a su alcance.',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function AmenitiesIntro() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <section data-bg="light" className="section clip theme_on-brand">
       <div className="container">
@@ -26,21 +45,21 @@ export function AmenitiesIntro() {
             <div className="u-48"></div>
             <div className="grid">
               <div className="s_title">
-                <p data-scroll-reveal="p" className="l1 a-center">Life inside the community</p>
+                <p data-scroll-reveal="p" className="l1 a-center">{t.kicker}</p>
               </div>
             </div>
             <div className="u-160"></div>
             <div className="grid">
               <div className="info-s_lead">
                 <h3 data-scroll-reveal="p" className="h4 a-center">
-                  Every villa is private. Everything around it is shared: a beach to swim from, thermal waters to soak in, trails to walk and places to gather.
+                  {t.lead}
                 </h3>
               </div>
             </div>
             <div className="u-160"></div>
             <div className="grid">
               <div className="info-s_desc">
-                <p data-scroll-reveal="p" className="p1 a-center">Beach Club and pools, spa and wellness center, coworking, restaurants and shops, trails and viewpoints — a community planned around slow days and quiet evenings, with all of it within easy reach.</p>
+                <p data-scroll-reveal="p" className="p1 a-center">{t.desc}</p>
                 <div className="u-32"></div>
                 <div className="s_logo">
                   <div data-scroll-reveal="ctn" className="logo_symbol ico-48">

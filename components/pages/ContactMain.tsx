@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Página de contacto de Bahía Mar.
@@ -9,9 +11,12 @@
  *
  * Marcado portado conservando las clases de Webflow, que es lo que le da
  * el aspecto (ver styles/webflow.css y components.css). Sólo cambian
- * textos, src/srcSet/alt y href. Teléfono, correo, redes y dirección de
- * la oficina de ventas son placeholders (ver BRIEF.md): el cliente no ha
- * facilitado ninguno. El horario tampoco se conoce, así que el pin sobre
+ * textos, src/srcSet/alt y href. Teléfono, correo y dirección de la
+ * oficina de ventas son los oficiales (data/contact.ts); la oficina es la
+ * de Landmass Capital en Punta Cana, y la segunda dirección («The site»)
+ * es la ubicación del proyecto en Las Terrenas. El WhatsApp usa el mismo
+ * número. Las redes siguen en «#»: el cliente no las ha facilitado. El
+ * horario tampoco se conoce, así que el pin sobre
  * la imagen no inventa horas ni política de visitas: sólo dice «Bahía Mar ·
  * Las Terrenas, Samaná», que es lo que muestra la foto.
  *
@@ -24,9 +29,43 @@
  * marcadores `data-bg` con geometría propia de Webflow (hero_themes…), que
  * aquí no existen y no se pueden crear sin clases nuevas, así que la
  * solución es una imagen de tono claro en la que el verde sí contrasta.
+ *
+ * Textos en inglés y español según la URL (lib/use-lang.ts).
  */
 
+import { EMAIL, EMAIL_HREF, OFFICE_MAPS_URL, PHONE, PHONE_HREF, officeAddress } from '@/data/contact';
+import { useLang } from '@/lib/use-lang';
+
+/** wa.me quiere el número sólo con dígitos: `tel:+18295997785` → `18295997785`. */
+const WHATSAPP_HREF = `https://wa.me/${PHONE_HREF.replace(/[^0-9]/g, '')}`;
+
+const T = {
+  en: {
+    title: 'Get in touch',
+    write: 'Write to us',
+    office: 'Sales office',
+    site: 'The site',
+    siteAddress: 'Bahía Mar, Las Terrenas, Samaná, Dominican Republic',
+    call: 'Call or message us',
+    alt: 'The clubhouse entrance at Bahía Mar: pale stone arcades around a paved forecourt, a planted island of palms and ferns in the middle, and light canopies shaped like leaves opening overhead.',
+    book: 'Book a call now',
+  },
+  es: {
+    title: 'Contáctenos',
+    write: 'Escríbanos',
+    office: 'Oficina de ventas',
+    site: 'El proyecto',
+    siteAddress: 'Bahía Mar, Las Terrenas, Samaná, República Dominicana',
+    call: 'Llámenos o escríbanos',
+    alt: 'La entrada de la casa club de Bahía Mar: arcadas de piedra clara en torno a un patio pavimentado, una isla ajardinada de palmeras y helechos en el centro y ligeras marquesinas en forma de hoja que se abren en lo alto.',
+    book: 'Agende una llamada',
+  },
+};
+
 export function ContactMain() {
+  const lang = useLang();
+  const t = T[lang];
+  const office = officeAddress(lang);
   return (
     <section data-bg="light" className="section clip theme_on-brand">
       <div className="container">
@@ -37,24 +76,24 @@ export function ContactMain() {
               <div className="u-272 b-mob"></div>
               <div className="grid">
                 <div className="contact-s_title">
-                  <h1 data-prevent-flicker="" data-scroll-reveal="h" className="h1 a-center">Get in touch</h1>
+                  <h1 data-prevent-flicker="" data-scroll-reveal="h" className="h1 a-center">{t.title}</h1>
                 </div>
               </div>
               <div className="u-96"></div>
               <div className="grid">
                 <div data-prevent-flicker="" data-scroll-reveal="ctn" className="contact-s_email">
-                  <h2 className="l1 reg a-center">Write to us</h2>
+                  <h2 className="l1 reg a-center">{t.write}</h2>
                   <div className="u-4"></div>
                   <div className="contact-cms w-dyn-list">
                     <div role="list" className="contact-cms_list w-dyn-items">
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="info@bahiamar.example" href="mailto:info@bahiamar.example" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={EMAIL} href={EMAIL_HREF} className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">info@bahiamar.example</div>
+                              <div hover="text" className="l1">{EMAIL}</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">info@bahiamar.example</div>
+                              <div hover="text" className="l1">{EMAIL}</div>
                             </div>
                           </div>
                         </a>
@@ -67,29 +106,29 @@ export function ContactMain() {
                   <div className="loc-cms w-dyn-list">
                     <div role="list" className="loc-cms_list w-dyn-items">
                       <div data-prevent-flicker="" data-scroll-reveal="ctn" role="listitem" className="loc-cms_list_item w-dyn-item">
-                        <h3 className="l1 reg a-center">Sales office</h3>
+                        <h3 className="l1 reg a-center">{t.office}</h3>
                         <div className="u-4"></div>
-                        <a hover-nav-item="" aria-label="Las Terrenas, Samaná (address TBC)" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={office} href={OFFICE_MAPS_URL} className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Las Terrenas, Samaná (address TBC)</div>
+                              <div hover="text" className="l1">{office}</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Las Terrenas, Samaná (address TBC)</div>
+                              <div hover="text" className="l1">{office}</div>
                             </div>
                           </div>
                         </a>
                       </div>
                       <div data-prevent-flicker="" data-scroll-reveal="ctn" role="listitem" className="loc-cms_list_item w-dyn-item">
-                        <h3 className="l1 reg a-center">The site</h3>
+                        <h3 className="l1 reg a-center">{t.site}</h3>
                         <div className="u-4"></div>
-                        <a hover-nav-item="" aria-label="Bahía Mar, Las Terrenas, Samaná, Dominican Republic" href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={t.siteAddress} href="https://maps.google.com/?q=Las+Terrenas,+Saman%C3%A1,+Dominican+Republic" className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
-                              <div hover="text" className="l1">Bahía Mar, Las Terrenas, Samaná, Dominican Republic</div>
+                              <div hover="text" className="l1">{t.siteAddress}</div>
                             </div>
                             <div className="nav-item_label_text is-2">
-                              <div hover="text" className="l1">Bahía Mar, Las Terrenas, Samaná, Dominican Republic</div>
+                              <div hover="text" className="l1">{t.siteAddress}</div>
                             </div>
                           </div>
                         </a>
@@ -99,20 +138,20 @@ export function ContactMain() {
                   <div className="u-32"></div>
                 </div>
                 <div data-prevent-flicker="" data-scroll-reveal="ctn" className="contact-s_phone">
-                  <h3 className="l1 reg a-center">Call or message us</h3>
+                  <h3 className="l1 reg a-center">{t.call}</h3>
                   <div className="u-4"></div>
                   <div className="contact-cms w-dyn-list">
                     <div role="list" className="contact-cms_list w-dyn-items">
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="+1 (809) 000-0000" href="tel:+18090000000" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={PHONE} href={PHONE_HREF} className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div className="nav-item_label_text"><div hover="text" className="l1">+1 (809) 000-0000</div></div>
-                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">+1 (809) 000-0000</div></div>
+                            <div className="nav-item_label_text"><div hover="text" className="l1">{PHONE}</div></div>
+                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">{PHONE}</div></div>
                           </div>
                         </a>
                       </div>
                       <div role="listitem" className="contact-cms_list_item w-dyn-item">
-                        <a hover-nav-item="" aria-label="WhatsApp" href="https://wa.me/18090000000" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label="WhatsApp" href={WHATSAPP_HREF} className="nav-item w-inline-block">
                           <div className="nav-item_label">
                             <div className="nav-item_label_text"><div hover="text" className="l1">WhatsApp</div></div>
                             <div className="nav-item_label_text is-2"><div hover="text" className="l1">WhatsApp</div></div>
@@ -170,7 +209,7 @@ export function ContactMain() {
                 </div>
                 <div data-parallax="w" data-scroll-reveal="ctn" data-prevent-flicker="" className="contact-s_map">
                   <div data-parallax="img" className="contact-s_map_c">
-                    <img src="/images/bahiamar-clubhouse-1.webp" loading="eager" sizes="100vw" srcSet="/images/bahiamar-clubhouse-1-p-500.webp 500w, /images/bahiamar-clubhouse-1-p-800.webp 800w, /images/bahiamar-clubhouse-1-p-1080.webp 1080w, /images/bahiamar-clubhouse-1-p-1600.webp 1600w, /images/bahiamar-clubhouse-1-p-2000.webp 2000w, /images/bahiamar-clubhouse-1.webp 2350w" alt="The clubhouse entrance at Bahía Mar: pale stone arcades around a paved forecourt, a planted island of palms and ferns in the middle, and light canopies shaped like leaves opening overhead." className="img h-auto" />
+                    <img src="/images/bahiamar-clubhouse-1.webp" loading="eager" sizes="100vw" srcSet="/images/bahiamar-clubhouse-1-p-500.webp 500w, /images/bahiamar-clubhouse-1-p-800.webp 800w, /images/bahiamar-clubhouse-1-p-1080.webp 1080w, /images/bahiamar-clubhouse-1-p-1600.webp 1600w, /images/bahiamar-clubhouse-1-p-2000.webp 2000w, /images/bahiamar-clubhouse-1.webp 2350w" alt={t.alt} className="img h-auto" />
                     <div className="contact-s_map_pin">
                       <div className="contact-s_map_pin_c theme_on-dark">
                         <div className="contact-s_map_pin_info">
@@ -204,10 +243,10 @@ export function ContactMain() {
                 <div data-prevent-flicker="" data-scroll-reveal="ctn" className="contact-s_btn">
                   <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                     <div data-magnetic-inner="" className="btn-circle_label">
-                      <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
+                      <a hover-nav-item="" aria-label={t.book} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                         <div className="nav-item_label">
-                          <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
-                          <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
+                          <div className="nav-item_label_text"><div hover="text" className="l1">{t.book}</div></div>
+                          <div className="nav-item_label_text is-2"><div hover="text" className="l1">{t.book}</div></div>
                         </div>
                       </a>
                     </div>
@@ -218,7 +257,7 @@ export function ContactMain() {
                         <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                       </svg>
                     </div>
-                    <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
+                    <a aria-label={t.book} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                   </div>
                 </div>
               </div>

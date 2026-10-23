@@ -93,6 +93,8 @@ type Meta = {
   /** Sin el sufijo del sitio: se añade aquí, como hacía `template`. */
   title?: string;
   description?: string;
+  /** El título va tal cual, sin sufijo (la home, como `absolute` en Next). */
+  absolute?: boolean;
 };
 
 /** Escribe (o crea) un `<meta name="…">` del `<head>`. */
@@ -106,9 +108,9 @@ function setMeta(name: string, content: string) {
   tag.setAttribute('content', content);
 }
 
-export function usePageMeta({ title, description }: Meta) {
+export function usePageMeta({ title, description, absolute = false }: Meta) {
   useEffect(() => {
-    document.title = title ? `${title} — ${SITE}` : DEFAULT_TITLE;
+    document.title = title ? (absolute ? title : `${title} — ${SITE}`) : DEFAULT_TITLE;
     if (description) setMeta('description', description);
-  }, [title, description]);
+  }, [title, description, absolute]);
 }

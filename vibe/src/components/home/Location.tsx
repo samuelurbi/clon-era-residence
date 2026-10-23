@@ -1,5 +1,6 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Ubicación: Las Terrenas, Samaná. Tras las tres capas de nubes, el fondo a
@@ -22,7 +23,25 @@
  * con el lote ya dibujado, para que no haya salto de escena al arrancar.
  */
 
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    peninsula: 'Samaná Peninsula',
+    country: 'Dominican Republic',
+    drag: 'Drag to see more',
+    video: 'Aerial flyover of the Bahía Mar hills above Las Terrenas, with the master plan outlined over the terrain.',
+  },
+  es: {
+    peninsula: 'Península de Samaná',
+    country: 'República Dominicana',
+    drag: 'Deslice para ver más',
+    video: 'Vuelo aéreo sobre las lomas de Bahía Mar, por encima de Las Terrenas, con el plan maestro trazado sobre el terreno.',
+  },
+};
+
 export function Location() {
+  const t = T[useLang()];
   return (
     <section data-bg="color" className="section clip theme_on-color">
       <div className="container">
@@ -102,9 +121,9 @@ export function Location() {
                   <div className="loc-s_desc_line"><div data-scroll-reveal="line" className="line-v"></div></div>
                   <h3 data-scroll-reveal="p" className="l1">Las Terrenas, Samaná</h3>
                   <div className="u-32"></div>
-                  <h4 data-scroll-reveal="p" className="p1">Samaná Peninsula</h4>
+                  <h4 data-scroll-reveal="p" className="p1">{t.peninsula}</h4>
                   <div className="u-32"></div>
-                  <h5 data-scroll-reveal="p" className="p1">Dominican Republic</h5>
+                  <h5 data-scroll-reveal="p" className="p1">{t.country}</h5>
                 </div>
                 <div className="b-mob">
                   <div className="l1-list">
@@ -115,7 +134,7 @@ export function Location() {
                         </svg>
                       </div>
                     </div>
-                    <div className="l1">Drag to see more</div>
+                    <div className="l1">{t.drag}</div>
                     <div className="ico-16">
                       <div className="ico w-embed">
                         <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +161,7 @@ export function Location() {
                   disablePictureInPicture
                   webkit-playsinline="webkit-playsinline"
                   poster="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-aerial-poster.webp"
-                  aria-label="Aerial flyover of the Bahía Mar hills above Las Terrenas, with the master plan outlined over the terrain."
+                  aria-label={t.video}
                   className="img h-auto"
                 >
                   <source src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/videos/bahiamar-aerial.webm" type="video/webm" />

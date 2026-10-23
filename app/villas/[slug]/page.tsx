@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CTA_IMAGES } from '@/data/cta-images';
 import { villas, villaBySlug } from '@/data/villas';
+import { villaMetadata } from '@/app/page-metadata';
 import { villaCards } from '@/data/villa-cards';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+import { CRUMB } from '@/data/crumbs';
 import { VillaDetail } from '@/components/villas/VillaDetail';
 import { VillaArch } from '@/components/villas/VillaArch';
 import { RelatedVillas } from '@/components/villas/RelatedVillas';
@@ -32,10 +34,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const villa = villaBySlug(slug);
   if (!villa) return {};
 
-  return {
-    title: villa.seo.title,
-    description: villa.seo.description,
-  };
+  return villaMetadata(villa, 'en');
 }
 
 /**
@@ -64,8 +63,8 @@ export default async function VillaPage({ params }: Params) {
     <>
       <Breadcrumbs
         trail={[
-          { label: 'Home', href: '/' },
-          { label: 'Select a Villa', href: '/villas' },
+          CRUMB.home,
+          { ...CRUMB.villas, href: '/villas' },
           { label: villa.name },
         ]}
       />

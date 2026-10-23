@@ -1,5 +1,6 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Título del bloque «otras villas» que precede a RelatedVillas en la ficha
@@ -14,7 +15,15 @@
  * el aspecto (ver styles/webflow.css y components.css).
  */
 
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: { title: 'similar options', line1: 'Other villas', line2: 'that might suit your needs' },
+  es: { title: 'opciones similares', line1: 'Otras villas', line2: 'que pueden interesarle' },
+};
+
 export function VillaArch() {
+  const t = T[useLang()];
   return (
     <section className="section arch clip">
       <div className="container">
@@ -24,7 +33,7 @@ export function VillaArch() {
               <div className="u-160"></div>
               <div className="grid">
                 <div className="other-title-s_title">
-                  <p data-scroll-reveal="h" className="h3 a-center">similar options</p>
+                  <p data-scroll-reveal="h" className="h3 a-center">{t.title}</p>
                 </div>
               </div>
               <div className="u-48"></div>
@@ -35,9 +44,9 @@ export function VillaArch() {
               <div className="grid">
                 <div className="s_title">
                   <p data-scroll-reveal="p" className="l1 a-center">
-                    Other villas 
+                    {t.line1}
                     <br />
-                    that might suit your needs
+                    {t.line2}
                   </p>
                 </div>
               </div>

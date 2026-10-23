@@ -1,5 +1,6 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Personalizado para Bahía Mar: se mantiene A MANO. Venía de
@@ -29,6 +30,19 @@
  */
 
 import { villas } from '@/data/villas';
+import { localize } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    alt: (name: string) => `${name} at Bahía Mar: front view of the villa, its private pool and the palm trees under a clear sky`,
+    cta: 'View available villas',
+  },
+  es: {
+    alt: (name: string) => `${name} en Bahía Mar: vista frontal de la villa, su piscina privada y las palmeras bajo un cielo despejado`,
+    cta: 'Ver villas disponibles',
+  },
+};
 
 /** Ancho completo + variantes de los heros del slider (1920 de ancho). */
 function heroSrcset(assetSlug: string): string {
@@ -40,6 +54,8 @@ function heroSrcset(assetSlug: string): string {
 }
 
 export function Hero() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <section id="hero" className="section clip theme_on-color">
       <div className="container">
@@ -77,7 +93,7 @@ export function Hero() {
                         <img
                           loading={i === 0 ? 'eager' : 'lazy'}
                           src={`https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-hero-${villa.assetSlug}.webp`}
-                          alt={`${villa.name} at Bahía Mar: front view of the villa, its private pool and the palm trees under a clear sky`}
+                          alt={t.alt(villa.name)}
                           sizes="(max-width: 1920px) 100vw, 1920px"
                           srcSet={heroSrcset(villa.assetSlug)}
                           className="img h-auto hero-img"
@@ -117,13 +133,13 @@ export function Hero() {
                     <div className="e-auto">
                       <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                         <div data-magnetic-inner="" className="btn-circle_label">
-                          <a hover-nav-item="" aria-label="View available villas" href="/villas" className="nav-item w-inline-block">
+                          <a hover-nav-item="" aria-label={t.cta} href={localize('/villas', lang)} className="nav-item w-inline-block">
                             <div className="nav-item_label">
                               <div className="nav-item_label_text">
-                                <div hover="text" className="l1">View available villas</div>
+                                <div hover="text" className="l1">{t.cta}</div>
                               </div>
                               <div className="nav-item_label_text is-2">
-                                <div hover="text" className="l1">View available villas</div>
+                                <div hover="text" className="l1">{t.cta}</div>
                               </div>
                             </div>
                           </a>
@@ -135,7 +151,7 @@ export function Hero() {
                             <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                           </svg>
                         </div>
-                        <a aria-label="View available villas" href="/villas" className="btn-circle_link w-inline-block"></a>
+                        <a aria-label={t.cta} href={localize('/villas', lang)} className="btn-circle_link w-inline-block"></a>
                       </div>
                     </div>
                   </div>

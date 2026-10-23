@@ -1,5 +1,6 @@
 /* GENERADO por scripts/vibe-export.mjs — no editar aquí.
  * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Sección «Architecture» de la home, personalizada para Bahía Mar.
@@ -16,7 +17,33 @@
  * blanco no caiga sobre cielo claro (ver inventario/architecture.json).
  */
 
+import { type Lang } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    title: 'Architecture',
+    desc: 'Contemporary tropical architecture, made for a life lived outdoors',
+    quote: 'The architecture of Bahía Mar pairs timber, pale stone and chukum with wide overhangs and terraces that open each villa to the landscape',
+    by: 'By Estudio Dolla',
+    role: 'Architects',
+    cta: 'Book a call now',
+    alt: 'Villa Horizonte at Bahía Mar: a wide timber overhang over the pool terrace, glass fronts opening the living area to the garden and a dark stone wall on the side.',
+  },
+  es: {
+    title: 'Arquitectura',
+    desc: 'Arquitectura tropical contemporánea, pensada para vivir al aire libre',
+    quote: 'La arquitectura de Bahía Mar combina madera, piedra clara y chukum con amplios aleros y terrazas que abren cada villa al paisaje',
+    by: 'Por Estudio Dolla',
+    role: 'Arquitectos',
+    cta: 'Agende una llamada',
+    alt: 'Villa Horizonte en Bahía Mar: un amplio alero de madera sobre la terraza de la piscina, frentes de vidrio que abren el salón al jardín y un muro de piedra oscura a un lado.',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function Architecture() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <section className="section clip">
       <div className="container">
@@ -41,10 +68,10 @@ export function Architecture() {
             <div className="arch-s">
               <div className="arch-s_t">
                 <div className="u-48"></div>
-                <h2 data-text="h" data-fit-text="" className="h1 a-center">Architecture</h2>
+                <h2 data-text="h" data-fit-text="" className="h1 a-center">{t.title}</h2>
                 <div className="u-32"></div>
                 <div className="grid">
-                  <div className="arch-s_desc"><p data-text="p" className="l1 a-center">Contemporary tropical architecture, made for a life lived outdoors</p></div>
+                  <div className="arch-s_desc"><p data-text="p" className="l1 a-center">{t.desc}</p></div>
                 </div>
               </div>
               <div className="arch-s_b">
@@ -52,13 +79,13 @@ export function Architecture() {
                   <div className="arch-s_quote w-clearfix">
                     <div className="red-line"></div>
                     <h3 data-part="p" className="h5">
-                      The architecture of Bahía Mar pairs timber, pale stone and chukum with wide overhangs and terraces that open each villa to the landscape
+                      {t.quote}
                     </h3>
                     <div className="u-64"></div>
                     <div className="grid _4-columns">
                       <div className="arch-s_author">
-                        <div data-part="p" className="l1">By Estudio Dolla</div>
-                        <div data-part="p" className="l1 reg">Architects</div>
+                        <div data-part="p" className="l1">{t.by}</div>
+                        <div data-part="p" className="l1 reg">{t.role}</div>
                       </div>
                     </div>
                     <div className="u-160 b-desk"></div>
@@ -66,10 +93,10 @@ export function Architecture() {
                   <div data-part="ctn" className="arch-s_btn b-desk">
                     <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                       <div data-magnetic-inner="" className="btn-circle_label">
-                        <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
+                        <a hover-nav-item="" aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                           <div className="nav-item_label">
-                            <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
-                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
+                            <div className="nav-item_label_text"><div hover="text" className="l1">{t.cta}</div></div>
+                            <div className="nav-item_label_text is-2"><div hover="text" className="l1">{t.cta}</div></div>
                           </div>
                         </a>
                       </div>
@@ -80,7 +107,7 @@ export function Architecture() {
                           <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                         </svg>
                       </div>
-                      <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
+                      <a aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                     </div>
                   </div>
                 </div>
@@ -89,7 +116,7 @@ export function Architecture() {
             </div>
             <div className="w_bg">
               <div data-desk="off" data-parallax="w" className="img-w">
-                <img className="img" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2.webp" alt="Villa Horizonte at Bahía Mar: a wide timber overhang over the pool terrace, glass fronts opening the living area to the garden and a dark stone wall on the side." sizes="(max-width: 1920px) 100vw, 1920px" data-parallax="img" loading="eager" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2.webp 2350w" />
+                <img className="img" src="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2.webp" alt={t.alt} sizes="(max-width: 1920px) 100vw, 1920px" data-parallax="img" loading="eager" srcSet="https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-500.webp 500w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-800.webp 800w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-1080.webp 1080w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-1600.webp 1600w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2-p-2000.webp 2000w, https://puntacanadinnerinthesky.com/urbatrix/bahiamar/images/bahiamar-architecture-2.webp 2350w" />
                 <div className="img-over-grad bot _100vh"></div>
                 <div className="img-over-grad bot _100vh"></div>
               </div>

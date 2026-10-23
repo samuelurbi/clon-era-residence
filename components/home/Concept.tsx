@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * YA NO ESTÁ GENERADO: nació de scripts/generate-sections.mjs sobre el
@@ -10,7 +11,57 @@
  * Las URLs del CDN ya están reescritas a /public.
  */
 
+import { localize } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    concept: 'The concept',
+    lead: 'Bahía Mar is a boutique resort community of villas across 349,146 m² of tropical landscape on the Samaná peninsula, designed around privacy, wellbeing and a life lived outdoors',
+    desc: 'Shaped by the calm of Samaná Bay, the project combines contemporary tropical architecture with warm natural materials, native planting and spaces that open straight onto the landscape.',
+    country: 'Dominican Republic',
+    titleThe: 'The',
+    titleMiddle: 'Samaná',
+    titlePeninsula: 'Peninsula',
+    introImgAlt: 'Villa terrace with sun loungers beside an infinity pool, palm trees and the Caribbean sea beyond.',
+    between: 'Between Las Terrenas and Cosón Bay',
+    introP: 'Surrounded by white-sand beaches, waterfalls, rainforest and the unhurried rhythm of the Samaná peninsula, the project combines privacy with easy reach of everything that makes Caribbean living effortless. A location designed not around movement — but around returning.',
+    cta: 'View available villas',
+    pathLine1: 'The coast you wanted',
+    pathA: 'yours',
+    pathLine2: 'year after year',
+    mapAria: 'Places near Bahía Mar and approximate drive times, to be confirmed',
+    airport: 'El Catey Airport',
+    waterfall: 'El Limón Waterfall',
+    mapNote: 'Approximate drive times (TBC)',
+  },
+  es: {
+    concept: 'El concepto',
+    lead: 'Bahía Mar es una comunidad boutique de villas sobre 349.146 m² de paisaje tropical en la península de Samaná, pensada para la privacidad, el bienestar y una vida al aire libre',
+    desc: 'Inspirado en la calma de la bahía de Samaná, el proyecto une arquitectura tropical contemporánea con materiales naturales y cálidos, vegetación autóctona y espacios que se abren directamente al paisaje.',
+    country: 'República Dominicana',
+    titleThe: 'La',
+    /* «La Samaná Península» es un calco: en español el orden es
+       «La / Península / de Samaná», en las mismas tres líneas. */
+    titleMiddle: 'Península',
+    titlePeninsula: 'de Samaná',
+    introImgAlt: 'Terraza de una villa con tumbonas junto a una piscina infinita, palmeras y el mar Caribe al fondo.',
+    between: 'Entre Las Terrenas y la bahía de Cosón',
+    introP: 'Rodeado de playas de arena blanca, cascadas, selva tropical y el ritmo sin prisas de la península de Samaná, el proyecto une la privacidad con la cercanía a todo lo que hace fácil la vida en el Caribe. Un lugar pensado no para ir y venir, sino para volver.',
+    cta: 'Ver villas disponibles',
+    pathLine1: 'La costa que soñaba',
+    pathA: 'suya',
+    pathLine2: 'año tras año',
+    mapAria: 'Lugares cercanos a Bahía Mar y tiempos aproximados en coche, por confirmar',
+    airport: 'Aeropuerto El Catey',
+    waterfall: 'Salto El Limón',
+    mapNote: 'Tiempos aproximados en coche (por confirmar)',
+  },
+};
+
 export function Concept() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <section data-bg="light" data-slow-scroll="" className="section clip">
       <div className="container loc">
@@ -25,14 +76,14 @@ export function Concept() {
                   </div>
                   <div className="loc-info-s_c">
                     <div className="grid">
-                      <div className="s_title"><h2 data-part="p" className="l1 a-center">The concept</h2></div>
+                      <div className="s_title"><h2 data-part="p" className="l1 a-center">{t.concept}</h2></div>
                     </div>
                     <div className="u-32 b-desk"></div>
                     <div className="u-160 b-mob"></div>
                     <div className="grid">
                       <div className="info-s_lead">
                         <h3 data-part="p" className="h4 a-center">
-                          Bahía Mar is a boutique resort community of villas across 349,146 m² of tropical landscape on the Samaná peninsula, designed around privacy, wellbeing and a life lived outdoors
+                          {t.lead}
                         </h3>
                       </div>
                     </div>
@@ -42,7 +93,7 @@ export function Concept() {
                     <div className="grid">
                       <div className="info-s_desc">
                         <p data-part="p" className="p1 a-center">
-                          Shaped by the calm of Samaná Bay, the project combines contemporary tropical architecture with warm natural materials, native planting and spaces that open straight onto the landscape.
+                          {t.desc}
                         </p>
                         <div className="u-32"></div>
                         <div className="s_logo">
@@ -84,40 +135,40 @@ export function Concept() {
                   <div className="u-160 b-mob"></div>
                   <div className="grid _13-columns fill">
                     <div className="loc-intro-s_cap">
-                      <h4 data-scroll-reveal="h" className="c1 a-center">Dominican Republic</h4>
+                      <h4 data-scroll-reveal="h" className="c1 a-center" lang={lang}>{t.country}</h4>
                     </div>
                     <div className="loc-intro-s_title">
-                      <h3 data-scroll-reveal="h" className="h1">
-                        <span className="loc-intro-s_title_line is-1">The</span>
-                        <span className="loc-intro-s_title_line is-2 mob_a-right">Samaná</span>
-                        <span className="loc-intro-s_title_line">Peninsula</span>
+                      <h3 data-scroll-reveal="h" className="h1" lang={lang}>
+                        <span className="loc-intro-s_title_line is-1">{t.titleThe}</span>
+                        <span className="loc-intro-s_title_line is-2 mob_a-right">{t.titleMiddle}</span>
+                        <span className="loc-intro-s_title_line">{t.titlePeninsula}</span>
                       </h3>
                     </div>
                     <div className="loc-intro-s_img">
                       <div className="u-32 b-mob"></div>
                       <div data-scroll-reveal="slide" className="img-w">
-                        <img loading="eager" src="/images/villa-coson-g3.webp" alt="Villa terrace with sun loungers beside an infinity pool, palm trees and the Caribbean sea beyond." sizes="(max-width: 2350px) 100vw, 2350px" srcSet="/images/villa-coson-g3-p-500.webp 500w, /images/villa-coson-g3-p-800.webp 800w, /images/villa-coson-g3-p-1080.webp 1080w, /images/villa-coson-g3-p-1600.webp 1600w, /images/villa-coson-g3-p-2000.webp 2000w, /images/villa-coson-g3.webp 2350w" className="img" />
+                        <img loading="eager" src="/images/villa-coson-g3.webp" alt={t.introImgAlt} sizes="(max-width: 2350px) 100vw, 2350px" srcSet="/images/villa-coson-g3-p-500.webp 500w, /images/villa-coson-g3-p-800.webp 800w, /images/villa-coson-g3-p-1080.webp 1080w, /images/villa-coson-g3-p-1600.webp 1600w, /images/villa-coson-g3-p-2000.webp 2000w, /images/villa-coson-g3.webp 2350w" className="img" />
                       </div>
                     </div>
                     <div className="loc-intro-s_desc">
                       <div className="u-32 b-mob"></div>
-                      <h3 data-scroll-reveal="p" className="h5">Between Las Terrenas and Cosón Bay</h3>
+                      <h3 data-scroll-reveal="p" className="h5">{t.between}</h3>
                       <div className="u-16"></div>
                       <p data-scroll-reveal="p" className="p1">
-                        Surrounded by white-sand beaches, waterfalls, rainforest and the unhurried rhythm of the Samaná peninsula, the project combines privacy with easy reach of everything that makes Caribbean living effortless. A location designed not around movement — but around returning.
+                        {t.introP}
                       </p>
                       <div className="u-96 b-mob"></div>
                     </div>
                     <div data-scroll-reveal="ctn" className="loc-intro-s_btn">
                       <div hover-btn-circle="" data-magnetic-btn="" hover-nav-item-trigger="" className="btn-circle">
                         <div data-magnetic-inner="" className="btn-circle_label">
-                          <a hover-nav-item="" aria-label="View available villas" href="/villas" className="nav-item w-inline-block">
+                          <a hover-nav-item="" aria-label={t.cta} href={localize('/villas', lang)} className="nav-item w-inline-block">
                             <div className="nav-item_label">
                               <div className="nav-item_label_text">
-                                <div hover="text" className="l1">View available villas</div>
+                                <div hover="text" className="l1">{t.cta}</div>
                               </div>
                               <div className="nav-item_label_text is-2">
-                                <div hover="text" className="l1">View available villas</div>
+                                <div hover="text" className="l1">{t.cta}</div>
                               </div>
                             </div>
                           </a>
@@ -129,7 +180,7 @@ export function Concept() {
                             <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                           </svg>
                         </div>
-                        <a aria-label="View available villas" href="/villas" className="btn-circle_link w-inline-block"></a>
+                        <a aria-label={t.cta} href={localize('/villas', lang)} className="btn-circle_link w-inline-block"></a>
                       </div>
                     </div>
                   </div>
@@ -151,9 +202,9 @@ export function Concept() {
                     <div className="grid">
                       <div className="loc-path-s_title">
                         <h2 className="h3 a-center">
-                          <span data-scroll-reveal="h" className="loc-path-s_title_line">The coast you wanted</span>
-                          <span data-scroll-reveal="a" className="loc-path-s_title_a a2">yours</span>
-                          <span data-scroll-reveal="h" className="loc-path-s_title_line">year after year</span>
+                          <span data-scroll-reveal="h" className="loc-path-s_title_line">{t.pathLine1}</span>
+                          <span data-scroll-reveal="a" className="loc-path-s_title_a a2">{t.pathA}</span>
+                          <span data-scroll-reveal="h" className="loc-path-s_title_line">{t.pathLine2}</span>
                         </h2>
                       </div>
                     </div>
@@ -184,7 +235,7 @@ export function Concept() {
                             */
                             style={{ width: "100%", height: "auto", display: "block" }}
                             role="img"
-                            aria-label="Places near Bahía Mar and approximate drive times, to be confirmed"
+                            aria-label={t.mapAria}
                           >
                             {/* La costa: una línea que ondula de oeste a este. */}
                             <path
@@ -201,11 +252,11 @@ export function Concept() {
                               confirmarlos, quitar el «~» y la nota.
                             */}
                             {[
-                              { x: 62, y: 167, nombre: 'El Catey Airport', tiempo: '~40 min' },
+                              { x: 62, y: 167, nombre: t.airport, tiempo: '~40 min' },
                               { x: 216, y: 147, nombre: 'Sánchez', tiempo: '~30 min' },
                               { x: 372, y: 150, nombre: 'Playa Cosón', tiempo: '~5 min' },
                               { x: 700, y: 118, nombre: 'Las Terrenas', tiempo: '~15 min' },
-                              { x: 856, y: 126, nombre: 'El Limón Waterfall', tiempo: '~30 min' },
+                              { x: 856, y: 126, nombre: t.waterfall, tiempo: '~30 min' },
                               { x: 1006, y: 104, nombre: 'Samaná', tiempo: '~50 min' },
                             ].map((p) => (
                               <g key={p.nombre}>
@@ -296,7 +347,7 @@ export function Concept() {
                                 opacity: 0.7,
                               }}
                             >
-                              Approximate drive times (TBC)
+                              {t.mapNote}
                             </text>
                           </svg>
                         </div>

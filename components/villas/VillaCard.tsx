@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Tarjeta de villa del listado y del bloque «otras villas» de la ficha.
@@ -13,18 +14,28 @@
  * no da unidades (tipos D y E) el segundo hueco enseña los niveles.
  */
 
-import type { VillaCardData } from '@/data/villa-cards';
+import { localizeCard, type VillaCardData } from '@/data/villa-cards';
+import { localize } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
 
-export function VillaCard({ card }: { card: VillaCardData }) {
+const T = {
+  en: { completion: 'Completion:', type: 'Type', level: 'level', levels: 'levels', bath: 'bath', bed: 'bed' },
+  es: { completion: 'Entrega:', type: 'Tipo', level: 'nivel', levels: 'niveles', bath: 'baños', bed: 'hab.' },
+};
+
+export function VillaCard({ card: cardEn }: { card: VillaCardData }) {
+  const lang = useLang();
+  const t = T[lang];
+  const card = localizeCard(cardEn, lang);
   return (
     <div data-sort-item="" data-filter-item="" role="listitem" className="apart-cms_list_item w-dyn-item">
-      <a data-sort-relevant={card.sortRelevant} hover-apart-card="" href={card.href} className="apart-card w-inline-block">
+      <a data-sort-relevant={card.sortRelevant} hover-apart-card="" href={localize(card.href, lang)} className="apart-card w-inline-block">
         <div className="apart-card_c">
           <div className="apart-card_t">
             <h2 data-type={card.filterType} className="l2 a-center">{card.name}</h2>
             <div className="u-4"></div>
             <p id="" className="l2 reg a-center">
-              <span>Completion:{' '}</span>
+              <span>{t.completion}{' '}</span>
               <span>{card.completion}</span>
             </p>
           </div>
@@ -38,24 +49,24 @@ export function VillaCard({ card }: { card: VillaCardData }) {
           <div className="apart-card_b">
             <div className="apart-card_data-list">
               <p id="" className="l2 reg a-center">
-                <span>Type{' '}</span>
+                <span>{t.type}{' '}</span>
                 <span>{card.type}</span>
               </p>
               <div className="data-divider"></div>
               <p id="" className="l2 reg a-center">
-                <span>{card.unitsLabel ?? `${card.levels} ${card.levels === '1' ? 'level' : 'levels'}`}</span>
+                <span>{card.unitsLabel ?? `${card.levels} ${card.levels === '1' ? t.level : t.levels}`}</span>
               </p>
               <div className="data-divider"></div>
               <p id="" className="l2 reg a-center">
                 <span>{card.bathrooms}</span>
-                <span>{' '}bath</span>
+                <span>{' '}{t.bath}</span>
               </p>
             </div>
             <div className="u-16"></div>
             <div className="apart-card_info">
               <h3 id="" data-bed={card.filterBed} className="h5">
                 <span>{card.bedrooms}</span>
-                <span>{' '}bed</span>
+                <span>{' '}{t.bed}</span>
               </h3>
               <div className="h5">/</div>
               <h4 data-sort-size={card.sortSize} className="h5"><span>{card.category}</span></h4>

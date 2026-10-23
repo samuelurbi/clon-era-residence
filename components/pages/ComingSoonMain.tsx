@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 /**
  * Página de espera («coming soon»).
@@ -14,9 +16,28 @@
  * Copy: ningún documento del cliente confirma una «próxima entrega» de
  * villas, así que la página no anuncia ninguna; sólo remite a contactar
  * para conocer la disponibilidad actual.
+ *
+ * Textos en inglés y español según la URL (lib/use-lang.ts).
  */
 
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    title: 'villas available on request',
+    desc: 'Villa availability at Bahía Mar is confirmed directly by our team. Contact us to find out which villas in Las Terrenas are currently available.',
+    book: 'Book a call now',
+  },
+  es: {
+    title: 'villas disponibles bajo consulta',
+    desc: 'Nuestro equipo confirma directamente la disponibilidad de las villas de Bahía Mar. Contáctenos para saber qué villas en Las Terrenas están disponibles en este momento.',
+    book: 'Agende una llamada',
+  },
+};
+
 export function ComingSoonMain() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <section data-footer-clip="" data-bg="light" className="section z-2 theme_on-brand">
       <div className="container">
@@ -25,12 +46,12 @@ export function ComingSoonMain() {
             <div className="grid">
               <div className="soon-s_title">
                 <div className="u-160"></div>
-                <h1 data-scroll-reveal="h" className="h2 a-center">villas available on request</h1>
+                <h1 data-scroll-reveal="h" className="h2 a-center">{t.title}</h1>
                 <div className="u-32"></div>
                 <div className="grid _4-columns">
                   <div className="soon-s_desc">
                     <p data-scroll-reveal="p" className="p1 a-center">
-                      Villa availability at Bahía Mar is confirmed directly by our team. Contact us to find out which villas in Las Terrenas are currently available.
+                      {t.desc}
                     </p>
                   </div>
                 </div>
@@ -38,10 +59,10 @@ export function ComingSoonMain() {
                 <div data-scroll-reveal="ctn" className="soon-s_btn">
                   <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                     <div data-magnetic-inner="" className="btn-circle_label">
-                      <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
+                      <a hover-nav-item="" aria-label={t.book} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                         <div className="nav-item_label">
-                          <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
-                          <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
+                          <div className="nav-item_label_text"><div hover="text" className="l1">{t.book}</div></div>
+                          <div className="nav-item_label_text is-2"><div hover="text" className="l1">{t.book}</div></div>
                         </div>
                       </a>
                     </div>
@@ -52,7 +73,7 @@ export function ComingSoonMain() {
                         <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                       </svg>
                     </div>
-                    <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
+                    <a aria-label={t.book} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                   </div>
                 </div>
               </div>

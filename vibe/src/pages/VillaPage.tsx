@@ -18,9 +18,11 @@
 import { useParams } from 'react-router-dom';
 
 import { CTA_IMAGES } from '@/data/cta-images';
-import { villas, villaBySlug } from '@/data/villas';
+import { villas, villaBySlug, localizeVilla } from '@/data/villas';
+import { useLang } from '@/lib/use-lang';
 import { villaCards } from '@/data/villa-cards';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+import { CRUMB } from '@/data/crumbs';
 import { VillaDetail } from '@/components/villas/VillaDetail';
 import { VillaArch } from '@/components/villas/VillaArch';
 import { RelatedVillas } from '@/components/villas/RelatedVillas';
@@ -50,7 +52,9 @@ export function VillaPage() {
    * cuando la ficha existe, React vería un número distinto de hooks
    * entre renders al navegar de una ficha válida a una inexistente.
    */
-  usePageMeta({ title: villa?.seo.title, description: villa?.seo.description });
+  const lang = useLang();
+  const seo = villa ? localizeVilla(villa, lang).seo : undefined;
+  usePageMeta({ title: seo?.title, description: seo?.description });
 
   if (!villa) return <NotFoundPage />;
 
@@ -68,8 +72,8 @@ export function VillaPage() {
     <>
       <Breadcrumbs
         trail={[
-          { label: 'Home', href: '/' },
-          { label: 'Select a Villa', href: '/villas' },
+          CRUMB.home,
+          { ...CRUMB.villas, href: '/villas' },
           { label: villa.name },
         ]}
       />

@@ -9,15 +9,20 @@
  * ============================================================ */
 
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+import { CRUMB } from '@/data/crumbs';
 import { BookACall } from '@/components/sections/BookACall';
 import { usePageMeta } from '@/shims/page-meta';
+import { useLang } from '@/lib/use-lang';
+import { localize } from '@/lib/i18n';
 
 export function NotFoundPage() {
-  usePageMeta({ title: 'Page not found' });
+  const lang = useLang();
+  const es = lang === 'es';
+  usePageMeta({ title: es ? 'Página no encontrada' : 'Page not found' });
 
   return (
     <>
-      <Breadcrumbs trail={[{ label: 'Home', href: '/' }, { label: 'Not found' }]} />
+      <Breadcrumbs trail={[CRUMB.home, { label: { en: 'Not found', es: 'No encontrada' } }]} />
       <section
         style={{
           background: 'var(--_colors---other--bg)',
@@ -26,12 +31,22 @@ export function NotFoundPage() {
           minHeight: '60svh',
         }}
       >
-        <h1 style={{ fontFamily: 'var(--_fonts---font-display)' }}>Page not found</h1>
-        <p style={{ fontFamily: 'var(--_fonts---font-body)' }}>
-          The page you were looking for is not here.{' '}
-          <a href="/villas">Browse the villas</a> or{' '}
-          <a href="/">go back to the homepage</a>.
-        </p>
+        <h1 style={{ fontFamily: 'var(--_fonts---font-display)' }}>
+          {es ? 'Página no encontrada' : 'Page not found'}
+        </h1>
+        {es ? (
+          <p style={{ fontFamily: 'var(--_fonts---font-body)' }}>
+            La página que buscaba no está aquí.{' '}
+            <a href={localize('/villas', lang)}>Vea las villas</a> o{' '}
+            <a href={localize('/', lang)}>vuelva al inicio</a>.
+          </p>
+        ) : (
+          <p style={{ fontFamily: 'var(--_fonts---font-body)' }}>
+            The page you were looking for is not here.{' '}
+            <a href="/villas">Browse the villas</a> or{' '}
+            <a href="/">go back to the homepage</a>.
+          </p>
+        )}
       </section>
       <BookACall />
     </>

@@ -1,5 +1,5 @@
 /* ============================================================
- *  ANIMATIONS — 22 módulos del repo en un solo archivo.
+ *  ANIMATIONS — 24 módulos del repo en un solo archivo.
  *
  *  GENERADO por scripts/vibe-bundle.mjs — no editar aquí.
  *  Se agrupa porque en GoHighLevel Vibe cada archivo nuevo hay que
@@ -10,6 +10,7 @@
  *  bloque, para poder volver atrás sin adivinar.
  */
 
+import { usePathname } from '@/shims';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -3003,6 +3004,13 @@ function navItemHover(): () => void {
       wordsClass: 'split-word',
       charsClass: 'split-char',
       mask: 'words',
+      /*
+       * SplitText normaliza el espacio en blanco y convierte el espacio
+       * duro (U+00A0) en uno normal. La dirección de la oficina los usa
+       * para no partirse por dentro de un tramo (data/contact.ts), así que
+       * en los textos que los llevan se respeta tal cual.
+       */
+      reduceWhiteSpace: !texts[0].textContent?.includes('\u00A0'),
     } as const;
 
     const a = new SplitText(texts[0], vars);
@@ -4615,4 +4623,82 @@ export function initUi(): () => void {
   return () => {
     for (const c of cleanups) c();
   };
+}
+
+/* ============================================================
+   lib/i18n.ts
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+/**
+ * Idiomas del sitio: inglés en la raíz y español bajo `/es`.
+ *
+ * El idioma vive en la URL, no en un estado ni en localStorage, por tres
+ * motivos:
+ *
+ *   - Cambiar de idioma es navegar, así que pasa por la transición de
+ *     página que ya existe y la capa de animación se reinicia sola (vuelve a
+ *     trocear el texto con SplitText sobre el idioma nuevo). Cambiar el
+ *     texto en caliente, con el DOM ya troceado, rompería esos nodos.
+ *   - Un enlace compartido abre en el idioma en que se compartió.
+ *   - Funciona igual en Next y en el gemelo de Vibe: los dos derivan el
+ *     idioma del `pathname`, sin proveedor ni contexto que montar.
+ *
+ * Las rutas son las mismas en los dos idiomas (`/villas` ↔ `/es/villas`):
+ * traducir los segmentos obligaría a una tabla de equivalencias para el
+ * switcher y para cada enlace, a cambio de nada que el cliente haya pedido.
+ */
+
+export type Lang = 'en' | 'es';
+
+export const LANGS: readonly Lang[] = ['en', 'es'];
+
+const ES_PREFIX = /^\/es(?=\/|$)/;
+
+/** Idioma de una ruta: `/es` y `/es/...` son español; el resto, inglés. */
+export function langFromPath(pathname: string): Lang {
+  return ES_PREFIX.test(pathname) ? 'es' : 'en';
+}
+
+/** La ruta sin el prefijo de idioma: `/es/villas` → `/villas`. */
+export function stripLang(pathname: string): string {
+  return pathname.replace(ES_PREFIX, '') || '/';
+}
+
+/**
+ * Ruta interna en el idioma dado: `localize('/villas', 'es')` → `/es/villas`.
+ *
+ * Lo que no es una ruta del sitio (anclas `#…`, `mailto:`, `tel:`, URLs
+ * absolutas) pasa tal cual, para poder usarla sin mirar qué enlace es.
+ */
+export function localize(path: string, lang: Lang): string {
+  if (lang === 'en' || !path.startsWith('/') || path.startsWith('//')) return path;
+  if (ES_PREFIX.test(path)) return path;
+  return path === '/' ? '/es' : `/es${path}`;
+}
+
+/** Atajo para los textos en línea: `pick(lang, 'Contact', 'Contacto')`. */
+export function pick<T>(lang: Lang, en: T, es: T): T {
+  return lang === 'es' ? es : en;
+}
+
+/* ============================================================
+   lib/use-lang.ts
+   ============================================================ */
+
+/* GENERADO por scripts/vibe-export.mjs — no editar aquí.
+ * La fuente está en el repo del clon; esta copia es solo para GoHighLevel Vibe. */
+/**
+ * Idioma de la página actual, leído de la URL (ver lib/i18n.ts).
+ *
+ * Solo sirve en componentes de cliente: depende de `usePathname`. En el
+ * gemelo de Vibe ese import se reapunta al shim sobre React Router, así que
+ * el mismo componente funciona allí sin tocarlo.
+ */
+
+
+
+export function useLang(): Lang {
+  return langFromPath(usePathname() || '/');
 }

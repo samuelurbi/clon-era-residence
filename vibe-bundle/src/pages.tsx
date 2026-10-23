@@ -1,5 +1,5 @@
 /* ============================================================
- *  PAGES — 6 módulos del repo en un solo archivo.
+ *  PAGES — 7 módulos del repo en un solo archivo.
  *
  *  GENERADO por scripts/vibe-bundle.mjs — no editar aquí.
  *  Se agrupa porque en GoHighLevel Vibe cada archivo nuevo hay que
@@ -10,10 +10,11 @@
  *  bloque, para poder volver atrás sin adivinar.
  */
 
+import { localize, useLang } from '@/animations';
 import { AmenitiesIntro, Arch, Architecture, Concept, Developer, Hero, Location, Pillars, PillarsMedia, SpaceToLive, VillasPreview } from '@/components-home';
 import { Breadcrumbs, ScrollRail } from '@/components-layout';
-import { Amenities, BookACall, ComingSoonMain, ContactMain, LightboxModal, RelatedVillas, SeaViewsCta, VillaArch, VillaDetail, VillasListing } from '@/components-pages';
-import { CTA_IMAGES, villaBySlug, villaCards, villas } from '@/data';
+import { Amenities, BookACall, ComingSoonMain, ContactMain, LegalMain, LightboxModal, RelatedVillas, SeaViewsCta, VillaArch, VillaDetail, VillasListing } from '@/components-pages';
+import { CRUMB, CTA_IMAGES, PAGE_META, localizeVilla, villaBySlug, villaCards, villas } from '@/data';
 import { usePageMeta } from '@/shims';
 import { useParams } from 'react-router-dom';
 
@@ -28,13 +29,10 @@ import { useParams } from 'react-router-dom';
 
 
 
+
+
 export function ComingSoonPage() {
-  usePageMeta({
-    title: 'Coming soon',
-    description:
-      'Villa availability at Bahía Mar, Las Terrenas, Samaná, is confirmed ' +
-      'directly by our team. Contact us to find out which villas are currently available.',
-  });
+  usePageMeta(PAGE_META.comingSoon[useLang()]);
 
   return <ComingSoonMain />;
 }
@@ -51,17 +49,15 @@ export function ComingSoonPage() {
 
 
 
+
+
+
 export function ContactPage() {
-  usePageMeta({
-    title: 'Contact',
-    description:
-      'Get in touch with the Bahía Mar team in Las Terrenas, Samaná, for villa ' +
-      'availability, floor plans and a private presentation of the project.',
-  });
+  usePageMeta(PAGE_META.contact[useLang()]);
 
   return (
     <>
-      <Breadcrumbs trail={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
+      <Breadcrumbs trail={[CRUMB.home, CRUMB.contact]} />
       <ContactMain />
       <SeaViewsCta image={CTA_IMAGES.contact} />
       <BookACall />
@@ -92,9 +88,11 @@ export function ContactPage() {
 
 
 
+
+
 export function HomePage() {
-  /* La home usa el título por defecto: no pasa `title`. */
-  usePageMeta({});
+  /* La home lleva el título completo, sin sufijo (como en Next). */
+  usePageMeta({ ...PAGE_META.home[useLang()], absolute: true });
 
   return (
     <>
@@ -118,6 +116,31 @@ export function HomePage() {
 }
 
 /* ============================================================
+   pages/LegalPage.tsx
+   ============================================================ */
+
+/* Port de `app/legal/page.tsx`: políticas legales, en los dos idiomas. */
+
+
+
+
+
+
+
+
+export function LegalPage() {
+  usePageMeta(PAGE_META.legal[useLang()]);
+
+  return (
+    <>
+      <Breadcrumbs trail={[CRUMB.home, CRUMB.legal]} />
+      <LegalMain />
+      <BookACall />
+    </>
+  );
+}
+
+/* ============================================================
    pages/NotFoundPage.tsx
    ============================================================ */
 
@@ -134,12 +157,17 @@ export function HomePage() {
 
 
 
+
+
+
 export function NotFoundPage() {
-  usePageMeta({ title: 'Page not found' });
+  const lang = useLang();
+  const es = lang === 'es';
+  usePageMeta({ title: es ? 'Página no encontrada' : 'Page not found' });
 
   return (
     <>
-      <Breadcrumbs trail={[{ label: 'Home', href: '/' }, { label: 'Not found' }]} />
+      <Breadcrumbs trail={[CRUMB.home, { label: { en: 'Not found', es: 'No encontrada' } }]} />
       <section
         style={{
           background: 'var(--_colors---other--bg)',
@@ -148,12 +176,22 @@ export function NotFoundPage() {
           minHeight: '60svh',
         }}
       >
-        <h1 style={{ fontFamily: 'var(--_fonts---font-display)' }}>Page not found</h1>
-        <p style={{ fontFamily: 'var(--_fonts---font-body)' }}>
-          The page you were looking for is not here.{' '}
-          <a href="/villas">Browse the villas</a> or{' '}
-          <a href="/">go back to the homepage</a>.
-        </p>
+        <h1 style={{ fontFamily: 'var(--_fonts---font-display)' }}>
+          {es ? 'Página no encontrada' : 'Page not found'}
+        </h1>
+        {es ? (
+          <p style={{ fontFamily: 'var(--_fonts---font-body)' }}>
+            La página que buscaba no está aquí.{' '}
+            <a href={localize('/villas', lang)}>Vea las villas</a> o{' '}
+            <a href={localize('/', lang)}>vuelva al inicio</a>.
+          </p>
+        ) : (
+          <p style={{ fontFamily: 'var(--_fonts---font-body)' }}>
+            The page you were looking for is not here.{' '}
+            <a href="/villas">Browse the villas</a> or{' '}
+            <a href="/">go back to the homepage</a>.
+          </p>
+        )}
       </section>
       <BookACall />
     </>
@@ -195,6 +233,8 @@ export function NotFoundPage() {
 
 
 
+
+
 /**
  * Cuántas villas se sugieren al pie.
  *
@@ -214,7 +254,9 @@ export function VillaPage() {
    * cuando la ficha existe, React vería un número distinto de hooks
    * entre renders al navegar de una ficha válida a una inexistente.
    */
-  usePageMeta({ title: villa?.seo.title, description: villa?.seo.description });
+  const lang = useLang();
+  const seo = villa ? localizeVilla(villa, lang).seo : undefined;
+  usePageMeta({ title: seo?.title, description: seo?.description });
 
   if (!villa) return <NotFoundPage />;
 
@@ -232,8 +274,8 @@ export function VillaPage() {
     <>
       <Breadcrumbs
         trail={[
-          { label: 'Home', href: '/' },
-          { label: 'Select a Villa', href: '/villas' },
+          CRUMB.home,
+          { ...CRUMB.villas, href: '/villas' },
           { label: villa.name },
         ]}
       />
@@ -260,18 +302,15 @@ export function VillaPage() {
 
 
 
+
+
+
 export function VillasPage() {
-  usePageMeta({
-    title: 'Villas',
-    description:
-      'Five villa typologies at Bahía Mar, Las Terrenas, Samaná: Villa Horizonte, ' +
-      'Esencia, Armonía, Ámbar and Remanso — single-level and two-level villas ' +
-      'with private pool, jacuzzi, solarium and views over Samaná Bay.',
-  });
+  usePageMeta(PAGE_META.villas[useLang()]);
 
   return (
     <>
-      <Breadcrumbs trail={[{ label: 'Home', href: '/' }, { label: 'Select a Villa' }]} />
+      <Breadcrumbs trail={[CRUMB.home, CRUMB.villas]} />
       <VillasListing />
       <SeaViewsCta image={CTA_IMAGES.villas} />
       <BookACall />

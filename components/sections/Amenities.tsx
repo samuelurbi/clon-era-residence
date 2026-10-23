@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * Amenidades de Bahía Mar: cinco diapositivas con pestañas.
@@ -14,7 +15,51 @@
  * Hay exactamente cinco elementos porque la animación los cuenta.
  */
 
+import { type Lang } from '@/lib/i18n';
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: {
+    entrance: 'Entrance',
+    entranceDesc: 'Past the entrance arches, the first funicular in the Caribbean links the whole community, together with a network of cart paths.',
+    entranceAlt: 'Entrance to Bahía Mar: a sequence of arches over the access road with a whale-tail sculpture at sunset',
+    pools: 'Beach & pools',
+    poolsDesc: 'Three community pools set among the palms, a lagoon, and a Beach Club with its own access to the beach.',
+    poolsAlt: 'Community pool of Bahía Mar surrounded by palms and rocks, with the sea on the horizon',
+    thermal: 'Thermal waters',
+    thermalDesc: 'Thermal waters, a spa with meditation huts, a center for meditation and healing, and a wellness center for yoga and pilates.',
+    thermalAlt: 'Circular thermal pool of the Bahía Mar spa under an open oculus draped with hanging plants',
+    coworking: 'Coworking',
+    coworkingDesc: 'A coworking space, a clubhouse and boutique hotel, seven restaurants and shops, a gym, a party hall, courts and children’s parks.',
+    coworkingAlt: 'Bahía Mar coworking lounge with a reflecting pool down its center and floor-to-ceiling glass towards the palms and the sea',
+    trails: 'Forest trails',
+    trailsDesc: 'Hiking trails, waterfalls and climbing, mountain bridges and two viewpoints — and an area of BBQs and fire pits for the evenings.',
+    trailsAlt: 'Raised wooden walkway winding through the forest of Bahía Mar beside a stream, under a sculpted white canopy',
+    cta: 'Book a call now',
+  },
+  es: {
+    entrance: 'Entrada',
+    entranceDesc: 'Tras los arcos de la entrada, el primer funicular del Caribe conecta toda la comunidad, junto con una red de caminos para carritos.',
+    entranceAlt: 'Entrada a Bahía Mar: una sucesión de arcos sobre el camino de acceso con una escultura de cola de ballena al atardecer',
+    pools: 'Playa y piscinas',
+    poolsDesc: 'Tres piscinas comunitarias entre las palmeras, una laguna y un Beach Club con acceso propio a la playa.',
+    poolsAlt: 'Piscina comunitaria de Bahía Mar rodeada de palmeras y rocas, con el mar en el horizonte',
+    thermal: 'Aguas termales',
+    thermalDesc: 'Aguas termales, un spa con cabañas de meditación, un centro de meditación y sanación, y un centro de bienestar para yoga y pilates.',
+    thermalAlt: 'Piscina termal circular del spa de Bahía Mar bajo un óculo abierto cubierto de plantas colgantes',
+    coworking: 'Coworking',
+    coworkingDesc: 'Un espacio de coworking, una casa club y hotel boutique, siete restaurantes y tiendas, gimnasio, salón de fiestas, canchas y parques infantiles.',
+    coworkingAlt: 'Sala de coworking de Bahía Mar con un espejo de agua en el centro y vidrio de piso a techo hacia las palmeras y el mar',
+    trails: 'Senderos del bosque',
+    trailsDesc: 'Senderos de caminata, cascadas y escalada, puentes de montaña y dos miradores, además de una zona de BBQ y fogateros para las noches.',
+    trailsAlt: 'Pasarela elevada de madera que serpentea por el bosque de Bahía Mar junto a un arroyo, bajo una cubierta blanca esculpida',
+    cta: 'Agende una llamada',
+  },
+} satisfies Record<Lang, Record<string, string>>;
+
 export function Amenities() {
+  const lang = useLang();
+  const t = T[lang];
   return (
     <div className="amen-scroll-area">
       <div className="scroll-area_screen">
@@ -30,13 +75,13 @@ export function Amenities() {
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Entrance</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">{t.entrance}</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Past the entrance arches, the first funicular in the Caribbean links the whole community, together with a network of cart paths.
+                                  {t.entranceDesc}
                                 </h4>
                               </div>
                             </div>
@@ -45,7 +90,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="Entrance to Bahía Mar: a sequence of arches over the access road with a whale-tail sculpture at sunset" src="/images/bahiamar-amenities-1.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-1-p-500.webp 500w, /images/bahiamar-amenities-1-p-800.webp 800w, /images/bahiamar-amenities-1-p-1080.webp 1080w, /images/bahiamar-amenities-1-p-1600.webp 1600w, /images/bahiamar-amenities-1-p-2000.webp 2000w, /images/bahiamar-amenities-1.webp 2350w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt={t.entranceAlt} src="/images/bahiamar-amenities-1.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-1-p-500.webp 500w, /images/bahiamar-amenities-1-p-800.webp 800w, /images/bahiamar-amenities-1-p-1080.webp 1080w, /images/bahiamar-amenities-1-p-1600.webp 1600w, /images/bahiamar-amenities-1-p-2000.webp 2000w, /images/bahiamar-amenities-1.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -58,13 +103,13 @@ export function Amenities() {
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Beach & pools</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">{t.pools}</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Three community pools set among the palms, a lagoon, and a Beach Club with its own access to the beach.
+                                  {t.poolsDesc}
                                 </h4>
                               </div>
                             </div>
@@ -73,7 +118,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="Community pool of Bahía Mar surrounded by palms and rocks, with the sea on the horizon" src="/images/bahiamar-amenities-2.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-2-p-500.webp 500w, /images/bahiamar-amenities-2-p-800.webp 800w, /images/bahiamar-amenities-2-p-1080.webp 1080w, /images/bahiamar-amenities-2-p-1600.webp 1600w, /images/bahiamar-amenities-2-p-2000.webp 2000w, /images/bahiamar-amenities-2.webp 2350w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt={t.poolsAlt} src="/images/bahiamar-amenities-2.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-2-p-500.webp 500w, /images/bahiamar-amenities-2-p-800.webp 800w, /images/bahiamar-amenities-2-p-1080.webp 1080w, /images/bahiamar-amenities-2-p-1600.webp 1600w, /images/bahiamar-amenities-2-p-2000.webp 2000w, /images/bahiamar-amenities-2.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -86,13 +131,13 @@ export function Amenities() {
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Thermal waters</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">{t.thermal}</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Thermal waters, a spa with meditation huts, a center for meditation and healing, and a wellness center for yoga and pilates.
+                                  {t.thermalDesc}
                                 </h4>
                               </div>
                             </div>
@@ -101,7 +146,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="Circular thermal pool of the Bahía Mar spa under an open oculus draped with hanging plants" src="/images/bahiamar-amenities-3.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-3-p-500.webp 500w, /images/bahiamar-amenities-3-p-800.webp 800w, /images/bahiamar-amenities-3-p-1080.webp 1080w, /images/bahiamar-amenities-3-p-1600.webp 1600w, /images/bahiamar-amenities-3-p-2000.webp 2000w, /images/bahiamar-amenities-3.webp 2350w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt={t.thermalAlt} src="/images/bahiamar-amenities-3.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-3-p-500.webp 500w, /images/bahiamar-amenities-3-p-800.webp 800w, /images/bahiamar-amenities-3-p-1080.webp 1080w, /images/bahiamar-amenities-3-p-1600.webp 1600w, /images/bahiamar-amenities-3-p-2000.webp 2000w, /images/bahiamar-amenities-3.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -114,13 +159,13 @@ export function Amenities() {
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Coworking</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">{t.coworking}</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  A coworking space, a clubhouse and boutique hotel, seven restaurants and shops, a gym, a party hall, courts and children’s parks.
+                                  {t.coworkingDesc}
                                 </h4>
                               </div>
                             </div>
@@ -129,7 +174,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="Bahía Mar coworking lounge with a reflecting pool down its center and floor-to-ceiling glass towards the palms and the sea" src="/images/bahiamar-amenities-4.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-4-p-500.webp 500w, /images/bahiamar-amenities-4-p-800.webp 800w, /images/bahiamar-amenities-4-p-1080.webp 1080w, /images/bahiamar-amenities-4-p-1600.webp 1600w, /images/bahiamar-amenities-4-p-2000.webp 2000w, /images/bahiamar-amenities-4.webp 2350w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt={t.coworkingAlt} src="/images/bahiamar-amenities-4.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-4-p-500.webp 500w, /images/bahiamar-amenities-4-p-800.webp 800w, /images/bahiamar-amenities-4-p-1080.webp 1080w, /images/bahiamar-amenities-4-p-1600.webp 1600w, /images/bahiamar-amenities-4-p-2000.webp 2000w, /images/bahiamar-amenities-4.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -142,13 +187,13 @@ export function Amenities() {
                           <div className="amen-slide_b">
                             <div className="grid">
                               <div className="amen-slide_title">
-                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">Forest trails</h3>
+                                <h3 data-scroll-reveal="p" data-tab="p" className="l1">{t.trails}</h3>
                                 <div className="u-32"></div>
                               </div>
                               <div className="amen-slide_desc w-clearfix">
                                 <div className="red-line"></div>
                                 <h4 data-scroll-reveal="p" data-tab="p" className="h5">
-                                  Hiking trails, waterfalls and climbing, mountain bridges and two viewpoints — and an area of BBQs and fire pits for the evenings.
+                                  {t.trailsDesc}
                                 </h4>
                               </div>
                             </div>
@@ -157,7 +202,7 @@ export function Amenities() {
                           <div className="amen-slide_img">
                             <div data-tab="slide" className="img-w">
                               <div className="img-w">
-                                <img data-parallax="img-in" loading="eager" alt="Raised wooden walkway winding through the forest of Bahía Mar beside a stream, under a sculpted white canopy" src="/images/bahiamar-amenities-5.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-5-p-500.webp 500w, /images/bahiamar-amenities-5-p-800.webp 800w, /images/bahiamar-amenities-5-p-1080.webp 1080w, /images/bahiamar-amenities-5-p-1600.webp 1600w, /images/bahiamar-amenities-5-p-2000.webp 2000w, /images/bahiamar-amenities-5.webp 2350w" className="img-p" />
+                                <img data-parallax="img-in" loading="eager" alt={t.trailsAlt} src="/images/bahiamar-amenities-5.webp" sizes="100vw" srcSet="/images/bahiamar-amenities-5-p-500.webp 500w, /images/bahiamar-amenities-5-p-800.webp 800w, /images/bahiamar-amenities-5-p-1080.webp 1080w, /images/bahiamar-amenities-5-p-1600.webp 1600w, /images/bahiamar-amenities-5-p-2000.webp 2000w, /images/bahiamar-amenities-5.webp 2350w" className="img-p" />
                               </div>
                               <div className="img-over-grad from-top"></div>
                               <div className="img-over-grad from-bot _4x bot"></div>
@@ -174,25 +219,25 @@ export function Amenities() {
                           <div role="list" className="amen-tabs-cms_list w-dyn-items">
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
                               <div data-tab="" data-tab-trigger="entrance" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Entrance</div>
+                                <div data-scroll-reveal="p" className="h5">{t.entrance}</div>
                               </div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
                               <div data-tab="" data-tab-trigger="pools" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Beach & pools</div>
+                                <div data-scroll-reveal="p" className="h5">{t.pools}</div>
                               </div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
                               <div data-tab="" data-tab-trigger="thermal" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Thermal waters</div>
+                                <div data-scroll-reveal="p" className="h5">{t.thermal}</div>
                               </div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
-                              <div data-tab="" data-tab-trigger="coworking" className="amen-tab"><div data-scroll-reveal="p" className="h5">Coworking</div></div>
+                              <div data-tab="" data-tab-trigger="coworking" className="amen-tab"><div data-scroll-reveal="p" className="h5">{t.coworking}</div></div>
                             </div>
                             <div role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
                               <div data-tab="" data-tab-trigger="trails" className="amen-tab">
-                                <div data-scroll-reveal="p" className="h5">Forest trails</div>
+                                <div data-scroll-reveal="p" className="h5">{t.trails}</div>
                               </div>
                             </div>
                           </div>
@@ -208,10 +253,10 @@ export function Amenities() {
                       <div data-scroll-reveal="ctn" className="amm-s_cms_btn">
                         <div data-magnetic-btn="" hover-nav-item-trigger="" hover-btn-circle="" className="btn-circle">
                           <div data-magnetic-inner="" className="btn-circle_label">
-                            <a hover-nav-item="" aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
+                            <a hover-nav-item="" aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="nav-item w-inline-block">
                               <div className="nav-item_label">
-                                <div className="nav-item_label_text"><div hover="text" className="l1">Book a call now</div></div>
-                                <div className="nav-item_label_text is-2"><div hover="text" className="l1">Book a call now</div></div>
+                                <div className="nav-item_label_text"><div hover="text" className="l1">{t.cta}</div></div>
+                                <div className="nav-item_label_text is-2"><div hover="text" className="l1">{t.cta}</div></div>
                               </div>
                             </a>
                           </div>
@@ -222,7 +267,7 @@ export function Amenities() {
                               <circle cx="104" cy="104" r="103.5" stroke="var(--_colors---base-1000--line)" strokeWidth="1" fill="none"></circle>
                             </svg>
                           </div>
-                          <a aria-label="Book a call now" href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
+                          <a aria-label={t.cta} href="https://landmass.urbatrix.com/login" target="_blank" rel="noopener noreferrer" className="btn-circle_link w-inline-block"></a>
                         </div>
                       </div>
                     </div>

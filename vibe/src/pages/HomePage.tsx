@@ -17,10 +17,12 @@ import { Developer } from '@/components/home/Developer';
 import { SeaViewsCta } from '@/components/sections/SeaViewsCta';
 import { BookACall } from '@/components/sections/BookACall';
 import { usePageMeta } from '@/shims/page-meta';
+import { PAGE_META } from '@/data/meta';
+import { useLang } from '@/lib/use-lang';
 
 export function HomePage() {
-  /* La home usa el título por defecto: no pasa `title`. */
-  usePageMeta({});
+  /* La home lleva el título completo, sin sufijo (como en Next). */
+  usePageMeta({ ...PAGE_META.home[useLang()], absolute: true });
 
   return (
     <>

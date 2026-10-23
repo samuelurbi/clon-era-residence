@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 /**
  * GENERADO por scripts/generate-sections.mjs desde villas/011.html — no editar a mano.
@@ -7,14 +8,22 @@
  * Las URLs del CDN ya están reescritas a /public.
  */
 
+import { useLang } from '@/lib/use-lang';
+
+const T = {
+  en: { close: 'Close', prev: 'Prev', next: 'Next' },
+  es: { close: 'Cerrar', prev: 'Anterior', next: 'Siguiente' },
+};
+
 export function LightboxModal() {
+  const t = T[useLang()];
   return (
     <div data-lightbox-modal="" className="modal">
       <div className="modal_c">
         <div className="modal_lightbox">
           <div className="modal_close">
             <div data-slider="close" hover-btn="" className="btn-ico">
-              <a aria-label="Close" href="#" className="btn-ico_link w-inline-block"></a>
+              <a aria-label={t.close} href="#" className="btn-ico_link w-inline-block"></a>
               <div hover="ico" className="btn_ico">
                 <div className="ico-16">
                   <div className="ico w-embed">
@@ -42,7 +51,7 @@ export function LightboxModal() {
               </div>
               <div className="btn-list">
                 <div data-slider="prev" hover-btn="" className="btn-ico">
-                  <a aria-label="Prev" href="#" className="btn-ico_link w-inline-block"></a>
+                  <a aria-label={t.prev} href="#" className="btn-ico_link w-inline-block"></a>
                   <div hover="ico" className="btn_ico">
                     <div className="ico-16">
                       <div className="ico w-embed">
@@ -55,7 +64,7 @@ export function LightboxModal() {
                   <div className="btn_bg"><div hover="bg" className="btn_bg_fill"></div></div>
                 </div>
                 <div data-slider="next" hover-btn="" className="btn-ico">
-                  <a aria-label="Next" href="#" className="btn-ico_link w-inline-block"></a>
+                  <a aria-label={t.next} href="#" className="btn-ico_link w-inline-block"></a>
                   <div hover="ico" className="btn_ico">
                     <div className="ico-16">
                       <div className="ico w-embed">

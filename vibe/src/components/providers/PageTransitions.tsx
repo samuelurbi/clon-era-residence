@@ -104,7 +104,9 @@ export function PageTransitions() {
       const go = () => {
         if (navigated) return;
         navigated = true;
-        router.push(to);
+        // Con el ancla: `/legal#privacy` desde otra página debe llegar a la
+        // sección, no arriba del todo (la página de destino hace el salto).
+        router.push(href);
       };
 
       // Primero se van los elementos, luego se apaga el conjunto: es el
